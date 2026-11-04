@@ -25,7 +25,7 @@ jobs:
       - name: 시세 수집
         run: |
           python scripts/update.py --only quotes
-          python scripts/update.py --industry semi --only quotes
+          timeout 300 python scripts/update.py --industry semi --only quotes || true
       - name: live-data 브랜치에 게시 (장중 실시간용)
         run: |
           mkdir -p /tmp/live/semi && cp docs/data/quotes.json docs/data/valuation.json /tmp/live/
