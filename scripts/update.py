@@ -472,8 +472,11 @@ def update_prices(key):
     out = {}
     for c in cfg:
         txt = http_get(PRICE_URL, {"serviceKey": key, "resultType": "json", "numOfRows": 400, "pageNo": 1,
-                                   "likeSrtnCd": c["code"], "beginBasDt": begin})
+                                   "likeSrtnCd": c["code"], "beginBasDt": begin}, retries=1)
         if not txt:
+            if not out:  # 첫 종목부터 실패하면(활용신청 전 403 등) 나머지도 건너뛴다
+                log("주가 API 응답 없음 — 시세 수집 중단")
+                break
             continue
         try:
             items = json.loads(txt)["response"]["body"]["items"]["item"]
