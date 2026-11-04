@@ -82,14 +82,19 @@ def main(industry="cosmetics"):
         if len(ks) == 4:
             ttm = {m: sum((Q[k].get(m) or 0) for k in ks) for m in ("rev", "op", "ni")}
             rec["ttm"] = dict(ttm, period=f"{ks[0]}~{ks[-1]}")
-        if not a:
-            out["companies"][code] = rec
-            continue
-        snap = a.get("snapshot") or {}
+        dft = cfg.get("default")
+        if not a and dft and rec.get("ttm") and rec["ttm"]["ni"] > 0:
+            # 개별 가정이 없는 회사: 최근 4개 분기 순이익을 그대로 쓰는 자동 가정
+            a = dict(dft, E1=round(rec["ttm"]["ni"] / 100))
+            rec["auto"] = True
+        snap = (a or {}).get("snapshot") or {}
         px = prices.get(code)
         qt = quotes.get(code)
         dsh = co.get("shares") or {}  # DART 유통주식수 (보통주·우선주)
         shares0 = (px or {}).get("shares") or snap.get("shares") or dsh.get("common")
+        if not shares0:
+            out["companies"][code] = rec
+            continue
         pref = co.get("pref")
         pref_sh = dsh.get("pref") if pref else None
         pq = quotes.get(pref) if pref else None
@@ -126,6 +131,9 @@ def main(industry="cosmetics"):
             rec["per"] = round(mcap / ni, 1) if ni > 0 else None
             rec["roe"] = round(ni / equity * 100, 1) if equity else None
         rec["pbr"] = round(mcap / equity, 2) if equity else None
+        if not a:
+            out["companies"][code] = rec
+            continue
         E1 = a["E1"] * 100  # 억원 → 백만원
         # 순현금은 따로 더하고, 그 이자(세후 약 2%)는 영업 이익에서 뺀다 (순차입이면 반대)
         nc = (net_cash or 0) if a.get("nc_adj", True) else 0  # 비지배지분이 큰 지주·연결사는 제외

@@ -100,7 +100,27 @@ def dart_corp_codes(key):
         sc = (el.findtext("stock_code") or "").strip()
         if sc:
             m[sc] = el.findtext("corp_code")
+            CORP_NAMES[sc] = (el.findtext("corp_name") or "").strip()
     return m
+
+
+CORP_NAMES = {}
+
+
+def check_names(cfg):
+    """설정의 종목코드·회사명이 DART 등록 정보와 맞는지 확인해 RAW/name_check.json에 남긴다."""
+    norm = lambda s: s.replace(" ", "").replace("(주)", "").replace("주식회사", "").upper()
+    bad = []
+    for c in cfg:
+        dn = CORP_NAMES.get(c["code"])
+        if dn is None:
+            bad.append({"code": c["code"], "name": c["name"], "dart": None})
+        elif norm(dn) != norm(c["name"]):
+            bad.append({"code": c["code"], "name": c["name"], "dart": dn})
+    RAW.mkdir(parents=True, exist_ok=True)
+    (RAW / "name_check.json").write_text(json.dumps({"checked": TODAY.isoformat(), "mismatch": bad}, ensure_ascii=False, indent=1), "utf-8")
+    for b in bad:
+        log("⚠ 종목 확인 필요:", b["code"], b["name"], "→ DART:", b["dart"])
 
 
 def dart_report(key, corp, year, reprt):
@@ -188,6 +208,7 @@ def update_dart(key):
     if not codes:
         log("DART corpCode 조회 실패 — 재무 갱신 건너뜀 (DART는 해외 IP 접속이 막혀 있어요)")
         return False
+    check_names(cfg)
     last_year = TODAY.year - 1
     years_a = list(range(last_year - 9, last_year + 1))
     years_q = list(range(TODAY.year - 4, TODAY.year + 1))
@@ -198,6 +219,10 @@ def update_dart(key):
         if not corp:
             log("corp_code 없음:", c["name"])
             result.append(old.get(c["code"], rec))
+            continue
+        o = old.get(c["code"])
+        if "--new-only" in sys.argv and o and o.get("quarterly"):  # 이미 받은 회사는 건너뛰기
+            result.append({**o, **c})
             continue
         log("DART:", c["name"])
         fy = {}
@@ -569,6 +594,8 @@ def update_dart_docs(key):
         corp = codes.get(c["code"])
         if not corp:
             continue
+        if "--new-only" in sys.argv and (DOCS / f"{c['code']}.json").exists():
+            continue
         reps = []
         for r in dart_latest_reports(key, corp):
             body = http_get(f"{DART}/document.xml", {"crtfc_key": key, "rcept_no": r["rcept_no"]}, raw=True)
@@ -714,6 +741,13 @@ def main():
         build_valuation.main(INDUSTRY)
     except Exception as e:
         log("밸류에이션 계산 실패:", e)
+    if INDUSTRY == "semi" and only in (None, "dart", "dart_docs"):
+        try:  # 새로 받은 회사도 리뷰(자동 정리)가 보이게
+            sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "semi"))
+            import build_reviews
+            build_reviews.main()
+        except Exception as e:
+            log("리뷰 정리 실패:", e)
     if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다
         meta = load("meta.json") or {}
         meta["sources_updated"] = sorted(set(meta.get("sources_updated", [])) | set(ran))
