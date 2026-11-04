@@ -44,5 +44,5 @@ jobs:
           git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json && git add docs/semi/data || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 종가 $(TZ=Asia/Seoul date +%Y-%m-%d)"
-            git pull --rebase -q && git push
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
           fi
