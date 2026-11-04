@@ -265,8 +265,8 @@ def update_kosis(key):
 
 
 # ---------------------------------------------------------------- 관세청 (data.go.kr)
-ITEM_URL = "https://apis.data.go.kr/1220000/nitemtrade/getNitemtradeList"
-NATION_URL = "https://apis.data.go.kr/1220000/nationitemtrade/getNationItemtradeList"
+ITEM_URL = "https://apis.data.go.kr/1220000/Itemtrade/getItemtradeList"  # 관세청_품목별 수출입실적(GW)
+NATION_URL = "https://apis.data.go.kr/1220000/nitemtrade/getNitemtradeList"  # 관세청_품목별 국가별 수출입실적(GW)
 HS_GROUPS = {"3303": "향수", "3304": "기초·색조(3304)", "3305": "두발용", "3307": "면도·탈취 등"}
 COUNTRIES = {"US": "미국", "CN": "중국", "JP": "일본", "HK": "홍콩", "VN": "베트남", "RU": "러시아", "TW": "대만", "AE": "UAE"}
 
@@ -291,8 +291,11 @@ def month_ranges(start: dt.date, end: dt.date):
         y += 1
 
 
-def sum_by_month(items, field="expDlr"):
+def sum_by_month(items, field="expDlr", hs=None):
+    """월별 합계. 응답에 요청한 HS 코드와 정확히 같은 행이 있으면 그 행만 쓰고(상·하위 단위 중복 방지), 없으면 모든 행을 더한다."""
     out = {}
+    if hs and any(it.get("hsCd") == hs for it in items):
+        items = [it for it in items if it.get("hsCd") == hs]
     for it in items:
         ym = it.get("year", "")
         if "." not in ym:  # 총계 행 제외
@@ -317,9 +320,11 @@ def update_customs(key):
             if not txt:
                 continue
             items = parse_items(txt)
-            for k, v in sum_by_month(items).items():
+            if not items:
+                log(f"관세청 응답에 데이터 없음 (HS {hs}, {s}~{e}):", txt[:200].replace(key, "***"))
+            for k, v in sum_by_month(items, hs=hs).items():
                 agg[k] = agg.get(k, 0) + v
-            for k, v in sum_by_month(items, "impDlr").items():
+            for k, v in sum_by_month(items, "impDlr", hs=hs).items():
                 imp_total[k] = imp_total.get(k, 0) + v
             time.sleep(0.3)
         if agg:
@@ -343,7 +348,7 @@ def update_customs(key):
         for s, e in month_ranges(dt.date(TODAY.year - 2, 1, 1), end):
             txt = http_get(NATION_URL, {"serviceKey": key, "strtYymm": s, "endYymm": e, "cntyCd": cc, "hsSgn": "3304"})
             if txt:
-                for k, v in sum_by_month(parse_items(txt)).items():
+                for k, v in sum_by_month(parse_items(txt), hs="3304").items():
                     agg[k] = agg.get(k, 0) + v
             time.sleep(0.3)
         if agg:
