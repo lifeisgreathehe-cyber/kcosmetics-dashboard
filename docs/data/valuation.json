@@ -428,7 +428,7 @@
    "shares": 15640000,
    "equity": 201023,
    "equity_source": "DART 2026Q2",
-   "net_cash": 146600,
+   "net_cash": 139820,
    "dividend_yield": 3.24,
    "per": 12.2,
    "roe": 15.2,
@@ -442,25 +442,25 @@
     "scenarios": {
      "bear": {
       "g": 2,
-      "value": 466072,
-      "per_share": 29800,
-      "upside": 24.9
+      "value": 460733,
+      "per_share": 29459,
+      "upside": 23.5
      },
      "base": {
       "g": 7,
-      "value": 546788,
-      "per_share": 34961,
-      "upside": 46.6
+      "value": 541812,
+      "per_share": 34643,
+      "upside": 45.3
      },
      "bull": {
       "g": 11,
-      "value": 625438,
-      "per_share": 39990,
-      "upside": 67.7
+      "value": 620817,
+      "per_share": 39694,
+      "upside": 66.4
      }
     },
-    "implied_g": -5.7,
-    "net_cash_added": 146600
+    "implied_g": -5.1,
+    "net_cash_added": 139820
    }
   },
   "439090": {
@@ -530,7 +530,7 @@
    "shares": 11350000,
    "equity": 646593,
    "equity_source": "DART 2026Q2",
-   "net_cash": 336726,
+   "net_cash": -600140,
    "dividend_yield": 1.61,
    "per": 15.3,
    "roe": 28.5,
@@ -544,25 +544,25 @@
     "scenarios": {
      "bear": {
       "g": 4,
-      "value": 1899549,
-      "per_share": 167361,
-      "upside": -32.7
+      "value": 1126949,
+      "per_share": 99291,
+      "upside": -60.0
      },
      "base": {
       "g": 10,
-      "value": 2391058,
-      "per_share": 210666,
-      "upside": -15.2
+      "value": 1670121,
+      "per_share": 147147,
+      "upside": -40.8
      },
      "bull": {
       "g": 15,
-      "value": 2910811,
-      "per_share": 256459,
-      "upside": 3.2
+      "value": 2244505,
+      "per_share": 197754,
+      "upside": -20.4
      }
     },
-    "implied_g": 14.2,
-    "net_cash_added": 336726
+    "implied_g": 19.1,
+    "net_cash_added": -600140
    }
   },
   "161890": {
@@ -1093,6 +1093,47 @@
     "op": 40698,
     "ni": 45908,
     "period": "2025Q3~2026Q2"
+   },
+   "price": 22600,
+   "price_date": "2026-11-04 15:27",
+   "price_source": "네이버 금융",
+   "mcap": 233232,
+   "shares": 10320000,
+   "equity": 308151,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 21620,
+   "dividend_yield": 2.91,
+   "per": 5.1,
+   "roe": 14.9,
+   "pbr": 0.76,
+   "dcf": {
+    "E1": 33000,
+    "r": 10.5,
+    "c": 0.75,
+    "note": "정상 영업이익 연 400억 안팎 기준, 순이익의 일회성 금융손익 제외",
+    "fwd_per": 7.1,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 322030,
+      "per_share": 31205,
+      "upside": 38.1
+     },
+     "base": {
+      "g": 7,
+      "value": 380428,
+      "per_share": 36863,
+      "upside": 63.1
+     },
+     "bull": {
+      "g": 11,
+      "value": 449966,
+      "per_share": 43601,
+      "upside": 92.9
+     }
+    },
+    "implied_g": -4.9,
+    "net_cash_added": 21620
    }
   },
   "216080": {

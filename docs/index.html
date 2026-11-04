@@ -31,7 +31,7 @@
   color-scheme:dark }
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font-body)}
-.wrap{max-width:1240px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+.wrap{max-width:1440px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
 header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:20px}
 h1{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
 h1 small{display:block;font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
@@ -68,6 +68,8 @@ td.num{font-family:var(--font-mono);font-size:12.5px}
 .up{color:var(--up)} .down{color:var(--down)}
 tbody tr.sel{background:var(--accent-soft)}
 #co-table tbody tr{cursor:pointer}
+#co-table th:first-child,#co-table td:first-child,#val-table th:first-child,#val-table td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+#co-table tbody tr.sel td:first-child,#co-table tbody tr:hover td:first-child{background:var(--accent-soft)}
 #co-table tbody tr:hover{background:var(--accent-soft)}
 .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2)}
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
@@ -86,9 +88,14 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .rv h4{font-size:12.5px;font-weight:600;color:var(--ink-2);margin:14px 0 4px;letter-spacing:.02em}
 .rv ul{margin:0;padding-left:18px} .rv li{margin-bottom:4px}
 .rv p{margin:0;max-width:80ch}
+.mixbar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:10px 0 6px;gap:2px}
+.mixbar span{display:block;height:100%}
+.mixleg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
+.mixleg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 4px}
 .vgrid .kpi .v{font-size:20px}
-th.sort{cursor:pointer;user-select:none} th.sort:hover{color:var(--ink)}
+th.sort{cursor:pointer;user-select:none} th.sort:hover{color:var(--ink);background:var(--accent-soft)}
+th.sort .sarr{margin-left:3px;font-size:10px;color:var(--ink-3)} th.sort[aria-sort="ascending"] .sarr,th.sort[aria-sort="descending"] .sarr{color:var(--accent)}
 th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
 td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
@@ -168,6 +175,7 @@ td.l,th.l{text-align:left}
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
       <div class="card full rv" id="co-review"></div>
+      <div class="card full rv" id="co-biz"></div>
       <div class="card full rv" id="co-value"></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
       <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
@@ -373,12 +381,12 @@ function renderCompanyTable(){
   const L=c=>{const q=latestQ(c);return q?{q,a:c.quarterly[q],p:c.quarterly[prevQ(q)]||{}}:null};
   const G={name:c=>c.name,rev:c=>L(c)?.a.rev,ry:c=>{const l=L(c);const v=l&&yoy(l.a.rev,l.p.rev);return typeof v==='number'?v:null},
     op:c=>L(c)?.a.op,oy:c=>{const l=L(c);const v=l&&yoy(l.a.op,l.p.op);return typeof v==='number'?v:null},
-    opm:c=>{const l=L(c);return l&&l.a.rev?l.a.op/l.a.rev*100:null},ni:c=>L(c)?.a.ni,
-    price:c=>VAL(c.code).price,mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr};
+    opm:c=>{const l=L(c);return l&&l.a.rev?l.a.op/l.a.rev*100:null},ni:c=>L(c)?.a.ni,q:c=>L(c)?.q,ny:c=>{const l=L(c);const v=l&&yoy(l.a.ni,l.p.ni);return typeof v==='number'?v:null},
+    price:c=>VAL(c.code).price,mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr,fv:c=>VAL(c.code).dcf?.scenarios.base.per_share,gap:c=>VAL(c.code).dcf?.scenarios.base.upside};
   const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
     const l=L(c);
-    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="14" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
     const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
     const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
@@ -386,10 +394,11 @@ function renderCompanyTable(){
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
       <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
-      <td class="num">${fmt(v.price)}${(()=>{const q=D.quotes&&D.quotes.quotes[c.code];return q&&q.chg_pct!=null?`<br><span class="${q.chg_pct>=0?'up':'down'}" style="font-size:11px">${pct(q.chg_pct)}</span>`:''})()}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td></tr>`}).join('');
-  const th=(k,t,num=1)=>`<th class="sort${k==='name'?' l':''}" data-k="${k}" ${num?'data-num="1"':''}>${t}${coSort&&coSort[0]===k?(coSort[1]>0?' ▲':' ▼'):''}</th>`;
-  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="5" class="grp">현재 주가 · 최근 4개 분기(TTM) 기준</th></tr>
-    <tr>${th('name','회사',0)}<th>분기</th>${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}<th>YoY</th>${th('price','주가')}${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}</tr></thead><tbody>${body}</tbody>`;
+      <td class="num">${fmt(v.price)}${(()=>{const q=D.quotes&&D.quotes.quotes[c.code];return q&&q.chg_pct!=null?`<br><span class="${q.chg_pct>=0?'up':'down'}" style="font-size:11px">${pct(q.chg_pct)}</span>`:''})()}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td>
+      ${(()=>{const b=v.dcf&&v.dcf.scenarios.base;if(!b)return '<td class="num">–</td><td class="num">–</td>';const [vt,vc]=VERD(b.upside);return `<td class="num">${fmt(b.per_share)}</td><td class="num ${cls(b.upside)}">${pct(b.upside)}<br><span class="tone ${vc}" style="font-size:10.5px;margin:2px 0 0">${vt}</span></td>`})()}</tr>`}).join('');
+  const th=(k,t,num=1)=>`<th class="sort${k==='name'?' l':''}" data-k="${k}" ${num?'data-num="1"':''} title="눌러서 정렬" aria-sort="${coSort&&coSort[0]===k?(coSort[1]>0?'ascending':'descending'):'none'}">${t}<span class="sarr">${coSort&&coSort[0]===k?(coSort[1]>0?'▲':'▼'):'↕'}</span></th>`;
+  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="5" class="grp">현재 주가 · 최근 4개 분기(TTM) 기준</th><th colspan="2" class="grp">내재가치(기준 시나리오)</th></tr>
+    <tr>${th('name','회사',0)}${th('q','분기',0)}${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}${th('ny','YoY')}${th('price','주가')}${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}${th('fv','적정주가')}${th('gap','괴리율')}</tr></thead><tbody>${body}</tbody>`;
   bindSort($('#co-table'),()=>coSort,v=>{coSort=v;renderCompanyTable()});
   $('#co-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{selectCo(tr.dataset.code);document.getElementById('co-detail').scrollIntoView({behavior:'smooth',block:'start'})};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
 }
@@ -405,6 +414,15 @@ function renderReview(c){
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
    ${r.news&&r.news.length?`<h4>최신 기사 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''}
    <p class="src">${D.reviews.disclaimer||''}</p>`;
+}
+function renderBiz(c){
+  const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
+  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>`;return}
+  const s=S(), mix=b.mix||[];
+  $('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART ${b.report}${b.url?` · <a href="${b.url}" target="_blank" rel="noopener" style="color:var(--accent)">원문 보기</a>`:''}</p>
+   ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
+   <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
+   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>`;
 }
 const VERD=u=>u==null?['–','neu']:u>=20?['저평가 구간','pos']:u<=-20?['기대 선반영','neg']:['적정 범위','neu'];
 function renderValueReport(c){
@@ -449,8 +467,8 @@ function selectCo(code){
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
-  $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderReview(c);renderValueReport(c);
+  $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
+  renderCompanyTable();renderReview(c);renderBiz(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];
@@ -467,7 +485,7 @@ function selectCo(code){
 function renderCompanies(){
   CO=D.companies; if(!CO) return;
   const anyDart=CO.companies.some(c=>c.source==='dart');
-  $('#co-note').innerHTML=anyDart?`화장품 상장사는 DART 전자공시 기준이에요(마지막 수집 ${CO.updated||''}). 미용·의료 상장사는 DART 수집 전까지 공개 집계(StockAnalysis) 기준이라 최근 분기가 1분기 늦을 수 있고 순이익은 비지배지분 포함 기준이에요.`:
+  $('#co-note').innerHTML=anyDart?`모든 회사가 DART 전자공시 기준(연결, 지배주주순이익)이에요. 마지막 수집 ${CO.updated||''}. 3분기 보고서는 11월 14일 전후 공시돼요.`:
     `지금은 공개 집계(StockAnalysis) 기준 최근 5개년 · 분기 데이터예요. 순이익은 비지배지분을 포함한 전체 순이익이에요. 저장소에 DART 키가 등록되면 다음 자동 실행부터 <b>10개년 연간 + 분기, 지배주주순이익</b>으로 바뀌어요.`;
   $('#co-select').innerHTML=CO.companies.map(c=>`<option value="${c.code}">${c.name}</option>`).join('');
   $('#co-select').onchange=e=>selectCo(e.target.value);
@@ -496,10 +514,10 @@ function renderValuation(){
       scales:{x:{ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false},min:-80,max:150},
               y:{type:'category',labels:ch.map(v=>v.name),ticks:{color:css('--ink-2'),font:{size:12}},grid:{display:false}}}})});
   const G={name:v=>v.name,price:v=>v.price,mcap:v=>v.mcap,ni:v=>v.ttm?.ni,per:v=>v.per,pbr:v=>v.pbr,roe:v=>v.roe,fper:v=>v.dcf.fwd_per,ig:v=>v.dcf.implied_g,
-    bear:v=>v.dcf.scenarios.bear.per_share,base:v=>v.dcf.scenarios.base.per_share,bull:v=>v.dcf.scenarios.bull.per_share,up:v=>v.dcf.scenarios.base.upside};
+    bear:v=>v.dcf.scenarios.bear.per_share,base:v=>v.dcf.scenarios.base.per_share,bull:v=>v.dcf.scenarios.bull.per_share,up:v=>v.dcf.scenarios.base.upside,bg:v=>v.dcf.scenarios.base.g};
   const rows=sortRows(rows0,valSort||['up',-1],G);
-  const th=(k,t)=>{const st=valSort||['up',-1];return `<th class="sort${k==='name'?' l':''}" data-k="${k}" ${k!=='name'?'data-num="1"':''}>${t}${st[0]===k?(st[1]>0?' ▲':' ▼'):''}</th>`};
-  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','선행 PER')}${th('ig','내재 성장률')}<th>기준 가정</th>${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
+  const th=(k,t)=>{const st=valSort||['up',-1];return `<th class="sort${k==='name'?' l':''}" data-k="${k}" ${k!=='name'?'data-num="1"':''} title="눌러서 정렬">${t}<span class="sarr">${st[0]===k?(st[1]>0?'▲':'▼'):'↕'}</span></th>`};
+  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','선행 PER')}${th('ig','내재 성장률')}${th('bg','기준 가정')}${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
     <td class="l">${v.name} <span class="pill">${v.group}</span></td><td class="num">${fmt(v.price)}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${fmt(eok(v.ttm&&v.ttm.ni))}</td>
     <td class="num">${v.per!=null?v.per.toFixed(1):'적자'}</td><td class="num">${ratio(v.pbr,2)}</td><td class="num">${ratio(v.roe,1,'%')}</td><td class="num">${v.dcf.fwd_per.toFixed(1)}</td>
     <td class="num">${v.dcf.implied_g==null?'–':v.dcf.implied_g.toFixed(1)+'%'}</td><td class="num">${S0.base.g}%</td>

@@ -101,6 +101,8 @@ def main():
         eq_src = f"DART {bs.get('period')}" if bs.get("equity") else "스냅샷(PBR 역산)"
         if bs.get("cash") is not None and bs.get("debt") is not None:
             net_cash = (bs.get("cash") or 0) + (bs.get("st_fin") or 0) - (bs.get("debt") or 0)
+            if not bs.get("debt") and snap.get("net_cash") is not None:  # 차입금 계정을 못 찾은 경우 보수적으로
+                net_cash = min(net_cash, snap["net_cash"])
         else:
             net_cash = snap.get("net_cash")
         shares = shares0
