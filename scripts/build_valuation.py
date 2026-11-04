@@ -18,6 +18,9 @@ def load(p, default=None):
         return default
 
 
+NC_YIELD = 0.02
+
+
 def path_growth(g1, gT, years=10):
     """1~5년차 g1, 6~10년차 gT로 선형 수렴."""
     out = []
@@ -67,7 +70,7 @@ def main():
     cfg = load(P("config", "valuation.json"), {}) or {}
     gT = cfg.get("terminal_growth", 2.0)
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
-           "terminal_growth": gT, "companies": {}}
+           "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
     for co in cos.get("companies", []):
         code = co["code"]
         a = cfg.get("companies", {}).get(code)
@@ -111,14 +114,19 @@ def main():
             rec["roe"] = round(ni / equity * 100, 1) if equity else None
         rec["pbr"] = round(mcap / equity, 2) if equity else None
         E1 = a["E1"] * 100  # 억원 → 백만원
+        # 순현금은 따로 더하고, 그 이자(세후 약 2%)는 영업 이익에서 뺀다 (순차입이면 반대)
+        nc = (net_cash or 0) if a.get("nc_adj", True) else 0  # 비지배지분이 큰 지주·연결사는 제외
+        E_op = E1 - nc * NC_YIELD
         sc = {}
         for k in ("bear", "base", "bull"):
-            v = equity_value(E1, a["g"][k], a["r"], a["c"], gT)
+            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT) + nc
+            v = max(v, 0)
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
                       "fwd_per": round(mcap / E1, 1), "scenarios": sc,
-                      "implied_g": implied_growth(mcap, E1, a["r"], a["c"], gT)}
+                      "implied_g": implied_growth(mcap - nc, E_op, a["r"], a["c"], gT),
+                      "net_cash_added": nc}
         out["companies"][code] = rec
     with open(P("docs", "data", "valuation.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
