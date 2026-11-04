@@ -27,3 +27,8 @@
 DART_API_KEY=... python scripts/update.py
 cd docs && python -m http.server
 ```
+
+## 분기 리뷰 · 내재가치
+- `docs/data/reviews.json`: 회사별 최근 4개 분기 실적 동향과 평가 (분기 실적 발표 후 갱신)
+- `config/valuation.json`: 회사별 내재가치 가정(정상화 이익, 성장 시나리오, 할인율)과 시세 스냅샷
+- `scripts/build_valuation.py`: TTM PER·ROE·PBR, 시나리오 적정가, 역DCF 내재 성장률을 계산해 `docs/data/valuation.json` 생성. `update.py` 실행 끝에 자동 호출돼요.

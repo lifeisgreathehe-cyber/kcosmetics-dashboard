@@ -104,8 +104,28 @@ def dart_report(key, corp, year, reprt):
         j = json.loads(txt)
         if j.get("status") != "000":
             continue
-        rows = [r for r in j.get("list", []) if r.get("sj_div") in ("IS", "CIS")]
+        allrows = j.get("list", [])
+        rows = [r for r in allrows if r.get("sj_div") in ("IS", "CIS")]
         out = {}
+        bs = [r for r in allrows if r.get("sj_div") == "BS"]
+        if bs:
+            def bsval(ids, names):
+                h = next((r for r in bs if r.get("account_id") in ids), None) or \
+                    next((r for r in bs if r.get("account_nm", "").replace(" ", "") in names), None)
+                return num(h.get("thstrm_amount")) if h else None
+            debt = 0
+            for r in bs:
+                nm = r.get("account_nm", "").replace(" ", "")
+                if (("차입금" in nm or nm in ("사채", "유동성사채", "전환사채", "유동성장기부채")) and "상환" not in nm
+                        and "이자" not in nm and not nm.endswith("합계")):
+                    debt += num(r.get("thstrm_amount")) or 0
+            out["_bs"] = {
+                "equity": bsval(["ifrs-full_EquityAttributableToOwnersOfParent"], ["지배기업의소유주에게귀속되는자본", "지배기업소유주지분"])
+                          or bsval(["ifrs-full_Equity"], ["자본총계"]),
+                "cash": bsval(["ifrs-full_CashAndCashEquivalents"], ["현금및현금성자산"]),
+                "st_fin": bsval(["ifrs-full_OtherCurrentFinancialAssets", "dart_ShortTermDepositsNotClassifiedAsCashEquivalents"], ["단기금융상품", "기타유동금융자산"]),
+                "debt": debt,
+            }
         for f, (ids, names) in ACC.items():
             hit = next((r for r in rows if r.get("account_id") in ids), None)
             if not hit:
@@ -161,8 +181,12 @@ def update_dart(key):
             h1 = dart_report(key, corp, y, REPRT["H1"])
             q3 = dart_report(key, corp, y, REPRT["Q3"])
             for qn, r in (("Q1", q1), ("Q2", h1), ("Q3", q3)):
+                if r and r.get("_bs"):
+                    rec["bs"] = {"period": f"{y}{qn}", **{k: to_m(v) for k, v in r["_bs"].items()}}
                 if r:
                     rec["quarterly"][f"{y}{qn}"] = {f: to_m(r[f][0]) if f in r else None for f in ("rev", "gp", "op", "ni")}
+            if y in fy and fy[y].get("_bs"):
+                rec["bs"] = {"period": f"{y}Q4", **{k: to_m(v) for k, v in fy[y]["_bs"].items()}}
             if y in fy and q3:
                 q4 = {}
                 for f in ("rev", "gp", "op", "ni"):
@@ -363,9 +387,49 @@ def update_customs(key):
             "updated": TODAY.isoformat()})
 
 
+# ---------------------------------------------------------------- 주가·시가총액 (금융위원회_주식시세정보, data.go.kr)
+PRICE_URL = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo"
+
+
+def update_prices(key):
+    cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
+    begin = (TODAY - dt.timedelta(days=400)).strftime("%Y%m%d")
+    out = {}
+    for c in cfg:
+        txt = http_get(PRICE_URL, {"serviceKey": key, "resultType": "json", "numOfRows": 400, "pageNo": 1,
+                                   "likeSrtnCd": c["code"], "beginBasDt": begin})
+        if not txt:
+            continue
+        try:
+            items = json.loads(txt)["response"]["body"]["items"]["item"]
+        except Exception:  # noqa: BLE001
+            log("시세 응답 파싱 실패:", c["name"], txt[:150].replace(key, "***"))
+            continue
+        items = [i for i in items if i.get("srtnCd") == c["code"]]
+        if not items:
+            continue
+        items.sort(key=lambda i: i["basDt"])
+        last = items[-1]
+        closes = [num(i["clpr"]) for i in items]
+        out[c["code"]] = {
+            "date": f"{last['basDt'][:4]}-{last['basDt'][4:6]}-{last['basDt'][6:]}",
+            "price": num(last["clpr"]), "mcap": round(num(last["mrktTotAmt"]) / 1e6), "shares": num(last["lstgStCnt"]),
+            "high52": max(closes[-250:]), "low52": min(closes[-250:]),
+            "chg52": round((closes[-1] / closes[-250] - 1) * 100, 1) if len(closes) >= 250 else None,
+            "spark": [num(i["clpr"]) for i in items[-120:]][::5],
+        }
+        time.sleep(0.2)
+    if out:
+        save("prices.json", {"source": "금융위원회 주식시세정보 (공공데이터포털)", "unit": "원 / 시가총액 백만원",
+                             "updated": TODAY.isoformat(), "prices": out})
+        return True
+    log("주가 데이터 없음 — 금융위원회_주식시세정보 활용신청 여부 확인 필요")
+    return False
+
+
 # ---------------------------------------------------------------- main
 def main():
-    # 사용법: python scripts/update.py [--only dart|kosis|customs]
+    # 사용법: python scripts/update.py [--only dart|kosis|customs|prices]
     # DART는 해외 IP(GitHub Actions 등)에서 접속이 막혀 있어 국내 PC에서 --only dart 로 실행한다.
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     ran = []
@@ -373,10 +437,19 @@ def main():
         update_kosis(os.environ["KOSIS_API_KEY"]); ran.append("KOSIS")
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs"):
         update_customs(os.environ["DATA_GO_KR_KEY"]); ran.append("관세청")
+    if os.getenv("DATA_GO_KR_KEY") and only in (None, "prices"):
+        if update_prices(os.environ["DATA_GO_KR_KEY"]):
+            ran.append("주가")
     if os.getenv("DART_API_KEY") and only in (None, "dart"):
         ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:
             ran.append("DART")
+    try:  # 실적·주가가 바뀌면 PER·ROE·PBR과 내재가치를 다시 계산
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import build_valuation
+        build_valuation.main()
+    except Exception as e:
+        log("밸류에이션 계산 실패:", e)
     if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다
         meta = load("meta.json") or {}
         meta["sources_updated"] = sorted(set(meta.get("sources_updated", [])) | set(ran))

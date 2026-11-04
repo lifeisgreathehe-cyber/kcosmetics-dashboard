@@ -1,0 +1,1171 @@
+{
+ "updated": "2026-11-04",
+ "method": "내재가치 가정. E1=향후 12개월 정상화 지배순이익(억원), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율. 스냅샷은 StockAnalysis 집계(가격일 표기), 금융위 시세 API·DART 재무상태표 수집 시 자동 대체.",
+ "terminal_growth": 2.0,
+ "companies": {
+  "090430": {
+   "name": "아모레퍼시픽",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 4491940,
+    "op": 388479,
+    "ni": 285977,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 139100,
+   "price_date": "2026-10-16",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 8550000,
+   "shares": 61466571,
+   "equity": 5937500,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 808690,
+   "dividend_yield": 0.89,
+   "per": 29.9,
+   "roe": 4.8,
+   "pbr": 1.44,
+   "dcf": {
+    "E1": 420000,
+    "r": 8.5,
+    "c": 0.8,
+    "note": "3Q26 잠정 OP 1,152억(+25%) 반영, 4Q25 일회성 제외한 정상화 이익",
+    "fwd_per": 20.4,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 5419154,
+      "per_share": 88164,
+      "upside": -36.6
+     },
+     "base": {
+      "g": 7,
+      "value": 6540871,
+      "per_share": 106413,
+      "upside": -23.5
+     },
+     "bull": {
+      "g": 11,
+      "value": 7882202,
+      "per_share": 128236,
+      "upside": -7.8
+     }
+    },
+    "implied_g": 12.8
+   }
+  },
+  "002790": {
+   "name": "아모레퍼시픽홀딩스",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 4840502,
+    "op": 419590,
+    "ni": 138283,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 26300,
+   "price_date": "2026-09-15",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 2160000,
+   "shares": 82129278,
+   "equity": 7448276,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 1640000,
+   "dividend_yield": 1.52,
+   "per": 15.6,
+   "roe": 1.9,
+   "pbr": 0.29,
+   "dcf": {
+    "E1": 260000,
+    "r": 9.0,
+    "c": 0.7,
+    "note": "자회사 아모레퍼시픽 실적 개선이 지배순이익에 반영되는 구조, 지주 할인 별도",
+    "fwd_per": 8.3,
+    "scenarios": {
+     "bear": {
+      "g": 2,
+      "value": 2600000,
+      "per_share": 31657,
+      "upside": 20.4
+     },
+     "base": {
+      "g": 6,
+      "value": 3130414,
+      "per_share": 38116,
+      "upside": 44.9
+     },
+     "bull": {
+      "g": 9,
+      "value": 3595483,
+      "per_share": 43778,
+      "upside": 66.5
+     }
+    },
+    "implied_g": -2.0
+   }
+  },
+  "051900": {
+   "name": "LG생활건강",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 6286752,
+    "op": 184118,
+    "ni": -75533,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 279500,
+   "price_date": "2026-10-16",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 4300000,
+   "shares": 15384615,
+   "equity": 5972222,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 1140000,
+   "dividend_yield": 1.07,
+   "per": null,
+   "roe": -1.3,
+   "pbr": 0.72,
+   "dcf": {
+    "E1": 220000,
+    "r": 8.5,
+    "c": 0.8,
+    "note": "4Q25 대규모 손상(순손실 2,517억) 제외 정상화, 뷰티 적자 축소 전제",
+    "fwd_per": 19.5,
+    "scenarios": {
+     "bear": {
+      "g": -2,
+      "value": 2240773,
+      "per_share": 145650,
+      "upside": -47.9
+     },
+     "base": {
+      "g": 3,
+      "value": 2838605,
+      "per_share": 184509,
+      "upside": -34.0
+     },
+     "bull": {
+      "g": 6,
+      "value": 3269181,
+      "per_share": 212497,
+      "upside": -24.0
+     }
+    },
+    "implied_g": 11.9
+   }
+  },
+  "278470": {
+   "name": "에이피알",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 2294467,
+    "op": 569225,
+    "ni": 432198,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 368500,
+   "price_date": "2026-09-09",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 14110000,
+   "shares": 38290366,
+   "equity": 647842,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 195250,
+   "dividend_yield": 1.29,
+   "per": 32.6,
+   "roe": 66.7,
+   "pbr": 21.78,
+   "dcf": {
+    "E1": 650000,
+    "r": 10.0,
+    "c": 0.8,
+    "note": "3Q26 잠정 순이익 1,102억, 해외 비중 94%. 성장 둔화 속도가 가치 핵심",
+    "fwd_per": 21.7,
+    "scenarios": {
+     "bear": {
+      "g": 8,
+      "value": 8516577,
+      "per_share": 222421,
+      "upside": -39.6
+     },
+     "base": {
+      "g": 18,
+      "value": 13291815,
+      "per_share": 347132,
+      "upside": -5.8
+     },
+     "bull": {
+      "g": 28,
+      "value": 20497228,
+      "per_share": 535310,
+      "upside": 45.3
+     }
+    },
+    "implied_g": 19.4
+   }
+  },
+  "018250": {
+   "name": "애경산업",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 685095,
+    "op": 6887,
+    "ni": 17365,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10390,
+   "price_date": "2026-10-29",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 261750,
+   "shares": 25192493,
+   "equity": 402692,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 117530,
+   "dividend_yield": 1.93,
+   "per": 15.1,
+   "roe": 4.3,
+   "pbr": 0.65,
+   "dcf": {
+    "E1": 25000,
+    "r": 10.0,
+    "c": 0.7,
+    "note": "마케팅비 확대(매출 5%→9%)로 단기 이익 압박",
+    "fwd_per": 10.5,
+    "scenarios": {
+     "bear": {
+      "g": -3,
+      "value": 174660,
+      "per_share": 6933,
+      "upside": -33.3
+     },
+     "base": {
+      "g": 3,
+      "value": 228838,
+      "per_share": 9084,
+      "upside": -12.6
+     },
+     "bull": {
+      "g": 7,
+      "value": 274017,
+      "per_share": 10877,
+      "upside": 4.7
+     }
+    },
+    "implied_g": 6.0
+   }
+  },
+  "214420": {
+   "name": "토니모리",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 214842,
+    "op": 11564,
+    "ni": 11262,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 4350,
+   "price_date": "2026-10-30",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 103980,
+   "shares": 23903448,
+   "equity": 128370,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -46200,
+   "dividend_yield": 1.15,
+   "per": 9.2,
+   "roe": 8.8,
+   "pbr": 0.81,
+   "dcf": {
+    "E1": 11000,
+    "r": 11.0,
+    "c": 0.7,
+    "note": "소형 브랜드, 이익 변동성 큼",
+    "fwd_per": 9.5,
+    "scenarios": {
+     "bear": {
+      "g": -5,
+      "value": 63102,
+      "per_share": 2640,
+      "upside": -39.3
+     },
+     "base": {
+      "g": 2,
+      "value": 85556,
+      "per_share": 3579,
+      "upside": -17.7
+     },
+     "bull": {
+      "g": 6,
+      "value": 101929,
+      "per_share": 4264,
+      "upside": -2.0
+     }
+    },
+    "implied_g": 6.5
+   }
+  },
+  "237880": {
+   "name": "클리오",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 329591,
+    "op": 29178,
+    "ni": 29625,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10700,
+   "price_date": "2026-10-15",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 187510,
+   "shares": 17524299,
+   "equity": 250013,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 155270,
+   "dividend_yield": 2.34,
+   "per": 6.3,
+   "roe": 11.8,
+   "pbr": 0.75,
+   "dcf": {
+    "E1": 23000,
+    "r": 10.5,
+    "c": 0.8,
+    "note": "순현금 1,553억(시가총액의 83%)은 별도 가치",
+    "fwd_per": 8.2,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 198089,
+      "per_share": 11304,
+      "upside": 5.6
+     },
+     "base": {
+      "g": 5,
+      "value": 247326,
+      "per_share": 14113,
+      "upside": 31.9
+     },
+     "bull": {
+      "g": 10,
+      "value": 308721,
+      "per_share": 17617,
+      "upside": 64.6
+     }
+    },
+    "implied_g": -1.2
+   }
+  },
+  "018290": {
+   "name": "브이티",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 471172,
+    "op": 52797,
+    "ni": 39092,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 12130,
+   "price_date": "2026-10-15",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 420140,
+   "shares": 34636439,
+   "equity": 274601,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 68070,
+   "dividend_yield": null,
+   "per": 10.7,
+   "roe": 14.2,
+   "pbr": 1.53,
+   "dcf": {
+    "E1": 45000,
+    "r": 10.5,
+    "c": 0.75,
+    "note": "매출 성장에도 이익률 하락, 리들샷 의존도",
+    "fwd_per": 9.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 363342,
+      "per_share": 10490,
+      "upside": -13.5
+     },
+     "base": {
+      "g": 7,
+      "value": 495780,
+      "per_share": 14314,
+      "upside": 18.0
+     },
+     "bull": {
+      "g": 14,
+      "value": 675510,
+      "per_share": 19503,
+      "upside": 60.8
+     }
+    },
+    "implied_g": 3.3
+   }
+  },
+  "092730": {
+   "name": "네오팜",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 148389,
+    "op": 32476,
+    "ni": 30648,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 21650,
+   "price_date": "2026-09-15",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 337070,
+   "shares": 15569053,
+   "equity": 194838,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 139820,
+   "dividend_yield": 3.24,
+   "per": 11.0,
+   "roe": 15.7,
+   "pbr": 1.73,
+   "dcf": {
+    "E1": 33000,
+    "r": 10.0,
+    "c": 0.85,
+    "note": "더마 브랜드 안정 성장, 순현금 1,398억",
+    "fwd_per": 10.2,
+    "scenarios": {
+     "bear": {
+      "g": 2,
+      "value": 350625,
+      "per_share": 22521,
+      "upside": 4.0
+     },
+     "base": {
+      "g": 7,
+      "value": 439211,
+      "per_share": 28210,
+      "upside": 30.3
+     },
+     "bull": {
+      "g": 11,
+      "value": 525530,
+      "per_share": 33755,
+      "upside": 55.9
+     }
+    },
+    "implied_g": 1.1
+   }
+  },
+  "439090": {
+   "name": "마녀공장",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 107178,
+    "op": 14630,
+    "ni": 13354,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 14430,
+   "price_date": "2026-10-15",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 236550,
+   "shares": 16392931,
+   "equity": 118275,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 99600,
+   "dividend_yield": null,
+   "per": 17.7,
+   "roe": 11.3,
+   "pbr": 2.0,
+   "dcf": {
+    "E1": 12000,
+    "r": 11.0,
+    "c": 0.85,
+    "note": "매출 역성장, 이익 분기별 변동",
+    "fwd_per": 19.7,
+    "scenarios": {
+     "bear": {
+      "g": -5,
+      "value": 83589,
+      "per_share": 5099,
+      "upside": -64.7
+     },
+     "base": {
+      "g": 3,
+      "value": 118402,
+      "per_share": 7223,
+      "upside": -49.9
+     },
+     "bull": {
+      "g": 8,
+      "value": 147379,
+      "per_share": 8990,
+      "upside": -37.7
+     }
+    },
+    "implied_g": 18.9
+   }
+  },
+  "192820": {
+   "name": "코스맥스",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 2663538,
+    "op": 210399,
+    "ni": 184274,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 205500,
+   "price_date": "2026-08-07",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 2330000,
+   "shares": 11338200,
+   "equity": 645429,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -600140,
+   "dividend_yield": 1.61,
+   "per": 12.6,
+   "roe": 28.6,
+   "pbr": 3.61,
+   "dcf": {
+    "E1": 160000,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "ODM 설비투자 부담으로 전환율 낮게 적용, 순차입 6,001억",
+    "fwd_per": 14.6,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 1339959,
+      "per_share": 118181,
+      "upside": -42.5
+     },
+     "base": {
+      "g": 9,
+      "value": 1761997,
+      "per_share": 155404,
+      "upside": -24.4
+     },
+     "bull": {
+      "g": 14,
+      "value": 2208919,
+      "per_share": 194821,
+      "upside": -5.2
+     }
+    },
+    "implied_g": 15.2
+   }
+  },
+  "161890": {
+   "name": "한국콜마",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 2927798,
+    "op": 295404,
+    "ni": 184885,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 145800,
+   "price_date": "2026-09-04",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 3440000,
+   "shares": 23593964,
+   "equity": 1773196,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -1061400,
+   "dividend_yield": 0.58,
+   "per": 18.6,
+   "roe": 10.4,
+   "pbr": 1.94,
+   "dcf": {
+    "E1": 200000,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "국내 ODM 강세, 순차입 1조 614억",
+    "fwd_per": 17.2,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 1674948,
+      "per_share": 70991,
+      "upside": -51.3
+     },
+     "base": {
+      "g": 8,
+      "value": 2104564,
+      "per_share": 89199,
+      "upside": -38.8
+     },
+     "bull": {
+      "g": 12,
+      "value": 2523194,
+      "per_share": 106942,
+      "upside": -26.7
+     }
+    },
+    "implied_g": 18.9
+   }
+  },
+  "241710": {
+   "name": "코스메카코리아",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 772052,
+    "op": 102167,
+    "ni": 63823,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 134500,
+   "price_date": "2026-09-04",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 1440000,
+   "shares": 10706320,
+   "equity": 335664,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -141990,
+   "dividend_yield": 0.27,
+   "per": 22.6,
+   "roe": 19.0,
+   "pbr": 4.29,
+   "dcf": {
+    "E1": 80000,
+    "r": 10.5,
+    "c": 0.65,
+    "note": "인디 브랜드 수주 고성장, 설비 증설 진행",
+    "fwd_per": 18.0,
+    "scenarios": {
+     "bear": {
+      "g": 5,
+      "value": 698964,
+      "per_share": 65285,
+      "upside": -51.5
+     },
+     "base": {
+      "g": 12,
+      "value": 953061,
+      "per_share": 89019,
+      "upside": -33.8
+     },
+     "bull": {
+      "g": 20,
+      "value": 1352353,
+      "per_share": 126314,
+      "upside": -6.1
+     }
+    },
+    "implied_g": 21.5
+   }
+  },
+  "352480": {
+   "name": "씨앤씨인터내셔널",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 292757,
+    "op": 12503,
+    "ni": 7862,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 20250,
+   "price_date": "2026-10-19",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 270730,
+   "shares": 13369383,
+   "equity": 347090,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 113640,
+   "dividend_yield": 4.94,
+   "per": 34.4,
+   "roe": 2.3,
+   "pbr": 0.78,
+   "dcf": {
+    "E1": 15000,
+    "r": 11.0,
+    "c": 0.7,
+    "note": "색조 ODM 마진 급락, 회복 여부가 관건",
+    "fwd_per": 18.0,
+    "scenarios": {
+     "bear": {
+      "g": -5,
+      "value": 86048,
+      "per_share": 6436,
+      "upside": -68.2
+     },
+     "base": {
+      "g": 5,
+      "value": 133039,
+      "per_share": 9951,
+      "upside": -50.9
+     },
+     "bull": {
+      "g": 15,
+      "value": 205859,
+      "per_share": 15398,
+      "upside": -24.0
+     }
+    },
+    "implied_g": 21.4
+   }
+  },
+  "251970": {
+   "name": "펌텍코리아",
+   "group": "부자재·용기",
+   "ttm": {
+    "rev": 383403,
+    "op": 58269,
+    "ni": 43437,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 64200,
+   "price_date": "2026-10-30",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 795980,
+   "shares": 12398442,
+   "equity": 388283,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 120990,
+   "dividend_yield": 0.7,
+   "per": 18.3,
+   "roe": 11.2,
+   "pbr": 2.05,
+   "dcf": {
+    "E1": 52000,
+    "r": 10.0,
+    "c": 0.7,
+    "note": "용기 수요 안정, 순현금 1,210억",
+    "fwd_per": 15.3,
+    "scenarios": {
+     "bear": {
+      "g": 2,
+      "value": 455000,
+      "per_share": 36698,
+      "upside": -42.8
+     },
+     "base": {
+      "g": 7,
+      "value": 569956,
+      "per_share": 45970,
+      "upside": -28.4
+     },
+     "bull": {
+      "g": 11,
+      "value": 681972,
+      "per_share": 55005,
+      "upside": -14.3
+     }
+    },
+    "implied_g": 14.5
+   }
+  },
+  "115960": {
+   "name": "연우",
+   "group": "부자재·용기",
+   "ttm": {
+    "rev": 274841,
+    "op": 940,
+    "ni": 13130,
+    "period": "2024Q1~2024Q4"
+   }
+  },
+  "257720": {
+   "name": "실리콘투",
+   "group": "유통·수출",
+   "ttm": {
+    "rev": 1354477,
+    "op": 252961,
+    "ni": 220878,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 39300,
+   "price_date": "2026-08-07",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 2580000,
+   "shares": 65648855,
+   "equity": 492366,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 50940,
+   "dividend_yield": 0.78,
+   "per": 11.7,
+   "roe": 44.9,
+   "pbr": 5.24,
+   "dcf": {
+    "E1": 240000,
+    "r": 10.5,
+    "c": 0.75,
+    "note": "유럽·중동 유통 확장, 재고·운전자본 부담",
+    "fwd_per": 10.8,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 2213811,
+      "per_share": 33722,
+      "upside": -14.2
+     },
+     "base": {
+      "g": 12,
+      "value": 3299056,
+      "per_share": 50253,
+      "upside": 27.9
+     },
+     "bull": {
+      "g": 20,
+      "value": 4681223,
+      "per_share": 71307,
+      "upside": 81.4
+     }
+    },
+    "implied_g": 6.4
+   }
+  },
+  "214450": {
+   "name": "파마리서치",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 565478.0,
+    "op": 225167.0,
+    "ni": 176521.0,
+    "period": "2025Q2~2026Q1"
+   },
+   "price": 352000,
+   "price_date": "2026-08-07",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 4100000,
+   "shares": 11647727,
+   "equity": 733453,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 417030,
+   "dividend_yield": 0.98,
+   "per": 23.2,
+   "roe": 24.1,
+   "pbr": 5.59,
+   "dcf": {
+    "E1": 200000,
+    "r": 9.5,
+    "c": 0.85,
+    "note": "리쥬란 스킨부스터 수출 고성장, 순현금 4,170억. 공개 집계상 2026Q1까지 반영",
+    "fwd_per": 20.5,
+    "scenarios": {
+     "bear": {
+      "g": 8,
+      "value": 2981466,
+      "per_share": 255970,
+      "upside": -27.3
+     },
+     "base": {
+      "g": 15,
+      "value": 4091224,
+      "per_share": 351247,
+      "upside": -0.2
+     },
+     "bull": {
+      "g": 22,
+      "value": 5581368,
+      "per_share": 479181,
+      "upside": 36.1
+     }
+    },
+    "implied_g": 15.0
+   }
+  },
+  "145020": {
+   "name": "휴젤",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 479571.0,
+    "op": 208884.0,
+    "ni": 157978.0,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 180300,
+   "price_date": "2026-10-06",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 1950000,
+   "shares": 10815308,
+   "equity": 1089385,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 577880,
+   "dividend_yield": null,
+   "per": 12.3,
+   "roe": 14.5,
+   "pbr": 1.79,
+   "dcf": {
+    "E1": 170000,
+    "r": 9.5,
+    "c": 0.85,
+    "note": "보툴리눔 톡신 미국·유럽 진출 확대, 순현금 5,779억",
+    "fwd_per": 11.5,
+    "scenarios": {
+     "bear": {
+      "g": 4,
+      "value": 2111344,
+      "per_share": 195218,
+      "upside": 8.3
+     },
+     "base": {
+      "g": 9,
+      "value": 2652173,
+      "per_share": 245224,
+      "upside": 36.0
+     },
+     "bull": {
+      "g": 14,
+      "value": 3324883,
+      "per_share": 307424,
+      "upside": 70.5
+     }
+    },
+    "implied_g": 2.3
+   }
+  },
+  "214150": {
+   "name": "클래시스",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 369112.0,
+    "op": 169948.0,
+    "ni": 137631.0,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 27600,
+   "price_date": "2026-10-16",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 1800000,
+   "shares": 65217391,
+   "equity": 555556,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -12270,
+   "dividend_yield": 3.62,
+   "per": 13.1,
+   "roe": 24.8,
+   "pbr": 3.24,
+   "dcf": {
+    "E1": 150000,
+    "r": 9.5,
+    "c": 0.85,
+    "note": "장비 판매 후 소모품 반복 매출 구조, 이익률 40%대",
+    "fwd_per": 12.0,
+    "scenarios": {
+     "bear": {
+      "g": 6,
+      "value": 2041238,
+      "per_share": 31299,
+      "upside": 13.4
+     },
+     "base": {
+      "g": 12,
+      "value": 2680894,
+      "per_share": 41107,
+      "upside": 48.9
+     },
+     "bull": {
+      "g": 18,
+      "value": 3508155,
+      "per_share": 53792,
+      "upside": 94.9
+     }
+    },
+    "implied_g": 3.2
+   }
+  },
+  "336570": {
+   "name": "원텍",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 159669.0,
+    "op": 48335.0,
+    "ni": 33741.0,
+    "period": "2025Q2~2026Q1"
+   },
+   "price": 4915,
+   "price_date": "2026-09-21",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 433220,
+   "shares": 88142421,
+   "equity": 173288,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": 85820,
+   "dividend_yield": 1.02,
+   "per": 12.8,
+   "roe": 19.5,
+   "pbr": 2.5,
+   "dcf": {
+    "E1": 38000,
+    "r": 10.5,
+    "c": 0.8,
+    "note": "레이저·RF 장비 수출, 분기 이익률 변동 큼. 2026Q1까지 반영",
+    "fwd_per": 11.4,
+    "scenarios": {
+     "bear": {
+      "g": 3,
+      "value": 373888,
+      "per_share": 4242,
+      "upside": -13.7
+     },
+     "base": {
+      "g": 10,
+      "value": 510061,
+      "per_share": 5787,
+      "upside": 17.7
+     },
+     "bull": {
+      "g": 16,
+      "value": 664233,
+      "per_share": 7536,
+      "upside": 53.3
+     }
+    },
+    "implied_g": 6.3
+   }
+  },
+  "086900": {
+   "name": "메디톡스",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 244021.0,
+    "op": 18574.0,
+    "ni": 19610.0,
+    "period": "2025Q2~2026Q1"
+   },
+   "price": 63500,
+   "price_date": "2026-10-13",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 410100,
+   "shares": 6458268,
+   "equity": 376239,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -76650,
+   "dividend_yield": 1.89,
+   "per": 20.9,
+   "roe": 5.2,
+   "pbr": 1.09,
+   "dcf": {
+    "E1": 30000,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "소송·일회성 비용으로 이익 변동 큼, 순차입 767억",
+    "fwd_per": 13.7,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 226080,
+      "per_share": 35006,
+      "upside": -44.9
+     },
+     "base": {
+      "g": 8,
+      "value": 322476,
+      "per_share": 49932,
+      "upside": -21.4
+     },
+     "bull": {
+      "g": 15,
+      "value": 439180,
+      "per_share": 68003,
+      "upside": 7.1
+     }
+    },
+    "implied_g": 13.4
+   }
+  },
+  "200670": {
+   "name": "휴메딕스",
+   "group": "미용·의료"
+  },
+  "216080": {
+   "name": "제테마",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 76583.0,
+    "op": 3832.0,
+    "ni": -1332.0,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 6050,
+   "price_date": "2026-10-23",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 225590,
+   "shares": 37287603,
+   "equity": 81440,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -95330,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -1.6,
+   "pbr": 2.77,
+   "dcf": {
+    "E1": 8000,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "필러·톡신 초기 단계, 순손실 반복으로 불확실성 높음",
+    "fwd_per": 28.2,
+    "scenarios": {
+     "bear": {
+      "g": 5,
+      "value": 60818,
+      "per_share": 1631,
+      "upside": -73.0
+     },
+     "base": {
+      "g": 15,
+      "value": 94107,
+      "per_share": 2524,
+      "upside": -58.3
+     },
+     "bull": {
+      "g": 25,
+      "value": 144485,
+      "per_share": 3875,
+      "upside": -36.0
+     }
+    },
+    "implied_g": 35.7
+   }
+  },
+  "099430": {
+   "name": "바이오플러스",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 94424.0,
+    "op": 13596.0,
+    "ni": 13995.0,
+    "period": "2025Q2~2026Q1"
+   },
+   "price": 3285,
+   "price_date": "2026-09-23",
+   "price_source": "StockAnalysis 스냅샷",
+   "mcap": 202160,
+   "shares": 61540335,
+   "equity": 200158,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -36310,
+   "dividend_yield": 2.13,
+   "per": 14.4,
+   "roe": 7.0,
+   "pbr": 1.01,
+   "dcf": {
+    "E1": 15000,
+    "r": 11.0,
+    "c": 0.7,
+    "note": "HA 필러 원료·완제품, 2025Q4 이익 급감 후 회복 중",
+    "fwd_per": 13.5,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 106906,
+      "per_share": 1737,
+      "upside": -47.1
+     },
+     "base": {
+      "g": 8,
+      "value": 151714,
+      "per_share": 2465,
+      "upside": -25.0
+     },
+     "bull": {
+      "g": 14,
+      "value": 197113,
+      "per_share": 3203,
+      "upside": -2.5
+     }
+    },
+    "implied_g": 14.6
+   }
+  }
+ }
+}

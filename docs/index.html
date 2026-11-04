@@ -78,6 +78,19 @@ tbody tr.sel{background:var(--accent-soft)}
 .srclist li{margin-bottom:6px}
 .srclist a{color:var(--accent)}
 p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
+.tone{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;margin-right:6px;vertical-align:2px}
+.tone.pos{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}
+.tone.neg{background:color-mix(in srgb,var(--down) 14%,transparent);color:var(--down)}
+.tone.neu{background:var(--accent-soft);color:var(--ink-2)}
+.rv h3{font-size:15px;font-weight:600;margin:4px 0 10px;text-wrap:balance}
+.rv h4{font-size:12.5px;font-weight:600;color:var(--ink-2);margin:14px 0 4px;letter-spacing:.02em}
+.rv ul{margin:0;padding-left:18px} .rv li{margin-bottom:4px}
+.rv p{margin:0;max-width:80ch}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 4px}
+.vgrid .kpi .v{font-size:20px}
+th.sort{cursor:pointer;user-select:none} th.sort:hover{color:var(--ink)}
+th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
+td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 </style>
 <!--ARTIFACT-HEAD-END-->
@@ -92,6 +105,7 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
   <nav class="tabs" aria-label="보기 선택">
     <a href="#industry" data-view="industry">산업 동향</a>
     <a href="#companies" data-view="companies">상장사 실적</a>
+    <a href="#valuation" data-view="valuation">내재가치</a>
     <a href="#sources" data-view="sources">출처 · 갱신 방법</a>
   </nav>
 
@@ -142,10 +156,10 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
   </section>
 
   <section id="v-companies" data-viewpanel="companies" hidden>
-    <p class="lede">화장품 브랜드, ODM·OEM, 용기·부자재, 유통 상장사의 실적이에요. 표에서 회사를 누르면 아래에 10년 연간 추세와 최근 12개 분기 실적(전년 동기 대비 증감률 포함)이 나타나요.</p>
+    <p class="lede">화장품 브랜드, ODM·OEM, 용기·부자재, 유통 상장사와 미용·의료(에스테틱) 상장사의 실적이에요. 표에서 회사를 누르면 아래에 최근 4개 분기 리뷰, 내재가치 리포트, 10년 연간 추세와 최근 12개 분기 실적이 나타나요.</p>
     <div class="note" id="co-note"></div>
     <div class="card">
-      <div class="row"><div><h2>최근 분기 실적 비교</h2><p class="sub" id="co-sub">단위: 억원</p></div>
+      <div class="row"><div><h2>최근 분기 실적 비교</h2><p class="sub" id="co-sub">단위: 억원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 열 제목을 누르면 정렬돼요</p></div>
         <div class="segs" role="group" aria-label="업종 필터" id="co-filter"></div></div>
       <div class="tbl"><table id="co-table"></table></div>
     </div>
@@ -153,6 +167,8 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
     <div class="grid" id="co-detail">
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
+      <div class="card full rv" id="co-review"></div>
+      <div class="card full rv" id="co-value"></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
       <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
       <div class="card full"><h2>연간 실적표</h2><p class="sub">단위: 억원, 괄호는 전년 대비 증감률</p><div class="tbl" id="t-annual"></div></div>
@@ -160,6 +176,18 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
       <div class="card"><h2>최근 12개 분기 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-q2"></canvas></div></div>
       <div class="card full"><h2>분기 실적표 (YoY)</h2><p class="sub">단위: 억원, 괄호는 전년 같은 분기 대비 증감률</p><div class="tbl" id="t-quarter"></div></div>
     </div>
+  </section>
+
+  <section id="v-valuation" data-viewpanel="valuation" hidden>
+    <p class="lede">최근 실적을 바탕으로 회사별 정상화 이익과 성장 시나리오를 세워 주주가치를 추정했어요. 현재 시가총액이 어떤 성장률을 전제하고 있는지(역DCF)도 함께 보여줘요. 회사를 누르면 상세 리포트로 이동해요.</p>
+    <div class="note" id="val-note"></div>
+    <div class="card"><div class="row"><div><h2>현재 주가 대비 적정가 범위</h2><p class="sub">막대는 비관~낙관 시나리오 적정가를 현재 주가 대비 %로 나타낸 범위, 점은 기준 시나리오예요. 0% 선 위에 있으면 현재 주가가 기준 적정가보다 낮다는 뜻이에요.</p></div>
+      <div class="segs" role="group" aria-label="업종 필터" id="val-filter"></div></div>
+      <div class="chart" id="val-chart-wrap" style="height:520px"><canvas id="c-val"></canvas></div></div>
+    <div style="height:16px"></div>
+    <div class="card"><h2>밸류에이션 요약</h2><p class="sub">단위: 억원, 원 · TTM은 최근 4개 분기 합계 · 열 제목을 누르면 정렬돼요</p><div class="tbl"><table id="val-table"></table></div></div>
+    <div style="height:16px"></div>
+    <div class="card"><h2>계산 방법</h2><div class="rv" id="val-method"></div></div>
   </section>
 
   <section id="v-sources" data-viewpanel="sources" hidden>
@@ -209,7 +237,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -328,22 +356,78 @@ const qkey=(q)=>{const y=+q.slice(0,4),n=+q.slice(5);return {y,n}};
 const prevQ=(q)=>{const {y,n}=qkey(q);return `${y-1}Q${n}`};
 const eok=v=>v==null?null:v/100; // 백만원 → 억원
 function latestQ(c){const ks=Object.keys(c.quarterly||{}).sort();return ks[ks.length-1]}
+let coSort=null;
+const VAL=code=>(D.valuation&&D.valuation.companies||{})[code]||{};
+const ratio=(v,d=1,suf='')=>v==null||!isFinite(v)?'–':v.toFixed(d)+suf;
+function sortRows(rows,key,getters){
+  if(!key)return rows;const [k,dir]=key;const g=getters[k];
+  return rows.slice().sort((a,b)=>{const x=g(a),y=g(b);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==='string'?x.localeCompare(y):x-y)*dir});
+}
+function bindSort(tbl,state,set){
+  tbl.querySelectorAll('th.sort').forEach(th=>th.onclick=()=>{const k=th.dataset.k;const cur=state();set(cur&&cur[0]===k?[k,-cur[1]]:[k,th.dataset.num?-1:1])});
+}
 function renderCompanyTable(){
   const groups=['전체',...new Set(CO.companies.map(c=>c.group))];
   $('#co-filter').innerHTML=groups.map(g=>`<button class="seg" aria-pressed="${g===grp}" data-g="${g}">${g}</button>`).join('');
   $('#co-filter').querySelectorAll('button').forEach(b=>b.onclick=()=>{grp=b.dataset.g;renderCompanyTable()});
-  const rows=CO.companies.filter(c=>grp==='전체'||c.group===grp);
+  const L=c=>{const q=latestQ(c);return q?{q,a:c.quarterly[q],p:c.quarterly[prevQ(q)]||{}}:null};
+  const G={name:c=>c.name,rev:c=>L(c)?.a.rev,ry:c=>{const l=L(c);const v=l&&yoy(l.a.rev,l.p.rev);return typeof v==='number'?v:null},
+    op:c=>L(c)?.a.op,oy:c=>{const l=L(c);const v=l&&yoy(l.a.op,l.p.op);return typeof v==='number'?v:null},
+    opm:c=>{const l=L(c);return l&&l.a.rev?l.a.op/l.a.rev*100:null},ni:c=>L(c)?.a.ni,
+    mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr};
+  const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
-    const q=latestQ(c);
-    if(!q) return `<tr data-code="${c.code}" tabindex="0"><td>${c.name} <span class="pill">${c.group}</span></td><td colspan="8" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (DART 키 등록 후 자동 수집)</td></tr>`;
-    const a=c.quarterly[q], p=c.quarterly[prevQ(q)]||{};
+    const l=L(c);
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="13" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
-    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td>${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
+    const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
+    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
-      <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td></tr>`}).join('');
-  $('#co-table').innerHTML=`<thead><tr><th>회사</th><th>최근 분기</th><th>매출액</th><th>YoY</th><th>영업이익</th><th>YoY</th><th>영업이익률</th><th>순이익</th><th>YoY</th></tr></thead><tbody>${body}</tbody>`;
+      <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
+      <td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td></tr>`}).join('');
+  const th=(k,t,num=1)=>`<th class="sort${k==='name'?' l':''}" data-k="${k}" ${num?'data-num="1"':''}>${t}${coSort&&coSort[0]===k?(coSort[1]>0?' ▲':' ▼'):''}</th>`;
+  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="4" class="grp">최근 4개 분기(TTM) 기준</th></tr>
+    <tr>${th('name','회사',0)}<th>분기</th>${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}<th>YoY</th>${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}</tr></thead><tbody>${body}</tbody>`;
+  bindSort($('#co-table'),()=>coSort,v=>{coSort=v;renderCompanyTable()});
   $('#co-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{selectCo(tr.dataset.code);document.getElementById('co-detail').scrollIntoView({behavior:'smooth',block:'start'})};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
+}
+const TONE={pos:'개선',neg:'부진',neu:'중립'};
+function renderReview(c){
+  const r=(D.reviews&&D.reviews.companies||{})[c.code];
+  if(!r){$('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">리뷰 작성 대기 중이에요. 실적 데이터가 수집되면 추가돼요.</p>`;return}
+  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${D.reviews.updated||''}</p>
+   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>
+   <h4>실적 동향</h4><ul>${r.trend.map(t=>`<li>${t}</li>`).join('')}</ul>
+   <h4>평가</h4><p>${r.eval}</p>
+   ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
+   <p class="src">${D.reviews.disclaimer||''}</p>`;
+}
+const VERD=u=>u==null?['–','neu']:u>=20?['저평가 구간','pos']:u<=-20?['기대 선반영','neg']:['적정 범위','neu'];
+function renderValueReport(c){
+  const v=VAL(c.code), d=v.dcf;
+  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`;return}
+  const S0=d.scenarios, [vt,vc]=VERD(S0.base.upside);
+  const kp=(l,val,sub='')=>`<div class="kpi"><div class="l">${l}</div><div class="v">${val}</div><div class="s">${sub}</div></div>`;
+  const ig=d.implied_g;
+  const igTxt=ig==null?'계산 범위 밖':ig.toFixed(1)+'%';
+  const gap=ig==null?'':ig>S0.base.g+3?`현재 주가는 기준 가정(${S0.base.g}%)보다 높은 성장을 전제하고 있어요.`:ig<S0.base.g-3?`현재 주가는 기준 가정(${S0.base.g}%)보다 낮은 성장만 반영하고 있어요.`:`현재 주가는 기준 가정(${S0.base.g}%)과 비슷한 성장을 반영하고 있어요.`;
+  $('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">주가 ${fmt(v.price)}원 (${v.price_date}, ${v.price_source}) · 자기자본 ${v.equity_source}</p>
+   <h3><span class="tone ${vc}">${vt}</span>기준 적정가 ${fmt(S0.base.per_share)}원, 현재가 대비 ${pct(S0.base.upside)}</h3>
+   <div class="vgrid">
+     ${kp('시가총액',fmt(eok(v.mcap))+'억',`순현금 ${fmt(eok(v.net_cash))}억`)}
+     ${kp('PER (TTM)',v.per!=null?v.per.toFixed(1)+'배':'적자',`TTM 순이익 ${fmt(eok(v.ttm&&v.ttm.ni))}억`)}
+     ${kp('ROE (TTM)',ratio(v.roe,1,'%'),`PBR ${ratio(v.pbr,2,'배')}`)}
+     ${kp('선행 PER',d.fwd_per.toFixed(1)+'배',`정상화 이익 ${fmt(eok(d.E1))}억 기준`)}
+     ${kp('역DCF 내재 성장률',igTxt,'1~5년차 연평균, 시가총액 정당화')}
+   </div>
+   <div class="tbl"><table><thead><tr><th class="l">시나리오</th><th>1~5년 이익 성장률</th><th>주주가치(억원)</th><th>주당 적정가(원)</th><th>현재가 대비</th></tr></thead><tbody>
+   ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
+   </tbody></table></div>
+   <h4>해석</h4><p>${gap} ${d.note}.</p>
+   <h4>가정</h4><p>정상화 지배순이익 ${fmt(eok(d.E1))}억원, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
+   <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/valuation.json에서 바꿀 수 있어요.</p>`;
 }
 function finTable(keys,get,prevKey){
   const metrics=[['rev','매출액'],['gp','매출총이익'],['op','영업이익'],['ni',NI],['opm','영업이익률']];
@@ -359,11 +443,11 @@ function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;
   $('#co-name').textContent=c.name;
-  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':'StockAnalysis 집계 (연결, 순이익은 비지배지분 포함 전체 기준). DART 키 등록 시 10년치 지배주주순이익으로 자동 교체';
+  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
-  renderCompanyTable();
+  renderCompanyTable();renderReview(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];
@@ -380,13 +464,53 @@ function selectCo(code){
 function renderCompanies(){
   CO=D.companies; if(!CO) return;
   const anyDart=CO.companies.some(c=>c.source==='dart');
-  $('#co-note').innerHTML=anyDart?`DART 전자공시 기준 데이터예요. 마지막 수집: ${CO.updated||''}`:
+  $('#co-note').innerHTML=anyDart?`화장품 상장사는 DART 전자공시 기준이에요(마지막 수집 ${CO.updated||''}). 미용·의료 상장사는 DART 수집 전까지 공개 집계(StockAnalysis) 기준이라 최근 분기가 1분기 늦을 수 있고 순이익은 비지배지분 포함 기준이에요.`:
     `지금은 공개 집계(StockAnalysis) 기준 최근 5개년 · 분기 데이터예요. 순이익은 비지배지분을 포함한 전체 순이익이에요. 저장소에 DART 키가 등록되면 다음 자동 실행부터 <b>10개년 연간 + 분기, 지배주주순이익</b>으로 바뀌어요.`;
   $('#co-select').innerHTML=CO.companies.map(c=>`<option value="${c.code}">${c.name}</option>`).join('');
   $('#co-select').onchange=e=>selectCo(e.target.value);
   selectCo(cur||CO.companies[0].code);
 }
 
+let valSort=null, vgrp='전체';
+function renderValuation(){
+  const V=D.valuation; if(!V)return;
+  const all=Object.entries(V.companies).map(([code,v])=>({code,...v})).filter(v=>v.dcf);
+  const dates=all.map(v=>v.price_date).filter(Boolean).sort();
+  $('#val-note').innerHTML=`주가 기준일 ${dates[0]}~${dates[dates.length-1]} (${[...new Set(all.map(v=>v.price_source))].join(', ')}). 금융위원회 주식시세 API가 연결되면 매 실행마다 최신 주가로 다시 계산돼요. 계산 ${V.updated}.`;
+  const groups=['전체',...new Set(all.map(v=>v.group))];
+  $('#val-filter').innerHTML=groups.map(g=>`<button class="seg" aria-pressed="${g===vgrp}" data-g="${g}">${g}</button>`).join('');
+  $('#val-filter').querySelectorAll('button').forEach(b=>b.onclick=()=>{vgrp=b.dataset.g;renderValuation()});
+  const rows0=all.filter(v=>vgrp==='전체'||v.group===vgrp);
+  const ch=rows0.slice().sort((a,b)=>b.dcf.scenarios.base.upside-a.dcf.scenarios.base.upside);
+  $('#val-chart-wrap').style.height=Math.max(220,ch.length*30+60)+'px';
+  const s=S(), clip=x=>Math.max(-80,Math.min(150,x));
+  draw('c-val',{type:'bar',data:{labels:ch.map(v=>v.name),datasets:[
+    {type:'bar',label:'비관~낙관 범위',data:ch.map(v=>[clip(v.dcf.scenarios.bear.upside),clip(v.dcf.scenarios.bull.upside)]),backgroundColor:s[0]+'55',borderColor:s[0],borderWidth:1,borderRadius:3,borderSkipped:false,barThickness:14},
+    {type:'scatter',label:'기준 시나리오',data:ch.map((v,i)=>({x:clip(v.dcf.scenarios.base.upside),y:v.name})),backgroundColor:s[1],borderColor:s[1],pointRadius:5,pointHoverRadius:6}]},
+    options:baseOpts({indexAxis:'y',interaction:{mode:'nearest',axis:'y',intersect:false},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},
+        tooltip:{callbacks:{label:x=>{const v=ch[x.dataIndex],S0=v.dcf.scenarios;return x.datasetIndex===0?`비관 ${pct(S0.bear.upside)} ~ 낙관 ${pct(S0.bull.upside)}`:`기준 ${fmt(S0.base.per_share)}원 (${pct(S0.base.upside)})`}}}},
+      scales:{x:{ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false},min:-80,max:150},
+              y:{type:'category',labels:ch.map(v=>v.name),ticks:{color:css('--ink-2'),font:{size:12}},grid:{display:false}}}})});
+  const G={name:v=>v.name,price:v=>v.price,mcap:v=>v.mcap,ni:v=>v.ttm?.ni,per:v=>v.per,pbr:v=>v.pbr,roe:v=>v.roe,fper:v=>v.dcf.fwd_per,ig:v=>v.dcf.implied_g,
+    bear:v=>v.dcf.scenarios.bear.per_share,base:v=>v.dcf.scenarios.base.per_share,bull:v=>v.dcf.scenarios.bull.per_share,up:v=>v.dcf.scenarios.base.upside};
+  const rows=sortRows(rows0,valSort||['up',-1],G);
+  const th=(k,t)=>{const st=valSort||['up',-1];return `<th class="sort${k==='name'?' l':''}" data-k="${k}" ${k!=='name'?'data-num="1"':''}>${t}${st[0]===k?(st[1]>0?' ▲':' ▼'):''}</th>`};
+  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','선행 PER')}${th('ig','내재 성장률')}<th>기준 가정</th>${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
+    <td class="l">${v.name} <span class="pill">${v.group}</span></td><td class="num">${fmt(v.price)}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${fmt(eok(v.ttm&&v.ttm.ni))}</td>
+    <td class="num">${v.per!=null?v.per.toFixed(1):'적자'}</td><td class="num">${ratio(v.pbr,2)}</td><td class="num">${ratio(v.roe,1,'%')}</td><td class="num">${v.dcf.fwd_per.toFixed(1)}</td>
+    <td class="num">${v.dcf.implied_g==null?'–':v.dcf.implied_g.toFixed(1)+'%'}</td><td class="num">${S0.base.g}%</td>
+    <td class="num">${fmt(S0.bear.per_share)}</td><td class="num">${fmt(S0.base.per_share)}</td><td class="num">${fmt(S0.bull.per_share)}</td><td class="num ${cls(S0.base.upside)}">${pct(S0.base.upside)}</td><td class="l"><span class="tone ${vc}">${vt}</span></td></tr>`}).join('')}</tbody>`;
+  bindSort($('#val-table'),()=>valSort||['up',-1],v=>{valSort=v;renderValuation()});
+  $('#val-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{cur=tr.dataset.code;location.hash='#companies';setTimeout(()=>{selectCo(cur);document.getElementById('co-review').scrollIntoView({block:'start'})},50)};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
+  $('#val-method').innerHTML=`<ul>
+   <li><b>PER·ROE·PBR</b>: 최근 4개 분기 지배주주순이익 합계(TTM)로 PER과 ROE를 계산하고, PBR은 가장 최근 자기자본 기준이에요. 자기자본은 DART 재무상태표가 수집되면 그 값을, 아니면 공개 집계의 PBR에서 역산한 값을 써요.</li>
+   <li><b>내재가치(주주잉여현금흐름 할인)</b>: 향후 12개월 정상화 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
+   <li><b>역DCF 내재 성장률</b>: 같은 틀에서 현재 시가총액을 정확히 정당화하는 1~5년차 연평균 이익 성장률이에요. 이 숫자가 기준 가정보다 크면 시장이 더 높은 성장을 기대하고 있다는 뜻이에요.</li>
+   <li><b>판단 기준</b>: 기준 적정가가 현재가보다 20% 이상 높으면 '저평가 구간', 20% 이상 낮으면 '기대 선반영', 그 사이는 '적정 범위'예요.</li>
+   <li>순현금은 이자수익으로 이익에 이미 반영된 것으로 보고 따로 더하지 않았어요. 순현금이 큰 회사(클리오, 네오팜, LG생활건강 등)는 그만큼 보수적으로 계산된 값이에요.</li></ul>
+   <p class="src">참고용 추정이며 투자 권유가 아니에요.</p>`;
+}
 function renderSources(){
   const list=[D.news_exports,D.customs_exports,D.customs_by_country,D.mfds_industry,D.export_top10,D.production_by_type,D.crossborder_cosmetics,D.online_cosmetics,D.retail_index_cosmetics].filter(Boolean);
   $('#src-list').innerHTML=list.map(d=>`<li>${d.url?`<a href="${d.url}" target="_blank" rel="noopener">${d.source}</a>`:d.source}${d.updated?` <span class="sub">(${d.updated})</span>`:''}</li>`).join('')+
@@ -398,12 +522,13 @@ function renderSources(){
 const rendered={};
 function show(){
   const v=(location.hash||'#industry').slice(1);
-  const view=['industry','companies','sources'].includes(v)?v:'industry';
+  const view=['industry','companies','valuation','sources'].includes(v)?v:'industry';
   document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
   document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
   if(!rendered[view]){rendered[view]=1;
     if(view==='industry'){renderKPIs();renderExports();renderIndustry();}
     if(view==='companies')renderCompanies();
+    if(view==='valuation')renderValuation();
     if(view==='sources')renderSources();}
 }
 function rerender(){Object.keys(rendered).forEach(k=>delete rendered[k]);show();}
