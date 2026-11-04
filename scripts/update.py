@@ -381,27 +381,43 @@ def sum_by_month(items, field="expDlr", hs=None):
 
 
 def update_customs(key):
-    start = dt.date(TODAY.year - 5, 1, 1)
+    # 시작 연도는 customs.json의 start_year (없으면 최근 5년). 지난 연도는 raw/.../customs_cache.json에 저장해 다시 받지 않는다.
+    start = dt.date(int(CUSTOMS.get("start_year", TODAY.year - 5)), 1, 1)
     end = TODAY.replace(day=1) - dt.timedelta(days=1)
-    by_hs, by_hs_imp = {}, {}
-    imp_total = {}
-    totals = set()
+    cache_p = RAW / "customs_cache.json"
+    cache = json.loads(cache_p.read_text("utf-8")) if cache_p.exists() else {}
     for hs, label, in_total in CUSTOMS["groups"]:
-        agg, agg_i = by_hs.get(label, {}), by_hs_imp.get(label, {})
+        ch = cache.setdefault(hs, {})
         for s, e in month_ranges(start, end):
+            y = s[:4]
+            if y in ch and int(y) < TODAY.year - 1:
+                continue
             txt = http_get(ITEM_URL, {"serviceKey": key, "strtYymm": s, "endYymm": e, "hsSgn": hs})
             if not txt:
                 continue
             items = parse_items(txt)
             if not items:
                 log(f"관세청 응답에 데이터 없음 (HS {hs}, {s}~{e}):", txt[:200].replace(key, "***"))
-            for k, v in sum_by_month(items, hs=hs).items():
-                agg[k] = agg.get(k, 0) + v
-            for k, v in sum_by_month(items, "impDlr", hs=hs).items():
-                agg_i[k] = agg_i.get(k, 0) + v
-                if in_total:
-                    imp_total[k] = imp_total.get(k, 0) + v
+                continue
+            ch[y] = {"exp": sum_by_month(items, hs=hs), "imp": sum_by_month(items, "impDlr", hs=hs)}
             time.sleep(0.3)
+        RAW.mkdir(parents=True, exist_ok=True)
+        cache_p.write_text(json.dumps(cache, ensure_ascii=False), "utf-8")  # 단계마다 저장(중간에 끊겨도 다음에 이어받기)
+    by_hs, by_hs_imp = {}, {}
+    imp_total = {}
+    totals = set()
+    first = start.strftime("%Y-%m")
+    for hs, label, in_total in CUSTOMS["groups"]:
+        agg, agg_i = by_hs.get(label, {}), by_hs_imp.get(label, {})
+        for y, d in cache.get(hs, {}).items():
+            for k, v in d["exp"].items():
+                if k >= first:
+                    agg[k] = agg.get(k, 0) + v
+            for k, v in d["imp"].items():
+                if k >= first:
+                    agg_i[k] = agg_i.get(k, 0) + v
+                    if in_total:
+                        imp_total[k] = imp_total.get(k, 0) + v
         if agg:
             by_hs[label] = agg
             by_hs_imp[label] = agg_i
@@ -456,8 +472,11 @@ def update_prices(key):
     out = {}
     for c in cfg:
         txt = http_get(PRICE_URL, {"serviceKey": key, "resultType": "json", "numOfRows": 400, "pageNo": 1,
-                                   "likeSrtnCd": c["code"], "beginBasDt": begin})
+                                   "likeSrtnCd": c["code"], "beginBasDt": begin}, retries=1)
         if not txt:
+            if not out:  # 첫 종목부터 실패하면(활용신청 전 403 등) 나머지도 건너뛴다
+                log("주가 API 응답 없음 — 시세 수집 중단")
+                break
             continue
         try:
             items = json.loads(txt)["response"]["body"]["items"]["item"]

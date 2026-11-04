@@ -133,7 +133,7 @@ td.l,th.l{text-align:left}
     <div class="kpis" id="kpis"></div>
     <div class="grid">
       <div class="card full">
-        <div class="row"><div><h2>월별 반도체 수출액</h2><p class="sub" id="exp-sub"></p></div></div>
+        <div class="row"><div><h2>월별 반도체 수출액</h2><p class="sub" id="exp-sub"></p></div><div class="segs" role="group" aria-label="기간 선택" id="exp-range"></div></div>
         <div class="chart" id="exp-wrap"><canvas id="c-exp" aria-label="월별 반도체 수출액 차트" role="img"></canvas></div>
         <div class="tbl" id="exp-tbl"></div>
         <div class="src" id="exp-src"></div>
@@ -291,15 +291,19 @@ function renderKPIs(){
   $('#kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x.l}</div><div class="v">${x.v}</div><div class="s">${x.s}</div></div>`).join('');
 }
 
+let expRange=120;
 function renderExports(){
   const cu=D.customs_exports, ne=D.news_exports, s=S();
   if(cu&&cu.total&&cu.total.length){
-    const n=cu.months.length, from=Math.max(0,n-36);
+    const n=cu.months.length, from=expRange?Math.max(0,n-expRange):0;
     const labels=cu.months.slice(from);
+    const R=[[36,'3년'],[120,'10년'],[0,'전체']];
+    $('#exp-range').innerHTML=R.map(([v,l])=>`<button class="seg" aria-pressed="${v===expRange}" data-v="${v}">${l}</button>`).join('');
+    $('#exp-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{expRange=+b.dataset.v;renderExports()});
     const order=['메모리','프로세서·컨트롤러','기타 집적회로','개별소자·광소자'];
     const keys=order.filter(k=>cu.series[k]).concat(Object.keys(cu.series).filter(k=>!order.includes(k)));
     const ds=keys.map((k,i)=>bar(k,cu.series[k].slice(from).map(v=>v==null?null:v/100),s[i],{stack:'a'}));
-    $('#exp-sub').textContent='최근 36개월, 단위: 억 달러 · 품목별 누적 막대 (HS 8541·8542)';
+    $('#exp-sub').textContent=`${labels[0]} ~ ${labels[labels.length-1]}, 단위: 억 달러 · 품목별 누적 막대 (HS 8541·8542)`;
     draw('c-exp',{type:'bar',data:{labels,datasets:ds},options:baseOpts({scales:{x:{stacked:true,ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:10,font:{size:11}},grid:{display:false}},y:{stacked:true,ticks:{color:css('--ink-3')},grid:{color:css('--line')},border:{display:false}}},
       plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw,1)}억$`,footer:(it)=>{const i=it[0].dataIndex+from;const t=cu.total[i],p=cu.total[i-12];return `합계 ${fmt(t/100,1)}억$  YoY ${pct(yoy(t,p))}`}}}}})});
     const last=labels.slice(-13);
