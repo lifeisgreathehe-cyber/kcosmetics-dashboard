@@ -90,6 +90,22 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .rv p{margin:0;max-width:80ch}
 .mixbar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:10px 0 6px;gap:2px}
 .mixbar span{display:block;height:100%}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:4px 24px}
+.dgrid p{max-width:none}
+.moat{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0}
+.moat .dots{letter-spacing:2px;color:var(--accent);font-size:15px}
+.chip{display:inline-block;font-size:11.5px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);margin:0 4px 4px 0}
+.fisher{width:100%;border-collapse:collapse;font-size:13px}
+.fisher td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal}
+.fisher td.n{color:var(--ink-3);width:22px;font-variant-numeric:tabular-nums}
+.fisher td.q{width:34%;color:var(--ink-2)}
+.fisher td.m{width:26px;text-align:center;font-size:14px}
+.fisher .m2{color:var(--up)} .fisher .m1{color:var(--ink-2)} .fisher .m0{color:var(--down)}
+details.fd{margin-top:6px} details.fd summary{cursor:pointer;color:var(--accent);font-size:13px;margin:4px 0}
+.fbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;max-width:240px;flex:1;min-width:120px}
+.fbar i{display:block;height:100%;background:var(--accent)}
+.ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:4px 24px}
+@media (max-width:640px){.fisher td.q{width:auto;display:block;border-top:none;padding-top:0}.fisher tr{display:grid;grid-template-columns:22px 26px 1fr}.fisher td.q{grid-column:1/-1;order:-1;padding:8px 8px 2px}}
 .mixleg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
 .mixleg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
 .vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 4px}
@@ -245,7 +261,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -417,12 +433,39 @@ function renderReview(c){
 }
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
-  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>`;return}
+  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}`;return}
   const s=S(), mix=b.mix||[];
   $('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART ${b.report}${b.url?` · <a href="${b.url}" target="_blank" rel="noopener" style="color:var(--accent)">원문 보기</a>`:''}</p>
    ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
-   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
+}
+function renderDeep(c){
+  const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
+  if(!x) return '';
+  const tone={'넓음':'pos','좁음':'neu','없음':'neg'}[x.moat.grade]||'neu';
+  const vt={'긍정':'pos','중립':'neu','부정':'neg'}[x.outlook.view]||'neu';
+  const mk=s=>s===2?['●','m2','충족']:s===1?['◐','m1','부분']:['○','m0','미흡'];
+  const fs=x.fisher_score, fmax=x.fisher.length*2;
+  return `<h2 style="margin-top:22px">심층 분석</h2><p class="sub">${dp.source} · 작성 ${dp.updated}</p>
+   <div class="dgrid">
+    <div><h4>제품·서비스</h4><p>${x.products}</p></div>
+    <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
+    <div><h4>고객</h4><p>${x.customers}</p></div>
+    <div><h4>원재료·조달</h4><p>${x.sourcing}</p></div>
+   </div>
+   <h4>경제적 해자</h4>
+   <div class="moat"><span class="tone ${tone}">해자 ${x.moat.grade}</span><span class="dots" aria-label="5점 중 ${x.moat.score}점">${'●'.repeat(x.moat.score)}${'○'.repeat(5-x.moat.score)}</span>${x.moat.sources.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+   <p>${x.moat.reason}</p>
+   <h4>필립 피셔 16문항</h4>
+   <div class="moat"><b>${fs} / ${fmax}점</b><span class="fbar"><i style="width:${fs/fmax*100}%"></i></span><span class="sub">● 충족 ${x.fisher.filter(f=>f.s===2).length} · ◐ 부분 ${x.fisher.filter(f=>f.s===1).length} · ○ 미흡 ${x.fisher.filter(f=>f.s===0).length}</span></div>
+   <details class="fd"><summary>16개 질문별 평가 펼쳐 보기</summary>
+   <table class="fisher"><tbody>${x.fisher.map((f,i)=>{const [m,k,l]=mk(f.s);return `<tr><td class="n">${i+1}</td><td class="q">${dp.fisher_questions[i]}</td><td class="m ${k}" title="${l}" aria-label="${l}">${m}</td><td>${f.a}</td></tr>`}).join('')}</tbody></table>
+   <p class="src">${dp.fisher_note}</p></details>
+   <h4>향후 3~4년 전망 <span class="tone ${vt}" style="margin-left:6px">${x.outlook.view}</span></h4>
+   <p>${x.outlook.summary}</p>
+   <div class="ol"><div><h4>기회</h4><ul>${x.outlook.upside.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>위험</h4><ul>${x.outlook.risks.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+   <p class="src">${dp.disclaimer}</p>`;
 }
 const VERD=u=>u==null?['–','neu']:u>=20?['저평가 구간','pos']:u<=-20?['기대 선반영','neg']:['적정 범위','neu'];
 function renderValueReport(c){
