@@ -62,12 +62,14 @@ def implied_growth(target, E1, r, c, gT):
     return round((lo + hi) / 2, 1)
 
 
-def main():
-    cos = load(P("docs", "data", "companies.json"), {}) or {}
-    prices = (load(P("docs", "data", "prices.json"), {}) or {}).get("prices", {})
-    quotes = (load(P("docs", "data", "quotes.json"), {}) or {})
+def main(industry="cosmetics"):
+    dd = ("docs", "data") if industry == "cosmetics" else ("docs", industry, "data")
+    cd = ("config",) if industry == "cosmetics" else ("config", industry)
+    cos = load(P(*dd, "companies.json"), {}) or {}
+    prices = (load(P(*dd, "prices.json"), {}) or {}).get("prices", {})
+    quotes = (load(P(*dd, "quotes.json"), {}) or {})
     qsrc, quotes = quotes.get("source"), quotes.get("quotes", {})
-    cfg = load(P("config", "valuation.json"), {}) or {}
+    cfg = load(P(*cd, "valuation.json"), {}) or {}
     gT = cfg.get("terminal_growth", 2.0)
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
            "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
@@ -83,19 +85,28 @@ def main():
         if not a:
             out["companies"][code] = rec
             continue
-        snap = a["snapshot"]
+        snap = a.get("snapshot") or {}
         px = prices.get(code)
         qt = quotes.get(code)
-        shares0 = (px or {}).get("shares") or snap["shares"]
+        dsh = co.get("shares") or {}  # DART 유통주식수 (보통주·우선주)
+        shares0 = (px or {}).get("shares") or snap.get("shares") or dsh.get("common")
+        pref = co.get("pref")
+        pref_sh = dsh.get("pref") if pref else None
+        pq = quotes.get(pref) if pref else None
         if qt and qt.get("price"):
             price, pdate, psrc = qt["price"], qt.get("time"), qsrc or "실시간 시세"
             mcap = round(price * shares0 / 1e6)
+            if pref_sh and pq and pq.get("price"):  # 우선주 시가총액 합산
+                mcap += round(pq["price"] * pref_sh / 1e6)
         elif px and px.get("price"):
             price, pdate = px["price"], px.get("date")
-            mcap = px.get("mcap") or round(price * snap["shares"] / 1e6)
+            mcap = px.get("mcap") or round(price * shares0 / 1e6)
             psrc = "금융위원회 주식시세정보"
-        else:
+        elif snap.get("price"):
             price, pdate, mcap, psrc = snap["price"], snap["price_date"], snap["mcap"], "StockAnalysis 스냅샷"
+        else:
+            out["companies"][code] = rec
+            continue
         bs = co.get("bs") or {}
         equity = bs.get("equity") or snap.get("equity")
         eq_src = f"DART {bs.get('period')}" if bs.get("equity") else "스냅샷(PBR 역산)"
@@ -105,7 +116,7 @@ def main():
                 net_cash = min(net_cash, snap["net_cash"])
         else:
             net_cash = snap.get("net_cash")
-        shares = shares0
+        shares = shares0 + (pref_sh or 0)  # 주당 가치는 보통주+우선주 기준
         rec.update(price=price, price_date=pdate, price_source=psrc, mcap=mcap, shares=shares,
                    equity=equity, equity_source=eq_src, net_cash=net_cash,
                    dividend_yield=snap.get("dividend_yield"))
@@ -130,10 +141,11 @@ def main():
                       "implied_g": implied_growth(mcap - nc, E_op, a["r"], a["c"], gT),
                       "net_cash_added": nc}
         out["companies"][code] = rec
-    with open(P("docs", "data", "valuation.json"), "w", encoding="utf-8") as f:
+    with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     print("valuation.json:", len(out["companies"]), "개사")
 
 
 if __name__ == "__main__":
-    main()
+    import sys
+    main(sys.argv[sys.argv.index("--industry") + 1] if "--industry" in sys.argv else "cosmetics")

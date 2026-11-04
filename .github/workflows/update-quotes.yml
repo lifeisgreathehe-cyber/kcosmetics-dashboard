@@ -23,10 +23,13 @@ jobs:
         with:
           python-version: "3.12"
       - name: 시세 수집
-        run: python scripts/update.py --only quotes
+        run: |
+          python scripts/update.py --only quotes
+          python scripts/update.py --industry semi --only quotes
       - name: live-data 브랜치에 게시 (장중 실시간용)
         run: |
-          mkdir -p /tmp/live && cp docs/data/quotes.json docs/data/valuation.json /tmp/live/
+          mkdir -p /tmp/live/semi && cp docs/data/quotes.json docs/data/valuation.json /tmp/live/
+          cp docs/semi/data/quotes.json docs/semi/data/valuation.json /tmp/live/semi/ || true
           cd /tmp/live
           git init -q -b live-data
           git config user.name "github-actions[bot]"
@@ -38,7 +41,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json
+          git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json && git add docs/semi/data || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 종가 $(TZ=Asia/Seoul date +%Y-%m-%d)"
             git pull --rebase -q && git push

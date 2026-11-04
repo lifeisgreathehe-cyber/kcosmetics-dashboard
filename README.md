@@ -32,3 +32,10 @@ cd docs && python -m http.server
 - `docs/data/reviews.json`: 회사별 최근 4개 분기 실적 동향과 평가 (분기 실적 발표 후 갱신)
 - `config/valuation.json`: 회사별 내재가치 가정(정상화 이익, 성장 시나리오, 할인율)과 시세 스냅샷
 - `scripts/build_valuation.py`: TTM PER·ROE·PBR, 시나리오 적정가, 역DCF 내재 성장률을 계산해 `docs/data/valuation.json` 생성. `update.py` 실행 끝에 자동 호출돼요.
+
+## 반도체 대시보드 (`docs/semi/`)
+같은 구조로 국내 반도체 산업 대시보드를 함께 운영해요. 주소: https://lifeisgreathehe-cyber.github.io/kcosmetics-dashboard/semi/
+- 설정: `config/semi/` (companies.json 34개사, kosis.json 생산·출하·재고지수·수출물가, customs.json HS 8541·8542·8486)
+- 데이터: `docs/semi/data/`, 사업보고서 본문: `raw/semi/dart_docs/`
+- 모든 스크립트에 `--industry semi`를 붙이면 반도체용으로 동작해요. 예) `python scripts/update.py --industry semi --only dart`
+- 삼성전자는 우선주(005935) 시가총액을 합산해요 (`pref` 필드). 유통주식수는 DART 주식총수 현황에서 받아요.

@@ -23,8 +23,17 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA = ROOT / "docs" / "data"
-CONFIG = ROOT / "config"
+# --industry semi : 반도체 대시보드 (config/semi → docs/semi/data, raw/semi/dart_docs)
+INDUSTRY = sys.argv[sys.argv.index("--industry") + 1] if "--industry" in sys.argv else "cosmetics"
+if INDUSTRY == "cosmetics":
+    DATA = ROOT / "docs" / "data"
+    CONFIG = ROOT / "config"
+    RAW = ROOT / "raw"
+else:
+    DATA = ROOT / "docs" / INDUSTRY / "data"
+    CONFIG = ROOT / "config" / INDUSTRY
+    RAW = ROOT / "raw" / INDUSTRY
+DATA.mkdir(parents=True, exist_ok=True)
 TODAY = dt.date.today()
 
 
@@ -143,6 +152,30 @@ def dart_report(key, corp, year, reprt):
     return None
 
 
+def dart_shares(key, corp):
+    """최근 정기보고서의 유통주식수(발행주식 - 자기주식). 보통주·우선주 구분."""
+    for y in (TODAY.year, TODAY.year - 1):
+        for rc in (REPRT["Q3"], REPRT["H1"], REPRT["Q1"], REPRT["FY"]):
+            txt = http_get(f"{DART}/stockTotqySttus.json", {"crtfc_key": key, "corp_code": corp, "bsns_year": y, "reprt_code": rc})
+            try:
+                j = json.loads(txt or "{}")
+            except json.JSONDecodeError:
+                continue
+            if j.get("status") != "000":
+                continue
+            out = {"period": f"{y}-{rc}"}
+            for r in j.get("list", []):
+                se = (r.get("se") or "").replace(" ", "")
+                k = "common" if se.startswith("보통") else "pref" if se.startswith("우선") else None
+                if k:
+                    tot, tre = num(r.get("istc_totqy")), num(r.get("tesstk_co")) or 0
+                    if tot:
+                        out[k] = tot - tre
+            if out.get("common"):
+                return out
+    return None
+
+
 def to_m(v):
     return None if v is None else round(v / 1_000_000)
 
@@ -194,6 +227,9 @@ def update_dart(key):
                     cum = q3.get(f, (None, None))[1]
                     q4[f] = to_m(a - cum) if a is not None and cum is not None else None
                 rec["quarterly"][f"{y}Q4"] = q4
+        sh = dart_shares(key, corp)
+        if sh:
+            rec["shares"] = sh
         if not rec["annual"] and not rec["quarterly"]:
             result.append(old.get(c["code"], rec))
         else:
@@ -264,6 +300,8 @@ def update_kosis(key):
             save(spec["file"], obj)
             continue
         series, periods = {}, set()
+        if spec.get("where"):  # 예: {"C2_NM": "달러기준"}
+            rows = [r for r in rows if all(r.get(k) == v for k, v in spec["where"].items())]
         for r in rows:
             name = spec.get("rename", {}).get(r.get(spec["series_key"]), r.get(spec["series_key"]))
             per = fmt_period(r["PRD_DE"], freq)
@@ -285,6 +323,9 @@ def update_kosis(key):
             obj["values"] = [next(iter(series.values())).get(p) for p in periods]
         else:
             obj["series"] = {name: [s.get(p) for p in periods] for name, s in series.items()}
+        for k in ("title", "source", "url"):
+            if spec.get(k):
+                obj[k] = spec[k]
         obj["updated"] = TODAY.isoformat()
         save(spec["file"], obj)
 
@@ -294,6 +335,12 @@ ITEM_URL = "https://apis.data.go.kr/1220000/Itemtrade/getItemtradeList"  # 관�
 NATION_URL = "https://apis.data.go.kr/1220000/nitemtrade/getNitemtradeList"  # 관세청_품목별 국가별 수출입실적(GW)
 HS_GROUPS = {"3303": "향수", "3304": "기초·색조(3304)", "3305": "두발용", "3307": "면도·탈취 등"}
 COUNTRIES = {"US": "미국", "CN": "중국", "JP": "일본", "HK": "홍콩", "VN": "베트남", "RU": "러시아", "TW": "대만", "AE": "UAE"}
+CUSTOMS = {"title": "화장품 월별 수출액 (관세청)", "source": "관세청 품목별 수출입실적 (HS 3303·3304·3305·3307)",
+           "groups": [[k, v, True] for k, v in HS_GROUPS.items()], "country_hs": "3304", "countries": COUNTRIES,
+           "country_title": "국가별 월별 수출액 (HS 3304)", "country_source": "관세청 국가별 품목별 수출입실적"}
+_cc = CONFIG / "customs.json"
+if _cc.exists():  # 업종별 HS 구성 (예: config/semi/customs.json)
+    CUSTOMS = json.loads(_cc.read_text("utf-8"))
 
 
 def parse_items(xml_text):
@@ -336,10 +383,11 @@ def sum_by_month(items, field="expDlr", hs=None):
 def update_customs(key):
     start = dt.date(TODAY.year - 5, 1, 1)
     end = TODAY.replace(day=1) - dt.timedelta(days=1)
-    by_hs = {}
+    by_hs, by_hs_imp = {}, {}
     imp_total = {}
-    for hs, label in HS_GROUPS.items():
-        agg = {}
+    totals = set()
+    for hs, label, in_total in CUSTOMS["groups"]:
+        agg, agg_i = by_hs.get(label, {}), by_hs_imp.get(label, {})
         for s, e in month_ranges(start, end):
             txt = http_get(ITEM_URL, {"serviceKey": key, "strtYymm": s, "endYymm": e, "hsSgn": hs})
             if not txt:
@@ -350,30 +398,41 @@ def update_customs(key):
             for k, v in sum_by_month(items, hs=hs).items():
                 agg[k] = agg.get(k, 0) + v
             for k, v in sum_by_month(items, "impDlr", hs=hs).items():
-                imp_total[k] = imp_total.get(k, 0) + v
+                agg_i[k] = agg_i.get(k, 0) + v
+                if in_total:
+                    imp_total[k] = imp_total.get(k, 0) + v
             time.sleep(0.3)
         if agg:
             by_hs[label] = agg
+            by_hs_imp[label] = agg_i
+            if in_total:
+                totals.add(label)
     if not by_hs:
         log("관세청 품목별 데이터 없음 — 건너뜀")
         return
     months = sorted({m for s in by_hs.values() for m in s})
-    series = {lab: [round(s.get(m, 0) / 1e6, 2) if m in s else None for m in months] for lab, s in by_hs.items()}
-    total = [round(sum(by_hs[l].get(m, 0) for l in by_hs) / 1e6, 2) for m in months]
-    save("customs_exports.json", {
-        "title": "화장품 월별 수출액 (관세청)", "source": "관세청 품목별 수출입실적 (HS 3303·3304·3305·3307)",
-        "url": "https://www.data.go.kr/data/15100475/openapi.do", "unit": "백만 달러", "months": months,
-        "total": total, "series": series,
-        "imports": [round(imp_total.get(m, 0) / 1e6, 2) for m in months], "updated": TODAY.isoformat()})
+    r2 = lambda d, m: round(d.get(m, 0) / 1e6, 2) if m in d else None
+    series = {lab: [r2(s, m) for m in months] for lab, s in by_hs.items() if lab in totals}
+    extra = {lab: {"exports": [r2(s, m) for m in months], "imports": [r2(by_hs_imp.get(lab, {}), m) for m in months]}
+             for lab, s in by_hs.items() if lab not in totals}
+    total = [round(sum(by_hs[l].get(m, 0) for l in totals) / 1e6, 2) for m in months]
+    out = {"title": CUSTOMS["title"], "source": CUSTOMS["source"],
+           "url": "https://www.data.go.kr/data/15100475/openapi.do", "unit": "백만 달러", "months": months,
+           "total": total, "series": series,
+           "imports": [round(imp_total.get(m, 0) / 1e6, 2) for m in months], "updated": TODAY.isoformat()}
+    if extra:
+        out["extra"] = extra
+    save("customs_exports.json", out)
 
-    # 국가별 (HS 3304 기준)
+    # 국가별
     cs = {}
-    for cc, nm in COUNTRIES.items():
+    chs = CUSTOMS["country_hs"]
+    for cc, nm in CUSTOMS["countries"].items():
         agg = {}
         for s, e in month_ranges(dt.date(TODAY.year - 2, 1, 1), end):
-            txt = http_get(NATION_URL, {"serviceKey": key, "strtYymm": s, "endYymm": e, "cntyCd": cc, "hsSgn": "3304"})
+            txt = http_get(NATION_URL, {"serviceKey": key, "strtYymm": s, "endYymm": e, "cntyCd": cc, "hsSgn": chs})
             if txt:
-                for k, v in sum_by_month(parse_items(txt), hs="3304").items():
+                for k, v in sum_by_month(parse_items(txt), hs=chs).items():
                     agg[k] = agg.get(k, 0) + v
             time.sleep(0.3)
         if agg:
@@ -381,7 +440,7 @@ def update_customs(key):
     if cs:
         months = sorted({m for s in cs.values() for m in s})
         save("customs_by_country.json", {
-            "title": "국가별 월별 수출액 (HS 3304)", "source": "관세청 국가별 품목별 수출입실적",
+            "title": CUSTOMS["country_title"], "source": CUSTOMS["country_source"],
             "unit": "백만 달러", "months": months,
             "series": {n: [round(s.get(m, 0) / 1e6, 2) if m in s else None for m in months] for n, s in cs.items()},
             "updated": TODAY.isoformat()})
@@ -431,7 +490,7 @@ def update_prices(key):
 
 # ---------------------------------------------------------------- DART 사업보고서 본문
 import re as _re
-DOCS = ROOT / "raw" / "dart_docs"
+DOCS = RAW / "dart_docs"
 
 
 def _xml_to_text(x: str) -> str:
@@ -574,6 +633,7 @@ def quotes_naver(codes):
 def quotes_yahoo(cfg, codes):
     out = {}
     mk = {c["code"]: c.get("market") for c in cfg}
+    mk.update({c["pref"]: c.get("market") for c in cfg if c.get("pref")})
     for c in codes:
         for suf in ((".KQ", ".KS") if mk.get(c) == "KOSDAQ" else (".KS", ".KQ")):
             j = _get_json(YAHOO + c + suf, {"interval": "1d", "range": "5d"})
@@ -591,7 +651,7 @@ def quotes_yahoo(cfg, codes):
 
 def update_quotes():
     cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
-    codes = [c["code"] for c in cfg]
+    codes = [c["code"] for c in cfg] + [c["pref"] for c in cfg if c.get("pref")]
     q = quotes_naver(codes)
     src = "네이버 금융" if q else None
     miss = [c for c in codes if c not in q]
@@ -609,7 +669,7 @@ def update_quotes():
 
 # ---------------------------------------------------------------- main
 def main():
-    # 사용법: python scripts/update.py [--only dart|kosis|customs|prices|quotes]
+    # 사용법: python scripts/update.py [--industry semi] [--only dart|kosis|customs|prices|quotes]
     # DART는 해외 IP(GitHub Actions 등)에서 접속이 막혀 있어 국내 PC에서 --only dart 로 실행한다.
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     ran = []
@@ -632,7 +692,7 @@ def main():
     try:  # 실적·주가가 바뀌면 PER·ROE·PBR과 내재가치를 다시 계산
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import build_valuation
-        build_valuation.main()
+        build_valuation.main(INDUSTRY)
     except Exception as e:
         log("밸류에이션 계산 실패:", e)
     if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다

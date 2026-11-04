@@ -27,12 +27,14 @@ jobs:
           DART_API_KEY: ${{ secrets.DART_API_KEY }}
           KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
-        run: python scripts/update.py
+        run: |
+          python scripts/update.py
+          python scripts/update.py --industry semi
       - name: 변경분 커밋
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data
+          git add docs/data docs/semi/data
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
