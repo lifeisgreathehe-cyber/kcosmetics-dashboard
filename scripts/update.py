@@ -374,7 +374,7 @@ def main():
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs"):
         update_customs(os.environ["DATA_GO_KR_KEY"]); ran.append("관세청")
     if os.getenv("DART_API_KEY") and only in (None, "dart"):
-        ok = update_dart(os.environ["DART_API_KEY"])
+        ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:
             ran.append("DART")
     if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다
