@@ -237,7 +237,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -374,11 +374,11 @@ function renderCompanyTable(){
   const G={name:c=>c.name,rev:c=>L(c)?.a.rev,ry:c=>{const l=L(c);const v=l&&yoy(l.a.rev,l.p.rev);return typeof v==='number'?v:null},
     op:c=>L(c)?.a.op,oy:c=>{const l=L(c);const v=l&&yoy(l.a.op,l.p.op);return typeof v==='number'?v:null},
     opm:c=>{const l=L(c);return l&&l.a.rev?l.a.op/l.a.rev*100:null},ni:c=>L(c)?.a.ni,
-    mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr};
+    price:c=>VAL(c.code).price,mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr};
   const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
     const l=L(c);
-    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="13" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="14" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
     const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
     const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
@@ -386,10 +386,10 @@ function renderCompanyTable(){
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
       <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
-      <td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td></tr>`}).join('');
+      <td class="num">${fmt(v.price)}${(()=>{const q=D.quotes&&D.quotes.quotes[c.code];return q&&q.chg_pct!=null?`<br><span class="${q.chg_pct>=0?'up':'down'}" style="font-size:11px">${pct(q.chg_pct)}</span>`:''})()}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td></tr>`}).join('');
   const th=(k,t,num=1)=>`<th class="sort${k==='name'?' l':''}" data-k="${k}" ${num?'data-num="1"':''}>${t}${coSort&&coSort[0]===k?(coSort[1]>0?' ▲':' ▼'):''}</th>`;
-  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="4" class="grp">최근 4개 분기(TTM) 기준</th></tr>
-    <tr>${th('name','회사',0)}<th>분기</th>${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}<th>YoY</th>${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}</tr></thead><tbody>${body}</tbody>`;
+  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="5" class="grp">현재 주가 · 최근 4개 분기(TTM) 기준</th></tr>
+    <tr>${th('name','회사',0)}<th>분기</th>${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}<th>YoY</th>${th('price','주가')}${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}</tr></thead><tbody>${body}</tbody>`;
   bindSort($('#co-table'),()=>coSort,v=>{coSort=v;renderCompanyTable()});
   $('#co-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{selectCo(tr.dataset.code);document.getElementById('co-detail').scrollIntoView({behavior:'smooth',block:'start'})};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
 }
@@ -447,6 +447,7 @@ function selectCo(code){
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
+  $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
   renderCompanyTable();renderReview(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
@@ -476,7 +477,7 @@ function renderValuation(){
   const V=D.valuation; if(!V)return;
   const all=Object.entries(V.companies).map(([code,v])=>({code,...v})).filter(v=>v.dcf);
   const dates=all.map(v=>v.price_date).filter(Boolean).sort();
-  $('#val-note').innerHTML=`주가 기준일 ${dates[0]}~${dates[dates.length-1]} (${[...new Set(all.map(v=>v.price_source))].join(', ')}). 금융위원회 주식시세 API가 연결되면 매 실행마다 최신 주가로 다시 계산돼요. 계산 ${V.updated}.`;
+  $('#val-note').innerHTML=D.quotes?`${quoteLine()}. 주가가 바뀔 때마다 시가총액, PER, PBR, 적정가 대비 괴리율, 역DCF 내재 성장률을 다시 계산해요.`:`주가 기준일 ${dates[0]}~${dates[dates.length-1]} (${[...new Set(all.map(v=>v.price_source))].join(', ')}). 실시간 시세가 수집되면 자동으로 최신 주가로 다시 계산돼요.`;
   const groups=['전체',...new Set(all.map(v=>v.group))];
   $('#val-filter').innerHTML=groups.map(g=>`<button class="seg" aria-pressed="${g===vgrp}" data-g="${g}">${g}</button>`).join('');
   $('#val-filter').querySelectorAll('button').forEach(b=>b.onclick=()=>{vgrp=b.dataset.g;renderValuation()});
@@ -535,10 +536,23 @@ function rerender(){Object.keys(rendered).forEach(k=>delete rendered[k]);show();
 window.addEventListener('hashchange',show);
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',rerender);
 new MutationObserver(rerender).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+const LIVE='https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/live-data/';
+async function JL(n){try{const r=await fetch(LIVE+n+'?t='+Date.now());if(!r.ok)return null;return await r.json()}catch(e){return null}}
+async function refreshLive(){
+  const [q,v]=await Promise.all([JL('quotes.json'),JL('valuation.json')]);
+  if(!q||!v)return;
+  if(D.quotes&&D.quotes.fetched&&q.fetched<=D.quotes.fetched)return;
+  D.quotes=q;D.valuation=v;rerender();
+}
+function quoteLine(){
+  const q=D.quotes; if(!q)return '주가: 스냅샷 기준(실시간 시세 미수집)';
+  return `주가 ${q.fetched} 수집 · ${q.source} · 장중 10분 간격 갱신`;
+}
 loadAll().then(()=>{
   const m=D.meta;
   $('#meta').innerHTML=`마지막 갱신 ${m&&m.last_run?m.last_run:'2026-11-04'}<br>공공데이터 · 전자공시 기반`;
   show();
+  refreshLive(); setInterval(refreshLive,5*60*1000);
 });
 })();
 </script>

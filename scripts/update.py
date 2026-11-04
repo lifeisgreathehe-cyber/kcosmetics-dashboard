@@ -427,9 +427,98 @@ def update_prices(key):
     return False
 
 
+
+# ---------------------------------------------------------------- 실시간(장중) 주가
+NAVER_MULTI = "https://polling.finance.naver.com/api/realtime"
+NAVER_ONE = "https://polling.finance.naver.com/api/realtime/domestic/stock/"
+YAHOO = "https://query1.finance.yahoo.com/v8/finance/chart/"
+KST = dt.timezone(dt.timedelta(hours=9))
+
+
+def _get_json(url, params=None, ua="Mozilla/5.0 (compatible; kcosmetics-dashboard)"):
+    full = url + ("?" + urllib.parse.urlencode(params, safe=":,") if params else "")
+    try:
+        req = urllib.request.Request(full, headers={"User-Agent": ua, "Referer": "https://finance.naver.com/"})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            raw = r.read()
+        for enc in ("utf-8", "euc-kr"):
+            try:
+                return json.loads(raw.decode(enc))
+            except Exception:  # noqa: BLE001
+                pass
+    except Exception as e:  # noqa: BLE001
+        log("시세 요청 실패:", url[:60], e)
+    return None
+
+
+def _n(v):
+    try:
+        return float(str(v).replace(",", ""))
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def quotes_naver(codes):
+    out = {}
+    j = _get_json(NAVER_MULTI, {"query": "SERVICE_ITEM:" + ",".join(codes)})
+    try:
+        ts = j["result"].get("time")
+        for d in j["result"]["areas"][0]["datas"]:
+            if d.get("nv"):
+                out[d["cd"]] = {"price": d["nv"], "chg_pct": round(_n(d.get("cr")) * (-1 if str(d.get("rf")) in ("4", "5") else 1), 2),
+                                "time": dt.datetime.fromtimestamp(ts / 1000, KST).strftime("%Y-%m-%d %H:%M") if ts else None}
+    except Exception:  # noqa: BLE001
+        pass
+    for c in [c for c in codes if c not in out]:  # 신형 엔드포인트
+        j = _get_json(NAVER_ONE + c)
+        try:
+            d = j["datas"][0]
+            out[c] = {"price": _n(d["closePrice"]), "chg_pct": _n(d.get("fluctuationsRatio")),
+                      "time": (d.get("localTradedAt") or "")[:16].replace("T", " ") or None}
+        except Exception:  # noqa: BLE001
+            pass
+    return out
+
+
+def quotes_yahoo(cfg, codes):
+    out = {}
+    mk = {c["code"]: c.get("market") for c in cfg}
+    for c in codes:
+        for suf in ((".KQ", ".KS") if mk.get(c) == "KOSDAQ" else (".KS", ".KQ")):
+            j = _get_json(YAHOO + c + suf, {"interval": "1d", "range": "5d"})
+            try:
+                m = j["chart"]["result"][0]["meta"]
+                p, pc = m["regularMarketPrice"], m.get("chartPreviousClose") or m.get("previousClose")
+                out[c] = {"price": p, "chg_pct": round((p / pc - 1) * 100, 2) if pc else None,
+                          "time": dt.datetime.fromtimestamp(m["regularMarketTime"], KST).strftime("%Y-%m-%d %H:%M")}
+                break
+            except Exception:  # noqa: BLE001
+                continue
+        time.sleep(0.3)
+    return out
+
+
+def update_quotes():
+    cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
+    codes = [c["code"] for c in cfg]
+    q = quotes_naver(codes)
+    src = "네이버 금융" if q else None
+    miss = [c for c in codes if c not in q]
+    if miss:
+        y = quotes_yahoo(cfg, miss)
+        if y:
+            q.update(y)
+            src = (src + " · " if src else "") + "Yahoo Finance"
+    if not q:
+        log("실시간 시세 수집 실패")
+        return False
+    save("quotes.json", {"source": src, "fetched": dt.datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"), "quotes": q})
+    log("시세:", len(q), "종목", src)
+    return True
+
 # ---------------------------------------------------------------- main
 def main():
-    # 사용법: python scripts/update.py [--only dart|kosis|customs|prices]
+    # 사용법: python scripts/update.py [--only dart|kosis|customs|prices|quotes]
     # DART는 해외 IP(GitHub Actions 등)에서 접속이 막혀 있어 국내 PC에서 --only dart 로 실행한다.
     only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     ran = []
@@ -440,6 +529,9 @@ def main():
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "prices"):
         if update_prices(os.environ["DATA_GO_KR_KEY"]):
             ran.append("주가")
+    if only in (None, "quotes"):
+        if update_quotes():
+            ran.append("실시간 주가")
     if os.getenv("DART_API_KEY") and only in (None, "dart"):
         ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:

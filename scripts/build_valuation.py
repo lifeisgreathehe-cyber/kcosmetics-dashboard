@@ -62,6 +62,8 @@ def implied_growth(target, E1, r, c, gT):
 def main():
     cos = load(P("docs", "data", "companies.json"), {}) or {}
     prices = (load(P("docs", "data", "prices.json"), {}) or {}).get("prices", {})
+    quotes = (load(P("docs", "data", "quotes.json"), {}) or {})
+    qsrc, quotes = quotes.get("source"), quotes.get("quotes", {})
     cfg = load(P("config", "valuation.json"), {}) or {}
     gT = cfg.get("terminal_growth", 2.0)
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
@@ -80,7 +82,12 @@ def main():
             continue
         snap = a["snapshot"]
         px = prices.get(code)
-        if px and px.get("price"):
+        qt = quotes.get(code)
+        shares0 = (px or {}).get("shares") or snap["shares"]
+        if qt and qt.get("price"):
+            price, pdate, psrc = qt["price"], qt.get("time"), qsrc or "실시간 시세"
+            mcap = round(price * shares0 / 1e6)
+        elif px and px.get("price"):
             price, pdate = px["price"], px.get("date")
             mcap = px.get("mcap") or round(price * snap["shares"] / 1e6)
             psrc = "금융위원회 주식시세정보"
@@ -93,7 +100,7 @@ def main():
             net_cash = (bs.get("cash") or 0) + (bs.get("st_fin") or 0) - (bs.get("debt") or 0)
         else:
             net_cash = snap.get("net_cash")
-        shares = round(mcap * 1e6 / price) if price else snap["shares"]
+        shares = shares0
         rec.update(price=price, price_date=pdate, price_source=psrc, mcap=mcap, shares=shares,
                    equity=equity, equity_source=eq_src, net_cash=net_cash,
                    dividend_yield=snap.get("dividend_yield"))
