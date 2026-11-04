@@ -428,6 +428,97 @@ def update_prices(key):
 
 
 
+
+# ---------------------------------------------------------------- DART 사업보고서 본문
+import re as _re
+DOCS = ROOT / "raw" / "dart_docs"
+
+
+def _xml_to_text(x: str) -> str:
+    x = _re.sub(r"(?is)<(script|style).*?</\1>", "", x)
+    x = _re.sub(r"(?i)</?(TR)[^>]*>", "\n", x)
+    x = _re.sub(r"(?i)<(TD|TH|TE|TU)[^>]*>", " | ", x)
+    x = _re.sub(r"(?i)<(P|BR|TITLE|SECTION-\d)[^>]*>", "\n", x)
+    x = _re.sub(r"<[^>]+>", "", x)
+    for a, b in (("&nbsp;", " "), ("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&cr;", "\n")):
+        x = x.replace(a, b)
+    x = _re.sub(r"[ \t ]+", " ", x)
+    x = _re.sub(r"\n\s*\n+", "\n", x)
+    return x.strip()
+
+
+def _section(text: str, start_pat: str, end_pat: str) -> str:
+    m = list(_re.finditer(start_pat, text))
+    if not m:
+        return ""
+    # 목차에 나온 첫 번째가 아닌, 본문이 가장 긴 구간을 고른다
+    best = ""
+    for st in m:
+        e = _re.search(end_pat, text[st.end():])
+        seg = text[st.start(): st.end() + (e.start() if e else 200000)]
+        if len(seg) > len(best):
+            best = seg
+    return best
+
+
+def dart_latest_reports(key, corp):
+    bgn = (TODAY - dt.timedelta(days=500)).strftime("%Y%m%d")
+    txt = http_get(f"{DART}/list.json", {"crtfc_key": key, "corp_code": corp, "bgn_de": bgn,
+                                         "end_de": TODAY.strftime("%Y%m%d"), "pblntf_ty": "A", "page_count": 100})
+    try:
+        items = json.loads(txt).get("list", [])
+    except Exception:  # noqa: BLE001
+        return []
+    items.sort(key=lambda i: i["rcept_dt"], reverse=True)
+    annual = next((i for i in items if i["report_nm"].strip().startswith("사업보고서")), None)
+    latest = next((i for i in items if _re.match(r"\s*(\[\S+\])?\s*(분기|반기|사업)보고서", i["report_nm"])), None)
+    out = []
+    for i in (annual, latest):
+        if i and i not in out:
+            out.append(i)
+    return out
+
+
+def update_dart_docs(key):
+    cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
+    codes = dart_corp_codes(key)
+    if not codes:
+        log("DART corpCode 조회 실패 — 사업보고서 수집 건너뜀")
+        return False
+    DOCS.mkdir(parents=True, exist_ok=True)
+    n = 0
+    for c in cfg:
+        corp = codes.get(c["code"])
+        if not corp:
+            continue
+        reps = []
+        for r in dart_latest_reports(key, corp):
+            body = http_get(f"{DART}/document.xml", {"crtfc_key": key, "rcept_no": r["rcept_no"]}, raw=True)
+            if not body or body[:2] != b"PK":
+                continue
+            try:
+                z = zipfile.ZipFile(io.BytesIO(body))
+                main_name = max(z.namelist(), key=lambda nm: z.getinfo(nm).file_size)
+                raw = z.read(main_name)
+                x = raw.decode("utf-8", errors="ignore")
+                if "사업" not in x:
+                    x = raw.decode("euc-kr", errors="ignore")
+            except Exception as e:  # noqa: BLE001
+                log("문서 해제 실패:", c["name"], e)
+                continue
+            t = _xml_to_text(x)
+            biz = _section(t, r"I{1,2}\.\s*사업의\s*내용", r"\n\s*I{2,3}\.\s*재무에\s*관한\s*사항")
+            reps.append({"report_nm": r["report_nm"].strip(), "rcept_no": r["rcept_no"], "rcept_dt": r["rcept_dt"],
+                         "url": f"https://dart.fss.or.kr/dsaf001/main.do?rcpNo={r['rcept_no']}",
+                         "business": biz[:150000], "chars": len(biz)})
+            time.sleep(0.3)
+        if reps:
+            (DOCS / f"{c['code']}.json").write_text(json.dumps({"code": c["code"], "name": c["name"],
+                "fetched": TODAY.isoformat(), "reports": reps}, ensure_ascii=False, indent=1), "utf-8")
+            n += 1
+            log("사업보고서:", c["name"], [r["report_nm"] for r in reps])
+    return n > 0
+
 # ---------------------------------------------------------------- 실시간(장중) 주가
 NAVER_MULTI = "https://polling.finance.naver.com/api/realtime"
 NAVER_ONE = "https://polling.finance.naver.com/api/realtime/domestic/stock/"
@@ -536,6 +627,8 @@ def main():
         ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:
             ran.append("DART")
+        if update_dart_docs(os.environ["DART_API_KEY"].strip().split("=")[-1].strip()):
+            ran.append("DART 사업보고서")
     try:  # 실적·주가가 바뀌면 PER·ROE·PBR과 내재가치를 다시 계산
         sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
         import build_valuation
