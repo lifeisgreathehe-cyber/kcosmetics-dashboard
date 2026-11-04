@@ -1,0 +1,10 @@
+[
+  {"file":"mfds_industry.json","orgId":"145","tblId":"DT_145011_A009","itmId":"ALL","objL1":"DATA","prdSe":"Y","start":"2007","series_key":"ITM_NM","flat":true},
+  {"file":"production_by_type.json","orgId":"145","tblId":"DT_145011_A013","itmId":"T001","objL1":"ALL","prdSe":"Y","start":"2016","series_key":"C1_NM",
+   "rename":{"기초화장용 제품류":"기초화장용","색조화장용 제품류":"색조화장용","두발용 제품류":"두발용","인체세정용 제품류":"인체세정용","눈화장용 제품류":"눈화장용","면도용 제품류":"면도용","손발톱용 제품류":"손발톱용","영.유아용 제품류":"영유아용","방향용 제품류":"방향용","두발염색용 제품류":"두발염색용","목욕용 제품류":"목욕용","체취방지용 제품류":"체취방지용","체모제거용 제품류":"체모제거용"}},
+  {"file":"export_top10.json","orgId":"145","tblId":"DT_145011_A008","itmId":"ALL","objL1":"ALL","prdSe":"Y","start":"2016","kind":"ranked"},
+  {"file":"online_cosmetics.json","orgId":"101","tblId":"DT_1KE10051","itmId":"ALL","objL1":"010","objL2":"00","prdSe":"M","start":"201701","series_key":"ITM_NM","single":true},
+  {"file":"crossborder_cosmetics.json","orgId":"101","tblId":"DT_1KE10081","itmId":"T10","objL1":"A0+A1+A2+A3+A4","objL2":"B09","objL3":"C0","prdSe":"Q","start":"201801","series_key":"C1_NM"},
+  {"file":"retail_index_cosmetics.json","orgId":"101","tblId":"DT_1K41014","itmId":"T1","objL1":"A1G33+A3G33+A7G33+A8G33","prdSe":"M","start":"202001","series_key":"C1",
+   "rename":{"A1G33":"백화점","A3G33":"면세점","A7G33":"전문소매점","A8G33":"무점포소매"}}
+]
