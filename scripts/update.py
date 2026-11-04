@@ -133,8 +133,8 @@ def update_dart(key):
     old = {c["code"]: c for c in store.get("companies", [])}
     codes = dart_corp_codes(key)
     if not codes:
-        log("DART corpCode 조회 실패 — 재무 갱신 건너뜀")
-        return
+        log("DART corpCode 조회 실패 — 재무 갱신 건너뜀 (DART는 해외 IP 접속이 막혀 있어요)")
+        return False
     last_year = TODAY.year - 1
     years_a = list(range(last_year - 9, last_year + 1))
     years_q = list(range(TODAY.year - 4, TODAY.year + 1))
@@ -176,6 +176,7 @@ def update_dart(key):
             result.append(rec)
     store = {"updated": TODAY.isoformat(), "companies": result}
     save("companies.json", store)
+    return True
 
 
 # ---------------------------------------------------------------- KOSIS
@@ -364,13 +365,25 @@ def update_customs(key):
 
 # ---------------------------------------------------------------- main
 def main():
+    # 사용법: python scripts/update.py [--only dart|kosis|customs]
+    # DART는 해외 IP(GitHub Actions 등)에서 접속이 막혀 있어 국내 PC에서 --only dart 로 실행한다.
+    only = sys.argv[sys.argv.index("--only") + 1] if "--only" in sys.argv else None
     ran = []
-    if os.getenv("KOSIS_API_KEY"):
+    if os.getenv("KOSIS_API_KEY") and only in (None, "kosis"):
         update_kosis(os.environ["KOSIS_API_KEY"]); ran.append("KOSIS")
-    if os.getenv("DATA_GO_KR_KEY"):
+    if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs"):
         update_customs(os.environ["DATA_GO_KR_KEY"]); ran.append("관세청")
-    if os.getenv("DART_API_KEY"):
-        update_dart(os.environ["DART_API_KEY"]); ran.append("DART")
+    if os.getenv("DART_API_KEY") and only in (None, "dart"):
+        ok = update_dart(os.environ["DART_API_KEY"])
+        if ok:
+            ran.append("DART")
+    if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다
+        meta = load("meta.json") or {}
+        meta["sources_updated"] = sorted(set(meta.get("sources_updated", [])) | set(ran))
+        meta[f"last_run_{only}"] = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST")
+        save("meta.json", meta)
+        log("완료:", ran)
+        return
     meta = load("meta.json") or {}
     meta["last_run"] = dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST")
     meta["sources_updated"] = ran
