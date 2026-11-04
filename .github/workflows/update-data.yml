@@ -44,5 +44,5 @@ jobs:
             echo "변경 없음"
           else
             git commit -m "data: 자동 갱신 $(date -u +%Y-%m-%d)"
-            git push
+            git pull --rebase -q && git push
           fi
