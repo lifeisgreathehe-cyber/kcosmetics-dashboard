@@ -273,9 +273,10 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep'];
+  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
+  try{const r=await fetch('https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/chem/data/news.json?t='+Date.now());if(r.ok){const x=await r.json();if(!D.news||(x.fetched||'')>(D.news.fetched||''))D.news=x}}catch(e){}
 }
 
 /* ---------------- 산업 ---------------- */
@@ -498,7 +499,8 @@ function renderDeep(c){
    <p>${g.summary}</p>
    <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
    ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
-   ${x.news&&x.news.length?`<h4>최근 뉴스와 읽는 법 (${dp.updated} 기준)</h4><ul class="nlist">${x.news.map(n=>`<li><span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'긍정',neg:'부정',neu:'중립'}[n.impact]||'중립'}</span><span class="sub">${n.date} · ${n.src}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a><br>${n.read}</li>`).join('')}</ul>`:''}
+   ${x.news&&x.news.length?`<h4>최근 뉴스와 읽는 법 (${dp.news_asof||dp.updated} 기준)</h4><ul class="nlist">${x.news.map(n=>`<li><span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'긍정',neg:'부정',neu:'중립'}[n.impact]||'중립'}</span><span class="sub">${n.date} · ${n.src}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a><br>${n.read}</li>`).join('')}</ul>`:''}
+   ${(()=>{const seen=new Set((x.news||[]).map(n=>n.title));const A=(((D.news&&D.news.companies)||{})[c.code]||[]).filter(n=>!seen.has(n.title)).slice(0,10);return A.length?`<h4>오늘까지의 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched} · ${D.news.source}</span></h4><ul>${A.map(n=>`<li><span class="sub">${(n.date||'').slice(5)} ${n.office||''}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''})()}
    <div class="dgrid">
     <div><h4>제품·서비스</h4><p>${x.products}</p></div>
     <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
