@@ -1,0 +1,75 @@
+[
+ {
+  "file": "refining_index.json",
+  "title": "석유정제품 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C192",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "chem_index.json",
+  "title": "화학물질·화학제품 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수, 의약품 제외)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C20",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "export_price.json",
+  "title": "석유제품·화학제품 수출물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 달러기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+  "orgId": "301",
+  "tblId": "DT_402Y014",
+  "itmId": "ALL",
+  "objL1": "13102134642ACC_CD.304AA+13102134642ACC_CD.30511AA+13102134642ACC_CD.305AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "달러기준"
+  },
+  "rename": {
+   "석탄및석유제품": "석유제품"
+  }
+ },
+ {
+  "file": "crude_price.json",
+  "title": "원유 수입물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+  "orgId": "301",
+  "tblId": "DT_401Y017",
+  "itmId": "ALL",
+  "objL1": "13102134644ACC_CD.20112101AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C2_NM",
+  "rename": {}
+ }
+]

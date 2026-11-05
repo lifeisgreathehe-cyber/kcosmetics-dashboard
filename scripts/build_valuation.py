@@ -85,7 +85,15 @@ def main(industry="cosmetics"):
             ttm = {m: sum((Q[k].get(m) or 0) for k in ks) for m in ("rev", "op", "ni")}
             rec["ttm"] = dict(ttm, period=f"{ks[0]}~{ks[-1]}")
         dft = cfg.get("default")
-        if not a and dft and rec.get("ttm") and rec["ttm"]["ni"] > 0:
+        if not a and dft and dft.get("E1_years"):
+            # 경기순환 업종: 최근 N개 연도 지배순이익 평균(사이클 평균)을 정상 이익으로 쓰는 자동 가정
+            A = co.get("annual", {}) or {}
+            ys = [A[y].get("ni") for y in sorted(A)[-dft["E1_years"]:] if A[y].get("ni") is not None]
+            if len(ys) >= 3 and sum(ys) > 0:
+                a = dict(dft, E1=round(sum(ys) / len(ys) / 100))
+                a["note"] = dft.get("note", "").replace("{n}", str(len(ys)))
+                rec["auto"] = True
+        elif not a and dft and rec.get("ttm") and rec["ttm"]["ni"] > 0:
             # 개별 가정이 없는 회사: 최근 4개 분기 순이익을 그대로 쓰는 자동 가정
             a = dict(dft, E1=round(rec["ttm"]["ni"] / 100))
             rec["auto"] = True

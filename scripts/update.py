@@ -23,7 +23,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# --industry semi : 반도체 대시보드 (config/semi → docs/semi/data, raw/semi/dart_docs)
+# --industry semi|chem : 업종별 대시보드 (config/<업종> → docs/<업종>/data, raw/<업종>/dart_docs)
 INDUSTRY = sys.argv[sys.argv.index("--industry") + 1] if "--industry" in sys.argv else "cosmetics"
 if INDUSTRY == "cosmetics":
     DATA = ROOT / "docs" / "data"
@@ -747,9 +747,9 @@ def main():
         build_valuation.main(INDUSTRY)
     except Exception as e:
         log("밸류에이션 계산 실패:", e)
-    if INDUSTRY == "semi" and only in (None, "dart", "dart_docs"):
-        try:  # 새로 받은 회사도 리뷰(자동 정리)가 보이게
-            sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "semi"))
+    if (ROOT / "scripts" / INDUSTRY / "build_reviews.py").exists() and only in (None, "dart", "dart_docs"):
+        try:  # 새로 받은 회사도 리뷰(자동 정리)가 보이게 (scripts/<업종>/build_reviews.py)
+            sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), INDUSTRY))
             import build_reviews
             build_reviews.main()
         except Exception as e:
