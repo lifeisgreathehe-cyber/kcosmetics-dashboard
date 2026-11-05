@@ -62,6 +62,27 @@ def implied_growth(target, E1, r, c, gT):
     return round((lo + hi) / 2, 1)
 
 
+def midcycle(annual, ttm_rev, cyc):
+    """여러 해 연간 순이익률 평균 × 최근 4분기 매출 = 사이클 평균 이익(백만원)."""
+    if not annual or not ttm_rev:
+        return None
+    lo, hi = (cyc.get("years") or [0, 9999])
+    ex = set(cyc.get("exclude") or [])
+    ys = [y for y in sorted(annual)
+          if annual[y].get("rev") and annual[y].get("ni") is not None
+          and lo <= int(y) <= hi and int(y) not in ex][-8:]
+    if not ys:
+        return None
+    m = {y: annual[y]["ni"] / annual[y]["rev"] * 100 for y in ys}
+    vals = sorted(m.values())
+    used = vals[1:-1] if len(vals) >= 5 else vals
+    avg = sum(used) / len(used)
+    return {"years": f"{ys[0]}~{ys[-1]}", "n": len(ys), "trimmed": len(vals) >= 5,
+            "excluded": sorted(ex), "margins": {y: round(v, 1) for y, v in m.items()},
+            "avg_margin": round(avg, 1), "min": round(vals[0], 1), "max": round(vals[-1], 1),
+            "ni": round(avg / 100 * ttm_rev)}
+
+
 def main(industry="cosmetics"):
     dd = ("docs", "data") if industry == "cosmetics" else ("docs", industry, "data")
     cd = ("config",) if industry == "cosmetics" else ("config", industry)
@@ -75,7 +96,12 @@ def main(industry="cosmetics"):
     manual = {c["code"]: c["shares"] for c in (load(P(*cd, "companies.json"), []) or []) if c.get("shares")}
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
            "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
-    for co in cos.get("companies", []):
+    out["industry_cycle"] = cfg.get("industry_cycle", {})
+    norm_ratio = {}
+    # 다른 회사의 사이클 조정 비율을 따르는 회사(follow)는 뒤에서 계산
+    order = sorted(cos.get("companies", []),
+                   key=lambda c: 1 if ((cfg.get("companies", {}).get(c["code"]) or {}).get("cycle") or {}).get("follow") else 0)
+    for co in order:
         code = co["code"]
         a = cfg.get("companies", {}).get(code)
         Q = co.get("quarterly", {}) or {}
@@ -144,7 +170,24 @@ def main(industry="cosmetics"):
         if not a:
             out["companies"][code] = rec
             continue
-        E1 = a["E1"] * 100  # 억원 → 백만원
+        E1f = a["E1"] * 100  # 억원 → 백만원 (향후 12개월 전망 이익)
+        cyc = a.get("cycle") or {}
+        w = cyc.get("w_mid", 0) or 0
+        mc = midcycle(co.get("annual"), (t or {}).get("rev"), cyc) if cyc and not cyc.get("follow") else None
+        if cyc.get("follow"):
+            E1 = round(E1f * norm_ratio.get(cyc["follow"], 1.0))
+            basis = f"{cyc['follow']} 사이클 조정 비율 적용"
+        elif mc and w:
+            E1 = round(w * mc["ni"] + (1 - w) * E1f)
+            basis = f"사이클 평균 이익 {w:.0%} + 전망 이익 {1 - w:.0%}"
+        else:
+            E1, basis = E1f, "전망 이익 100%"
+        norm_ratio[code] = E1 / E1f if E1f else 1.0
+        if cyc:
+            rec["cycle"] = {"phase": cyc.get("phase"), "note": cyc.get("note", ""), "w_mid": w,
+                            "follow": cyc.get("follow"), "industry": out["industry_cycle"].get(co.get("group"), ""),
+                            "midcycle": mc, "ttm_margin": round(t["ni"] / t["rev"] * 100, 1) if t and t.get("rev") else None,
+                            "ttm_ni": t["ni"] if t else None, "E1_fwd": E1f, "E1_basis": basis}
         # 순현금은 따로 더하고, 그 이자(세후 약 2%)는 영업 이익에서 뺀다 (순차입이면 반대)
         nc = (net_cash or 0) if a.get("nc_adj", True) else 0  # 비지배지분이 큰 지주·연결사는 제외
         E_op = E1 - nc * NC_YIELD
@@ -155,10 +198,13 @@ def main(industry="cosmetics"):
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
-                      "fwd_per": round(mcap / E1, 1), "scenarios": sc,
+                      "fwd_per": round(mcap / E1f, 1) if E1f else None,
+                      "norm_per": round(mcap / E1, 1) if E1 > 0 else None, "scenarios": sc,
                       "implied_g": implied_growth(mcap - nc, E_op, a["r"], a["c"], gT),
                       "net_cash_added": nc}
         out["companies"][code] = rec
+    out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
+                        if c["code"] in out["companies"]}
     with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     print("valuation.json:", len(out["companies"]), "개사")
