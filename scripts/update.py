@@ -506,6 +506,92 @@ def update_customs(key):
             "series": {n: [round(s.get(m, 0) / 1e6, 2) if m in s else None for m in months] for n, s in cs.items()},
             "updated": TODAY.isoformat()})
 
+# ---------------------------------------------------------------- 지역별 연간 수출액 (관세청 품목별 국가별)
+REGION_OF = {}
+for _r, _cs in {
+    "북미": "US CA", "중화권": "CN HK TW MO", "일본": "JP",
+    "동남아": "VN TH SG MY ID PH KH MM LA BN",
+    "유럽": "GB FR DE NL PL ES IT BE SE CZ HU AT IE DK SK RO LT LV EE FI PT GR CH NO BG HR SI LU CY MT",
+    "러시아·CIS": "RU KZ KG UZ UA BY AZ AM GE TJ TM MD",
+    "중동": "AE SA IL TR KW QA IQ OM BH JO LB IR EG",
+    "중남미": "MX BR CL PE CO AR EC GT PA CR DO",
+    "오세아니아": "AU NZ", "기타 아시아": "IN MN BD PK LK NP KR"}.items():
+    for _c in _cs.split():
+        REGION_OF[_c] = _r
+REGION_ORDER = ["북미", "중화권", "일본", "동남아", "유럽", "러시아·CIS", "중동", "중남미", "오세아니아", "기타 아시아", "기타"]
+
+
+def update_regions(key):
+    """화장품(HS 3303·3304·3305·3307) 연간 수출액을 국가별로 받아 지역으로 묶는다. 국가를 지정하지 않고 요청해
+    전 세계 국가 행을 한 번에 받고, 지난 연도는 raw/region_cache.json에 저장해 다시 받지 않는다."""
+    hs_list = CUSTOMS.get("region_hs") or list(HS_GROUPS)
+    start_y = int(CUSTOMS.get("region_start_year", 2016))
+    end = TODAY.replace(day=1) - dt.timedelta(days=1)
+    cache_p = RAW / "region_cache.json"
+    cache = json.loads(cache_p.read_text("utf-8")) if cache_p.exists() else {}
+    for hs in hs_list:
+        for y in range(start_y, end.year + 1):
+            k = f"{hs}:{y}"
+            if k in cache and y < end.year:
+                continue
+            e = f"{y}12" if y < end.year else end.strftime("%Y%m")
+            txt = http_get(NATION_URL, {"serviceKey": key, "strtYymm": f"{y}01", "endYymm": e, "hsSgn": hs})
+            items = parse_items(txt) if txt else []
+            if not items:
+                log(f"지역별: 응답 없음 HS {hs} {y}", (txt or "")[:200].replace(key, "***"))
+                continue
+            if any(it.get("hsCd") == hs for it in items):
+                items = [it for it in items if it.get("hsCd") == hs]
+            byc = {}
+            for it in items:
+                if "." not in (it.get("year") or ""):  # 총계 행 제외
+                    continue
+                cc = (it.get("statCd") or "").strip()
+                v = num(it.get("expDlr"))
+                if cc and v:
+                    byc[cc] = byc.get(cc, 0) + v
+                    if it.get("statCdCntnKor1"):
+                        cache.setdefault("_names", {})[cc] = it["statCdCntnKor1"]
+            if len(byc) < 3:
+                log(f"지역별: 국가 구분이 없는 응답(HS {hs} {y}) — 필드:", list(items[0].keys()))
+                continue
+            cache[k] = {"months": e[4:], "by_country": byc}
+            time.sleep(0.3)
+        RAW.mkdir(parents=True, exist_ok=True)
+        cache_p.write_text(json.dumps(cache, ensure_ascii=False), "utf-8")
+    years = sorted({k.split(":")[1] for k in cache if ":" in k})
+    if not years:
+        log("지역별 수출 데이터 없음")
+        return False
+    reg = {r: [] for r in REGION_ORDER}
+    other = {}
+    partial = {}
+    for y in years:
+        tot = {r: 0 for r in REGION_ORDER}
+        for hs in hs_list:
+            d = cache.get(f"{hs}:{y}")
+            if not d:
+                continue
+            if d["months"] != "12":
+                partial[y] = d["months"]
+            for cc, v in d["by_country"].items():
+                r = REGION_OF.get(cc, "기타")
+                tot[r] += v
+                if r == "기타":
+                    other[cc] = other.get(cc, 0) + v
+        for r in REGION_ORDER:
+            reg[r].append(round(tot[r] / 1e6, 1))
+    names = cache.get("_names", {})
+    top_other = sorted(other.items(), key=lambda x: -x[1])[:8]
+    save("export_regions.json", {
+        "title": "지역별 연간 화장품 수출액", "unit": "백만 달러",
+        "source": "관세청 품목별 국가별 수출입실적 (HS " + "·".join(hs_list) + ")",
+        "url": "https://www.data.go.kr/data/15101609/openapi.do", "years": years, "partial": partial,
+        "regions": reg, "other_top": [[names.get(c, c), round(v / 1e6, 1)] for c, v in top_other],
+        "updated": TODAY.isoformat()})
+    log("지역별 수출:", years[0], "~", years[-1])
+    return True
+
 
 # ---------------------------------------------------------------- 주가·시가총액 (금융위원회_주식시세정보, data.go.kr)
 PRICE_URL = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo"
@@ -854,6 +940,9 @@ def main():
         update_kosis(os.environ["KOSIS_API_KEY"]); ran.append("KOSIS")
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs"):
         update_customs(os.environ["DATA_GO_KR_KEY"]); ran.append("관세청")
+    if os.getenv("DATA_GO_KR_KEY") and only in (None, "regions") and INDUSTRY == "cosmetics":
+        if update_regions(os.environ["DATA_GO_KR_KEY"]):
+            ran.append("지역별 수출")
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "prices"):
         if update_prices(os.environ["DATA_GO_KR_KEY"]):
             ran.append("주가")

@@ -1,0 +1,32 @@
+name: 지역별 연간 화장품 수출 갱신
+
+on:
+  schedule:
+    - cron: "30 1 17 * *"   # 매월 17일 10:30 KST (관세청 전월 확정치 반영 후)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  regions:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 관세청 국가별 수출 수집
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: python scripts/update.py --only regions
+      - name: main 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/export_regions.json raw/region_cache.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 지역별 연간 수출 $(TZ=Asia/Seoul date +%Y-%m-%d)"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi
