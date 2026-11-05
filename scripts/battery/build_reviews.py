@@ -48,8 +48,22 @@ def main():
     for f in sorted(glob.glob(os.path.join(HERE, "reviews_*.py"))):
         R.update(importlib.import_module(os.path.basename(f)[:-3]).R)
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/battery/data/companies.json"), encoding="utf-8"))["companies"]}
-    out = {"updated": UPDATED,
-           "period": "2026년 3분기 실적 발표(LG엔솔·삼성SDI·SK온·에코프로비엠·포스코퓨처엠·롯데에너지머티·SKC 등)와 2026-11-05까지의 기사",
+    # 매일 추가하는 뉴스 해석: news_add_YYYYMMDD.py 의 ADD = {종목코드 또는 "@그룹명" 또는 "@all": [뉴스 튜플]}
+    asof = UPDATED
+    for f in sorted(glob.glob(os.path.join(HERE, "news_add_*.py"))):
+        m = importlib.import_module(os.path.basename(f)[:-3])
+        asof = max(asof, getattr(m, "ASOF", asof))
+        for key, items in m.ADD.items():
+            codes = [c for c, co in cos.items() if key == "@all" or key == "@" + co.get("group", "")] if key.startswith("@") else [key]
+            for c in codes:
+                if c in R:
+                    have = {n[1] for n in R[c]["news"]}
+                    R[c]["news"] = R[c]["news"] + [n for n in items if n[1] not in have]
+        for code, upd in getattr(m, "UPD", {}).items():  # 평가·제목 갱신
+            if code in R:
+                R[code].update(upd)
+    out = {"updated": UPDATED, "news_asof": None,
+           "period": "2026년 3분기 실적 발표(LG엔솔·삼성SDI·SK온·에코프로비엠·포스코퓨처엠·롯데에너지머티·SKC 등)와 최신 기사",
            "disclaimer": "공시와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다. 각 기사 아래 '이렇게 보세요'는 기사 내용이 회사 가치에 어떤 의미인지에 대한 해석이에요.",
            "companies": {}}
     for code, co in cos.items():
@@ -68,6 +82,7 @@ def main():
             "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""), "mix_title": "", "mix": [],
                     "points": r.get("points", [])} if rep else None,
         }
+    out["news_asof"] = asof
     missing = sorted(set(cos) - set(out["companies"]))
     with open(os.path.join(ROOT, "docs/battery/data/reviews.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
