@@ -86,6 +86,7 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .rv h3{font-size:15px;font-weight:600;margin:4px 0 10px;text-wrap:balance}
 .rv h4{font-size:12.5px;font-weight:600;color:var(--ink-2);margin:14px 0 4px;letter-spacing:.02em}
 .rv ul{margin:0;padding-left:18px} .rv li{margin-bottom:4px}
+.nlist{list-style:none;padding-left:0!important} .nlist li{margin-bottom:10px;max-width:90ch}
 .rv p{margin:0;max-width:80ch}
 .mixbar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:10px 0 6px;gap:2px}
 .mixbar span{display:block;height:100%}
@@ -491,6 +492,13 @@ function renderDeep(c){
   const mk=s=>s===2?['●','m2','충족']:s===1?['◐','m1','부분']:['○','m0','미흡'];
   const fs=x.fisher_score, fmax=x.fisher.length*2;
   return `<h2 style="margin-top:22px">심층 분석</h2><p class="sub">${dp.source} · 작성 ${dp.updated}</p>
+   ${x.explain?`<h4>주요 제품 이해하기${x.explain.title?` · ${x.explain.title}`:''}</h4>
+   ${x.explain.sections.map(t=>`<p><b>${t.h}</b> ${t.p}</p>`).join('')}`:''}
+   ${x.diagnosis?(()=>{const g=x.diagnosis,dt={'pos':'pos','neg':'neg'}[g.tone]||'neu';return `<h4>실적 진단: 사이클 때문인가, 경쟁력 때문인가 <span class="tone ${dt}" style="margin-left:6px">${g.verdict}</span></h4>
+   <p>${g.summary}</p>
+   <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+   ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
+   ${x.news&&x.news.length?`<h4>최근 뉴스와 읽는 법 (${dp.updated} 기준)</h4><ul class="nlist">${x.news.map(n=>`<li><span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'긍정',neg:'부정',neu:'중립'}[n.impact]||'중립'}</span><span class="sub">${n.date} · ${n.src}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a><br>${n.read}</li>`).join('')}</ul>`:''}
    <div class="dgrid">
     <div><h4>제품·서비스</h4><p>${x.products}</p></div>
     <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
@@ -513,7 +521,8 @@ function renderDeep(c){
 const VERD=u=>u==null?['–','neu']:u>=20?['저평가 구간','pos']:u<=-20?['기대 선반영','neg']:['적정 범위','neu'];
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
-  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`;return}
+  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2>`+(v.skip?`<h3><span class="tone neu">계산 보류</span>사이클 위치: ${v.cycle&&v.cycle.position||'–'}</h3><p>${v.skip}</p>${v.cycle&&v.cycle.note?`<h4>업황 사이클</h4><p>${v.cycle.note}</p>`:''}${v.hist?`<p class="sub">참고: ${v.hist.years}년 순이익률 범위 ${v.hist.margin_range[0]}%~${v.hist.margin_range[1]}%, PBR ${ratio(v.pbr,2,'배')}</p>`:''}`:`<p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`);return}
+  const cy=d.cycle, h=v.hist;
   const S0=d.scenarios, [vt,vc]=VERD(S0.base.upside);
   const kp=(l,val,sub='')=>`<div class="kpi"><div class="l">${l}</div><div class="v">${val}</div><div class="s">${sub}</div></div>`;
   const ig=d.implied_g;
@@ -525,14 +534,18 @@ function renderValueReport(c){
      ${kp('시가총액',fmt(eok(v.mcap))+'억',`순현금 ${fmt(eok(v.net_cash))}억`)}
      ${kp('PER (TTM)',v.per!=null?v.per.toFixed(1)+'배':'적자',`TTM 순이익 ${fmt(eok(v.ttm&&v.ttm.ni))}억`)}
      ${kp('ROE (TTM)',ratio(v.roe,1,'%'),`PBR ${ratio(v.pbr,2,'배')}`)}
-     ${kp('선행 PER',d.fwd_per.toFixed(1)+'배',`정상화 이익 ${fmt(eok(d.E1))}억 기준`)}
+     ${kp('정상 PER',d.fwd_per.toFixed(1)+'배',`사이클 평균 정상 이익 ${fmt(eok(d.E1))}억 기준`)}
+     ${cy?kp('사이클 위치',cy.position,cy.excess_value?`초과 이익 가치 ${fmt(eok(cy.excess_value))}억 반영`:'초과 이익 반영 안 함'):''}
      ${kp('역DCF 내재 성장률',igTxt,'1~5년차 연평균, 시가총액 정당화')}
    </div>
    <div class="tbl"><table><thead><tr><th class="l">시나리오</th><th>1~5년 이익 성장률</th><th>주주가치(억원)</th><th>주당 적정가(원)</th><th>현재가 대비</th></tr></thead><tbody>
    ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
    </tbody></table></div>
-   <h4>해석</h4><p>${gap} ${d.note}.</p>
-   <h4>가정</h4><p>정상화 지배순이익 ${fmt(eok(d.E1))}억원(${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
+   ${cy?`<h4>업황 사이클 판단</h4><p>${cy.note}</p>`:''}
+   <h4>정상 이익은 이렇게 정했어요</h4><p>${h?`과거 실적 기준(${h.years}, ${h.n}년): 순이익률은 ${h.margin_range[0]}%~${h.margin_range[1]}% 사이를 오갔고, 가장 좋은 해와 나쁜 해를 뺀 평균은 ${h.margin}%예요. 매출 추세선(연 ${h.trend_g}% 성장)으로 본 지금의 정상 매출 ${fmt(eok(h.trend_rev))}억원(최근 4분기 실제 ${fmt(eok(h.ttm_rev))}억원)에 평균 이익률을 곱하면 ${fmt(eok(h.norm_ni))}억원이에요. `:''}${d.note.replace(/\.$/,'')}.</p>
+   ${cy&&cy.path&&cy.path.length?`<p>최근 4분기 순이익 ${fmt(eok(v.ttm.ni))}억원은 정상 이익보다 ${fmt(eok(Math.abs(cy.excess)))}억원 ${cy.excess>=0?'많아요':'적어요'}. 사이클 위치(${cy.position})를 보고 이 차이가 앞으로 ${cy.path.length}년간 ${cy.path.map(x=>Math.round(x*100)+'%').join(' → ')}만큼 이어진다고 보고, 그 현재가치 ${fmt(eok(cy.excess_value))}억원을 ${cy.excess_value>=0?'더했어요':'뺐어요'}.</p>`:cy?`<p>최근 4분기 이익과 정상 이익의 차이는 일회성이거나 작아서 따로 더하거나 빼지 않았어요.</p>`:''}
+   <h4>해석</h4><p>${gap}</p>
+   <h4>가정</h4><p>사이클 평균 정상 지배순이익 ${fmt(eok(d.E1))}억원(${D.valuation.asof||D.reviews?.updated||''} 기준)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/chem/valuation.json에서 바꿀 수 있어요.</p>`;
 }
 function finTable(keys,get,prevKey){
@@ -599,12 +612,12 @@ function renderValuation(){
         tooltip:{callbacks:{label:x=>{const v=ch[x.dataIndex],S0=v.dcf.scenarios;return x.datasetIndex===0?`비관 ${pct(S0.bear.upside)} ~ 낙관 ${pct(S0.bull.upside)}`:`기준 ${fmt(S0.base.per_share)}원 (${pct(S0.base.upside)})`}}}},
       scales:{x:{ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false},min:-80,max:150},
               y:{type:'category',labels:ch.map(v=>v.name),ticks:{color:css('--ink-2'),font:{size:12}},grid:{display:false}}}})});
-  const G={name:v=>v.name,price:v=>v.price,mcap:v=>v.mcap,ni:v=>v.ttm?.ni,per:v=>v.per,pbr:v=>v.pbr,roe:v=>v.roe,fper:v=>v.dcf.fwd_per,ig:v=>v.dcf.implied_g,
+  const G={name:v=>v.name,cyc:v=>v.dcf.cycle?.position,price:v=>v.price,mcap:v=>v.mcap,ni:v=>v.ttm?.ni,per:v=>v.per,pbr:v=>v.pbr,roe:v=>v.roe,fper:v=>v.dcf.fwd_per,ig:v=>v.dcf.implied_g,
     bear:v=>v.dcf.scenarios.bear.per_share,base:v=>v.dcf.scenarios.base.per_share,bull:v=>v.dcf.scenarios.bull.per_share,up:v=>v.dcf.scenarios.base.upside,bg:v=>v.dcf.scenarios.base.g};
   const rows=sortRows(rows0,valSort||['up',-1],G);
   const th=(k,t)=>{const st=valSort||['up',-1];return `<th class="sort${k==='name'?' l':''}" data-k="${k}" ${k!=='name'?'data-num="1"':''} title="눌러서 정렬">${t}<span class="sarr">${st[0]===k?(st[1]>0?'▲':'▼'):'↕'}</span></th>`};
-  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','선행 PER')}${th('ig','내재 성장률')}${th('bg','기준 가정')}${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
-    <td class="l">${v.name} <span class="pill">${v.group}</span></td><td class="num">${fmt(v.price)}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${fmt(eok(v.ttm&&v.ttm.ni))}</td>
+  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('cyc','사이클')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','정상 PER')}${th('ig','내재 성장률')}${th('bg','기준 가정')}${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
+    <td class="l">${v.name} <span class="pill">${v.group}</span></td><td class="l">${v.dcf.cycle?.position||'–'}</td><td class="num">${fmt(v.price)}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${fmt(eok(v.ttm&&v.ttm.ni))}</td>
     <td class="num">${v.per!=null?v.per.toFixed(1):'적자'}</td><td class="num">${ratio(v.pbr,2)}</td><td class="num">${ratio(v.roe,1,'%')}</td><td class="num">${v.dcf.fwd_per.toFixed(1)}</td>
     <td class="num">${v.dcf.implied_g==null?'–':v.dcf.implied_g.toFixed(1)+'%'}</td><td class="num">${S0.base.g}%</td>
     <td class="num">${fmt(S0.bear.per_share)}</td><td class="num">${fmt(S0.base.per_share)}</td><td class="num">${fmt(S0.bull.per_share)}</td><td class="num ${cls(S0.base.upside)}">${pct(S0.base.upside)}</td><td class="l"><span class="tone ${vc}">${vt}</span></td></tr>`}).join('')}</tbody>`;
@@ -612,12 +625,14 @@ function renderValuation(){
   $('#val-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{cur=tr.dataset.code;location.hash='#companies';setTimeout(()=>{selectCo(cur);document.getElementById('co-review').scrollIntoView({block:'start'})},50)};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
   $('#val-method').innerHTML=`<ul>
    <li><b>PER·ROE·PBR</b>: 최근 4개 분기 지배주주순이익 합계(TTM)로 PER과 ROE를 계산하고, PBR은 가장 최근 자기자본 기준이에요. 자기자본은 DART 재무상태표가 수집되면 그 값을, 아니면 공개 집계의 PBR에서 역산한 값을 써요.</li>
-   <li><b>사이클 정상화</b>: 정유·석유화학은 유가·스프레드에 따라 이익이 몇 배씩 출렁이는 경기순환 업종이라, 최근 1년 이익을 그대로 쓰면 호황기엔 비싸게, 불황기엔 싸게 평가하는 실수를 해요. 그래서 정상 이익은 사이클 평균(회사별 검토 전에는 최근 7개 연도 지배순이익 평균)을 기준으로 잡고, 회사별로 현재 사이클 위치(고점·회복·저점)와 구조적 변화(중국 증설, 설비 감축)를 반영해 조정해요.</li>
-   <li><b>내재가치(주주잉여현금흐름 할인)</b>: 향후 12개월 정상화 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
+   <li><b>사이클을 반영한 정상 이익</b>: 정유·석유화학은 유가·정제마진·스프레드에 따라 이익이 몇 배씩 달라져서 최근 1년 순이익으로 가치를 매기면 호황에는 비싸게, 불황에는 싸게 보는 실수를 하게 돼요. 그래서 지난 10년 순이익률에서 가장 좋은 해와 나쁜 해를 뺀 평균과, 매출 추세선으로 본 정상 매출을 곱해 '사이클 평균 이익'을 먼저 구했어요. 중국 증설·국내 설비 감축·신규 설비(샤힌 등)처럼 사업 구조가 바뀐 회사는 그 이유를 적고 조정했어요.</li>
+   <li><b>사이클 위치와 초과 이익</b>: 회사마다 지금이 호황 정점권, 상승기, 중립, 회복기, 바닥권 중 어디인지 판단했어요. 최근 4개 분기 이익이 정상 이익보다 높거나 낮은 부분은 그 위치에 따라 앞으로 1~3년만 이어진다고 보고 그 현재가치만 더하거나 뺐어요. 성장률은 사이클이 아니라 구조적 성장만 반영해요.</li>
+   <li><b>계산 보류</b>: 10년 평균으로도 적자이거나 이익을 낸 해가 거의 없는 회사, 주식수·시세가 확인되지 않은 회사는 적정가를 계산하지 않고 이유를 적었어요.</li>
+   <li><b>내재가치(주주잉여현금흐름 할인)</b>: 사이클 평균 정상 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
    <li><b>역DCF 내재 성장률</b>: 같은 틀에서 현재 시가총액을 정확히 정당화하는 1~5년차 연평균 이익 성장률이에요. 이 숫자가 기준 가정보다 크면 시장이 더 높은 성장을 기대하고 있다는 뜻이에요.</li>
    <li><b>판단 기준</b>: 기준 적정가가 현재가보다 20% 이상 높으면 '저평가 구간', 20% 이상 낮으면 '기대 선반영', 그 사이는 '적정 범위'예요.</li>
    <li><b>순현금</b>: 순현금은 주주가치에 더하고 순차입은 빼요. 대신 그 이자 효과(세후 약 2%)는 이익에서 제외해 이중 계산을 피했어요. 비지배지분이 큰 지주·연결사는 연결 현금·차입이 지배주주 몫과 달라 조정하지 않았어요.</li>
-   <li><b>최신 정보 반영</b>: 정상화 이익과 성장 시나리오는 ${V.asof||V.updated} 기준 3분기 잠정실적, 증권사 추정치와 목표가 변화 기사를 읽고 정했어요. 회사별 근거 기사는 상세 리포트의 '최신 기사'에서 볼 수 있어요.</li></ul>
+   <li><b>최신 정보 반영</b>: 사이클 위치, 정상 이익과 성장 시나리오는 ${V.asof||V.updated} 기준 최근 실적과 업황 기사를 읽고 정했어요. 회사별 근거 기사는 상세 리포트의 '최신 기사'에서 볼 수 있어요.</li></ul>
    <p class="src">참고용 추정이며 투자 권유가 아니에요.</p>`;
 }
 function renderSources(){
