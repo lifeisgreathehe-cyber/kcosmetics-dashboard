@@ -252,7 +252,7 @@ def main(industry="cosmetics"):
                       "fwd_per": round(mcap / E1f, 1) if E1f else None,
                       "norm_per": round(mcap / E1, 1) if E1 > 0 else None, "scenarios": sc,
                       "implied_g": implied_growth(mcap - nc - xv, E_op, a["r"], a["c"], gT),
-                      "cycle": cy,
+                      **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
