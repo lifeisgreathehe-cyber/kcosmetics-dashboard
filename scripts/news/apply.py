@@ -21,9 +21,12 @@ for code, items in mod.NEWS.items():
             miss.append((code, title))
             url = ""
         out.append({"date": d, "src": src, "title": title, "url": url, "impact": imp, "read": read, "val": val})
-    prev = [n for n in rv["companies"].get(code, {}).get("news", []) if not n.get("read")
-            and not any(norm(n["title"]) == norm(o["title"]) for o in out)]
-    rv["companies"].setdefault(code, {})["news"] = out + prev
+    # 이전 해석은 남기고(같은 제목은 새 해석으로 교체) 최신순으로 해석 8개 + 링크만 있는 기사 4개까지 보관
+    prev = [n for n in rv["companies"].get(code, {}).get("news", [])
+            if not any(norm(n["title"]) == norm(o["title"]) for o in out)]
+    allr = sorted(out + [n for n in prev if n.get("read")], key=lambda n: n["date"], reverse=True)[:8]
+    plain = [n for n in prev if not n.get("read")][:4]
+    rv["companies"].setdefault(code, {})["news"] = allr + plain
 rv["news_asof"] = mod.ASOF
 json.dump(rv, open(P("docs", "data", "reviews.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 cfg = json.load(open(P("config", "valuation.json"), encoding="utf-8"))
