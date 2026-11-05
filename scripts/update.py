@@ -754,7 +754,7 @@ def _news_naver(code, size=20):
             title = _re.sub(r"<[^>]+>", "", it.get("titleFull") or it["title"])
             for a, b in (("&quot;", '"'), ("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&#39;", "'")):
                 title = title.replace(a, b)
-            body = _re.sub(r"<[^>]+>", "", it.get("body") or "")[:160]
+            body = _re.sub(r"<[^>]+>", "", it.get("body") or "")[:300]
             out.append({"date": f"{ts[:4]}-{ts[4:6]}-{ts[6:8]}" if len(ts) >= 8 else "",
                         "time": f"{ts[8:10]}:{ts[10:12]}" if len(ts) >= 12 else "",
                         "title": title.strip(), "office": it.get("officeName") or "", "url": url, "summary": body.strip()})
@@ -778,6 +778,11 @@ def update_news():
         items = _news_naver(c["code"])
         if items:
             ok += 1
+        # 시황·행사 기사 등 다른 회사 이야기는 걸러낸다 (config의 news_kw: 회사·브랜드명, news_ex: 제외어)
+        kw, ex = c.get("news_kw") or [c["name"]], c.get("news_ex") or []
+        rel = lambda x: any(k in x["title"] + x["summary"] for k in kw) and not any(e in x["title"] + x["summary"] for e in ex)
+        items = [x for x in items if rel(x)]
+        old[c["code"]] = [x for x in (old.get(c["code"]) or []) if rel(x)]
         merged = {x["url"] or x["title"]: x for x in (old.get(c["code"]) or []) + items}
         lst = sorted((x for x in merged.values() if x["date"] >= cutoff),
                      key=lambda x: (x["date"], x["time"]), reverse=True)[:25]

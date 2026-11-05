@@ -1,27 +1,223 @@
 [
-  {"code":"090430","name":"아모레퍼시픽","group":"브랜드","market":"KOSPI"},
-  {"code":"002790","name":"아모레퍼시픽홀딩스","group":"브랜드","market":"KOSPI"},
-  {"code":"051900","name":"LG생활건강","group":"브랜드","market":"KOSPI"},
-  {"code":"278470","name":"에이피알","group":"브랜드","market":"KOSPI"},
-  {"code":"018250","name":"애경산업","group":"브랜드","market":"KOSPI"},
-  {"code":"214420","name":"토니모리","group":"브랜드","market":"KOSPI"},
-  {"code":"237880","name":"클리오","group":"브랜드","market":"KOSDAQ"},
-  {"code":"018290","name":"브이티","group":"브랜드","market":"KOSDAQ"},
-  {"code":"092730","name":"네오팜","group":"브랜드","market":"KOSDAQ"},
-  {"code":"439090","name":"마녀공장","group":"브랜드","market":"KOSDAQ"},
-  {"code":"192820","name":"코스맥스","group":"ODM·OEM","market":"KOSPI"},
-  {"code":"161890","name":"한국콜마","group":"ODM·OEM","market":"KOSPI"},
-  {"code":"241710","name":"코스메카코리아","group":"ODM·OEM","market":"KOSDAQ"},
-  {"code":"352480","name":"씨앤씨인터내셔널","group":"ODM·OEM","market":"KOSDAQ"},
-  {"code":"251970","name":"펌텍코리아","group":"부자재·용기","market":"KOSDAQ"},
-  {"code":"115960","name":"연우","group":"부자재·용기","market":"KOSDAQ"},
-  {"code":"257720","name":"실리콘투","group":"유통·수출","market":"KOSDAQ"},
-  {"code":"214450","name":"파마리서치","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"145020","name":"휴젤","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"214150","name":"클래시스","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"336570","name":"원텍","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"086900","name":"메디톡스","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"200670","name":"휴메딕스","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"216080","name":"제테마","group":"미용·의료","market":"KOSDAQ"},
-  {"code":"099430","name":"바이오플러스","group":"미용·의료","market":"KOSDAQ"}
+ {
+  "code": "090430",
+  "name": "아모레퍼시픽",
+  "group": "브랜드",
+  "market": "KOSPI",
+  "news_kw": [
+   "아모레퍼시픽",
+   "아모레",
+   "설화수",
+   "코스알엑스",
+   "라네즈"
+  ]
+ },
+ {
+  "code": "002790",
+  "name": "아모레퍼시픽홀딩스",
+  "group": "브랜드",
+  "market": "KOSPI",
+  "news_kw": [
+   "아모레퍼시픽홀딩스",
+   "아모레퍼시픽그룹",
+   "아모레"
+  ]
+ },
+ {
+  "code": "051900",
+  "name": "LG생활건강",
+  "group": "브랜드",
+  "market": "KOSPI",
+  "news_kw": [
+   "LG생활건강",
+   "LG생건",
+   "더후",
+   "더페이스샵",
+   "힌스"
+  ]
+ },
+ {
+  "code": "278470",
+  "name": "에이피알",
+  "group": "브랜드",
+  "market": "KOSPI",
+  "news_kw": [
+   "에이피알",
+   "APR",
+   "메디큐브"
+  ]
+ },
+ {
+  "code": "018250",
+  "name": "애경산업",
+  "group": "브랜드",
+  "market": "KOSPI"
+ },
+ {
+  "code": "214420",
+  "name": "토니모리",
+  "group": "브랜드",
+  "market": "KOSPI"
+ },
+ {
+  "code": "237880",
+  "name": "클리오",
+  "group": "브랜드",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "클리오",
+   "페리페라",
+   "구달"
+  ]
+ },
+ {
+  "code": "018290",
+  "name": "브이티",
+  "group": "브랜드",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "브이티",
+   "리들샷"
+  ],
+  "news_ex": [
+   "브이티지엠피"
+  ]
+ },
+ {
+  "code": "092730",
+  "name": "네오팜",
+  "group": "브랜드",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "439090",
+  "name": "마녀공장",
+  "group": "브랜드",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "마녀공장"
+  ]
+ },
+ {
+  "code": "192820",
+  "name": "코스맥스",
+  "group": "ODM·OEM",
+  "market": "KOSPI"
+ },
+ {
+  "code": "161890",
+  "name": "한국콜마",
+  "group": "ODM·OEM",
+  "market": "KOSPI"
+ },
+ {
+  "code": "241710",
+  "name": "코스메카코리아",
+  "group": "ODM·OEM",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "352480",
+  "name": "씨앤씨인터내셔널",
+  "group": "ODM·OEM",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "251970",
+  "name": "펌텍코리아",
+  "group": "부자재·용기",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "115960",
+  "name": "연우",
+  "group": "부자재·용기",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "연우"
+  ],
+  "news_ex": [
+   "연우진",
+   "에스엠"
+  ]
+ },
+ {
+  "code": "257720",
+  "name": "실리콘투",
+  "group": "유통·수출",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "214450",
+  "name": "파마리서치",
+  "group": "미용·의료",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "파마리서치",
+   "리쥬란"
+  ]
+ },
+ {
+  "code": "145020",
+  "name": "휴젤",
+  "group": "미용·의료",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "214150",
+  "name": "클래시스",
+  "group": "미용·의료",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "클래시스",
+   "슈링크"
+  ]
+ },
+ {
+  "code": "336570",
+  "name": "원텍",
+  "group": "미용·의료",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "원텍",
+   "올리지오"
+  ]
+ },
+ {
+  "code": "086900",
+  "name": "메디톡스",
+  "group": "미용·의료",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "200670",
+  "name": "휴메딕스",
+  "group": "미용·의료",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "휴메딕스",
+   "엘라비에"
+  ]
+ },
+ {
+  "code": "216080",
+  "name": "제테마",
+  "group": "미용·의료",
+  "market": "KOSDAQ"
+ },
+ {
+  "code": "099430",
+  "name": "바이오플러스",
+  "group": "미용·의료",
+  "market": "KOSDAQ",
+  "news_kw": [
+   "바이오플러스"
+  ],
+  "news_ex": [
+   "인터펙스",
+   "BIX",
+   "바이오플러스 2026",
+   "바이오플러스-"
+  ]
+ }
 ]

@@ -81,6 +81,9 @@ tbody tr.sel{background:var(--accent-soft)}
 .srclist a{color:var(--accent)}
 p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 ul.ev{margin:4px 0 12px;padding-left:20px}ul.ev li{margin:3px 0}
+.nread{display:grid;gap:10px;margin:6px 0 12px}.nread>div{border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.nread .nh{display:flex;justify-content:space-between;align-items:center;gap:8px}.nread .nt{font-weight:600;margin:4px 0}.nread p{margin:4px 0 0}
+.nread .nv{font-size:13px;color:var(--ink-2)}ul.nauto{padding-left:18px}ul.nauto li{margin:4px 0}
 .tone{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;margin-right:6px;vertical-align:2px}
 .tone.pos{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}
 .tone.neg{background:color-mix(in srgb,var(--down) 14%,transparent);color:var(--down)}
@@ -262,9 +265,10 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
+  try{const r=await fetch('https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/data/news.json?t='+Date.now());if(r.ok){const x=await r.json();if(!D.news||(x.fetched||'')>(D.news.fetched||''))D.news=x}}catch(e){}
 }
 
 /* ---------------- 산업 ---------------- */
@@ -429,8 +433,23 @@ function renderReview(c){
    <h4>평가</h4><p>${r.eval}</p>
    ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
-   ${r.news&&r.news.length?`<h4>최신 기사 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''}
+   ${newsBlock(c,r)}
    <p class="src">${D.reviews.disclaimer||''}</p>`;
+}
+const IMP={pos:['호재','pos'],neg:['악재','neg'],neu:['중립','neu'],mix:['엇갈림','neu']};
+function newsBlock(c,r){
+  const cur=(r&&r.news||[]).filter(n=>n.read), plain=(r&&r.news||[]).filter(n=>!n.read);
+  const auto=((D.news&&D.news.companies)||{})[c.code]||[];
+  const seen=new Set(cur.concat(plain).map(n=>n.title));
+  const A=auto.filter(n=>!seen.has(n.title)).slice(0,12);
+  const link=(n)=>n.url?`<a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>`:n.title;
+  let h='';
+  if(cur.length) h+=`<h4>최근 뉴스, 이렇게 읽어요 <span class="sub" style="font-weight:400">(${D.reviews.news_asof||D.reviews.updated} 기준)</span></h4>
+   <div class="nread">${cur.map(n=>{const [l,k]=IMP[n.impact]||IMP.neu;return `<div><div class="nh"><span class="sub">${n.date}${n.src?' · '+n.src:''}</span><span class="tone ${k}">${l}</span></div><div class="nt">${link(n)}</div><p>${n.read}</p>${n.val?`<p class="nv"><b>가치 반영</b> ${n.val}</p>`:''}</div>`}).join('')}</div>`;
+  if(plain.length) h+=`<ul>${plain.map(n=>`<li><span class="sub">${n.date}</span> ${link(n)}</li>`).join('')}</ul>`;
+  if(A.length) h+=`<h4>오늘까지의 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched} · ${D.news.source}</span></h4>
+   <ul class="nauto">${A.map(n=>`<li><span class="sub">${n.date.slice(5)} ${n.office||''}</span> ${link(n)}</li>`).join('')}</ul>`;
+  return h;
 }
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
