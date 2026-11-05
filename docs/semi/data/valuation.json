@@ -1578,6 +1578,10 @@
    "per": 955.7,
    "roe": 1.2,
    "pbr": 11.7,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 27714
+   },
    "dcf": {
     "E1": 50000,
     "r": 11.0,
@@ -1588,21 +1592,21 @@
     "scenarios": {
      "bear": {
       "g": 3.0,
-      "value": 496421,
-      "per_share": 10864,
-      "upside": -92.8
+      "value": 513536,
+      "per_share": 11239,
+      "upside": -92.6
      },
      "base": {
       "g": 12.0,
-      "value": 712945,
-      "per_share": 15603,
-      "upside": -89.7
+      "value": 730060,
+      "per_share": 15977,
+      "upside": -89.5
      },
      "bull": {
       "g": 22.0,
-      "value": 1072202,
-      "per_share": 23465,
-      "upside": -84.5
+      "value": 1089317,
+      "per_share": 23839,
+      "upside": -84.3
      }
     },
     "implied_g": 70.7,
@@ -1613,8 +1617,8 @@
       0.8,
       0.4
      ],
-     "excess": -42752,
-     "excess_value": -35753
+     "excess": -22286,
+     "excess_value": -18638
     },
     "net_cash_added": 83330
    }
@@ -1949,6 +1953,10 @@
    "per": 13.4,
    "roe": 15.2,
    "pbr": 2.03,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 100079
+   },
    "dcf": {
     "E1": 75000,
     "r": 10.0,
@@ -1959,24 +1967,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 798428,
-      "per_share": 40459,
-      "upside": -31.5
+      "value": 815970,
+      "per_share": 41348,
+      "upside": -30.0
      },
      "base": {
       "g": 7.0,
-      "value": 985920,
-      "per_share": 49960,
-      "upside": -15.5
+      "value": 1003462,
+      "per_share": 50849,
+      "upside": -14.0
      },
      "bull": {
       "g": 12.0,
-      "value": 1219434,
-      "per_share": 61793,
-      "upside": 4.6
+      "value": 1236976,
+      "per_share": 62682,
+      "upside": 6.1
      }
     },
-    "implied_g": 11.0,
+    "implied_g": 10.6,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1985,8 +1993,8 @@
       0.7,
       0.3
      ],
-     "excess": 12278,
-     "excess_value": 16826
+     "excess": 25079,
+     "excess_value": 34368
     },
     "net_cash_added": 39502
    }
@@ -3595,6 +3603,10 @@
    "per": 31.2,
    "roe": 13.2,
    "pbr": 4.1,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 32400
+   },
    "dcf": {
     "E1": 38000,
     "r": 10.0,
@@ -3627,7 +3639,7 @@
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
      "path": [],
-     "excess": 9654,
+     "excess": -5600,
      "excess_value": 0
     },
     "net_cash_added": 33950
@@ -4250,6 +4262,10 @@
    "per": 27.5,
    "roe": 13.8,
    "pbr": 3.78,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 67123
+   },
    "dcf": {
     "E1": 20000,
     "r": 11.0,
@@ -4260,24 +4276,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 142626,
-      "per_share": 5203,
-      "upside": -82.2
+      "value": 190668,
+      "per_share": 6956,
+      "upside": -76.2
      },
      "base": {
       "g": 10.0,
-      "value": 228596,
-      "per_share": 8340,
-      "upside": -71.5
+      "value": 276638,
+      "per_share": 10092,
+      "upside": -65.5
      },
      "bull": {
       "g": 20.0,
-      "value": 360231,
-      "per_share": 13142,
-      "upside": -55.1
+      "value": 408273,
+      "per_share": 14895,
+      "upside": -49.1
      }
     },
-    "implied_g": 38.7,
+    "implied_g": 37.2,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4286,8 +4302,8 @@
       0.7,
       0.3
      ],
-     "excess": 9184,
-     "excess_value": 11630
+     "excess": 47123,
+     "excess_value": 59672
     },
     "net_cash_added": -25643
    }
@@ -4641,6 +4657,10 @@
    "per": 39.1,
    "roe": 13.3,
    "pbr": 5.22,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 76382
+   },
    "dcf": {
     "E1": 60000,
     "r": 10.0,
@@ -4651,20 +4671,20 @@
     "scenarios": {
      "bear": {
       "g": 3.0,
-      "value": 970944,
-      "per_share": 45924,
-      "upside": -68.0
+      "value": 969236,
+      "per_share": 45843,
+      "upside": -68.1
      },
      "base": {
       "g": 11.0,
-      "value": 1225104,
-      "per_share": 57945,
-      "upside": -59.6
+      "value": 1223396,
+      "per_share": 57864,
+      "upside": -59.7
      },
      "bull": {
       "g": 18.0,
-      "value": 1531664,
-      "per_share": 72445,
+      "value": 1529956,
+      "per_share": 72364,
       "upside": -49.6
      }
     },
@@ -4677,8 +4697,8 @@
       0.7,
       0.3
      ],
-     "excess": 17555,
-     "excess_value": 25561
+     "excess": 16382,
+     "excess_value": 23853
     },
     "net_cash_added": 358085
    }
@@ -5622,6 +5642,10 @@
    "per": 21.3,
    "roe": 15.1,
    "pbr": 3.21,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 89023
+   },
    "dcf": {
     "E1": 95000,
     "r": 9.5,
@@ -5632,24 +5656,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 1298315,
-      "per_share": 116134,
-      "upside": -26.6
+      "value": 1303617,
+      "per_share": 116609,
+      "upside": -26.3
      },
      "base": {
       "g": 7.0,
-      "value": 1557288,
-      "per_share": 139300,
-      "upside": -11.9
+      "value": 1562590,
+      "per_share": 139774,
+      "upside": -11.6
      },
      "bull": {
       "g": 12.0,
-      "value": 1880252,
-      "per_share": 168189,
-      "upside": 6.3
+      "value": 1885554,
+      "per_share": 168663,
+      "upside": 6.6
      }
     },
-    "implied_g": 10.4,
+    "implied_g": 10.3,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5657,8 +5681,8 @@
       0.8,
       0.4
      ],
-     "excess": -11839,
-     "excess_value": -10709
+     "excess": -5977,
+     "excess_value": -5407
     },
     "net_cash_added": 300462
    }
@@ -5995,6 +6019,10 @@
    "per": 12.2,
    "roe": 9.7,
    "pbr": 1.18,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 24175
+   },
    "dcf": {
     "E1": 20000,
     "r": 11.0,
@@ -6005,24 +6033,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 186941,
-      "per_share": 6825,
-      "upside": -26.6
+      "value": 191343,
+      "per_share": 6986,
+      "upside": -24.9
      },
      "base": {
       "g": 8.0,
-      "value": 253361,
-      "per_share": 9250,
-      "upside": -0.5
+      "value": 257763,
+      "per_share": 9411,
+      "upside": 1.2
      },
      "bull": {
       "g": 14.0,
-      "value": 320656,
-      "per_share": 11707,
-      "upside": 25.9
+      "value": 325058,
+      "per_share": 11868,
+      "upside": 27.6
      }
     },
-    "implied_g": 8.1,
+    "implied_g": 7.7,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6031,8 +6059,8 @@
       0.7,
       0.3
      ],
-     "excess": 916,
-     "excess_value": 1237
+     "excess": 4175,
+     "excess_value": 5639
     },
     "net_cash_added": 27237
    }
@@ -6170,11 +6198,15 @@
    "per": null,
    "roe": -43.1,
    "pbr": 1.52,
+   "ttm_news": {
+    "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
+    "ni": 25000
+   },
    "dcf": {
     "E1": 25000,
     "r": 10.5,
     "c": 0.8,
-    "note": "10년 평균 기준 282억원이에요. 최근 적자(-977억원)는 자회사 손상 등 일회성 손실이 커서 초과 손실로 빼지 않았어요.",
+    "note": "10년 평균 기준 282억원이에요. 2025년 4분기 자회사 손상(-1,208억원)은 일회성이라 빼고, 3분기 영업이익 102억원(+553%)으로 회복이 확인돼 사이클 위치를 '회복기'로 바꿨어요. 일회성을 뺀 최근 이익(약 250억원)은 정상 이익과 비슷해요.",
     "fwd_per": 13.8,
     "norm_per": 13.8,
     "scenarios": {
@@ -6199,10 +6231,13 @@
     },
     "implied_g": 18.4,
     "cycle": {
-     "position": "바닥권",
+     "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
-     "path": [],
-     "excess": -122680,
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 0,
      "excess_value": 0
     },
     "net_cash_added": -232037
@@ -7764,6 +7799,10 @@
    "per": 26.5,
    "roe": 15.6,
    "pbr": 4.12,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 183195
+   },
    "dcf": {
     "E1": 110000,
     "r": 10.0,
@@ -7774,24 +7813,24 @@
     "scenarios": {
      "bear": {
       "g": 3.0,
-      "value": 1163972,
-      "per_share": 23554,
-      "upside": -71.1
+      "value": 1198624,
+      "per_share": 24255,
+      "upside": -70.2
      },
      "base": {
       "g": 10.0,
-      "value": 1496153,
-      "per_share": 30276,
-      "upside": -62.9
+      "value": 1530805,
+      "per_share": 30977,
+      "upside": -62.0
      },
      "bull": {
       "g": 16.0,
-      "value": 1872832,
-      "per_share": 37899,
-      "upside": -53.5
+      "value": 1907484,
+      "per_share": 38600,
+      "upside": -52.6
      }
     },
-    "implied_g": 35.8,
+    "implied_g": 35.6,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -7800,8 +7839,8 @@
       0.7,
       0.3
      ],
-     "excess": 42074,
-     "excess_value": 46847
+     "excess": 73195,
+     "excess_value": 81499
     },
     "net_cash_added": 219465
    }
@@ -7840,42 +7879,48 @@
    "per": null,
    "roe": -7.8,
    "pbr": 6.0,
+   "ttm_news": {
+    "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
+    "ni": 130000
+   },
    "dcf": {
-    "E1": 70000,
+    "E1": 90000,
     "r": 11.0,
     "c": 0.6,
-    "note": "10년 평균 이익률이 거의 0%라 평균은 맞지 않아요. 흑자였던 해 수준(매출 1.7조원 × 4%)을 정상으로 봤고, 2025년 4분기 일회성 손실은 초과 손실로 조금만 반영했어요.",
-    "fwd_per": 55.7,
-    "norm_per": 55.7,
+    "note": "10년 평균 이익률이 거의 0%라 평균은 맞지 않아요. 흑자였던 해 수준(매출 1.7조원 × 4%)에 AI·소캠2 기판 비중 확대를 더해 900억원을 정상으로 봤어요. 2026년 3분기 영업이익 1,018억원으로 메모리 기판 호황이 본격화돼 사이클 위치를 '상승기'로 바꿨고, 2025년 4분기 일회성 손실을 뺀 최근 이익(약 1,300억원)과 정상 이익의 차이만 1~3년 더 이어진다고 봤어요.",
+    "fwd_per": 43.3,
+    "norm_per": 43.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 3656,
-      "per_share": 98,
-      "upside": -99.9
+      "value": 185911,
+      "per_share": 4971,
+      "upside": -95.2
      },
      "base": {
       "g": 10.0,
-      "value": 269245,
-      "per_share": 7200,
-      "upside": -93.1
+      "value": 518556,
+      "per_share": 13866,
+      "upside": -86.7
      },
      "bull": {
       "g": 18.0,
-      "value": 580637,
-      "per_share": 15526,
-      "upside": -85.1
+      "value": 908569,
+      "per_share": 24295,
+      "upside": -76.7
      }
     },
-    "implied_g": 52.8,
+    "implied_g": 46.6,
     "cycle": {
-     "position": "회복기",
+     "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
      "path": [
+      1.0,
+      0.7,
       0.3
      ],
-     "excess": -120595,
-     "excess_value": -19556
+     "excess": 40000,
+     "excess_value": 40521
     },
     "net_cash_added": -460700
    }
@@ -8368,6 +8413,10 @@
    "per": 6.9,
    "roe": 5.6,
    "pbr": 0.39,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 74926
+   },
    "dcf": {
     "E1": 60000,
     "r": 10.5,
@@ -8400,7 +8449,7 @@
      "position": "중립",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
      "path": [],
-     "excess": -5614,
+     "excess": 14926,
      "excess_value": 0
     },
     "net_cash_added": 57633

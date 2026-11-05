@@ -259,7 +259,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep'];
+  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -435,7 +435,20 @@ function renderReview(c){
    ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
    ${r.news&&r.news.length?`<h4>최근 뉴스와 읽는 법 (${r.news_asof||D.reviews.updated} 기준)</h4><ul class="newsread">${r.news.map(n=>`<li><span class="sub">${n.date}${n.src?' · '+n.src:''}</span> ${n.impact?`<span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'호재',neg:'악재',neu:'중립'}[n.impact]}</span>`:''}<a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>${n.read?`<br><span style="color:var(--ink-2)">어떻게 볼까: ${n.read}</span>`:''}</li>`).join('')}</ul>`:''}
+   ${sectorBlock(r)}${autoNews(c,r)}
    <p class="src">${D.reviews.disclaimer||''}</p>`;
+}
+function sectorBlock(r){
+  const x=r.sector_news||[]; if(!x.length) return '';
+  return `<h4>업종 공통 뉴스와 이 회사에 주는 의미</h4><ul class="newsread">${x.map(n=>`<li><span class="sub">${n.date} · ${n.src}</span> <span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'호재',neg:'악재',neu:'중립'}[n.impact]}</span><a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a><br><span style="color:var(--ink-2)">어떻게 볼까: ${n.read}</span></li>`).join('')}</ul>`;
+}
+function autoNews(c,r){
+  const all=((D.news&&D.news.companies)||{})[c.code]||[];
+  const nm=c.name.replace(/\(.*\)/,'').trim();
+  const seen=new Set((r.news||[]).concat(r.sector_news||[]).map(n=>n.url));
+  const A=all.filter(n=>!seen.has(n.url)&&(n.title.includes(nm)||(n.summary||'').slice(0,80).includes(nm))).slice(0,10);
+  if(!A.length) return '';
+  return `<h4>오늘까지 나온 회사 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched} · 하루 6번 갱신, 해석은 매일 저녁 추가</span></h4><ul>${A.map(n=>`<li><span class="sub">${n.date.slice(5)} ${n.office||''}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`;
 }
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;

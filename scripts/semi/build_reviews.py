@@ -50,7 +50,17 @@ def auto(co):
                 points=["사업보고서 핵심 내용은 다음 업데이트 때 정리할게요. 위 원문 링크에서 바로 볼 수 있어요."])
 
 
-from news_src import N as NEWS
+from news_src import N as NEWS, SECTOR
+
+
+def sector_for(group, code):
+    out = []
+    for d, t, u, src, by, default in SECTOR:
+        rd = by.get(group) or default
+        if not rd or any(u == x[2] for x in (NEWS.get(code) or {}).get("items", [])):
+            continue
+        out.append({"date": d, "title": t, "url": u, "src": src, "read": rd[0], "impact": rd[1]})
+    return out
 
 
 def main():
@@ -75,6 +85,7 @@ def main():
             "news": [{"date": x[0], "title": x[1], "url": x[2], "src": x[3], "read": x[4], "impact": x[5]}
                      for x in sorted(nw.get("items", []), key=lambda x: x[0], reverse=True)]
                     or [{"date": d, "title": t, "url": u} for d, t, u in r.get("news", [])],
+            "sector_news": sector_for(co.get("group"), code),
             "news_asof": nw.get("asof"), "take": nw.get("take"), "latest": nw.get("latest"),
             "next": r["next"],
             "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""),

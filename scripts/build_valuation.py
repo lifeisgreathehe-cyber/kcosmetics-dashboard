@@ -248,6 +248,10 @@ def main(industry="cosmetics"):
                 # DART 반영 전 잠정실적이 있으면 최근 3개 분기 + 잠정 분기로 최근 이익을 다시 잡는다
                 ni_now = sum((Q[k].get("ni") or 0) for k in ks_all[-3:]) + lt["ni"] * 100
                 rec["ttm_news"] = {"period": f"{ks_all[-3]}~{lt['period']}", "ni": ni_now}
+            if a.get("ni_now") is not None:
+                # 일회성 손익(손상차손·평가손익)을 뺀 최근 이익을 사람이 정한 경우(억원)
+                ni_now = a["ni_now"] * 100
+                rec["ttm_news"] = {"period": a.get("ni_now_note", "일회성 손익을 뺀 최근 이익"), "ni": ni_now}
             ex = ni_now - E1
             xv = round(sum(ex * w_ * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, w_ in enumerate(path)))
             cy = {"position": a.get("cyc_pos", "중립"), "note": a.get("cycle_note", ""), "path": path,
