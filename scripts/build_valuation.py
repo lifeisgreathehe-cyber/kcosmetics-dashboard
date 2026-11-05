@@ -46,6 +46,37 @@ def equity_value(E1, g1, r, c, gT):
     return pv + tv / (1 + r) ** 10
 
 
+# 사이클 위치별 기본 초과이익 경로: 최근 4분기 순이익과 정상 이익의 차이가 앞으로 몇 해 동안 얼마나 남는지(비율)
+CYCLE_PATH = {"호황 정점권": [0.7, 0.3], "상승기": [1.0, 0.7, 0.3], "회복기": [0.8, 0.4], "중립": [],
+              "하강기": [0.8, 0.4], "바닥권": [0.7, 0.3]}
+
+
+def cycle_base(co):
+    """과거 연간 실적으로 본 '사이클 평균' 정상 이익: 순이익률(최고·최저 해 제외 평균) × 추세 매출."""
+    import math
+    A = co.get("annual") or {}
+    ys = [y for y in sorted(A) if (A[y].get("rev") or 0) > 0 and A[y].get("ni") is not None]
+    Q = co.get("quarterly") or {}
+    ks = sorted(Q)[-4:]
+    if len(ys) < 3 or len(ks) < 4:
+        return None
+    ttm_rev = sum((Q[k].get("rev") or 0) for k in ks)
+    ms = [A[y]["ni"] / A[y]["rev"] for y in ys]
+    tm = sorted(ms)[1:-1] if len(ms) >= 6 else ms
+    mm = sum(tm) / len(tm)
+    pts = [(int(y) + .5, math.log(A[y]["rev"])) for y in ys]
+    te = int(ks[-1][:4]) + int(ks[-1][-1]) / 4 - .5
+    if ttm_rev > 0:
+        pts.append((te, math.log(ttm_rev)))
+    n = len(pts)
+    mx, my = sum(p[0] for p in pts) / n, sum(p[1] for p in pts) / n
+    b = sum((p[0] - mx) * (p[1] - my) for p in pts) / sum((p[0] - mx) ** 2 for p in pts)
+    tr = math.exp(my + b * (te - mx))
+    return {"years": f"{ys[0]}~{ys[-1]}", "n": len(ys), "margin": round(mm * 100, 1),
+            "margin_range": [round(min(ms) * 100, 1), round(max(ms) * 100, 1)],
+            "trend_rev": round(tr), "ttm_rev": ttm_rev, "norm_ni": round(tr * mm), "trend_g": round((math.exp(b) - 1) * 100, 1)}
+
+
 def implied_growth(target, E1, r, c, gT):
     """시가총액을 정당화하는 1~5년차 성장률(역DCF). 이분법."""
     lo, hi = -30.0, 80.0
@@ -111,7 +142,15 @@ def main(industry="cosmetics"):
             ttm = {m: sum((Q[k].get(m) or 0) for k in ks) for m in ("rev", "op", "ni")}
             rec["ttm"] = dict(ttm, period=f"{ks[0]}~{ks[-1]}")
         dft = cfg.get("default")
-        if not a and dft and dft.get("E1_years"):
+        semi_cyc = cfg.get("cycle_mode")  # 반도체: 사이클 위치 + 사이클 평균 정상 이익(cycle_base)
+        hb = cycle_base(co) if semi_cyc else None
+        if hb:
+            rec["hist"] = hb
+        if semi_cyc:
+            if not a and dft and hb and hb["norm_ni"] > 0:
+                a = dict(dft, E1=round(hb["norm_ni"] / 100))
+                rec["auto"] = True
+        elif not a and dft and dft.get("E1_years"):
             # 경기순환 업종: 최근 N개 연도 지배순이익 평균(사이클 평균)을 정상 이익으로 쓰는 자동 가정
             A = co.get("annual", {}) or {}
             ys = [A[y].get("ni") for y in sorted(A)[-dft["E1_years"]:] if A[y].get("ni") is not None]
@@ -167,6 +206,10 @@ def main(industry="cosmetics"):
             rec["per"] = round(mcap / ni, 1) if ni > 0 else None
             rec["roe"] = round(ni / equity * 100, 1) if equity else None
         rec["pbr"] = round(mcap / equity, 2) if equity else None
+        if a and a.get("skip"):
+            rec["skip"] = a["skip"]
+            rec["cycle"] = {"position": a.get("cyc_pos"), "note": a.get("cycle_note", "")}
+            a = None
         if not a:
             out["companies"][code] = rec
             continue
@@ -191,16 +234,25 @@ def main(industry="cosmetics"):
         # 순현금은 따로 더하고, 그 이자(세후 약 2%)는 영업 이익에서 뺀다 (순차입이면 반대)
         nc = (net_cash or 0) if a.get("nc_adj", True) else 0  # 비지배지분이 큰 지주·연결사는 제외
         E_op = E1 - nc * NC_YIELD
+        # 반도체: 최근 4분기 순이익이 정상 이익보다 높거나 낮은 상태가 사이클 위치에 따라 몇 해 더 이어지는지
+        xv, cy = 0, None
+        if semi_cyc and t:
+            path = a.get("excess", CYCLE_PATH.get(a.get("cyc_pos"), []))
+            ex = t["ni"] - E1
+            xv = round(sum(ex * w_ * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, w_ in enumerate(path)))
+            cy = {"position": a.get("cyc_pos", "중립"), "note": a.get("cycle_note", ""), "path": path,
+                  "excess": ex, "excess_value": xv}
         sc = {}
         for k in ("bear", "base", "bull"):
-            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT) + nc
+            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT) + nc + xv
             v = max(v, 0)
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
                       "fwd_per": round(mcap / E1f, 1) if E1f else None,
                       "norm_per": round(mcap / E1, 1) if E1 > 0 else None, "scenarios": sc,
-                      "implied_g": implied_growth(mcap - nc, E_op, a["r"], a["c"], gT),
+                      "implied_g": implied_growth(mcap - nc - xv, E_op, a["r"], a["c"], gT),
+                      "cycle": cy,
                       "net_cash_added": nc}
         out["companies"][code] = rec
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
