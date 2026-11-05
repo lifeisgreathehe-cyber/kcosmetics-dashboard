@@ -6,13 +6,18 @@ from reviews_src import R, NEXT
 ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
 
 
+def clean(Q):
+    """비어 있는 항목(None)은 0으로 두고, 매출이 없는 분기는 뺀다."""
+    return {k: {f: (v.get(f) or 0) for f in ("rev", "op", "ni")} for k, v in Q.items() if v.get("rev")}
+
+
 def eok(v):
     v = round(v / 100)
     return f"{v/10000:,.1f}조" if abs(v) >= 10000 else f"{v:,}억"
 
 
 def trend(co):
-    Q = co["quarterly"]
+    Q = clean(co["quarterly"])
     ks = sorted(Q)[-4:]
     out, gs = [], []
     for k in ks:
@@ -29,7 +34,7 @@ def trend(co):
 
 def auto(co):
     """해석 원고가 아직 없는 회사: 숫자만으로 만든 자동 리뷰."""
-    Q = co["quarterly"]
+    Q = clean(co["quarterly"])
     ks = sorted(Q)[-4:]
     last = Q[ks[-1]]
     prev = Q.get(f"{int(ks[-1][:4])-1}{ks[-1][4:]}", {})
@@ -51,7 +56,7 @@ def main():
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
-        if len(co.get("quarterly") or {}) < 8:
+        if len(clean(co.get("quarterly") or {})) < 8:
             continue
         r = R.get(code) or auto(co)
         dp = os.path.join(ROOT, f"raw/semi/dart_docs/{code}.json")
