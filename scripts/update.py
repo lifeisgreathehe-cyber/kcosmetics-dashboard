@@ -217,7 +217,8 @@ def update_dart(key):
     check_names(cfg)
     last_year = TODAY.year - 1
     years_a = list(range(last_year - 9, last_year + 1))
-    years_q = list(range(TODAY.year - 4, TODAY.year + 1))
+    # 분기 실적: 기본 10년(실적 한눈에 보기 그래프용). DART_Q_YEARS 환경변수로 줄일 수 있다.
+    years_q = list(range(TODAY.year - int(os.getenv("DART_Q_YEARS", "10")) + 1, TODAY.year + 1))
     result = []
     for c in cfg:
         corp = codes.get(c["code"])
