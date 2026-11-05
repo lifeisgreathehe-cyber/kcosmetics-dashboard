@@ -1,0 +1,39 @@
+name: 회사별 최근 뉴스 갱신
+
+on:
+  schedule:
+    - cron: "0 22,1,4,7,10,13 * * *"  # 매일 07·10·13·16·19·22시 KST
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-news
+  cancel-in-progress: true
+
+jobs:
+  news:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 뉴스 수집 (모든 산업)
+        run: |
+          python scripts/update.py --only news
+          for d in config/*/; do
+            ind=$(basename "$d")
+            [ -f "config/$ind/companies.json" ] && [ -d "docs/$ind" ] && (timeout 300 python scripts/update.py --industry "$ind" --only news || true)
+          done
+      - name: main 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/news.json docs/*/data/news.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 뉴스 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi

@@ -732,6 +732,66 @@ def update_quotes():
     log("시세:", len(q), "종목", src)
     return True
 
+# ---------------------------------------------------------------- 회사별 최근 뉴스 (네이버 금융 종목뉴스)
+NAVER_NEWS = "https://m.stock.naver.com/api/news/stock/"
+
+
+def _news_naver(code, size=20):
+    """네이버 금융 종목뉴스 → [{date, time, title, office, url, summary}] (최신순). 해외 IP에서도 열려 있어 Actions에서 실행."""
+    d = _get_json(NAVER_NEWS + code, {"pageSize": size, "page": 1},
+                  ua="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36")
+    out = []
+    groups = d if isinstance(d, list) else (d or {}).get("items") or []
+    if not groups:
+        log("뉴스 응답 확인:", code, str(d)[:300])
+    for g in groups:
+        for it in (g.get("items") if isinstance(g, dict) and "items" in g else [g]):
+            if not isinstance(it, dict) or not it.get("title"):
+                continue
+            ts = str(it.get("datetime") or "")
+            oid, aid = it.get("officeId"), it.get("articleId")
+            url = f"https://n.news.naver.com/mnews/article/{oid}/{aid}" if oid and aid else it.get("url") or ""
+            title = _re.sub(r"<[^>]+>", "", it.get("titleFull") or it["title"])
+            for a, b in (("&quot;", '"'), ("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&#39;", "'")):
+                title = title.replace(a, b)
+            body = _re.sub(r"<[^>]+>", "", it.get("body") or "")[:160]
+            out.append({"date": f"{ts[:4]}-{ts[4:6]}-{ts[6:8]}" if len(ts) >= 8 else "",
+                        "time": f"{ts[8:10]}:{ts[10:12]}" if len(ts) >= 12 else "",
+                        "title": title.strip(), "office": it.get("officeName") or "", "url": url, "summary": body.strip()})
+    out.sort(key=lambda x: (x["date"], x["time"]), reverse=True)
+    seen, uniq = set(), []
+    for x in out:  # 같은 제목(통신사 재전송) 중복 제거
+        k = _re.sub(r"\W", "", x["title"])[:30]
+        if k in seen:
+            continue
+        seen.add(k)
+        uniq.append(x)
+    return uniq
+
+
+def update_news():
+    cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
+    cutoff = (TODAY - dt.timedelta(days=90)).isoformat()
+    old = (load("news.json") or {}).get("companies", {})
+    res, ok = {}, 0
+    for c in cfg:
+        items = _news_naver(c["code"])
+        if items:
+            ok += 1
+        merged = {x["url"] or x["title"]: x for x in (old.get(c["code"]) or []) + items}
+        lst = sorted((x for x in merged.values() if x["date"] >= cutoff),
+                     key=lambda x: (x["date"], x["time"]), reverse=True)[:25]
+        if lst:
+            res[c["code"]] = lst
+        time.sleep(0.15)
+    if not ok:
+        log("뉴스 수집 실패 — 기존 파일 유지")
+        return False
+    save("news.json", {"source": "네이버 금융 종목뉴스", "fetched": dt.datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
+                       "companies": res})
+    log("뉴스:", ok, "/", len(cfg), "개사")
+    return True
+
 # ---------------------------------------------------------------- main
 def main():
     # 사용법: python scripts/update.py [--industry semi] [--only dart|kosis|customs|prices|quotes]
@@ -748,6 +808,11 @@ def main():
     if only in (None, "quotes"):
         if update_quotes():
             ran.append("실시간 주가")
+    if only in (None, "news"):
+        if update_news():
+            ran.append("뉴스")
+        if only == "news":
+            return
     if os.getenv("DART_API_KEY") and only in (None, "dart"):
         ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:
