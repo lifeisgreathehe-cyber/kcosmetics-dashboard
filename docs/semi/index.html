@@ -56,6 +56,20 @@ nav.tabs a:focus-visible,button:focus-visible,select:focus-visible,tr:focus-visi
 .glance .gp{position:relative;height:120px;border-top:1px solid var(--line)}
 .glance .gp:first-child{border-top:0}
 .chart.tall{height:360px}
+.vc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) ;gap:14px;margin-top:6px;position:relative}
+.vc .st{border:1px solid var(--line);border-radius:10px;padding:10px 12px;position:relative;min-width:0}
+.vc .st>h3{font-size:14px;font-weight:600;margin:0 0 2px}
+.vc .st>p{font-size:12px;color:var(--ink-3);margin:0 0 8px}
+.vc .st:not(:last-child)::after{content:'→';position:absolute;right:-13px;top:14px;font-size:14px;color:var(--ink-3)}
+.vc .bx{border-top:1px dashed var(--line);padding:7px 0 3px}
+.vc .bx h4{font-size:12px;font-weight:600;color:var(--ink-2);margin:0 0 5px}
+.vc .bx.core h4{color:var(--accent)}
+.vc button.chip{background:none;cursor:pointer;font:inherit;font-size:11.5px}
+.vc button.chip:hover,.vc button.chip:focus-visible{border-color:var(--accent);color:var(--ink)}
+.vc .end{font-size:12px;color:var(--ink-2)}
+@media (max-width:900px){.vc{grid-template-columns:1fr}.vc .st:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-15px}}
+.mpt td,.mpt th{text-align:right}.mpt td:first-child,.mpt th:first-child{text-align:left}
+
 .row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
 select,button.seg{font:inherit;font-size:13px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
 .segs{display:inline-flex;gap:4px}
@@ -151,6 +165,19 @@ td.l,th.l{text-align:left}
         <div class="chart"><canvas id="c-ys" aria-label="수출 증감률과 삼성전자 주가 비교 차트" role="img"></canvas></div>
         <p class="sub" id="ys-note"></p>
         <div class="src" id="ys-src"></div>
+      </div>
+      <div class="card full" id="mp-card">
+        <div class="row"><div><h2>D램 · 낸드 고정거래가격</h2><p class="sub">DDR4 8Gb(PC용 범용 D램)와 낸드 128Gb MLC(메모리카드·USB용 범용 낸드)의 월평균 고정거래가격, 달러 · 로그 눈금</p></div><div class="segs" role="group" aria-label="눈금 선택" id="mp-scale"></div></div>
+        <div class="chart"><canvas id="c-mp" aria-label="D램·낸드 고정거래가격 차트" role="img"></canvas></div>
+        <div class="dgrid rv" id="mp-read" style="margin-top:12px"></div>
+        <div class="tbl" id="mp-tbl"></div>
+        <p class="sub" id="mp-note" style="margin-top:8px"></p>
+        <div class="src" id="mp-src"></div>
+      </div>
+      <div class="card full" id="vc-card">
+        <h2>반도체 밸류체인 지도</h2><p class="sub">대시보드에 있는 129개사를 반도체가 만들어지는 순서대로 놓았어요. 회사 이름을 누르면 그 회사 분석으로 이동해요. 이름 위에 올리면 주력 제품이 보여요.</p>
+        <div class="vc" id="vc"></div>
+        <div class="src">회사 분류는 대시보드 업종 분류와 회사별 사업 내용(사업보고서·심층분석)을 기준으로 했어요.</div>
       </div>
       <div class="card full">
         <h2>숫자로 보는 최근 동향</h2><p class="sub">기사·보도자료에서 수치화할 수 있는 항목. 카드를 누르면 원문이 열려요.</p>
@@ -275,7 +302,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist'];
+  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','memory_prices'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -377,6 +404,70 @@ function renderExpYoy(cu,from){
     note=`이 기간 수출 증감률(3개월 평균)과 삼성전자 주가의 1년 등락률의 상관계수는 ${r.toFixed(2)}이에요. 주가는 보통 수출 증감률이 꺾이기 몇 달 전에 먼저 꺾여요. 증감률이 높은 수준에서 내려오기 시작하면 업황 정점을 의심해 볼 신호예요.`}
   $('#ys-note').textContent=note;
   $('#ys-src').textContent=`출처: 관세청 수출입무역통계, ${D.stock_hist.source} · 주가 ${D.stock_hist.updated} 갱신`;
+}
+
+/* ---------------- D램·낸드 가격 ---------------- */
+let mpLog=true;
+function renderMemPrices(){
+  const mp=D.memory_prices; if(!mp||!mp.rows){$('#mp-card').hidden=true;return}
+  const R=mp.rows, s=S();
+  // 2020-10 ~ 최근까지 월 라벨을 채워 빈 달은 선으로 이어요
+  const first=R[0].m, last=R[R.length-1].m, labels=[];
+  let [y,m]=first.split('-').map(Number); const [ly,lm]=last.split('-').map(Number);
+  while(y<ly||(y===ly&&m<=lm)){labels.push(`${y}-${String(m).padStart(2,'0')}`);m++;if(m>12){m=1;y++}}
+  const by=Object.fromEntries(R.map(r=>[r.m,r]));
+  const Dm=labels.map(l=>by[l]?.dram??null), Nn=labels.map(l=>by[l]?.nand??null);
+  $('#mp-scale').innerHTML=['로그','일반'].map((t,i)=>`<button type="button" class="seg" aria-pressed="${(i===0)===mpLog}">${t}</button>`).join('');
+  $('#mp-scale').querySelectorAll('button').forEach((b,i)=>b.onclick=()=>{mpLog=i===0;renderMemPrices()});
+  const ax={color:css('--ink-3'),font:{size:11}};
+  draw('c-mp',{type:'line',data:{labels,datasets:[
+    line('D램 DDR4 8Gb',Dm,s[0],{pointRadius:2}),line('낸드 128Gb MLC',Nn,s[1],{pointRadius:2})]},
+    options:baseOpts({scales:{x:{ticks:Object.assign({maxRotation:0,autoSkipPadding:14},ax),grid:{display:false}},
+      y:Object.assign({ticks:Object.assign({callback:v=>{if(!mpLog)return '$'+v;const l=Math.log10(v),f=+(v/10**Math.floor(l)).toFixed(3);return [1,2,5].includes(f)?'$'+v:''}},ax),grid:{color:css('--line')},border:{display:false}},mpLog?{type:'logarithmic'}:{})},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw==null?'보도 없음':'$'+c.raw.toFixed(2)}`}}}})});
+  $('#mp-read').innerHTML=(mp.read||[]).map(([h,p])=>`<div><h4>${h}</h4><p>${p}</p></div>`).join('');
+  // 표: 최근 12개 기록, 앞 기록 대비 변화
+  const rows=R.slice(-12).reverse().map((r,k,arr)=>{
+    const i=R.indexOf(r), pv=R.slice(0,i).reverse();
+    const pd=pv.find(x=>x.dram!=null), pn=pv.find(x=>x.nand!=null);
+    const ch=(a,b)=>a==null||!b?'–':`<span class="${cls(yoy(a,b))}">${pct(yoy(a,b))}</span>`;
+    const d1=R.find(x=>x.m===`${+r.m.slice(0,4)-1}${r.m.slice(4)}`);
+    return `<tr><td>${r.m}${r.imp?' *':''}</td><td>${r.dram==null?'–':'$'+r.dram.toFixed(2)}</td><td>${pd&&r.dram!=null?ch(r.dram,pd.dram)+` <span class="sub">(${pd.m} 대비)</span>`:'–'}</td><td>${d1&&d1.dram!=null&&r.dram!=null?ch(r.dram,d1.dram):'–'}</td><td>${r.nand==null?'–':'$'+r.nand.toFixed(2)}</td><td>${pn&&r.nand!=null?ch(r.nand,pn.nand)+` <span class="sub">(${pn.m} 대비)</span>`:'–'}</td><td>${r.url?`<a href="${r.url}" target="_blank" rel="noopener">기사</a>`:'<span class="sub">기사 모음</span>'}</td></tr>`}).join('');
+  $('#mp-tbl').innerHTML=`<table class="mpt"><thead><tr><th>월</th><th>D램 DDR4 8Gb</th><th>직전 기록 대비</th><th>1년 전 대비</th><th>낸드 128Gb MLC</th><th>직전 기록 대비</th><th>출처</th></tr></thead><tbody>${rows}</tbody></table>`;
+  $('#mp-note').textContent=mp.note||'';
+  $('#mp-src').textContent=`출처: ${mp.source} · ${mp.updated}까지 · 매달 말 새 가격이 나오면 갱신해요`;
+}
+
+/* ---------------- 밸류체인 ---------------- */
+const VC=[
+ {h:'① 설계',p:'칩의 회로를 그리는 단계예요. 공장 없이 설계만 하는 팹리스와, 설계 부품(IP)·설계 대행(디자인하우스) 회사가 있어요.',bx:[
+   {h:'팹리스(칩 설계·판매)',core:1,g:'파운드리·팹리스',not:['DB하이텍','KEC','시지트로닉스','칩스앤미디어','오픈엣지테크놀로지','퀄리타스반도체','가온칩스','에이디테크놀로지','에이직랜드','코아시아']},
+   {h:'설계 IP',n:['칩스앤미디어','오픈엣지테크놀로지','퀄리타스반도체']},
+   {h:'디자인하우스(파운드리와 팹리스 연결)',n:['가온칩스','에이디테크놀로지','에이직랜드','코아시아']}]},
+ {h:'② 웨이퍼 제조(전공정)',p:'둥근 실리콘 웨이퍼 위에 회로를 새기는 단계예요. 투자의 대부분이 여기에 들어가요.',bx:[
+   {h:'칩 제조사(메모리·파운드리·전력반도체)',core:1,n:['삼성전자','SK하이닉스','DB하이텍','KEC','시지트로닉스']},
+   {h:'지주회사',n:['SK스퀘어']},
+   {h:'전공정 장비(증착·식각·세정·열처리·계측)',g:'전공정 장비'},
+   {h:'소재·부품(가스·약품·블랭크마스크·공정 부품)',g:'소재·부품'},
+   {h:'클린룸·가스공급 설비',n:['신성이엔지','케이씨','한양이엔지','성도이엔지']}]},
+ {h:'③ 패키징·테스트(후공정)',p:'다 만든 웨이퍼를 잘라 포장하고, 제대로 동작하는지 검사하는 단계예요. HBM처럼 칩을 쌓는 기술이 중요해지고 있어요.',bx:[
+   {h:'후공정 외주(OSAT)',core:1,g:'후공정(OSAT)'},
+   {h:'후공정·검사 장비',g:'후공정·검사 장비'},
+   {h:'테스트 부품(소켓·프로브카드)',g:'테스트 부품'},
+   {h:'패키지 기판·PCB',g:'기판·PCB'}]},
+ {h:'④ 유통·최종 수요',p:'완성된 칩은 유통사를 거치거나 바로 고객에게 가요.',bx:[
+   {h:'반도체 유통',n:['에스에이엠티','미래반도체','매커스']},
+   {h:'최종 수요처',end:'AI 서버·데이터센터, 스마트폰, PC, 자동차, 가전'}]}
+];
+function renderValueChain(){
+  if(!D.companies)return;const cos=D.companies.companies, deep=(D.deep&&D.deep.companies)||{}, byN=Object.fromEntries(cos.map(c=>[c.name,c]));
+  const used=new Set();
+  const chip=c=>{used.add(c.code);const t=deep[c.code]?.explain?.title||c.group;return `<button type="button" class="chip" data-code="${c.code}" title="${t}">${c.name}</button>`};
+  const pick=b=>b.n?b.n.map(n=>byN[n]).filter(Boolean):cos.filter(c=>c.group===b.g&&!(b.not||[]).includes(c.name));
+  $('#vc').innerHTML=VC.map(st=>`<div class="st"><h3>${st.h}</h3><p>${st.p}</p>${st.bx.map(b=>`<div class="bx${b.core?' core':''}"><h4>${b.h}</h4>${b.end?`<div class="end">${b.end}</div>`:pick(b).map(chip).join('')}</div>`).join('')}</div>`).join('');
+  const miss=cos.filter(c=>!used.has(c.code));
+  if(miss.length) $('#vc').lastElementChild.insertAdjacentHTML('beforeend',`<div class="bx"><h4>기타</h4>${miss.map(chip).join('')}</div>`);
+  $('#vc').querySelectorAll('button[data-code]').forEach(b=>b.onclick=()=>{cur=b.dataset.code;location.hash='#companies';setTimeout(()=>{selectCo(cur);document.getElementById('co-review').scrollIntoView({block:'start'})},50)});
 }
 
 const empty=(id,msg)=>{const c=document.getElementById(id);if(c&&c.parentElement)c.parentElement.innerHTML=`<p class="sub" style="padding:40px 0;text-align:center">${msg}</p>`};
@@ -708,7 +799,7 @@ function show(){
   document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
   document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
   if(!rendered[view]){rendered[view]=1;
-    if(view==='industry'){renderKPIs();renderExports();renderIndustry();}
+    if(view==='industry'){renderKPIs();renderExports();renderMemPrices();renderValueChain();renderIndustry();}
     if(view==='companies')renderCompanies();
     if(view==='valuation')renderValuation();
     if(view==='sources')renderSources();}
