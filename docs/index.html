@@ -159,6 +159,12 @@ td.l,th.l{text-align:left}
         <div class="chart"><canvas id="c-top"></canvas></div>
         <div class="src" id="top-src"></div>
       </div>
+      <div class="card full" id="reg-card" style="display:none">
+        <div class="row"><div><h2>지역별 연간 수출액</h2><p class="sub" id="reg-sub">단위: 억 달러 · 막대를 누르면 지역별 금액을 볼 수 있어요</p></div>
+          <div class="segs" role="group" aria-label="표시 방식" id="reg-mode"><button class="seg" data-v="abs" aria-pressed="true">금액</button><button class="seg" data-v="pct" aria-pressed="false">비중</button></div></div>
+        <div class="chart" style="height:340px"><canvas id="c-reg"></canvas></div>
+        <div class="src" id="reg-src"></div>
+      </div>
       <div class="card">
         <h2>유형별 생산실적</h2><p class="sub">단위: 조원 · 책임판매업체 기준</p>
         <div class="chart"><canvas id="c-type"></canvas></div>
@@ -269,7 +275,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','export_regions'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
   const RAW='https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/data/';
@@ -349,6 +355,22 @@ function renderIndustry(){
         options:baseOpts({indexAxis:'y',interaction:{mode:'nearest',intersect:true,axis:'y'},plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${fmt(c.raw,2)}억$`}}},
           scales:{x:{ticks:{color:css('--ink-3')},grid:{color:css('--line')},border:{display:false}},y:{ticks:{color:css('--ink-2')},grid:{display:false}}}})});};
     sel.onchange=go; go(); src('#top-src',t);
+  }
+  const rg=D.export_regions;
+  if(rg&&rg.years&&rg.years.length){
+    $("#reg-card").style.display="";
+    const names=Object.keys(rg.regions).filter(k=>rg.regions[k].some(v=>v>0));
+    const lab=rg.years.map(y=>rg.partial&&rg.partial[y]?`${y}(1~${+rg.partial[y]}월)`:y);
+    const tot=rg.years.map((_,i)=>names.reduce((a,k)=>a+(rg.regions[k][i]||0),0));
+    let mode='abs';
+    const go=()=>{const pct=mode==='pct';
+      draw('c-reg',{type:'bar',data:{labels:lab,datasets:names.map((k,j)=>({label:k,data:rg.regions[k].map((v,i)=>pct?(tot[i]?v/tot[i]*100:0):v/100),backgroundColor:k==='기타'?css('--ink-3'):s[j%8],borderWidth:0,maxBarThickness:46}))},
+        options:baseOpts({interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:10,color:css('--ink-2')}},
+          tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${pct?fmt(c.raw,1)+'%':fmt(c.raw,2)+'억$'}`,footer:it=>pct?'':`합계 ${fmt(tot[it[0].dataIndex]/100,1)}억$`}}},
+          scales:{x:{stacked:true,ticks:{color:css('--ink-3')},grid:{display:false}},y:{stacked:true,max:pct?100:undefined,ticks:{color:css('--ink-3'),callback:v=>pct?v+'%':v},grid:{color:css('--line')},border:{display:false}}}})});};
+    document.querySelectorAll('#reg-mode button').forEach(b=>b.onclick=()=>{mode=b.dataset.v;document.querySelectorAll('#reg-mode button').forEach(x=>x.setAttribute('aria-pressed',x===b));go()});
+    go(); src('#reg-src',rg);
+    if(rg.other_top&&rg.other_top.length)$('#reg-sub').textContent+=` · 기타 주요국: ${rg.other_top.slice(0,4).map(x=>x[0]).join(', ')}`;
   }
   const p=D.production_by_type;
   if(p){

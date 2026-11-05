@@ -28,5 +28,5 @@ jobs:
           git add docs/data/export_regions.json raw/region_cache.json 2>/dev/null || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 지역별 연간 수출 $(TZ=Asia/Seoul date +%Y-%m-%d)"
-            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+            for i in 1 2 3; do git pull --rebase --autostash -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
           fi
