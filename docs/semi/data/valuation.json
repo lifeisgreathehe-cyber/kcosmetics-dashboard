@@ -8262,6 +8262,10 @@
    "per": 8.9,
    "roe": 22.7,
    "pbr": 2.03,
+   "ttm_news": {
+    "period": "2025Q4~2026Q3",
+    "ni": 38067
+   },
    "dcf": {
     "E1": 25000,
     "r": 11.0,
@@ -8272,24 +8276,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 117955,
-      "per_share": 12132,
-      "upside": -59.9
+      "value": 124061,
+      "per_share": 12760,
+      "upside": -57.8
      },
      "base": {
       "g": 8.0,
-      "value": 197482,
-      "per_share": 20312,
-      "upside": -32.9
+      "value": 203588,
+      "per_share": 20940,
+      "upside": -30.8
      },
      "bull": {
       "g": 15.0,
-      "value": 293579,
-      "per_share": 30195,
-      "upside": -0.2
+      "value": 299685,
+      "per_share": 30823,
+      "upside": 1.9
      }
     },
-    "implied_g": 15.0,
+    "implied_g": 14.6,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8298,8 +8302,8 @@
       0.7,
       0.3
      ],
-     "excess": 7901,
-     "excess_value": 9338
+     "excess": 13067,
+     "excess_value": 15444
     },
     "net_cash_added": -81123
    }
