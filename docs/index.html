@@ -364,7 +364,7 @@ function renderIndustry(){
     const tot=rg.years.map((_,i)=>names.reduce((a,k)=>a+(rg.regions[k][i]||0),0));
     let mode='abs';
     const go=()=>{const pct=mode==='pct';
-      draw('c-reg',{type:'bar',data:{labels:lab,datasets:names.map((k,j)=>({label:k,data:rg.regions[k].map((v,i)=>pct?(tot[i]?v/tot[i]*100:0):v/100),backgroundColor:k==='기타'?css('--ink-3'):s[j%8],borderWidth:0,maxBarThickness:46}))},
+      draw('c-reg',{type:'bar',data:{labels:lab,datasets:names.map((k,j)=>({label:k,data:rg.regions[k].map((v,i)=>pct?(tot[i]?v/tot[i]*100:0):v/100),backgroundColor:k==='기타'?css('--ink-3'):(s.concat(['#8d6e63','#26a69a','#c0ca33']))[j%11],borderWidth:0,maxBarThickness:46}))},
         options:baseOpts({interaction:{mode:'index',intersect:false},plugins:{legend:{position:'bottom',labels:{boxWidth:10,color:css('--ink-2')}},
           tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${pct?fmt(c.raw,1)+'%':fmt(c.raw,2)+'억$'}`,footer:it=>pct?'':`합계 ${fmt(tot[it[0].dataIndex]/100,1)}억$`}}},
           scales:{x:{stacked:true,ticks:{color:css('--ink-3')},grid:{display:false}},y:{stacked:true,max:pct?100:undefined,ticks:{color:css('--ink-3'),callback:v=>pct?v+'%':v},grid:{color:css('--line')},border:{display:false}}}})});};

@@ -29,7 +29,7 @@
         const p = pts[i], d = ds.data[i];
         const s = `${t} ${fmt(d.y)} (${mlabel(d.x)})`;
         c.fillStyle = col; const w = c.measureText(s).width;
-        let x = p.x + 6; if (x + w > ch.chartArea.right) x = p.x - w - 6;
+        let x = p.x + 6; if (x + w > ch.chartArea.right) x = p.x - w - 6; x = Math.max(ch.chartArea.left + 2, x);
         c.fillText(s, x, Math.min(Math.max(p.y + dy, ch.chartArea.top + 10), ch.chartArea.bottom - 2));
       });
       c.restore();
