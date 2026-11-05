@@ -28,6 +28,7 @@ jobs:
             ind=$(basename "$d")
             [ -f "config/$ind/companies.json" ] && [ -d "docs/$ind" ] && (timeout 300 python scripts/update.py --industry "$ind" --only news || true)
           done
+          timeout 120 python scripts/update.py --only stock_hist || true
           for d in config/*/; do
             ind=$(basename "$d")
             [ -f "config/$ind/stock_hist.json" ] && (timeout 120 python scripts/update.py --industry "$ind" --only stock_hist || true)
@@ -37,7 +38,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/news.json docs/*/data/news.json 2>/dev/null || true
-          git add docs/*/data/stock_hist.json 2>/dev/null || true
+          git add docs/data/stock_hist.json docs/*/data/stock_hist.json 2>/dev/null || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 뉴스 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
             for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
