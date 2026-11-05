@@ -28,6 +28,13 @@ def main():
     for f in sorted(glob.glob(os.path.join(os.path.dirname(__file__), "explain_*.py"))):
         for code, x in importlib.import_module(os.path.basename(f)[:-3]).E.items():
             if code in comps:
+                if "deep" in x:  # 간략판을 대체하는 전체 심층 분석
+                    dd = dict(x["deep"])
+                    rows = [l.strip() for l in dd["fisher"].strip().split("\n")]
+                    assert len(rows) == 16, (code, len(rows))
+                    dd["fisher"] = [{"s": int(l[0]), "a": l[2:].strip()} for l in rows]
+                    dd["fisher_score"] = sum(f["s"] for f in dd["fisher"])
+                    comps[code] = dd
                 ex = x["explain"]
                 comps[code]["explain"] = {"title": ex.get("title", ""), "sections": [{"h": h, "p": t} for h, t in ex["sections"]]}
                 comps[code]["diagnosis"] = x["diagnosis"]
