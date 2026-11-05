@@ -798,6 +798,52 @@ def update_news():
     return True
 
 # ---------------------------------------------------------------- main
+# ---------------------------------------------------------------- 월봉 주가 이력(수정주가)
+def update_stock_hist():
+    """config/<업종>/stock_hist.json 의 종목들 월말 종가(수정주가)를 받아 docs/<업종>/data/stock_hist.json 에 저장."""
+    p = CONFIG / "stock_hist.json"
+    if not p.exists():
+        return False
+    codes = json.loads(p.read_text("utf-8")).get("codes", "all")
+    if codes == "all":  # 업종 회사 전체
+        cc = json.loads((CONFIG / "companies.json").read_text("utf-8"))
+        cc = cc["companies"] if isinstance(cc, dict) else cc
+        codes = [[c["code"], c["name"]] for c in cc]
+    out = {}
+    for code, name in codes:
+        rows = []
+        try:  # 네이버 차트(월봉, 수정주가)
+            req = urllib.request.Request(f"https://fchart.stock.naver.com/sise.nhn?symbol={code}&timeframe=month&count=400&requestType=0",
+                                         headers={"User-Agent": "Mozilla/5.0", "Referer": "https://finance.naver.com/"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                txt = r.read().decode("euc-kr", "ignore")
+            for m in _re.finditer(r'data="([^"]+)"', txt):
+                f = m.group(1).split("|")
+                rows.append((f"{f[0][:4]}-{f[0][4:6]}", num(f[4])))
+            time.sleep(0.15)
+        except Exception as e:  # noqa: BLE001
+            log("월봉 요청 실패(네이버):", code, e)
+        if not rows:  # 야후 대체
+            j = _get_json(YAHOO + f"{code}.KS", {"range": "max", "interval": "1mo"})
+            try:
+                res = j["chart"]["result"][0]
+                cl = res["indicators"].get("adjclose", [{}])[0].get("adjclose") or res["indicators"]["quote"][0]["close"]
+                for t, c in zip(res["timestamp"], cl):
+                    if c:
+                        rows.append((dt.datetime.fromtimestamp(t, KST).strftime("%Y-%m"), round(c)))
+            except Exception as e:  # noqa: BLE001
+                log("월봉 요청 실패(야후):", code, e)
+        if rows:
+            d = dict(rows)
+            ms = sorted(d)
+            out[code] = {"name": name, "months": ms, "close": [d[m] for m in ms]}
+            log("월봉:", name, ms[0], "~", ms[-1], len(ms))
+    if out:
+        save("stock_hist.json", {"source": "네이버 금융 월봉(수정주가, 월말 종가)", "updated": TODAY.isoformat(), "series": out})
+        return True
+    return False
+
+
 def main():
     # 사용법: python scripts/update.py [--industry semi] [--only dart|kosis|customs|prices|quotes]
     # DART는 해외 IP(GitHub Actions 등)에서 접속이 막혀 있어 국내 PC에서 --only dart 로 실행한다.
@@ -813,6 +859,10 @@ def main():
     if only in (None, "quotes"):
         if update_quotes():
             ran.append("실시간 주가")
+    if only == "stock_hist":
+        if update_stock_hist():
+            ran.append("월봉 주가")
+        return
     if only in (None, "news"):
         if update_news():
             ran.append("뉴스")
