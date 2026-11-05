@@ -767,7 +767,7 @@ def quotes_naver(codes):
         ts = j["result"].get("time")
         for d in j["result"]["areas"][0]["datas"]:
             if d.get("nv"):
-                out[d["cd"]] = {"price": d["nv"], "chg_pct": round(_n(d.get("cr")) * (-1 if str(d.get("rf")) in ("4", "5") else 1), 2),
+                out[d["cd"]] = {"nm": d.get("nm"), "price": d["nv"], "chg_pct": round(_n(d.get("cr")) * (-1 if str(d.get("rf")) in ("4", "5") else 1), 2),
                                 "time": dt.datetime.fromtimestamp(ts / 1000, KST).strftime("%Y-%m-%d %H:%M") if ts else None}
     except Exception:  # noqa: BLE001
         pass
@@ -815,6 +815,14 @@ def update_quotes():
     if not q:
         log("실시간 시세 수집 실패")
         return False
+    names = {c["code"]: c["name"] for c in cfg}
+    bad = [(k, names.get(k), v.get("nm")) for k, v in q.items() if v.get("nm") and names.get(k) and
+           _re.sub(r"\s", "", names[k]) != _re.sub(r"\s", "", v["nm"])]
+    if bad:
+        log("종목명 불일치(설정 vs 네이버):", bad)
+    miss = [c["code"] + " " + c["name"] for c in cfg if c["code"] not in q]
+    if miss:
+        log("시세 없음(상장폐지·코드 오류 확인):", miss)
     save("quotes.json", {"source": src, "fetched": dt.datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"), "quotes": q})
     log("시세:", len(q), "종목", src)
     return True
