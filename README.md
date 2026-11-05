@@ -39,3 +39,9 @@ cd docs && python -m http.server
 - 데이터: `docs/semi/data/`, 사업보고서 본문: `raw/semi/dart_docs/`
 - 모든 스크립트에 `--industry semi`를 붙이면 반도체용으로 동작해요. 예) `python scripts/update.py --industry semi --only dart`
 - 삼성전자는 우선주(005935) 시가총액을 합산해요 (`pref` 필드). 유통주식수는 DART 주식총수 현황에서 받아요.
+
+## 화학·정유 대시보드 (`docs/chem/`)
+주소: https://lifeisgreathehe-cyber.github.io/kcosmetics-dashboard/chem/
+- 설정: `config/chem/` (companies.json 61개사: 정유·윤활유/유통·석유화학·정밀/스페셜티·합성섬유·도료·비료), kosis.json(석유정제·화학 생산/출하/재고지수, 석유제품·화학 수출물가, 원유 수입물가), customs.json(HS 2710·29·39·4002 수출, 2709 원유 수입, 국가별 HS 39)
+- 내재가치 자동 가정은 최근 1년 이익이 아니라 최근 7개 연도 지배순이익 평균(사이클 평균)을 정상 이익으로 씀 (`config/chem/valuation.json`의 `default.E1_years`)
+- DART 수집(국내 PC): `python scripts\update.py --industry chem --only dart`

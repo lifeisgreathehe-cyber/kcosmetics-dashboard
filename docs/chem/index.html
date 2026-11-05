@@ -1,0 +1,668 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>K-화학·정유 산업 대시보드</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: 상단 요약 띠 → 탭(산업 / 기업 / 출처) → 2열 차트 그리드, 휴대폰에선 1열 */
+:root{
+  --bg:#f6f6f8; --panel:#ffffff; --ink:#17161c; --ink-2:#55525f; --ink-3:#8a8794;
+  --line:#e4e2ea; --accent:#7a2d5c; --accent-soft:#f3e7ef;
+  --up:#0f7a3a; --down:#c0392b;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --s6:#008300; --s7:#6250d6; --s8:#e34948;
+  --font-display:"Nanum Myeongjo", "Noto Serif KR", Georgia, serif;
+  --font-body:"IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#141317; --panel:#1d1c21; --ink:#f0eef4; --ink-2:#c2bfcb; --ink-3:#8f8c99;
+  --line:#302e36; --accent:#e59ac6; --accent-soft:#3a2432; --up:#4cc47a; --down:#ef7a6c;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#141317; --panel:#1d1c21; --ink:#f0eef4; --ink-2:#c2bfcb; --ink-3:#8f8c99;
+  --line:#302e36; --accent:#e59ac6; --accent-soft:#3a2432; --up:#4cc47a; --down:#ef7a6c;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181; --s6:#008300; --s7:#9085e9; --s8:#e66767;
+  color-scheme:dark }
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font-body)}
+.wrap{max-width:1440px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+header.top{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 24px;margin-bottom:20px}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(26px,4vw,38px);line-height:1.15;margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 small{display:block;font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:.14em;color:var(--accent);margin-bottom:6px}
+.meta{font-size:12.5px;color:var(--ink-3);text-align:right}
+nav.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:24px;overflow-x:auto}
+nav.tabs a{padding:10px 16px;color:var(--ink-2);text-decoration:none;font-weight:500;border-bottom:2px solid transparent;white-space:nowrap}
+nav.tabs a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--accent)}
+nav.tabs a:focus-visible,button:focus-visible,select:focus-visible,tr:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:24px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:14px 16px;min-width:0}
+.kpi .l{font-size:12.5px;color:var(--ink-2)}
+.kpi .v{font-family:var(--font-mono);font-weight:500;font-size:24px;margin:2px 0;font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12px;color:var(--ink-3)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid .full{grid-column:1/-1}
+@media (max-width:820px){.grid{grid-template-columns:minmax(0,1fr)}}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.card h2{font-size:16px;font-weight:600;margin:0 0 2px}
+.card .sub{font-size:12.5px;color:var(--ink-3);margin:0 0 10px}
+.card .src{font-size:11.5px;color:var(--ink-3);margin-top:8px}
+.card .src a{color:var(--ink-2)}
+.chart{position:relative;height:300px}
+.chart.tall{height:360px}
+.row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
+select,button.seg{font:inherit;font-size:13px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:5px 10px;cursor:pointer}
+.segs{display:inline-flex;gap:4px}
+button.seg[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);color:var(--ink)}
+.tbl{overflow-x:auto;margin-top:6px}
+table{border-collapse:collapse;width:100%;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+th{font-weight:500;color:var(--ink-2);font-size:12px}
+th:first-child,td:first-child{text-align:left}
+td.num{font-family:var(--font-mono);font-size:12.5px}
+.up{color:var(--up)} .down{color:var(--down)}
+tbody tr.sel{background:var(--accent-soft)}
+#co-table tbody tr{cursor:pointer}
+#co-table th:first-child,#co-table td:first-child,#val-table th:first-child,#val-table td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
+#co-table tbody tr.sel td:first-child,#co-table tbody tr:hover td:first-child{background:var(--accent-soft)}
+#co-table tbody tr:hover{background:var(--accent-soft)}
+.pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2)}
+.news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
+.news a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+.news a:hover{border-color:var(--accent)}
+.news .l{font-size:12px;color:var(--ink-2)} .news .v{font-family:var(--font-mono);font-size:18px;margin:2px 0} .news .s{font-size:12px;color:var(--ink-3)}
+.note{font-size:12.5px;color:var(--ink-2);background:var(--accent-soft);border-radius:8px;padding:10px 12px;margin-bottom:16px}
+.srclist li{margin-bottom:6px}
+.srclist a{color:var(--accent)}
+p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
+.tone{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:99px;margin-right:6px;vertical-align:2px}
+.tone.pos{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}
+.tone.neg{background:color-mix(in srgb,var(--down) 14%,transparent);color:var(--down)}
+.tone.neu{background:var(--accent-soft);color:var(--ink-2)}
+.rv h3{font-size:15px;font-weight:600;margin:4px 0 10px;text-wrap:balance}
+.rv h4{font-size:12.5px;font-weight:600;color:var(--ink-2);margin:14px 0 4px;letter-spacing:.02em}
+.rv ul{margin:0;padding-left:18px} .rv li{margin-bottom:4px}
+.rv p{margin:0;max-width:80ch}
+.mixbar{display:flex;height:22px;border-radius:5px;overflow:hidden;margin:10px 0 6px;gap:2px}
+.mixbar span{display:block;height:100%}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:4px 24px}
+.dgrid p{max-width:none}
+.moat{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:6px 0}
+.moat .dots{letter-spacing:2px;color:var(--accent);font-size:15px}
+.chip{display:inline-block;font-size:11.5px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);margin:0 4px 4px 0}
+.fisher{width:100%;border-collapse:collapse;font-size:13px}
+.fisher td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal}
+.fisher td.n{color:var(--ink-3);width:22px;font-variant-numeric:tabular-nums}
+.fisher td.q{width:34%;color:var(--ink-2)}
+.fisher td.m{width:26px;text-align:center;font-size:14px}
+.fisher .m2{color:var(--up)} .fisher .m1{color:var(--ink-2)} .fisher .m0{color:var(--down)}
+details.fd{margin-top:6px} details.fd summary{cursor:pointer;color:var(--accent);font-size:13px;margin:4px 0}
+.fbar{height:8px;border-radius:4px;background:var(--line);overflow:hidden;max-width:240px;flex:1;min-width:120px}
+.fbar i{display:block;height:100%;background:var(--accent)}
+.ol{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:4px 24px}
+@media (max-width:640px){.fisher td.q{width:auto;display:block;border-top:none;padding-top:0}.fisher tr{display:grid;grid-template-columns:22px 26px 1fr}.fisher td.q{grid-column:1/-1;order:-1;padding:8px 8px 2px}}
+.mixleg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12.5px;color:var(--ink-2)}
+.mixleg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:8px 0 4px}
+.vgrid .kpi .v{font-size:20px}
+th.sort{cursor:pointer;user-select:none} th.sort:hover{color:var(--ink);background:var(--accent-soft)}
+th.sort .sarr{margin-left:3px;font-size:10px;color:var(--ink-3)} th.sort[aria-sort="ascending"] .sarr,th.sort[aria-sort="descending"] .sarr{color:var(--accent)}
+th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
+td.l,th.l{text-align:left}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1><small>KOREA CHEMICALS &amp; REFINING</small>국내 화학 · 정유 산업 대시보드</h1>
+    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="../" style="color:var(--accent)">화장품 대시보드 →</a> · <a href="../semi/" style="color:var(--accent)">반도체 대시보드 →</a></div>
+  </header>
+  <nav class="tabs" aria-label="보기 선택">
+    <a href="#industry" data-view="industry">산업 동향</a>
+    <a href="#companies" data-view="companies">상장사 실적</a>
+    <a href="#valuation" data-view="valuation">내재가치</a>
+    <a href="#sources" data-view="sources">출처 · 갱신 방법</a>
+  </nav>
+
+  <section id="v-industry" data-viewpanel="industry">
+    <div class="kpis" id="kpis"></div>
+    <div class="grid">
+      <div class="card full">
+        <div class="row"><div><h2>월별 석유제품 · 석유화학 수출액</h2><p class="sub" id="exp-sub"></p></div><div class="segs" role="group" aria-label="기간 선택" id="exp-range"></div></div>
+        <div class="chart" id="exp-wrap"><canvas id="c-exp" aria-label="월별 석유제품·석유화학 수출액 차트" role="img"></canvas></div>
+        <div class="tbl" id="exp-tbl"></div>
+        <div class="src" id="exp-src"></div>
+      </div>
+      <div class="card full">
+        <h2>숫자로 보는 최근 동향</h2><p class="sub">기사·보도자료에서 수치화할 수 있는 항목. 카드를 누르면 원문이 열려요.</p>
+        <div class="news" id="news"></div>
+      </div>
+      <div class="card">
+        <h2>정유 · 석유화학 수출 증감률</h2><p class="sub">전년 동월 대비 %, 정유=HS 2710 석유제품, 석유화학=HS 29·39·4002 합계</p>
+        <div class="chart"><canvas id="c-mem"></canvas></div>
+        <div class="src" id="mem-src"></div>
+      </div>
+      <div class="card">
+        <h2>국가별 플라스틱 · 합성수지 수출</h2><p class="sub">최근 24개월, 단위: 억 달러 · HS 39 · 중국 비중이 줄어드는 흐름이 핵심이에요</p>
+        <div class="chart"><canvas id="c-cty"></canvas></div>
+        <div class="src" id="cty-src"></div>
+      </div>
+      <div class="card">
+        <h2>석유제품 수출물가 vs 원유 수입물가</h2><p class="sub">달러 기준, 2020=100 · 제품값이 원유값보다 더 오르면 정제마진이 좋아지는 국면이에요</p>
+        <div class="chart"><canvas id="c-px"></canvas></div>
+        <div class="src" id="px-src"></div>
+      </div>
+      <div class="card">
+        <h2>정제마진 참고 지표</h2><p class="sub">석유제품 수출물가 ÷ 원유 수입물가 × 100. 서로 다른 통계표(수출·수입물가)를 나눈 값이라 절대 수준보다 방향만 참고하세요.</p>
+        <div class="chart"><canvas id="c-spr"></canvas></div>
+        <div class="src" id="spr-src"></div>
+      </div>
+      <div class="card">
+        <h2>화학제품 수출물가지수</h2><p class="sub">달러 기준, 2020=100 · 기초유기화학물질(에틸렌·프로필렌·BTX 등)과 화학제품 전체</p>
+        <div class="chart"><canvas id="c-cpx"></canvas></div>
+        <div class="src" id="cpx-src"></div>
+      </div>
+      <div class="card">
+        <h2>원유 수입액</h2><p class="sub">월별, 단위: 억 달러 · HS 2709 · 정유사 원가(유가 × 물량) 흐름</p>
+        <div class="chart"><canvas id="c-eq"></canvas></div>
+        <div class="src" id="eq-src"></div>
+      </div>
+      <div class="card">
+        <h2>석유정제 생산 · 출하 · 재고지수</h2><p class="sub">월별 원지수, 2020=100 · 최근 5년</p>
+        <div class="chart"><canvas id="c-pi"></canvas></div>
+        <div class="src" id="pi-src"></div>
+      </div>
+      <div class="card">
+        <h2>화학제품 생산 · 출하 · 재고지수</h2><p class="sub">월별 원지수, 2020=100 · 의약품 제외 · 최근 5년</p>
+        <div class="chart"><canvas id="c-ci"></canvas></div>
+        <div class="src" id="ci-src"></div>
+      </div>
+      <div class="card full">
+        <h2>출하 − 재고 순환</h2><p class="sub">출하지수 증감률에서 재고지수 증감률을 뺀 값(%p, 전년 동월 대비). 플러스면 재고가 줄며 경기가 좋아지는 국면이에요.</p>
+        <div class="chart"><canvas id="c-cyc"></canvas></div>
+        <div class="src" id="cyc-src"></div>
+      </div>
+    </div>
+  </section>
+  <section id="v-companies" data-viewpanel="companies" hidden>
+    <p class="lede">정유, 윤활유·석유유통, 석유화학(NCC), 정밀·스페셜티 화학, 합성섬유, 도료, 비료·농화학 상장사의 실적이에요. 표에서 회사를 누르면 아래에 최근 4개 분기 리뷰, 내재가치 리포트, 10년 연간 추세와 최근 12개 분기 실적이 나타나요.</p>
+    <div class="note" id="co-note"></div>
+    <div class="card">
+      <div class="row"><div><h2>최근 분기 실적 비교</h2><p class="sub" id="co-sub">단위: 억원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 열 제목을 누르면 정렬돼요</p></div>
+        <div class="segs" role="group" aria-label="업종 필터" id="co-filter"></div></div>
+      <div class="tbl"><table id="co-table"></table></div>
+    </div>
+    <div style="height:16px"></div>
+    <div class="grid" id="co-detail">
+      <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
+        <select id="co-select" aria-label="회사 선택"></select></div></div>
+      <div class="card full rv" id="co-review"></div>
+      <div class="card full rv" id="co-biz"></div>
+      <div class="card full rv" id="co-value"></div>
+      <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
+      <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
+      <div class="card full"><h2>연간 실적표</h2><p class="sub">단위: 억원, 괄호는 전년 대비 증감률</p><div class="tbl" id="t-annual"></div></div>
+      <div class="card"><h2>최근 12개 분기 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-q1"></canvas></div></div>
+      <div class="card"><h2>최근 12개 분기 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-q2"></canvas></div></div>
+      <div class="card full"><h2>분기 실적표 (YoY)</h2><p class="sub">단위: 억원, 괄호는 전년 같은 분기 대비 증감률</p><div class="tbl" id="t-quarter"></div></div>
+    </div>
+  </section>
+
+  <section id="v-valuation" data-viewpanel="valuation" hidden>
+    <p class="lede">최근 실적을 바탕으로 회사별 정상화 이익과 성장 시나리오를 세워 주주가치를 추정했어요. 현재 시가총액이 어떤 성장률을 전제하고 있는지(역DCF)도 함께 보여줘요. 회사를 누르면 상세 리포트로 이동해요.</p>
+    <div class="note" id="val-note"></div>
+    <div class="card"><div class="row"><div><h2>현재 주가 대비 적정가 범위</h2><p class="sub">막대는 비관~낙관 시나리오 적정가를 현재 주가 대비 %로 나타낸 범위, 점은 기준 시나리오예요. 0% 선 위에 있으면 현재 주가가 기준 적정가보다 낮다는 뜻이에요.</p></div>
+      <div class="segs" role="group" aria-label="업종 필터" id="val-filter"></div></div>
+      <div class="chart" id="val-chart-wrap" style="height:520px"><canvas id="c-val"></canvas></div></div>
+    <div style="height:16px"></div>
+    <div class="card"><h2>밸류에이션 요약</h2><p class="sub">단위: 억원, 원 · TTM은 최근 4개 분기 합계 · 열 제목을 누르면 정렬돼요</p><div class="tbl"><table id="val-table"></table></div></div>
+    <div style="height:16px"></div>
+    <div class="card"><h2>계산 방법</h2><div class="rv" id="val-method"></div></div>
+  </section>
+
+  <section id="v-sources" data-viewpanel="sources" hidden>
+    <div class="grid">
+      <div class="card"><h2>데이터 출처</h2><ul class="srclist" id="src-list"></ul></div>
+      <div class="card"><h2>자동 갱신 구조</h2>
+        <p>이 페이지는 GitHub 저장소 <a href="https://github.com/lifeisgreathehe-cyber/kcosmetics-dashboard">kcosmetics-dashboard</a>의 <code>docs/chem/data</code> 폴더에 있는 JSON 파일을 읽어 그려요. GitHub Actions가 매주 월요일과 매월 16일 오전 9시에 아래 API에서 최신 데이터를 받아 파일을 갱신해요.</p>
+        <ul class="srclist">
+          <li><b>DART OpenAPI</b> (DART_API_KEY): 상장사 10년 연간 · 분기 손익, 지배주주순이익</li>
+          <li><b>KOSIS OpenAPI</b> (KOSIS_API_KEY): 석유정제·화학제품 제조업 생산·출하·재고지수(광업제조업동향조사), 석유제품·화학제품 수출물가지수와 원유 수입물가지수(한국은행)</li>
+          <li><b>공공데이터포털 관세청 API</b> (DATA_GO_KR_KEY): HS 2710(석유제품)·29(유기화학품)·39(플라스틱)·4002(합성고무) 월별 수출입, 국가별 플라스틱 수출, HS 2709 원유 수입</li>
+        </ul>
+        <p class="sub">키가 등록되지 않은 소스는 마지막으로 수집된 값을 그대로 보여줘요.</p>
+        <p class="sub" id="run-meta"></p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script>
+(function(){
+const $=s=>document.querySelector(s);
+const css=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const S=()=>[1,2,3,4,5,6,7,8].map(i=>css('--s'+i));
+const charts={};
+const fmt=(v,d=0)=>v==null||isNaN(v)?'–':Number(v).toLocaleString('ko-KR',{maximumFractionDigits:d,minimumFractionDigits:d});
+const pct=(v)=>typeof v==='string'?v:(v==null||!isFinite(v)?'–':(v>0?'+':'')+v.toFixed(1)+'%');
+const cls=(v)=>v==='흑자전환'?'up':(v==='적자전환'||v==='적자지속')?'down':(v==null||!isFinite(v)?'':(v>=0?'up':'down'));
+const yoy=(c,p)=>{if(c==null||p==null||p===0)return null;if(p<0&&c>=0)return '흑자전환';if(p>0&&c<0)return '적자전환';if(p<0&&c<0)return '적자지속';return ((c-p)/p)*100;};
+let NI='지배주주순이익';
+async function J(n){try{const r=await fetch('data/'+n,{cache:'no-cache'});if(!r.ok)return null;return await r.json()}catch(e){return null}}
+function src(el,d){if(!d)return;$(el).innerHTML=`출처: ${d.source||''}${d.url?` · <a href="${d.url}" target="_blank" rel="noopener">원자료</a>`:''}${d.updated?` · 수집 ${d.updated}`:''}`}
+
+function baseOpts(extra={}){
+  const ink=css('--ink-2'),grid=css('--line');
+  return Object.assign({responsive:true,maintainAspectRatio:false,animation:false,
+    interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'bottom',labels:{color:ink,boxWidth:10,boxHeight:10,usePointStyle:true,font:{size:11.5}}},
+      tooltip:{callbacks:{}}},
+    scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:12,font:{size:11}},grid:{display:false},border:{color:grid}},
+            y:{ticks:{color:css('--ink-3'),font:{size:11}},grid:{color:grid},border:{display:false}}}},extra);
+}
+function draw(id,cfg){if(charts[id])charts[id].destroy();charts[id]=new Chart(document.getElementById(id),cfg);}
+const bar=(label,data,color,extra={})=>Object.assign({type:'bar',label,data,backgroundColor:color,borderRadius:3,borderSkipped:'bottom',maxBarThickness:28},extra);
+const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,borderColor:color,backgroundColor:color,borderWidth:2,pointRadius:0,pointHoverRadius:4,tension:.25,spanGaps:true},extra);
+
+let D={};
+async function loadAll(){
+  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep'];
+  const res=await Promise.all(names.map(n=>J(n+'.json')));
+  names.forEach((n,i)=>D[n]=res[i]);
+}
+
+/* ---------------- 산업 ---------------- */
+const PETRO=['유기화학품','플라스틱·합성수지','합성고무'];
+const sumK=(cu,ks)=>cu.months.map((_,i)=>{let t=0,ok=false;ks.forEach(k=>{const a=cu.series[k];if(a&&a[i]!=null){t+=a[i];ok=true}});return ok?t:null});
+const ys=(arr,i,lag=12)=>{const v=arr?yoy(arr[i],arr[i-lag]):null;return typeof v==='number'?v:null};
+function renderKPIs(){
+  const cu=D.customs_exports, ne=D.news_exports, ri=D.refining_index, ci=D.chem_index, cp=D.crude_price;
+  const k=[];
+  if(cu&&cu.total&&cu.total.length){
+    const n=cu.total.length;
+    const O=cu.series['석유제품'], P=sumK(cu,PETRO);
+    if(O) k.push({l:`${cu.months[n-1]} 석유제품 수출`,v:fmt(O[n-1]/100,1)+'억$',s:`전년 동월 대비 <span class="${cls(ys(O,n-1))}">${pct(ys(O,n-1))}</span>`});
+    k.push({l:`${cu.months[n-1]} 석유화학 수출`,v:fmt(P[n-1]/100,1)+'억$',s:`HS 29·39·4002 · YoY <span class="${cls(ys(P,n-1))}">${pct(ys(P,n-1))}</span>`});
+    const y=cu.months[n-1].slice(0,4); let ytd=0,ytdp=0;
+    cu.months.forEach((mm,i)=>{ if(mm.startsWith(y)) {ytd+=cu.total[i]; const j=cu.months.indexOf((+y-1)+mm.slice(4)); if(j>=0) ytdp+=cu.total[j];}});
+    k.push({l:`${y}년 누적 (정유+석유화학)`,v:fmt(ytd/100,0)+'억$',s:`전년 동기 대비 <span class="${cls(yoy(ytd,ytdp))}">${pct(yoy(ytd,ytdp))}</span>`});
+  } else if(ne&&ne.rows&&ne.rows.length){
+    const last=ne.rows[ne.rows.length-1];
+    k.push({l:`${last.m} 석유제품 수출`,v:fmt(last.v,1)+'억$',s:`전년 동월 대비 <span class="${cls(last.yoy)}">${pct(last.yoy)}</span>`});
+    if(last.pc!=null) k.push({l:`${last.m} 석유화학 수출`,v:fmt(last.pc,1)+'억$',s:`전년 동월 대비 <span class="${cls(last.pc_yoy)}">${pct(last.pc_yoy)}</span>`});
+    if(ne.ytd) k.push({l:ne.ytd.label,v:ne.ytd.value,s:ne.ytd.sub});
+  }
+  if(cp&&cp.series&&cp.series['달러기준']){const P=cp.series['달러기준'],n=cp.months.length-1;
+    k.push({l:`${cp.months[n]} 원유 수입물가`,v:fmt(P[n],1),s:`달러 기준 · YoY <span class="${cls(ys(P,n))}">${pct(ys(P,n))}</span>`});}
+  if(ri&&ri.series){const P=ri.series['생산'],n=ri.months.length-1;
+    k.push({l:`${ri.months[n]} 석유정제 생산지수`,v:fmt(P[n],1),s:`전년 동월 대비 <span class="${cls(ys(P,n))}">${pct(ys(P,n))}</span>`});}
+  if(ci&&ci.series){const P=ci.series['생산'],I=ci.series['재고'],n=ci.months.length-1;
+    k.push({l:`${ci.months[n]} 화학 생산지수`,v:fmt(P[n],1),s:`YoY <span class="${cls(ys(P,n))}">${pct(ys(P,n))}</span> · 재고 YoY <span class="${cls(ys(I,n)==null?null:-ys(I,n))}">${pct(ys(I,n))}</span>`});}
+  $('#kpis').innerHTML=k.map(x=>`<div class="kpi"><div class="l">${x.l}</div><div class="v">${x.v}</div><div class="s">${x.s}</div></div>`).join('');
+}
+
+let expRange=120;
+function renderExports(){
+  const cu=D.customs_exports, ne=D.news_exports, s=S();
+  if(cu&&cu.total&&cu.total.length){
+    const n=cu.months.length, from=expRange?Math.max(0,n-expRange):0;
+    const labels=cu.months.slice(from);
+    const R=[[36,'3년'],[120,'10년'],[0,'전체']];
+    $('#exp-range').innerHTML=R.map(([v,l])=>`<button class="seg" aria-pressed="${v===expRange}" data-v="${v}">${l}</button>`).join('');
+    $('#exp-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{expRange=+b.dataset.v;renderExports()});
+    const order=['석유제품','유기화학품','플라스틱·합성수지','합성고무'];
+    const keys=order.filter(k=>cu.series[k]).concat(Object.keys(cu.series).filter(k=>!order.includes(k)));
+    const ds=keys.map((k,i)=>bar(k,cu.series[k].slice(from).map(v=>v==null?null:v/100),s[i],{stack:'a'}));
+    $('#exp-sub').textContent=`${labels[0]} ~ ${labels[labels.length-1]}, 단위: 억 달러 · 품목별 누적 막대 (HS 2710·29·39·4002)`;
+    draw('c-exp',{type:'bar',data:{labels,datasets:ds},options:baseOpts({scales:{x:{stacked:true,ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:10,font:{size:11}},grid:{display:false}},y:{stacked:true,ticks:{color:css('--ink-3')},grid:{color:css('--line')},border:{display:false}}},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw,1)}억$`,footer:(it)=>{const i=it[0].dataIndex+from;const t=cu.total[i],p=cu.total[i-12];return `합계 ${fmt(t/100,1)}억$  YoY ${pct(yoy(t,p))}`}}}}})});
+    const last=labels.slice(-13), O=cu.series['석유제품'], P=sumK(cu,PETRO);
+    const rowv=(nm,arr)=>`<tr><td>${nm}</td>${last.map(m=>{const i=cu.months.indexOf(m);return `<td class="num">${fmt(arr[i]/100,1)}</td>`}).join('')}</tr>`;
+    const rowy=(nm,arr)=>`<tr><td>${nm}</td>${last.map(m=>{const i=cu.months.indexOf(m);const y=ys(arr,i);return `<td class="num ${cls(y)}">${pct(y)}</td>`}).join('')}</tr>`;
+    $('#exp-tbl').innerHTML=`<table><thead><tr><th>월</th>${last.map(m=>`<th>${m.slice(2)}</th>`).join('')}</tr></thead><tbody>
+      ${rowv('합계(억$)',cu.total)}${rowy('합계 YoY',cu.total)}${O?rowv('석유제품',O)+rowy('석유제품 YoY',O):''}${rowv('석유화학',P)}${rowy('석유화학 YoY',P)}</tbody></table>`;
+    src('#exp-src',cu);
+  } else if(ne&&ne.rows){
+    const rows=ne.rows;
+    $('#exp-sub').textContent='단위: 억 달러 · 산업통상부 월별 수출입동향(보도자료·언론 인용). 관세청 API 수집이 끝나면 품목별 시계열로 자동 교체돼요.';
+    draw('c-exp',{type:'bar',data:{labels:rows.map(r=>r.m),datasets:[bar('석유제품',rows.map(r=>r.v),s[0]),bar('석유화학',rows.map(r=>r.pc),s[1])]},
+      options:baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:(c)=>`${c.dataset.label}: ${fmt(c.raw,1)}억$`}}}})});
+    $('#exp-tbl').innerHTML=`<table><thead><tr><th>월</th>${rows.map(r=>`<th>${r.m.slice(2)}</th>`).join('')}</tr></thead><tbody>
+      <tr><td>석유제품(억$)</td>${rows.map(r=>`<td class="num">${r.v==null?'–':fmt(r.v,1)}</td>`).join('')}</tr>
+      <tr><td>YoY</td>${rows.map(r=>`<td class="num ${cls(r.yoy)}">${pct(r.yoy)}</td>`).join('')}</tr>
+      <tr><td>석유화학(억$)</td>${rows.map(r=>`<td class="num">${r.pc==null?'–':fmt(r.pc,1)}</td>`).join('')}</tr>
+      <tr><td>YoY</td>${rows.map(r=>`<td class="num ${cls(r.pc_yoy)}">${pct(r.pc_yoy)}</td>`).join('')}</tr></tbody></table>`;
+    $('#exp-src').innerHTML=`출처: ${ne.source}`;
+  }
+  if(ne&&ne.highlights){
+    $('#news').innerHTML=ne.highlights.map(h=>`<a href="${h.src}" target="_blank" rel="noopener"><div class="l">${h.label}</div><div class="v">${h.value}</div><div class="s">${h.sub}</div></a>`).join('');
+  }
+}
+
+const empty=(id,msg)=>{const c=document.getElementById(id);if(c&&c.parentElement)c.parentElement.innerHTML=`<p class="sub" style="padding:40px 0;text-align:center">${msg}</p>`};
+const zeroGrid=()=>({x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:12},grid:{display:false}},y:{ticks:{color:css('--ink-3')},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false}}});
+function piChart(id,srcId,d){
+  const s=S(), lo=baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw,1)}`}}}});
+  if(!(d&&d.series)){empty(id,'KOSIS 수집 후 표시돼요.');return}
+  const n=d.months.length, from=Math.max(0,n-60), L=d.months.slice(from);
+  draw(id,{type:'line',data:{labels:L,datasets:['생산','출하','재고'].filter(k=>d.series[k]).map((k,i)=>line(k,d.series[k].slice(from),[s[0],s[2],s[1]][i]))},options:lo});
+  src(srcId,d);
+}
+function renderIndustry(){
+  const s=S(), cu=D.customs_exports;
+  const lo=(fmtv)=>baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmtv(c.raw)}`}}}});
+  if(cu&&cu.series&&cu.series['석유제품']){
+    const n=cu.months.length, from=Math.max(12,n-36), L=cu.months.slice(from), O=cu.series['석유제품'], P=sumK(cu,PETRO);
+    draw('c-mem',{type:'line',data:{labels:L,datasets:[line('석유제품(정유)',L.map((_,j)=>ys(O,from+j)),s[0]),line('석유화학',L.map((_,j)=>ys(P,from+j)),s[1])]},
+      options:baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${pct(c.raw)}`}}},
+        scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:12},grid:{display:false}},y:{ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false}}}})});
+    src('#mem-src',cu);
+  } else empty('c-mem','관세청 품목별 데이터 수집 후 표시돼요.');
+  const ct=D.customs_by_country;
+  if(ct&&ct.months){
+    const n=ct.months.length, from=Math.max(0,n-24), L=ct.months.slice(from);
+    const ks=Object.keys(ct.series).sort((a,b)=>ct.series[b].slice(-12).reduce((x,y)=>x+(y||0),0)-ct.series[a].slice(-12).reduce((x,y)=>x+(y||0),0));
+    const top=ks.slice(0,6);
+    draw('c-cty',{type:'bar',data:{labels:L,datasets:top.map((k,i)=>bar(k,ct.series[k].slice(from).map(v=>v==null?null:v/100),s[i],{stack:'a'}))},
+      options:baseOpts({scales:{x:{stacked:true,ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:10},grid:{display:false}},y:{stacked:true,ticks:{color:css('--ink-3')},grid:{color:css('--line')},border:{display:false}}},
+        plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw,1)}억$ (YoY ${pct(ys(ct.series[c.dataset.label],from+c.dataIndex))})`}}}})});
+    src('#cty-src',ct);
+  } else empty('c-cty','관세청 국가별 데이터 수집 후 표시돼요.');
+  const px=D.export_price, cp=D.crude_price;
+  const PO=px&&px.series&&px.series['석유제품'], CR=cp&&cp.series&&cp.series['달러기준'];
+  if(PO||CR){
+    const months=[...new Set([...(px?px.months:[]),...(cp?cp.months:[])])].sort();
+    const n=months.length, from=Math.max(0,n-72), L=months.slice(from);
+    const pick=(d,arr)=>L.map(m=>{const i=d.months.indexOf(m);return i<0?null:arr[i]});
+    const ds=[]; if(PO)ds.push(line('석유제품 수출물가',pick(px,PO),s[0])); if(CR)ds.push(line('원유 수입물가',pick(cp,CR),s[1]));
+    draw('c-px',{type:'line',data:{labels:L,datasets:ds},options:lo(v=>fmt(v,1))});
+    $('#px-src').innerHTML=`출처: 한국은행 수출입물가조사(KOSIS) · <a href="${(px||cp).url}" target="_blank" rel="noopener">수출물가</a>${cp?` · <a href="${cp.url}" target="_blank" rel="noopener">수입물가</a>`:''} · 수집 ${(px||cp).updated||''}`;
+    if(PO&&CR){
+      const r=L.map((m,j)=>{const a=pick(px,PO)[j],b=pick(cp,CR)[j];return a!=null&&b?+(a/b*100).toFixed(1):null});
+      const avg=r.filter(v=>v!=null);const mean=avg.reduce((x,y)=>x+y,0)/avg.length;
+      draw('c-spr',{type:'line',data:{labels:L,datasets:[line('제품÷원유 ×100',r,s[2],{fill:false}),line(`기간 평균 ${mean.toFixed(0)}`,L.map(()=>+mean.toFixed(1)),css('--ink-3'),{borderDash:[4,4],borderWidth:1})]},options:lo(v=>fmt(v,1))});
+      $('#spr-src').textContent='한국은행 수출물가(석유제품)·수입물가(원유) 지수로 직접 계산. 평균보다 높으면 원유 대비 제품값이 강한 구간이에요.';
+    } else empty('c-spr','수출·수입물가 수집 후 표시돼요.');
+  } else {empty('c-px','KOSIS 수집 후 표시돼요.');empty('c-spr','KOSIS 수집 후 표시돼요.');}
+  if(px&&px.series){
+    const ks=Object.keys(px.series).filter(k=>k!=='석유제품');
+    const n=px.months.length, from=Math.max(0,n-72), L=px.months.slice(from);
+    if(ks.length){draw('c-cpx',{type:'line',data:{labels:L,datasets:ks.map((k,i)=>line(k,px.series[k].slice(from),s[i+2]))},options:lo(v=>fmt(v,1))});src('#cpx-src',px);}
+    else empty('c-cpx','KOSIS 수집 후 표시돼요.');
+  } else empty('c-cpx','KOSIS 수집 후 표시돼요.');
+  const eq=cu&&cu.extra&&cu.extra['원유'];
+  if(eq){
+    const n=cu.months.length, from=Math.max(0,n-36), L=cu.months.slice(from);
+    const im=eq.imports;
+    draw('c-eq',{type:'bar',data:{labels:L,datasets:[bar('원유 수입',im.slice(from).map(v=>v==null?null:v/100),s[1])]},
+      options:baseOpts({plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${fmt(c.raw,1)}억$`,footer:it=>'YoY '+pct(ys(im,from+it[0].dataIndex))}}}})});
+    src('#eq-src',cu);
+  } else empty('c-eq','관세청 데이터 수집 후 표시돼요.');
+  piChart('c-pi','#pi-src',D.refining_index);
+  piChart('c-ci','#ci-src',D.chem_index);
+  const ri=D.refining_index, ci=D.chem_index;
+  if((ri&&ri.series)||(ci&&ci.series)){
+    const base=(ri&&ri.series)?ri:ci, n=base.months.length, from=Math.max(12,n-60), L=base.months.slice(from);
+    const gap=d=>d&&d.series?L.map(m=>{const i=d.months.indexOf(m);const a=ys(d.series['출하'],i),b=ys(d.series['재고'],i);return a==null||b==null?null:+(a-b).toFixed(1)}):null;
+    const ds=[]; const g1=gap(ri),g2=gap(ci);
+    if(g1)ds.push(bar('석유정제',g1,s[0])); if(g2)ds.push(bar('화학',g2,s[1]));
+    draw('c-cyc',{type:'bar',data:{labels:L,datasets:ds},
+      options:baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw>0?'+':''}${c.raw}%p`}}},scales:zeroGrid()})});
+    src('#cyc-src',base);
+  } else empty('c-cyc','KOSIS 수집 후 표시돼요.');
+}
+/* ---------------- 기업 ---------------- */
+let CO=null, cur=null, grp='전체';
+const qkey=(q)=>{const y=+q.slice(0,4),n=+q.slice(5);return {y,n}};
+const prevQ=(q)=>{const {y,n}=qkey(q);return `${y-1}Q${n}`};
+const eok=v=>v==null?null:v/100; // 백만원 → 억원
+function latestQ(c){const ks=Object.keys(c.quarterly||{}).sort();return ks[ks.length-1]}
+let coSort=null;
+const VAL=code=>(D.valuation&&D.valuation.companies||{})[code]||{};
+const ratio=(v,d=1,suf='')=>v==null||!isFinite(v)?'–':v.toFixed(d)+suf;
+function sortRows(rows,key,getters){
+  if(!key)return rows;const [k,dir]=key;const g=getters[k];
+  return rows.slice().sort((a,b)=>{const x=g(a),y=g(b);if(x==null&&y==null)return 0;if(x==null)return 1;if(y==null)return -1;return (typeof x==='string'?x.localeCompare(y):x-y)*dir});
+}
+function bindSort(tbl,state,set){
+  tbl.querySelectorAll('th.sort').forEach(th=>th.onclick=()=>{const k=th.dataset.k;const cur=state();set(cur&&cur[0]===k?[k,-cur[1]]:[k,th.dataset.num?-1:1])});
+}
+function renderCompanyTable(){
+  const groups=['전체',...new Set(CO.companies.map(c=>c.group))];
+  $('#co-filter').innerHTML=groups.map(g=>`<button class="seg" aria-pressed="${g===grp}" data-g="${g}">${g}</button>`).join('');
+  $('#co-filter').querySelectorAll('button').forEach(b=>b.onclick=()=>{grp=b.dataset.g;renderCompanyTable()});
+  const L=c=>{const q=latestQ(c);return q?{q,a:c.quarterly[q],p:c.quarterly[prevQ(q)]||{}}:null};
+  const G={name:c=>c.name,rev:c=>L(c)?.a.rev,ry:c=>{const l=L(c);const v=l&&yoy(l.a.rev,l.p.rev);return typeof v==='number'?v:null},
+    op:c=>L(c)?.a.op,oy:c=>{const l=L(c);const v=l&&yoy(l.a.op,l.p.op);return typeof v==='number'?v:null},
+    opm:c=>{const l=L(c);return l&&l.a.rev?l.a.op/l.a.rev*100:null},ni:c=>L(c)?.a.ni,q:c=>L(c)?.q,ny:c=>{const l=L(c);const v=l&&yoy(l.a.ni,l.p.ni);return typeof v==='number'?v:null},
+    price:c=>VAL(c.code).price,mcap:c=>VAL(c.code).mcap,per:c=>VAL(c.code).per,roe:c=>VAL(c.code).roe,pbr:c=>VAL(c.code).pbr,fv:c=>VAL(c.code).dcf?.scenarios.base.per_share,gap:c=>VAL(c.code).dcf?.scenarios.base.upside};
+  const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
+  const body=rows.map(c=>{
+    const l=L(c);
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    const {q,a,p}=l, v=VAL(c.code);
+    const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
+    const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
+    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
+      <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
+      <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
+      <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
+      <td class="num">${fmt(v.price)}${(()=>{const q=D.quotes&&D.quotes.quotes[c.code];return q&&q.chg_pct!=null?`<br><span class="${q.chg_pct>=0?'up':'down'}" style="font-size:11px">${pct(q.chg_pct)}</span>`:''})()}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${per}</td><td class="num ${v.roe!=null&&v.roe<0?'down':''}">${ratio(v.roe,1,'%')}</td><td class="num">${ratio(v.pbr,2,'배')}</td>
+      ${(()=>{const b=v.dcf&&v.dcf.scenarios.base;if(!b)return '<td class="num">–</td><td class="num">–</td>';const [vt,vc]=VERD(b.upside);return `<td class="num">${fmt(b.per_share)}</td><td class="num ${cls(b.upside)}">${pct(b.upside)}<br><span class="tone ${vc}" style="font-size:10.5px;margin:2px 0 0">${vt}</span></td>`})()}</tr>`}).join('');
+  const th=(k,t,num=1)=>`<th class="sort${k==='name'?' l':''}" data-k="${k}" ${num?'data-num="1"':''} title="눌러서 정렬" aria-sort="${coSort&&coSort[0]===k?(coSort[1]>0?'ascending':'descending'):'none'}">${t}<span class="sarr">${coSort&&coSort[0]===k?(coSort[1]>0?'▲':'▼'):'↕'}</span></th>`;
+  $('#co-table').innerHTML=`<thead><tr><th colspan="9" class="grp">최근 분기</th><th colspan="5" class="grp">현재 주가 · 최근 4개 분기(TTM) 기준</th><th colspan="2" class="grp">내재가치(기준 시나리오)</th></tr>
+    <tr>${th('name','회사',0)}${th('q','분기',0)}${th('rev','매출액')}${th('ry','YoY')}${th('op','영업이익')}${th('oy','YoY')}${th('opm','영업이익률')}${th('ni','순이익')}${th('ny','YoY')}${th('price','주가')}${th('mcap','시가총액')}${th('per','PER')}${th('roe','ROE')}${th('pbr','PBR')}${th('fv','적정주가')}${th('gap','괴리율')}</tr></thead><tbody>${body}</tbody>`;
+  bindSort($('#co-table'),()=>coSort,v=>{coSort=v;renderCompanyTable()});
+  $('#co-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{selectCo(tr.dataset.code);document.getElementById('co-detail').scrollIntoView({behavior:'smooth',block:'start'})};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
+}
+const TONE={pos:'개선',neg:'부진',neu:'중립'};
+function renderReview(c){
+  const r=(D.reviews&&D.reviews.companies||{})[c.code];
+  if(!r){$('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">리뷰 작성 대기 중이에요. 실적 데이터가 수집되면 추가돼요.</p>`;return}
+  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${D.reviews.updated||''}</p>
+   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>
+   <h4>실적 동향</h4><ul>${r.trend.map(t=>`<li>${t}</li>`).join('')}</ul>
+   <h4>평가</h4><p>${r.eval}</p>
+   ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
+   ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
+   ${r.news&&r.news.length?`<h4>최신 기사 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''}
+   <p class="src">${D.reviews.disclaimer||''}</p>`;
+}
+function renderBiz(c){
+  const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
+  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}`;return}
+  const s=S(), mix=b.mix||[];
+  $('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART ${b.report}${b.url?` · <a href="${b.url}" target="_blank" rel="noopener" style="color:var(--accent)">원문 보기</a>`:''}</p>
+   ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
+   <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
+   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
+}
+function renderDeep(c){
+  const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
+  if(!x) return '';
+  const tone={'넓음':'pos','좁음':'neu','없음':'neg'}[x.moat.grade]||'neu';
+  const vt={'긍정':'pos','중립':'neu','부정':'neg'}[x.outlook.view]||'neu';
+  const mk=s=>s===2?['●','m2','충족']:s===1?['◐','m1','부분']:['○','m0','미흡'];
+  const fs=x.fisher_score, fmax=x.fisher.length*2;
+  return `<h2 style="margin-top:22px">심층 분석</h2><p class="sub">${dp.source} · 작성 ${dp.updated}</p>
+   <div class="dgrid">
+    <div><h4>제품·서비스</h4><p>${x.products}</p></div>
+    <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
+    <div><h4>고객</h4><p>${x.customers}</p></div>
+    <div><h4>원재료·조달</h4><p>${x.sourcing}</p></div>
+   </div>
+   <h4>경제적 해자</h4>
+   <div class="moat"><span class="tone ${tone}">해자 ${x.moat.grade}</span><span class="dots" aria-label="5점 중 ${x.moat.score}점">${'●'.repeat(x.moat.score)}${'○'.repeat(5-x.moat.score)}</span>${x.moat.sources.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
+   <p>${x.moat.reason}</p>
+   <h4>필립 피셔 16문항</h4>
+   <div class="moat"><b>${fs} / ${fmax}점</b><span class="fbar"><i style="width:${fs/fmax*100}%"></i></span><span class="sub">● 충족 ${x.fisher.filter(f=>f.s===2).length} · ◐ 부분 ${x.fisher.filter(f=>f.s===1).length} · ○ 미흡 ${x.fisher.filter(f=>f.s===0).length}</span></div>
+   <details class="fd"><summary>16개 질문별 평가 펼쳐 보기</summary>
+   <table class="fisher"><tbody>${x.fisher.map((f,i)=>{const [m,k,l]=mk(f.s);return `<tr><td class="n">${i+1}</td><td class="q">${dp.fisher_questions[i]}</td><td class="m ${k}" title="${l}" aria-label="${l}">${m}</td><td>${f.a}</td></tr>`}).join('')}</tbody></table>
+   <p class="src">${dp.fisher_note}</p></details>
+   <h4>향후 3~4년 전망 <span class="tone ${vt}" style="margin-left:6px">${x.outlook.view}</span></h4>
+   <p>${x.outlook.summary}</p>
+   <div class="ol"><div><h4>기회</h4><ul>${x.outlook.upside.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>위험</h4><ul>${x.outlook.risks.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+   <p class="src">${dp.disclaimer}</p>`;
+}
+const VERD=u=>u==null?['–','neu']:u>=20?['저평가 구간','pos']:u<=-20?['기대 선반영','neg']:['적정 범위','neu'];
+function renderValueReport(c){
+  const v=VAL(c.code), d=v.dcf;
+  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`;return}
+  const S0=d.scenarios, [vt,vc]=VERD(S0.base.upside);
+  const kp=(l,val,sub='')=>`<div class="kpi"><div class="l">${l}</div><div class="v">${val}</div><div class="s">${sub}</div></div>`;
+  const ig=d.implied_g;
+  const igTxt=ig==null?'계산 범위 밖':ig.toFixed(1)+'%';
+  const gap=ig==null?'':ig>S0.base.g+3?`현재 주가는 기준 가정(${S0.base.g}%)보다 높은 성장을 전제하고 있어요.`:ig<S0.base.g-3?`현재 주가는 기준 가정(${S0.base.g}%)보다 낮은 성장만 반영하고 있어요.`:`현재 주가는 기준 가정(${S0.base.g}%)과 비슷한 성장을 반영하고 있어요.`;
+  $('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">주가 ${fmt(v.price)}원 (${v.price_date}, ${v.price_source}) · 자기자본 ${v.equity_source}</p>
+   <h3><span class="tone ${vc}">${vt}</span>기준 적정가 ${fmt(S0.base.per_share)}원, 현재가 대비 ${pct(S0.base.upside)}</h3>
+   <div class="vgrid">
+     ${kp('시가총액',fmt(eok(v.mcap))+'억',`순현금 ${fmt(eok(v.net_cash))}억`)}
+     ${kp('PER (TTM)',v.per!=null?v.per.toFixed(1)+'배':'적자',`TTM 순이익 ${fmt(eok(v.ttm&&v.ttm.ni))}억`)}
+     ${kp('ROE (TTM)',ratio(v.roe,1,'%'),`PBR ${ratio(v.pbr,2,'배')}`)}
+     ${kp('선행 PER',d.fwd_per.toFixed(1)+'배',`정상화 이익 ${fmt(eok(d.E1))}억 기준`)}
+     ${kp('역DCF 내재 성장률',igTxt,'1~5년차 연평균, 시가총액 정당화')}
+   </div>
+   <div class="tbl"><table><thead><tr><th class="l">시나리오</th><th>1~5년 이익 성장률</th><th>주주가치(억원)</th><th>주당 적정가(원)</th><th>현재가 대비</th></tr></thead><tbody>
+   ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
+   </tbody></table></div>
+   <h4>해석</h4><p>${gap} ${d.note}.</p>
+   <h4>가정</h4><p>정상화 지배순이익 ${fmt(eok(d.E1))}억원(${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
+   <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/chem/valuation.json에서 바꿀 수 있어요.</p>`;
+}
+function finTable(keys,get,prevKey){
+  const metrics=[['rev','매출액'],['gp','매출총이익'],['op','영업이익'],['ni',NI],['opm','영업이익률']];
+  const head=`<tr><th>항목</th>${keys.map(k=>`<th>${k}</th>`).join('')}</tr>`;
+  const body=metrics.map(([m,l])=>`<tr><td>${l}</td>${keys.map(k=>{
+    const a=get(k)||{},p=get(prevKey(k))||{};
+    if(m==='opm'){const v=a.rev?a.op/a.rev*100:null;return `<td class="num">${v==null?'–':v.toFixed(1)+'%'}</td>`}
+    const y=yoy(a[m],p[m]);
+    return `<td class="num">${fmt(eok(a[m]))}<br><span class="${cls(y)}" style="font-size:11px">${pct(y)}</span></td>`}).join('')}</tr>`).join('');
+  return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
+}
+function selectCo(code){
+  cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
+  $('#co-select').value=code;
+  $('#co-name').textContent=c.name;
+  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':c.source==='pending'?'DART 수집 대기':'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
+  NI=c.source==='dart'?'지배주주순이익':'순이익';
+  document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
+  $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
+  $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
+  renderCompanyTable();renderReview(c);renderBiz(c);renderValueReport(c);
+  const s=S();
+  const ay=Object.keys(c.annual||{}).sort().slice(-10);
+  const A=k=>c.annual[k];
+  const ao=baseOpts({plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:x=>`${x.dataset.label}: ${fmt(x.raw)}억원`}}}});
+  draw('c-a1',{type:'bar',data:{labels:ay,datasets:[bar('매출액',ay.map(k=>eok(A(k).rev)),s[0]),bar('매출총이익',ay.map(k=>eok(A(k).gp)),s[2])]},options:ao});
+  draw('c-a2',{type:'bar',data:{labels:ay,datasets:[bar('영업이익',ay.map(k=>eok(A(k).op)),s[1]),bar(NI,ay.map(k=>eok(A(k).ni)),s[6])]},options:ao});
+  $('#t-annual').innerHTML=ay.length?finTable(ay,A,k=>String(+k-1)):'<p class="sub">데이터 없음</p>';
+  const qs=Object.keys(c.quarterly||{}).sort().slice(-12);
+  const Q=k=>c.quarterly[k];
+  draw('c-q1',{type:'bar',data:{labels:qs,datasets:[bar('매출액',qs.map(k=>eok(Q(k).rev)),s[0]),bar('매출총이익',qs.map(k=>eok(Q(k).gp)),s[2])]},options:ao});
+  draw('c-q2',{type:'bar',data:{labels:qs,datasets:[bar('영업이익',qs.map(k=>eok(Q(k).op)),s[1]),bar(NI,qs.map(k=>eok(Q(k).ni)),s[6])]},options:ao});
+  $('#t-quarter').innerHTML=qs.length?finTable(qs,Q,prevQ):'<p class="sub">데이터 없음</p>';
+}
+function renderCompanies(){
+  CO=D.companies; if(!CO) return;
+  const anyDart=CO.companies.some(c=>c.source==='dart');
+  $('#co-note').innerHTML=anyDart?`모든 회사가 DART 전자공시 기준(연결, 지배주주순이익)이에요. 마지막 수집 ${CO.updated||''}. 3분기 보고서는 11월 14일 전후 공시돼요. 우선주가 있는 회사(LG화학·S-Oil·한화솔루션·금호석유화학·코오롱인더)는 시가총액에 우선주를 포함했어요.`:
+    `실적 데이터를 모으는 중이에요. 국내 PC에서 DART 수집을 실행하면 <b>10개년 연간 + 12개 분기, 지배주주순이익</b>이 채워져요.`;
+  $('#co-select').innerHTML=CO.companies.map(c=>`<option value="${c.code}">${c.name}</option>`).join('');
+  $('#co-select').onchange=e=>selectCo(e.target.value);
+  selectCo(cur||CO.companies[0].code);
+}
+
+let valSort=null, vgrp='전체';
+function renderValuation(){
+  const V=D.valuation; if(!V)return;
+  const all=Object.entries(V.companies).map(([code,v])=>({code,...v})).filter(v=>v.dcf);
+  const dates=all.map(v=>v.price_date).filter(Boolean).sort();
+  $('#val-note').innerHTML=D.quotes?`${quoteLine()}. 주가가 바뀔 때마다 시가총액, PER, PBR, 적정가 대비 괴리율, 역DCF 내재 성장률을 다시 계산해요.`:`주가 기준일 ${dates[0]}~${dates[dates.length-1]} (${[...new Set(all.map(v=>v.price_source))].join(', ')}). 실시간 시세가 수집되면 자동으로 최신 주가로 다시 계산돼요.`;
+  const groups=['전체',...new Set(all.map(v=>v.group))];
+  $('#val-filter').innerHTML=groups.map(g=>`<button class="seg" aria-pressed="${g===vgrp}" data-g="${g}">${g}</button>`).join('');
+  $('#val-filter').querySelectorAll('button').forEach(b=>b.onclick=()=>{vgrp=b.dataset.g;renderValuation()});
+  const rows0=all.filter(v=>vgrp==='전체'||v.group===vgrp);
+  const ch=rows0.slice().sort((a,b)=>b.dcf.scenarios.base.upside-a.dcf.scenarios.base.upside);
+  $('#val-chart-wrap').style.height=Math.max(220,ch.length*30+60)+'px';
+  const s=S(), clip=x=>Math.max(-80,Math.min(150,x));
+  draw('c-val',{type:'bar',data:{labels:ch.map(v=>v.name),datasets:[
+    {type:'bar',label:'비관~낙관 범위',data:ch.map(v=>[clip(v.dcf.scenarios.bear.upside),clip(v.dcf.scenarios.bull.upside)]),backgroundColor:s[0]+'55',borderColor:s[0],borderWidth:1,borderRadius:3,borderSkipped:false,barThickness:14},
+    {type:'scatter',label:'기준 시나리오',data:ch.map((v,i)=>({x:clip(v.dcf.scenarios.base.upside),y:v.name})),backgroundColor:s[1],borderColor:s[1],pointRadius:5,pointHoverRadius:6}]},
+    options:baseOpts({indexAxis:'y',interaction:{mode:'nearest',axis:'y',intersect:false},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},
+        tooltip:{callbacks:{label:x=>{const v=ch[x.dataIndex],S0=v.dcf.scenarios;return x.datasetIndex===0?`비관 ${pct(S0.bear.upside)} ~ 낙관 ${pct(S0.bull.upside)}`:`기준 ${fmt(S0.base.per_share)}원 (${pct(S0.base.upside)})`}}}},
+      scales:{x:{ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false},min:-80,max:150},
+              y:{type:'category',labels:ch.map(v=>v.name),ticks:{color:css('--ink-2'),font:{size:12}},grid:{display:false}}}})});
+  const G={name:v=>v.name,price:v=>v.price,mcap:v=>v.mcap,ni:v=>v.ttm?.ni,per:v=>v.per,pbr:v=>v.pbr,roe:v=>v.roe,fper:v=>v.dcf.fwd_per,ig:v=>v.dcf.implied_g,
+    bear:v=>v.dcf.scenarios.bear.per_share,base:v=>v.dcf.scenarios.base.per_share,bull:v=>v.dcf.scenarios.bull.per_share,up:v=>v.dcf.scenarios.base.upside,bg:v=>v.dcf.scenarios.base.g};
+  const rows=sortRows(rows0,valSort||['up',-1],G);
+  const th=(k,t)=>{const st=valSort||['up',-1];return `<th class="sort${k==='name'?' l':''}" data-k="${k}" ${k!=='name'?'data-num="1"':''} title="눌러서 정렬">${t}<span class="sarr">${st[0]===k?(st[1]>0?'▲':'▼'):'↕'}</span></th>`};
+  $('#val-table').innerHTML=`<thead><tr>${th('name','회사')}${th('price','주가')}${th('mcap','시가총액')}${th('ni','순이익 TTM')}${th('per','PER')}${th('pbr','PBR')}${th('roe','ROE')}${th('fper','선행 PER')}${th('ig','내재 성장률')}${th('bg','기준 가정')}${th('bear','비관')}${th('base','기준 적정가')}${th('bull','낙관')}${th('up','기준 대비')}<th class="l">판단</th></tr></thead><tbody>${rows.map(v=>{const S0=v.dcf.scenarios,[vt,vc]=VERD(S0.base.upside);return `<tr data-code="${v.code}" tabindex="0" style="cursor:pointer">
+    <td class="l">${v.name} <span class="pill">${v.group}</span></td><td class="num">${fmt(v.price)}</td><td class="num">${fmt(eok(v.mcap))}</td><td class="num">${fmt(eok(v.ttm&&v.ttm.ni))}</td>
+    <td class="num">${v.per!=null?v.per.toFixed(1):'적자'}</td><td class="num">${ratio(v.pbr,2)}</td><td class="num">${ratio(v.roe,1,'%')}</td><td class="num">${v.dcf.fwd_per.toFixed(1)}</td>
+    <td class="num">${v.dcf.implied_g==null?'–':v.dcf.implied_g.toFixed(1)+'%'}</td><td class="num">${S0.base.g}%</td>
+    <td class="num">${fmt(S0.bear.per_share)}</td><td class="num">${fmt(S0.base.per_share)}</td><td class="num">${fmt(S0.bull.per_share)}</td><td class="num ${cls(S0.base.upside)}">${pct(S0.base.upside)}</td><td class="l"><span class="tone ${vc}">${vt}</span></td></tr>`}).join('')}</tbody>`;
+  bindSort($('#val-table'),()=>valSort||['up',-1],v=>{valSort=v;renderValuation()});
+  $('#val-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{cur=tr.dataset.code;location.hash='#companies';setTimeout(()=>{selectCo(cur);document.getElementById('co-review').scrollIntoView({block:'start'})},50)};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
+  $('#val-method').innerHTML=`<ul>
+   <li><b>PER·ROE·PBR</b>: 최근 4개 분기 지배주주순이익 합계(TTM)로 PER과 ROE를 계산하고, PBR은 가장 최근 자기자본 기준이에요. 자기자본은 DART 재무상태표가 수집되면 그 값을, 아니면 공개 집계의 PBR에서 역산한 값을 써요.</li>
+   <li><b>사이클 정상화</b>: 정유·석유화학은 유가·스프레드에 따라 이익이 몇 배씩 출렁이는 경기순환 업종이라, 최근 1년 이익을 그대로 쓰면 호황기엔 비싸게, 불황기엔 싸게 평가하는 실수를 해요. 그래서 정상 이익은 사이클 평균(회사별 검토 전에는 최근 7개 연도 지배순이익 평균)을 기준으로 잡고, 회사별로 현재 사이클 위치(고점·회복·저점)와 구조적 변화(중국 증설, 설비 감축)를 반영해 조정해요.</li>
+   <li><b>내재가치(주주잉여현금흐름 할인)</b>: 향후 12개월 정상화 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
+   <li><b>역DCF 내재 성장률</b>: 같은 틀에서 현재 시가총액을 정확히 정당화하는 1~5년차 연평균 이익 성장률이에요. 이 숫자가 기준 가정보다 크면 시장이 더 높은 성장을 기대하고 있다는 뜻이에요.</li>
+   <li><b>판단 기준</b>: 기준 적정가가 현재가보다 20% 이상 높으면 '저평가 구간', 20% 이상 낮으면 '기대 선반영', 그 사이는 '적정 범위'예요.</li>
+   <li><b>순현금</b>: 순현금은 주주가치에 더하고 순차입은 빼요. 대신 그 이자 효과(세후 약 2%)는 이익에서 제외해 이중 계산을 피했어요. 비지배지분이 큰 지주·연결사는 연결 현금·차입이 지배주주 몫과 달라 조정하지 않았어요.</li>
+   <li><b>최신 정보 반영</b>: 정상화 이익과 성장 시나리오는 ${V.asof||V.updated} 기준 3분기 잠정실적, 증권사 추정치와 목표가 변화 기사를 읽고 정했어요. 회사별 근거 기사는 상세 리포트의 '최신 기사'에서 볼 수 있어요.</li></ul>
+   <p class="src">참고용 추정이며 투자 권유가 아니에요.</p>`;
+}
+function renderSources(){
+  const list=[D.news_exports,D.customs_exports,D.customs_by_country,D.refining_index,D.chem_index,D.export_price,D.crude_price].filter(Boolean);
+  $('#src-list').innerHTML=list.map(d=>`<li>${d.url?`<a href="${d.url}" target="_blank" rel="noopener">${d.source}</a>`:d.source}${d.updated?` <span class="sub">(${d.updated})</span>`:''}</li>`).join('')+
+   `<li>상장사 재무: DART 전자공시 OpenAPI / StockAnalysis 집계</li>`;
+  const m=D.meta; if(m) $('#run-meta').textContent=`마지막 자동 실행: ${m.last_run||'–'} · 갱신된 소스: ${(m.sources_updated||[]).join(', ')||'없음(키 미등록)'}`;
+}
+
+/* ---------------- 라우팅 ---------------- */
+const rendered={};
+function show(){
+  const v=(location.hash||'#industry').slice(1);
+  const view=['industry','companies','valuation','sources'].includes(v)?v:'industry';
+  document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
+  document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
+  if(!rendered[view]){rendered[view]=1;
+    if(view==='industry'){renderKPIs();renderExports();renderIndustry();}
+    if(view==='companies')renderCompanies();
+    if(view==='valuation')renderValuation();
+    if(view==='sources')renderSources();}
+}
+function rerender(){Object.keys(rendered).forEach(k=>delete rendered[k]);show();}
+window.addEventListener('hashchange',show);
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',rerender);
+new MutationObserver(rerender).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+const LIVE='https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/live-data/chem/';
+async function JL(n){try{const r=await fetch(LIVE+n+'?t='+Date.now());if(!r.ok)return null;return await r.json()}catch(e){return null}}
+async function refreshLive(){
+  const [q,v]=await Promise.all([JL('quotes.json'),JL('valuation.json')]);
+  if(!q||!v)return;
+  if(D.quotes&&D.quotes.fetched&&q.fetched<=D.quotes.fetched)return;
+  D.quotes=q;D.valuation=v;rerender();
+}
+function quoteLine(){
+  const q=D.quotes; if(!q)return '주가: 스냅샷 기준(실시간 시세 미수집)';
+  return `주가 ${q.fetched} 수집 · ${q.source} · 장중 10분 간격 갱신`;
+}
+loadAll().then(()=>{
+  const m=D.meta;
+  $('#meta').innerHTML=`마지막 갱신 ${m&&m.last_run?m.last_run:'2026-11-05'}<br>공공데이터 · 전자공시 기반`;
+  show();
+  refreshLive(); setInterval(refreshLive,5*60*1000);
+});
+})();
+</script>
+</body>
+</html>
