@@ -140,6 +140,17 @@ td.l,th.l{text-align:left}
         <div class="src" id="exp-src"></div>
       </div>
       <div class="card full">
+        <h2>월별 반도체 수출액 증감률</h2><p class="sub" id="yoy-sub">전년 같은 달 대비 %, 막대는 월별 · 선은 3개월 평균 · 기간은 위 수출액 그래프 선택을 따라가요</p>
+        <div class="chart"><canvas id="c-yoy" aria-label="월별 반도체 수출액 증감률 차트" role="img"></canvas></div>
+        <div class="src">출처: 관세청 수출입무역통계(HS 8541·8542) 합계로 계산</div>
+      </div>
+      <div class="card full">
+        <h2>수출 증감률과 삼성전자 주가</h2><p class="sub" id="ys-sub">왼쪽 축: 수출 증감률(3개월 평균, %) · 오른쪽 축: 삼성전자 월말 주가(원, 로그 눈금, 수정주가)</p>
+        <div class="chart"><canvas id="c-ys" aria-label="수출 증감률과 삼성전자 주가 비교 차트" role="img"></canvas></div>
+        <p class="sub" id="ys-note"></p>
+        <div class="src" id="ys-src"></div>
+      </div>
+      <div class="card full">
         <h2>숫자로 보는 최근 동향</h2><p class="sub">기사·보도자료에서 수치화할 수 있는 항목. 카드를 누르면 원문이 열려요.</p>
         <div class="news" id="news"></div>
       </div>
@@ -259,7 +270,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news'];
+  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -313,6 +324,7 @@ function renderExports(){
       <tr><td>YoY</td>${last.map(m=>{const i=cu.months.indexOf(m);const y=yoy(cu.total[i],cu.total[i-12]);return `<td class="num ${cls(y)}">${pct(y)}</td>`}).join('')}</tr>
       ${cu.series['메모리']?`<tr><td>메모리 YoY</td>${last.map(m=>{const i=cu.months.indexOf(m);const y=ys(cu.series['메모리'],i);return `<td class="num ${cls(y)}">${pct(y)}</td>`}).join('')}</tr>`:''}</tbody></table>`;
     src('#exp-src',cu);
+    renderExpYoy(cu,from);
   } else if(ne&&ne.rows){
     const rows=ne.rows;
     $('#exp-sub').textContent='단위: 억 달러 · 산업통상부 월별 수출입동향(보도자료·언론 인용). 관세청 API 수집이 끝나면 품목별 시계열로 자동 교체돼요.';
@@ -327,6 +339,39 @@ function renderExports(){
   if(ne&&ne.highlights){
     $('#news').innerHTML=ne.highlights.map(h=>`<a href="${h.src}" target="_blank" rel="noopener"><div class="l">${h.label}</div><div class="v">${h.value}</div><div class="s">${h.sub}</div></a>`).join('');
   }
+}
+
+const ma=(a,k)=>a.map((_,i)=>{if(i<k-1)return null;const w=a.slice(i-k+1,i+1);return w.some(v=>v==null)?null:w.reduce((x,y)=>x+y,0)/k});
+function renderExpYoy(cu,from){
+  const yy=cu.total.map((v,i)=>ys(cu.total,i)), y3=ma(yy,3);
+  const labels=cu.months.slice(from), Y=yy.slice(from), Y3=y3.slice(from);
+  const up=css('--up'), dn=css('--down'), s=S();
+  const pctTick={callback:v=>v+'%',color:css('--ink-3'),font:{size:11}};
+  draw('c-yoy',{type:'bar',data:{labels,datasets:[
+    bar('월별 증감률',Y,Y.map(v=>v==null?up:(v>=0?up:dn)+'99'),{maxBarThickness:10,order:2}),
+    line('3개월 평균',Y3,css('--ink'),{order:1,borderWidth:1.6})]},
+    options:baseOpts({scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:12,font:{size:11}},grid:{display:false}},y:{ticks:pctTick,grid:{color:css('--line')},border:{display:false}}},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw==null?'–':(c.raw>0?'+':'')+c.raw.toFixed(1)+'%'}`}}}})});
+  const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series['005930'];
+  if(!sh){$('#ys-note').textContent='삼성전자 월별 주가 이력을 받는 중이에요. 자동 수집(하루 6번)이 한 번 돌면 그래프가 나타나요.';draw('c-ys',{type:'line',data:{labels,datasets:[line('수출 증감률(3개월 평균)',Y3,s[0])]},options:baseOpts({scales:{y:{ticks:pctTick}}})});return}
+  const pm=Object.fromEntries(sh.months.map((m,i)=>[m,sh.close[i]]));
+  const P=labels.map(m=>pm[m]??null);
+  draw('c-ys',{type:'line',data:{labels,datasets:[
+    line('수출 증감률(3개월 평균, 왼쪽)',Y3,s[0],{yAxisID:'y'}),
+    line('삼성전자 주가(오른쪽, 로그)',P,s[2],{yAxisID:'y2',borderWidth:1.8})]},
+    options:baseOpts({scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:12,font:{size:11}},grid:{display:false}},
+      y:{position:'left',ticks:pctTick,grid:{color:css('--line')},border:{display:false}},
+      y2:{type:'logarithmic',position:'right',grid:{display:false},border:{display:false},ticks:{color:css('--ink-3'),font:{size:11},callback:(v)=>{const l=Math.log10(v);return Math.abs(l-Math.round(l))<1e-9||[2,5].includes(+(v/10**Math.floor(l)).toFixed(3))?fmt(v,0):''}}}},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y2'?`삼성전자: ${c.raw==null?'–':fmt(c.raw,0)+'원'}`:`수출 증감률: ${c.raw==null?'–':(c.raw>0?'+':'')+c.raw.toFixed(1)+'%'}`}}}})});
+  // 상관관계: 증감률(3개월 평균)과 주가의 12개월 변화율
+  const pr=labels.map((m,i)=>{const a=P[i],b=P[i-12];return a&&b?(a/b-1)*100:null});
+  const pairs=Y3.map((v,i)=>[v,pr[i]]).filter(([a,b])=>a!=null&&b!=null);
+  let note='';
+  if(pairs.length>24){const n=pairs.length,mx=pairs.reduce((t,p)=>t+p[0],0)/n,my=pairs.reduce((t,p)=>t+p[1],0)/n;
+    const r=pairs.reduce((t,p)=>t+(p[0]-mx)*(p[1]-my),0)/Math.sqrt(pairs.reduce((t,p)=>t+(p[0]-mx)**2,0)*pairs.reduce((t,p)=>t+(p[1]-my)**2,0));
+    note=`이 기간 수출 증감률(3개월 평균)과 삼성전자 주가의 1년 등락률의 상관계수는 ${r.toFixed(2)}이에요. 주가는 보통 수출 증감률이 꺾이기 몇 달 전에 먼저 꺾여요. 증감률이 높은 수준에서 내려오기 시작하면 업황 정점을 의심해 볼 신호예요.`}
+  $('#ys-note').textContent=note;
+  $('#ys-src').textContent=`출처: 관세청 수출입무역통계, ${D.stock_hist.source} · 주가 ${D.stock_hist.updated} 갱신`;
 }
 
 const empty=(id,msg)=>{const c=document.getElementById(id);if(c&&c.parentElement)c.parentElement.innerHTML=`<p class="sub" style="padding:40px 0;text-align:center">${msg}</p>`};
