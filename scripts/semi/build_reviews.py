@@ -2,6 +2,7 @@
 import json, os, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from reviews_src import R, NEXT
+from new_src import NEW
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
 
@@ -56,9 +57,9 @@ def main():
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
-        if len(clean(co.get("quarterly") or {})) < 8:
+        if len(clean(co.get("quarterly") or {})) < 4:
             continue
-        r = R.get(code) or auto(co)
+        r = R.get(code) or (dict(NEW[code]["review"], next=NEXT) if code in NEW else auto(co))
         dp = os.path.join(ROOT, f"raw/semi/dart_docs/{code}.json")
         docs = json.load(open(dp)) if os.path.exists(dp) else {}
         reps = docs.get("reports") or []

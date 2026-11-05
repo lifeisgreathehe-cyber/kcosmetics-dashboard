@@ -71,6 +71,8 @@ def main(industry="cosmetics"):
     qsrc, quotes = quotes.get("source"), quotes.get("quotes", {})
     cfg = load(P(*cd, "valuation.json"), {}) or {}
     gT = cfg.get("terminal_growth", 2.0)
+    # DART에서 주식수를 못 읽은 회사는 설정 파일의 shares(보통주 유통주식수)를 쓴다
+    manual = {c["code"]: c["shares"] for c in (load(P(*cd, "companies.json"), []) or []) if c.get("shares")}
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
            "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
     for co in cos.get("companies", []):
@@ -91,7 +93,7 @@ def main(industry="cosmetics"):
         px = prices.get(code)
         qt = quotes.get(code)
         dsh = co.get("shares") or {}  # DART 유통주식수 (보통주·우선주)
-        shares0 = (px or {}).get("shares") or snap.get("shares") or dsh.get("common")
+        shares0 = (px or {}).get("shares") or snap.get("shares") or dsh.get("common") or manual.get(code)
         if not shares0:
             out["companies"][code] = rec
             continue

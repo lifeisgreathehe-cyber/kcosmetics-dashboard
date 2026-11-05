@@ -18,11 +18,17 @@ def main():
             d["fisher"] = [{"s": int(l[0]), "a": l[2:].strip()} for l in rows]
             d["fisher_score"] = sum(f["s"] for f in d["fisher"])
             comps[code] = d
+    from new_src import NEW
+    for code, x in NEW.items():
+        d = dict(x["deep"])
+        d["fisher_score"] = sum(f["s"] for f in d["fisher"])
+        d["brief"] = True  # 간략 평가
+        comps[code] = d
     out = {
         "updated": "2026-11-04",
         "source": "DART 사업보고서(2025.12)·반기보고서(2026.06) 본문, 최근 4개 분기 실적, 2026년 10~11월 기사",
         "fisher_questions": FISHER,
-        "fisher_note": "필립 피셔 『위대한 기업에 투자하라』의 15가지 질문에, 자본 배분(주주환원) 항목을 16번째로 더했어요. 2점 충족, 1점 부분 충족, 0점 미흡이에요. 노사·경영진 항목은 공개 정보가 적어 보수적으로(1점) 매겼어요.",
+        "fisher_note": "필립 피셔 『위대한 기업에 투자하라』의 15가지 질문에, 자본 배분(주주환원) 항목을 16번째로 더했어요. 2점 충족, 1점 부분 충족, 0점 미흡이에요. 노사·경영진 항목은 공개 정보가 적어 보수적으로(1점) 매겼어요. 2026-11-05에 추가한 96개사는 질문별 근거를 짧은 공통 문장으로 적은 간략 평가예요.",
         "disclaimer": "공시와 언론 보도를 바탕으로 한 정성 평가이며 투자 권유가 아니에요.",
         "companies": comps,
     }

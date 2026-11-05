@@ -191,6 +191,12 @@ def dart_shares(key, corp):
                     tot, tre = num(r.get("istc_totqy")), num(r.get("tesstk_co")) or 0
                     if tot:
                         out[k] = tot - tre
+            if not out.get("common"):  # 보통주 구분 없이 합계만 있는 보고서
+                for r in j.get("list", []):
+                    se = (r.get("se") or "").replace(" ", "")
+                    tot, tre = num(r.get("istc_totqy")), num(r.get("tesstk_co")) or 0
+                    if se in ("합계", "계") and tot:
+                        out["common"] = tot - tre - (out.get("pref") or 0)
             if out.get("common"):
                 return out
     return None
