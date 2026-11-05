@@ -155,7 +155,7 @@ def main(industry="cosmetics"):
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
-                      "fwd_per": round(mcap / E1, 1), "scenarios": sc,
+                      "fwd_per": round(mcap / E1, 1), "scenarios": sc, "cycle": a.get("cycle", ""),
                       "implied_g": implied_growth(mcap - nc, E_op, a["r"], a["c"], gT),
                       "net_cash_added": nc}
         out["companies"][code] = rec

@@ -430,17 +430,24 @@ def update_customs(key):
             if not items:
                 log(f"관세청 응답에 데이터 없음 (HS {hs}, {s}~{e}):", txt[:200].replace(key, "***"))
                 continue
-            ch[y] = {"exp": sum_by_month(items, hs=hs), "imp": sum_by_month(items, "impDlr", hs=hs)}
+            ch[y] = {"exp": sum_by_month(items, hs=hs), "imp": sum_by_month(items, "impDlr", hs=hs),
+                     "expW": sum_by_month(items, "expWgt", hs=hs), "impW": sum_by_month(items, "impWgt", hs=hs)}  # 중량(kg) → 단가 계산용
             time.sleep(0.3)
         RAW.mkdir(parents=True, exist_ok=True)
         cache_p.write_text(json.dumps(cache, ensure_ascii=False), "utf-8")  # 단계마다 저장(중간에 끊겨도 다음에 이어받기)
     by_hs, by_hs_imp = {}, {}
+    wgt = {}  # 품목별 {"exp": {월: kg}, "imp": {월: kg}} — 캐시에 중량이 있는 품목만
     imp_total = {}
     totals = set()
     first = start.strftime("%Y-%m")
     for hs, label, in_total in CUSTOMS["groups"]:
         agg, agg_i = by_hs.get(label, {}), by_hs_imp.get(label, {})
         for y, d in cache.get(hs, {}).items():
+            for f in ("exp", "imp"):
+                for k, v in (d.get(f + "W") or {}).items():
+                    if k >= first:
+                        w = wgt.setdefault(label, {"exp": {}, "imp": {}})[f]
+                        w[k] = w.get(k, 0) + v
             for k, v in d["exp"].items():
                 if k >= first:
                     agg[k] = agg.get(k, 0) + v
@@ -462,6 +469,12 @@ def update_customs(key):
     series = {lab: [r2(s, m) for m in months] for lab, s in by_hs.items() if lab in totals}
     extra = {lab: {"exports": [r2(s, m) for m in months], "imports": [r2(by_hs_imp.get(lab, {}), m) for m in months]}
              for lab, s in by_hs.items() if lab not in totals}
+    for lab in extra:  # 단가($/kg) = 금액 ÷ 중량. 중량이 없는 달은 비움
+        w = wgt.get(lab)
+        if not w:
+            continue
+        for f, src in (("exp", by_hs[lab]), ("imp", by_hs_imp.get(lab, {}))):
+            extra[lab][f + "_price"] = [round(src[m] / w[f][m], 2) if w[f].get(m) and src.get(m) else None for m in months]
     total = [round(sum(by_hs[l].get(m, 0) for l in totals) / 1e6, 2) for m in months]
     out = {"title": CUSTOMS["title"], "source": CUSTOMS["source"],
            "url": "https://www.data.go.kr/data/15100475/openapi.do", "unit": "백만 달러", "months": months,

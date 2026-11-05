@@ -27,11 +27,13 @@ jobs:
           python scripts/update.py --only quotes
           timeout 300 python scripts/update.py --industry semi --only quotes || true
           timeout 300 python scripts/update.py --industry chem --only quotes || true
+          timeout 300 python scripts/update.py --industry battery --only quotes || true
       - name: live-data 브랜치에 게시 (장중 실시간용)
         run: |
-          mkdir -p /tmp/live/semi /tmp/live/chem && cp docs/data/quotes.json docs/data/valuation.json /tmp/live/
+          mkdir -p /tmp/live/semi /tmp/live/chem /tmp/live/battery && cp docs/data/quotes.json docs/data/valuation.json /tmp/live/
           cp docs/semi/data/quotes.json docs/semi/data/valuation.json /tmp/live/semi/ || true
           cp docs/chem/data/quotes.json docs/chem/data/valuation.json /tmp/live/chem/ || true
+          cp docs/battery/data/quotes.json docs/battery/data/valuation.json /tmp/live/battery/ || true
           cd /tmp/live
           git init -q -b live-data
           git config user.name "github-actions[bot]"
@@ -43,7 +45,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json && git add docs/semi/data || true; git add docs/chem/data || true
+          git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json && git add docs/semi/data || true; git add docs/chem/data || true; git add docs/battery/data || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 종가 $(TZ=Asia/Seoul date +%Y-%m-%d)"
             for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
