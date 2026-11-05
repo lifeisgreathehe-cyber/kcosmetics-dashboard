@@ -50,25 +50,32 @@ def auto(co):
                 points=["사업보고서 핵심 내용은 다음 업데이트 때 정리할게요. 위 원문 링크에서 바로 볼 수 있어요."])
 
 
+from news_src import N as NEWS
+
+
 def main():
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/semi/data/companies.json")))["companies"]}
-    out = {"updated": "2026-11-04",
-           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-04까지 발표된 3분기 실적(삼성전자·SK하이닉스·한미반도체)",
+    out = {"updated": "2026-11-05",
+           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-05까지 나온 3분기 잠정실적과 뉴스",
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
         if len(clean(co.get("quarterly") or {})) < 4:
             continue
         r = R.get(code) or (dict(NEW[code]["review"], next=NEXT) if code in NEW else auto(co))
+        nw = NEWS.get(code) or {}
         dp = os.path.join(ROOT, f"raw/semi/dart_docs/{code}.json")
         docs = json.load(open(dp)) if os.path.exists(dp) else {}
         reps = docs.get("reports") or []
         rep = next((x for x in reps if "반기" in x["report_nm"]), None) or (reps[0] if reps else {})
         out["companies"][code] = {
-            "tone": r["tone"], "title": r["title"],
+            "tone": nw.get("tone", r["tone"]), "title": nw.get("title", r["title"]),
             "trend": trend(co) + r.get("extra", []),
             "eval": r["eval"], "watch": r["watch"],
-            "news": [{"date": d, "title": t, "url": u} for d, t, u in r.get("news", [])],
+            "news": [{"date": x[0], "title": x[1], "url": x[2], "src": x[3], "read": x[4], "impact": x[5]}
+                     for x in sorted(nw.get("items", []), key=lambda x: x[0], reverse=True)]
+                    or [{"date": d, "title": t, "url": u} for d, t, u in r.get("news", [])],
+            "news_asof": nw.get("asof"), "take": nw.get("take"), "latest": nw.get("latest"),
             "next": r["next"],
             "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""),
                     "mix_title": r.get("mix_title", ""),

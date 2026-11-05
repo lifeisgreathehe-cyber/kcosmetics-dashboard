@@ -128,6 +128,9 @@ def main(industry="cosmetics"):
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
            "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
     out["industry_cycle"] = cfg.get("industry_cycle", {})
+    # 반도체: 리뷰에 정리한 잠정실적(억원)
+    latest = {k: v.get("latest") for k, v in ((load(P(*dd, "reviews.json"), {}) or {}).get("companies", {}) or {}).items()
+              if v.get("latest")} if cfg.get("cycle_mode") else {}
     norm_ratio = {}
     # 다른 회사의 사이클 조정 비율을 따르는 회사(follow)는 뒤에서 계산
     order = sorted(cos.get("companies", []),
@@ -238,7 +241,14 @@ def main(industry="cosmetics"):
         xv, cy = 0, None
         if semi_cyc and t:
             path = a.get("excess", CYCLE_PATH.get(a.get("cyc_pos"), []))
-            ex = t["ni"] - E1
+            ni_now = t["ni"]
+            lt = (latest or {}).get(code)
+            ks_all = sorted(Q)
+            if lt and lt.get("period") not in Q and lt.get("ni") is not None and len(ks_all) >= 3:
+                # DART 반영 전 잠정실적이 있으면 최근 3개 분기 + 잠정 분기로 최근 이익을 다시 잡는다
+                ni_now = sum((Q[k].get("ni") or 0) for k in ks_all[-3:]) + lt["ni"] * 100
+                rec["ttm_news"] = {"period": f"{ks_all[-3]}~{lt['period']}", "ni": ni_now}
+            ex = ni_now - E1
             xv = round(sum(ex * w_ * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, w_ in enumerate(path)))
             cy = {"position": a.get("cyc_pos", "중립"), "note": a.get("cycle_note", ""), "path": path,
                   "excess": ex, "excess_value": xv}
