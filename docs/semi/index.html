@@ -451,6 +451,12 @@ function renderDeep(c){
   const mk=s=>s===2?['●','m2','충족']:s===1?['◐','m1','부분']:['○','m0','미흡'];
   const fs=x.fisher_score, fmax=x.fisher.length*2;
   return `<h2 style="margin-top:22px">심층 분석</h2><p class="sub">${dp.source} · 작성 ${dp.updated}</p>
+   ${x.explain?`<h4>주요 제품 이해하기${x.explain.title?` · ${x.explain.title}`:''}</h4>
+   ${x.explain.sections.map(t=>`<p><b>${t.h}</b> ${t.p}</p>`).join('')}`:''}
+   ${x.diagnosis?(()=>{const g=x.diagnosis,dt={'pos':'pos','neg':'neg'}[g.tone]||'neu';return `<h4>실적 진단: 사이클 때문인가, 경쟁력 때문인가 <span class="tone ${dt}" style="margin-left:6px">${g.verdict}</span></h4>
+   <p>${g.summary}</p>
+   <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
+   ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
    <div class="dgrid">
     <div><h4>제품·서비스</h4><p>${x.products}</p></div>
     <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
