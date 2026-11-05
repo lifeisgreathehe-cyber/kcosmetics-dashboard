@@ -1,0 +1,41 @@
+name: 장기 월봉 주가 이력 갱신
+
+on:
+  schedule:
+    - cron: "40 7 * * 1-5"  # 평일 16:40 KST(장 마감 후)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-stock-hist
+  cancel-in-progress: false
+
+jobs:
+  hist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 월봉 수집 (stock_hist.json이 있는 업종)
+        run: |
+          [ -f config/stock_hist.json ] && (timeout 300 python scripts/update.py --only stock_hist || true)
+          for d in config/*/; do
+            ind=$(basename "$d")
+            [ -f "config/$ind/stock_hist.json" ] && (timeout 300 python scripts/update.py --industry "$ind" --only stock_hist || true)
+          done
+          true
+      - name: main 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/stock_hist.json 2>/dev/null || true
+          git add docs/*/data/stock_hist.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 월봉 주가 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi
