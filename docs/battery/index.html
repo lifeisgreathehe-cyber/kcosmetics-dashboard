@@ -275,7 +275,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle'];
+  const names=['meta','production_index','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -467,6 +467,14 @@ function renderCompanyTable(){
   $('#co-table').querySelectorAll('tbody tr').forEach(tr=>{const go=()=>{selectCo(tr.dataset.code);document.getElementById('co-detail').scrollIntoView({behavior:'smooth',block:'start'})};tr.onclick=go;tr.onkeydown=e=>{if(e.key==='Enter')go()}});
 }
 const TONE={pos:'개선',neg:'부진',neu:'중립'};
+function autoNews(c,r){
+  const auto=((D.news&&D.news.companies)||{})[c.code]||[];
+  const seen=new Set((r&&r.news||[]).map(n=>n.title));
+  const A=auto.filter(n=>!seen.has(n.title)).slice(0,12);
+  if(!A.length) return '';
+  return `<h4>오늘까지의 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched||''} · ${D.news.source||''} · 해석은 매일 저녁 추가</span></h4>
+   <ul>${A.map(n=>`<li><span class="sub">${(n.date||'').slice(5)} ${n.office||''}</span> ${n.url?`<a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>`:n.title}</li>`).join('')}</ul>`;
+}
 function renderReview(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code];
   if(!r){$('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">리뷰 작성 대기 중이에요. 실적 데이터가 수집되면 추가돼요.</p>`;return}
@@ -474,7 +482,8 @@ function renderReview(c){
    <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>
    <h4>실적 동향</h4><ul>${r.trend.map(t=>`<li>${t}</li>`).join('')}</ul>
    <h4>평가</h4><p>${r.eval}</p>
-   ${r.news&&r.news.length?`<h4>최근 뉴스와 해석 (${D.reviews.updated}까지)</h4><ul class="newsread">${r.news.map(n=>{const im={'+':['pos','긍정'],'-':['neg','부정']}[n.impact]||['neu','중립'];return `<li><span class="sub">${n.date}${n.src?' · '+n.src:''}</span> <span class="tone ${im[0]}" style="margin-left:4px">${im[1]}</span><br><a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>${n.read?`<p style="margin:4px 0 0"><b>이렇게 보세요</b> ${n.read}</p>`:''}</li>`}).join('')}</ul>`:''}
+   ${r.news&&r.news.length?`<h4>최근 뉴스와 해석 (${D.reviews.news_asof||D.reviews.updated}까지)</h4><ul class="newsread">${r.news.map(n=>{const im={'+':['pos','긍정'],'-':['neg','부정']}[n.impact]||['neu','중립'];return `<li><span class="sub">${n.date}${n.src?' · '+n.src:''}</span> <span class="tone ${im[0]}" style="margin-left:4px">${im[1]}</span><br><a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>${n.read?`<p style="margin:4px 0 0"><b>이렇게 보세요</b> ${n.read}</p>`:''}</li>`}).join('')}</ul>`:''}
+   ${autoNews(c,r)}
    ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
 
