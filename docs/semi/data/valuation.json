@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-06",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라, 지난 10년 순이익률(가장 좋은 해와 나쁜 해를 뺀 평균)과 추세 매출로 계산한 '사이클 평균 이익'에서 출발해, 사업 구조가 바뀐 회사는 그 이유를 적고 조정했어요. ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금이 사이클의 어디쯤인지(호황 정점권·상승기·중립·회복기·바닥권)에 따라 앞으로 1~3년만 이어진다고 보고 그 현재가치만 더하거나 뺐어요. ③ 성장률(g)은 사이클이 아닌 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고, 6~10년차 성장률은 2%로 수렴, 순현금은 더해요(차입은 빼요).",
  "terminal_growth": 2.0,
  "asof": "2026-11-05",
@@ -26,46 +26,46 @@
     "norm_ni": 47989506,
     "trend_g": 6.4
    },
-   "price": 201500,
-   "price_date": "2026-11-05 23:58",
+   "price": 194100,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1290185009,
+   "mcap": 1243518133,
    "shares": 6566563106,
    "equity": 565064740,
    "equity_source": "DART 2026Q2",
    "net_cash": 167544307,
    "dividend_yield": null,
-   "per": 8.6,
+   "per": 8.3,
    "roe": 26.5,
-   "pbr": 2.28,
+   "pbr": 2.2,
    "dcf": {
     "E1": 75000000,
     "r": 9.5,
     "c": 0.6,
     "note": "10년 평균 순이익률 13%와 추세 매출 365조원이면 정상 이익은 48조원이에요. HBM·AI 서버로 메모리 이익 체질이 좋아진 점을 반영해 정상 이익을 75조원으로 올려 잡았어요. 3분기 실적이 최근 4분기 평균보다 높아 내년 초과 이익은 올해의 1.5배, 2028년부터 정상으로 돌아간다고 봤어요.",
-    "fwd_per": 17.2,
-    "norm_per": 17.2,
+    "fwd_per": 16.6,
+    "norm_per": 16.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 813846358,
       "per_share": 123938,
-      "upside": -36.9
+      "upside": -34.6
      },
      "base": {
       "g": 6.0,
       "value": 979064806,
       "per_share": 149099,
-      "upside": -24.1
+      "upside": -21.3
      },
      "bull": {
       "g": 12.0,
       "value": 1194738926,
       "per_share": 181943,
-      "upside": -7.4
+      "upside": -3.9
      }
     },
-    "implied_g": 14.2,
+    "implied_g": 13.2,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 서버 수요로 D램·HBM 가격과 이익이 역사상 최고 수준이에요. 2027~28년 물량 상당 부분이 장기계약으로 팔려 호황이 1~2년 더 이어질 가능성이 높지만, 과거 사이클처럼 공급이 늘면 이익이 크게 줄어드는 구간이 다시 올 수 있어요. 그래서 지금 이익이 아니라 호황과 불황을 평균한 이익으로 가치를 매기고, 남은 호황 기간의 초과 이익만 따로 더했어요.",
@@ -102,46 +102,46 @@
     "norm_ni": 20812217,
     "trend_g": 18.8
    },
-   "price": 1262000,
-   "price_date": "2026-11-05 23:58",
+   "price": 1186000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 897377281,
+   "mcap": 843335543,
    "shares": 711075500,
    "equity": 262380610,
    "equity_source": "DART 2026Q2",
    "net_cash": 8272412,
    "dividend_yield": null,
-   "per": 5.5,
+   "per": 5.2,
    "roe": 61.7,
-   "pbr": 3.42,
+   "pbr": 3.21,
    "dcf": {
     "E1": 60000000,
     "r": 10.0,
     "c": 0.6,
     "note": "10년 평균 순이익률 21%, 추세 매출 98조원으로는 정상 이익이 21조원이지만 HBM 1위로 이익 체질이 바뀐 점을 반영해 정상 매출 200조원 × 순이익률 30% = 60조원으로 잡았어요. 3분기 영업이익률 80%는 정상 수준이 아니라 호황 초과 이익으로 보고 2028년까지만 반영했어요.",
-    "fwd_per": 15.0,
-    "norm_per": 15.0,
+    "fwd_per": 14.1,
+    "norm_per": 14.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 585431406,
       "per_share": 823304,
-      "upside": -34.8
+      "upside": -30.6
      },
      "base": {
       "g": 6.0,
       "value": 712759053,
       "per_share": 1002368,
-      "upside": -20.6
+      "upside": -15.5
      },
      "bull": {
       "g": 12.0,
       "value": 878702662,
       "per_share": 1235738,
-      "upside": -2.1
+      "upside": 4.2
      }
     },
-    "implied_g": 12.6,
+    "implied_g": 10.8,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 서버 수요로 D램·HBM 가격과 이익이 역사상 최고 수준이에요. 2027~28년 물량 상당 부분이 장기계약으로 팔려 호황이 1~2년 더 이어질 가능성이 높지만, 과거 사이클처럼 공급이 늘면 이익이 크게 줄어드는 구간이 다시 올 수 있어요. 그래서 지금 이익이 아니라 호황과 불황을 평균한 이익으로 가치를 매기고, 남은 호황 기간의 초과 이익만 따로 더했어요.",
@@ -178,46 +178,46 @@
     "norm_ni": 3181221,
     "trend_g": -22.2
    },
-   "price": 804000,
-   "price_date": "2026-11-05 23:58",
+   "price": 754000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 105946376,
+   "mcap": 99357671,
    "shares": 131774099,
    "equity": 54830646,
    "equity_source": "DART 2026Q2",
    "net_cash": 1399193,
    "dividend_yield": null,
-   "per": 3.2,
+   "per": 3.0,
    "roe": 59.9,
-   "pbr": 1.93,
+   "pbr": 1.81,
    "dcf": {
     "E1": 12000000,
     "r": 10.0,
     "c": 0.4,
     "note": "SK하이닉스 정상 이익 60조원 × 지분율 약 20%를 정상 지분법 이익으로 봤어요. 지주회사는 배당으로만 현금을 받아 현금 전환율을 0.4로 낮춰 지주 할인을 반영했어요.",
-    "fwd_per": 8.8,
-    "norm_per": 8.8,
+    "fwd_per": 8.3,
+    "norm_per": 8.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 77576077,
       "per_share": 588705,
-      "upside": -26.8
+      "upside": -21.9
      },
      "base": {
       "g": 5.0,
       "value": 91435940,
       "per_share": 693884,
-      "upside": -13.7
+      "upside": -8.0
      },
      "bull": {
       "g": 10.0,
       "value": 108742153,
       "per_share": 825216,
-      "upside": 2.6
+      "upside": 9.4
      }
     },
-    "implied_g": 9.3,
+    "implied_g": 7.4,
     "cycle": {
      "position": "호황 정점권",
      "note": "가치의 대부분이 SK하이닉스 지분이라 메모리 사이클을 그대로 따라가요.",
@@ -254,16 +254,16 @@
     "norm_ni": 283097,
     "trend_g": 9.0
    },
-   "price": 84900,
-   "price_date": "2026-11-05 23:58",
+   "price": 85300,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3631035,
+   "mcap": 3648142,
    "shares": 42768373,
    "equity": 2393709,
    "equity_source": "DART 2026Q2",
    "net_cash": 682901,
    "dividend_yield": null,
-   "per": 10.5,
+   "per": 10.6,
    "roe": 14.4,
    "pbr": 1.52,
    "dcf": {
@@ -271,29 +271,29 @@
     "r": 9.5,
     "c": 0.7,
     "note": "8인치 파운드리 가동률이 높고 10년 평균 순이익률이 18%예요. 최근 이익(3,457억원)이 평균보다 약간 높은 정도라 정상 이익을 3,000억원으로 봤어요.",
-    "fwd_per": 12.1,
-    "norm_per": 12.1,
+    "fwd_per": 12.2,
+    "norm_per": 12.2,
     "scenarios": {
      "bear": {
       "g": 1.0,
       "value": 3235808,
       "per_share": 75659,
-      "upside": -10.9
+      "upside": -11.3
      },
      "base": {
       "g": 5.0,
       "value": 3748605,
       "per_share": 87649,
-      "upside": 3.2
+      "upside": 2.8
      },
      "bull": {
       "g": 9.0,
       "value": 4361794,
       "per_share": 101986,
-      "upside": 20.1
+      "upside": 19.6
      }
     },
-    "implied_g": 4.1,
+    "implied_g": 4.3,
     "cycle": {
      "position": "중립",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -326,18 +326,18 @@
     "norm_ni": 152857,
     "trend_g": 13.0
    },
-   "price": 24350,
-   "price_date": "2026-11-05 23:58",
+   "price": 23150,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 396036,
+   "mcap": 376519,
    "shares": 16264300,
    "equity": 1131895,
    "equity_source": "DART 2026Q2",
    "net_cash": 46425,
    "dividend_yield": null,
-   "per": 6.8,
+   "per": 6.5,
    "roe": 5.1,
-   "pbr": 0.35,
+   "pbr": 0.33,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 36772
@@ -347,29 +347,29 @@
     "r": 10.0,
     "c": 0.8,
     "note": "10년 평균 이익(1,529억원)은 LG디스플레이 LCD 물량이 있던 시절 기준이라 지금은 맞지 않아요. 2026년 3분기 상장 후 첫 영업적자(-156억원)와 애플 DDI 공급처 이원화를 반영해 정상 이익을 매출 1.4조원 × 순이익률 3.5% ≈ 500억원으로 낮췄어요. 메모리 값 상승에 따른 단가 압박이 이어지는 1~2년은 이보다 낮은 이익이 이어진다고 봤어요.",
-    "fwd_per": 7.9,
-    "norm_per": 7.9,
+    "fwd_per": 7.5,
+    "norm_per": 7.5,
     "scenarios": {
      "bear": {
       "g": -5.0,
       "value": 395290,
       "per_share": 24304,
-      "upside": -0.2
+      "upside": 5.0
      },
      "base": {
       "g": 1.0,
       "value": 506152,
       "per_share": 31120,
-      "upside": 27.8
+      "upside": 34.4
      },
      "bull": {
       "g": 6.0,
       "value": 624715,
       "per_share": 38410,
-      "upside": 57.7
+      "upside": 65.9
      }
     },
-    "implied_g": -5.0,
+    "implied_g": -6.2,
     "cycle": {
      "position": "바닥권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -405,10 +405,10 @@
     "norm_ni": 1570,
     "trend_g": 17.7
    },
-   "price": 29800,
-   "price_date": "2026-11-05 23:58",
+   "price": 27700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 353394,
+   "mcap": 328490,
    "shares": 11858844,
    "equity": 71794,
    "equity_source": "DART 2026Q2",
@@ -416,35 +416,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.6,
-   "pbr": 4.92,
+   "pbr": 4.58,
    "dcf": {
     "E1": 5000,
     "r": 12.0,
     "c": 0.8,
     "note": "설계 용역이라 10년 평균 이익률이 2%로 낮아요. 일본·미국 AI 칩 설계 수주가 양산 매출로 바뀌는 것을 전제로 작은 정상 이익에 높은 성장률을 줬어요.",
-    "fwd_per": 70.7,
-    "norm_per": 70.7,
+    "fwd_per": 65.7,
+    "norm_per": 65.7,
     "scenarios": {
      "bear": {
       "g": 5.0,
       "value": 69116,
       "per_share": 5828,
-      "upside": -80.4
+      "upside": -79.0
      },
      "base": {
       "g": 20.0,
       "value": 103213,
       "per_share": 8703,
-      "upside": -70.8
+      "upside": -68.6
      },
      "bull": {
       "g": 35.0,
       "value": 165197,
       "per_share": 13930,
-      "upside": -53.3
+      "upside": -49.7
      }
     },
-    "implied_g": 57.7,
+    "implied_g": 55.5,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -480,46 +480,46 @@
     "norm_ni": 5905,
     "trend_g": 11.7
    },
-   "price": 11170,
-   "price_date": "2026-11-05 23:58",
+   "price": 10830,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 235696,
+   "mcap": 228522,
    "shares": 21100831,
    "equity": 86245,
    "equity_source": "DART 2026Q2",
    "net_cash": 11925,
    "dividend_yield": null,
-   "per": 25.4,
+   "per": 24.6,
    "roe": 10.8,
-   "pbr": 2.73,
+   "pbr": 2.65,
    "dcf": {
     "E1": 6000,
     "r": 11.0,
     "c": 0.9,
     "note": "비디오 IP 로열티 회사로 10년 평균 정상 이익이 59억원이에요. 최근 이익(93억원)에는 환율 효과가 섞여 있어 평균 수준으로 봤어요.",
-    "fwd_per": 39.3,
-    "norm_per": 39.3,
+    "fwd_per": 38.1,
+    "norm_per": 38.1,
     "scenarios": {
      "bear": {
       "g": 5.0,
       "value": 77625,
       "per_share": 3679,
-      "upside": -67.1
+      "upside": -66.0
      },
      "base": {
       "g": 10.0,
       "value": 93696,
       "per_share": 4440,
-      "upside": -60.2
+      "upside": -59.0
      },
      "bull": {
       "g": 18.0,
       "value": 127669,
       "per_share": 6050,
-      "upside": -45.8
+      "upside": -44.1
      }
     },
-    "implied_g": 33.6,
+    "implied_g": 32.8,
     "cycle": {
      "position": "중립",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -552,46 +552,46 @@
     "norm_ni": 25431,
     "trend_g": 17.2
    },
-   "price": 55800,
-   "price_date": "2026-11-05 23:58",
+   "price": 52500,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1879517,
+   "mcap": 1768363,
    "shares": 33683104,
    "equity": 446897,
    "equity_source": "DART 2026Q2",
    "net_cash": -20048,
    "dividend_yield": null,
-   "per": 7.2,
+   "per": 6.8,
    "roe": 58.4,
-   "pbr": 4.21,
+   "pbr": 3.96,
    "dcf": {
     "E1": 45000,
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 순이익률 8%, 추세 매출 3,356억원이면 정상 이익은 254억원이에요. 매출 규모가 커진 점을 반영해 450억원으로 잡았고, 메모리 값이 오른 덕분의 초과 이익(최근 4분기 2,609억원)은 2027년까지만 반영했어요.",
-    "fwd_per": 41.8,
-    "norm_per": 41.8,
+    "fwd_per": 39.3,
+    "norm_per": 39.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 530172,
       "per_share": 15740,
-      "upside": -71.8
+      "upside": -70.0
      },
      "base": {
       "g": 5.0,
       "value": 665823,
       "per_share": 19767,
-      "upside": -64.6
+      "upside": -62.3
      },
      "bull": {
       "g": 12.0,
       "value": 830626,
       "per_share": 24660,
-      "upside": -55.8
+      "upside": -53.0
      }
     },
-    "implied_g": 35.2,
+    "implied_g": 33.6,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -627,46 +627,46 @@
     "norm_ni": -3884,
     "trend_g": 14.6
    },
-   "price": 15650,
-   "price_date": "2026-11-05 23:58",
+   "price": 14980,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 203072,
+   "mcap": 194378,
    "shares": 12975826,
    "equity": 180332,
    "equity_source": "DART 2026Q2",
    "net_cash": -35222,
    "dividend_yield": null,
-   "per": 88.5,
+   "per": 84.7,
    "roe": 1.3,
-   "pbr": 1.13,
+   "pbr": 1.08,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
     "c": 0.8,
     "note": "10년 평균 순이익률이 거의 0%예요. 2나노 설계 프로젝트가 양산으로 넘어가면 이익률 3% 수준(약 60억원)이 가능하다고 봤어요.",
-    "fwd_per": 33.8,
-    "norm_per": 33.8,
+    "fwd_per": 32.4,
+    "norm_per": 32.4,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 10994,
       "per_share": 847,
-      "upside": -94.6
+      "upside": -94.3
      },
      "base": {
       "g": 15.0,
       "value": 55001,
       "per_share": 4239,
-      "upside": -72.9
+      "upside": -71.7
      },
      "bull": {
       "g": 30.0,
       "value": 136315,
       "per_share": 10505,
-      "upside": -32.9
+      "upside": -29.9
      }
     },
-    "implied_g": 38.0,
+    "implied_g": 37.1,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -702,10 +702,10 @@
     "norm_ni": -18292,
     "trend_g": 22.1
    },
-   "price": 14870,
-   "price_date": "2026-11-05 23:58",
+   "price": 13670,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 162465,
+   "mcap": 149354,
    "shares": 10925658,
    "equity": 85302,
    "equity_source": "DART 2026Q2",
@@ -713,35 +713,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -8.0,
-   "pbr": 1.9,
+   "pbr": 1.75,
    "dcf": {
     "E1": 5000,
     "r": 12.0,
     "c": 0.8,
     "note": "상장 이후 적자였다가 2026년 2분기 흑자로 돌아섰어요. 흑자가 이어진다는 전제로 매출의 3% 수준을 정상 이익으로 봤어요.",
-    "fwd_per": 32.5,
-    "norm_per": 32.5,
+    "fwd_per": 29.9,
+    "norm_per": 29.9,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 10638,
       "per_share": 974,
-      "upside": -93.5
+      "upside": -92.9
      },
      "base": {
       "g": 15.0,
       "value": 45975,
       "per_share": 4208,
-      "upside": -71.7
+      "upside": -69.2
      },
      "bull": {
       "g": 30.0,
       "value": 111267,
       "per_share": 10184,
-      "upside": -31.5
+      "upside": -25.5
      }
     },
-    "implied_g": 37.7,
+    "implied_g": 35.9,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -777,46 +777,46 @@
     "norm_ni": 13125,
     "trend_g": 11.7
    },
-   "price": 6080,
-   "price_date": "2026-11-05 23:58",
+   "price": 5700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 100661,
+   "mcap": 94370,
    "shares": 16556112,
    "equity": 124553,
    "equity_source": "DART 2026Q2",
    "net_cash": -44527,
    "dividend_yield": null,
-   "per": 10.5,
+   "per": 9.9,
    "roe": 7.7,
-   "pbr": 0.81,
+   "pbr": 0.76,
    "dcf": {
     "E1": 12000,
     "r": 10.5,
     "c": 0.8,
     "note": "가전용 MCU로 10년 평균 순이익률 4.7%예요. 추세 매출 2,770억원 × 4.5% ≈ 120억원을 정상 이익으로 봤어요.",
-    "fwd_per": 8.4,
-    "norm_per": 8.4,
+    "fwd_per": 7.9,
+    "norm_per": 7.9,
     "scenarios": {
      "bear": {
       "g": -2.0,
       "value": 55049,
       "per_share": 3325,
-      "upside": -45.3
+      "upside": -41.7
      },
      "base": {
       "g": 4.0,
       "value": 86029,
       "per_share": 5196,
-      "upside": -14.5
+      "upside": -8.8
      },
      "bull": {
       "g": 9.0,
       "value": 118969,
       "per_share": 7186,
-      "upside": 18.2
+      "upside": 26.1
      }
     },
-    "implied_g": 6.4,
+    "implied_g": 5.4,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -852,10 +852,10 @@
     "norm_ni": 8002,
     "trend_g": 7.9
    },
-   "price": 7620,
-   "price_date": "2026-11-05 23:58",
+   "price": 7130,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 112481,
+   "mcap": 105248,
    "shares": 14761296,
    "equity": 139649,
    "equity_source": "DART 2026Q2",
@@ -863,35 +863,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -41.6,
-   "pbr": 0.81,
+   "pbr": 0.75,
    "dcf": {
     "E1": 12000,
     "r": 11.0,
     "c": 0.8,
     "note": "최근 순손실(-581억원)은 투자 지분 평가손실 등 영업외 손실이 커서 생긴 거예요. 본업 기준 매출 2,300억원 × 5%를 정상 이익으로 봤어요.",
-    "fwd_per": 9.4,
-    "norm_per": 9.4,
+    "fwd_per": 8.8,
+    "norm_per": 8.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 12172,
       "per_share": 825,
-      "upside": -89.2
+      "upside": -88.4
      },
      "base": {
       "g": 8.0,
       "value": 60119,
       "per_share": 4073,
-      "upside": -46.6
+      "upside": -42.9
      },
      "bull": {
       "g": 15.0,
       "value": 118057,
       "per_share": 7998,
-      "upside": 5.0
+      "upside": 12.2
      }
     },
-    "implied_g": 14.4,
+    "implied_g": 13.6,
     "cycle": {
      "position": "바닥권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -924,10 +924,10 @@
     "norm_ni": -58827,
     "trend_g": 47.4
    },
-   "price": 1528,
-   "price_date": "2026-11-05 23:58",
+   "price": 1419,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 50252,
+   "mcap": 46667,
    "shares": 32887431,
    "equity": 13724,
    "equity_source": "DART 2026Q2",
@@ -935,7 +935,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -71.8,
-   "pbr": 3.66,
+   "pbr": 3.4,
    "skip": "상장 이후 4년 내내 큰 적자라 정상 이익을 추정할 수 없어요. 차량용 칩 양산 매출이 손익분기를 넘는지 먼저 확인해야 해요.",
    "cycle": {
     "position": "바닥권",
@@ -964,10 +964,10 @@
     "norm_ni": -1452,
     "trend_g": -1.0
    },
-   "price": 3420,
-   "price_date": "2026-11-05 23:58",
+   "price": 3205,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 22315,
+   "mcap": 20912,
    "shares": 6524731,
    "equity": 81645,
    "equity_source": "DART 2026Q2",
@@ -975,7 +975,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.0,
-   "pbr": 0.27,
+   "pbr": 0.26,
    "skip": "10년 평균 순이익률이 적자예요. 이익을 낸 해가 드물어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1004,10 +1004,10 @@
     "norm_ni": -5952,
     "trend_g": -2.4
    },
-   "price": 2900,
-   "price_date": "2026-11-05 23:58",
+   "price": 2765,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 21139,
+   "mcap": 20155,
    "shares": 7289290,
    "equity": 59546,
    "equity_source": "DART 2026Q2",
@@ -1015,7 +1015,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -40.8,
-   "pbr": 0.36,
+   "pbr": 0.34,
    "skip": "최근 3년 적자 폭이 커지고 있어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1044,46 +1044,46 @@
     "norm_ni": -756,
     "trend_g": 11.6
    },
-   "price": 17160,
-   "price_date": "2026-11-05 23:58",
+   "price": 16940,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 346880,
+   "mcap": 342433,
    "shares": 20214445,
    "equity": 86152,
    "equity_source": "DART 2026Q2",
    "net_cash": 57800,
    "dividend_yield": null,
-   "per": 13.9,
+   "per": 13.7,
    "roe": 29.0,
-   "pbr": 4.03,
+   "pbr": 3.97,
    "dcf": {
     "E1": 6000,
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 순이익률이 거의 0%예요. 2026년 2분기 순이익(193억원)은 일회성이라 빼고, 본업이 손익분기를 조금 넘는 수준으로 봤어요.",
-    "fwd_per": 57.8,
-    "norm_per": 57.8,
+    "fwd_per": 57.1,
+    "norm_per": 57.1,
     "scenarios": {
      "bear": {
       "g": -5.0,
       "value": 89557,
       "per_share": 4430,
-      "upside": -74.2
+      "upside": -73.8
      },
      "base": {
       "g": 5.0,
       "value": 106900,
       "per_share": 5288,
-      "upside": -69.2
+      "upside": -68.8
      },
      "bull": {
       "g": 15.0,
       "value": 133776,
       "per_share": 6618,
-      "upside": -61.4
+      "upside": -60.9
      }
     },
-    "implied_g": 47.3,
+    "implied_g": 46.9,
     "cycle": {
      "position": "중립",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -1116,10 +1116,10 @@
     "norm_ni": -28261,
     "trend_g": 6.6
    },
-   "price": 6310,
-   "price_date": "2026-11-05 23:58",
+   "price": 5960,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 166247,
+   "mcap": 157025,
    "shares": 26346530,
    "equity": 24616,
    "equity_source": "DART 2026Q2",
@@ -1127,7 +1127,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -122.4,
-   "pbr": 6.75,
+   "pbr": 6.38,
    "skip": "IP 라이선스 회사로 상장 이후 매년 매출보다 큰 적자를 내고 있어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1156,10 +1156,10 @@
     "norm_ni": -23446,
     "trend_g": 2.1
    },
-   "price": 8100,
-   "price_date": "2026-11-05 23:58",
+   "price": 7520,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 114919,
+   "mcap": 106691,
    "shares": 14187572,
    "equity": 30720,
    "equity_source": "DART 2026Q2",
@@ -1167,7 +1167,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -61.0,
-   "pbr": 3.74,
+   "pbr": 3.47,
    "skip": "상장 이후 적자가 매출의 몇 배라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1196,10 +1196,10 @@
     "norm_ni": -3136,
     "trend_g": -3.1
    },
-   "price": 812,
-   "price_date": "2026-11-05 23:58",
+   "price": 763,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 7432,
+   "mcap": 6984,
    "shares": 9153171,
    "equity": 13415,
    "equity_source": "DART 2026Q2",
@@ -1207,7 +1207,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -64.9,
-   "pbr": 0.55,
+   "pbr": 0.52,
    "skip": "최근 7년 중 이익을 낸 해가 거의 없어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1236,10 +1236,10 @@
     "norm_ni": -3702,
     "trend_g": -13.2
    },
-   "price": 2910,
-   "price_date": "2026-11-05 23:58",
+   "price": 2755,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 89331,
+   "mcap": 84573,
    "shares": 30697929,
    "equity": 10564,
    "equity_source": "DART 2026Q2",
@@ -1247,7 +1247,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -103.2,
-   "pbr": 8.46,
+   "pbr": 8.01,
    "skip": "최근 3년 매출보다 큰 적자를 내고 있어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1276,10 +1276,10 @@
     "norm_ni": -12337,
     "trend_g": -0.7
    },
-   "price": 3445,
-   "price_date": "2026-11-05 23:58",
+   "price": 3335,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 86143,
+   "mcap": 83392,
    "shares": 25005241,
    "equity": 84303,
    "equity_source": "DART 2026Q2",
@@ -1287,7 +1287,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.1,
-   "pbr": 1.02,
+   "pbr": 0.99,
    "skip": "10년 평균 순이익률이 적자예요. 디자인하우스·유통 사업 구조조정이 끝나야 정상 이익을 볼 수 있어요.",
    "cycle": {
     "position": "바닥권",
@@ -1316,46 +1316,46 @@
     "norm_ni": -9664,
     "trend_g": 3.6
    },
-   "price": 10180,
-   "price_date": "2026-11-05 23:58",
+   "price": 9410,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 119365,
+   "mcap": 110336,
    "shares": 11725444,
    "equity": 68579,
    "equity_source": "DART 2026Q2",
    "net_cash": 21925,
    "dividend_yield": null,
-   "per": 212.8,
+   "per": 196.7,
    "roe": 0.8,
-   "pbr": 1.74,
+   "pbr": 1.61,
    "dcf": {
     "E1": 5000,
     "r": 12.0,
     "c": 0.8,
     "note": "10년 중 적자 해가 많지만 2024~26년은 흑자예요. 매출 930억원 × 5% ≈ 50억원을 정상 이익으로 봤어요.",
-    "fwd_per": 23.9,
-    "norm_per": 23.9,
+    "fwd_per": 22.1,
+    "norm_per": 22.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 51783,
       "per_share": 4416,
-      "upside": -56.6
+      "upside": -53.1
      },
      "base": {
       "g": 10.0,
       "value": 69563,
       "per_share": 5933,
-      "upside": -41.7
+      "upside": -37.0
      },
      "bull": {
       "g": 20.0,
       "value": 96658,
       "per_share": 8243,
-      "upside": -19.0
+      "upside": -12.4
      }
     },
-    "implied_g": 26.1,
+    "implied_g": 23.8,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -1414,10 +1414,10 @@
     "norm_ni": -11623,
     "trend_g": 0.7
    },
-   "price": 2235,
-   "price_date": "2026-11-05 23:58",
+   "price": 2145,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 89702,
+   "mcap": 86090,
    "shares": 40135001,
    "equity": 322722,
    "equity_source": "DART 2026Q2",
@@ -1425,7 +1425,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -8.8,
-   "pbr": 0.28,
+   "pbr": 0.27,
    "skip": "최근 4년 중 3년이 적자라 정상 이익을 추정할 수 없어요. 전력반도체 신제품 성과를 먼저 봐야 해요.",
    "cycle": {
     "position": "바닥권",
@@ -1454,10 +1454,10 @@
     "norm_ni": -6918,
     "trend_g": 4.3
    },
-   "price": 2200,
-   "price_date": "2026-11-05 23:58",
+   "price": 2130,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 14188,
+   "mcap": 13737,
    "shares": 6449231,
    "equity": 17987,
    "equity_source": "DART 2026Q2",
@@ -1465,7 +1465,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -23.3,
-   "pbr": 0.79,
+   "pbr": 0.76,
    "skip": "상장 이후 매출의 절반 가까운 적자를 내고 있어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -1494,46 +1494,46 @@
     "norm_ni": 94690,
     "trend_g": 8.3
    },
-   "price": 73700,
-   "price_date": "2026-11-05 23:58",
+   "price": 69300,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3585924,
+   "mcap": 3371839,
    "shares": 48655690,
    "equity": 1073559,
    "equity_source": "DART 2026Q2",
    "net_cash": 237236,
    "dividend_yield": null,
-   "per": 20.7,
+   "per": 19.5,
    "roe": 16.1,
-   "pbr": 3.34,
+   "pbr": 3.14,
    "dcf": {
     "E1": 110000,
     "r": 10.0,
     "c": 0.75,
     "note": "10년 평균 순이익률 9%, 추세 매출 1.07조원이면 정상 이익은 950억원이에요. 메모리 증설로 매출 규모가 커질 것을 반영해 1,100억원으로 봤어요. 최근 순이익에는 영업외 이익이 섞여 있어 초과 이익은 더하지 않았어요.",
-    "fwd_per": 32.6,
-    "norm_per": 32.6,
+    "fwd_per": 30.7,
+    "norm_per": 30.7,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 1269512,
       "per_share": 26092,
-      "upside": -64.6
+      "upside": -62.3
      },
      "base": {
       "g": 10.0,
       "value": 1651508,
       "per_share": 33943,
-      "upside": -53.9
+      "upside": -51.0
      },
      "bull": {
       "g": 16.0,
       "value": 2084675,
       "per_share": 42845,
-      "upside": -41.9
+      "upside": -38.2
      }
     },
-    "implied_g": 29.7,
+    "implied_g": 28.2,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1566,18 +1566,18 @@
     "norm_ni": 49862,
     "trend_g": 2.5
    },
-   "price": 146500,
-   "price_date": "2026-11-05 23:58",
+   "price": 137900,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 6694160,
+   "mcap": 6301192,
    "shares": 45693922,
    "equity": 591945,
    "equity_source": "DART 2026Q2",
    "net_cash": 83330,
    "dividend_yield": null,
-   "per": 923.6,
+   "per": 869.4,
    "roe": 1.2,
-   "pbr": 11.31,
+   "pbr": 10.64,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 27714
@@ -1587,29 +1587,29 @@
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 순이익률 16%, 추세 매출 3,120억원 → 정상 이익 499억원을 그대로 썼어요. 최근 이익(72억원)은 바닥 수준이라 1~2년 더 낮게 이어진다고 봤어요.",
-    "fwd_per": 133.9,
-    "norm_per": 133.9,
+    "fwd_per": 126.0,
+    "norm_per": 126.0,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 513536,
       "per_share": 11239,
-      "upside": -92.3
+      "upside": -91.9
      },
      "base": {
       "g": 12.0,
       "value": 730060,
       "per_share": 15977,
-      "upside": -89.1
+      "upside": -88.4
      },
      "bull": {
       "g": 22.0,
       "value": 1089317,
       "per_share": 23839,
-      "upside": -83.7
+      "upside": -82.7
      }
     },
-    "implied_g": 69.7,
+    "implied_g": 68.0,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1645,46 +1645,46 @@
     "norm_ni": 84594,
     "trend_g": 15.0
    },
-   "price": 89600,
-   "price_date": "2026-11-05 23:58",
+   "price": 81200,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2595418,
+   "mcap": 2352097,
    "shares": 28966714,
    "equity": 614914,
    "equity_source": "DART 2026Q2",
    "net_cash": 276407,
    "dividend_yield": null,
-   "per": 20.8,
+   "per": 18.8,
    "roe": 20.3,
-   "pbr": 4.22,
+   "pbr": 3.83,
    "dcf": {
     "E1": 100000,
     "r": 10.0,
     "c": 0.8,
     "note": "7년 평균 순이익률 15%, 추세 매출 5,580억원 → 정상 이익 846억원이에요. 신제품(하이드로젠·베벨) 비중 증가를 반영해 1,000억원으로 봤고, 최근 이익(1,249억원)과의 차이는 상승기 동안 이어진다고 봤어요.",
-    "fwd_per": 26.0,
-    "norm_per": 26.0,
+    "fwd_per": 23.5,
+    "norm_per": 23.5,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 1255298,
       "per_share": 43336,
-      "upside": -51.6
+      "upside": -46.6
      },
      "base": {
       "g": 8.0,
       "value": 1548389,
       "per_share": 53454,
-      "upside": -40.3
+      "upside": -34.2
      },
      "bull": {
       "g": 14.0,
       "value": 1929203,
       "per_share": 66601,
-      "upside": -25.7
+      "upside": -18.0
      }
     },
-    "implied_g": 21.8,
+    "implied_g": 19.3,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1721,46 +1721,46 @@
     "norm_ni": 51565,
     "trend_g": 11.1
    },
-   "price": 86000,
-   "price_date": "2026-11-05 23:58",
+   "price": 76200,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1945720,
+   "mcap": 1723998,
    "shares": 22624647,
    "equity": 543501,
    "equity_source": "DART 2026Q2",
    "net_cash": 345381,
    "dividend_yield": null,
-   "per": 17.5,
+   "per": 15.5,
    "roe": 20.5,
-   "pbr": 3.58,
+   "pbr": 3.17,
    "dcf": {
     "E1": 65000,
     "r": 10.0,
     "c": 0.8,
     "note": "10년 평균 순이익률 13%, 추세 매출 4,000억원 → 516억원이에요. 매출 성장을 반영해 650억원으로 봤고, 최근 순이익(1,112억원)에는 일회성 이익이 있어 초과 이익은 더하지 않았어요.",
-    "fwd_per": 29.9,
-    "norm_per": 29.9,
+    "fwd_per": 26.5,
+    "norm_per": 26.5,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 926305,
       "per_share": 40942,
-      "upside": -52.4
+      "upside": -46.3
      },
      "base": {
       "g": 9.0,
       "value": 1141482,
       "per_share": 50453,
-      "upside": -41.3
+      "upside": -33.8
      },
      "bull": {
       "g": 15.0,
       "value": 1385880,
       "per_share": 61255,
-      "upside": -28.8
+      "upside": -19.6
      }
     },
-    "implied_g": 24.8,
+    "implied_g": 21.4,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1793,46 +1793,46 @@
     "norm_ni": 46201,
     "trend_g": 4.2
    },
-   "price": 88300,
-   "price_date": "2026-11-05 23:58",
+   "price": 80500,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1623996,
+   "mcap": 1480540,
    "shares": 18391806,
    "equity": 467634,
    "equity_source": "DART 2026Q2",
    "net_cash": 128181,
    "dividend_yield": null,
-   "per": 20.1,
+   "per": 18.3,
    "roe": 17.3,
-   "pbr": 3.47,
+   "pbr": 3.17,
    "dcf": {
     "E1": 60000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 순이익률 15%, 추세 매출 3,170억원 → 462억원이에요. 매출이 추세보다 높아진 점을 반영해 600억원으로 봤어요.",
-    "fwd_per": 27.1,
-    "norm_per": 27.1,
+    "fwd_per": 24.7,
+    "norm_per": 24.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 651106,
       "per_share": 35402,
-      "upside": -59.9
+      "upside": -56.0
      },
      "base": {
       "g": 7.0,
       "value": 831414,
       "per_share": 45206,
-      "upside": -48.8
+      "upside": -43.8
      },
      "bull": {
       "g": 13.0,
       "value": 1036532,
       "per_share": 56358,
-      "upside": -36.2
+      "upside": -30.0
      }
     },
-    "implied_g": 24.8,
+    "implied_g": 22.4,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1869,46 +1869,46 @@
     "norm_ni": 75630,
     "trend_g": 0.4
    },
-   "price": 36550,
-   "price_date": "2026-11-05 23:58",
+   "price": 34050,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2973665,
+   "mcap": 2770268,
    "shares": 81358836,
    "equity": 313462,
    "equity_source": "DART 2026Q2",
    "net_cash": 217022,
    "dividend_yield": null,
-   "per": 34.7,
+   "per": 32.3,
    "roe": 27.3,
-   "pbr": 9.49,
+   "pbr": 8.84,
    "dcf": {
     "E1": 80000,
     "r": 10.0,
     "c": 0.9,
     "note": "고압 수소 어닐링 독점으로 이익률이 40%대에서 안정적이에요. 4년 평균(756억원)과 최근 이익(857억원) 사이인 800억원을 정상으로 봤어요.",
-    "fwd_per": 37.2,
-    "norm_per": 37.2,
+    "fwd_per": 34.6,
+    "norm_per": 34.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 994822,
       "per_share": 12228,
-      "upside": -66.5
+      "upside": -64.1
      },
      "base": {
       "g": 7.0,
       "value": 1283241,
       "per_share": 15773,
-      "upside": -56.8
+      "upside": -53.7
      },
      "bull": {
       "g": 14.0,
       "value": 1675366,
       "per_share": 20592,
-      "upside": -43.7
+      "upside": -39.5
      }
     },
-    "implied_g": 28.6,
+    "implied_g": 26.8,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -1941,18 +1941,18 @@
     "norm_ni": 66495,
     "trend_g": 12.4
    },
-   "price": 58000,
-   "price_date": "2026-11-05 23:58",
+   "price": 54400,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1144577,
+   "mcap": 1073534,
    "shares": 19734079,
    "equity": 574397,
    "equity_source": "DART 2026Q2",
    "net_cash": 39502,
    "dividend_yield": null,
-   "per": 13.1,
+   "per": 12.3,
    "roe": 15.2,
-   "pbr": 1.99,
+   "pbr": 1.87,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 100079
@@ -1962,29 +1962,29 @@
     "r": 10.0,
     "c": 0.8,
     "note": "9년 평균 순이익률 14%로 꾸준하고, 추세 매출 4,820억원 → 665억원이에요. CMP 장비 매출 확대를 반영해 750억원으로 봤어요.",
-    "fwd_per": 15.3,
-    "norm_per": 15.3,
+    "fwd_per": 14.3,
+    "norm_per": 14.3,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 815970,
       "per_share": 41348,
-      "upside": -28.7
+      "upside": -24.0
      },
      "base": {
       "g": 7.0,
       "value": 1003462,
       "per_share": 50849,
-      "upside": -12.3
+      "upside": -6.5
      },
      "bull": {
       "g": 12.0,
       "value": 1236976,
       "per_share": 62682,
-      "upside": 8.1
+      "upside": 15.2
      }
     },
-    "implied_g": 10.1,
+    "implied_g": 8.6,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2021,10 +2021,10 @@
     "norm_ni": 21593,
     "trend_g": 1.8
    },
-   "price": 9440,
-   "price_date": "2026-11-05 23:58",
+   "price": 8790,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 283916,
+   "mcap": 264367,
    "shares": 30075860,
    "equity": 318869,
    "equity_source": "DART 2026Q2",
@@ -2032,35 +2032,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.5,
-   "pbr": 0.89,
+   "pbr": 0.83,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
     "c": 0.75,
     "note": "10년 평균 순이익률 5%, 추세 매출 4,180억원 → 216억원이에요. 최근 적자는 업황 바닥 영향으로 봤어요.",
-    "fwd_per": 14.2,
-    "norm_per": 14.2,
+    "fwd_per": 13.2,
+    "norm_per": 13.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 143937,
       "per_share": 4786,
-      "upside": -49.3
+      "upside": -45.6
      },
      "base": {
       "g": 8.0,
       "value": 212206,
       "per_share": 7056,
-      "upside": -25.3
+      "upside": -19.7
      },
      "bull": {
       "g": 15.0,
       "value": 294856,
       "per_share": 9804,
-      "upside": 3.9
+      "upside": 11.5
      }
     },
-    "implied_g": 14.2,
+    "implied_g": 12.7,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2096,46 +2096,46 @@
     "norm_ni": 24262,
     "trend_g": 9.9
    },
-   "price": 33200,
-   "price_date": "2026-11-05 23:58",
+   "price": 30900,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 874049,
+   "mcap": 813497,
    "shares": 26326765,
    "equity": 257277,
    "equity_source": "DART 2026Q2",
    "net_cash": 190119,
    "dividend_yield": null,
-   "per": 12.9,
+   "per": 12.0,
    "roe": 26.3,
-   "pbr": 3.4,
+   "pbr": 3.16,
    "dcf": {
     "E1": 40000,
     "r": 11.0,
     "c": 0.8,
     "note": "8년 평균 이익은 243억원이지만 SK하이닉스 식각 장비 공급 확대로 매출이 추세의 2배 가까이 늘었어요. 정상 매출 2,000억원 × 20% = 400억원으로 봤어요.",
-    "fwd_per": 21.9,
-    "norm_per": 21.9,
+    "fwd_per": 20.3,
+    "norm_per": 20.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 522489,
       "per_share": 19846,
-      "upside": -40.2
+      "upside": -35.8
      },
      "base": {
       "g": 10.0,
       "value": 684307,
       "per_share": 25993,
-      "upside": -21.7
+      "upside": -15.9
      },
      "bull": {
       "g": 20.0,
       "value": 932080,
       "per_share": 35404,
-      "upside": 6.6
+      "upside": 14.6
      }
     },
-    "implied_g": 18.0,
+    "implied_g": 15.7,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2172,46 +2172,46 @@
     "norm_ni": 49241,
     "trend_g": 1.0
    },
-   "price": 137600,
-   "price_date": "2026-11-05 23:58",
+   "price": 123600,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2966986,
+   "mcap": 2665112,
    "shares": 21562395,
    "equity": 537377,
    "equity_source": "DART 2026Q2",
    "net_cash": 200914,
    "dividend_yield": null,
-   "per": 28.8,
+   "per": 25.8,
    "roe": 19.2,
-   "pbr": 5.52,
+   "pbr": 4.96,
    "dcf": {
     "E1": 75000,
     "r": 10.5,
     "c": 0.8,
     "note": "지분법 이익(피에스케이)과 후공정 장비가 함께 들어와 이익률이 40%대예요. 추세 매출 기준 정상 이익(492억원)보다 HBM 리플로우 장비 성장을 반영해 750억원으로 봤어요.",
-    "fwd_per": 39.6,
-    "norm_per": 39.6,
+    "fwd_per": 35.5,
+    "norm_per": 35.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 850501,
       "per_share": 39444,
-      "upside": -71.3
+      "upside": -68.1
      },
      "base": {
       "g": 8.0,
       "value": 1111164,
       "per_share": 51533,
-      "upside": -62.5
+      "upside": -58.3
      },
      "bull": {
       "g": 14.0,
       "value": 1375733,
       "per_share": 63802,
-      "upside": -53.6
+      "upside": -48.4
      }
     },
-    "implied_g": 34.5,
+    "implied_g": 31.7,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2248,46 +2248,46 @@
     "norm_ni": 72112,
     "trend_g": 6.4
    },
-   "price": 26550,
-   "price_date": "2026-11-05 23:58",
+   "price": 28750,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2027969,
+   "mcap": 2196011,
    "shares": 76383005,
    "equity": 1028933,
    "equity_source": "DART 2026Q2",
    "net_cash": -335796,
    "dividend_yield": null,
-   "per": 36.8,
+   "per": 39.8,
    "roe": 5.4,
-   "pbr": 1.97,
+   "pbr": 2.13,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
     "c": 0.5,
     "note": "원익IPS·원익QnC 지분과 가스 사업을 가진 지주회사예요. 10년 평균 기준 721억원과 최근 이익(551억원) 사이로 봤고, 지주회사라 현금 전환율을 0.5로 낮췄어요.",
-    "fwd_per": 31.2,
-    "norm_per": 31.2,
+    "fwd_per": 33.8,
+    "norm_per": 33.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 341476,
       "per_share": 4471,
-      "upside": -83.2
+      "upside": -84.5
      },
      "base": {
       "g": 7.0,
       "value": 469009,
       "per_share": 6140,
-      "upside": -76.9
+      "upside": -78.6
      },
      "bull": {
       "g": 12.0,
       "value": 587254,
       "per_share": 7688,
-      "upside": -71.0
+      "upside": -73.3
      }
     },
-    "implied_g": 41.0,
+    "implied_g": 43.0,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2324,46 +2324,46 @@
     "norm_ni": 8908,
     "trend_g": 27.7
    },
-   "price": 6010,
-   "price_date": "2026-11-05 23:58",
+   "price": 5660,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 75814,
+   "mcap": 71398,
    "shares": 12614560,
    "equity": 62831,
    "equity_source": "DART 2026Q2",
    "net_cash": 14229,
    "dividend_yield": null,
-   "per": 10.4,
+   "per": 9.8,
    "roe": 11.6,
-   "pbr": 1.21,
+   "pbr": 1.14,
    "dcf": {
     "E1": 8500,
     "r": 11.5,
     "c": 0.75,
     "note": "5년 평균 기준 정상 이익 89억원과 최근 이익(73억원)이 비슷해 85억원으로 봤어요.",
-    "fwd_per": 8.9,
-    "norm_per": 8.9,
+    "fwd_per": 8.4,
+    "norm_per": 8.4,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 73741,
       "per_share": 5846,
-      "upside": -2.7
+      "upside": 3.3
      },
      "base": {
       "g": 10.0,
       "value": 105844,
       "per_share": 8391,
-      "upside": 39.6
+      "upside": 48.2
      },
      "bull": {
       "g": 18.0,
       "value": 143403,
       "per_share": 11368,
-      "upside": 89.2
+      "upside": 100.9
      }
     },
-    "implied_g": 0.8,
+    "implied_g": -0.9,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2396,46 +2396,46 @@
     "norm_ni": 25746,
     "trend_g": 3.9
    },
-   "price": 19810,
-   "price_date": "2026-11-05 23:58",
+   "price": 18860,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 303921,
+   "mcap": 289346,
    "shares": 15341797,
    "equity": 292340,
    "equity_source": "DART 2026Q2",
    "net_cash": 41911,
    "dividend_yield": null,
-   "per": 15.7,
+   "per": 14.9,
    "roe": 6.6,
-   "pbr": 1.04,
+   "pbr": 0.99,
    "dcf": {
     "E1": 23000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 순이익률 7%, 추세 매출 3,580억원 → 257억원이에요. 최근 이익(194억원)은 평균보다 약간 낮아요.",
-    "fwd_per": 13.2,
-    "norm_per": 13.2,
+    "fwd_per": 12.6,
+    "norm_per": 12.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 229716,
       "per_share": 14973,
-      "upside": -24.4
+      "upside": -20.6
      },
      "base": {
       "g": 6.0,
       "value": 287980,
       "per_share": 18771,
-      "upside": -5.2
+      "upside": -0.5
      },
      "bull": {
       "g": 12.0,
       "value": 363793,
       "per_share": 23713,
-      "upside": 19.7
+      "upside": 25.7
      }
     },
-    "implied_g": 7.4,
+    "implied_g": 6.1,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2471,46 +2471,46 @@
     "norm_ni": 16572,
     "trend_g": 10.0
    },
-   "price": 11290,
-   "price_date": "2026-11-05 23:58",
+   "price": 10750,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 108408,
+   "mcap": 103223,
    "shares": 9602135,
    "equity": 146887,
    "equity_source": "DART 2026Q2",
    "net_cash": 20876,
    "dividend_yield": null,
-   "per": 5.5,
+   "per": 5.2,
    "roe": 13.5,
-   "pbr": 0.74,
+   "pbr": 0.7,
    "dcf": {
     "E1": 18000,
     "r": 10.5,
     "c": 0.8,
     "note": "9년 평균 기준 166억원과 최근 199억원 사이로 봤어요.",
-    "fwd_per": 6.0,
-    "norm_per": 6.0,
+    "fwd_per": 5.7,
+    "norm_per": 5.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 172306,
       "per_share": 17945,
-      "upside": 58.9
+      "upside": 66.9
      },
      "base": {
       "g": 6.0,
       "value": 218531,
       "per_share": 22759,
-      "upside": 101.6
+      "upside": 111.7
      },
      "bull": {
       "g": 12.0,
       "value": 278679,
       "per_share": 29023,
-      "upside": 157.1
+      "upside": 170.0
      }
     },
-    "implied_g": -12.6,
+    "implied_g": -14.0,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2543,46 +2543,46 @@
     "norm_ni": 19411,
     "trend_g": 9.0
    },
-   "price": 8200,
-   "price_date": "2026-11-05 23:58",
+   "price": 7800,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 128035,
+   "mcap": 121789,
    "shares": 15614033,
    "equity": 245403,
    "equity_source": "DART 2026Q2",
    "net_cash": 62668,
    "dividend_yield": null,
-   "per": 98.4,
+   "per": 93.6,
    "roe": 0.5,
-   "pbr": 0.52,
+   "pbr": 0.5,
    "dcf": {
     "E1": 17000,
     "r": 10.5,
     "c": 0.75,
     "note": "10년 평균 순이익률 6%, 추세 매출 3,370억원 → 194억원이에요. 최근 이익(13억원)이 바닥 수준이라 1~2년 더 낮게 이어진다고 봤어요.",
-    "fwd_per": 7.5,
-    "norm_per": 7.5,
+    "fwd_per": 7.2,
+    "norm_per": 7.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 179459,
       "per_share": 11493,
-      "upside": 40.2
+      "upside": 47.4
      },
      "base": {
       "g": 7.0,
       "value": 225802,
       "per_share": 14461,
-      "upside": 76.4
+      "upside": 85.4
      },
      "bull": {
       "g": 13.0,
       "value": 278522,
       "per_share": 17838,
-      "upside": 117.5
+      "upside": 128.7
      }
     },
-    "implied_g": -11.9,
+    "implied_g": -13.9,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2618,46 +2618,46 @@
     "norm_ni": 850,
     "trend_g": 13.0
    },
-   "price": 10350,
-   "price_date": "2026-11-05 23:58",
+   "price": 9890,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 235368,
+   "mcap": 224907,
    "shares": 22740835,
    "equity": 70613,
    "equity_source": "DART 2026Q2",
    "net_cash": 8094,
    "dividend_yield": null,
-   "per": 19.7,
+   "per": 18.8,
    "roe": 16.9,
-   "pbr": 3.33,
+   "pbr": 3.19,
    "dcf": {
     "E1": 8000,
     "r": 11.5,
     "c": 0.8,
     "note": "4년 중 2년이 적자라 평균은 의미가 작아요. 매출 700억원대 × 11%를 정상 이익으로 봤어요.",
-    "fwd_per": 29.4,
-    "norm_per": 29.4,
+    "fwd_per": 28.1,
+    "norm_per": 28.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 73971,
       "per_share": 3253,
-      "upside": -68.6
+      "upside": -67.1
      },
      "base": {
       "g": 12.0,
       "value": 115038,
       "per_share": 5059,
-      "upside": -51.1
+      "upside": -48.9
      },
      "bull": {
       "g": 22.0,
       "value": 169208,
       "per_share": 7441,
-      "upside": -28.1
+      "upside": -24.8
      }
     },
-    "implied_g": 30.5,
+    "implied_g": 29.3,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2694,10 +2694,10 @@
     "norm_ni": 1408,
     "trend_g": 15.1
    },
-   "price": 8400,
-   "price_date": "2026-11-05 23:58",
+   "price": 7770,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 77561,
+   "mcap": 71744,
    "shares": 9233442,
    "equity": 55558,
    "equity_source": "DART 2026Q2",
@@ -2705,14 +2705,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -24.7,
-   "pbr": 1.4,
+   "pbr": 1.29,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
     "c": 0.8,
     "note": "6년 평균 순이익률 2.5%예요. 흑자였던 해 수준(매출 550억원 × 7%)을 정상으로 봤어요.",
-    "fwd_per": 19.4,
-    "norm_per": 19.4,
+    "fwd_per": 17.9,
+    "norm_per": 17.9,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -2724,16 +2724,16 @@
       "g": 12.0,
       "value": 21547,
       "per_share": 2334,
-      "upside": -72.2
+      "upside": -70.0
      },
      "bull": {
       "g": 25.0,
       "value": 60894,
       "per_share": 6595,
-      "upside": -21.5
+      "upside": -15.1
      }
     },
-    "implied_g": 29.0,
+    "implied_g": 27.7,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2769,46 +2769,46 @@
     "norm_ni": 46144,
     "trend_g": 14.9
    },
-   "price": 37150,
-   "price_date": "2026-11-05 23:58",
+   "price": 34800,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 667341,
+   "mcap": 625127,
    "shares": 17963419,
    "equity": 322594,
    "equity_source": "DART 2026Q2",
    "net_cash": 61325,
    "dividend_yield": null,
-   "per": 12.0,
+   "per": 11.2,
    "roe": 17.2,
-   "pbr": 2.07,
+   "pbr": 1.94,
    "dcf": {
     "E1": 50000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 순이익률 11%, 추세 매출 4,180억원 → 461억원이에요. 최근 4년 이익률이 13%대로 안정돼 500억원으로 봤어요.",
-    "fwd_per": 13.3,
-    "norm_per": 13.3,
+    "fwd_per": 12.5,
+    "norm_per": 12.5,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 528038,
       "per_share": 29395,
-      "upside": -20.9
+      "upside": -15.5
      },
      "base": {
       "g": 8.0,
       "value": 668167,
       "per_share": 37196,
-      "upside": 0.1
+      "upside": 6.9
      },
      "bull": {
       "g": 14.0,
       "value": 849959,
       "per_share": 47316,
-      "upside": 27.4
+      "upside": 36.0
      }
     },
-    "implied_g": 8.0,
+    "implied_g": 6.3,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2845,46 +2845,46 @@
     "norm_ni": 25324,
     "trend_g": 6.1
    },
-   "price": 7420,
-   "price_date": "2026-11-05 23:58",
+   "price": 7020,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 218267,
+   "mcap": 206501,
    "shares": 29416053,
    "equity": 252721,
    "equity_source": "DART 2026Q2",
    "net_cash": 21353,
    "dividend_yield": null,
-   "per": 12.9,
+   "per": 12.2,
    "roe": 6.7,
-   "pbr": 0.86,
+   "pbr": 0.82,
    "dcf": {
     "E1": 23000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 기준 253억원이에요. 최근 이익률(3%)이 평균(9%)보다 낮아 회복 구간으로 봤어요.",
-    "fwd_per": 9.5,
-    "norm_per": 9.5,
+    "fwd_per": 9.0,
+    "norm_per": 9.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 210674,
       "per_share": 7162,
-      "upside": -3.5
+      "upside": 2.0
      },
      "base": {
       "g": 6.0,
       "value": 270019,
       "per_share": 9179,
-      "upside": 23.7
+      "upside": 30.8
      },
      "bull": {
       "g": 12.0,
       "value": 347238,
       "per_share": 11804,
-      "upside": 59.1
+      "upside": 68.2
      }
     },
-    "implied_g": 0.9,
+    "implied_g": -0.5,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2920,10 +2920,10 @@
     "norm_ni": 19561,
     "trend_g": 8.3
    },
-   "price": 21700,
-   "price_date": "2026-11-05 23:58",
+   "price": 21100,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 465035,
+   "mcap": 452177,
    "shares": 21430175,
    "equity": 271087,
    "equity_source": "DART 2026Q2",
@@ -2931,14 +2931,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -1.7,
-   "pbr": 1.72,
+   "pbr": 1.67,
    "dcf": {
     "E1": 18000,
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 순이익률 7%, 추세 매출 2,780억원 → 196억원이에요. 최근 적자는 펠리클 사업 비용과 업황 영향으로 봤어요.",
-    "fwd_per": 25.8,
-    "norm_per": 25.8,
+    "fwd_per": 25.1,
+    "norm_per": 25.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -2950,16 +2950,16 @@
       "g": 8.0,
       "value": 15517,
       "per_share": 724,
-      "upside": -96.7
+      "upside": -96.6
      },
      "bull": {
       "g": 15.0,
       "value": 108408,
       "per_share": 5059,
-      "upside": -76.7
+      "upside": -76.0
      }
     },
-    "implied_g": 31.4,
+    "implied_g": 31.0,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2995,46 +2995,46 @@
     "norm_ni": 17033,
     "trend_g": 6.1
    },
-   "price": 16930,
-   "price_date": "2026-11-05 23:58",
+   "price": 15750,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 184947,
+   "mcap": 172057,
    "shares": 10924243,
    "equity": 203081,
    "equity_source": "DART 2026Q2",
    "net_cash": 102849,
    "dividend_yield": null,
-   "per": 11.0,
+   "per": 10.3,
    "roe": 8.2,
-   "pbr": 0.91,
+   "pbr": 0.85,
    "dcf": {
     "E1": 17000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 기준 170억원과 최근 이익(167억원)이 같아 그대로 썼어요.",
-    "fwd_per": 10.9,
-    "norm_per": 10.9,
+    "fwd_per": 10.1,
+    "norm_per": 10.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 231547,
       "per_share": 21196,
-      "upside": 25.2
+      "upside": 34.6
      },
      "base": {
       "g": 6.0,
       "value": 270832,
       "per_share": 24792,
-      "upside": 46.4
+      "upside": 57.4
      },
      "bull": {
       "g": 12.0,
       "value": 321951,
       "per_share": 29471,
-      "upside": 74.1
+      "upside": 87.1
      }
     },
-    "implied_g": -10.3,
+    "implied_g": -14.3,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3067,46 +3067,46 @@
     "norm_ni": 5749,
     "trend_g": 17.0
    },
-   "price": 11160,
-   "price_date": "2026-11-05 23:58",
+   "price": 10660,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 144503,
+   "mcap": 138029,
    "shares": 12948323,
    "equity": 48316,
    "equity_source": "DART 2026Q2",
    "net_cash": 9540,
    "dividend_yield": null,
-   "per": 31.9,
+   "per": 30.4,
    "roe": 9.4,
-   "pbr": 2.99,
+   "pbr": 2.86,
    "dcf": {
     "E1": 5500,
     "r": 11.5,
     "c": 0.8,
     "note": "6년 평균 기준 57억원과 최근 이익(45억원) 사이로 봤어요.",
-    "fwd_per": 26.3,
-    "norm_per": 26.3,
+    "fwd_per": 25.1,
+    "norm_per": 25.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 50563,
       "per_share": 3905,
-      "upside": -65.0
+      "upside": -63.4
      },
      "base": {
       "g": 10.0,
       "value": 72693,
       "per_share": 5614,
-      "upside": -49.7
+      "upside": -47.3
      },
      "bull": {
       "g": 18.0,
       "value": 98584,
       "per_share": 7614,
-      "upside": -31.8
+      "upside": -28.6
      }
     },
-    "implied_g": 27.9,
+    "implied_g": 26.7,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3139,46 +3139,46 @@
     "norm_ni": 12564,
     "trend_g": 11.8
    },
-   "price": 21000,
-   "price_date": "2026-11-05 23:58",
+   "price": 19690,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 164446,
+   "mcap": 154187,
    "shares": 7830739,
    "equity": 103700,
    "equity_source": "DART 2026Q2",
    "net_cash": -68185,
    "dividend_yield": null,
-   "per": 6.8,
+   "per": 6.4,
    "roe": 23.3,
-   "pbr": 1.59,
+   "pbr": 1.49,
    "dcf": {
     "E1": 17000,
     "r": 11.0,
     "c": 0.8,
     "note": "7년 평균 기준 126억원이지만 최근 이익률이 30%로 올라 170억원으로 봤어요.",
-    "fwd_per": 9.7,
-    "norm_per": 9.7,
+    "fwd_per": 9.1,
+    "norm_per": 9.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 91008,
       "per_share": 11622,
-      "upside": -44.7
+      "upside": -41.0
      },
      "base": {
       "g": 8.0,
       "value": 153701,
       "per_share": 19628,
-      "upside": -6.5
+      "upside": -0.3
      },
      "bull": {
       "g": 15.0,
       "value": 229457,
       "per_share": 29302,
-      "upside": 39.5
+      "upside": 48.8
      }
     },
-    "implied_g": 9.1,
+    "implied_g": 8.1,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3215,46 +3215,46 @@
     "norm_ni": 123400,
     "trend_g": 13.8
    },
-   "price": 168100,
-   "price_date": "2026-11-05 23:58",
+   "price": 162600,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 15944790,
+   "mcap": 15423098,
    "shares": 94853002,
    "equity": 746889,
    "equity_source": "DART 2026Q2",
    "net_cash": 90573,
    "dividend_yield": null,
-   "per": 71.8,
+   "per": 69.5,
    "roe": 29.7,
-   "pbr": 21.35,
+   "pbr": 20.65,
    "dcf": {
     "E1": 220000,
     "r": 10.0,
     "c": 0.85,
     "note": "10년 평균 이익(1,234억원)은 HBM 이전 기준이에요. HBM용 TC본더로 사업 구조가 바뀐 점을 반영해 정상 매출 6,000억원 × 순이익률 35% ≈ 2,200억원으로 봤어요. 2023년 순이익률 168%는 보유 주식 매각 이익이라 평균에서 뺐어요.",
-    "fwd_per": 72.5,
-    "norm_per": 72.5,
+    "fwd_per": 70.1,
+    "norm_per": 70.1,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 2518701,
       "per_share": 26554,
-      "upside": -84.2
+      "upside": -83.7
      },
      "base": {
       "g": 12.0,
       "value": 3726973,
       "per_share": 39292,
-      "upside": -76.6
+      "upside": -75.8
      },
      "bull": {
       "g": 22.0,
       "value": 5740429,
       "per_share": 60519,
-      "upside": -64.0
+      "upside": -62.8
      }
     },
-    "implied_g": 46.9,
+    "implied_g": 46.0,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3291,10 +3291,10 @@
     "norm_ni": 13718,
     "trend_g": -0.6
    },
-   "price": 31100,
-   "price_date": "2026-11-05 23:58",
+   "price": 29250,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1111529,
+   "mcap": 1045409,
    "shares": 35740474,
    "equity": 210104,
    "equity_source": "DART 2026Q2",
@@ -3302,35 +3302,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -5.6,
-   "pbr": 5.29,
+   "pbr": 4.98,
    "dcf": {
     "E1": 25000,
     "r": 12.0,
     "c": 0.7,
     "note": "10년 평균 기준 137억원이에요. HBM용 큐브프로버가 매출로 이어진다는 전제로 250억원으로 봤고, 최근 적자는 이자·파생상품 손실 영향이에요.",
-    "fwd_per": 44.5,
-    "norm_per": 44.5,
+    "fwd_per": 41.8,
+    "norm_per": 41.8,
     "scenarios": {
      "bear": {
       "g": 5.0,
       "value": 5825,
       "per_share": 163,
-      "upside": -99.5
+      "upside": -99.4
      },
      "base": {
       "g": 18.0,
       "value": 175836,
       "per_share": 4920,
-      "upside": -84.2
+      "upside": -83.2
      },
      "bull": {
       "g": 30.0,
       "value": 435400,
       "per_share": 12182,
-      "upside": -60.8
+      "upside": -58.4
      }
     },
-    "implied_g": 47.7,
+    "implied_g": 46.4,
     "cycle": {
      "position": "회복기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3366,46 +3366,46 @@
     "norm_ni": 42808,
     "trend_g": 2.8
    },
-   "price": 311000,
-   "price_date": "2026-11-05 23:58",
+   "price": 294500,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3831380,
+   "mcap": 3628107,
    "shares": 12319550,
    "equity": 748195,
    "equity_source": "DART 2026Q2",
    "net_cash": 330867,
    "dividend_yield": null,
-   "per": 35.3,
+   "per": 33.4,
    "roe": 14.5,
-   "pbr": 5.12,
+   "pbr": 4.85,
    "dcf": {
     "E1": 75000,
     "r": 10.0,
     "c": 0.8,
     "note": "10년 평균 순이익률 11%, 추세 매출 3,870억원 → 428억원이에요. HBM용 레이저 장비로 매출이 추세보다 커진 점을 반영해 750억원으로 봤어요.",
-    "fwd_per": 51.1,
-    "norm_per": 51.1,
+    "fwd_per": 48.4,
+    "norm_per": 48.4,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 1060623,
       "per_share": 86093,
-      "upside": -72.3
+      "upside": -70.8
      },
      "base": {
       "g": 9.0,
       "value": 1313915,
       "per_share": 106653,
-      "upside": -65.7
+      "upside": -63.8
      },
      "bull": {
       "g": 15.0,
       "value": 1601605,
       "per_share": 130005,
-      "upside": -58.2
+      "upside": -55.9
      }
     },
-    "implied_g": 39.3,
+    "implied_g": 37.8,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3442,10 +3442,10 @@
     "norm_ni": 26116,
     "trend_g": 3.2
    },
-   "price": 23300,
-   "price_date": "2026-11-05 23:58",
+   "price": 22650,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 238032,
+   "mcap": 231392,
    "shares": 10215978,
    "equity": 148290,
    "equity_source": "DART 2026Q2",
@@ -3453,35 +3453,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.4,
-   "pbr": 1.61,
+   "pbr": 1.56,
    "dcf": {
     "E1": 20000,
     "r": 12.0,
     "c": 0.8,
     "note": "2024년까지 이익률 30%대였지만 2025년부터 적자예요. 매출 800억원 × 25%를 정상 이익으로 봤고, 지금의 부진이 1~2년 더 이어진다고 봤어요.",
-    "fwd_per": 11.9,
-    "norm_per": 11.9,
+    "fwd_per": 11.6,
+    "norm_per": 11.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 79886,
       "per_share": 7820,
-      "upside": -66.4
+      "upside": -65.5
      },
      "base": {
       "g": 12.0,
       "value": 183568,
       "per_share": 17969,
-      "upside": -22.9
+      "upside": -20.7
      },
      "bull": {
       "g": 25.0,
       "value": 372759,
       "per_share": 36488,
-      "upside": 56.6
+      "upside": 61.1
      }
     },
-    "implied_g": 16.5,
+    "implied_g": 16.0,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3517,46 +3517,46 @@
     "norm_ni": 38187,
     "trend_g": 25.8
    },
-   "price": 215000,
-   "price_date": "2026-11-05 23:58",
+   "price": 193400,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1496373,
+   "mcap": 1346040,
    "shares": 6959874,
    "equity": 340305,
    "equity_source": "DART 2026Q2",
    "net_cash": 56445,
    "dividend_yield": null,
-   "per": 64.5,
+   "per": 58.0,
    "roe": 6.8,
-   "pbr": 4.4,
+   "pbr": 3.96,
    "dcf": {
     "E1": 38000,
     "r": 10.0,
     "c": 0.8,
     "note": "10년 평균 기준 382억원으로, 최근 이익(232억원)보다 높아요. 원자현미경 구조적 성장 회사라 평균 이익을 그대로 썼어요.",
-    "fwd_per": 39.4,
-    "norm_per": 39.4,
+    "fwd_per": 35.4,
+    "norm_per": 35.4,
     "scenarios": {
      "bear": {
       "g": 5.0,
       "value": 473161,
       "per_share": 67984,
-      "upside": -68.4
+      "upside": -64.8
      },
      "base": {
       "g": 13.0,
       "value": 655297,
       "per_share": 94154,
-      "upside": -56.2
+      "upside": -51.3
      },
      "bull": {
       "g": 19.0,
       "value": 838898,
       "per_share": 120533,
-      "upside": -43.9
+      "upside": -37.7
      }
     },
-    "implied_g": 33.2,
+    "implied_g": 30.5,
     "cycle": {
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3591,18 +3591,18 @@
     "norm_ni": 31965,
     "trend_g": 2.9
    },
-   "price": 22100,
-   "price_date": "2026-11-05 23:58",
+   "price": 20950,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1462175,
+   "mcap": 1386089,
    "shares": 66161750,
    "equity": 362215,
    "equity_source": "DART 2026Q2",
    "net_cash": 33950,
    "dividend_yield": null,
-   "per": 30.7,
+   "per": 29.1,
    "roe": 13.2,
-   "pbr": 4.04,
+   "pbr": 3.83,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 32400
@@ -3612,29 +3612,29 @@
     "r": 10.0,
     "c": 0.8,
     "note": "10년 평균 기준 320억원과 최근 이익(477억원) 사이로 봤어요.",
-    "fwd_per": 38.5,
-    "norm_per": 38.5,
+    "fwd_per": 36.5,
+    "norm_per": 36.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 374990,
       "per_share": 5668,
-      "upside": -74.4
+      "upside": -72.9
      },
      "base": {
       "g": 7.0,
       "value": 501452,
       "per_share": 7579,
-      "upside": -65.7
+      "upside": -63.8
      },
      "bull": {
       "g": 13.0,
       "value": 645559,
       "per_share": 9757,
-      "upside": -55.8
+      "upside": -53.4
      }
     },
-    "implied_g": 32.6,
+    "implied_g": 31.3,
     "cycle": {
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3667,10 +3667,10 @@
     "norm_ni": -1642,
     "trend_g": 20.1
    },
-   "price": 41000,
-   "price_date": "2026-11-05 23:58",
+   "price": 38050,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 512651,
+   "mcap": 475765,
    "shares": 12503677,
    "equity": 42640,
    "equity_source": "DART 2026Q2",
@@ -3678,35 +3678,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -16.2,
-   "pbr": 12.02,
+   "pbr": 11.16,
    "dcf": {
     "E1": 10000,
     "r": 12.0,
     "c": 0.8,
     "note": "2019~22년 이익률 13~19%였지만 최근 3년 적자예요. 매출 1,000억원 × 10%를 회복 시 정상 이익으로 봤어요.",
-    "fwd_per": 51.3,
-    "norm_per": 51.3,
+    "fwd_per": 47.6,
+    "norm_per": 47.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 47526,
       "per_share": 3801,
-      "upside": -90.7
+      "upside": -90.0
      },
      "base": {
       "g": 15.0,
       "value": 115365,
       "per_share": 9226,
-      "upside": -77.5
+      "upside": -75.8
      },
      "bull": {
       "g": 25.0,
       "value": 190520,
       "per_share": 15237,
-      "upside": -62.8
+      "upside": -60.0
      }
     },
-    "implied_g": 47.6,
+    "implied_g": 45.7,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3742,46 +3742,46 @@
     "norm_ni": 1766,
     "trend_g": 5.8
    },
-   "price": 7940,
-   "price_date": "2026-11-05 23:58",
+   "price": 7110,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 177797,
+   "mcap": 159211,
    "shares": 22392557,
    "equity": 52448,
    "equity_source": "DART 2026Q2",
    "net_cash": -21249,
    "dividend_yield": null,
-   "per": 1400.0,
+   "per": 1253.6,
    "roe": 0.2,
-   "pbr": 3.39,
+   "pbr": 3.04,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
     "c": 0.8,
     "note": "4년 평균 기준 18억원이에요. 흑자였던 해 수준(매출 800억원 × 5%)을 정상으로 봤어요.",
-    "fwd_per": 44.4,
-    "norm_per": 44.4,
+    "fwd_per": 39.8,
+    "norm_per": 39.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 8597,
       "per_share": 384,
-      "upside": -95.2
+      "upside": -94.6
      },
      "base": {
       "g": 10.0,
       "value": 25844,
       "per_share": 1154,
-      "upside": -85.5
+      "upside": -83.8
      },
      "bull": {
       "g": 20.0,
       "value": 52129,
       "per_share": 2328,
-      "upside": -70.7
+      "upside": -67.3
      }
     },
-    "implied_g": 44.0,
+    "implied_g": 41.5,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3817,46 +3817,46 @@
     "norm_ni": -242,
     "trend_g": 12.9
    },
-   "price": 6820,
-   "price_date": "2026-11-05 23:58",
+   "price": 6410,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 89703,
+   "mcap": 84310,
    "shares": 13152931,
    "equity": 49292,
    "equity_source": "DART 2026Q2",
    "net_cash": -16893,
    "dividend_yield": null,
-   "per": 477.1,
+   "per": 448.5,
    "roe": 0.4,
-   "pbr": 1.82,
+   "pbr": 1.71,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
     "c": 0.8,
     "note": "10년 평균 이익률이 거의 0%예요. 최근 흑자 해 수준(매출 700억원 × 6%)을 정상으로 봤어요.",
-    "fwd_per": 22.4,
-    "norm_per": 22.4,
+    "fwd_per": 21.1,
+    "norm_per": 21.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 12355,
       "per_share": 939,
-      "upside": -86.2
+      "upside": -85.3
      },
      "base": {
       "g": 10.0,
       "value": 29263,
       "per_share": 2225,
-      "upside": -67.4
+      "upside": -65.3
      },
      "bull": {
       "g": 20.0,
       "value": 55030,
       "per_share": 4184,
-      "upside": -38.7
+      "upside": -34.7
      }
     },
-    "implied_g": 29.2,
+    "implied_g": 27.9,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3892,46 +3892,46 @@
     "norm_ni": 38796,
     "trend_g": 7.5
    },
-   "price": 54100,
-   "price_date": "2026-11-05 23:58",
+   "price": 49250,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 486900,
+   "mcap": 443250,
    "shares": 9000000,
    "equity": 397499,
    "equity_source": "DART 2026Q2",
    "net_cash": 106573,
    "dividend_yield": null,
-   "per": 5.6,
+   "per": 5.1,
    "roe": 21.9,
-   "pbr": 1.22,
+   "pbr": 1.12,
    "dcf": {
     "E1": 45000,
     "r": 10.0,
     "c": 0.85,
     "note": "10년 평균 순이익률 17%, 추세 매출 2,250억원 → 388억원이에요. 최근 순이익(872억원)에는 투자 이익이 섞여 있어 초과 이익은 더하지 않았어요.",
-    "fwd_per": 10.8,
-    "norm_per": 10.8,
+    "fwd_per": 9.8,
+    "norm_per": 9.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 522790,
       "per_share": 58088,
-      "upside": 7.4
+      "upside": 17.9
      },
      "base": {
       "g": 8.0,
       "value": 703360,
       "per_share": 78151,
-      "upside": 44.5
+      "upside": 58.7
      },
      "bull": {
       "g": 15.0,
       "value": 922385,
       "per_share": 102487,
-      "upside": 89.4
+      "upside": 108.1
      }
     },
-    "implied_g": -2.0,
+    "implied_g": -4.7,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -3964,46 +3964,46 @@
     "norm_ni": 4399,
     "trend_g": 8.1
    },
-   "price": 14180,
-   "price_date": "2026-11-05 23:58",
+   "price": 13520,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 174262,
+   "mcap": 166151,
    "shares": 12289301,
    "equity": 88548,
    "equity_source": "DART 2026Q2",
    "net_cash": -10961,
    "dividend_yield": null,
-   "per": 32.0,
+   "per": 30.5,
    "roe": 6.2,
-   "pbr": 1.97,
+   "pbr": 1.88,
    "dcf": {
     "E1": 5500,
     "r": 11.0,
     "c": 0.8,
     "note": "4년 평균 기준 44억원과 최근 55억원이 비슷해 55억원으로 봤어요.",
-    "fwd_per": 31.7,
-    "norm_per": 31.7,
+    "fwd_per": 30.2,
+    "norm_per": 30.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 35623,
       "per_share": 2899,
-      "upside": -79.6
+      "upside": -78.6
      },
      "base": {
       "g": 8.0,
       "value": 55148,
       "per_share": 4488,
-      "upside": -68.4
+      "upside": -66.8
      },
      "bull": {
       "g": 15.0,
       "value": 78742,
       "per_share": 6407,
-      "upside": -54.8
+      "upside": -52.6
      }
     },
-    "implied_g": 32.1,
+    "implied_g": 31.0,
     "cycle": {
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4036,18 +4036,18 @@
     "norm_ni": -6904,
     "trend_g": 6.9
    },
-   "price": 6750,
-   "price_date": "2026-11-05 23:58",
+   "price": 6060,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 34253,
+   "mcap": 30752,
    "shares": 5074554,
    "equity": 146127,
    "equity_source": "DART 2026Q2",
    "net_cash": -2517,
    "dividend_yield": null,
-   "per": 1.4,
+   "per": 1.2,
    "roe": 17.3,
-   "pbr": 0.23,
+   "pbr": 0.21,
    "skip": "DART 주식수(507만주)가 실제보다 적게 잡힌 것으로 보여 PER이 1배대로 나와요. 주식수를 확인하기 전에는 적정가를 계산하지 않아요.",
    "cycle": {
     "position": "중립",
@@ -4076,10 +4076,10 @@
     "norm_ni": 1629,
     "trend_g": -4.4
    },
-   "price": 9840,
-   "price_date": "2026-11-05 23:58",
+   "price": 9370,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 200075,
+   "mcap": 190518,
    "shares": 20332817,
    "equity": 104463,
    "equity_source": "DART 2026Q2",
@@ -4087,35 +4087,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.8,
-   "pbr": 1.92,
+   "pbr": 1.82,
    "dcf": {
     "E1": 6000,
     "r": 11.5,
     "c": 0.8,
     "note": "10년 평균 기준 16억원이에요. 2018~19년 수준까지는 어렵다고 보고 매출 1,150억원 × 5%를 정상으로 봤어요.",
-    "fwd_per": 33.3,
-    "norm_per": 33.3,
+    "fwd_per": 31.8,
+    "norm_per": 31.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 17105,
       "per_share": 841,
-      "upside": -91.5
+      "upside": -91.0
      },
      "base": {
       "g": 10.0,
       "value": 44317,
       "per_share": 2180,
-      "upside": -77.9
+      "upside": -76.7
      },
      "bull": {
       "g": 20.0,
       "value": 85884,
       "per_share": 4224,
-      "upside": -57.1
+      "upside": -54.9
      }
     },
-    "implied_g": 36.2,
+    "implied_g": 35.2,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4151,46 +4151,46 @@
     "norm_ni": 12382,
     "trend_g": 17.2
    },
-   "price": 13750,
-   "price_date": "2026-11-05 23:58",
+   "price": 12210,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 593902,
+   "mcap": 527385,
    "shares": 43192902,
    "equity": 133889,
    "equity_source": "DART 2026Q2",
    "net_cash": 12407,
    "dividend_yield": null,
-   "per": 36.5,
+   "per": 32.4,
    "roe": 12.1,
-   "pbr": 4.44,
+   "pbr": 3.94,
    "dcf": {
     "E1": 15000,
     "r": 11.0,
     "c": 0.8,
     "note": "7년 평균 기준 124억원, 최근 이익 163억원이에요. CXL·SSD 테스터 수요를 반영해 150억원으로 봤어요.",
-    "fwd_per": 39.6,
-    "norm_per": 39.6,
+    "fwd_per": 35.2,
+    "norm_per": 35.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 134271,
       "per_share": 3109,
-      "upside": -77.4
+      "upside": -74.5
      },
      "base": {
       "g": 10.0,
       "value": 200218,
       "per_share": 4635,
-      "upside": -66.3
+      "upside": -62.0
      },
      "bull": {
       "g": 20.0,
       "value": 301195,
       "per_share": 6973,
-      "upside": -49.3
+      "upside": -42.9
      }
     },
-    "implied_g": 36.8,
+    "implied_g": 33.8,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4250,18 +4250,18 @@
     "norm_ni": 11517,
     "trend_g": 13.2
    },
-   "price": 28850,
-   "price_date": "2026-11-05 23:58",
+   "price": 26150,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 790806,
+   "mcap": 716797,
    "shares": 27410957,
    "equity": 211879,
    "equity_source": "DART 2026Q2",
    "net_cash": -25643,
    "dividend_yield": null,
-   "per": 27.1,
+   "per": 24.6,
    "roe": 13.8,
-   "pbr": 3.73,
+   "pbr": 3.38,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 67123
@@ -4271,29 +4271,29 @@
     "r": 11.0,
     "c": 0.75,
     "note": "10년 평균 이익률이 3%로 낮아 정상 이익은 115억원이에요. HBM 번인 테스터 매출 확대를 반영해 200억원으로 봤어요.",
-    "fwd_per": 39.5,
-    "norm_per": 39.5,
+    "fwd_per": 35.8,
+    "norm_per": 35.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 190668,
       "per_share": 6956,
-      "upside": -75.9
+      "upside": -73.4
      },
      "base": {
       "g": 10.0,
       "value": 276638,
       "per_share": 10092,
-      "upside": -65.0
+      "upside": -61.4
      },
      "bull": {
       "g": 20.0,
       "value": 408273,
       "per_share": 14895,
-      "upside": -48.4
+      "upside": -43.0
      }
     },
-    "implied_g": 36.8,
+    "implied_g": 34.3,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4330,10 +4330,10 @@
     "norm_ni": -6628,
     "trend_g": 13.8
    },
-   "price": 3830,
-   "price_date": "2026-11-05 23:58",
+   "price": 3770,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 117628,
+   "mcap": 115785,
    "shares": 30712170,
    "equity": 23836,
    "equity_source": "DART 2026Q2",
@@ -4341,7 +4341,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -18.9,
-   "pbr": 4.93,
+   "pbr": 4.86,
    "skip": "7년 중 흑자 해가 2번뿐이라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -4357,10 +4357,10 @@
     "ni": -6206,
     "period": "2025Q3~2026Q2"
    },
-   "price": 5030,
-   "price_date": "2026-11-05 23:58",
+   "price": 4760,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 44302,
+   "mcap": 41924,
    "shares": 8807605,
    "equity": 27921,
    "equity_source": "DART 2026Q2",
@@ -4368,7 +4368,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -22.2,
-   "pbr": 1.59,
+   "pbr": 1.5,
    "skip": "DART 재무가 1년치뿐이고 적자라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -4420,46 +4420,46 @@
     "norm_ni": -8782,
     "trend_g": 115.5
    },
-   "price": 8420,
-   "price_date": "2026-11-05 23:58",
+   "price": 8590,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 66304,
+   "mcap": 67643,
    "shares": 7874611,
    "equity": 36875,
    "equity_source": "DART 2026Q2",
    "net_cash": 13275,
    "dividend_yield": null,
-   "per": 19.5,
+   "per": 19.8,
    "roe": 9.2,
-   "pbr": 1.8,
+   "pbr": 1.83,
    "dcf": {
     "E1": 3000,
     "r": 12.5,
     "c": 0.8,
     "note": "최근에야 흑자로 돌아섰어요. 흑자 유지를 전제로 매출의 7% 수준을 정상으로 봤어요.",
-    "fwd_per": 22.1,
-    "norm_per": 22.1,
+    "fwd_per": 22.5,
+    "norm_per": 22.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 32776,
       "per_share": 4162,
-      "upside": -50.6
+      "upside": -51.5
      },
      "base": {
       "g": 15.0,
       "value": 49593,
       "per_share": 6298,
-      "upside": -25.2
+      "upside": -26.7
      },
      "bull": {
       "g": 30.0,
       "value": 80569,
       "per_share": 10232,
-      "upside": 21.5
+      "upside": 19.1
      }
     },
-    "implied_g": 24.2,
+    "implied_g": 24.8,
     "cycle": {
      "position": "회복기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4495,46 +4495,46 @@
     "norm_ni": 24984,
     "trend_g": 9.8
    },
-   "price": 10580,
-   "price_date": "2026-11-05 23:58",
+   "price": 9760,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 866982,
+   "mcap": 799787,
    "shares": 81945350,
    "equity": 385283,
    "equity_source": "DART 2026Q2",
    "net_cash": 60888,
    "dividend_yield": null,
-   "per": 27.8,
+   "per": 25.7,
    "roe": 8.1,
-   "pbr": 2.25,
+   "pbr": 2.08,
    "dcf": {
     "E1": 30000,
     "r": 11.0,
     "c": 0.75,
     "note": "9년 평균 기준 250억원, 최근 312억원이에요. 삼성전자 HBM 테스터 공급을 반영해 300억원으로 봤어요.",
-    "fwd_per": 28.9,
-    "norm_per": 28.9,
+    "fwd_per": 26.7,
+    "norm_per": 26.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 282162,
       "per_share": 3443,
-      "upside": -67.5
+      "upside": -64.7
      },
      "base": {
       "g": 8.0,
       "value": 374282,
       "per_share": 4567,
-      "upside": -56.8
+      "upside": -53.2
      },
      "bull": {
       "g": 15.0,
       "value": 485596,
       "per_share": 5926,
-      "upside": -44.0
+      "upside": -39.3
      }
     },
-    "implied_g": 30.1,
+    "implied_g": 28.0,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4571,46 +4571,46 @@
     "norm_ni": 140022,
     "trend_g": 13.5
    },
-   "price": 50600,
-   "price_date": "2026-11-05 23:58",
+   "price": 47650,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3840317,
+   "mcap": 3616425,
    "shares": 75895600,
    "equity": 776764,
    "equity_source": "DART 2026Q2",
    "net_cash": 426814,
    "dividend_yield": null,
-   "per": 20.4,
+   "per": 19.3,
    "roe": 24.2,
-   "pbr": 4.94,
+   "pbr": 4.66,
    "dcf": {
     "E1": 170000,
     "r": 9.0,
     "c": 0.9,
     "note": "10년 평균 순이익률 35%로 사이클과 무관하게 꾸준해요. 추세 매출 기준 1,400억원과 최근 이익(1,878억원) 사이인 1,700억원으로 봤어요.",
-    "fwd_per": 22.6,
-    "norm_per": 22.6,
+    "fwd_per": 21.3,
+    "norm_per": 21.3,
     "scenarios": {
      "bear": {
       "g": 4.0,
       "value": 2712311,
       "per_share": 35737,
-      "upside": -29.4
+      "upside": -25.0
      },
      "base": {
       "g": 10.0,
       "value": 3440075,
       "per_share": 45326,
-      "upside": -10.4
+      "upside": -4.9
      },
      "bull": {
       "g": 15.0,
       "value": 4210694,
       "per_share": 55480,
-      "upside": 9.6
+      "upside": 16.4
      }
     },
-    "implied_g": 12.7,
+    "implied_g": 11.2,
     "cycle": {
      "position": "중립",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -4645,18 +4645,18 @@
     "norm_ni": 35813,
     "trend_g": 10.3
    },
-   "price": 139700,
-   "price_date": "2026-11-05 23:58",
+   "price": 125700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2953600,
+   "mcap": 2657606,
    "shares": 21142451,
    "equity": 582142,
    "equity_source": "DART 2026Q2",
    "net_cash": 358085,
    "dividend_yield": null,
-   "per": 38.1,
+   "per": 34.3,
    "roe": 13.3,
-   "pbr": 5.07,
+   "pbr": 4.57,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 76382
@@ -4666,29 +4666,29 @@
     "r": 10.0,
     "c": 0.85,
     "note": "10년 평균 기준 358억원은 AI 이전 기준이에요. AI 칩 테스트 소켓으로 이익률이 25~30%대로 올라선 점을 반영해 600억원으로 봤어요.",
-    "fwd_per": 49.2,
-    "norm_per": 49.2,
+    "fwd_per": 44.3,
+    "norm_per": 44.3,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 969236,
       "per_share": 45843,
-      "upside": -67.2
+      "upside": -63.5
      },
      "base": {
       "g": 11.0,
       "value": 1223396,
       "per_share": 57864,
-      "upside": -58.6
+      "upside": -54.0
      },
      "bull": {
       "g": 18.0,
       "value": 1529956,
       "per_share": 72364,
-      "upside": -48.2
+      "upside": -42.4
      }
     },
-    "implied_g": 36.9,
+    "implied_g": 34.0,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -4725,46 +4725,46 @@
     "norm_ni": 40176,
     "trend_g": 13.2
    },
-   "price": 185200,
-   "price_date": "2026-11-05 23:58",
+   "price": 170700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2048577,
+   "mcap": 1888186,
    "shares": 11061429,
    "equity": 473920,
    "equity_source": "DART 2026Q2",
    "net_cash": 80100,
    "dividend_yield": null,
-   "per": 19.6,
+   "per": 18.0,
    "roe": 22.1,
-   "pbr": 4.32,
+   "pbr": 3.98,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 순이익률 8.5%, 추세 매출 4,720억원 → 402억원이에요. 메모리 생산 확대로 매출 규모가 커진 점을 반영해 650억원으로 봤어요. 최근 이익(1,047억원)은 메모리 호황의 초과 이익으로 봤어요.",
-    "fwd_per": 31.5,
-    "norm_per": 31.5,
+    "fwd_per": 29.0,
+    "norm_per": 29.0,
     "scenarios": {
      "bear": {
       "g": -2.0,
       "value": 633800,
       "per_share": 57298,
-      "upside": -69.1
+      "upside": -66.4
      },
      "base": {
       "g": 6.0,
       "value": 846744,
       "per_share": 76549,
-      "upside": -58.7
+      "upside": -55.2
      },
      "bull": {
       "g": 12.0,
       "value": 1063620,
       "per_share": 96156,
-      "upside": -48.1
+      "upside": -43.7
      }
     },
-    "implied_g": 28.7,
+    "implied_g": 26.6,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -4801,46 +4801,46 @@
     "norm_ni": 5525,
     "trend_g": 17.5
    },
-   "price": 47800,
-   "price_date": "2026-11-05 23:58",
+   "price": 41200,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 397350,
+   "mcap": 342486,
    "shares": 8312766,
    "equity": 97299,
    "equity_source": "DART 2026Q2",
    "net_cash": 23752,
    "dividend_yield": null,
-   "per": 14.7,
+   "per": 12.6,
    "roe": 27.9,
-   "pbr": 4.08,
+   "pbr": 3.52,
    "dcf": {
     "E1": 18000,
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 기준 55억원은 적자 시절이 섞여 낮아요. 최근 3년 이익률 11~17%를 반영해 매출 1,200억원 × 15%로 봤어요.",
-    "fwd_per": 22.1,
-    "norm_per": 22.1,
+    "fwd_per": 19.0,
+    "norm_per": 19.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 178817,
       "per_share": 21511,
-      "upside": -55.0
+      "upside": -47.8
      },
      "base": {
       "g": 8.0,
       "value": 238646,
       "per_share": 28708,
-      "upside": -39.9
+      "upside": -30.3
      },
      "bull": {
       "g": 15.0,
       "value": 310942,
       "per_share": 37405,
-      "upside": -21.7
+      "upside": -9.2
      }
     },
-    "implied_g": 21.3,
+    "implied_g": 17.5,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -4877,46 +4877,46 @@
     "norm_ni": 83,
     "trend_g": 13.8
    },
-   "price": 20700,
-   "price_date": "2026-11-05 23:58",
+   "price": 19020,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 436583,
+   "mcap": 401150,
    "shares": 21090955,
    "equity": 71854,
    "equity_source": "DART 2026Q2",
    "net_cash": -15751,
    "dividend_yield": null,
-   "per": 26.4,
+   "per": 24.2,
    "roe": 23.0,
-   "pbr": 6.08,
+   "pbr": 5.58,
    "dcf": {
     "E1": 9000,
     "r": 11.5,
     "c": 0.8,
     "note": "10년 평균 이익률이 거의 0%예요. 메모리 번인 소켓 수요가 좋은 지금(166억원)과 평균 사이인 90억원으로 봤어요.",
-    "fwd_per": 48.5,
-    "norm_per": 48.5,
+    "fwd_per": 44.6,
+    "norm_per": 44.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 66353,
       "per_share": 3146,
-      "upside": -84.8
+      "upside": -83.5
      },
      "base": {
       "g": 8.0,
       "value": 96013,
       "per_share": 4552,
-      "upside": -78.0
+      "upside": -76.1
      },
      "bull": {
       "g": 15.0,
       "value": 131786,
       "per_share": 6248,
-      "upside": -69.8
+      "upside": -67.1
      }
     },
-    "implied_g": 43.3,
+    "implied_g": 41.2,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -4953,46 +4953,46 @@
     "norm_ni": 12173,
     "trend_g": 18.2
    },
-   "price": 12230,
-   "price_date": "2026-11-05 23:58",
+   "price": 11770,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 734268,
+   "mcap": 706651,
    "shares": 60038299,
    "equity": 194969,
    "equity_source": "DART 2026Q2",
    "net_cash": 19759,
    "dividend_yield": null,
-   "per": 24.7,
+   "per": 23.8,
    "roe": 15.3,
-   "pbr": 3.77,
+   "pbr": 3.62,
    "dcf": {
     "E1": 20000,
     "r": 11.0,
     "c": 0.8,
     "note": "5년 평균 기준 122억원, 최근 298억원이에요. 프로브카드용 세라믹 기판 수요를 반영해 200억원으로 봤어요.",
-    "fwd_per": 36.7,
-    "norm_per": 36.7,
+    "fwd_per": 35.3,
+    "norm_per": 35.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 192616,
       "per_share": 3208,
-      "upside": -73.8
+      "upside": -72.7
      },
      "base": {
       "g": 10.0,
       "value": 280257,
       "per_share": 4668,
-      "upside": -61.8
+      "upside": -60.3
      },
      "bull": {
       "g": 18.0,
       "value": 383013,
       "per_share": 6379,
-      "upside": -47.8
+      "upside": -45.8
      }
     },
-    "implied_g": 34.5,
+    "implied_g": 33.5,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -5029,10 +5029,10 @@
     "norm_ni": -17300,
     "trend_g": 65.8
    },
-   "price": 6970,
-   "price_date": "2026-11-05 23:58",
+   "price": 6590,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 41255,
+   "mcap": 39005,
    "shares": 5918890,
    "equity": 27574,
    "equity_source": "DART 2026Q2",
@@ -5040,35 +5040,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -9.4,
-   "pbr": 1.5,
+   "pbr": 1.41,
    "dcf": {
     "E1": 3000,
     "r": 12.5,
     "c": 0.8,
     "note": "상장 이후 적자였지만 손익분기에 가까워졌어요. 흑자 전환을 전제로 매출의 10%를 정상으로 봤어요.",
-    "fwd_per": 13.8,
-    "norm_per": 13.8,
+    "fwd_per": 13.0,
+    "norm_per": 13.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 21414,
       "per_share": 3618,
-      "upside": -48.1
+      "upside": -45.1
      },
      "base": {
       "g": 15.0,
       "value": 39151,
       "per_share": 6615,
-      "upside": -5.1
+      "upside": 0.4
      },
      "bull": {
       "g": 30.0,
       "value": 71822,
       "per_share": 12134,
-      "upside": 74.1
+      "upside": 84.1
      }
     },
-    "implied_g": 16.3,
+    "implied_g": 14.9,
     "cycle": {
      "position": "회복기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -5104,10 +5104,10 @@
     "norm_ni": -2797,
     "trend_g": -4.2
    },
-   "price": 2625,
-   "price_date": "2026-11-05 23:58",
+   "price": 2440,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 52500,
+   "mcap": 48800,
    "shares": 20000000,
    "equity": 47465,
    "equity_source": "DART 2026Q2",
@@ -5115,7 +5115,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -26.9,
-   "pbr": 1.11,
+   "pbr": 1.03,
    "skip": "최근 4년 적자 폭이 커지고 있어 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -5144,10 +5144,10 @@
     "norm_ni": 1220,
     "trend_g": 4.5
    },
-   "price": 8180,
-   "price_date": "2026-11-05 23:58",
+   "price": 7610,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 72466,
+   "mcap": 67416,
    "shares": 8858925,
    "equity": 91789,
    "equity_source": "DART 2026Q2",
@@ -5155,14 +5155,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -1.5,
-   "pbr": 0.79,
+   "pbr": 0.73,
    "dcf": {
     "E1": 3000,
     "r": 12.0,
     "c": 0.75,
     "note": "5년 평균 순이익률 2%예요. 흑자였던 해 수준(매출 500억원 × 6%)을 정상으로 봤어요.",
-    "fwd_per": 24.2,
-    "norm_per": 24.2,
+    "fwd_per": 22.5,
+    "norm_per": 22.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -5183,7 +5183,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 37.4,
+    "implied_g": 36.5,
     "cycle": {
      "position": "회복기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -5219,10 +5219,10 @@
     "norm_ni": -8126,
     "trend_g": -9.5
    },
-   "price": 5670,
-   "price_date": "2026-11-05 23:58",
+   "price": 5780,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 48070,
+   "mcap": 49003,
    "shares": 8477977,
    "equity": 37363,
    "equity_source": "DART 2026Q2",
@@ -5230,7 +5230,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -27.0,
-   "pbr": 1.29,
+   "pbr": 1.31,
    "skip": "10년 중 9년이 적자라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -5259,46 +5259,46 @@
     "norm_ni": 152367,
     "trend_g": 7.8
    },
-   "price": 266000,
-   "price_date": "2026-11-05 23:58",
+   "price": 250500,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2037202,
+   "mcap": 1918493,
    "shares": 7658656,
    "equity": 1149347,
    "equity_source": "DART 2026Q2",
    "net_cash": 315388,
    "dividend_yield": null,
-   "per": 16.0,
+   "per": 15.0,
    "roe": 11.1,
-   "pbr": 1.77,
+   "pbr": 1.67,
    "dcf": {
     "E1": 145000,
     "r": 9.5,
     "c": 0.75,
     "note": "6년 평균 순이익률 14%, 추세 매출 1.06조원 → 1,524억원이에요. 최근 이익(1,276억원)은 평균보다 낮아 회복 구간으로 봤어요.",
-    "fwd_per": 14.0,
-    "norm_per": 14.0,
+    "fwd_per": 13.2,
+    "norm_per": 13.2,
     "scenarios": {
      "bear": {
       "g": 1.0,
       "value": 1626382,
       "per_share": 212359,
-      "upside": -20.2
+      "upside": -15.2
      },
      "base": {
       "g": 6.0,
       "value": 1966853,
       "per_share": 256814,
-      "upside": -3.5
+      "upside": 2.5
      },
      "bull": {
       "g": 10.0,
       "value": 2299398,
       "per_share": 300235,
-      "upside": 12.9
+      "upside": 19.9
      }
     },
-    "implied_g": 6.9,
+    "implied_g": 5.4,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5334,46 +5334,46 @@
     "norm_ni": 117091,
     "trend_g": 6.9
    },
-   "price": 34800,
-   "price_date": "2026-11-05 23:58",
+   "price": 32200,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1773760,
+   "mcap": 1641238,
    "shares": 50970126,
    "equity": 1225326,
    "equity_source": "DART 2026Q2",
    "net_cash": -239633,
    "dividend_yield": null,
-   "per": 8.5,
+   "per": 7.8,
    "roe": 17.1,
-   "pbr": 1.45,
+   "pbr": 1.34,
    "dcf": {
     "E1": 145000,
     "r": 10.0,
     "c": 0.7,
     "note": "10년 평균 기준 1,171억원이에요. 최근 이익률이 10% 안팎으로 올라 1,450억원으로 봤고, 최근 순이익(2,091억원)에는 영업외 이익이 섞여 있어 초과 이익은 더하지 않았어요.",
-    "fwd_per": 12.2,
-    "norm_per": 12.2,
+    "fwd_per": 11.3,
+    "norm_per": 11.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 958073,
       "per_share": 18797,
-      "upside": -46.0
+      "upside": -41.6
      },
      "base": {
       "g": 5.0,
       "value": 1260839,
       "per_share": 24737,
-      "upside": -28.9
+      "upside": -23.2
      },
      "bull": {
       "g": 9.0,
       "value": 1556537,
       "per_share": 30538,
-      "upside": -12.2
+      "upside": -5.2
      }
     },
-    "implied_g": 11.5,
+    "implied_g": 10.0,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5406,46 +5406,46 @@
     "norm_ni": 143957,
     "trend_g": 7.1
    },
-   "price": 195100,
-   "price_date": "2026-11-05 23:58",
+   "price": 173000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 2092845,
+   "mcap": 1855777,
    "shares": 10727036,
    "equity": 1094877,
    "equity_source": "DART 2026Q2",
    "net_cash": -197910,
    "dividend_yield": null,
-   "per": 13.5,
+   "per": 12.0,
    "roe": 14.1,
-   "pbr": 1.91,
+   "pbr": 1.69,
    "dcf": {
     "E1": 150000,
     "r": 9.5,
     "c": 0.7,
     "note": "10년 평균 기준 1,440억원과 최근 이익(1,545억원)이 비슷해 1,500억원으로 봤어요.",
-    "fwd_per": 14.0,
-    "norm_per": 14.0,
+    "fwd_per": 12.4,
+    "norm_per": 12.4,
     "scenarios": {
      "bear": {
       "g": 1.0,
       "value": 1174718,
       "per_share": 109510,
-      "upside": -43.9
+      "upside": -36.7
      },
      "base": {
       "g": 6.0,
       "value": 1527469,
       "per_share": 142394,
-      "upside": -27.0
+      "upside": -17.7
      },
      "bull": {
       "g": 10.0,
       "value": 1872007,
       "per_share": 174513,
-      "upside": -10.6
+      "upside": 0.9
      }
     },
-    "implied_g": 12.2,
+    "implied_g": 9.8,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5478,46 +5478,46 @@
     "norm_ni": 47553,
     "trend_g": 7.3
    },
-   "price": 39400,
-   "price_date": "2026-11-05 23:58",
+   "price": 35750,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 562941,
+   "mcap": 510790,
    "shares": 14287836,
    "equity": 482518,
    "equity_source": "DART 2026Q2",
    "net_cash": -77799,
    "dividend_yield": null,
-   "per": 9.8,
+   "per": 8.9,
    "roe": 11.9,
-   "pbr": 1.17,
+   "pbr": 1.06,
    "dcf": {
     "E1": 52000,
     "r": 10.0,
     "c": 0.7,
     "note": "10년 평균 기준 476억원, 최근 572억원이에요.",
-    "fwd_per": 10.8,
-    "norm_per": 10.8,
+    "fwd_per": 9.8,
+    "norm_per": 9.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 356712,
       "per_share": 24966,
-      "upside": -36.6
+      "upside": -30.2
      },
      "base": {
       "g": 5.0,
       "value": 464961,
       "per_share": 32542,
-      "upside": -17.4
+      "upside": -9.0
      },
      "bull": {
       "g": 9.0,
       "value": 570683,
       "per_share": 39942,
-      "upside": 1.4
+      "upside": 11.7
      }
     },
-    "implied_g": 8.7,
+    "implied_g": 6.8,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5554,46 +5554,46 @@
     "norm_ni": 61768,
     "trend_g": 11.0
    },
-   "price": 40950,
-   "price_date": "2026-11-05 23:58",
+   "price": 37850,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 789903,
+   "mcap": 730106,
    "shares": 19289452,
    "equity": 613170,
    "equity_source": "DART 2026Q2",
    "net_cash": -67760,
    "dividend_yield": null,
-   "per": 12.3,
+   "per": 11.4,
    "roe": 10.5,
-   "pbr": 1.29,
+   "pbr": 1.19,
    "dcf": {
     "E1": 65000,
     "r": 10.0,
     "c": 0.75,
     "note": "9년 평균 기준 618억원, 최근 642억원으로 비슷해요. 실리콘 부품 증설을 반영해 650억원으로 봤어요.",
-    "fwd_per": 12.2,
-    "norm_per": 12.2,
+    "fwd_per": 11.2,
+    "norm_per": 11.2,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 553287,
       "per_share": 28683,
-      "upside": -30.0
+      "upside": -24.2
      },
      "base": {
       "g": 9.0,
       "value": 783708,
       "per_share": 40629,
-      "upside": -0.8
+      "upside": 7.3
      },
      "bull": {
       "g": 15.0,
       "value": 1045421,
       "per_share": 54197,
-      "upside": 32.3
+      "upside": 43.2
      }
     },
-    "implied_g": 9.2,
+    "implied_g": 7.6,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5630,18 +5630,18 @@
     "norm_ni": 98510,
     "trend_g": 12.2
    },
-   "price": 157200,
-   "price_date": "2026-11-05 23:58",
+   "price": 144000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1757404,
+   "mcap": 1609836,
    "shares": 11179416,
    "equity": 551454,
    "equity_source": "DART 2026Q2",
    "net_cash": 300462,
    "dividend_yield": null,
-   "per": 21.1,
+   "per": 19.4,
    "roe": 15.1,
-   "pbr": 3.19,
+   "pbr": 2.92,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 89023
@@ -5651,29 +5651,29 @@
     "r": 9.5,
     "c": 0.85,
     "note": "10년 평균 순이익률 27%로 매우 꾸준하고, 추세 매출 기준 정상 이익은 985억원이에요. 최근 이익(832억원)은 낸드 가동률 회복이 늦어 평균보다 낮아요.",
-    "fwd_per": 18.5,
-    "norm_per": 18.5,
+    "fwd_per": 16.9,
+    "norm_per": 16.9,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 1303617,
       "per_share": 116609,
-      "upside": -25.8
+      "upside": -19.0
      },
      "base": {
       "g": 7.0,
       "value": 1562590,
       "per_share": 139774,
-      "upside": -11.1
+      "upside": -2.9
      },
      "bull": {
       "g": 12.0,
       "value": 1885554,
       "per_share": 168663,
-      "upside": 7.3
+      "upside": 17.1
      }
     },
-    "implied_g": 10.1,
+    "implied_g": 7.8,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5709,25 +5709,25 @@
     "norm_ni": 100120,
     "trend_g": 23.3
    },
-   "price": 22500,
-   "price_date": "2026-11-05 23:58",
+   "price": 21150,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 591480,
+   "mcap": 555991,
    "shares": 26288000,
    "equity": 534229,
    "equity_source": "DART 2026Q2",
    "net_cash": -743254,
    "dividend_yield": null,
-   "per": 12.2,
+   "per": 11.5,
    "roe": 9.1,
-   "pbr": 1.11,
+   "pbr": 1.04,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
     "c": 0.7,
     "note": "10년 평균 순이익률(최고·최저 제외)은 8%지만 최근엔 차입 이자로 2~6%예요. 매출 1.1조원 × 6%를 정상으로 봤어요.",
-    "fwd_per": 9.1,
-    "norm_per": 9.1,
+    "fwd_per": 8.6,
+    "norm_per": 8.6,
     "scenarios": {
      "bear": {
       "g": 2.0,
@@ -5739,16 +5739,16 @@
       "g": 7.0,
       "value": 65728,
       "per_share": 2500,
-      "upside": -88.9
+      "upside": -88.2
      },
      "bull": {
       "g": 12.0,
       "value": 269130,
       "per_share": 10238,
-      "upside": -54.5
+      "upside": -51.6
      }
     },
-    "implied_g": 18.2,
+    "implied_g": 17.6,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5784,46 +5784,46 @@
     "norm_ni": 55656,
     "trend_g": 17.8
    },
-   "price": 24150,
-   "price_date": "2026-11-05 23:58",
+   "price": 23250,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 398740,
+   "mcap": 383881,
    "shares": 16510993,
    "equity": 379648,
    "equity_source": "DART 2026Q2",
    "net_cash": 75588,
    "dividend_yield": null,
-   "per": 5.3,
+   "per": 5.1,
    "roe": 20.0,
-   "pbr": 1.05,
+   "pbr": 1.01,
    "dcf": {
     "E1": 62000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 기준 557억원, 최근 759억원이에요. 실리콘 링 수요가 메모리 가동률을 따라 늘고 있어요.",
-    "fwd_per": 6.4,
-    "norm_per": 6.4,
+    "fwd_per": 6.2,
+    "norm_per": 6.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 615397,
       "per_share": 37272,
-      "upside": 54.3
+      "upside": 60.3
      },
      "base": {
       "g": 8.0,
       "value": 837525,
       "per_share": 50725,
-      "upside": 110.0
+      "upside": 118.2
      },
      "bull": {
       "g": 14.0,
       "value": 1062981,
       "per_share": 64380,
-      "upside": 166.6
+      "upside": 176.9
      }
     },
-    "implied_g": -12.3,
+    "implied_g": -13.5,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5860,46 +5860,46 @@
     "norm_ni": 79980,
     "trend_g": 21.4
    },
-   "price": 18690,
-   "price_date": "2026-11-05 23:58",
+   "price": 17090,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 376963,
+   "mcap": 344693,
    "shares": 20169252,
    "equity": 286701,
    "equity_source": "DART 2026Q2",
    "net_cash": -526492,
    "dividend_yield": null,
-   "per": 11.8,
+   "per": 10.8,
    "roe": 11.2,
-   "pbr": 1.31,
+   "pbr": 1.2,
    "dcf": {
     "E1": 60000,
     "r": 10.5,
     "c": 0.75,
     "note": "10년 평균 순이익률 13%지만 지배주주 몫이 줄어 최근 이익률은 5%예요. 매출 6,500억원 × 9%를 정상으로 봤어요.",
-    "fwd_per": 6.3,
-    "norm_per": 6.3,
+    "fwd_per": 5.7,
+    "norm_per": 5.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 20886,
       "per_share": 1036,
-      "upside": -94.5
+      "upside": -93.9
      },
      "base": {
       "g": 8.0,
       "value": 263702,
       "per_share": 13074,
-      "upside": -30.0
+      "upside": -23.5
      },
      "bull": {
       "g": 14.0,
       "value": 510156,
       "per_share": 25294,
-      "upside": 35.3
+      "upside": 48.0
      }
     },
-    "implied_g": 10.9,
+    "implied_g": 10.1,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -5935,46 +5935,46 @@
     "norm_ni": 10810,
     "trend_g": 21.8
    },
-   "price": 20100,
-   "price_date": "2026-11-05 23:58",
+   "price": 19040,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 633072,
+   "mcap": 599686,
    "shares": 31496097,
    "equity": 184026,
    "equity_source": "DART 2026Q2",
    "net_cash": -740710,
    "dividend_yield": null,
-   "per": 39.2,
+   "per": 37.1,
    "roe": 8.8,
-   "pbr": 3.44,
+   "pbr": 3.26,
    "dcf": {
     "E1": 22000,
     "r": 11.0,
     "c": 0.7,
     "note": "코미코 지분을 가진 회사로 10년 평균 이익률이 1%로 낮아요. 코미코 지분 이익 기준으로 220억원을 정상으로 봤어요. 연결 차입금 대부분이 코미코 몫이라 순현금은 가감하지 않았어요.",
-    "fwd_per": 28.8,
-    "norm_per": 28.8,
+    "fwd_per": 27.3,
+    "norm_per": 27.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 156795,
       "per_share": 4978,
-      "upside": -75.2
+      "upside": -73.9
      },
      "base": {
       "g": 8.0,
       "value": 222514,
       "per_share": 7065,
-      "upside": -64.9
+      "upside": -62.9
      },
      "bull": {
       "g": 14.0,
       "value": 289099,
       "per_share": 9179,
-      "upside": -54.3
+      "upside": -51.8
      }
     },
-    "implied_g": 32.5,
+    "implied_g": 31.1,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6007,18 +6007,18 @@
     "norm_ni": 12347,
     "trend_g": 5.7
    },
-   "price": 9240,
-   "price_date": "2026-11-05 23:58",
+   "price": 8640,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 253074,
+   "mcap": 236641,
    "shares": 27389012,
    "equity": 215752,
    "equity_source": "DART 2026Q2",
    "net_cash": 27237,
    "dividend_yield": null,
-   "per": 12.1,
+   "per": 11.3,
    "roe": 9.7,
-   "pbr": 1.17,
+   "pbr": 1.1,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 24175
@@ -6028,29 +6028,29 @@
     "r": 11.0,
     "c": 0.8,
     "note": "10년 평균 기준 123억원은 초기 적자가 섞여 낮아요. 최근 이익률 14~20%를 반영해 200억원으로 봤어요.",
-    "fwd_per": 12.7,
-    "norm_per": 12.7,
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 191343,
       "per_share": 6986,
-      "upside": -24.4
+      "upside": -19.1
      },
      "base": {
       "g": 8.0,
       "value": 257763,
       "per_share": 9411,
-      "upside": 1.9
+      "upside": 8.9
      },
      "bull": {
       "g": 14.0,
       "value": 325058,
       "per_share": 11868,
-      "upside": 28.4
+      "upside": 37.4
      }
     },
-    "implied_g": 7.5,
+    "implied_g": 5.7,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6087,46 +6087,46 @@
     "norm_ni": 32381,
     "trend_g": 18.7
    },
-   "price": 32050,
-   "price_date": "2026-11-05 23:58",
+   "price": 30450,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 675478,
+   "mcap": 641757,
    "shares": 21075750,
    "equity": 335439,
    "equity_source": "DART 2026Q2",
    "net_cash": 72968,
    "dividend_yield": null,
-   "per": 10.7,
+   "per": 10.2,
    "roe": 18.7,
-   "pbr": 2.01,
+   "pbr": 1.91,
    "dcf": {
     "E1": 55000,
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 기준 324억원이지만 블랭크마스크 국산화로 이익률이 24%까지 올라 550억원으로 봤어요.",
-    "fwd_per": 12.3,
-    "norm_per": 12.3,
+    "fwd_per": 11.7,
+    "norm_per": 11.7,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 587580,
       "per_share": 27879,
-      "upside": -13.0
+      "upside": -8.4
      },
      "base": {
       "g": 10.0,
       "value": 802326,
       "per_share": 38069,
-      "upside": 18.8
+      "upside": 25.0
      },
      "bull": {
       "g": 18.0,
       "value": 1104928,
       "per_share": 52427,
-      "upside": 63.6
+      "upside": 72.2
      }
     },
-    "implied_g": 5.6,
+    "implied_g": 4.3,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6186,10 +6186,10 @@
     "norm_ni": 28153,
     "trend_g": 25.3
    },
-   "price": 7520,
-   "price_date": "2026-11-05 23:58",
+   "price": 6980,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 341686,
+   "mcap": 317150,
    "shares": 45437002,
    "equity": 226881,
    "equity_source": "DART 2026Q2",
@@ -6197,7 +6197,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -43.1,
-   "pbr": 1.51,
+   "pbr": 1.4,
    "ttm_news": {
     "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
     "ni": 25000
@@ -6207,29 +6207,29 @@
     "r": 10.5,
     "c": 0.8,
     "note": "10년 평균 기준 282억원이에요. 2025년 4분기 자회사 손상(-1,208억원)은 일회성이라 빼고, 3분기 영업이익 102억원(+553%)으로 회복이 확인돼 사이클 위치를 '회복기'로 바꿨어요. 일회성을 뺀 최근 이익(약 250억원)은 정상 이익과 비슷해요.",
-    "fwd_per": 13.7,
-    "norm_per": 13.7,
+    "fwd_per": 12.7,
+    "norm_per": 12.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 23246,
       "per_share": 512,
-      "upside": -93.2
+      "upside": -92.7
      },
      "base": {
       "g": 8.0,
       "value": 132094,
       "per_share": 2907,
-      "upside": -61.3
+      "upside": -58.3
      },
      "bull": {
       "g": 15.0,
       "value": 263872,
       "per_share": 5807,
-      "upside": -22.8
+      "upside": -16.8
      }
     },
-    "implied_g": 18.3,
+    "implied_g": 17.3,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6265,46 +6265,46 @@
     "norm_ni": 9150,
     "trend_g": 3.1
    },
-   "price": 11110,
-   "price_date": "2026-11-05 23:58",
+   "price": 10400,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 124760,
+   "mcap": 116787,
    "shares": 11229508,
    "equity": 149446,
    "equity_source": "DART 2026Q2",
    "net_cash": 13100,
    "dividend_yield": null,
-   "per": 31.7,
+   "per": 29.7,
    "roe": 2.6,
-   "pbr": 0.83,
+   "pbr": 0.78,
    "dcf": {
     "E1": 8000,
     "r": 11.0,
     "c": 0.75,
     "note": "10년 평균 기준 91억원이에요. 최근 이익률(1~2%)이 낮아 회복 구간으로 봤어요.",
-    "fwd_per": 15.6,
-    "norm_per": 15.6,
+    "fwd_per": 14.6,
+    "norm_per": 14.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 68998,
       "per_share": 6144,
-      "upside": -44.7
+      "upside": -40.9
      },
      "base": {
       "g": 6.0,
       "value": 86734,
       "per_share": 7724,
-      "upside": -30.5
+      "upside": -25.7
      },
      "bull": {
       "g": 12.0,
       "value": 109775,
       "per_share": 9776,
-      "upside": -12.0
+      "upside": -6.0
      }
     },
-    "implied_g": 15.2,
+    "implied_g": 13.6,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6340,25 +6340,25 @@
     "norm_ni": 26193,
     "trend_g": 19.4
    },
-   "price": 10560,
-   "price_date": "2026-11-05 23:58",
+   "price": 9880,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 694114,
+   "mcap": 649417,
    "shares": 65730510,
    "equity": 152127,
    "equity_source": "DART 2026Q2",
    "net_cash": -184647,
    "dividend_yield": null,
-   "per": 50.6,
+   "per": 47.4,
    "roe": 9.0,
-   "pbr": 4.56,
+   "pbr": 4.27,
    "dcf": {
     "E1": 20000,
     "r": 11.0,
     "c": 0.75,
     "note": "6년 평균 기준 262억원이지만 최근 이익률이 5%로 낮아 200억원으로 봤어요.",
-    "fwd_per": 34.7,
-    "norm_per": 34.7,
+    "fwd_per": 32.5,
+    "norm_per": 32.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -6370,16 +6370,16 @@
       "g": 10.0,
       "value": 90641,
       "per_share": 1379,
-      "upside": -86.9
+      "upside": -86.0
      },
      "bull": {
       "g": 18.0,
       "value": 207063,
       "per_share": 3150,
-      "upside": -70.2
+      "upside": -68.1
      }
     },
-    "implied_g": 37.1,
+    "implied_g": 35.8,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6415,46 +6415,46 @@
     "norm_ni": 29919,
     "trend_g": 11.5
    },
-   "price": 9000,
-   "price_date": "2026-11-05 23:58",
+   "price": 8380,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 965298,
+   "mcap": 898800,
    "shares": 107255330,
    "equity": 365524,
    "equity_source": "DART 2026Q2",
    "net_cash": -248033,
    "dividend_yield": null,
-   "per": 26.5,
+   "per": 24.7,
    "roe": 10.0,
-   "pbr": 2.64,
+   "pbr": 2.46,
    "dcf": {
     "E1": 30000,
     "r": 10.5,
     "c": 0.7,
     "note": "10년 평균 기준 299억원과 최근 이익(365억원) 사이로 봤어요. 냉매 가격이 이익을 크게 흔들어요.",
-    "fwd_per": 32.2,
-    "norm_per": 32.2,
+    "fwd_per": 30.0,
+    "norm_per": 30.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 15430,
       "per_share": 144,
-      "upside": -98.4
+      "upside": -98.3
      },
      "base": {
       "g": 6.0,
       "value": 95854,
       "per_share": 894,
-      "upside": -90.1
+      "upside": -89.3
      },
      "bull": {
       "g": 12.0,
       "value": 200501,
       "per_share": 1869,
-      "upside": -79.2
+      "upside": -77.7
      }
     },
-    "implied_g": 35.3,
+    "implied_g": 33.9,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6487,46 +6487,46 @@
     "norm_ni": 49741,
     "trend_g": 7.9
    },
-   "price": 31600,
-   "price_date": "2026-11-05 23:58",
+   "price": 29750,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 398413,
+   "mcap": 375088,
    "shares": 12608000,
    "equity": 548266,
    "equity_source": "DART 2026Q2",
    "net_cash": -12252,
    "dividend_yield": null,
-   "per": 7.3,
+   "per": 6.9,
    "roe": 9.9,
-   "pbr": 0.73,
+   "pbr": 0.68,
    "dcf": {
     "E1": 52000,
     "r": 10.0,
     "c": 0.75,
     "note": "10년 평균 기준 497억원, 최근 543억원이에요.",
-    "fwd_per": 7.7,
-    "norm_per": 7.7,
+    "fwd_per": 7.2,
+    "norm_per": 7.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 438217,
       "per_share": 34757,
-      "upside": 10.0
+      "upside": 16.8
      },
      "base": {
       "g": 6.0,
       "value": 577189,
       "per_share": 45780,
-      "upside": 44.9
+      "upside": 53.9
      },
      "bull": {
       "g": 12.0,
       "value": 758308,
       "per_share": 60145,
-      "upside": 90.3
+      "upside": 102.2
      }
     },
-    "implied_g": -2.1,
+    "implied_g": -3.4,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6563,46 +6563,46 @@
     "norm_ni": 24667,
     "trend_g": 16.2
    },
-   "price": 5610,
-   "price_date": "2026-11-05 23:58",
+   "price": 5510,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 52758,
+   "mcap": 51817,
    "shares": 9404253,
    "equity": 110967,
    "equity_source": "DART 2026Q2",
    "net_cash": -6919,
    "dividend_yield": null,
-   "per": 37.3,
+   "per": 36.7,
    "roe": 1.3,
-   "pbr": 0.48,
+   "pbr": 0.47,
    "dcf": {
     "E1": 8000,
     "r": 11.0,
     "c": 0.75,
     "note": "10년 평균 이익률은 12%지만 최근 3%까지 떨어졌어요. 이익률 하락이 구조적이라 평균 대신 매출 1,600억원 × 5%로 봤어요.",
-    "fwd_per": 6.6,
-    "norm_per": 6.6,
+    "fwd_per": 6.5,
+    "norm_per": 6.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 43304,
       "per_share": 4605,
-      "upside": -17.9
+      "upside": -16.4
      },
      "base": {
       "g": 4.0,
       "value": 62786,
       "per_share": 6676,
-      "upside": 19.0
+      "upside": 21.2
      },
      "bull": {
       "g": 10.0,
       "value": 85017,
       "per_share": 9040,
-      "upside": 61.1
+      "upside": 64.1
      }
     },
-    "implied_g": 0.7,
+    "implied_g": 0.3,
     "cycle": {
      "position": "바닥권",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6638,10 +6638,10 @@
     "norm_ni": 168,
     "trend_g": 6.4
    },
-   "price": 2270,
-   "price_date": "2026-11-05 23:58",
+   "price": 2105,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 32458,
+   "mcap": 30099,
    "shares": 14298752,
    "equity": 41617,
    "equity_source": "DART 2026Q2",
@@ -6649,7 +6649,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -19.0,
-   "pbr": 0.78,
+   "pbr": 0.72,
    "skip": "최근 3년 적자라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -6678,25 +6678,25 @@
     "norm_ni": 8843,
     "trend_g": 10.4
    },
-   "price": 18100,
-   "price_date": "2026-11-05 23:58",
+   "price": 17090,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 303537,
+   "mcap": 286600,
    "shares": 16770027,
    "equity": 231581,
    "equity_source": "DART 2026Q2",
    "net_cash": -366633,
    "dividend_yield": null,
-   "per": 31.9,
+   "per": 30.1,
    "roe": 4.1,
-   "pbr": 1.31,
+   "pbr": 1.24,
    "dcf": {
     "E1": 10000,
     "r": 10.5,
     "c": 0.7,
     "note": "10년 평균 기준 88억원과 최근 95억원이 비슷해 100억원으로 봤어요.",
-    "fwd_per": 30.4,
-    "norm_per": 30.4,
+    "fwd_per": 28.7,
+    "norm_per": 28.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -6717,7 +6717,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 37.9,
+    "implied_g": 37.3,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6750,25 +6750,25 @@
     "norm_ni": -4740,
     "trend_g": 6.7
    },
-   "price": 7690,
-   "price_date": "2026-11-05 23:58",
+   "price": 7120,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 155500,
+   "mcap": 143974,
    "shares": 20221090,
    "equity": 49225,
    "equity_source": "DART 2026Q2",
    "net_cash": -33966,
    "dividend_yield": null,
-   "per": 48.5,
+   "per": 44.9,
    "roe": 6.5,
-   "pbr": 3.16,
+   "pbr": 2.92,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
     "c": 0.75,
     "note": "4년 중 2년이 적자예요. 최근 흑자 수준(매출 980억원 × 4%)을 정상으로 봤어요.",
-    "fwd_per": 38.9,
-    "norm_per": 38.9,
+    "fwd_per": 36.0,
+    "norm_per": 36.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -6780,16 +6780,16 @@
       "g": 12.0,
       "value": 19151,
       "per_share": 947,
-      "upside": -87.7
+      "upside": -86.7
      },
      "bull": {
       "g": 25.0,
       "value": 58359,
       "per_share": 2886,
-      "upside": -62.5
+      "upside": -59.5
      }
     },
-    "implied_g": 42.7,
+    "implied_g": 41.1,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6825,46 +6825,46 @@
     "norm_ni": 21216,
     "trend_g": 10.2
    },
-   "price": 10470,
-   "price_date": "2026-11-05 23:58",
+   "price": 10050,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 245231,
+   "mcap": 235394,
    "shares": 23422275,
    "equity": 415533,
    "equity_source": "DART 2026Q2",
    "net_cash": -1104761,
    "dividend_yield": null,
-   "per": 11.4,
+   "per": 10.9,
    "roe": 5.2,
-   "pbr": 0.59,
+   "pbr": 0.57,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
     "c": 0.6,
     "note": "10년 평균 기준 212억원과 최근 216억원이 같아요. 금값이 매출을 크게 흔들지만 이익은 작아요. 차입금은 금 재고 운전자금이라 따로 빼지 않았어요.",
-    "fwd_per": 12.3,
-    "norm_per": 12.3,
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 129188,
       "per_share": 5516,
-      "upside": -47.3
+      "upside": -45.1
      },
      "base": {
       "g": 5.0,
       "value": 161299,
       "per_share": 6887,
-      "upside": -34.2
+      "upside": -31.5
      },
      "bull": {
       "g": 10.0,
       "value": 201340,
       "per_share": 8596,
-      "upside": -17.9
+      "upside": -14.5
      }
     },
-    "implied_g": 14.5,
+    "implied_g": 13.5,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6897,46 +6897,46 @@
     "norm_ni": 4376,
     "trend_g": 2.5
    },
-   "price": 11550,
-   "price_date": "2026-11-05 23:58",
+   "price": 10440,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 91157,
+   "mcap": 82396,
    "shares": 7892377,
    "equity": 89487,
    "equity_source": "DART 2026Q2",
    "net_cash": 25971,
    "dividend_yield": null,
-   "per": 9.8,
+   "per": 8.9,
    "roe": 10.4,
-   "pbr": 1.02,
+   "pbr": 0.92,
    "dcf": {
     "E1": 7000,
     "r": 11.0,
     "c": 0.75,
     "note": "9년 평균 기준 44억원, 최근 93억원 사이로 봤어요.",
-    "fwd_per": 13.0,
-    "norm_per": 13.0,
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 75458,
       "per_share": 9561,
-      "upside": -17.2
+      "upside": -8.4
      },
      "base": {
       "g": 6.0,
       "value": 90311,
       "per_share": 11443,
-      "upside": -0.9
+      "upside": 9.6
      },
      "bull": {
       "g": 12.0,
       "value": 109608,
       "per_share": 13888,
-      "upside": 20.2
+      "upside": 33.0
      }
     },
-    "implied_g": 6.3,
+    "implied_g": 3.0,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6969,46 +6969,46 @@
     "norm_ni": 22404,
     "trend_g": -1.8
    },
-   "price": 10960,
-   "price_date": "2026-11-05 23:58",
+   "price": 10640,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 236137,
+   "mcap": 229242,
    "shares": 21545310,
    "equity": 213387,
    "equity_source": "DART 2026Q2",
    "net_cash": -46973,
    "dividend_yield": null,
-   "per": 12.9,
+   "per": 12.5,
    "roe": 8.6,
-   "pbr": 1.11,
+   "pbr": 1.07,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
     "c": 0.75,
     "note": "4년 평균 기준 224억원과 최근 183억원 사이로 봤어요.",
-    "fwd_per": 11.8,
-    "norm_per": 11.8,
+    "fwd_per": 11.5,
+    "norm_per": 11.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 120761,
       "per_share": 5605,
-      "upside": -48.9
+      "upside": -47.3
      },
      "base": {
       "g": 6.0,
       "value": 172371,
       "per_share": 8000,
-      "upside": -27.0
+      "upside": -24.8
      },
      "bull": {
       "g": 12.0,
       "value": 239525,
       "per_share": 11117,
-      "upside": 1.4
+      "upside": 4.5
      }
     },
-    "implied_g": 11.7,
+    "implied_g": 11.2,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7044,25 +7044,25 @@
     "norm_ni": 4321,
     "trend_g": 7.4
    },
-   "price": 8360,
-   "price_date": "2026-11-05 23:58",
+   "price": 7770,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 106176,
+   "mcap": 98683,
    "shares": 12700504,
    "equity": 79456,
    "equity_source": "DART 2026Q2",
    "net_cash": -79061,
    "dividend_yield": null,
-   "per": 35.7,
+   "per": 33.2,
    "roe": 3.7,
-   "pbr": 1.34,
+   "pbr": 1.24,
    "dcf": {
     "E1": 5000,
     "r": 11.5,
     "c": 0.75,
     "note": "5년 평균 기준 43억원이에요. 쿼츠 부품 증설 효과를 반영해 50억원으로 봤어요.",
-    "fwd_per": 21.2,
-    "norm_per": 21.2,
+    "fwd_per": 19.7,
+    "norm_per": 19.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -7080,10 +7080,10 @@
       "g": 18.0,
       "value": 22836,
       "per_share": 1798,
-      "upside": -78.5
+      "upside": -76.9
      }
     },
-    "implied_g": 32.1,
+    "implied_g": 31.1,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7119,10 +7119,10 @@
     "norm_ni": 58316,
     "trend_g": -4.4
    },
-   "price": 35900,
-   "price_date": "2026-11-05 23:58",
+   "price": 33600,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 734011,
+   "mcap": 686985,
    "shares": 20445981,
    "equity": 1901913,
    "equity_source": "DART 2026Q2",
@@ -7130,35 +7130,35 @@
    "dividend_yield": null,
    "per": 1.2,
    "roe": 31.1,
-   "pbr": 0.39,
+   "pbr": 0.36,
    "dcf": {
     "E1": 80000,
     "r": 10.0,
     "c": 0.6,
     "note": "최근 4분기 순이익 5,900억원은 대부분 일회성 이익이에요. 9년 평균 기준(583억원)보다 솔브레인 지분 가치가 커진 점을 반영해 800억원으로 봤어요.",
-    "fwd_per": 9.2,
-    "norm_per": 9.2,
+    "fwd_per": 8.6,
+    "norm_per": 8.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 548281,
       "per_share": 26816,
-      "upside": -25.3
+      "upside": -20.2
      },
      "base": {
       "g": 5.0,
       "value": 686879,
       "per_share": 33595,
-      "upside": -6.4
+      "upside": -0.0
      },
      "bull": {
       "g": 9.0,
       "value": 822243,
       "per_share": 40215,
-      "upside": 12.0
+      "upside": 19.7
      }
     },
-    "implied_g": 6.5,
+    "implied_g": 5.0,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7191,46 +7191,46 @@
     "norm_ni": 48945,
     "trend_g": 9.5
    },
-   "price": 16030,
-   "price_date": "2026-11-05 23:58",
+   "price": 15730,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 324581,
+   "mcap": 318506,
    "shares": 20248339,
    "equity": 561958,
    "equity_source": "DART 2026Q2",
    "net_cash": 58194,
    "dividend_yield": null,
-   "per": 8.2,
+   "per": 8.1,
    "roe": 7.0,
-   "pbr": 0.58,
+   "pbr": 0.57,
    "dcf": {
     "E1": 42000,
     "r": 10.0,
     "c": 0.7,
     "note": "10년 평균 기준 489억원과 최근 395억원 사이로 봤어요.",
-    "fwd_per": 7.7,
-    "norm_per": 7.7,
+    "fwd_per": 7.6,
+    "norm_per": 7.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 384710,
       "per_share": 19000,
-      "upside": 18.5
+      "upside": 20.8
      },
      "base": {
       "g": 5.0,
       "value": 467249,
       "per_share": 23076,
-      "upside": 44.0
+      "upside": 46.7
      },
      "bull": {
       "g": 9.0,
       "value": 547862,
       "per_share": 27057,
-      "upside": 68.8
+      "upside": 72.0
      }
     },
-    "implied_g": -4.5,
+    "implied_g": -5.0,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7263,25 +7263,25 @@
     "norm_ni": -8714,
     "trend_g": 21.4
    },
-   "price": 27950,
-   "price_date": "2026-11-05 23:58",
+   "price": 25200,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1858128,
+   "mcap": 1675307,
    "shares": 66480426,
    "equity": 552513,
    "equity_source": "DART 2026Q2",
    "net_cash": -799138,
    "dividend_yield": null,
-   "per": 10.9,
+   "per": 9.8,
    "roe": 31.0,
-   "pbr": 3.36,
+   "pbr": 3.03,
    "dcf": {
     "E1": 45000,
     "r": 11.0,
     "c": 0.5,
     "note": "10년 평균 순이익률이 거의 0%예요. 매출 2조원 × 2%를 정상 이익으로 봤고, 최근 순이익(1,712억원)에는 일회성 이익이 커서 초과 이익은 더하지 않았어요.",
-    "fwd_per": 41.3,
-    "norm_per": 41.3,
+    "fwd_per": 37.2,
+    "norm_per": 37.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -7302,7 +7302,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 51.3,
+    "implied_g": 49.5,
     "cycle": {
      "position": "상승기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7335,46 +7335,46 @@
     "norm_ni": 82387,
     "trend_g": 29.8
    },
-   "price": 69300,
-   "price_date": "2026-11-05 23:58",
+   "price": 62900,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1333722,
+   "mcap": 1210550,
    "shares": 19245628,
    "equity": 451104,
    "equity_source": "DART 2026Q2",
    "net_cash": -79838,
    "dividend_yield": null,
-   "per": 39.0,
+   "per": 35.4,
    "roe": 7.6,
-   "pbr": 2.96,
+   "pbr": 2.68,
    "dcf": {
     "E1": 45000,
     "r": 10.5,
     "c": 0.6,
     "note": "10년 평균 순이익률은 17%지만 최근 고객 이탈로 이익률이 0~10%로 떨어졌어요. 매출 4,000억원 × 11%를 회복 시 정상으로 봤어요.",
-    "fwd_per": 29.6,
-    "norm_per": 29.6,
+    "fwd_per": 26.9,
+    "norm_per": 26.9,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 257222,
       "per_share": 13365,
-      "upside": -80.7
+      "upside": -78.8
      },
      "base": {
       "g": 12.0,
       "value": 425785,
       "per_share": 22124,
-      "upside": -68.1
+      "upside": -64.8
      },
      "bull": {
       "g": 22.0,
       "value": 706068,
       "per_share": 36687,
-      "upside": -47.1
+      "upside": -41.7
      }
     },
-    "implied_g": 35.9,
+    "implied_g": 33.7,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7410,10 +7410,10 @@
     "norm_ni": 12304,
     "trend_g": -1.3
    },
-   "price": 6670,
-   "price_date": "2026-11-05 23:58",
+   "price": 6180,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1093647,
+   "mcap": 1013304,
    "shares": 163964999,
    "equity": 479879,
    "equity_source": "DART 2026Q2",
@@ -7421,35 +7421,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -2.2,
-   "pbr": 2.28,
+   "pbr": 2.11,
    "dcf": {
     "E1": 12000,
     "r": 11.0,
     "c": 0.7,
     "note": "10년 평균 순이익률 3%, 추세 매출 4,620억원 → 123억원이에요.",
-    "fwd_per": 91.1,
-    "norm_per": 91.1,
+    "fwd_per": 84.4,
+    "norm_per": 84.4,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 116453,
       "per_share": 710,
-      "upside": -89.4
+      "upside": -88.5
      },
      "base": {
       "g": 12.0,
       "value": 160185,
       "per_share": 977,
-      "upside": -85.4
+      "upside": -84.2
      },
      "bull": {
       "g": 25.0,
       "value": 260877,
       "per_share": 1591,
-      "upside": -76.1
+      "upside": -74.3
      }
     },
-    "implied_g": 63.4,
+    "implied_g": 61.3,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7485,10 +7485,10 @@
     "norm_ni": 24938,
     "trend_g": 13.7
    },
-   "price": 2725,
-   "price_date": "2026-11-05 23:58",
+   "price": 2540,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 158269,
+   "mcap": 147524,
    "shares": 58080410,
    "equity": 284943,
    "equity_source": "DART 2026Q2",
@@ -7496,14 +7496,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -41.4,
-   "pbr": 0.56,
+   "pbr": 0.52,
    "dcf": {
     "E1": 15000,
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 기준 249억원이에요. 최근 적자(-1,179억원)는 합병 관련 손상 등 일회성이 커서 초과 손실로 빼지 않았고, 정상 이익은 평균보다 낮춰 150억원으로 봤어요.",
-    "fwd_per": 10.6,
-    "norm_per": 10.6,
+    "fwd_per": 9.8,
+    "norm_per": 9.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -7521,10 +7521,10 @@
       "g": 15.0,
       "value": 5173,
       "per_share": 89,
-      "upside": -96.7
+      "upside": -96.5
      }
     },
-    "implied_g": 27.0,
+    "implied_g": 26.3,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7557,18 +7557,18 @@
     "norm_ni": -4522,
     "trend_g": 8.7
    },
-   "price": 18620,
-   "price_date": "2026-11-05 23:58",
+   "price": 16700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 429362,
+   "mcap": 385089,
    "shares": 23059202,
    "equity": 127657,
    "equity_source": "DART 2026Q2",
    "net_cash": -187604,
    "dividend_yield": null,
-   "per": 35.2,
+   "per": 31.5,
    "roe": 9.6,
-   "pbr": 3.36,
+   "pbr": 3.02,
    "skip": "10년 평균 순이익률이 적자예요. 자회사 정리와 FOPLP 사업 성과를 먼저 봐야 해요.",
    "cycle": {
     "position": "바닥권",
@@ -7597,46 +7597,46 @@
     "norm_ni": -9126,
     "trend_g": 5.2
    },
-   "price": 19170,
-   "price_date": "2026-11-05 23:58",
+   "price": 17600,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 233568,
+   "mcap": 214439,
    "shares": 12184045,
    "equity": 180630,
    "equity_source": "DART 2026Q2",
    "net_cash": -28608,
    "dividend_yield": null,
-   "per": 15.6,
+   "per": 14.3,
    "roe": 8.3,
-   "pbr": 1.29,
+   "pbr": 1.19,
    "dcf": {
     "E1": 8000,
     "r": 12.0,
     "c": 0.6,
     "note": "6년 평균은 적자지만 최근 흑자(150억원)예요. 흑자 유지를 전제로 매출 1,200억원 × 7%로 봤어요.",
-    "fwd_per": 29.2,
-    "norm_per": 29.2,
+    "fwd_per": 26.8,
+    "norm_per": 26.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 22957,
       "per_share": 1884,
-      "upside": -90.2
+      "upside": -89.3
      },
      "base": {
       "g": 10.0,
       "value": 48016,
       "per_share": 3941,
-      "upside": -79.4
+      "upside": -77.6
      },
      "bull": {
       "g": 20.0,
       "value": 86205,
       "per_share": 7075,
-      "upside": -63.1
+      "upside": -59.8
      }
     },
-    "implied_g": 40.7,
+    "implied_g": 38.8,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7672,25 +7672,25 @@
     "norm_ni": -42,
     "trend_g": 21.3
    },
-   "price": 8150,
-   "price_date": "2026-11-05 23:58",
+   "price": 7700,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 345242,
+   "mcap": 326180,
    "shares": 42361029,
    "equity": 81636,
    "equity_source": "DART 2026Q2",
    "net_cash": -67145,
    "dividend_yield": null,
-   "per": 33.3,
+   "per": 31.5,
    "roe": 12.7,
-   "pbr": 4.23,
+   "pbr": 4.0,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
     "c": 0.6,
     "note": "10년 평균 이익률이 0%예요. 최근 흑자 수준보다 낮은 60억원을 정상으로 봤어요.",
-    "fwd_per": 57.5,
-    "norm_per": 57.5,
+    "fwd_per": 54.4,
+    "norm_per": 54.4,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -7708,10 +7708,10 @@
       "g": 20.0,
       "value": 30216,
       "per_share": 713,
-      "upside": -91.2
+      "upside": -90.7
      }
     },
-    "implied_g": 56.9,
+    "implied_g": 55.6,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -7747,10 +7747,10 @@
     "norm_ni": -15172,
     "trend_g": 7.1
    },
-   "price": 2140,
-   "price_date": "2026-11-05 23:58",
+   "price": 2040,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 58394,
+   "mcap": 55665,
    "shares": 27286943,
    "equity": 60852,
    "equity_source": "DART 2026Q2",
@@ -7758,7 +7758,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -12.5,
-   "pbr": 0.96,
+   "pbr": 0.91,
    "skip": "10년 평균 순이익률이 적자이고 최근 3년도 적자예요.",
    "cycle": {
     "position": "바닥권",
@@ -7787,18 +7787,18 @@
     "norm_ni": 48978,
     "trend_g": 7.9
    },
-   "price": 80700,
-   "price_date": "2026-11-05 23:58",
+   "price": 74400,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3987946,
+   "mcap": 3676619,
    "shares": 49416925,
    "equity": 976850,
    "equity_source": "DART 2026Q2",
    "net_cash": 219465,
    "dividend_yield": null,
-   "per": 26.2,
+   "per": 24.2,
    "roe": 15.6,
-   "pbr": 4.08,
+   "pbr": 3.76,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 183195
@@ -7808,29 +7808,29 @@
     "r": 10.0,
     "c": 0.65,
     "note": "6년 평균 기준 490억원은 적자 해가 섞여 낮아요. AI 서버용 기판으로 이익률이 10%대로 올라 매출 1.3조원 × 8.5%를 정상으로 봤어요.",
-    "fwd_per": 36.3,
-    "norm_per": 36.3,
+    "fwd_per": 33.4,
+    "norm_per": 33.4,
     "scenarios": {
      "bear": {
       "g": 3.0,
       "value": 1198624,
       "per_share": 24255,
-      "upside": -69.9
+      "upside": -67.4
      },
      "base": {
       "g": 10.0,
       "value": 1530805,
       "per_share": 30977,
-      "upside": -61.6
+      "upside": -58.4
      },
      "bull": {
       "g": 16.0,
       "value": 1907484,
       "per_share": 38600,
-      "upside": -52.2
+      "upside": -48.1
      }
     },
-    "implied_g": 35.4,
+    "implied_g": 33.2,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -7867,10 +7867,10 @@
     "norm_ni": 4479,
     "trend_g": 6.8
    },
-   "price": 101600,
-   "price_date": "2026-11-05 23:58",
+   "price": 97000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 3799532,
+   "mcap": 3627506,
    "shares": 37396973,
    "equity": 649030,
    "equity_source": "DART 2026Q2",
@@ -7878,7 +7878,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.8,
-   "pbr": 5.85,
+   "pbr": 5.59,
    "ttm_news": {
     "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
     "ni": 130000
@@ -7888,29 +7888,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 이익률이 거의 0%라 평균은 맞지 않아요. 흑자였던 해 수준(매출 1.7조원 × 4%)에 AI·소캠2 기판 비중 확대를 더해 900억원을 정상으로 봤어요. 2026년 3분기 영업이익 1,018억원으로 메모리 기판 호황이 본격화돼 사이클 위치를 '상승기'로 바꿨고, 2025년 4분기 일회성 손실을 뺀 최근 이익(약 1,300억원)과 정상 이익의 차이만 1~3년 더 이어진다고 봤어요.",
-    "fwd_per": 42.2,
-    "norm_per": 42.2,
+    "fwd_per": 40.3,
+    "norm_per": 40.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 185911,
       "per_share": 4971,
-      "upside": -95.1
+      "upside": -94.9
      },
      "base": {
       "g": 10.0,
       "value": 518556,
       "per_share": 13866,
-      "upside": -86.4
+      "upside": -85.7
      },
      "bull": {
       "g": 18.0,
       "value": 908569,
       "per_share": 24295,
-      "upside": -76.1
+      "upside": -75.0
      }
     },
-    "implied_g": 46.0,
+    "implied_g": 44.9,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -7947,46 +7947,46 @@
     "norm_ni": 29154,
     "trend_g": 8.7
    },
-   "price": 70000,
-   "price_date": "2026-11-05 23:58",
+   "price": 64100,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 5138645,
+   "mcap": 4705531,
    "shares": 73409219,
    "equity": 859078,
    "equity_source": "DART 2026Q2",
    "net_cash": 144347,
    "dividend_yield": null,
-   "per": 25.6,
+   "per": 23.4,
    "roe": 23.4,
-   "pbr": 5.98,
+   "pbr": 5.48,
    "dcf": {
     "E1": 170000,
     "r": 10.0,
     "c": 0.6,
     "note": "10년 평균 이익(292억원)은 AI 이전 기준이에요. AI 서버용 고다층 기판으로 이익률이 15%로 올라선 점을 반영해 매출 1.3조원 × 13%로 봤어요.",
-    "fwd_per": 30.2,
-    "norm_per": 30.2,
+    "fwd_per": 27.7,
+    "norm_per": 27.7,
     "scenarios": {
      "bear": {
       "g": 5.0,
       "value": 1611003,
       "per_share": 21946,
-      "upside": -68.6
+      "upside": -65.8
      },
      "base": {
       "g": 12.0,
       "value": 2140565,
       "per_share": 29159,
-      "upside": -58.3
+      "upside": -54.5
      },
      "bull": {
       "g": 20.0,
       "value": 2974157,
       "per_share": 40515,
-      "upside": -42.1
+      "upside": -36.8
      }
     },
-    "implied_g": 33.4,
+    "implied_g": 31.2,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8023,46 +8023,46 @@
     "norm_ni": 783695,
     "trend_g": 6.4
    },
-   "price": 950000,
-   "price_date": "2026-11-05 23:58",
+   "price": 901000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 70959011,
+   "mcap": 67299020,
    "shares": 74693696,
    "equity": 10230579,
    "equity_source": "DART 2026Q2",
    "net_cash": 348095,
    "dividend_yield": null,
-   "per": 70.4,
+   "per": 66.8,
    "roe": 9.8,
-   "pbr": 6.94,
+   "pbr": 6.58,
    "dcf": {
     "E1": 1100000,
     "r": 9.0,
     "c": 0.6,
     "note": "10년 평균 기준 7,837억원, 최근 1조원이에요. AI 서버용 MLCC·FC-BGA 비중 확대를 반영해 1.1조원으로 봤어요.",
-    "fwd_per": 64.5,
-    "norm_per": 64.5,
+    "fwd_per": 61.2,
+    "norm_per": 61.2,
     "scenarios": {
      "bear": {
       "g": 2.0,
       "value": 9620551,
       "per_share": 128800,
-      "upside": -86.4
+      "upside": -85.7
      },
      "base": {
       "g": 8.0,
       "value": 12624182,
       "per_share": 169013,
-      "upside": -82.2
+      "upside": -81.2
      },
      "bull": {
       "g": 14.0,
       "value": 16538810,
       "per_share": 221422,
-      "upside": -76.7
+      "upside": -75.4
      }
     },
-    "implied_g": 48.4,
+    "implied_g": 47.1,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8099,46 +8099,46 @@
     "norm_ni": 66036,
     "trend_g": 10.9
    },
-   "price": 38100,
-   "price_date": "2026-11-05 23:58",
+   "price": 35000,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 647700,
+   "mcap": 595000,
    "shares": 17000000,
    "equity": 577889,
    "equity_source": "DART 2026Q2",
    "net_cash": -129854,
    "dividend_yield": null,
-   "per": 12.1,
+   "per": 11.1,
    "roe": 9.3,
-   "pbr": 1.12,
+   "pbr": 1.03,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
     "c": 0.65,
     "note": "10년 평균 기준 660억원이에요. 최근 이익률(4%)이 낮아 회복 구간으로 봤어요.",
-    "fwd_per": 10.0,
-    "norm_per": 10.0,
+    "fwd_per": 9.2,
+    "norm_per": 9.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 335368,
       "per_share": 19728,
-      "upside": -48.2
+      "upside": -43.6
      },
      "base": {
       "g": 8.0,
       "value": 537057,
       "per_share": 31592,
-      "upside": -17.1
+      "upside": -9.7
      },
      "bull": {
       "g": 14.0,
       "value": 741769,
       "per_share": 43633,
-      "upside": 14.5
+      "upside": 24.7
      }
     },
-    "implied_g": 11.4,
+    "implied_g": 9.9,
     "cycle": {
      "position": "회복기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8174,46 +8174,46 @@
     "norm_ni": 4093,
     "trend_g": 14.5
    },
-   "price": 66600,
-   "price_date": "2026-11-05 23:58",
+   "price": 61900,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 1597242,
+   "mcap": 1484524,
    "shares": 23982620,
    "equity": 494045,
    "equity_source": "DART 2026Q2",
    "net_cash": -184793,
    "dividend_yield": null,
-   "per": 18.8,
+   "per": 17.5,
    "roe": 17.2,
-   "pbr": 3.23,
+   "pbr": 3.0,
    "dcf": {
     "E1": 40000,
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 이익률이 0%대지만 최근 메모리 모듈 기판 수요로 850억원을 냈어요. 평균과 지금 사이인 400억원을 정상으로 봤어요.",
-    "fwd_per": 39.9,
-    "norm_per": 39.9,
+    "fwd_per": 37.1,
+    "norm_per": 37.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 127750,
       "per_share": 5327,
-      "upside": -92.0
+      "upside": -91.4
      },
      "base": {
       "g": 8.0,
       "value": 239632,
       "per_share": 9992,
-      "upside": -85.0
+      "upside": -83.9
      },
      "bull": {
       "g": 14.0,
       "value": 352989,
       "per_share": 14719,
-      "upside": -77.9
+      "upside": -76.2
      }
     },
-    "implied_g": 44.3,
+    "implied_g": 42.6,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8250,18 +8250,18 @@
     "norm_ni": 14424,
     "trend_g": 7.7
    },
-   "price": 30250,
-   "price_date": "2026-11-05 23:58",
+   "price": 27850,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 294110,
+   "mcap": 270775,
    "shares": 9722630,
    "equity": 144820,
    "equity_source": "DART 2026Q2",
    "net_cash": -81123,
    "dividend_yield": null,
-   "per": 8.9,
+   "per": 8.2,
    "roe": 22.7,
-   "pbr": 2.03,
+   "pbr": 1.87,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 38067
@@ -8271,29 +8271,29 @@
     "r": 11.0,
     "c": 0.7,
     "note": "6년 평균 기준 144억원, 최근 329억원이에요. DDR5 모듈 기판 수요를 반영해 250억원으로 봤어요.",
-    "fwd_per": 11.8,
-    "norm_per": 11.8,
+    "fwd_per": 10.8,
+    "norm_per": 10.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 124061,
       "per_share": 12760,
-      "upside": -57.8
+      "upside": -54.2
      },
      "base": {
       "g": 8.0,
       "value": 203588,
       "per_share": 20940,
-      "upside": -30.8
+      "upside": -24.8
      },
      "bull": {
       "g": 15.0,
       "value": 299685,
       "per_share": 30823,
-      "upside": 1.9
+      "upside": 10.7
      }
     },
-    "implied_g": 14.6,
+    "implied_g": 13.1,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -8330,10 +8330,10 @@
     "norm_ni": -2184,
     "trend_g": 4.9
    },
-   "price": 12680,
-   "price_date": "2026-11-05 23:58",
+   "price": 11560,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 257482,
+   "mcap": 234739,
    "shares": 20306182,
    "equity": 218479,
    "equity_source": "DART 2026Q2",
@@ -8341,14 +8341,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -2.1,
-   "pbr": 1.18,
+   "pbr": 1.07,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
     "c": 0.7,
     "note": "10년 평균 이익률이 적자에 가까워요. 클린룸 수주 회복을 전제로 매출의 1%를 정상으로 봤어요.",
-    "fwd_per": 42.9,
-    "norm_per": 42.9,
+    "fwd_per": 39.1,
+    "norm_per": 39.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
@@ -8369,7 +8369,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 47.9,
+    "implied_g": 46.6,
     "cycle": {
      "position": "회복기",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -8405,18 +8405,18 @@
     "norm_ni": 76469,
     "trend_g": 5.7
    },
-   "price": 35750,
-   "price_date": "2026-11-05 23:58",
+   "price": 33350,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 384575,
+   "mcap": 358757,
    "shares": 10757343,
    "equity": 968919,
    "equity_source": "DART 2026Q2",
    "net_cash": 57633,
    "dividend_yield": null,
-   "per": 7.1,
+   "per": 6.6,
    "roe": 5.6,
-   "pbr": 0.4,
+   "pbr": 0.37,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 74926
@@ -8426,29 +8426,29 @@
     "r": 10.5,
     "c": 0.7,
     "note": "10년 평균 기준 765억원과 최근 544억원 사이로 봤어요.",
-    "fwd_per": 6.4,
-    "norm_per": 6.4,
+    "fwd_per": 6.0,
+    "norm_per": 6.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 501106,
       "per_share": 46583,
-      "upside": 30.3
+      "upside": 39.7
      },
      "base": {
       "g": 5.0,
       "value": 611335,
       "per_share": 56830,
-      "upside": 59.0
+      "upside": 70.4
      },
      "bull": {
       "g": 9.0,
       "value": 718858,
       "per_share": 66825,
-      "upside": 86.9
+      "upside": 100.4
      }
     },
-    "implied_g": -6.9,
+    "implied_g": -8.8,
     "cycle": {
      "position": "중립",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -8481,46 +8481,46 @@
     "norm_ni": 79423,
     "trend_g": 8.0
    },
-   "price": 24700,
-   "price_date": "2026-11-05 23:58",
+   "price": 23300,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 421808,
+   "mcap": 397900,
    "shares": 17077232,
    "equity": 706184,
    "equity_source": "DART 2026Q2",
    "net_cash": 119083,
    "dividend_yield": null,
-   "per": 6.6,
+   "per": 6.2,
    "roe": 9.0,
-   "pbr": 0.6,
+   "pbr": 0.56,
    "dcf": {
     "E1": 70000,
     "r": 10.5,
     "c": 0.7,
     "note": "10년 평균 기준 794억원, 최근 639억원이에요. 반도체 공장 건설 확대를 반영했어요.",
-    "fwd_per": 6.0,
-    "norm_per": 6.0,
+    "fwd_per": 5.7,
+    "norm_per": 5.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 621388,
       "per_share": 36387,
-      "upside": 47.3
+      "upside": 56.2
      },
      "base": {
       "g": 6.0,
       "value": 776938,
       "per_share": 45496,
-      "upside": 84.2
+      "upside": 95.3
      },
      "bull": {
       "g": 11.0,
       "value": 941878,
       "per_share": 55154,
-      "upside": 123.3
+      "upside": 136.7
      }
     },
-    "implied_g": -11.4,
+    "implied_g": -13.3,
     "cycle": {
      "position": "상승기",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -8557,43 +8557,43 @@
     "norm_ni": 24498,
     "trend_g": 6.7
    },
-   "price": 5950,
-   "price_date": "2026-11-05 23:58",
+   "price": 5630,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 88970,
+   "mcap": 84185,
    "shares": 14953000,
    "equity": 299533,
    "equity_source": "DART 2026Q2",
    "net_cash": 43802,
    "dividend_yield": null,
-   "per": 4.5,
+   "per": 4.3,
    "roe": 6.6,
-   "pbr": 0.3,
+   "pbr": 0.28,
    "dcf": {
     "E1": 22000,
     "r": 11.0,
     "c": 0.7,
     "note": "10년 평균 기준 245억원과 최근 198억원 사이로 봤어요.",
-    "fwd_per": 4.0,
-    "norm_per": 4.0,
+    "fwd_per": 3.8,
+    "norm_per": 3.8,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 194354,
       "per_share": 12998,
-      "upside": 118.4
+      "upside": 130.9
      },
      "base": {
       "g": 6.0,
       "value": 239543,
       "per_share": 16020,
-      "upside": 169.2
+      "upside": 184.5
      },
      "bull": {
       "g": 11.0,
       "value": 287390,
       "per_share": 19220,
-      "upside": 223.0
+      "upside": 241.4
      }
     },
     "implied_g": -30.0,
@@ -8629,46 +8629,46 @@
     "norm_ni": 114565,
     "trend_g": 18.1
    },
-   "price": 6930,
-   "price_date": "2026-11-05 23:58",
+   "price": 6570,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 675987,
+   "mcap": 640871,
    "shares": 97545067,
    "equity": 833272,
    "equity_source": "DART 2026Q2",
    "net_cash": -876211,
    "dividend_yield": null,
-   "per": 1.6,
+   "per": 1.5,
    "roe": 51.8,
-   "pbr": 0.81,
+   "pbr": 0.77,
    "dcf": {
     "E1": 130000,
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 순이익률 2.7%, 추세 매출 4.2조원 → 1,146억원이에요. 메모리 값 급등으로 생긴 최근 이익(4,314억원)과의 차이는 2027년까지만 반영했어요. 차입금은 재고 운전자금이라 따로 빼지 않았어요.",
-    "fwd_per": 5.2,
-    "norm_per": 5.2,
+    "fwd_per": 4.9,
+    "norm_per": 4.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 824093,
       "per_share": 8448,
-      "upside": 21.9
+      "upside": 28.6
      },
      "base": {
       "g": 4.0,
       "value": 1073061,
       "per_share": 11001,
-      "upside": 58.7
+      "upside": 67.4
      },
      "bull": {
       "g": 9.0,
       "value": 1304535,
       "per_share": 13374,
-      "upside": 93.0
+      "upside": 103.6
      }
     },
-    "implied_g": -8.6,
+    "implied_g": -10.1,
     "cycle": {
      "position": "호황 정점권",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -8704,46 +8704,46 @@
     "norm_ni": 14504,
     "trend_g": 19.4
    },
-   "price": 12210,
-   "price_date": "2026-11-05 23:58",
+   "price": 11240,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 176288,
+   "mcap": 162283,
    "shares": 14438000,
    "equity": 152346,
    "equity_source": "DART 2026Q2",
    "net_cash": -71361,
    "dividend_yield": null,
-   "per": 3.6,
+   "per": 3.3,
    "roe": 32.3,
-   "pbr": 1.16,
+   "pbr": 1.07,
    "dcf": {
     "E1": 20000,
     "r": 11.0,
     "c": 0.6,
     "note": "4년 평균 기준 145억원이에요. 메모리 값 급등으로 생긴 최근 이익(493억원)과의 차이는 2027년까지만 반영했어요.",
-    "fwd_per": 8.8,
-    "norm_per": 8.8,
+    "fwd_per": 8.1,
+    "norm_per": 8.1,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 119569,
       "per_share": 8282,
-      "upside": -32.2
+      "upside": -26.3
      },
      "base": {
       "g": 5.0,
       "value": 164386,
       "per_share": 11386,
-      "upside": -6.8
+      "upside": 1.3
      },
      "bull": {
       "g": 10.0,
       "value": 201576,
       "per_share": 13962,
-      "upside": 14.3
+      "upside": 24.2
      }
     },
-    "implied_g": 6.7,
+    "implied_g": 4.7,
     "cycle": {
      "position": "호황 정점권",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -8779,46 +8779,46 @@
     "norm_ni": 24311,
     "trend_g": 15.1
    },
-   "price": 23550,
-   "price_date": "2026-11-05 23:58",
+   "price": 22950,
+   "price_date": "2026-11-06 18:40",
    "price_source": "네이버 금융",
-   "mcap": 198501,
+   "mcap": 193444,
    "shares": 8428933,
    "equity": 129930,
    "equity_source": "DART 2026Q2",
    "net_cash": 37734,
    "dividend_yield": null,
-   "per": 6.8,
+   "per": 6.6,
    "roe": 22.4,
-   "pbr": 1.53,
+   "pbr": 1.49,
    "dcf": {
     "E1": 26000,
     "r": 10.5,
     "c": 0.75,
     "note": "10년 평균 기준 243억원과 최근 292억원 사이로 봤어요.",
-    "fwd_per": 7.6,
-    "norm_per": 7.6,
+    "fwd_per": 7.4,
+    "norm_per": 7.4,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 241572,
       "per_share": 28660,
-      "upside": 21.7
+      "upside": 24.9
      },
      "base": {
       "g": 6.0,
       "value": 303794,
       "per_share": 36042,
-      "upside": 53.0
+      "upside": 57.0
      },
      "bull": {
       "g": 11.0,
       "value": 369773,
       "per_share": 43870,
-      "upside": 86.3
+      "upside": 91.2
      }
     },
-    "implied_g": -5.4,
+    "implied_g": -6.1,
     "cycle": {
      "position": "중립",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
