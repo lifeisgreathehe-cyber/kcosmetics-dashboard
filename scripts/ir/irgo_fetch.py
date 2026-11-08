@@ -8,6 +8,7 @@ ap = argparse.ArgumentParser()
 ap.add_argument("--industry", default=""); ap.add_argument("--codes", default="")
 ap.add_argument("--pdf", type=int, default=6, help="회사당 PDF 내려받을 최근 자료 수")
 ap.add_argument("--probe", action="store_true", help="상세 페이지 HTML만 저장")
+ap.add_argument("--retext", action="store_true", help="본문이 비정상적으로 짧은 기존 자료를 다시 추출(OCR)")
 a = ap.parse_args()
 ind = a.industry
 cfg = f"config/{ind}/companies.json" if ind else "config/companies.json"
@@ -56,6 +57,35 @@ def pdf_links(h):
     c += re.findall(r'(https?://[^"\'\s<>]+?(?:download|fileDown|FileDown|attach)[^"\'\s<>]*)', h)
     c += re.findall(r"'(https?://[^']+?\.pdf[^']*)'", h, re.I)
     return [html.unescape(x) if x.startswith("http") else urllib.parse.urljoin("https://m.irgo.co.kr/", html.unescape(x)) for x in c]
+def extract(b):
+    """pypdf → (짧으면) pdftotext → (그래도 짧으면) tesseract OCR(kor+eng). (text, pages)"""
+    import io, subprocess, tempfile, shutil
+    from pypdf import PdfReader
+    r = PdfReader(io.BytesIO(b)); n = len(r.pages)
+    txt = "\n\n".join(f"[p{i+1}]\n" + (p.extract_text() or "") for i, p in enumerate(r.pages))
+    good = lambda s: len(re.sub(r"\s|\[p\d+\]|•", "", s)) > 150 * max(1, n) * 0.5
+    if good(txt): return txt, n
+    d = tempfile.mkdtemp(); f = os.path.join(d, "a.pdf"); open(f, "wb").write(b)
+    try:
+        if shutil.which("pdftotext"):
+            pages = []
+            for i in range(1, n + 1):
+                o = subprocess.run(["pdftotext", "-layout", "-f", str(i), "-l", str(i), f, "-"], capture_output=True, text=True).stdout
+                pages.append(f"[p{i}]\n{o}")
+            t2 = "\n\n".join(pages)
+            if good(t2): return t2, n
+        if shutil.which("tesseract") and shutil.which("pdftoppm") and n <= 60:
+            pages = []
+            for i in range(1, n + 1):
+                subprocess.run(["pdftoppm", "-r", "150", "-gray", "-f", str(i), "-l", str(i), "-png", f, os.path.join(d, "pg")], check=False)
+                png = sorted(x for x in os.listdir(d) if x.startswith("pg"))
+                o = subprocess.run(["tesseract", os.path.join(d, png[-1]), "-", "-l", "kor+eng", "--psm", "3"], capture_output=True, text=True).stdout if png else ""
+                for x in png: os.remove(os.path.join(d, x))
+                pages.append(f"[p{i}] (OCR)\n{o}")
+            return "\n\n".join(pages), n
+    finally:
+        shutil.rmtree(d, ignore_errors=True)
+    return txt, n
 path = f"{DOC}/data/ir_web.json"
 db = json.load(open(path, encoding="utf-8")) if os.path.exists(path) else {"companies": {}}
 for c in codes:
@@ -73,9 +103,20 @@ for c in codes:
         for y in (y0 - 1, y0 - 2, y0 - 3):
             k = next((n for n, i in enumerate(its) if i["date"].startswith(str(y))), None)
             if k is not None: pick.add(k)
+    # 중장기 목표가 담긴 자료(기업가치제고계획·Investor Day·전략 설명)는 위치와 상관없이 최근 3건 포함
+    KEY = re.compile(r"기업가치|밸류업|Value-?up|Investor Day|인베스터|중장기|비전|Vision|전략")
+    for n in [n for n, i in enumerate(its) if KEY.search(i["title"])][:3]: pick.add(n)
     for n, it in enumerate(its):
         if it["id"] in prev and prev[it["id"]].get("pdf"):
-            it.update({k: prev[it["id"]][k] for k in ("pdf", "text", "kb", "pages") if k in prev[it["id"]]}); continue
+            it.update({k: prev[it["id"]][k] for k in ("pdf", "text", "kb", "pages") if k in prev[it["id"]]})
+            tp = it.get("text")
+            short = tp and os.path.exists(tp) and len(re.sub(r"\s|\[p\d+\]|•", "", open(tp, encoding="utf-8").read())) < 75 * max(1, it.get("pages") or 1)
+            if a.retext and short:
+                try:
+                    txt, it["pages"] = extract(get(it["pdf"], binary=True)); open(tp, "w", encoding="utf-8").write(txt); print("  재추출", c, it["date"], len(txt))
+                except Exception as e:
+                    print("  재추출 실패", e)
+            continue
         if n not in pick: continue
         try:
             d = get(it["page"]); time.sleep(0.7)
@@ -92,10 +133,7 @@ for c in codes:
             # 원문 PDF는 저장소에 올리지 않고(용량) IRGO 원본 링크로 연결, 텍스트만 저장
             it["pdf"] = u; it["kb"] = len(b) // 1024
             try:
-                import io
-                from pypdf import PdfReader
-                r = PdfReader(io.BytesIO(b)); it["pages"] = len(r.pages)
-                txt = "\n\n".join(f"[p{i+1}]\n" + (p.extract_text() or "") for i, p in enumerate(r.pages))
+                txt, it["pages"] = extract(b)
                 tp = f"{RAW}/ir_text/{c}_{it['date']}_{it['id']}.txt"; open(tp, "w", encoding="utf-8").write(txt); it["text"] = tp
             except Exception as e:
                 print("  텍스트 실패", e)

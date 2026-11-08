@@ -1,0 +1,780 @@
+[p1]
+IR Presentation 2023
+December, 2023
+
+[p2]
+Confidential and Proprietary, 2023 Telechips Inc.2
+본 자료는 투자자의 투자를 권유할 목적으로 작성된 것이 아니라 투자자의 이해를 증진시키고 투자판단에 참고가 되는 각종 정보를 제공할 목적으로 작성되었으며, 본 자료를 
+작성하는데 있어 최대한 객관적인 사실에 기초하였습니다. 그러나 현 시점에서 회사의 계획, 추정, 예상 등을 포함하는 미래에 관한 사항들은 실제 결과와는 다르게 나타날 수 
+있고 회사는 제반 정보의 정확성과 완전함을 보장할 수 없습니다. 따라서 본 자료를 참고한 투자자의 투자의사결정은 전적으로 투자자 자신의 판단과 책임하에 이루어져야 하며,
+당사는 본 자료의 내용에 의거하여 행해진 일체의 투자행위 결과에 대하여 어떠한 책임도 지지 않습니다. 따라서 본 자료는 어떠한 경우에도 투자자의 증권투자 결과에 법적 
+책임소재의 증빙자료로 사용될 수 없습니다.
+This document is not intended to solicit the investment of investors but is written with the purpose of enhancing investors' understanding and providing various information for referenc
+e in investment decisions. In the creation of this document, we have endeavored to rely on the most objective facts. However, statements about the future, including the company's plan
+s, estimates, and expectations, may differ from actual results at the current moment. The company cannot guarantee the accuracy and completeness of all information. Therefore, any in
+vestment decisions made by investors based on this document should be entirely at the investor's own judgment and responsibility. We do not assume any responsibility for the results
+of any investment actions taken based on the contents of this document. As a result, under no circumstances can this document be used as legal evidence for holding investors accounta
+ble for securities investment outcomes.
+DISCLAIMER
+
+
+[p3]
+Confidential and Proprietary, 2023 Telechips Inc.3
+텔레칩스, 대한민국 유일의 글로벌 차량용 종합반도체 기업으로 성장
+· 텔레칩스 100% 자회사
+· 2018년 설립
+· 인력 11명
+· ADAS 및 자율주행용 AI Algorithm 
+· 전방 카메라용 물체 인식
+차량용 종합 반도체 기업
+· 1999. 10. 29 설립
+· 대표이사: 이장규
+· 385명 (해외인력 포함)
+· 2004년 KOSDAQ 상장
+· 주력 제품
+- Infotainment: IVI, Cluster, Cockpit
+- ADAS / Autonomous Driving (AD)
+- Network Gateway
+- MCU Global Network 
+Pangyo
+Daegu
+KOREA
+구분 2022년 2023년 3분기
+자본금 1,697억원 2,164억원
+총자산 3,102억원 3,385억원
+매출 1,504억원 1,466억원(누적)
+영업이익 91억원 146억원(누적)
+차량용 AI 알고리즘
+· 텔레칩스 & 어보브반도체 합작회사
+· 2018년 설립
+· 인력 50명
+· BMS(Battery Management System) for xEV / ESS 
+· BDS(Battery Diagnosis System) & Algorithm(전세계 최초)
+·  Battery 진단 (SOH/RUL) 및 폭발 위험성 예측
+차량용 배터리 SoC
+
+
+[p4]
+Confidential and Proprietary, 2023 Telechips Inc.4
+OEM
+Tier1 
+            ●    
+Manufacturers
+텔레칩스 사업현황 : 글로벌 주요 납품 및 수주 고객 (OEM and Tier1)
+
+[p5]
+Confidential and Proprietary, 2023 Telechips Inc.5
+Soul Booster
+TCC8022-i
+Yaris
+Sorento
+Carnival
+(Sedona)
+K5
+(Optima)
+K3
+(Forte)
+Telluride
+Korando
+C300
+TCC8031 
+TCM3840
+F-Type Sport
+TCC8801
+Range RoverEvoque
+TCC8801
+AVN
+A6
+TCC3171-I/TCC8000
+E-Class
+TCC3171-i
+DAB+ Module
+Golf Passat
+TCC3171-i
+AVN / DA / Cluster / HVAC
+TCC893x
+VXM-184
+Korea Korea / EU Japan, China, ASEAN
+Grandeur
+(Azera)
+Santa Fe
+Sonata
+TCC8001/TCC8002/TCC8010/TCC8001S/TCC8132
+TCC8931/TCC8971/TCC8022(Dolphin)/TCC8032(D+)
+AVN / D-Audio
+Car Audio
+TCC8022
+HUD
+DOP AVN
+TCC8930
+XF
+TCC8971-i
+TCC3171-i
+New Beetle
+TCC760
+Car Audio
+Logan
+TCC8601/TCC8001S
+QASHQAI
+Captiva
+TCC8801
+ TCC8935
+Malibu
+TCC8935 TCC8971+TCM3800/TCM3902 TSound+AD55+TCC5027+TCC8005
+Malibu
+ Serena
+Aruz
+MU-X
+ Xpander
+CAMRY
+ Datsun Cross
+TCC5110
+Safety IC
+Cluster
+TCC8972
+Safety IC
+TCC5110
+Rexton
+DAF11/9/7Z
+Hustler
+Spacia
+TritonRVR
+TCC8034
+HVAC / EV
+MAZDA EV
+(MX-30)
+TCC8974
+MJ118D
+Ioniq 5/6
+MDV
+TCC8034
+TCC897x
+GENESIS 
+GV80
+HUD
+GENESIS
+GV60
+Safety IC
+Casper
+HUD/AVN
+Niro EVHUD
+GENESIS
+G80
+GENESIS
+G70
+HUD
+GENESIS 
+GV70
+Palisade
+HUD/AVN
+K8
+HUD/AVN
+K9
+HUD
+Ev6
+HUD/AVN
+TCC8931
+TCM3800
+TCM3910
+SM7
+TCC8001/TCC8002/TCC8010/TCC8001S/TCC8132
+BALENO
+ ERTIGA MC
+XL6
+ BREZZA Celerio New Alto S-Cross
+TCC8971i
+TCC8971i
+Rocky
+Uni-V
+TCC8931-i
+X3
+TCC8022-i
+瑞迈
+TCC8935
+Mistra (名图)
+AVN, SVM
+Dn8c (Sonata)
+TCC8031
+TCC8032
+Han 汉
+Cluster
+TCC5110
+TCC8032
+ H7
+TCC8035
+Cluster
+TCC8035
+Dihao GL
+EADO Plus
+TCC8050
+LYNK&Co02
+LYNK&Co03
+Cluster
+TCC8035
+CS55 Plus
+Hozon-V (哪吒V)
+TCC8971+TCC5027/TCC8003/AD55/TCC3171
+TCC8973
+E5
+E-Star
+TCC8032
+TCC5110
+Cluster
+Cayenne
+TCC8032
+NX450h+
+NX350h
+DOP AVN
+TCC7022
+Seltos
+Air Purifier
+Sonet
+텔레칩스 사업현황 : 글로벌 주요 납품 자동차 모델
+
+[p6]
+Confidential and Proprietary, 2023 Telechips Inc.6
+Domain Zonal
+Electrification   
+Autonomous Driving
+Connectivity
+Advanced
+Infotainment
+(Cockpit)
+Dolphin7
+Dolphin5
+VCP
+ VCP3
+N-Dolphin
+Process Technology                   
+MCU
+Autonomous
+Driving / ADAS
+Network
+Gateway (NGW)
+Zonal
+GWC
+HPC
+HPC (High Performance Computing)
+Semiconductor
+* ADAS: Advanced Drive Assistance System * MCU: Micro Control Unit        * Zonal GWC: Zonal Gateway Controller 
+Top 20 Global Fabless Position by 2030
+Semiconductor
+Reliability
+Enhancement
+Cyber Security Functional
+Safety
+: ASIL-D
+Low-Power
+Design
+SDV Solution
+Optimization
+AXON
+A2X
+인포테인먼트부터 미래 모빌리티 E/E Architecture 핵심 반도체로의 확장 
+
+[p7]
+Confidential and Proprietary, 2023 Telechips Inc.7
+미래 자동차 시장의 변화에도 Mid-Entry Tier Cockpit 시장은 독립적으로 지속 성장
+8
+7
+6
+5
+4
+3
+2
+1
+단위 : Million pcs
+Economy Mid Premium출처 : IHS Cockpit & ADAS market volume, 2023
+미래 자동차 시장 구조에서도 지속적인 독립영역으로 존재하는 IVI(In-Vehicle Infotainment) Domain
+특히, Mid (양산 초기 시점)에서 Entry (양산 말기 시점) Tier는 가격 이슈로 인해 독립 플랫폼으로 지속 전개
+Computing
+Performance
+No Longer 
+Supported
+Time
+Entry
+Mid
+Premium
+X
+Premium
+Chip A
+High
+Chip A
+Mid
+Chip A
+Mid
+Chip B
+Low
+Chip B
+Dolphin5
+Entry
+Dolphin5
+Low
+Dolphin5
+Mid
+IVI Platform Market Structure Cockpit Domain Market Outlook
+2023 2024 2025 2026 2027
+
+[p8]
+Confidential and Proprietary, 2023 Telechips Inc.8
+지속적인 해외고객사 확대를 통한 성장 동력 확보
+2020년 이후 꾸준한 일본향 매출 증가로 해외 매출비중 30% 이상 유지
+2023년 중국 및 동남아향 매출 본격 반영으로 해외 매출비중 상승세
+2024년 유럽 글로벌OEM ‘Digital Cluster’, 2025년 유럽 글로벌 Top Tier1 ‘Cockpit’ 양산 시작, 2025년 해외 매출비중 50%↑ 목표
+100
+90
+80
+70
+60
+50
+40
+30
+20
+10
+2020
+단위 : %
+2021 2022 2023(E) 2025(E)
+68.3 63.5 65.2 63.5 43.9
+31.7 36.5 34.8 36.5
+56.1
+국내
+해외
+출처 : Telechips
+2023
+2024
+2025
+2025년 해외매출비중 50% 이상 달성
+글로벌 Top Tier1 Cockpit 양산
+글로벌 Top OEM Digital Cluster 양산
+글로벌 Tier1을 통한
+일본, 중국 및 동남아향 매출 증가
+GOAL
+텔레칩스 해외 매출비중 글로벌 마켓 성장 동력 및 목표
+Target
+
+[p9]
+Confidential and Proprietary, 2023 Telechips Inc.9
+9
+AVN
+ RSE
+HUD
+CLUSTER
+ Front Camera
+HVAC
+ DMS/IMS
+ Parking Assist
+Mid-Low Infotainment/Cockpit Solution
+Hypervisor-less, SDR(Software Defined Radio), STR
+Embedded ADAS Solution
+Powerful Core & Neural Network Processing w/ ultra low power
+Infotainment ADAS
+ADVANCED INFOTAINMENT    I Multi-Purpose Application Processor
+Dolphin5
+The Best Automotive Application Processor
+TCC807x
+
+
+[p10]
+Confidential and Proprietary, 2023 Telechips Inc.10
+For Safety & Convenience
+AUTONOMOUS DRIVING & ADAS   I Vision Processor 
+N-Dolphin
+AI Vision Processor
+TCC750x
+· Increase of Safety Regulations of Countries
+· Object detection capability is required in 
+not just DMS and IMS but also CMS
+Out-Cabin
+· Pedestrian
+· Car
+· Lane
+· Sign
+· etc.
+In-Cabin
+· Head position&Angle
+· Eye blinking speed
+· Driver&Passenger
+Detection ADAS front camera
+·   Low Power Consumption, < 3.5W
+·   8 TOPS Neural Processing Engine
+·   Advanced Camera Path Up To 5.3MP
+·   Algorithm Turnkey Available
+CMS (E-Mirror)
+·   Neural Processing Engine 
+for Object Detection
+·   Robust Camera Path by TVM
+(Trust View Manager)
+DMS & IMS ·   Advanced ISP for Low Light Condition (RGB-IR, 3DNR) ·   Support For Various NPU TOPS (2 ~ 8 TOPS)
+
+
+[p11]
+Confidential and Proprietary, 2023 Telechips Inc.11
+Self-Driving
+Processor
+(Platform SOC)
+A2X
+A2X
+A2X
+A2X
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+…
+PCIe
+Perception SensingPlanningPredictionControl
+250  
+TOPS
+500
+TOPS 
+1000
+TOPS 
+Autonomous Driving 
+Level 2~3 Target
+(Low seg.)
+Autonomous Driving 
+Level 3 Target
+(Mid seg.)
+Autonomous Driving 
+Level 4+ Target
+(Premium seg.)
+AUTONOMOUS DRIVING & ADAS   I Scalable AI Accelerator 
+A2X
+Scalable AI Accelerator
+TCA2000
+Independent of
+Self-Driving Processor
+Scalable AI Accelerator
+Easy Adaptation
+to Platform SOC
+
+
+[p12]
+Confidential and Proprietary, 2023 Telechips Inc.12
+12
+High Security
+• Hardware security modules(HSM) 
+and Advanced Firewall HW engine 
+like Deep Packet Inspection 
+Enhanced Cyber Security
+High Functional Safety
+• Dual Core Lock-Step based Safety
+• Real-time Processing
+(legacy network, Safety control)
+ISO26262 ASIL-D
+• Multi Giga-ETH Hardware Acceleration 
+(Switching & Routing)
+• Legacy Network Acceleration (CAN/LIN)
+Flexible and High bandwidth 
+Ethernet, Legacy Network
+High Speed Networking
+Telematics
+& V2X
+Central 
+Gateway
+DCU A
+DCU D
+Ethernet/Legacy
+Network Mngt. Firewall OTA Management
+DCU B
+DCU C
+• Infotainment
+• ADAS
+• Comfort System
+• Driving Performance
+CONNECTIVITY   I Vehicle Network Processor for Central Gateway / Zonal Gateway 
+AXON
+Vehicle Network Processor
+AXON
+
+[p13]
+Confidential and Proprietary, 2023 Telechips Inc.13
+Over-the-Air
+• Dedicated HSM memory 
+for enhanced security features 
+• Giga-ETH with TSN
+OTA with enhanced security
+High Functional Safety
+• Dual Core Lock-Step based Safety
+• Real-time Processing
+(legacy network, Safety control)
+ISO26262 ASIL-D
+• Numerous I/F (ADC, PWM, SENT) 
+with Legacy Network
+• Control BLDC & BDC simultaneously
+Multiple Motor & Sensor Control
+Multi Control
+VCP3
+(TCC71xx)
+VCP
+Fabrication
+Samsung 28nm LNF
+• Advanced 28nm process for MCU
+• Stable supply with no geopolitical 
+issues 
+도메인 아키텍처 Zonal 아키텍처
+E/E ARCHITECTURE   I Vehicle Integrated Actuator (MCU)
+VCPx
+Vehicle Integrated Actuator
+TCC71xx
+
+[p14]
+Confidential and Proprietary, 2023 Telechips Inc.14
+TOPST   I Total Open-Platform for System development and Training
+Global OSHW Market Analysis ( '22 → '27)
+‘22년 기준, 유럽-미주 시장 79%, 아시아-태평양 시장 20%
+‘27년 아시아-태평양 시장의 고속 성장으로 점유율 역전 (20% → 70%)
+'27. OSHW 용도별 시장 규모(Expected)
+아시아-태평양 시장의 고성장은 중국, 인도, 베트남 등 인구대국이 주도
+스마트 시티 등 IOT 시장 확대에 따른 산업용 시장의 고도 성장 지속
+2022(Current)
+유럽-미주 (79%)
+아시아-태평양
+(20%)
+$630M
+$160M
+2027(Expected)
+$2,500M
+아시아-태평양 (70%)
+$1,000M
+유럽-미주 (30%)
+$975M $925M
+$600M Education (24%)
+Industry (39%) DIY (37%)
+
+[p15]
+Confidential and Proprietary, 2023 Telechips Inc.15
+OSHW(Opensource Hardware)
+- Easy to use with opensource S/W
+- Expandability with multiple boards
+- Openness for other chipset makers to bring 
+their own's properties
+Open project (TOPST alliance)
+- Inclusive collaboration to create new 
+innovative business models in cutting-edge 
+industrial application areas like drone, robotic, 
+and smart-devices
+Open Community(topst.ai) – `24.1H
+- Anyone can freely participate in open 
+community to access all contents and share 
+their own expertise and solutions as a 
+contributor and user.
+K-시스템 반도체산업의 개방형 생태계 
+국내 시장의 외산 반도체 대체,
+해외 시장 동반 진출
+• 인재육성(특성화고~대학)
+• 기업교육
+※ 서울대, 숭실대, 대구대, 가천대, 한라대,
+충북대, 성균관대, 서강대, 영남대 외
+ 스마트 모빌리티
+ 로봇
+ IoT
+ 헬스케어 
+Education
+Industry
+TOPST   I Total Open-Platform for System development and Training
+
+[p16]
+Confidential and Proprietary, 2023 Telechips Inc.16
+Beyond IVI – A bold Challenge for Future Mobility
+ADAS / AI​
+INFOTAINMENT / COCKPIT​
+OPEN PLATFORM​
+CONNECTIVITY​
+E/E ARCHITECTURE​
+미래 모빌리티 기술을 선도하는
+대한민국 유일의 차량용 종합 반도체 기업
+Dolphin Series :​​
+The Best Automotive Application Processor​
+For Advanced Infotainment​​
+AXON :​​
+Vehicle Network Processor 
+For Central Gateway / Zonal Gateway
+N-Dolphin :​​
+AI Vision Processor For
+Secure Driving Environment​
+A2X :
+Scalable AI Accelerator For​
+Future-Proof Autonomous Driving
+VCP Series :​​
+Vehicle Integrated Actuator For​​
+Future Mobility E/E Architecture​​
+TOPST :​​
+Total Open-Platform For System 
+Development and Training​
+
+
+[p17]
+Confidential and Proprietary, 2023 Telechips Inc.17
+Appendix
+
+[p18]
+Confidential and Proprietary, 2023 Telechips Inc.18
+#-1. 회사 연혁
+Consumer Electronics
+& Automotive
+2001
+2002
+2004
+2005
+2007
+2008
+2009
+2012
+2013
+- NT Mark 인증 획득
+- 세계 최초 MP3 실시간 녹음·재생이 가능한 제품 출시
+- 수출중소기업인상 수상
+- 신기술실용화 대통령 표창
+- KOSDAQ 상장
+- 제7회 산업기술혁신 대상 수상
+- 세계 최초의 플래시 타입 MP3 플레이어에 대한 
+PlayForSure 인증 획득
+- ISO 9001 및 ISO 14001 인증
+- 국내 최초 Car Audio용 AP 자동차 OEM 공급 개시
+- 제1회 반도체의 날 대통령 표창
+- 세계 최초 Full HD(1080p) 적용 멀티미디어 솔루션 출시
+- 세계 최초 Android 스마트미디어 플레이어 솔루션 양산
+- 세계 최초 Operator HDMI Stick 출시
+Intelligent Automotive Solution
+( Smart Cockpit / ADAS / AI )
+2015
+2016
+2017
+2018
+2019
+2020
+2021
+- 국내 최초 Car AVN용 AP 자동차 OEM 공급 개시
+- 월드클래스 300기업 선정
+- 글로벌 전문 후보기업 선정
+- 2016년 무역의 날 수출 3천만불탑 수상 및 유공자 표창
+- 국내 최초 북미 대형 방송사업자에 STB용 AP 공급 개시
+- 벤처천억기업 수상
+- 차세대 운전자 보조 기술 통합시스템(Cockpit) 출시
+- 인공지능 알고리즘 솔루션 전문기업 ㈜마인드인테크 
+(종속회사) 설립
+- Cockpit 시스템 자동차 OEM 공급 개시
+- 국내 최초 Digital Cluster 솔루션 및 HUD
+(Head-Up Display) 양산
+- 국내 최초 AVN & SVM 통합 솔루션 양산
+- 국내 최초 차량용 MCU 출시
+Telechips History
+1999
+2000
+- ㈜텔레칩스 설립
+- IR52 장영실상 수상 (Caller ID Chip))
+Foundation
+
+
+[p19]
+Confidential and Proprietary, 2023 Telechips Inc.19
+#-2. 요약 재무제표
+구분 2023.3Q 2022 2021 2020
+유동자산 131,543 119,729 89,544 85,918
+비유동자산 206,995 190,443 117,715 80,118
+자산총계 338,538 310,172 207,259 166,036
+유동부채 71,781 101,988 41,945 31,033
+비유동부채 50,354 38,515 59,037 42,554
+부채총계 122,135 140,503 100,982 73,588
+자본금 7,572 6,928 6,753 6,753
+주식발행초과금 44,414 18,639 12,632 12,632
+기타자본구성요소 6,458 15,685 4,444 -981
+이익잉여금 157,958 128,418 82,447 74,044
+자본총계 216,402 169,670 106,277 92,448
+요약 연결 재무상태표 (단위: 백만원)
+구분 2023.3Q 2022 2021 2020
+매출액 146,617 150,404 136,412 100,722
+매출원가 84,568 93,836 86,447 66,058
+매출총이익 62,048 56,568 49,966 34,664
+판매비와관리비 47,482 47,388 41,889 43,139
+영업이익 14,566 9,180 8,077 -8,475
+법인세차감전
+순이익 34,347 47,805 7,933 -8,121
+당기순이익 31,358 45,897 7,031 -9,413
+요약 연결 손익계산서 (단위: 백만원)
+
+[p20]
+Confidential and Proprietary, 2023 Telechips Inc.20
+Capable of satisfying plant capacity
+Application Processor, VCP
+ Safety IC, etc.
+AustinGiheung
+Assembly TestFab. Supplier Chain (Wafer Purchasing)
+#-3. Global Production Eco System
+
+[p21]
+Confidential and Proprietary, 2023 Telechips Inc.21
+Functional Safety Cyber Security S/W Quality Management Process
+9001&14001
+Quality 
+Management Systems 
+&
+Environmental
+Management Systems
+#-4. 글로벌 표준 취득 현황
+
+[p22]
+Confidential and Proprietary, 2023 Telechips Inc.22
+“Silver” rating in 2022
+EcoVadis
+Environment
+ Labor & Human Rights
+ Ethics
+ Sustainable Procurement
+• Implementation of a records retention 
+schedule
+• Information security risk assessments 
+performed
+• Audits of control procedures to prevent 
+information security breaches
+• Awareness training to prevent 
+information security breaches
+• Measures to protect third party data 
+from unauthorized access or disclosure
+• Audits of control procedures to prevent 
+corruption
+• Incident response procedure (IRP) to 
+manage breaches of confidential 
+information
+• Regular supplier assessment on 
+environmental or social practices
+• On-site audits of suppliers on 
+environmental or social issues
+• 50-100% of suppliers for which 
+conflict minerals information is 
+available
+• Improvement of energy efficiency 
+through technology or equipment 
+upgrades
+• Packaging designed for easy 
+dismantling and recyclability
+• Measures to reuse or recycle waste
+• ISO14001 certified (at least one 
+operational site)
+• Measures or innovative technologies 
+implemented to reduce, recycle or 
+reuse waste
+• Employee stock ownership plan
+• Flexible organization of work available to 
+employees
+• Health care coverage of employees in place
+• Internal audits on health & safety issues
+• Employee health & safety detailed risk 
+assessment
+• Regular assessment (at least once a year) of 
+individual performance
+• Interactive session with employees regarding 
+working conditions
+• Official measures promoting career mobility
+• Remuneration process (e.g. salary grid, 
+procedure for salary advancement) 
+communicated to employees
+#-5. ESG (Environmental, Social and Governance) 현황
