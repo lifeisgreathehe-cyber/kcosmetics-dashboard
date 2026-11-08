@@ -65,5 +65,5 @@ jobs:
             echo "변경 없음"
           else
             git commit -m "data: 자동 갱신 $(date -u +%Y-%m-%d)"
-            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+            for i in 1 2 3; do git pull --rebase --autostash -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
           fi
