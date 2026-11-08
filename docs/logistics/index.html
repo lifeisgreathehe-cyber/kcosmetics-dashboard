@@ -116,6 +116,7 @@ td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 .newsread{list-style:none;padding-left:0}.newsread li{border-top:1px solid var(--line);padding:10px 0}.newsread li p{font-size:14px;color:var(--ink-2)}
 .snap .sl{font-size:12px;color:var(--ink-2);margin:8px 0 2px;font-weight:600}.snap .sl .u{font-weight:400;color:var(--ink-3)}.snap .chart.sm{height:120px}
+.irt td{vertical-align:top;font-size:13px;line-height:1.5;min-width:90px}.irt td:nth-child(2),.irt td:nth-child(4){min-width:200px}.irlist{margin:6px 0 0;padding-left:18px}.irlist li{margin:3px 0;font-size:13px}
 </style>
 </head>
 <body>
@@ -194,6 +195,7 @@ td.l,th.l{text-align:left}
         <div class="sl"><span class="ni-l">지배주주순이익</span> <span class="u">억원</span></div><div class="chart sm" style="height:140px"><canvas id="s-ni"></canvas></div></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
+      <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-value"></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
       <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
@@ -263,7 +265,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','freight_ppi','freight_ppi_annual','service_volume','service_nominal','news_exports','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist'];
+  const names=['meta','freight_ppi','freight_ppi_annual','service_volume','service_nominal','news_exports','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir_web','ir'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -445,6 +447,30 @@ function renderBiz(c){
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
    <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
 }
+function renderIR(c){
+  const el=$('#co-ir'); if(!el) return;
+  const W=D.ir_web||{}, L=(W.companies||{})[c.code]||[], DR=((D.ir||{}).companies||{})[c.code]||[];
+  const A=(((D.deep||{}).companies||{})[c.code]||{}).ir;
+  const lk=(u,t)=>u?`<a href="${u}" target="_blank" rel="noopener" style="color:var(--accent)">${t}</a>`:t;
+  const FE={'높음':'pos','보통':'neu','낮음':'neg'}, VE={'부합':'pos','부분 부합':'neu','상충':'neg','확인 불가':'neu'};
+  const nm=t=>t.replace(/^[^,]+,\s*/,'');
+  let h=`<h2>IR 자료 분석</h2>`;
+  const latest=L.find(i=>i.pdf)||L[0];
+  if(latest) h+=`<p><b>최신 IR 원문</b> ${latest.date} · ${lk(latest.pdf||latest.page,nm(latest.title))}${latest.pdf?` <span class="sub">(PDF${latest.pages?` ${latest.pages}쪽`:''})</span>`:''} <span class="sub">· ${W.source||'IRGO(KIND 게시 IR 자료)'} · 수집 ${W.fetched||''}</span></p>`;
+  else h+=`<p class="sub">IRGO·KIND에 올라온 IR 원문을 찾지 못했어요. 아래 분석은 공시·기사와 사업보고서 기준이에요.</p>`;
+  if(A){
+    h+=`<p>${A.verdict}</p>`;
+    if(A.strategy.length) h+=`<h4>IR에서 제시한 성장전략과 달성 가능성</h4><div class="tbl"><table class="irt"><thead><tr><th class="l">전략</th><th class="l">회사가 제시한 내용·목표</th><th class="l">달성 가능성</th><th class="l">판단 근거</th></tr></thead><tbody>${A.strategy.map(t=>`<tr><td class="l"><b>${t.h}</b></td><td class="l" style="white-space:normal">${t.claim}</td><td class="l"><span class="tone ${FE[t.feas]||'neu'}">${t.feas}</span></td><td class="l" style="white-space:normal">${t.why}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.changes.length) h+=`<h4>과거 IR과 비교해 바뀐 점</h4><ul>${A.changes.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+    if(A.cross.length) h+=`<h4>경쟁사·공급사·고객사 자료로 교차검증</h4><div class="tbl"><table class="irt"><thead><tr><th class="l">상대 회사</th><th class="l">상대 IR·발표 내용</th><th class="l">결과</th><th class="l">해석</th></tr></thead><tbody>${A.cross.map(t=>`<tr><td class="l"><b>${t.peer}</b></td><td class="l" style="white-space:normal">${t.claim}</td><td class="l"><span class="tone ${VE[t.verdict]||'neu'}">${t.verdict}</span></td><td class="l" style="white-space:normal">${t.read}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.docs.length) h+=`<p class="src">분석에 쓴 자료: ${A.docs.map(([d,t,u])=>lk(u,`${d} ${t}`)).join(' · ')}</p>`;
+  }
+  const more=L.filter(i=>i!==latest).slice(0,10);
+  if(more.length) h+=`<details class="fd"><summary>지난 IR 자료 ${more.length}건 (원문 링크)</summary><ul class="irlist">${more.map(i=>`<li><span class="sub">${i.date} · ${i.kind||''}</span> ${lk(i.pdf||i.page,nm(i.title))}${i.pdf?'':' <span class="sub">(자료 페이지)</span>'}</li>`).join('')}</ul></details>`;
+  if(DR.length) h+=`<details class="fd"><summary>DART 기업설명회(IR) 공시 ${DR.length}건</summary><ul class="irlist">${DR.slice(0,12).map(i=>`<li><span class="sub">${i.date}</span> ${lk(i.url,i.title)}${(i.pdfs||[]).filter(x=>x.url).map(x=>` · ${lk(x.url,'첨부')}`).join('')}</li>`).join('')}</ul></details>`;
+  h+=`<p class="src">IR 원문은 회사가 거래소(KIND)에 올린 자료를 IRGO에서 GitHub Actions로 모아 연결해요(새 IR이 나오면 다시 수집). 분석 판단은 원문 숫자와 기사·경쟁사 IR을 함께 보고 작성했어요(${(D.deep||{}).updated||''}).</p>`;
+  el.innerHTML=h;
+}
 function renderDeep(c){
   const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
   if(!x) return '';
@@ -576,7 +602,7 @@ function selectCo(code){
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderSnap(c);renderReview(c);renderBiz(c);renderValueReport(c);
+  renderCompanyTable();renderSnap(c);renderReview(c);renderBiz(c);renderIR(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];

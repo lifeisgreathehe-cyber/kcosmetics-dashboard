@@ -60,12 +60,18 @@ def main():
         for code, upd in getattr(m, "UPD", {}).items():
             if code in D:
                 D[code]["review"].update(upd)
+    from ir_notes import IR
     deep, rev = {}, {}
     for code, x in D.items():
         news = sorted(x["news_raw"], key=lambda n: n[0], reverse=True)
         y = copy.deepcopy(x)
         y.pop("news_raw"); r = y.pop("review")
         y["news"] = [dict(date=d, title=t, url=u, src=s, read=rd, impact=IMP.get(i, "neu")) for d, t, u, s, rd, i in news][:8]
+        ir = IR.get(code)
+        if ir:  # IR 분석(scripts/logistics/ir_notes.py): 성장전략·달성 가능성, 과거 IR 대비 변화, 교차검증
+            y["ir"] = {"docs": ir["docs"], "verdict": ir["verdict"], "changes": ir["changes"],
+                       "strategy": [dict(h=a, claim=b, feas=c, why=d) for a, b, c, d in ir["strategy"]],
+                       "cross": [dict(peer=a, claim=b, verdict=c, read=d) for a, b, c, d in ir["cross"]]}
         deep[code] = y
         dp = os.path.join(ROOT, f"raw/logistics/dart_docs/{code}.json")
         docs = json.load(open(dp, encoding="utf-8")) if os.path.exists(dp) else {}
