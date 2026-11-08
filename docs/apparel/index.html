@@ -281,7 +281,6 @@ async function loadAll(){
 
 /* ---------------- 산업 ---------------- */
 const ys=(arr,i,lag=12)=>{const v=yoy(arr[i],arr[i-lag]);return typeof v==='number'?v:null};
-const ys=(arr,i,lag=12)=>{const v=yoy(arr[i],arr[i-lag]);return typeof v==='number'?v:null};
 const ORD=['편직제 의류(니트·티셔츠)','비편직 의류(우븐·아우터)','신발','가방·지갑'];
 function renderKPIs(){
   const cu=D.customs_exports, ne=D.news_exports, pi=D.production_index, rt=D.retail_index, on=D.online_fashion;
