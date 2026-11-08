@@ -53,10 +53,17 @@ for c in codes:
     open(f"{RAW}/irgo/{c}.html", "w", encoding="utf-8").write(h)
     its = items(h); print(c, "자료", len(its))
     prev = {i["id"]: i for i in db["companies"].get(c, [])}
+    # 최근 N건 + 과거 비교용으로 직전 3개 연도 각각에서 가장 늦은 자료 1건
+    pick = set(range(min(a.pdf, len(its))))
+    if its:
+        y0 = int(its[0]["date"][:4] or 0)
+        for y in (y0 - 1, y0 - 2, y0 - 3):
+            k = next((n for n, i in enumerate(its) if i["date"].startswith(str(y))), None)
+            if k is not None: pick.add(k)
     for n, it in enumerate(its):
         if it["id"] in prev and prev[it["id"]].get("pdf"):
             it.update({k: prev[it["id"]][k] for k in ("pdf", "text", "kb", "pages") if k in prev[it["id"]]}); continue
-        if n >= a.pdf: continue
+        if n not in pick: continue
         try:
             d = get(it["page"]); time.sleep(0.7)
         except Exception as e:
@@ -82,7 +89,7 @@ for c in codes:
             print("  PDF", it["date"], it["title"][:30], it["kb"], "KB"); break
         else:
             print("  PDF 링크 없음", it["page"])
-    db["companies"][c] = its[:30]
+    db["companies"][c] = [i for n, i in enumerate(its) if n < 30 or i.get("pdf")]
     time.sleep(1)
 if not a.probe:
     db.update({"source": "IRGO (m.irgo.co.kr) · 상장사 IR 자료", "fetched": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime())})
