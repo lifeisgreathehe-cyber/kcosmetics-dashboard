@@ -150,6 +150,14 @@ def main(industry="cosmetics"):
         if hb:
             rec["hist"] = hb
         if semi_cyc:
+            if a and a.get("E1") is None and not a.get("skip"):
+                # 회사별 사이클 판단(cyc_pos·g·r·c·note)은 사람이 정하고, 정상 이익만 과거 실적(cycle_base)에서 자동으로
+                # E1_mult: 사이클 평균 대비 조정 배율(구조 변화 반영), DART 실적이 없으면 아직 계산하지 않는다
+                if hb and hb["norm_ni"] > 0:
+                    a = dict(dft or {}, **a, E1=round(hb["norm_ni"] / 100 * a.get("E1_mult", 1.0)))
+                    rec["auto_E1"] = True
+                else:
+                    a = None
             if not a and dft and hb and hb["norm_ni"] > 0:
                 a = dict(dft, E1=round(hb["norm_ni"] / 100))
                 rec["auto"] = True

@@ -49,11 +49,18 @@ jobs:
           KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: python scripts/update.py --industry battery
+      - name: 물류·운송 데이터 수집
+        timeout-minutes: 30
+        continue-on-error: true
+        env:
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: python scripts/update.py --industry logistics
       - name: 변경분 커밋
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/data docs/semi/data raw/semi docs/chem/data raw/chem docs/battery/data raw/battery
+          git add docs/data docs/semi/data raw/semi docs/chem/data raw/chem docs/battery/data raw/battery docs/logistics/data
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
