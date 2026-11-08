@@ -531,7 +531,7 @@ function renderIR(c){
     h+=`<p style="margin-top:8px"><b>종합 판단</b> ${A.verdict}</p>`;
     if(A.docs.length) h+=`<p class="sub">읽은 자료: ${A.docs.map(d=>`${d.date} ${lk(d.url,d.title)}`).join(' · ')} · 분석 기준일 ${A.asof}</p>`;
     h+=`<p class="src">${D.ir_analysis.note}</p>`;
-  } else h+=`<p class="sub">IR 해석은 원문이 수집되는 대로 회사별로 추가하고 있어요.</p>`;
+  } else { const ly=latest?+latest.date.slice(0,4):0; h+= !L.length?`<p>KIND·IRGO에 올라온 IR 자료(실적 발표·기업설명회 자료)를 찾지 못했어요. 투자자 소통이 적은 회사라는 신호이고, 분석은 DART 사업보고서와 뉴스 기준이에요.</p>`: ly&&ly<2025?`<p>마지막 IR 자료가 ${latest.date}로 오래됐어요. 최근 성장전략은 IR이 아니라 DART 사업보고서와 뉴스로 판단했고, 오래된 자료는 과거 전략을 확인하는 용도로만 링크했어요.</p>`:`<p class="sub">최근 IR 원문이 수집돼 있어요. 해석은 순서대로 추가하고 있어요.</p>`; }
   const more=L.filter(i=>i!==latest).slice(0,12);
   if(more.length) h+=`<details class="fd"><summary>지난 IR 자료 원문 (${more.length}건)</summary><ul>${more.map(i=>`<li><span class="sub">${i.date}</span> ${lk(i.pdf||i.page,tt(i.title))}${i.pdf?' <span class="sub">PDF</span>':''}</li>`).join('')}</ul></details>`;
   el.innerHTML=h;
