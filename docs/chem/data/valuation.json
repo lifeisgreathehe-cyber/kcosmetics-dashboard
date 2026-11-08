@@ -27,10 +27,10 @@
     "trend_g": 8.8
    },
    "auto": true,
-   "price": 115300,
-   "price_date": "2026-11-05 23:58",
+   "price": 109900,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 19491547,
+   "mcap": 18578673,
    "shares": 169050707,
    "equity": 26190732,
    "equity_source": "DART 2026Q2",
@@ -38,14 +38,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.5,
-   "pbr": 0.74,
+   "pbr": 0.71,
    "dcf": {
     "E1": 320100,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 60.9,
-    "norm_per": 60.9,
+    "fwd_per": 58.0,
+    "norm_per": 58.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -66,7 +66,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 50.4,
+    "implied_g": 49.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -75,6 +75,22 @@
      "excess_value": 0
     },
     "net_cash_added": -23981905
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 5117075,
+    "norm": 320060,
+    "ttm_ni": -1167289,
+    "oneoff": true,
+    "E": 2718568,
+    "per_share": 113516,
+    "bear": 90967,
+    "bull": 135585,
+    "upside": 3.3,
+    "pct": 58,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.3
    }
   },
   "010950": {
@@ -100,25 +116,25 @@
     "trend_g": 8.7
    },
    "auto": true,
-   "price": 108500,
-   "price_date": "2026-11-05 23:58",
+   "price": 106200,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 12487720,
+   "mcap": 12218802,
    "shares": 116420639,
    "equity": 10085597,
    "equity_source": "DART 2026Q2",
    "net_cash": -7525629,
    "dividend_yield": null,
-   "per": 8.2,
+   "per": 8.0,
    "roe": 15.1,
-   "pbr": 1.24,
+   "pbr": 1.21,
    "dcf": {
     "E1": 999700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 12.5,
-    "norm_per": 12.5,
+    "fwd_per": 12.2,
+    "norm_per": 12.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -130,16 +146,16 @@
       "g": 2.0,
       "value": 593519,
       "per_share": 5098,
-      "upside": -95.2
+      "upside": -95.1
      },
      "bull": {
       "g": 6.0,
       "value": 2172041,
       "per_share": 18657,
-      "upside": -82.6
+      "upside": -82.2
      }
     },
-    "implied_g": 22.5,
+    "implied_g": 22.2,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -148,6 +164,22 @@
      "excess_value": 0
     },
     "net_cash_added": -7525629
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 1852856,
+    "norm": 999691,
+    "ttm_ni": 1523867,
+    "oneoff": false,
+    "E": 1426273,
+    "per_share": 86478,
+    "bear": 69300,
+    "bull": 103291,
+    "upside": -17.6,
+    "pct": 45,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.2
    }
   },
   "078930": {
@@ -174,7 +206,7 @@
    },
    "auto": true,
    "price": 77300,
-   "price_date": "2026-11-05 23:58",
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 7180822,
    "shares": 92895495,
@@ -221,6 +253,22 @@
      "excess_value": 0
     },
     "net_cash_added": -6699852
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 2971368,
+    "norm": 1349580,
+    "ttm_ni": 2336996,
+    "oneoff": false,
+    "E": 2160474,
+    "per_share": 164167,
+    "bear": 131557,
+    "bull": 196085,
+    "upside": 112.4,
+    "pct": 92,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.1
    }
   },
   "267250": {
@@ -246,43 +294,43 @@
     "trend_g": 21.4
    },
    "auto": true,
-   "price": 130000,
-   "price_date": "2026-11-05 23:58",
+   "price": 124600,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 9186896,
+   "mcap": 8805286,
    "shares": 70668430,
    "equity": 12228470,
    "equity_source": "DART 2026Q2",
    "net_cash": 16791659,
    "dividend_yield": null,
-   "per": 3.4,
+   "per": 3.2,
    "roe": 22.4,
-   "pbr": 0.75,
+   "pbr": 0.72,
    "dcf": {
     "E1": 733000,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 12.5,
-    "norm_per": 12.5,
+    "fwd_per": 12.0,
+    "norm_per": 12.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 19038291,
       "per_share": 269403,
-      "upside": 107.2
+      "upside": 116.2
      },
      "base": {
       "g": 2.0,
       "value": 19595189,
       "per_share": 277283,
-      "upside": 113.3
+      "upside": 122.5
      },
      "bull": {
       "g": 6.0,
       "value": 20140251,
       "per_share": 284996,
-      "upside": 119.2
+      "upside": 128.7
      }
     },
     "implied_g": -30.0,
@@ -294,6 +342,22 @@
      "excess_value": 0
     },
     "net_cash_added": 16791659
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 5514457,
+    "norm": 732982,
+    "ttm_ni": 2734602,
+    "oneoff": false,
+    "E": 3123720,
+    "per_share": 312017,
+    "bear": 250038,
+    "bull": 372680,
+    "upside": 150.4,
+    "pct": 98,
+    "tier": "싼 ⅓",
+    "exp_ex": 7.3
    }
   },
   "002960": {
@@ -319,46 +383,46 @@
     "trend_g": 6.7
    },
    "auto": true,
-   "price": 517000,
-   "price_date": "2026-11-05 23:58",
+   "price": 519000,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 672100,
+   "mcap": 674700,
    "shares": 1300000,
    "equity": 122965,
    "equity_source": "DART 2026Q2",
    "net_cash": 29679,
    "dividend_yield": null,
-   "per": 13.1,
+   "per": 13.2,
    "roe": 41.7,
-   "pbr": 5.47,
+   "pbr": 5.49,
    "dcf": {
     "E1": 39900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 16.8,
-    "norm_per": 16.8,
+    "fwd_per": 16.9,
+    "norm_per": 16.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 252021,
       "per_share": 193863,
-      "upside": -62.5
+      "upside": -62.6
      },
      "base": {
       "g": 2.0,
       "value": 307136,
       "per_share": 236259,
-      "upside": -54.3
+      "upside": -54.5
      },
      "bull": {
       "g": 6.0,
       "value": 361079,
       "per_share": 277753,
-      "upside": -46.3
+      "upside": -46.5
      }
     },
-    "implied_g": 21.1,
+    "implied_g": 21.2,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -367,6 +431,22 @@
      "excess_value": 0
     },
     "net_cash_added": 29679
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 47230,
+    "norm": 39885,
+    "ttm_ni": 51234,
+    "oneoff": false,
+    "E": 43558,
+    "per_share": 236511,
+    "bear": 189530,
+    "bull": 282494,
+    "upside": -54.4,
+    "pct": 17,
+    "tier": "비싼 ⅓",
+    "exp_ex": -4.0
    }
   },
   "004090": {
@@ -392,25 +472,25 @@
     "trend_g": 7.1
    },
    "auto": true,
-   "price": 10490,
-   "price_date": "2026-11-05 23:58",
+   "price": 10320,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 133161,
+   "mcap": 131003,
    "shares": 12694115,
    "equity": 215707,
    "equity_source": "DART 2026Q2",
    "net_cash": -125015,
    "dividend_yield": null,
-   "per": 9.0,
+   "per": 8.9,
    "roe": 6.9,
-   "pbr": 0.62,
+   "pbr": 0.61,
    "dcf": {
     "E1": 12400,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 10.7,
-    "norm_per": 10.7,
+    "fwd_per": 10.6,
+    "norm_per": 10.6,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -431,7 +511,7 @@
       "upside": -99.5
      }
     },
-    "implied_g": 22.4,
+    "implied_g": 22.2,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -440,6 +520,22 @@
      "excess_value": 0
     },
     "net_cash_added": -125015
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 16933,
+    "norm": 12408,
+    "ttm_ni": 14800,
+    "oneoff": false,
+    "E": 14671,
+    "per_share": 8158,
+    "bear": 6537,
+    "bull": 9744,
+    "upside": -21.0,
+    "pct": 40,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.5
    }
   },
   "014530": {
@@ -465,46 +561,46 @@
     "trend_g": 12.4
    },
    "auto": true,
-   "price": 3195,
-   "price_date": "2026-11-05 23:58",
+   "price": 3135,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 111408,
+   "mcap": 109316,
    "shares": 34869420,
    "equity": 210132,
    "equity_source": "DART 2026Q2",
    "net_cash": 18742,
    "dividend_yield": null,
-   "per": 9.9,
+   "per": 9.8,
    "roe": 5.3,
-   "pbr": 0.53,
+   "pbr": 0.52,
    "dcf": {
     "E1": 21900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 5.1,
-    "norm_per": 5.1,
+    "fwd_per": 5.0,
+    "norm_per": 5.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 140502,
       "per_share": 4029,
-      "upside": 26.1
+      "upside": 28.5
      },
      "base": {
       "g": 2.0,
       "value": 170684,
       "per_share": 4895,
-      "upside": 53.2
+      "upside": 56.1
      },
      "bull": {
       "g": 6.0,
       "value": 200225,
       "per_share": 5742,
-      "upside": 79.7
+      "upside": 83.2
      }
     },
-    "implied_g": -9.2,
+    "implied_g": -9.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -513,6 +609,22 @@
      "excess_value": 0
     },
     "net_cash_added": 18742
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 15344,
+    "norm": 21878,
+    "ttm_ni": 11206,
+    "oneoff": false,
+    "E": 18611,
+    "per_share": 3768,
+    "bear": 3019,
+    "bull": 4500,
+    "upside": 20.2,
+    "pct": 70,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.3
    }
   },
   "003650": {
@@ -538,10 +650,10 @@
     "trend_g": 4.8
    },
    "auto": true,
-   "price": 111600,
-   "price_date": "2026-11-05 23:58",
+   "price": 113100,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 168848,
+   "mcap": 171118,
    "shares": 1512979,
    "equity": 575750,
    "equity_source": "DART 2026Q2",
@@ -549,7 +661,7 @@
    "dividend_yield": null,
    "per": 1.4,
    "roe": 21.4,
-   "pbr": 0.29,
+   "pbr": 0.3,
    "dcf": {
     "E1": 36300,
     "r": 10.5,
@@ -562,19 +674,19 @@
       "g": -3.0,
       "value": 507292,
       "per_share": 335294,
-      "upside": 200.4
+      "upside": 196.5
      },
      "base": {
       "g": 2.0,
       "value": 548643,
       "per_share": 362624,
-      "upside": 224.9
+      "upside": 220.6
      },
      "bull": {
       "g": 6.0,
       "value": 589115,
       "per_share": 389374,
-      "upside": 248.9
+      "upside": 244.3
      }
     },
     "implied_g": -30.0,
@@ -586,6 +698,22 @@
      "excess_value": 0
     },
     "net_cash_added": 340475
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 28818,
+    "norm": 36332,
+    "ttm_ni": 123121,
+    "oneoff": true,
+    "E": 32575,
+    "per_share": 151980,
+    "bear": 121790,
+    "bull": 181527,
+    "upside": 34.4,
+    "pct": 77,
+    "tier": "싼 ⅓",
+    "exp_ex": 3.0
    }
   },
   "024060": {
@@ -611,16 +739,16 @@
     "trend_g": -3.7
    },
    "auto": true,
-   "price": 10080,
-   "price_date": "2026-11-05 23:58",
+   "price": 10060,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 151200,
+   "mcap": 150900,
    "shares": 15000000,
    "equity": 82608,
    "equity_source": "DART 2026Q2",
    "net_cash": -3125,
    "dividend_yield": null,
-   "per": 364.3,
+   "per": 363.6,
    "roe": 0.5,
    "pbr": 1.83,
    "dcf": {
@@ -628,8 +756,8 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 84.0,
-    "norm_per": 84.0,
+    "fwd_per": 83.8,
+    "norm_per": 83.8,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -659,6 +787,22 @@
      "excess_value": 0
     },
     "net_cash_added": -3125
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 151,
+    "norm": 1766,
+    "ttm_ni": 415,
+    "oneoff": false,
+    "E": 959,
+    "per_share": 451,
+    "bear": 361,
+    "bull": 539,
+    "upside": -95.5,
+    "pct": 4,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
    }
   },
   "000440": {
@@ -684,10 +828,10 @@
     "trend_g": -5.2
    },
    "auto": true,
-   "price": 10260,
-   "price_date": "2026-11-05 23:58",
+   "price": 10130,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 45491,
+   "mcap": 44915,
    "shares": 4433835,
    "equity": 49451,
    "equity_source": "DART 2026Q2",
@@ -695,32 +839,32 @@
    "dividend_yield": null,
    "per": null,
    "roe": -2.0,
-   "pbr": 0.92,
+   "pbr": 0.91,
    "dcf": {
     "E1": 300,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 151.6,
-    "norm_per": 151.6,
+    "fwd_per": 149.7,
+    "norm_per": 149.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 5290,
       "per_share": 1193,
-      "upside": -88.4
+      "upside": -88.2
      },
      "base": {
       "g": 2.0,
       "value": 5597,
       "per_share": 1262,
-      "upside": -87.7
+      "upside": -87.5
      },
      "bull": {
       "g": 6.0,
       "value": 5897,
       "per_share": 1330,
-      "upside": -87.0
+      "upside": -86.9
      }
     },
     "implied_g": null,
@@ -732,6 +876,14 @@
      "excess_value": 0
     },
     "net_cash_added": 4051
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -1155,
+    "norm": 260,
+    "ttm_ni": -1006,
+    "oneoff": false
    }
   },
   "128820": {
@@ -756,10 +908,10 @@
     "norm_ni": -26570,
     "trend_g": 8.8
    },
-   "price": 3795,
-   "price_date": "2026-11-05 23:58",
+   "price": 3715,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 146861,
+   "mcap": 143766,
    "shares": 38698662,
    "equity": 628410,
    "equity_source": "DART 2026Q2",
@@ -767,7 +919,15 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.6,
-   "pbr": 0.23
+   "pbr": 0.23,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 17132,
+    "norm": -26570,
+    "ttm_ni": -48035,
+    "oneoff": true
+   }
   },
   "018670": {
    "name": "SK가스",
@@ -792,46 +952,46 @@
     "trend_g": 4.3
    },
    "auto": true,
-   "price": 225000,
-   "price_date": "2026-11-05 23:58",
+   "price": 230500,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2029960,
+   "mcap": 2079582,
    "shares": 9022046,
    "equity": 3788569,
    "equity_source": "DART 2026Q2",
    "net_cash": 275012,
    "dividend_yield": null,
-   "per": 6.3,
+   "per": 6.5,
    "roe": 8.4,
-   "pbr": 0.54,
+   "pbr": 0.55,
    "dcf": {
     "E1": 245700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 8.3,
-    "norm_per": 8.3,
+    "fwd_per": 8.5,
+    "norm_per": 8.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 1633737,
       "per_share": 181083,
-      "upside": -19.5
+      "upside": -21.4
      },
      "base": {
       "g": 2.0,
       "value": 1970540,
       "per_share": 218414,
-      "upside": -2.9
+      "upside": -5.2
      },
      "bull": {
       "g": 6.0,
       "value": 2300184,
       "per_share": 254951,
-      "upside": 13.3
+      "upside": 10.6
      }
     },
-    "implied_g": 2.8,
+    "implied_g": 3.4,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -840,6 +1000,22 @@
      "excess_value": 0
     },
     "net_cash_added": 275012
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 313134,
+    "norm": 245666,
+    "ttm_ni": 319731,
+    "oneoff": false,
+    "E": 279400,
+    "per_share": 218602,
+    "bear": 175178,
+    "bull": 261102,
+    "upside": -5.2,
+    "pct": 57,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.7
    }
   },
   "017940": {
@@ -865,16 +1041,16 @@
     "trend_g": 13.7
    },
    "auto": true,
-   "price": 83000,
-   "price_date": "2026-11-05 23:58",
+   "price": 80700,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 479885,
+   "mcap": 466587,
    "shares": 5781751,
    "equity": 2155069,
    "equity_source": "DART 2026Q2",
    "net_cash": -392839,
    "dividend_yield": null,
-   "per": 2.7,
+   "per": 2.6,
    "roe": 8.2,
    "pbr": 0.22,
    "dcf": {
@@ -882,29 +1058,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 3.2,
-    "norm_per": 3.2,
+    "fwd_per": 3.1,
+    "norm_per": 3.1,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 493313,
       "per_share": 85322,
-      "upside": 2.8
+      "upside": 5.7
      },
      "base": {
       "g": 2.0,
       "value": 712974,
       "per_share": 123314,
-      "upside": 48.6
+      "upside": 52.8
      },
      "bull": {
       "g": 6.0,
       "value": 927965,
       "per_share": 160499,
-      "upside": 93.4
+      "upside": 98.9
      }
     },
-    "implied_g": -3.3,
+    "implied_g": -3.7,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -913,6 +1089,22 @@
      "excess_value": 0
     },
     "net_cash_added": -392839
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 62306,
+    "norm": 148799,
+    "ttm_ni": 176168,
+    "oneoff": true,
+    "E": 105552,
+    "per_share": 128867,
+    "bear": 103269,
+    "bull": 153921,
+    "upside": 59.7,
+    "pct": 87,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.2
    }
   },
   "051910": {
@@ -938,10 +1130,10 @@
     "trend_g": 10.0
    },
    "auto": true,
-   "price": 246000,
-   "price_date": "2026-11-05 23:58",
+   "price": 233500,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 18203905,
+   "mcap": 17290002,
    "shares": 78275100,
    "equity": 35430227,
    "equity_source": "DART 2026Q2",
@@ -949,14 +1141,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.3,
-   "pbr": 0.51,
+   "pbr": 0.49,
    "dcf": {
     "E1": 1872700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 9.7,
-    "norm_per": 9.7,
+    "fwd_per": 9.2,
+    "norm_per": 9.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -977,7 +1169,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 24.8,
+    "implied_g": 24.4,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -986,6 +1178,22 @@
      "excess_value": 0
     },
     "net_cash_added": -28879386
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 636751,
+    "norm": 1872662,
+    "ttm_ni": -1512310,
+    "oneoff": true,
+    "E": 1254707,
+    "per_share": 113149,
+    "bear": 90673,
+    "bull": 135147,
+    "upside": -48.8,
+    "pct": 21,
+    "tier": "비싼 ⅓",
+    "exp_ex": -3.2
    }
   },
   "011170": {
@@ -1011,10 +1219,10 @@
     "trend_g": 4.3
    },
    "auto": true,
-   "price": 50200,
-   "price_date": "2026-11-05 23:58",
+   "price": 46800,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2116791,
+   "mcap": 1973422,
    "shares": 42167147,
    "equity": 13331538,
    "equity_source": "DART 2026Q2",
@@ -1022,14 +1230,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -8.8,
-   "pbr": 0.16,
+   "pbr": 0.15,
    "dcf": {
     "E1": 743400,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 2.8,
-    "norm_per": 2.8,
+    "fwd_per": 2.7,
+    "norm_per": 2.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -1050,7 +1258,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 13.2,
+    "implied_g": 12.9,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1059,6 +1267,22 @@
      "excess_value": 0
     },
     "net_cash_added": -8484961
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -735631,
+    "norm": 743401,
+    "ttm_ni": -1172981,
+    "oneoff": false,
+    "E": 3885,
+    "per_share": 650,
+    "bear": 521,
+    "bull": 777,
+    "upside": -98.6,
+    "pct": 2,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
    }
   },
   "009830": {
@@ -1084,10 +1308,10 @@
     "trend_g": 5.7
    },
    "auto": true,
-   "price": 27100,
-   "price_date": "2026-11-05 23:58",
+   "price": 25800,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 4630401,
+   "mcap": 4410033,
    "shares": 171999671,
    "equity": 9708962,
    "equity_source": "DART 2026Q2",
@@ -1095,14 +1319,14 @@
    "dividend_yield": null,
    "per": null,
    "roe": -1.7,
-   "pbr": 0.48,
+   "pbr": 0.45,
    "dcf": {
     "E1": 234900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 19.7,
-    "norm_per": 19.7,
+    "fwd_per": 18.8,
+    "norm_per": 18.8,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -1123,7 +1347,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 39.4,
+    "implied_g": 39.1,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1132,6 +1356,22 @@
      "excess_value": 0
     },
     "net_cash_added": -12260299
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -123090,
+    "norm": 234941,
+    "ttm_ni": -169743,
+    "oneoff": false,
+    "E": 55926,
+    "per_share": 2295,
+    "bear": 1839,
+    "bull": 2741,
+    "upside": -91.0,
+    "pct": 6,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
    }
   },
   "011780": {
@@ -1157,46 +1397,46 @@
     "trend_g": 5.8
    },
    "auto": true,
-   "price": 111800,
-   "price_date": "2026-11-05 23:58",
+   "price": 93400,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2839978,
+   "mcap": 2372576,
    "shares": 25402312,
    "equity": 6743479,
    "equity_source": "DART 2026Q2",
    "net_cash": -90425,
    "dividend_yield": null,
-   "per": 5.6,
+   "per": 4.7,
    "roe": 7.5,
-   "pbr": 0.42,
+   "pbr": 0.35,
    "dcf": {
     "E1": 588500,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 4.8,
-    "norm_per": 4.8,
+    "fwd_per": 4.0,
+    "norm_per": 4.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 3248741,
       "per_share": 127892,
-      "upside": 14.4
+      "upside": 36.9
      },
      "base": {
       "g": 2.0,
       "value": 4076459,
       "per_share": 160476,
-      "upside": 43.5
+      "upside": 71.8
      },
      "bull": {
       "g": 6.0,
       "value": 4886583,
       "per_share": 192368,
-      "upside": 72.1
+      "upside": 106.0
      }
     },
-    "implied_g": -6.0,
+    "implied_g": -10.0,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1205,6 +1445,22 @@
      "excess_value": 0
     },
     "net_cash_added": -90425
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 441381,
+    "norm": 588451,
+    "ttm_ni": 504936,
+    "oneoff": false,
+    "E": 514916,
+    "per_share": 143085,
+    "bear": 114663,
+    "bull": 170904,
+    "upside": 53.2,
+    "pct": 83,
+    "tier": "싼 ⅓",
+    "exp_ex": 3.9
    }
   },
   "006650": {
@@ -1230,46 +1486,46 @@
     "trend_g": 7.0
    },
    "auto": true,
-   "price": 89000,
-   "price_date": "2026-11-05 23:58",
+   "price": 84800,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 549673,
+   "mcap": 523733,
    "shares": 6176100,
    "equity": 1876122,
    "equity_source": "DART 2026Q2",
    "net_cash": -49060,
    "dividend_yield": null,
-   "per": 7.5,
+   "per": 7.1,
    "roe": 3.9,
-   "pbr": 0.29,
+   "pbr": 0.28,
    "dcf": {
     "E1": 159200,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 3.5,
-    "norm_per": 3.5,
+    "fwd_per": 3.3,
+    "norm_per": 3.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 857028,
       "per_share": 138765,
-      "upside": 55.9
+      "upside": 63.6
      },
      "base": {
       "g": 2.0,
       "value": 1081631,
       "per_share": 175132,
-      "upside": 96.8
+      "upside": 106.5
      },
      "bull": {
       "g": 6.0,
       "value": 1301459,
       "per_share": 210725,
-      "upside": 136.8
+      "upside": 148.5
      }
     },
-    "implied_g": -12.5,
+    "implied_g": -13.6,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1278,6 +1534,22 @@
      "excess_value": 0
     },
     "net_cash_added": -49060
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 90206,
+    "norm": 159155,
+    "ttm_ni": 73688,
+    "oneoff": false,
+    "E": 124680,
+    "per_share": 142500,
+    "bear": 114194,
+    "bull": 170205,
+    "upside": 68.0,
+    "pct": 89,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.5
    }
   },
   "298000": {
@@ -1302,18 +1574,26 @@
     "norm_ni": -76273,
     "trend_g": 9.5
    },
-   "price": 34950,
-   "price_date": "2026-11-05 23:58",
+   "price": 33300,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 131684,
+   "mcap": 125467,
    "shares": 3767780,
    "equity": 703387,
    "equity_source": "DART 2026Q2",
    "net_cash": -1416029,
    "dividend_yield": null,
-   "per": 4.8,
+   "per": 4.5,
    "roe": 3.9,
-   "pbr": 0.19
+   "pbr": 0.18,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 41732,
+    "norm": -76273,
+    "ttm_ni": 27581,
+    "oneoff": false
+   }
   },
   "003240": {
    "name": "태광산업",
@@ -1338,16 +1618,16 @@
     "trend_g": -4.2
    },
    "auto": true,
-   "price": 862000,
-   "price_date": "2026-11-05 23:58",
+   "price": 844000,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 725486,
+   "mcap": 710337,
    "shares": 841631,
    "equity": 4250730,
    "equity_source": "DART 2026Q2",
    "net_cash": 805417,
    "dividend_yield": null,
-   "per": 6.1,
+   "per": 6.0,
    "roe": 2.8,
    "pbr": 0.17,
    "dcf": {
@@ -1355,26 +1635,26 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 5.6,
-    "norm_per": 5.6,
+    "fwd_per": 5.5,
+    "norm_per": 5.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 1442874,
       "per_share": 1714378,
-      "upside": 98.9
+      "upside": 103.1
      },
      "base": {
       "g": 2.0,
       "value": 1600888,
       "per_share": 1902125,
-      "upside": 120.7
+      "upside": 125.4
      },
      "bull": {
       "g": 6.0,
       "value": 1755543,
       "per_share": 2085882,
-      "upside": 142.0
+      "upside": 147.1
      }
     },
     "implied_g": -30.0,
@@ -1386,6 +1666,22 @@
      "excess_value": 0
     },
     "net_cash_added": 805417
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 46752,
+    "norm": 128821,
+    "ttm_ni": 118699,
+    "oneoff": false,
+    "E": 87787,
+    "per_share": 736274,
+    "bear": 590019,
+    "bull": 879421,
+    "upside": -12.8,
+    "pct": 53,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.2
    }
   },
   "010060": {
@@ -1411,46 +1707,46 @@
     "trend_g": 2.2
    },
    "auto": true,
-   "price": 206500,
-   "price_date": "2026-11-05 23:58",
+   "price": 198800,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 3840721,
+   "mcap": 3697507,
    "shares": 18599132,
    "equity": 4092603,
    "equity_source": "DART 2026Q2",
    "net_cash": 892800,
    "dividend_yield": null,
-   "per": 102.8,
+   "per": 98.9,
    "roe": 0.9,
-   "pbr": 0.94,
+   "pbr": 0.9,
    "dcf": {
     "E1": 195000,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 19.7,
-    "norm_per": 19.7,
+    "fwd_per": 19.0,
+    "norm_per": 19.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 1894841,
       "per_share": 101878,
-      "upside": -50.7
+      "upside": -48.8
      },
      "base": {
       "g": 2.0,
       "value": 2143228,
       "per_share": 115233,
-      "upside": -44.2
+      "upside": -42.0
      },
      "bull": {
       "g": 6.0,
       "value": 2386336,
       "per_share": 128304,
-      "upside": -37.9
+      "upside": -35.5
      }
     },
-    "implied_g": 21.5,
+    "implied_g": 20.3,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1459,6 +1755,22 @@
      "excess_value": 0
     },
     "net_cash_added": 892800
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 54936,
+    "norm": 195049,
+    "ttm_ni": 37369,
+    "oneoff": false,
+    "E": 124992,
+    "per_share": 47438,
+    "bear": 38015,
+    "bull": 56660,
+    "upside": -76.1,
+    "pct": 9,
+    "tier": "비싼 ⅓",
+    "exp_ex": -7.9
    }
   },
   "456040": {
@@ -1484,46 +1796,46 @@
     "trend_g": 16.4
    },
    "auto": true,
-   "price": 55800,
-   "price_date": "2026-11-05 23:58",
+   "price": 53200,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 494298,
+   "mcap": 471267,
    "shares": 8858395,
    "equity": 1180454,
    "equity_source": "DART 2026Q2",
    "net_cash": 272677,
    "dividend_yield": null,
-   "per": 57.2,
+   "per": 54.5,
    "roe": 0.7,
-   "pbr": 0.42,
+   "pbr": 0.4,
    "dcf": {
     "E1": 38300,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 12.9,
-    "norm_per": 12.9,
+    "fwd_per": 12.3,
+    "norm_per": 12.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 458478,
       "per_share": 51756,
-      "upside": -7.2
+      "upside": -2.7
      },
      "base": {
       "g": 2.0,
       "value": 504534,
       "per_share": 56956,
-      "upside": 2.1
+      "upside": 7.1
      },
      "bull": {
       "g": 6.0,
       "value": 549612,
       "per_share": 62044,
-      "upside": 11.2
+      "upside": 16.6
      }
     },
-    "implied_g": 1.0,
+    "implied_g": -1.5,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1532,6 +1844,22 @@
      "excess_value": 0
     },
     "net_cash_added": 272677
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 49571,
+    "norm": 38287,
+    "ttm_ni": 8647,
+    "oneoff": true,
+    "E": 43929,
+    "per_share": 35005,
+    "bear": 28051,
+    "bull": 41810,
+    "upside": -34.2,
+    "pct": 28,
+    "tier": "비싼 ⅓",
+    "exp_ex": -1.6
    }
   },
   "285130": {
@@ -1557,46 +1885,46 @@
     "trend_g": 25.6
    },
    "auto": true,
-   "price": 44200,
-   "price_date": "2026-11-05 23:58",
+   "price": 43450,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 763283,
+   "mcap": 750332,
    "shares": 17268857,
    "equity": 2465326,
    "equity_source": "DART 2026Q2",
    "net_cash": -145000,
    "dividend_yield": null,
-   "per": 103.8,
+   "per": 102.1,
    "roe": 0.3,
-   "pbr": 0.31,
+   "pbr": 0.3,
    "dcf": {
     "E1": 115000,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 6.6,
-    "norm_per": 6.6,
+    "fwd_per": 6.5,
+    "norm_per": 6.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 521919,
       "per_share": 30223,
-      "upside": -31.6
+      "upside": -30.4
      },
      "base": {
       "g": 2.0,
       "value": 687235,
       "per_share": 39796,
-      "upside": -10.0
+      "upside": -8.4
      },
      "bull": {
       "g": 6.0,
       "value": 849038,
       "per_share": 49166,
-      "upside": 11.2
+      "upside": 13.2
      }
     },
-    "implied_g": 4.0,
+    "implied_g": 3.6,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1605,6 +1933,22 @@
      "excess_value": 0
     },
     "net_cash_added": -145000
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -250,
+    "norm": 114957,
+    "ttm_ni": 7352,
+    "oneoff": false,
+    "E": 57354,
+    "per_share": 23444,
+    "bear": 18787,
+    "bull": 28002,
+    "upside": -46.0,
+    "pct": 25,
+    "tier": "비싼 ⅓",
+    "exp_ex": -2.9
    }
   },
   "004000": {
@@ -1630,46 +1974,46 @@
     "trend_g": 6.1
    },
    "auto": true,
-   "price": 35000,
-   "price_date": "2026-11-05 23:58",
+   "price": 33700,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 891450,
+   "mcap": 858339,
    "shares": 25470000,
    "equity": 2536780,
    "equity_source": "DART 2026Q2",
    "net_cash": 506987,
    "dividend_yield": null,
-   "per": 4.4,
+   "per": 4.3,
    "roe": 7.9,
-   "pbr": 0.35,
+   "pbr": 0.34,
    "dcf": {
     "E1": 195200,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 4.6,
-    "norm_per": 4.6,
+    "fwd_per": 4.4,
+    "norm_per": 4.4,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 1553807,
       "per_share": 61005,
-      "upside": 74.3
+      "upside": 81.0
      },
      "base": {
       "g": 2.0,
       "value": 1813295,
       "per_share": 71193,
-      "upside": 103.4
+      "upside": 111.3
      },
      "bull": {
       "g": 6.0,
       "value": 2067267,
       "per_share": 81165,
-      "upside": 131.9
+      "upside": 140.8
      }
     },
-    "implied_g": -27.3,
+    "implied_g": -29.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1678,6 +2022,22 @@
      "excess_value": 0
     },
     "net_cash_added": 506987
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 155682,
+    "norm": 195171,
+    "ttm_ni": 201039,
+    "oneoff": false,
+    "E": 175427,
+    "per_share": 48618,
+    "bear": 38961,
+    "bull": 58071,
+    "upside": 44.3,
+    "pct": 81,
+    "tier": "싼 ⅓",
+    "exp_ex": 3.5
    }
   },
   "120110": {
@@ -1703,25 +2063,25 @@
     "trend_g": 1.2
    },
    "auto": true,
-   "price": 39750,
-   "price_date": "2026-11-05 23:58",
+   "price": 37400,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1252925,
+   "mcap": 1180231,
    "shares": 32700381,
    "equity": 4308506,
    "equity_source": "DART 2026Q2",
    "net_cash": -2355663,
    "dividend_yield": null,
-   "per": 9.2,
+   "per": 8.7,
    "roe": 3.2,
-   "pbr": 0.29,
+   "pbr": 0.27,
    "dcf": {
     "E1": 119200,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 10.5,
-    "norm_per": 10.5,
+    "fwd_per": 9.9,
+    "norm_per": 9.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -1742,7 +2102,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 27.7,
+    "implied_g": 27.2,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1751,6 +2111,22 @@
      "excess_value": 0
     },
     "net_cash_added": -2355663
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 144856,
+    "norm": 119211,
+    "ttm_ni": 135799,
+    "oneoff": false,
+    "E": 132033,
+    "per_share": 28501,
+    "bear": 22840,
+    "bull": 34042,
+    "upside": -21.0,
+    "pct": 38,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.5
    }
   },
   "298050": {
@@ -1776,25 +2152,25 @@
     "trend_g": 6.0
    },
    "auto": true,
-   "price": 151300,
-   "price_date": "2026-11-05 23:58",
+   "price": 148000,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 677816,
+   "mcap": 663032,
    "shares": 4479948,
    "equity": 900857,
    "equity_source": "DART 2026Q2",
    "net_cash": -2579268,
    "dividend_yield": null,
-   "per": 18.3,
+   "per": 17.9,
    "roe": 4.1,
-   "pbr": 0.75,
+   "pbr": 0.74,
    "dcf": {
     "E1": 23100,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 29.3,
-    "norm_per": 29.3,
+    "fwd_per": 28.7,
+    "norm_per": 28.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -1815,7 +2191,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 44.7,
+    "implied_g": 44.6,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1824,6 +2200,22 @@
      "excess_value": 0
     },
     "net_cash_added": -2579268
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 126036,
+    "norm": 23069,
+    "ttm_ni": 37107,
+    "oneoff": true,
+    "E": 74552,
+    "per_share": 117468,
+    "bear": 94134,
+    "bull": 140307,
+    "upside": -20.6,
+    "pct": 42,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.4
    }
   },
   "011790": {
@@ -1848,10 +2240,10 @@
     "norm_ni": -77347,
     "trend_g": -4.0
    },
-   "price": 69500,
-   "price_date": "2026-11-05 23:58",
+   "price": 65100,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 3374557,
+   "mcap": 3160916,
    "shares": 48554778,
    "equity": 1994280,
    "equity_source": "DART 2026Q2",
@@ -1859,7 +2251,15 @@
    "dividend_yield": null,
    "per": null,
    "roe": -40.4,
-   "pbr": 1.69
+   "pbr": 1.58,
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -481923,
+    "norm": -77347,
+    "ttm_ni": -805087,
+    "oneoff": false
+   }
   },
   "069260": {
    "name": "TKG휴켐스",
@@ -1884,46 +2284,46 @@
     "trend_g": 8.3
    },
    "auto": true,
-   "price": 15410,
-   "price_date": "2026-11-05 23:58",
+   "price": 15160,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 591295,
+   "mcap": 581702,
    "shares": 38370877,
    "equity": 939657,
    "equity_source": "DART 2026Q2",
    "net_cash": 322126,
    "dividend_yield": null,
-   "per": 9.2,
+   "per": 9.0,
    "roe": 6.9,
-   "pbr": 0.63,
+   "pbr": 0.62,
    "dcf": {
     "E1": 117700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 5.0,
-    "norm_per": 5.0,
+    "fwd_per": 4.9,
+    "norm_per": 4.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 951470,
       "per_share": 24797,
-      "upside": 60.9
+      "upside": 63.6
      },
      "base": {
       "g": 2.0,
       "value": 1107473,
       "per_share": 28862,
-      "upside": 87.3
+      "upside": 90.4
      },
      "bull": {
       "g": 6.0,
       "value": 1260160,
       "per_share": 32842,
-      "upside": 113.1
+      "upside": 116.6
      }
     },
-    "implied_g": -23.2,
+    "implied_g": -24.2,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -1932,6 +2332,22 @@
      "excess_value": 0
     },
     "net_cash_added": 322126
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 63057,
+    "norm": 117729,
+    "ttm_ni": 64479,
+    "oneoff": false,
+    "E": 90393,
+    "per_share": 16629,
+    "bear": 13326,
+    "bull": 19862,
+    "upside": 9.7,
+    "pct": 62,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.7
    }
   },
   "001390": {
@@ -1957,10 +2373,10 @@
     "trend_g": 31.2
    },
    "auto": true,
-   "price": 3670,
-   "price_date": "2026-11-05 23:58",
+   "price": 3585,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 242964,
+   "mcap": 237336,
    "shares": 66202640,
    "equity": 1049849,
    "equity_source": "DART 2026Q2",
@@ -1993,10 +2409,10 @@
       "g": 6.0,
       "value": 192255,
       "per_share": 2904,
-      "upside": -20.9
+      "upside": -19.0
      }
     },
-    "implied_g": 6.6,
+    "implied_g": 6.5,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2005,6 +2421,22 @@
      "excess_value": 0
     },
     "net_cash_added": -1670236
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 153835,
+    "norm": 187517,
+    "ttm_ni": 92582,
+    "oneoff": false,
+    "E": 170676,
+    "per_share": 18198,
+    "bear": 14583,
+    "bull": 21736,
+    "upside": 407.6,
+    "pct": 100,
+    "tier": "싼 ⅓",
+    "exp_ex": 12.3
    }
   },
   "004430": {
@@ -2030,16 +2462,16 @@
     "trend_g": 5.4
    },
    "auto": true,
-   "price": 10370,
-   "price_date": "2026-11-05 23:58",
+   "price": 10200,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 248880,
+   "mcap": 244800,
    "shares": 24000000,
    "equity": 818227,
    "equity_source": "DART 2026Q2",
    "net_cash": 141275,
    "dividend_yield": null,
-   "per": 5.3,
+   "per": 5.2,
    "roe": 5.7,
    "pbr": 0.3,
    "dcf": {
@@ -2047,29 +2479,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 4.4,
-    "norm_per": 4.4,
+    "fwd_per": 4.3,
+    "norm_per": 4.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 445458,
       "per_share": 18561,
-      "upside": 79.0
+      "upside": 82.0
      },
      "base": {
       "g": 2.0,
       "value": 520860,
       "per_share": 21702,
-      "upside": 109.3
+      "upside": 112.8
      },
      "bull": {
       "g": 6.0,
       "value": 594658,
       "per_share": 24777,
-      "upside": 138.9
+      "upside": 142.9
      }
     },
-    "implied_g": -28.3,
+    "implied_g": -29.4,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2078,6 +2510,22 @@
      "excess_value": 0
     },
     "net_cash_added": 141275
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 50123,
+    "norm": 56551,
+    "ttm_ni": 46671,
+    "oneoff": false,
+    "E": 53337,
+    "per_share": 15687,
+    "bear": 12571,
+    "bull": 18737,
+    "upside": 53.8,
+    "pct": 85,
+    "tier": "싼 ⅓",
+    "exp_ex": 3.9
    }
   },
   "161000": {
@@ -2103,25 +2551,25 @@
     "trend_g": 7.9
    },
    "auto": true,
-   "price": 9670,
-   "price_date": "2026-11-05 23:58",
+   "price": 9260,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 466977,
+   "mcap": 447178,
    "shares": 48291357,
    "equity": 730391,
    "equity_source": "DART 2026Q2",
    "net_cash": -517201,
    "dividend_yield": null,
-   "per": 23.4,
+   "per": 22.4,
    "roe": 2.7,
-   "pbr": 0.64,
+   "pbr": 0.61,
    "dcf": {
     "E1": 66600,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 7.0,
-    "norm_per": 7.0,
+    "fwd_per": 6.7,
+    "norm_per": 6.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -2133,16 +2581,16 @@
       "g": 2.0,
       "value": 25933,
       "per_share": 537,
-      "upside": -94.4
+      "upside": -94.2
      },
      "bull": {
       "g": 6.0,
       "value": 131529,
       "per_share": 2724,
-      "upside": -71.8
+      "upside": -70.6
      }
     },
-    "implied_g": 15.4,
+    "implied_g": 15.0,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2151,6 +2599,22 @@
      "excess_value": 0
     },
     "net_cash_added": -517201
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 23946,
+    "norm": 66619,
+    "ttm_ni": 19958,
+    "oneoff": false,
+    "E": 45283,
+    "per_share": 6619,
+    "bear": 5304,
+    "bull": 7906,
+    "upside": -28.5,
+    "pct": 32,
+    "tier": "비싼 ⅓",
+    "exp_ex": -1.1
    }
   },
   "005950": {
@@ -2175,18 +2639,34 @@
     "norm_ni": -9624,
     "trend_g": 3.9
    },
-   "price": 8750,
-   "price_date": "2026-11-05 23:58",
+   "price": 8320,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 230074,
+   "mcap": 218767,
    "shares": 26294169,
    "equity": 188619,
    "equity_source": "DART 2026Q2",
    "net_cash": 35837,
    "dividend_yield": null,
-   "per": 2.7,
+   "per": 2.6,
    "roe": 45.1,
-   "pbr": 1.22
+   "pbr": 1.16,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 91231,
+    "norm": -9624,
+    "ttm_ni": 85004,
+    "oneoff": false,
+    "E": 40804,
+    "per_share": 10954,
+    "bear": 8778,
+    "bull": 13084,
+    "upside": 31.7,
+    "pct": 75,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.9
+   }
   },
   "457190": {
    "name": "이수스페셜티케미컬",
@@ -2210,18 +2690,34 @@
     "norm_ni": -3258,
     "trend_g": 65.2
    },
-   "price": 69400,
-   "price_date": "2026-11-05 23:58",
+   "price": 63600,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2097190,
+   "mcap": 1921920,
    "shares": 30218872,
    "equity": 138485,
    "equity_source": "DART 2026Q2",
    "net_cash": 16639,
    "dividend_yield": null,
-   "per": 317.2,
+   "per": 290.7,
    "roe": 4.8,
-   "pbr": 15.14
+   "pbr": 13.88,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 7747,
+    "norm": -3258,
+    "ttm_ni": 6611,
+    "oneoff": false,
+    "E": 2245,
+    "per_share": 524,
+    "bear": 420,
+    "bull": 626,
+    "upside": -99.2,
+    "pct": 0,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
+   }
   },
   "014830": {
    "name": "유니드",
@@ -2246,16 +2742,16 @@
     "trend_g": 7.3
    },
    "auto": true,
-   "price": 51900,
-   "price_date": "2026-11-05 23:58",
+   "price": 51000,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 344560,
+   "mcap": 338585,
    "shares": 6638929,
    "equity": 1213953,
    "equity_source": "DART 2026Q2",
    "net_cash": -252579,
    "dividend_yield": null,
-   "per": 4.0,
+   "per": 3.9,
    "roe": 7.2,
    "pbr": 0.28,
    "dcf": {
@@ -2263,29 +2759,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 3.7,
-    "norm_per": 3.7,
+    "fwd_per": 3.6,
+    "norm_per": 3.6,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 308852,
       "per_share": 46521,
-      "upside": -10.4
+      "upside": -8.8
      },
      "base": {
       "g": 2.0,
       "value": 448020,
       "per_share": 67484,
-      "upside": 30.0
+      "upside": 32.3
      },
      "bull": {
       "g": 6.0,
       "value": 584231,
       "per_share": 88001,
-      "upside": 69.6
+      "upside": 72.6
      }
     },
-    "implied_g": -1.6,
+    "implied_g": -1.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2294,6 +2790,22 @@
      "excess_value": 0
     },
     "net_cash_added": -252579
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 73261,
+    "norm": 94220,
+    "ttm_ni": 87108,
+    "oneoff": false,
+    "E": 83741,
+    "per_share": 89037,
+    "bear": 71351,
+    "bull": 106348,
+    "upside": 74.6,
+    "pct": 91,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.8
    }
   },
   "006890": {
@@ -2319,16 +2831,16 @@
     "trend_g": 3.8
    },
    "auto": true,
-   "price": 4435,
-   "price_date": "2026-11-05 23:58",
+   "price": 4395,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 51446,
+   "mcap": 50982,
    "shares": 11600000,
    "equity": 170677,
    "equity_source": "DART 2026Q2",
    "net_cash": -15626,
    "dividend_yield": null,
-   "per": 7.2,
+   "per": 7.1,
    "roe": 4.2,
    "pbr": 0.3,
    "dcf": {
@@ -2343,22 +2855,22 @@
       "g": -3.0,
       "value": 41577,
       "per_share": 3584,
-      "upside": -19.2
+      "upside": -18.4
      },
      "base": {
       "g": 2.0,
       "value": 55756,
       "per_share": 4807,
-      "upside": 8.4
+      "upside": 9.4
      },
      "bull": {
       "g": 6.0,
       "value": 69635,
       "per_share": 6003,
-      "upside": 35.4
+      "upside": 36.6
      }
     },
-    "implied_g": 0.6,
+    "implied_g": 0.4,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2367,6 +2879,22 @@
      "excess_value": 0
     },
     "net_cash_added": -15626
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 2701,
+    "norm": 9771,
+    "ttm_ni": 7135,
+    "oneoff": false,
+    "E": 6236,
+    "per_share": 3795,
+    "bear": 3041,
+    "bull": 4533,
+    "upside": -13.7,
+    "pct": 51,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.1
    }
   },
   "025000": {
@@ -2392,46 +2920,46 @@
     "trend_g": 2.8
    },
    "auto": true,
-   "price": 56800,
-   "price_date": "2026-11-05 23:58",
+   "price": 55100,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 235535,
+   "mcap": 228485,
    "shares": 4146735,
    "equity": 750380,
    "equity_source": "DART 2026Q2",
    "net_cash": -69802,
    "dividend_yield": null,
-   "per": 2.3,
+   "per": 2.2,
    "roe": 13.8,
-   "pbr": 0.31,
+   "pbr": 0.3,
    "dcf": {
     "E1": 48900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 4.8,
-    "norm_per": 4.8,
+    "fwd_per": 4.7,
+    "norm_per": 4.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 214705,
       "per_share": 51777,
-      "upside": -8.8
+      "upside": -6.0
      },
      "base": {
       "g": 2.0,
       "value": 285229,
       "per_share": 68784,
-      "upside": 21.1
+      "upside": 24.8
      },
      "bull": {
       "g": 6.0,
       "value": 354254,
       "per_share": 85430,
-      "upside": 50.4
+      "upside": 55.0
      }
     },
-    "implied_g": -1.4,
+    "implied_g": -1.9,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2440,6 +2968,22 @@
      "excess_value": 0
     },
     "net_cash_added": -69802
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 27913,
+    "norm": 48857,
+    "ttm_ni": 103232,
+    "oneoff": true,
+    "E": 38385,
+    "per_share": 65342,
+    "bear": 52362,
+    "bull": 78045,
+    "upside": 18.6,
+    "pct": 68,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.2
    }
   },
   "092230": {
@@ -2465,10 +3009,10 @@
     "trend_g": 4.1
    },
    "auto": true,
-   "price": 92100,
-   "price_date": "2026-11-05 23:58",
+   "price": 89700,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 363685,
+   "mcap": 354208,
    "shares": 3948809,
    "equity": 1350391,
    "equity_source": "DART 2026Q2",
@@ -2476,35 +3020,35 @@
    "dividend_yield": null,
    "per": 1.2,
    "roe": 22.4,
-   "pbr": 0.27,
+   "pbr": 0.26,
    "dcf": {
     "E1": 59100,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 6.2,
-    "norm_per": 6.2,
+    "fwd_per": 6.0,
+    "norm_per": 6.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 275620,
       "per_share": 69798,
-      "upside": -24.2
+      "upside": -22.2
      },
      "base": {
       "g": 2.0,
       "value": 360345,
       "per_share": 91254,
-      "upside": -0.9
+      "upside": 1.7
      },
      "bull": {
       "g": 6.0,
       "value": 443268,
       "per_share": 112254,
-      "upside": 21.9
+      "upside": 25.1
      }
     },
-    "implied_g": 2.2,
+    "implied_g": 1.7,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2513,6 +3057,22 @@
      "excess_value": 0
     },
     "net_cash_added": -66174
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 47783,
+    "norm": 59081,
+    "ttm_ni": 302343,
+    "oneoff": true,
+    "E": 53432,
+    "per_share": 95514,
+    "bear": 76541,
+    "bull": 114084,
+    "upside": 6.5,
+    "pct": 60,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.5
    }
   },
   "007690": {
@@ -2538,25 +3098,25 @@
     "trend_g": 4.3
    },
    "auto": true,
-   "price": 31050,
-   "price_date": "2026-11-05 23:58",
+   "price": 30300,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 266606,
+   "mcap": 260166,
    "shares": 8586336,
    "equity": 913650,
    "equity_source": "DART 2026Q2",
    "net_cash": -427594,
    "dividend_yield": null,
-   "per": 5.0,
+   "per": 4.9,
    "roe": 5.8,
-   "pbr": 0.29,
+   "pbr": 0.28,
    "dcf": {
     "E1": 44300,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 6.0,
-    "norm_per": 6.0,
+    "fwd_per": 5.9,
+    "norm_per": 5.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -2574,10 +3134,10 @@
       "g": 6.0,
       "value": 18011,
       "per_share": 2098,
-      "upside": -93.2
+      "upside": -93.1
      }
     },
-    "implied_g": 16.0,
+    "implied_g": 15.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2586,6 +3146,22 @@
      "excess_value": 0
     },
     "net_cash_added": -427594
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 58265,
+    "norm": 44340,
+    "ttm_ni": 52814,
+    "oneoff": false,
+    "E": 51302,
+    "per_share": 42176,
+    "bear": 33798,
+    "bull": 50375,
+    "upside": 39.2,
+    "pct": 79,
+    "tier": "싼 ⅓",
+    "exp_ex": 3.3
    }
   },
   "093370": {
@@ -2611,25 +3187,25 @@
     "trend_g": 11.5
    },
    "auto": true,
-   "price": 9000,
-   "price_date": "2026-11-05 23:58",
+   "price": 8400,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 965298,
+   "mcap": 900945,
    "shares": 107255330,
    "equity": 365524,
    "equity_source": "DART 2026Q2",
    "net_cash": -248033,
    "dividend_yield": null,
-   "per": 26.5,
+   "per": 24.7,
    "roe": 10.0,
-   "pbr": 2.64,
+   "pbr": 2.46,
    "dcf": {
     "E1": 29900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 32.3,
-    "norm_per": 32.3,
+    "fwd_per": 30.1,
+    "norm_per": 30.1,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -2647,10 +3223,10 @@
       "g": 6.0,
       "value": 45884,
       "per_share": 428,
-      "upside": -95.2
+      "upside": -94.9
      }
     },
-    "implied_g": 39.1,
+    "implied_g": 37.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2659,6 +3235,22 @@
      "excess_value": 0
     },
     "net_cash_added": -248033
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 35131,
+    "norm": 29919,
+    "ttm_ni": 36451,
+    "oneoff": false,
+    "E": 32525,
+    "per_share": 2141,
+    "bear": 1715,
+    "bull": 2557,
+    "upside": -74.5,
+    "pct": 11,
+    "tier": "비싼 ⅓",
+    "exp_ex": -7.5
    }
   },
   "001340": {
@@ -2684,25 +3276,25 @@
     "trend_g": 7.9
    },
    "auto": true,
-   "price": 4170,
-   "price_date": "2026-11-05 23:58",
+   "price": 4095,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 184559,
+   "mcap": 181240,
    "shares": 44258789,
    "equity": 224170,
    "equity_source": "DART 2026Q2",
    "net_cash": -239910,
    "dividend_yield": null,
-   "per": 24.6,
+   "per": 24.1,
    "roe": 3.3,
-   "pbr": 0.82,
+   "pbr": 0.81,
    "dcf": {
     "E1": 16200,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 11.4,
-    "norm_per": 11.4,
+    "fwd_per": 11.2,
+    "norm_per": 11.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -2723,7 +3315,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 26.0,
+    "implied_g": 25.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2732,6 +3324,22 @@
      "excess_value": 0
     },
     "net_cash_added": -239910
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 10421,
+    "norm": 16233,
+    "ttm_ni": 7508,
+    "oneoff": false,
+    "E": 13327,
+    "per_share": 2126,
+    "bear": 1703,
+    "bull": 2539,
+    "upside": -48.1,
+    "pct": 23,
+    "tier": "비싼 ⅓",
+    "exp_ex": -3.1
    }
   },
   "102260": {
@@ -2757,46 +3365,46 @@
     "trend_g": 4.8
    },
    "auto": true,
-   "price": 3440,
-   "price_date": "2026-11-05 23:58",
+   "price": 3350,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 171209,
+   "mcap": 166729,
    "shares": 49769934,
    "equity": 486390,
    "equity_source": "DART 2026Q2",
    "net_cash": -54938,
    "dividend_yield": null,
-   "per": 4.1,
+   "per": 4.0,
    "roe": 8.7,
-   "pbr": 0.35,
+   "pbr": 0.34,
    "dcf": {
     "E1": 26700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 6.4,
-    "norm_per": 6.4,
+    "fwd_per": 6.2,
+    "norm_per": 6.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 102310,
       "per_share": 2056,
-      "upside": -40.2
+      "upside": -38.6
      },
      "base": {
       "g": 2.0,
       "value": 141289,
       "per_share": 2839,
-      "upside": -17.5
+      "upside": -15.3
      },
      "bull": {
       "g": 6.0,
       "value": 179439,
       "per_share": 3605,
-      "upside": 4.8
+      "upside": 7.6
      }
     },
-    "implied_g": 5.2,
+    "implied_g": 4.7,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2805,6 +3413,22 @@
      "excess_value": 0
     },
     "net_cash_added": -54938
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 74059,
+    "norm": 26704,
+    "ttm_ni": 42190,
+    "oneoff": false,
+    "E": 50382,
+    "per_share": 7146,
+    "bear": 5726,
+    "bull": 8535,
+    "upside": 113.3,
+    "pct": 94,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.2
    }
   },
   "083420": {
@@ -2830,25 +3454,25 @@
     "trend_g": 3.3
    },
    "auto": true,
-   "price": 4360,
-   "price_date": "2026-11-05 23:58",
+   "price": 4300,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 101703,
+   "mcap": 100303,
    "shares": 23326324,
    "equity": 137075,
    "equity_source": "DART 2026Q2",
    "net_cash": -43545,
    "dividend_yield": null,
-   "per": 5.1,
+   "per": 5.0,
    "roe": 14.7,
-   "pbr": 0.74,
+   "pbr": 0.73,
    "dcf": {
     "E1": 6700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 15.2,
-    "norm_per": 15.2,
+    "fwd_per": 15.0,
+    "norm_per": 15.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -2860,16 +3484,16 @@
       "g": 2.0,
       "value": 9897,
       "per_share": 424,
-      "upside": -90.3
+      "upside": -90.1
      },
      "bull": {
       "g": 6.0,
       "value": 20287,
       "per_share": 870,
-      "upside": -80.1
+      "upside": -79.8
      }
     },
-    "implied_g": 24.8,
+    "implied_g": 24.6,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -2878,6 +3502,22 @@
      "excess_value": 0
     },
     "net_cash_added": -43545
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 16952,
+    "norm": 6696,
+    "ttm_ni": 20128,
+    "oneoff": false,
+    "E": 11824,
+    "per_share": 3578,
+    "bear": 2867,
+    "bull": 4274,
+    "upside": -16.8,
+    "pct": 47,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.1
    }
   },
   "268280": {
@@ -2903,10 +3543,10 @@
     "trend_g": 9.0
    },
    "auto": true,
-   "price": 131900,
-   "price_date": "2026-11-05 23:58",
+   "price": 132100,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 635023,
+   "mcap": 635986,
    "shares": 4814431,
    "equity": 492990,
    "equity_source": "DART 2026Q2",
@@ -2927,19 +3567,19 @@
       "g": -3.0,
       "value": 374210,
       "per_share": 77727,
-      "upside": -41.1
+      "upside": -41.2
      },
      "base": {
       "g": 2.0,
       "value": 460718,
       "per_share": 95695,
-      "upside": -27.4
+      "upside": -27.6
      },
      "bull": {
       "g": 6.0,
       "value": 545388,
       "per_share": 113282,
-      "upside": -14.1
+      "upside": -14.2
      }
     },
     "implied_g": 9.6,
@@ -2951,6 +3591,22 @@
      "excess_value": 0
     },
     "net_cash_added": 25220
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 76771,
+    "norm": 62165,
+    "ttm_ni": 87494,
+    "oneoff": false,
+    "E": 69468,
+    "per_share": 101853,
+    "bear": 81621,
+    "bull": 121655,
+    "upside": -22.9,
+    "pct": 36,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.6
    }
   },
   "107590": {
@@ -2977,7 +3633,7 @@
    },
    "auto": true,
    "price": 56700,
-   "price_date": "2026-11-05 23:58",
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 131286,
    "shares": 2315450,
@@ -3024,6 +3680,22 @@
      "excess_value": 0
     },
     "net_cash_added": -48299
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 40143,
+    "norm": 40439,
+    "ttm_ni": 52274,
+    "oneoff": false,
+    "E": 40291,
+    "per_share": 122831,
+    "bear": 98431,
+    "bull": 146711,
+    "upside": 116.6,
+    "pct": 96,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.3
    }
   },
   "134380": {
@@ -3049,46 +3721,46 @@
     "trend_g": 10.1
    },
    "auto": true,
-   "price": 11200,
-   "price_date": "2026-11-05 23:58",
+   "price": 11500,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 217140,
+   "mcap": 222957,
    "shares": 19387530,
    "equity": 205873,
    "equity_source": "DART 2026Q3",
    "net_cash": 83470,
    "dividend_yield": null,
-   "per": 4.5,
+   "per": 4.6,
    "roe": 23.4,
-   "pbr": 1.05,
+   "pbr": 1.08,
    "dcf": {
     "E1": 26700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 8.1,
-    "norm_per": 8.1,
+    "fwd_per": 8.4,
+    "norm_per": 8.4,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 225059,
       "per_share": 11608,
-      "upside": 3.6
+      "upside": 0.9
      },
      "base": {
       "g": 2.0,
       "value": 260157,
       "per_share": 13419,
-      "upside": 19.8
+      "upside": 16.7
      },
      "bull": {
       "g": 6.0,
       "value": 294508,
       "per_share": 15191,
-      "upside": 35.6
+      "upside": 32.1
      }
     },
-    "implied_g": -4.3,
+    "implied_g": -3.3,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3097,6 +3769,22 @@
      "excess_value": 0
     },
     "net_cash_added": 83470
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": 48037,
+    "norm": 26708,
+    "ttm_ni": 48182,
+    "oneoff": false,
+    "E": 37373,
+    "per_share": 13607,
+    "bear": 10904,
+    "bull": 16252,
+    "upside": 18.3,
+    "pct": 66,
+    "tier": "가운데 ⅓",
+    "exp_ex": 2.2
    }
   },
   "011500": {
@@ -3122,46 +3810,46 @@
     "trend_g": 0.7
    },
    "auto": true,
-   "price": 11860,
-   "price_date": "2026-11-05 23:58",
+   "price": 11230,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 185455,
+   "mcap": 175604,
    "shares": 15637042,
    "equity": 182360,
    "equity_source": "DART 2026Q2",
    "net_cash": -9132,
    "dividend_yield": null,
-   "per": 19.3,
+   "per": 18.3,
    "roe": 5.3,
-   "pbr": 1.02,
+   "pbr": 0.96,
    "dcf": {
     "E1": 9600,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 19.3,
-    "norm_per": 19.3,
+    "fwd_per": 18.3,
+    "norm_per": 18.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 46205,
       "per_share": 2955,
-      "upside": -75.1
+      "upside": -73.7
      },
      "base": {
       "g": 2.0,
       "value": 59922,
       "per_share": 3832,
-      "upside": -67.7
+      "upside": -65.9
      },
      "bull": {
       "g": 6.0,
       "value": 73347,
       "per_share": 4691,
-      "upside": -60.5
+      "upside": -58.2
      }
     },
-    "implied_g": 25.7,
+    "implied_g": 24.4,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3170,6 +3858,22 @@
      "excess_value": 0
     },
     "net_cash_added": -9132
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 9653,
+    "norm": 9582,
+    "ttm_ni": 9594,
+    "oneoff": false,
+    "E": 9617,
+    "per_share": 4341,
+    "bear": 3479,
+    "bull": 5185,
+    "upside": -61.3,
+    "pct": 13,
+    "tier": "비싼 ⅓",
+    "exp_ex": -5.0
    }
   },
   "012610": {
@@ -3195,10 +3899,10 @@
     "trend_g": 3.2
    },
    "auto": true,
-   "price": 3010,
-   "price_date": "2026-11-05 23:58",
+   "price": 2985,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 123012,
+   "mcap": 121990,
    "shares": 40867768,
    "equity": 253340,
    "equity_source": "DART 2026Q2",
@@ -3206,14 +3910,14 @@
    "dividend_yield": null,
    "per": 6.1,
    "roe": 8.0,
-   "pbr": 0.49,
+   "pbr": 0.48,
    "dcf": {
     "E1": 8800,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 14.0,
-    "norm_per": 14.0,
+    "fwd_per": 13.9,
+    "norm_per": 13.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -3234,7 +3938,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 29.8,
+    "implied_g": 29.7,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3243,6 +3947,22 @@
      "excess_value": 0
     },
     "net_cash_added": -162366
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 19985,
+    "norm": 8838,
+    "ttm_ni": 20157,
+    "oneoff": false,
+    "E": 14412,
+    "per_share": 2489,
+    "bear": 1995,
+    "bull": 2973,
+    "upside": -16.6,
+    "pct": 49,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.1
    }
   },
   "138490": {
@@ -3302,7 +4022,15 @@
    "dividend_yield": null,
    "per": null,
    "roe": -33.0,
-   "pbr": 0.11
+   "pbr": 0.11,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -25017,
+    "norm": -5128,
+    "ttm_ni": -22013,
+    "oneoff": false
+   }
   },
   "298020": {
    "name": "효성티앤씨",
@@ -3327,25 +4055,25 @@
     "trend_g": 9.3
    },
    "auto": true,
-   "price": 289000,
-   "price_date": "2026-11-05 23:58",
+   "price": 284500,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1240350,
+   "mcap": 1221036,
    "shares": 4291867,
    "equity": 1749746,
    "equity_source": "DART 2026Q2",
    "net_cash": -2189087,
    "dividend_yield": null,
-   "per": 11.0,
+   "per": 10.8,
    "roe": 6.4,
-   "pbr": 0.71,
+   "pbr": 0.7,
    "dcf": {
     "E1": 122900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 10.1,
-    "norm_per": 10.1,
+    "fwd_per": 9.9,
+    "norm_per": 9.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -3366,7 +4094,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 26.4,
+    "implied_g": 26.3,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3375,6 +4103,22 @@
      "excess_value": 0
     },
     "net_cash_added": -2189087
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 202836,
+    "norm": 122888,
+    "ttm_ni": 112546,
+    "oneoff": false,
+    "E": 162862,
+    "per_share": 267858,
+    "bear": 214651,
+    "bull": 319935,
+    "upside": -5.8,
+    "pct": 55,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.7
    }
   },
   "079980": {
@@ -3399,10 +4143,10 @@
     "norm_ni": -16427,
     "trend_g": -3.4
    },
-   "price": 1761,
-   "price_date": "2026-11-05 23:58",
+   "price": 1687,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 57955,
+   "mcap": 55520,
    "shares": 32910320,
    "equity": 251050,
    "equity_source": "DART 2026Q2",
@@ -3410,7 +4154,15 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.9,
-   "pbr": 0.23
+   "pbr": 0.22,
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 11279,
+    "norm": -16427,
+    "ttm_ni": -12390,
+    "oneoff": true
+   }
   },
   "104480": {
    "name": "티케이케미칼",
@@ -3435,46 +4187,46 @@
     "trend_g": -7.0
    },
    "auto": true,
-   "price": 1890,
-   "price_date": "2026-11-05 23:58",
+   "price": 1814,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 171792,
+   "mcap": 164884,
    "shares": 90895434,
    "equity": 1326570,
    "equity_source": "DART 2026Q2",
    "net_cash": -79661,
    "dividend_yield": null,
-   "per": 3.1,
+   "per": 3.0,
    "roe": 4.2,
-   "pbr": 0.13,
+   "pbr": 0.12,
    "dcf": {
     "E1": 36700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 4.7,
-    "norm_per": 4.7,
+    "fwd_per": 4.5,
+    "norm_per": 4.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 136950,
       "per_share": 1507,
-      "upside": -20.3
+      "upside": -16.9
      },
      "base": {
       "g": 2.0,
       "value": 190644,
       "per_share": 2097,
-      "upside": 11.0
+      "upside": 15.6
      },
      "bull": {
       "g": 6.0,
       "value": 243197,
       "per_share": 2676,
-      "upside": 41.6
+      "upside": 47.5
      }
     },
-    "implied_g": 0.4,
+    "implied_g": -0.3,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3483,6 +4235,22 @@
      "excess_value": 0
     },
     "net_cash_added": -79661
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 23884,
+    "norm": 36711,
+    "ttm_ni": 55377,
+    "oneoff": true,
+    "E": 30298,
+    "per_share": 2353,
+    "bear": 1886,
+    "bull": 2810,
+    "upside": 29.7,
+    "pct": 74,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.8
    }
   },
   "008730": {
@@ -3508,25 +4276,25 @@
     "trend_g": 0.0
    },
    "auto": true,
-   "price": 12140,
-   "price_date": "2026-11-05 23:58",
+   "price": 11610,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 301072,
+   "mcap": 287928,
    "shares": 24800000,
    "equity": 293281,
    "equity_source": "DART 2026Q2",
    "net_cash": -288225,
    "dividend_yield": null,
-   "per": 60.1,
+   "per": 57.5,
    "roe": 1.7,
-   "pbr": 1.03,
+   "pbr": 0.98,
    "dcf": {
     "E1": 9100,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 33.1,
-    "norm_per": 33.1,
+    "fwd_per": 31.6,
+    "norm_per": 31.6,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -3547,7 +4315,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 42.3,
+    "implied_g": 41.8,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3556,6 +4324,22 @@
      "excess_value": 0
     },
     "net_cash_added": -288225
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 5341,
+    "norm": 9115,
+    "ttm_ni": 5006,
+    "oneoff": false,
+    "E": 7228,
+    "per_share": 2057,
+    "bear": 1649,
+    "bull": 2457,
+    "upside": -82.3,
+    "pct": 8,
+    "tier": "비싼 ⅓",
+    "exp_ex": -9.7
    }
   },
   "002380": {
@@ -3581,25 +4365,25 @@
     "trend_g": 8.7
    },
    "auto": true,
-   "price": 388500,
-   "price_date": "2026-11-05 23:58",
+   "price": 372500,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2857095,
+   "mcap": 2739429,
    "shares": 7354171,
    "equity": 11016744,
    "equity_source": "DART 2026Q2",
    "net_cash": -1936908,
    "dividend_yield": null,
-   "per": 0.8,
+   "per": 0.7,
    "roe": 33.2,
-   "pbr": 0.26,
+   "pbr": 0.25,
    "dcf": {
     "E1": 223000,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 12.8,
-    "norm_per": 12.8,
+    "fwd_per": 12.3,
+    "norm_per": 12.3,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -3617,10 +4401,10 @@
       "g": 6.0,
       "value": 269858,
       "per_share": 36695,
-      "upside": -90.6
+      "upside": -90.1
      }
     },
-    "implied_g": 23.7,
+    "implied_g": 23.1,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3629,6 +4413,22 @@
      "excess_value": 0
     },
     "net_cash_added": -1936908
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 312626,
+    "norm": 222974,
+    "ttm_ni": 3657289,
+    "oneoff": true,
+    "E": 267800,
+    "per_share": 257045,
+    "bear": 205985,
+    "bull": 307020,
+    "upside": -31.0,
+    "pct": 30,
+    "tier": "비싼 ⅓",
+    "exp_ex": -1.3
    }
   },
   "090350": {
@@ -3654,46 +4454,46 @@
     "trend_g": 4.9
    },
    "auto": true,
-   "price": 8060,
-   "price_date": "2026-11-05 23:58",
+   "price": 7890,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 161200,
+   "mcap": 157800,
    "shares": 20000000,
    "equity": 436485,
    "equity_source": "DART 2026Q2",
    "net_cash": 10274,
    "dividend_yield": null,
-   "per": 4.9,
+   "per": 4.8,
    "roe": 7.5,
-   "pbr": 0.37,
+   "pbr": 0.36,
    "dcf": {
     "E1": 23000,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 7.0,
-    "norm_per": 7.0,
+    "fwd_per": 6.9,
+    "norm_per": 6.9,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 139215,
       "per_share": 6961,
-      "upside": -13.6
+      "upside": -11.8
      },
      "base": {
       "g": 2.0,
       "value": 171176,
       "per_share": 8559,
-      "upside": 6.2
+      "upside": 8.5
      },
      "bull": {
       "g": 6.0,
       "value": 202459,
       "per_share": 10123,
-      "upside": 25.6
+      "upside": 28.3
      }
     },
-    "implied_g": 0.6,
+    "implied_g": 0.0,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3702,6 +4502,22 @@
      "excess_value": 0
     },
     "net_cash_added": 10274
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 33442,
+    "norm": 23024,
+    "ttm_ni": 32790,
+    "oneoff": false,
+    "E": 28233,
+    "per_share": 9965,
+    "bear": 7985,
+    "bull": 11902,
+    "upside": 26.3,
+    "pct": 72,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.6
    }
   },
   "000390": {
@@ -3727,46 +4543,46 @@
     "trend_g": 3.1
    },
    "auto": true,
-   "price": 6280,
-   "price_date": "2026-11-05 23:58",
+   "price": 6150,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 170838,
+   "mcap": 167301,
    "shares": 27203469,
    "equity": 349112,
    "equity_source": "DART 2026Q2",
    "net_cash": 89478,
    "dividend_yield": null,
-   "per": 12.6,
+   "per": 12.3,
    "roe": 3.9,
-   "pbr": 0.49,
+   "pbr": 0.48,
    "dcf": {
     "E1": 7900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 21.6,
-    "norm_per": 21.6,
+    "fwd_per": 21.2,
+    "norm_per": 21.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 124043,
       "per_share": 4560,
-      "upside": -27.4
+      "upside": -25.9
      },
      "base": {
       "g": 2.0,
       "value": 132611,
       "per_share": 4875,
-      "upside": -22.4
+      "upside": -20.7
      },
      "bull": {
       "g": 6.0,
       "value": 140996,
       "per_share": 5183,
-      "upside": -17.5
+      "upside": -15.7
      }
     },
-    "implied_g": 16.4,
+    "implied_g": 15.3,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3775,6 +4591,22 @@
      "excess_value": 0
     },
     "net_cash_added": 89478
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 14791,
+    "norm": 7912,
+    "ttm_ni": 13551,
+    "oneoff": false,
+    "E": 11352,
+    "per_share": 2946,
+    "bear": 2360,
+    "bull": 3518,
+    "upside": -52.1,
+    "pct": 19,
+    "tier": "비싼 ⅓",
+    "exp_ex": -3.6
    }
   },
   "000860": {
@@ -3800,10 +4632,10 @@
     "trend_g": 10.6
    },
    "auto": true,
-   "price": 12090,
-   "price_date": "2026-11-05 23:58",
+   "price": 12260,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 157170,
+   "mcap": 159380,
    "shares": 13000000,
    "equity": 622707,
    "equity_source": "DART 2026Q2",
@@ -3811,35 +4643,35 @@
    "dividend_yield": null,
    "per": null,
    "roe": -0.4,
-   "pbr": 0.25,
+   "pbr": 0.26,
    "dcf": {
     "E1": 39900,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 3.9,
-    "norm_per": 3.9,
+    "fwd_per": 4.0,
+    "norm_per": 4.0,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 159864,
       "per_share": 12297,
-      "upside": 1.7
+      "upside": 0.3
      },
      "base": {
       "g": 2.0,
       "value": 217892,
       "per_share": 16761,
-      "upside": 38.6
+      "upside": 36.7
      },
      "bull": {
       "g": 6.0,
       "value": 274688,
       "per_share": 21130,
-      "upside": 74.8
+      "upside": 72.3
      }
     },
-    "implied_g": -3.3,
+    "implied_g": -3.0,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3848,6 +4680,22 @@
      "excess_value": 0
     },
     "net_cash_added": -74235
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 11213,
+    "norm": 39919,
+    "ttm_ni": -2439,
+    "oneoff": true,
+    "E": 25566,
+    "per_share": 13882,
+    "bear": 11125,
+    "bull": 16581,
+    "upside": 13.2,
+    "pct": 64,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.9
    }
   },
   "025860": {
@@ -3873,25 +4721,25 @@
     "trend_g": 5.4
    },
    "auto": true,
-   "price": 5630,
-   "price_date": "2026-11-05 23:58",
+   "price": 5530,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 269951,
+   "mcap": 265156,
    "shares": 47948695,
    "equity": 553116,
    "equity_source": "DART 2026Q2",
    "net_cash": -207535,
    "dividend_yield": null,
-   "per": 23.0,
+   "per": 22.6,
    "roe": 2.1,
-   "pbr": 0.49,
+   "pbr": 0.48,
    "dcf": {
     "E1": 28700,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 9.4,
-    "norm_per": 9.4,
+    "fwd_per": 9.2,
+    "norm_per": 9.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -3903,16 +4751,16 @@
       "g": 2.0,
       "value": 24352,
       "per_share": 508,
-      "upside": -91.0
+      "upside": -90.8
      },
      "bull": {
       "g": 6.0,
       "value": 69436,
       "per_share": 1448,
-      "upside": -74.3
+      "upside": -73.8
      }
     },
-    "implied_g": 18.4,
+    "implied_g": 18.1,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -3921,6 +4769,22 @@
      "excess_value": 0
     },
     "net_cash_added": -207535
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 14096,
+    "norm": 28702,
+    "ttm_ni": 11755,
+    "oneoff": false,
+    "E": 21399,
+    "per_share": 3150,
+    "bear": 2525,
+    "bull": 3763,
+    "upside": -43.0,
+    "pct": 26,
+    "tier": "비싼 ⅓",
+    "exp_ex": -2.6
    }
   },
   "002100": {
@@ -3946,10 +4810,10 @@
     "trend_g": 7.1
    },
    "auto": true,
-   "price": 8850,
-   "price_date": "2026-11-05 23:58",
+   "price": 8830,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 158102,
+   "mcap": 157745,
    "shares": 17864650,
    "equity": 285270,
    "equity_source": "DART 2026Q2",
@@ -3994,6 +4858,22 @@
      "excess_value": 0
     },
     "net_cash_added": -153199
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 17851,
+    "norm": 18080,
+    "ttm_ni": 15044,
+    "oneoff": false,
+    "E": 17966,
+    "per_share": 7099,
+    "bear": 5689,
+    "bull": 8479,
+    "upside": -19.6,
+    "pct": 43,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.4
    }
   },
   "001550": {
@@ -4019,16 +4899,16 @@
     "trend_g": 8.4
    },
    "auto": true,
-   "price": 9300,
-   "price_date": "2026-11-05 23:58",
+   "price": 9220,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 48284,
+   "mcap": 47869,
    "shares": 5191828,
    "equity": 61707,
    "equity_source": "DART 2026Q2",
    "net_cash": -52802,
    "dividend_yield": null,
-   "per": 18.9,
+   "per": 18.7,
    "roe": 4.1,
    "pbr": 0.78,
    "dcf": {
@@ -4036,8 +4916,8 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 25.4,
-    "norm_per": 25.4,
+    "fwd_per": 25.2,
+    "norm_per": 25.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
@@ -4058,7 +4938,7 @@
       "upside": -100.0
      }
     },
-    "implied_g": 38.7,
+    "implied_g": 38.6,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -4067,6 +4947,22 @@
      "excess_value": 0
     },
     "net_cash_added": -52802
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 3322,
+    "norm": 1933,
+    "ttm_ni": 2559,
+    "oneoff": false,
+    "E": 2627,
+    "per_share": 3572,
+    "bear": 2863,
+    "bull": 4267,
+    "upside": -61.3,
+    "pct": 15,
+    "tier": "비싼 ⅓",
+    "exp_ex": -5.0
    }
   },
   "097870": {
@@ -4092,46 +4988,46 @@
     "trend_g": -2.7
    },
    "auto": true,
-   "price": 4000,
-   "price_date": "2026-11-05 23:58",
+   "price": 3970,
+   "price_date": "2026-11-07 18:38",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 31560,
+   "mcap": 31323,
    "shares": 7890000,
    "equity": 79743,
    "equity_source": "DART 2026Q3",
    "net_cash": -4485,
    "dividend_yield": null,
-   "per": 9.9,
+   "per": 9.8,
    "roe": 4.0,
-   "pbr": 0.4,
+   "pbr": 0.39,
    "dcf": {
     "E1": 2800,
     "r": 10.5,
     "c": 0.6,
     "note": "자동 가정(회사별 검토 전): 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요.",
-    "fwd_per": 11.3,
-    "norm_per": 11.3,
+    "fwd_per": 11.2,
+    "norm_per": 11.2,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 11861,
       "per_share": 1503,
-      "upside": -62.4
+      "upside": -62.1
      },
      "base": {
       "g": 2.0,
       "value": 15913,
       "per_share": 2017,
-      "upside": -49.6
+      "upside": -49.2
      },
      "bull": {
       "g": 6.0,
       "value": 19879,
       "per_share": 2519,
-      "upside": -37.0
+      "upside": -36.5
      }
     },
-    "implied_g": 14.9,
+    "implied_g": 14.7,
     "cycle": {
      "position": "중립",
      "note": "",
@@ -4140,8 +5036,63 @@
      "excess_value": 0
     },
     "net_cash_added": -4485
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q2~2026Q3",
+    "core": 4046,
+    "norm": 2781,
+    "ttm_ni": 3202,
+    "oneoff": false,
+    "E": 3414,
+    "per_share": 3054,
+    "bear": 2448,
+    "bull": 3648,
+    "upside": -23.1,
+    "pct": 34,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.6
    }
   }
  },
- "industry_cycle": {}
+ "industry_cycle": {},
+ "quant_meta": {
+  "model": "사이클 평균 이익 50% + 핵심 이익(일회성 제거) 50%, 업종 공통 가정",
+  "par": {
+   "g": {
+    "bear": -3.0,
+    "base": 2.0,
+    "bull": 6.0
+   },
+   "r": 10.5,
+   "c": 0.6
+  },
+  "beta": 0.065,
+  "history": [
+   {
+    "year": "2023",
+    "n": 54,
+    "ic": 0.232,
+    "hit_rel": 55.6,
+    "top3": 0.3,
+    "bot3": -12.0
+   },
+   {
+    "year": "2024",
+    "n": 52,
+    "ic": 0.222,
+    "hit_rel": 57.7,
+    "top3": 16.0,
+    "bot3": -0.6
+   },
+   {
+    "year": "2025",
+    "n": 48,
+    "ic": 0.271,
+    "hit_rel": 62.5,
+    "top3": 8.8,
+    "bot3": -4.8
+   }
+  ]
+ }
 }

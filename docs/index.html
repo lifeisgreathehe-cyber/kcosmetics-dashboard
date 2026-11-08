@@ -549,9 +549,21 @@ function renderFin(c){
   $('#fc-sub').textContent=`주가는 월말 종가(수정주가${D.stock_hist?', '+D.stock_hist.source:''}), 실적은 분기 기준 · 단위: 억원${sh?'':' · 장기 주가는 다음 자동 수집 후 표시돼요'}`;
 }
 document.addEventListener('click',e=>{const b=e.target.closest('#fc-range button');if(!b)return;fcRange=b.dataset.v;document.querySelectorAll('#fc-range button').forEach(x=>x.setAttribute('aria-pressed',x===b));const c=CO.companies.find(x=>x.code===cur);if(c)renderFin(c)});
+function quantBlock(v){
+  const q=v.quant, M=(D.valuation||{}).quant_meta;
+  if(!q) return '';
+  const hist=(M&&M.history||[]).map(h=>`${h.year}년 싼 ⅓ ${pct(h.top3)} vs 비싼 ⅓ ${pct(h.bot3)}`).join(', ');
+  const tierCls=q.tier==='싼 ⅓'?'pos':q.tier==='비싼 ⅓'?'neg':'neu';
+  return `<h4>백테스트 검증 모델로 교차 점검</h4>
+   <p>${q.per_share!=null?`<span class="tone ${tierCls}">업종 내 ${q.tier}</span>기계식 적정가 ${fmt(q.per_share)}원(현재가 대비 ${pct(q.upside)}), 업종 안에서 싸 보이는 정도 ${q.pct}점(100점이 가장 쌈). 과거 3년 백테스트의 기울기로 환산한 1년 업종 대비 기대 초과수익은 ${pct(q.exp_ex)}p예요. 이 기울기는 작아서 1년 주가를 맞히는 용도가 아니라 순위 참고용이에요.`:'정상 이익이 0 이하라 기계식 적정가를 낼 수 없어요.'}
+   ${q.oneoff?` 최근 4분기 순이익(${fmt(eok(q.ttm_ni))}억)이 영업이익과 크게 달라 일회성 손익이 섞인 것으로 보고, 핵심 이익 ${fmt(eok(q.core))}억으로 바꿔 계산했어요.`:''}
+   ${q.conflict?` <b>위 판단과 기계식 모델이 반대 방향이에요.</b> 사람이 정한 가정(성장률·사이클 위치)이 맞는지 다시 볼 필요가 있어요.`:''}
+   숫자로 정한 사이클 위치는 '${q.pos}'예요(최근 핵심 이익이 사이클 평균보다 높은지 × 이익이 늘고 있는지).</p>
+   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${location.pathname.includes('/semi')||location.pathname.includes('/chem')||location.pathname.includes('/battery')?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
+}
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
-  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`;return}
+  if(!d){$('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">${v.ttm?'밸류에이션 가정 준비 중이에요.':'최근 4개 분기 실적이 없어 내재가치를 계산하지 않았어요.'}</p>`+quantBlock(v);return}
   const S0=d.scenarios, [vt,vc]=VERD(S0.base.upside);
   const kp=(l,val,sub='')=>`<div class="kpi"><div class="l">${l}</div><div class="v">${val}</div><div class="s">${sub}</div></div>`;
   const ig=d.implied_g;
@@ -570,6 +582,7 @@ function renderValueReport(c){
    ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
    </tbody></table></div>
    ${cycleBlock(v)}
+   ${quantBlock(v)}
    <h4>해석</h4><p>${gap} ${d.note}.</p>
    <h4>가정</h4><p>정상화 이익 ${fmt(eok(d.E1))}억원(${v.cycle?v.cycle.E1_basis+', ':''}${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/valuation.json에서 바꿀 수 있어요.</p>`;
