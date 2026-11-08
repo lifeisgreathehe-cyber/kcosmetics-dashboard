@@ -115,6 +115,7 @@ th.sort .sarr{margin-left:3px;font-size:10px;color:var(--ink-3)} th.sort[aria-so
 th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
 td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.fisher.ir th{text-align:left;font-size:11.5px;color:var(--ink-3);font-weight:600;padding:6px 8px}.fisher.ir td{vertical-align:top}.fisher.ir td.q{min-width:90px}@media(max-width:640px){.fisher.ir thead{display:none}.fisher.ir tr{display:block;padding:6px 0;border-bottom:1px solid var(--line)}.fisher.ir td{display:block;border:0!important;padding:2px 4px}}
 </style>
 </head>
 <body>
@@ -502,6 +503,12 @@ function renderDeep(c){
    <p>${g.summary}</p>
    <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
    ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
+   ${x.ir?(()=>{const r=x.ir,gt={'높음':'pos','중간':'neu','낮음':'neg'},vt2=v=>/^불일치/.test(v)?'neg':/^일치/.test(v)?'pos':'neu';return `<h4>IR 자료로 본 성장전략과 달성 가능성</h4><p>${r.summary}</p>
+   ${r.latest.length?`<p class="sub">IR 원문: ${r.latest.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.date} ${l.title}</a>`).join(' · ')}</p>`:''}
+   <table class="fisher ir"><thead><tr><th>전략</th><th>IR이 말한 내용</th><th>달성 가능성</th></tr></thead><tbody>${r.strategy.map(t=>`<tr><td class="q"><b>${t.item}</b></td><td>${t.detail}</td><td><span class="tone ${gt[t.grade]||'neu'}" style="font-size:10.5px">${t.grade}</span> ${t.check}</td></tr>`).join('')}</tbody></table>
+   ${r.changes.length?`<h4>과거 IR과 비교해 바뀐 점</h4><table class="fisher ir"><thead><tr><th>항목</th><th>예전 IR</th><th>최신 IR</th><th>읽는 법</th></tr></thead><tbody>${r.changes.map(t=>`<tr><td class="q"><b>${t.item}</b></td><td>${t.before}</td><td>${t.now}</td><td>${t.read}</td></tr>`).join('')}</tbody></table>`:''}
+   ${r.cross.length?`<h4>경쟁사·공급사·고객사 IR로 교차검증</h4><table class="fisher ir"><thead><tr><th>상대 회사</th><th>관계</th><th>상대 IR·발표 내용</th><th>검증</th></tr></thead><tbody>${r.cross.map(t=>`<tr><td class="q"><b>${t.peer}</b></td><td>${t.rel}</td><td>${t.claim}</td><td><span class="tone ${vt2(t.result)}" style="font-size:10.5px">${t.result.split(' ')[0]}</span> ${t.result.split(' ').slice(1).join(' ')}</td></tr>`).join('')}</tbody></table>`:''}
+   ${r.sources.length?`<p class="src">참고: ${r.sources.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.title}</a>`).join(' · ')}</p>`:''}`})():''}
    ${x.news&&x.news.length?`<h4>최근 뉴스와 읽는 법 (${dp.news_asof||dp.updated} 기준)</h4><ul class="nlist">${x.news.map(n=>`<li><span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'긍정',neg:'부정',neu:'중립'}[n.impact]||'중립'}</span><span class="sub">${n.date} · ${n.src}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a><br>${n.read}</li>`).join('')}</ul>`:''}
    ${(()=>{const seen=new Set((x.news||[]).map(n=>n.title));const A=(((D.news&&D.news.companies)||{})[c.code]||[]).filter(n=>!seen.has(n.title)).slice(0,10);return A.length?`<h4>오늘까지의 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched} · ${D.news.source}</span></h4><ul>${A.map(n=>`<li><span class="sub">${(n.date||'').slice(5)} ${n.office||''}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''})()}
    <div class="dgrid">

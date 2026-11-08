@@ -22,6 +22,12 @@ def main():
             ts = {n["title"] for n in new}
             old = [n for n in comps[code].get("news", []) if n["title"] not in ts]
             comps[code]["news"] = sorted(new + old, key=lambda n: n["date"], reverse=True)[:8]
+    # IR 분석(scripts/chem/ir_*.py의 IRS {code: IR(...)})을 회사별 ir로 합친다
+    for f in sorted(glob.glob(os.path.join(HERE, "ir_*.py"))):
+        m = importlib.import_module(os.path.basename(f)[:-3])
+        for code, v in m.IRS.items():
+            if code in comps:
+                comps[code]["ir"] = v
     out = {"updated": datetime.date.today().isoformat(), "news_asof": asof,
            "source": "DART 사업보고서·반기보고서, 2026년 3분기 잠정실적과 2026년 10~11월 기사",
            "fisher_questions": FISHER,
