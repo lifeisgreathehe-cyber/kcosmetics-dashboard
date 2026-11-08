@@ -286,7 +286,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir','ir_view'];
+  const names=['meta','production_index','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir','ir_view','ir_web'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -509,7 +509,12 @@ function renderBiz(c){
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
    <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
 }
-function irDocs(code){return ((D.ir&&D.ir.companies)||{})[code]||[]}
+function irDocs(code){
+  const a=(((D.ir&&D.ir.companies)||{})[code]||[]).map(d=>({date:d.date,title:d.title,url:d.url,pdfs:d.pdfs||[]}));
+  const w=(((D.ir_web&&D.ir_web.companies)||{})[code]||[]).map(d=>({date:d.date,title:d.title,url:d.page||d.pdf,pdfs:d.pdf?[{url:d.pdf,pages:d.pages}]:[]}));
+  const seen=new Set(), out=[];
+  [...w,...a].sort((x,y)=>(y.date||'').localeCompare(x.date||'')).forEach(d=>{const k=d.date+'|'+(d.title||'').slice(0,12);if(!seen.has(k)){seen.add(k);out.push(d)}});
+  return out.slice(0,12)}
 function irPdf(p){return p.url||p.path&&p.path.replace(/^docs\/battery\//,'')}
 function renderIR(c){
   const v=((D.ir_view&&D.ir_view.companies)||{})[c.code], docs=irDocs(c.code);
@@ -519,7 +524,7 @@ function renderIR(c){
     if(!(latest.pdfs||[]).length) ls.unshift(`<a href="${latest.url}" target="_blank" rel="noopener">최신 IR 공시 원문(${latest.date})</a>`)}
   $('#co-irlink').innerHTML=ls.length?'IR 원문: '+ls.join(' · '):'';
   const G={'높음':'pos','보통':'neu','낮음':'neg'};
-  const docList=docs.length?`<h4>IR 자료 원문 (DART 기업설명회 공시, 최근 ${D.ir.years||3}년)</h4><ul class="irlist">${docs.map(d=>`<li>${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${d.title}</a>${(d.pdfs||[]).map((p,i)=>` · <a href="${irPdf(p)}" target="_blank" rel="noopener">PDF${d.pdfs.length>1?' '+(i+1):''}${p.pages?` (${p.pages}쪽)`:''}</a>`).join('')}</li>`).join('')}</ul>`:'';
+  const docList=docs.length?`<h4>IR 자료 원문 (KIND·DART 기업설명회 자료)</h4><ul class="irlist">${docs.map(d=>`<li>${d.date} · <a href="${d.url}" target="_blank" rel="noopener">${d.title}</a>${(d.pdfs||[]).map((p,i)=>` · <a href="${irPdf(p)}" target="_blank" rel="noopener">PDF${d.pdfs.length>1?' '+(i+1):''}${p.pages?` (${p.pages}쪽)`:''}</a>`).join('')}</li>`).join('')}</ul>`:'';
   if(!v){$('#co-ir').innerHTML=`<h2>IR 자료 분석</h2><p class="sub">${docs.length?'IR 원문은 아래에서 볼 수 있고, 해석은 순서대로 추가하고 있어요.':'IR 자료 수집과 해석을 준비 중이에요.'}</p>${docList}`;return}
   $('#co-ir').innerHTML=`<h2>IR 자료 분석</h2><p class="sub">${v.basis||''} · 작성 ${D.ir_view.updated}</p>
    ${v.verdict?`<h3><span class="tone ${v.tone||'neu'}">${v.verdict_label||'종합'}</span>${v.verdict}</h3>`:''}
