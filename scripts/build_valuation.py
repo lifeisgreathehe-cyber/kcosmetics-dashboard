@@ -193,8 +193,18 @@ def main(industry="cosmetics"):
         hb = cycle_base(co) if semi_cyc else None
         if hb:
             rec["hist"] = hb
+        if semi_cyc and a and a.get("E1") is None:
+            # 회사별 사이클 판단(cyc_pos·g·r·c)은 사람이 정하고, 정상 이익은 DART 이력으로 계산(음식료):
+            # margin(정상 순이익률 %)이 있으면 추세 매출 × margin, 없으면 사이클 평균 이익 × E1_adj
+            if hb and (a.get("margin") is not None or hb["norm_ni"] > 0):
+                base_ni = hb["trend_rev"] * a["margin"] / 100 if a.get("margin") is not None else hb["norm_ni"] * a.get("E1_adj", 1.0)
+                a = dict(dft or {}, **a, E1=round(base_ni / 100))
+            else:
+                rec["cycle"] = {"position": a.get("cyc_pos"), "note": a.get("cycle_note", ""), "basis": a.get("note", "")}
+                a = None
+                rec["pending"] = "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
         if semi_cyc:
-            if not a and dft and hb and hb["norm_ni"] > 0:
+            if not a and dft and hb and hb["norm_ni"] > 0 and not rec.get("pending"):
                 a = dict(dft, E1=round(hb["norm_ni"] / 100))
                 rec["auto"] = True
         elif not a and dft and dft.get("E1_years"):

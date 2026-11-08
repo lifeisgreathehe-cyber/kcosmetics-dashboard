@@ -56,6 +56,9 @@ nav.tabs a:focus-visible,button:focus-visible,select:focus-visible,tr:focus-visi
 .glance .gp{position:relative;height:120px;border-top:1px solid var(--line)}
 .glance .gp:first-child{border-top:0}
 .chart.tall{height:360px}
+.odds{display:inline-block;font-size:11px;font-weight:600;padding:1px 7px;border-radius:99px;margin-left:6px}
+.odds.h{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}.odds.m{background:var(--accent-soft);color:var(--ink-2)}.odds.l{background:color-mix(in srgb,var(--down) 14%,transparent);color:var(--down)}
+.irdocs a{color:var(--accent)}
 .vc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr)) ;gap:14px;margin-top:6px;position:relative}
 .vc .st{border:1px solid var(--line);border-radius:10px;padding:10px 12px;position:relative;min-width:0}
 .vc .st>h3{font-size:14px;font-weight:600;margin:0 0 2px}
@@ -232,6 +235,7 @@ td.l,th.l{text-align:left}
         <div class="glance"><div class="gp" style="height:240px"><canvas id="g-px"></canvas></div><div class="gp"><canvas id="g-rev"></canvas></div><div class="gp"><canvas id="g-gp"></canvas></div><div class="gp"><canvas id="g-op"></canvas></div><div class="gp"><canvas id="g-ni"></canvas></div></div>
         <div class="src" id="gl-src"></div></div>
       <div class="card full rv" id="co-review"></div>
+      <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-biz"></div>
       <div class="card full rv" id="co-value"></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
@@ -302,7 +306,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','memory_prices'];
+  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','memory_prices','ir','ir_analysis','ir_web'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -591,6 +595,30 @@ function autoNews(c,r){
   if(!A.length) return '';
   return `<h4>오늘까지 나온 회사 뉴스 <span class="sub" style="font-weight:400">자동 수집 · ${D.news.fetched} · 하루 6번 갱신, 해석은 매일 저녁 추가</span></h4><ul>${A.map(n=>`<li><span class="sub">${n.date.slice(5)} ${n.office||''}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`;
 }
+/* ---------------- IR 자료 ---------------- */
+function irDocs(code){ // 자동 수집(ir.json, DART 기업설명회 공시) + 분석에 쓴 자료(ir_analysis.json)
+  const out=[], seen=new Set(), add=(d)=>{if(!d||!d.url||seen.has(d.url))return;seen.add(d.url);out.push(d)};
+  const a=(D.ir_analysis&&D.ir_analysis.companies||{})[code]; (a&&a.docs||[]).forEach(add);
+  const ir=D.ir&&(D.ir.companies||D.ir)[code];
+  const L=Array.isArray(ir)?ir:(ir&&(ir.items||ir.events||ir.list))||[];
+  L.forEach(x=>{const u=x.pdf||x.attach_url||x.ir_url||x.url||x.link;add({date:(x.date||x.rcept_dt||'').replace(/^(\d{4})(\d\d)(\d\d)$/,'$1-$2-$3'),title:x.title||x.report_nm||x.name||'기업설명회(IR) 공시',url:u,src:x.src||'DART 기업설명회 공시'})});
+  ((D.ir_web&&D.ir_web.companies||{})[code]||[]).forEach(x=>add({date:(x.date||'').replace(/\./g,'-'),title:x.title||'IR 자료',url:x.pdf||x.page,src:(x.kind||'IR 자료')+(x.pdf?' · PDF 원문':'')+' (KIND·IRGO)'}));
+  return out.sort((x,y)=>(y.date||'').localeCompare(x.date||''));
+}
+function renderIR(c){
+  const a=(D.ir_analysis&&D.ir_analysis.companies||{})[c.code], docs=irDocs(c.code), el=$('#co-ir');
+  const latest=docs.find(d=>/KIND|DART|회사 IR|뉴스룸/.test(d.src||''))||docs[0];
+  if(latest) $('#co-meta').insertAdjacentHTML('beforeend',` · <a href="${latest.url}" target="_blank" rel="noopener" style="color:var(--accent)">최신 IR 자료 원문(${latest.date||''})</a>`);
+  if(!a&&!docs.length){el.innerHTML=`<h2>IR 자료로 본 성장전략</h2><p class="sub">이 회사의 IR 자료 분석을 차례로 넣고 있어요. 공개 IR 자료(기업설명회)가 없는 회사는 사업보고서와 실적 발표로 대신 판단해요.</p><p><a href="https://m.irgo.co.kr/IR-COMP/${c.code}" target="_blank" rel="noopener" style="color:var(--accent)">이 회사의 IR 일정·실적발표 자료 모음 보기</a></p>`;return}
+  const od=o=>({'높음':'h','보통':'m','낮음':'l'}[o]||'m');
+  const vd=v=>({'일치':'pos','부분 일치':'neu','불일치':'neg'}[v]||'neu');
+  el.innerHTML=`<h2>IR 자료로 본 성장전략</h2><p class="sub">${a?`분석 기준 ${a.asof} · `:''}회사 IR 자료의 목표를 정리하고, 달성 가능성과 과거 IR 대비 변화, 고객사·경쟁사 자료와의 교차검증을 적었어요.</p>
+   ${a&&a.summary?`<p>${a.summary}</p>`:''}
+   ${a&&a.strategy&&a.strategy.length?`<h4>회사가 말하는 성장전략과 달성 가능성</h4><ul>${a.strategy.map(t=>`<li><b>${t.h}</b><span class="odds ${od(t.odds)}">달성 가능성 ${t.odds}</span><br>${t.detail}${t.target?` <span class="sub">(목표: ${t.target})</span>`:''}<br><span class="sub">판단 근거: ${t.why}</span></li>`).join('')}</ul>`:''}
+   ${a&&a.change&&a.change.length?`<h4>과거 IR 대비 달라진 점${a.prev?` <span class="sub">(${a.prev}와 비교)</span>`:''}</h4><ul>${a.change.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
+   ${a&&a.cross&&a.cross.length?`<h4>고객사·경쟁사·공급사 자료로 교차검증</h4><ul>${a.cross.map(t=>`<li><span class="tone ${vd(t.verdict)}">${t.verdict}</span><b>${t.who}</b>: ${t.check}${t.url?` <a href="${t.url}" target="_blank" rel="noopener" style="color:var(--accent)">출처</a>`:''}</li>`).join('')}</ul>`:''}
+   <h4>IR 자료 원문</h4><ul class="irdocs">${docs.slice(0,8).map(d=>`<li>${d.date||''} <a href="${d.url}" target="_blank" rel="noopener">${d.title}</a> <span class="sub">${d.src||''}</span></li>`).join('')}<li><a href="https://m.irgo.co.kr/IR-COMP/${c.code}" target="_blank" rel="noopener">이 회사의 IR 일정·실적발표 자료 모음</a> <span class="sub">IRGO(상장사 IR 공시 모음)</span></li></ul>`;
+}
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
   if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}`;return}
@@ -644,7 +672,7 @@ function quantBlock(v){
    ${q.oneoff?` 최근 4분기 순이익(${fmt(eok(q.ttm_ni))}억)이 영업이익과 크게 달라 일회성 손익이 섞인 것으로 보고, 핵심 이익 ${fmt(eok(q.core))}억으로 바꿔 계산했어요.`:''}
    ${q.conflict?` <b>위 판단과 기계식 모델이 반대 방향이에요.</b> 사람이 정한 가정(성장률·사이클 위치)이 맞는지 다시 볼 필요가 있어요.`:''}
    숫자로 정한 사이클 위치는 '${q.pos}'예요(최근 핵심 이익이 사이클 평균보다 높은지 × 이익이 늘고 있는지).</p>
-   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${location.pathname.includes('/semi')||location.pathname.includes('/chem')||location.pathname.includes('/battery')?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
+   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
 }
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
@@ -729,7 +757,7 @@ function selectCo(code){
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderGlance(c);renderReview(c);renderBiz(c);renderValueReport(c);
+  renderCompanyTable();renderGlance(c);renderReview(c);renderIR(c);renderBiz(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];
