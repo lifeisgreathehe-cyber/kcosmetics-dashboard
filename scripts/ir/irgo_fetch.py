@@ -73,6 +73,9 @@ for c in codes:
         for y in (y0 - 1, y0 - 2, y0 - 3):
             k = next((n for n, i in enumerate(its) if i["date"].startswith(str(y))), None)
             if k is not None: pick.add(k)
+    # 중장기 목표가 담긴 자료(기업가치제고계획·Investor Day·전략 설명)는 위치와 상관없이 최근 3건 포함
+    KEY = re.compile(r"기업가치|밸류업|Value-?up|Investor Day|인베스터|중장기|비전|Vision|전략")
+    for n in [n for n, i in enumerate(its) if KEY.search(i["title"])][:3]: pick.add(n)
     for n, it in enumerate(its):
         if it["id"] in prev and prev[it["id"]].get("pdf"):
             it.update({k: prev[it["id"]][k] for k in ("pdf", "text", "kb", "pages") if k in prev[it["id"]]}); continue
