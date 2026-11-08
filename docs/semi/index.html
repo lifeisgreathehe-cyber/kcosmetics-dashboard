@@ -306,7 +306,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','memory_prices','ir','ir_analysis'];
+  const names=['meta','production_index','export_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','memory_prices','ir','ir_analysis','ir_web'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -602,11 +602,12 @@ function irDocs(code){ // 자동 수집(ir.json, DART 기업설명회 공시) + 
   const ir=D.ir&&(D.ir.companies||D.ir)[code];
   const L=Array.isArray(ir)?ir:(ir&&(ir.items||ir.events||ir.list))||[];
   L.forEach(x=>{const u=x.pdf||x.attach_url||x.ir_url||x.url||x.link;add({date:(x.date||x.rcept_dt||'').replace(/^(\d{4})(\d\d)(\d\d)$/,'$1-$2-$3'),title:x.title||x.report_nm||x.name||'기업설명회(IR) 공시',url:u,src:x.src||'DART 기업설명회 공시'})});
+  ((D.ir_web&&D.ir_web.companies||{})[code]||[]).forEach(x=>add({date:(x.date||'').replace(/\./g,'-'),title:x.title||'IR 자료',url:x.pdf||x.page,src:(x.kind||'IR 자료')+(x.pdf?' · PDF 원문':'')+' (KIND·IRGO)'}));
   return out.sort((x,y)=>(y.date||'').localeCompare(x.date||''));
 }
 function renderIR(c){
   const a=(D.ir_analysis&&D.ir_analysis.companies||{})[c.code], docs=irDocs(c.code), el=$('#co-ir');
-  const latest=docs[0];
+  const latest=docs.find(d=>/KIND|DART|회사 IR|뉴스룸/.test(d.src||''))||docs[0];
   if(latest) $('#co-meta').insertAdjacentHTML('beforeend',` · <a href="${latest.url}" target="_blank" rel="noopener" style="color:var(--accent)">최신 IR 자료 원문(${latest.date||''})</a>`);
   if(!a&&!docs.length){el.innerHTML=`<h2>IR 자료로 본 성장전략</h2><p class="sub">이 회사의 IR 자료 분석을 차례로 넣고 있어요. 공개 IR 자료(기업설명회)가 없는 회사는 사업보고서와 실적 발표로 대신 판단해요.</p><p><a href="https://m.irgo.co.kr/IR-COMP/${c.code}" target="_blank" rel="noopener" style="color:var(--accent)">이 회사의 IR 일정·실적발표 자료 모음 보기</a></p>`;return}
   const od=o=>({'높음':'h','보통':'m','낮음':'l'}[o]||'m');
