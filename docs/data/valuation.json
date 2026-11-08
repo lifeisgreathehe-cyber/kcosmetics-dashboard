@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-08",
  "method": "내재가치 가정. E1=향후 12개월 정상화 지배순이익(억원), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율. 스냅샷은 StockAnalysis 집계(가격일 표기), 금융위 시세 API·DART 재무상태표 수집 시 자동 대체. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외. 비지배지분이 큰 아모레퍼시픽홀딩스·한국콜마는 조정 제외. 사이클 조정: 연간 순이익률의 여러 해 평균(5년 이상이면 최고·최저 해를 뺀 평균)에 최근 4분기 매출을 곱해 '사이클 평균 이익'을 구하고, 회사별 비중(w_mid)만큼 E1과 섞어 정상화 이익을 정해요.",
  "terminal_growth": 2.0,
  "asof": "2026-11-05",
@@ -1930,6 +1930,1145 @@
     },
     "implied_g": 7.6,
     "net_cash_added": 3839
+   }
+  },
+  "340570": {
+   "name": "티앤엘",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 175160,
+    "op": 59385,
+    "ni": 50777,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 24000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 191995,
+   "shares": 7999808,
+   "equity": 224207,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 104154,
+   "dividend_yield": null,
+   "per": 3.8,
+   "roe": 22.6,
+   "pbr": 0.86,
+   "dcf": {
+    "E1": 50800,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 3.8,
+    "norm_per": 3.8,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 471284,
+      "per_share": 58912,
+      "upside": 145.5
+     },
+     "base": {
+      "g": 5,
+      "value": 562538,
+      "per_share": 70319,
+      "upside": 193.0
+     },
+     "bull": {
+      "g": 10,
+      "value": 676326,
+      "per_share": 84543,
+      "upside": 252.3
+     }
+    },
+    "implied_g": -30.0,
+    "net_cash_added": 104154
+   }
+  },
+  "483650": {
+   "name": "달바글로벌",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 635706,
+    "op": 134519,
+    "ni": 108898,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 154300,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 1914948,
+   "shares": 12410551,
+   "equity": 251813,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 201724,
+   "dividend_yield": null,
+   "per": 17.6,
+   "roe": 43.2,
+   "pbr": 7.6,
+   "dcf": {
+    "E1": 108900,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 17.6,
+    "norm_per": 17.6,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 991990,
+      "per_share": 79931,
+      "upside": -48.2
+     },
+     "base": {
+      "g": 5,
+      "value": 1188417,
+      "per_share": 95759,
+      "upside": -37.9
+     },
+     "bull": {
+      "g": 10,
+      "value": 1433351,
+      "per_share": 115495,
+      "upside": -25.1
+     }
+    },
+    "implied_g": 17.5,
+    "net_cash_added": 201724
+   }
+  },
+  "226320": {
+   "name": "잇츠한불",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 172158,
+    "op": 23855,
+    "ni": 33318,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 10830,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 190789,
+   "shares": 17616685,
+   "equity": 402785,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 355780,
+   "dividend_yield": null,
+   "per": 5.7,
+   "roe": 8.3,
+   "pbr": 0.47,
+   "dcf": {
+    "E1": 33300,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 5.7,
+    "norm_per": 5.7,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 553105,
+      "per_share": 31397,
+      "upside": 189.9
+     },
+     "base": {
+      "g": 5,
+      "value": 602152,
+      "per_share": 34181,
+      "upside": 215.6
+     },
+     "bull": {
+      "g": 10,
+      "value": 663311,
+      "per_share": 37652,
+      "upside": 247.7
+     }
+    },
+    "implied_g": -30.0,
+    "net_cash_added": 355780
+   }
+  },
+  "123690": {
+   "name": "한국화장품",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 81870,
+    "op": 590,
+    "ni": 880,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 5250,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 84352,
+   "shares": 16067071,
+   "equity": 34856,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 15839,
+   "dividend_yield": null,
+   "per": 95.9,
+   "roe": 2.5,
+   "pbr": 2.42,
+   "dcf": {
+    "E1": 900,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 93.7,
+    "norm_per": 93.7,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 20234,
+      "per_share": 1259,
+      "upside": -76.0
+     },
+     "base": {
+      "g": 5,
+      "value": 21327,
+      "per_share": 1327,
+      "upside": -74.7
+     },
+     "bull": {
+      "g": 10,
+      "value": 22689,
+      "per_share": 1412,
+      "upside": -73.1
+     }
+    },
+    "implied_g": 66.9,
+    "net_cash_added": 15839
+   }
+  },
+  "027050": {
+   "name": "코리아나",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 71651,
+    "op": -4476,
+    "ni": -8966,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 1163,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 37449,
+   "shares": 32200000,
+   "equity": 84134,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 10903,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -10.7,
+   "pbr": 0.45
+  },
+  "114840": {
+   "name": "아이패밀리에스씨",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 225549,
+    "op": 23311,
+    "ni": 19146,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 10210,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 169013,
+   "shares": 16553659,
+   "equity": 106909,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 22895,
+   "dividend_yield": null,
+   "per": 8.8,
+   "roe": 17.9,
+   "pbr": 1.58,
+   "dcf": {
+    "E1": 19100,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 8.8,
+    "norm_per": 8.8,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 163382,
+      "per_share": 9870,
+      "upside": -3.3
+     },
+     "base": {
+      "g": 5,
+      "value": 198301,
+      "per_share": 11979,
+      "upside": 17.3
+     },
+     "bull": {
+      "g": 10,
+      "value": 241843,
+      "per_share": 14610,
+      "upside": 43.1
+     }
+    },
+    "implied_g": 0.9,
+    "net_cash_added": 22895
+   }
+  },
+  "078520": {
+   "name": "에이블씨엔씨",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 240631,
+    "op": 25357,
+    "ni": 23795,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 9240,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 215432,
+   "shares": 23315163,
+   "equity": 75852,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 16352,
+   "dividend_yield": null,
+   "per": 9.1,
+   "roe": 31.4,
+   "pbr": 2.84,
+   "dcf": {
+    "E1": 23800,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 9.1,
+    "norm_per": 9.1,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 193244,
+      "per_share": 8288,
+      "upside": -10.3
+     },
+     "base": {
+      "g": 5,
+      "value": 237212,
+      "per_share": 10174,
+      "upside": 10.1
+     },
+     "bull": {
+      "g": 10,
+      "value": 292038,
+      "per_share": 12526,
+      "upside": 35.6
+     }
+    },
+    "implied_g": 2.7,
+    "net_cash_added": 16352
+   }
+  },
+  "086450": {
+   "name": "동국제약",
+   "group": "브랜드",
+   "ttm": {
+    "rev": 979600,
+    "op": 102525,
+    "ni": 76301,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 24500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 1105213,
+   "shares": 45110727,
+   "equity": 696625,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 12894,
+   "dividend_yield": null,
+   "per": 14.5,
+   "roe": 11.0,
+   "pbr": 1.59,
+   "dcf": {
+    "E1": 76300,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 14.5,
+    "norm_per": 14.5,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 585947,
+      "per_share": 12989,
+      "upside": -47.0
+     },
+     "base": {
+      "g": 5,
+      "value": 728384,
+      "per_share": 16147,
+      "upside": -34.1
+     },
+     "bull": {
+      "g": 10,
+      "value": 905995,
+      "per_share": 20084,
+      "upside": -18.0
+     }
+    },
+    "implied_g": 14.6,
+    "net_cash_added": 12894
+   }
+  },
+  "024720": {
+   "name": "콜마홀딩스",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 596303,
+    "op": 73966,
+    "ni": 46779,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 8550,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 293233,
+   "shares": 34296259,
+   "equity": 667601,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -132246,
+   "dividend_yield": null,
+   "per": 6.3,
+   "roe": 7.0,
+   "pbr": 0.44,
+   "dcf": {
+    "E1": 46800,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 6.3,
+    "norm_per": 6.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 240371,
+      "per_share": 7009,
+      "upside": -18.0
+     },
+     "base": {
+      "g": 5,
+      "value": 332988,
+      "per_share": 9709,
+      "upside": 13.6
+     },
+     "bull": {
+      "g": 10,
+      "value": 448476,
+      "per_share": 13077,
+      "upside": 52.9
+     }
+    },
+    "implied_g": 3.0,
+    "net_cash_added": -132246
+   }
+  },
+  "044820": {
+   "name": "코스맥스비티아이",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 771332,
+    "op": 43208,
+    "ni": 63783,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 22950,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 219284,
+   "shares": 9554839,
+   "equity": 324190,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 75606,
+   "dividend_yield": null,
+   "per": 3.4,
+   "roe": 19.7,
+   "pbr": 0.68,
+   "dcf": {
+    "E1": 63800,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 3.4,
+    "norm_per": 3.4,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 545007,
+      "per_share": 57040,
+      "upside": 148.5
+     },
+     "base": {
+      "g": 5,
+      "value": 661681,
+      "per_share": 69251,
+      "upside": 201.7
+     },
+     "bull": {
+      "g": 10,
+      "value": 807166,
+      "per_share": 84477,
+      "upside": 268.1
+     }
+    },
+    "implied_g": -28.6,
+    "net_cash_added": 75606
+   }
+  },
+  "950140": {
+   "name": "잉글우드랩",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 152,
+    "op": 26,
+    "ni": 22,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 6800,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 135101,
+   "shares": 19867866,
+   "equity": 117,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 22,
+   "dividend_yield": null,
+   "per": 6141.0,
+   "roe": 18.8,
+   "pbr": 1154.71,
+   "dcf": {
+    "E1": 0,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": null,
+    "norm_per": null,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 19,
+      "per_share": 1,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 5,
+      "value": 18,
+      "per_share": 1,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10,
+      "value": 17,
+      "per_share": 1,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": 22
+   }
+  },
+  "003350": {
+   "name": "한국화장품제조",
+   "group": "ODM·OEM",
+   "ttm": {
+    "rev": 216266,
+    "op": 38586,
+    "ni": 32026,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 12280,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 278265,
+   "shares": 22660000,
+   "equity": 121901,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 121020,
+   "dividend_yield": null,
+   "per": 8.7,
+   "roe": 26.3,
+   "pbr": 2.28,
+   "dcf": {
+    "E1": 32000,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 8.7,
+    "norm_per": 8.7,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 343932,
+      "per_share": 15178,
+      "upside": 23.6
+     },
+     "base": {
+      "g": 5,
+      "value": 399338,
+      "per_share": 17623,
+      "upside": 43.5
+     },
+     "bull": {
+      "g": 10,
+      "value": 468427,
+      "per_share": 20672,
+      "upside": 68.3
+     }
+    },
+    "implied_g": -7.9,
+    "net_cash_added": 121020
+   }
+  },
+  "260930": {
+   "name": "씨티케이",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 100512,
+    "op": -7536,
+    "ni": -14470,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2025,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 38159,
+   "shares": 18843789,
+   "equity": 145388,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -34935,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -10.0,
+   "pbr": 0.26
+  },
+  "086710": {
+   "name": "선진뷰티사이언스",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 82935,
+    "op": 3487,
+    "ni": 4991,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 5730,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 68819,
+   "shares": 12010260,
+   "equity": 86234,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -59044,
+   "dividend_yield": null,
+   "per": 13.8,
+   "roe": 5.8,
+   "pbr": 0.8,
+   "dcf": {
+    "E1": 5000,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 13.8,
+    "norm_per": 13.8,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 5,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10,
+      "value": 13549,
+      "per_share": 1128,
+      "upside": -80.3
+     }
+    },
+    "implied_g": 23.0,
+    "net_cash_added": -59044
+   }
+  },
+  "214370": {
+   "name": "케어젠",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 74897,
+    "op": 18240,
+    "ni": 22874,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 28250,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 1380600,
+   "shares": 48870784,
+   "equity": 218656,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 5901,
+   "dividend_yield": null,
+   "per": 60.4,
+   "roe": 10.5,
+   "pbr": 6.31,
+   "dcf": {
+    "E1": 22900,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 60.3,
+    "norm_per": 60.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 177586,
+      "per_share": 3634,
+      "upside": -87.1
+     },
+     "base": {
+      "g": 5,
+      "value": 220260,
+      "per_share": 4507,
+      "upside": -84.0
+     },
+     "bull": {
+      "g": 10,
+      "value": 273471,
+      "per_share": 5596,
+      "upside": -80.2
+     }
+    },
+    "implied_g": 49.1,
+    "net_cash_added": 5901
+   }
+  },
+  "078140": {
+   "name": "대봉엘에스",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 112387,
+    "op": 7027,
+    "ni": 1360,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 6690,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 73243,
+   "shares": 10948169,
+   "equity": 141767,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -17499,
+   "dividend_yield": null,
+   "per": 53.9,
+   "roe": 1.0,
+   "pbr": 0.52,
+   "dcf": {
+    "E1": 1400,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 52.3,
+    "norm_per": 52.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 5,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10,
+      "value": 3054,
+      "per_share": 279,
+      "upside": -95.8
+     }
+    },
+    "implied_g": 45.2,
+    "net_cash_added": -17499
+   }
+  },
+  "052260": {
+   "name": "현대바이오랜드",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 140699,
+    "op": 14475,
+    "ni": 13348,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 3770,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 113100,
+   "shares": 30000000,
+   "equity": 145564,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 19884,
+   "dividend_yield": null,
+   "per": 8.5,
+   "roe": 9.2,
+   "pbr": 0.78,
+   "dcf": {
+    "E1": 13300,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 8.5,
+    "norm_per": 8.5,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 117116,
+      "per_share": 3904,
+      "upside": 3.6
+     },
+     "base": {
+      "g": 5,
+      "value": 141284,
+      "per_share": 4709,
+      "upside": 24.9
+     },
+     "bull": {
+      "g": 10,
+      "value": 171419,
+      "per_share": 5714,
+      "upside": 51.6
+     }
+    },
+    "implied_g": -1.0,
+    "net_cash_added": 19884
+   }
+  },
+  "265740": {
+   "name": "엔에프씨",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 92615,
+    "op": 17057,
+    "ni": 13449,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 6360,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 113612,
+   "shares": 17863600,
+   "equity": 71313,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 3263,
+   "dividend_yield": null,
+   "per": 8.4,
+   "roe": 18.9,
+   "pbr": 1.59,
+   "dcf": {
+    "E1": 13400,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 8.5,
+    "norm_per": 8.5,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 103753,
+      "per_share": 5808,
+      "upside": -8.7
+     },
+     "base": {
+      "g": 5,
+      "value": 128731,
+      "per_share": 7206,
+      "upside": 13.3
+     },
+     "bull": {
+      "g": 10,
+      "value": 159877,
+      "per_share": 8950,
+      "upside": 40.7
+     }
+    },
+    "implied_g": 2.1,
+    "net_cash_added": 3263
+   }
+  },
+  "251120": {
+   "name": "바이오에프디엔씨",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 19534,
+    "op": 6098,
+    "ni": 6406,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 8890,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 75822,
+   "shares": 8528949,
+   "equity": 72929,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 13842,
+   "dividend_yield": null,
+   "per": 11.8,
+   "roe": 8.8,
+   "pbr": 1.04,
+   "dcf": {
+    "E1": 6400,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 59986,
+      "per_share": 7033,
+      "upside": -20.9
+     },
+     "base": {
+      "g": 5,
+      "value": 71456,
+      "per_share": 8378,
+      "upside": -5.8
+     },
+     "bull": {
+      "g": 10,
+      "value": 85757,
+      "per_share": 10055,
+      "upside": 13.1
+     }
+    },
+    "implied_g": 6.6,
+    "net_cash_added": 13842
+   }
+  },
+  "214260": {
+   "name": "라파스",
+   "group": "원료·소재",
+   "ttm": {
+    "rev": 30158,
+    "op": -3914,
+    "ni": -5479,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 7280,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 61214,
+   "shares": 8408463,
+   "equity": 25614,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 5302,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -21.4,
+   "pbr": 2.39
+  },
+  "290650": {
+   "name": "엘앤씨바이오",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 116304,
+    "op": 19430,
+    "ni": -149411,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 24600,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 657742,
+   "shares": 26737464,
+   "equity": 324772,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -3106,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -46.0,
+   "pbr": 2.03
+  },
+  "149980": {
+   "name": "하이로닉",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 37097,
+    "op": 4743,
+    "ni": 4529,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 4010,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 68968,
+   "shares": 17199046,
+   "equity": 79028,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 21303,
+   "dividend_yield": null,
+   "per": 15.2,
+   "roe": 5.7,
+   "pbr": 0.87,
+   "dcf": {
+    "E1": 4500,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 15.3,
+    "norm_per": 15.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 52004,
+      "per_share": 3024,
+      "upside": -24.6
+     },
+     "base": {
+      "g": 5,
+      "value": 59635,
+      "per_share": 3467,
+      "upside": -13.5
+     },
+     "bull": {
+      "g": 10,
+      "value": 69151,
+      "per_share": 4021,
+      "upside": 0.3
+     }
+    },
+    "implied_g": 9.9,
+    "net_cash_added": 21303
+   }
+  },
+  "199550": {
+   "name": "레이저옵텍",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 31679,
+    "op": -10405,
+    "ni": -7277,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2945,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 43716,
+   "shares": 14844207,
+   "equity": 30056,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 6991,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -24.2,
+   "pbr": 1.45
+  },
+  "256840": {
+   "name": "한국비엔씨",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 91186,
+    "op": -5605,
+    "ni": -4719,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2320,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 158676,
+   "shares": 68394886,
+   "equity": 226757,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 69648,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -2.1,
+   "pbr": 0.7
+  },
+  "069620": {
+   "name": "대웅제약",
+   "group": "미용·의료",
+   "ttm": {
+    "rev": 1635214,
+    "op": 190507,
+    "ni": 195473,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 107000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융",
+   "mcap": 1231171,
+   "shares": 11506270,
+   "equity": 1063932,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -678554,
+   "dividend_yield": null,
+   "per": 6.3,
+   "roe": 18.4,
+   "pbr": 1.16,
+   "dcf": {
+    "E1": 195500,
+    "r": 10.5,
+    "c": 0.7,
+    "note": "개별 가정 전 자동 계산: 최근 4개 분기 순이익을 정상 이익으로 사용(사이클 판단 전)",
+    "fwd_per": 6.3,
+    "norm_per": 6.3,
+    "scenarios": {
+     "bear": {
+      "g": 0,
+      "value": 897004,
+      "per_share": 77958,
+      "upside": -27.1
+     },
+     "base": {
+      "g": 5,
+      "value": 1288623,
+      "per_share": 111993,
+      "upside": 4.7
+     },
+     "bull": {
+      "g": 10,
+      "value": 1776949,
+      "per_share": 154433,
+      "upside": 44.3
+     }
+    },
+    "implied_g": 4.3,
+    "net_cash_added": -678554
    }
   }
  },

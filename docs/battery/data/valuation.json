@@ -1,288 +1,2850 @@
 {
- "updated": "2026-11-05",
+ "updated": "2026-11-08",
  "method": "내재가치 가정. E1=정상화 지배순이익(억원, 사이클 평균적인 해 기준), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차는 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율(증설 부담이 큰 회사일수록 낮음). 2차전지는 전기차 보급 속도·리튬 가격·미국 보조금에 따라 이익이 크게 출렁이므로 최근 1년 실적이 아니라 회사별 사이클 위치를 판단한 정상화 이익을 쓰는 것이 원칙. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외.",
  "terminal_growth": 2.0,
  "asof": "2026-11-05",
  "companies": {
   "373220": {
    "name": "LG에너지솔루션",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 25956572,
+    "op": 384835,
+    "ni": -1683059,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 347500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 81315000,
+   "shares": 234000000,
+   "equity": 22342149,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -21856684,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -7.5,
+   "pbr": 3.64,
+   "dcf": {
+    "E1": 141100,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 576.3,
+    "norm_per": 576.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -21856684
+   }
   },
   "006400": {
    "name": "삼성SDI",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 14255668,
+    "op": -842261,
+    "ni": 37647,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 510000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 39686503,
+   "shares": 78693635,
+   "equity": 24298832,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -10502815,
+   "dividend_yield": null,
+   "per": 1054.2,
+   "roe": 0.2,
+   "pbr": 1.63,
+   "dcf": {
+    "E1": 1016200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 39.1,
+    "norm_per": 39.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 49.7,
+    "net_cash_added": -10502815
+   }
   },
   "096770": {
    "name": "SK이노베이션",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 93212140,
+    "op": 6560353,
+    "ni": -1167289,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 115300,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 19557764,
+   "shares": 170169232,
+   "equity": 26190732,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -23981905,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -4.5,
+   "pbr": 0.75
   },
   "082920": {
    "name": "비츠로셀",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 277065,
+    "op": 77103,
+    "ni": 71297,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 22450,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1009086,
+   "shares": 44948159,
+   "equity": 358842,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 150410,
+   "dividend_yield": null,
+   "per": 14.2,
+   "roe": 19.9,
+   "pbr": 2.81,
+   "dcf": {
+    "E1": 36900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 27.3,
+    "norm_per": 27.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 289282,
+      "per_share": 6436,
+      "upside": -71.3
+     },
+     "base": {
+      "g": 4.0,
+      "value": 355921,
+      "per_share": 7918,
+      "upside": -64.7
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 417639,
+      "per_share": 9292,
+      "upside": -58.6
+     }
+    },
+    "implied_g": 37.6,
+    "net_cash_added": 150410
+   }
   },
   "004490": {
    "name": "세방전지",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 2118957,
+    "op": 135579,
+    "ni": 142467,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 54700,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 730270,
+   "shares": 13350457,
+   "equity": 1684427,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 139677,
+   "dividend_yield": null,
+   "per": 5.1,
+   "roe": 8.5,
+   "pbr": 0.43,
+   "dcf": {
+    "E1": 110900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 6.6,
+    "norm_per": 6.6,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 582645,
+      "per_share": 43642,
+      "upside": -20.2
+     },
+     "base": {
+      "g": 4.0,
+      "value": 795205,
+      "per_share": 59564,
+      "upside": 8.9
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 992071,
+      "per_share": 74310,
+      "upside": 35.8
+     }
+    },
+    "implied_g": 1.6,
+    "net_cash_added": 139677
+   }
   },
   "001570": {
    "name": "금양",
-   "group": "셀"
+   "group": "셀",
+   "ttm": {
+    "rev": 85001,
+    "op": -39098,
+    "ni": -62891,
+    "period": "2025Q2~2026Q1"
+   },
+   "price": 9900,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 632041,
+   "shares": 63842570,
+   "equity": 446707,
+   "equity_source": "DART 2026Q1",
+   "net_cash": -271492,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -14.1,
+   "pbr": 1.41
   },
   "003670": {
    "name": "포스코퓨처엠",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 2869339,
+    "op": 59293,
+    "ni": 44558,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 175600,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 15618950,
+   "shares": 88946185,
+   "equity": 4199286,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -3405825,
+   "dividend_yield": null,
+   "per": 350.5,
+   "roe": 1.1,
+   "pbr": 3.72,
+   "dcf": {
+    "E1": 20200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 773.2,
+    "norm_per": 773.2,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -3405825
+   }
   },
   "247540": {
    "name": "에코프로비엠",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 2304144,
+    "op": 130992,
+    "ni": 43735,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 90200,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 8823778,
+   "shares": 97824591,
+   "equity": 1795197,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -2403590,
+   "dividend_yield": null,
+   "per": 201.8,
+   "roe": 2.4,
+   "pbr": 4.92,
+   "dcf": {
+    "E1": 53500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 164.9,
+    "norm_per": 164.9,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 77.0,
+    "net_cash_added": -2403590
+   }
   },
   "086520": {
    "name": "에코프로",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 3314254,
+    "op": 286130,
+    "ni": 140701,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 71600,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 9699364,
+   "shares": 135465978,
+   "equity": 2229190,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -3066130,
+   "dividend_yield": null,
+   "per": 68.9,
+   "roe": 6.3,
+   "pbr": 4.35
   },
   "066970": {
    "name": "엘앤에프",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 2894752,
+    "op": 242681,
+    "ni": -322712,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 84300,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 3325184,
+   "shares": 39444649,
+   "equity": 776013,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -974208,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -41.6,
+   "pbr": 4.28
   },
   "450080": {
    "name": "에코프로머티리얼즈",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 523674,
+    "op": -16702,
+    "ni": 71596,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 28150,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1993410,
+   "shares": 70813870,
+   "equity": 1160582,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -900946,
+   "dividend_yield": null,
+   "per": 27.8,
+   "roe": 6.2,
+   "pbr": 1.72,
+   "dcf": {
+    "E1": 500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 4개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 3986.8,
+    "norm_per": 3986.8,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -900946
+   }
   },
   "051910": {
    "name": "LG화학",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 48815994,
+    "op": 816348,
+    "ni": -1512310,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 246000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 18203905,
+   "shares": 78275100,
+   "equity": 35430227,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -28879386,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -4.3,
+   "pbr": 0.51,
+   "dcf": {
+    "E1": 868500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 21.0,
+    "norm_per": 21.0,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 43.8,
+    "net_cash_added": -28879386
+   }
   },
   "005070": {
    "name": "코스모신소재",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 482692,
+    "op": 6333,
+    "ni": -7060,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 35700,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1185340,
+   "shares": 33202811,
+   "equity": 540549,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -79700,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -1.3,
+   "pbr": 2.19,
+   "dcf": {
+    "E1": 18000,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 65.9,
+    "norm_per": 65.9,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 587,
+      "per_share": 18,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 39113,
+      "per_share": 1178,
+      "upside": -96.7
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 74794,
+      "per_share": 2253,
+      "upside": -93.7
+     }
+    },
+    "implied_g": 61.8,
+    "net_cash_added": -79700
+   }
   },
   "005420": {
    "name": "코스모화학",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 715135,
+    "op": 1412,
+    "ni": -19393,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 9300,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 356789,
+   "shares": 38364359,
+   "equity": 234528,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -253627,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -8.3,
+   "pbr": 1.52
   },
   "101360": {
    "name": "에코앤드림",
-   "group": "양극재·전구체"
+   "group": "양극재·전구체",
+   "ttm": {
+    "rev": 108687,
+    "op": -6766,
+    "ni": -14135,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 9770,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 171441,
+   "shares": 17547646,
+   "equity": 207889,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -232543,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -6.8,
+   "pbr": 0.82,
+   "dcf": {
+    "E1": 800,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 214.3,
+    "norm_per": 214.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 65.6,
+    "net_cash_added": -232543
+   }
   },
   "005490": {
    "name": "POSCO홀딩스",
-   "group": "리튬·원료·재활용"
+   "group": "리튬·원료·재활용",
+   "ttm": {
+    "rev": 71237312,
+    "op": 2177297,
+    "ni": 1347453,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 274000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 20720093,
+   "shares": 75620779,
+   "equity": 57465538,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -15890942,
+   "dividend_yield": null,
+   "per": 15.4,
+   "roe": 2.3,
+   "pbr": 0.36,
+   "dcf": {
+    "E1": 2642400,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 7.8,
+    "norm_per": 7.8,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 2059027,
+      "per_share": 27228,
+      "upside": -90.1
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 7449692,
+      "per_share": 98514,
+      "upside": -64.0
+     }
+    },
+    "implied_g": 20.4,
+    "net_cash_added": -15890942
+   }
   },
   "365340": {
    "name": "성일하이텍",
-   "group": "리튬·원료·재활용"
+   "group": "리튬·원료·재활용",
+   "ttm": {
+    "rev": 234946,
+    "op": -15299,
+    "ni": -42122,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 27450,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 354685,
+   "shares": 12921115,
+   "equity": 158333,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -345377,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -26.6,
+   "pbr": 2.24
   },
   "107600": {
    "name": "새빗켐",
-   "group": "리튬·원료·재활용"
+   "group": "리튬·원료·재활용",
+   "ttm": {
+    "rev": 48543,
+    "op": -5259,
+    "ni": -12903,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10210,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 57687,
+   "shares": 5650054,
+   "equity": 46399,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -20962,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -27.8,
+   "pbr": 1.24
   },
   "078600": {
    "name": "대주전자재료",
-   "group": "음극재·도전재"
+   "group": "음극재·도전재",
+   "ttm": {
+    "rev": 328657,
+    "op": 26567,
+    "ni": 10092,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 83900,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1308928,
+   "shares": 15601046,
+   "equity": 282504,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -254924,
+   "dividend_yield": null,
+   "per": 129.7,
+   "roe": 3.6,
+   "pbr": 4.63,
+   "dcf": {
+    "E1": 16400,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 79.8,
+    "norm_per": 79.8,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 65.1,
+    "net_cash_added": -254924
+   }
   },
   "121600": {
    "name": "나노신소재",
-   "group": "음극재·도전재"
+   "group": "음극재·도전재",
+   "ttm": {
+    "rev": 129315,
+    "op": 10637,
+    "ni": 15378,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 70500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 848960,
+   "shares": 12041985,
+   "equity": 265479,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 95618,
+   "dividend_yield": null,
+   "per": 55.2,
+   "roe": 5.8,
+   "pbr": 3.2,
+   "dcf": {
+    "E1": 8600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 98.7,
+    "norm_per": 98.7,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 123021,
+      "per_share": 10216,
+      "upside": -85.5
+     },
+     "base": {
+      "g": 4.0,
+      "value": 136170,
+      "per_share": 11308,
+      "upside": -84.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 148348,
+      "per_share": 12319,
+      "upside": -82.5
+     }
+    },
+    "implied_g": 77.5,
+    "net_cash_added": 95618
+   }
   },
   "418550": {
    "name": "제이오",
-   "group": "음극재·도전재"
+   "group": "음극재·도전재",
+   "ttm": {
+    "rev": 41336,
+    "op": -7968,
+    "ni": -6597,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 3935,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 117344,
+   "shares": 29820573,
+   "equity": 167404,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 3911,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -3.9,
+   "pbr": 0.7
   },
   "348370": {
    "name": "엔켐",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 366930,
+    "op": -92272,
+    "ni": -144598,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 16270,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 356492,
+   "shares": 21910993,
+   "equity": 434722,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -133493,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -33.3,
+   "pbr": 0.82
   },
   "357780": {
    "name": "솔브레인",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 1060862,
+    "op": 168146,
+    "ni": 127645,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 266000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 2037202,
+   "shares": 7658656,
+   "equity": 1149347,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 315388,
+   "dividend_yield": null,
+   "per": 16.0,
+   "roe": 11.1,
+   "pbr": 1.77,
+   "dcf": {
+    "E1": 129600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 15.7,
+    "norm_per": 15.7,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 820580,
+      "per_share": 107144,
+      "upside": -59.7
+     },
+     "base": {
+      "g": 4.0,
+      "value": 1062999,
+      "per_share": 138797,
+      "upside": -47.8
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 1287519,
+      "per_share": 168113,
+      "upside": -36.8
+     }
+    },
+    "implied_g": 23.2,
+    "net_cash_added": 315388
+   }
   },
   "278280": {
    "name": "천보",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 156979,
+    "op": -9220,
+    "ni": -64596,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 30500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 371641,
+   "shares": 12184939,
+   "equity": 451969,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 56635,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -14.3,
+   "pbr": 0.82
   },
   "093370": {
    "name": "후성",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 569908,
+    "op": 43348,
+    "ni": 36451,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 9000,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 965298,
+   "shares": 107255330,
+   "equity": 365524,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -248033,
+   "dividend_yield": null,
+   "per": 26.5,
+   "roe": 10.0,
+   "pbr": 2.64,
+   "dcf": {
+    "E1": 300,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 3217.7,
+    "norm_per": 3217.7,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -248033
+   }
   },
   "025900": {
    "name": "동화기업",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 873218,
+    "op": -12747,
+    "ni": -40388,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 5630,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 257522,
+   "shares": 45741078,
+   "equity": 814980,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -992303,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -5.0,
+   "pbr": 0.32
   },
   "220260": {
    "name": "켐트로스",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 71176,
+    "op": 7461,
+    "ni": 2150,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 3865,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 123958,
+   "shares": 32072040,
+   "equity": 101039,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 10291,
+   "dividend_yield": null,
+   "per": 57.7,
+   "roe": 2.1,
+   "pbr": 1.23,
+   "dcf": {
+    "E1": 900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 137.7,
+    "norm_per": 137.7,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 13135,
+      "per_share": 410,
+      "upside": -89.4
+     },
+     "base": {
+      "g": 4.0,
+      "value": 14500,
+      "per_share": 452,
+      "upside": -88.3
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 15764,
+      "per_share": 492,
+      "upside": -87.3
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": 10291
+   }
   },
   "011500": {
    "name": "한농화성",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 230824,
+    "op": 12451,
+    "ni": 9594,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 11860,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 185455,
+   "shares": 15637042,
+   "equity": 182360,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -9132,
+   "dividend_yield": null,
+   "per": 19.3,
+   "roe": 5.3,
+   "pbr": 1.02,
+   "dcf": {
+    "E1": 9800,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 18.9,
+    "norm_per": 18.9,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 31772,
+      "per_share": 2032,
+      "upside": -82.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 51400,
+      "per_share": 3287,
+      "upside": -72.3
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 69579,
+      "per_share": 4450,
+      "upside": -62.5
+     }
+    },
+    "implied_g": 31.2,
+    "net_cash_added": -9132
+   }
   },
   "457190": {
    "name": "이수스페셜티케미컬",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 429465,
+    "op": 11389,
+    "ni": 6611,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 69400,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 2097190,
+   "shares": 30218872,
+   "equity": 138485,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 16639,
+   "dividend_yield": null,
+   "per": 317.2,
+   "roe": 4.8,
+   "pbr": 15.14,
+   "dcf": {
+    "E1": 1700,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 3개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 1233.6,
+    "norm_per": 1233.6,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 22241,
+      "per_share": 736,
+      "upside": -98.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 24929,
+      "per_share": 825,
+      "upside": -98.8
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 27419,
+      "per_share": 907,
+      "upside": -98.7
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": 16639
+   }
   },
   "281740": {
    "name": "레이크머티리얼즈",
-   "group": "전해액·첨가제"
+   "group": "전해액·첨가제",
+   "ttm": {
+    "rev": 148395,
+    "op": 16492,
+    "ni": 13709,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 10560,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 694114,
+   "shares": 65730510,
+   "equity": 152127,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -184647,
+   "dividend_yield": null,
+   "per": 50.6,
+   "roe": 9.0,
+   "pbr": 4.56,
+   "dcf": {
+    "E1": 19500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 35.6,
+    "norm_per": 35.6,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 47.7,
+    "net_cash_added": -184647
+   }
   },
   "361610": {
    "name": "SK아이이테크놀로지",
-   "group": "분리막"
+   "group": "분리막",
+   "ttm": {
+    "rev": 196314,
+    "op": -259688,
+    "ni": -1580264,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 13340,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1091040,
+   "shares": 81787100,
+   "equity": 1287921,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1447799,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -122.7,
+   "pbr": 0.85
   },
   "393890": {
    "name": "더블유씨피",
-   "group": "분리막"
+   "group": "분리막",
+   "ttm": {
+    "rev": 135405,
+    "op": -107220,
+    "ni": -148316,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 7430,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 251455,
+   "shares": 33843144,
+   "equity": 902789,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -853318,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -16.4,
+   "pbr": 0.28
   },
   "089980": {
    "name": "상아프론테크",
-   "group": "분리막"
+   "group": "분리막",
+   "ttm": {
+    "rev": 214859,
+    "op": 8802,
+    "ni": 9852,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 13080,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 204557,
+   "shares": 15638896,
+   "equity": 209982,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -65818,
+   "dividend_yield": null,
+   "per": 20.8,
+   "roe": 4.7,
+   "pbr": 0.97,
+   "dcf": {
+    "E1": 8300,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 24.6,
+    "norm_per": 24.6,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 10005,
+      "per_share": 640,
+      "upside": -95.1
+     }
+    },
+    "implied_g": 40.2,
+    "net_cash_added": -65818
+   }
   },
   "020150": {
    "name": "롯데에너지머티리얼즈",
-   "group": "동박·알루미늄박"
+   "group": "동박·알루미늄박",
+   "ttm": {
+    "rev": 668657,
+    "op": -89977,
+    "ni": -81458,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 34050,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1783044,
+   "shares": 52365463,
+   "equity": 1722135,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -208389,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -4.7,
+   "pbr": 1.04
   },
   "336370": {
    "name": "솔루스첨단소재",
-   "group": "동박·알루미늄박"
+   "group": "동박·알루미늄박",
+   "ttm": {
+    "rev": 609053,
+    "op": -86815,
+    "ni": 41087,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 6900,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 484465,
+   "shares": 70212298,
+   "equity": 747822,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -821103,
+   "dividend_yield": null,
+   "per": 11.8,
+   "roe": 5.5,
+   "pbr": 0.65,
+   "dcf": {
+    "E1": 25200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 19.2,
+    "norm_per": 19.2,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 42.9,
+    "net_cash_added": -821103
+   }
   },
   "011790": {
    "name": "SKC",
-   "group": "동박·알루미늄박"
+   "group": "동박·알루미늄박",
+   "ttm": {
+    "rev": 2076302,
+    "op": -203537,
+    "ni": -805087,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 69500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 3374557,
+   "shares": 48554778,
+   "equity": 1994280,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -2112562,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -40.4,
+   "pbr": 1.69
   },
   "006110": {
    "name": "삼아알미늄",
-   "group": "동박·알루미늄박"
+   "group": "동박·알루미늄박",
+   "ttm": {
+    "rev": 302308,
+    "op": -14516,
+    "ni": -22554,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 46500,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 703241,
+   "shares": 15123455,
+   "equity": 221563,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -210518,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -10.2,
+   "pbr": 3.17
   },
   "018470": {
    "name": "조일알미늄",
-   "group": "동박·알루미늄박"
+   "group": "동박·알루미늄박",
+   "ttm": {
+    "rev": 537016,
+    "op": 25267,
+    "ni": 18114,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 4835,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 612264,
+   "shares": 126631721,
+   "equity": 227026,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -298840,
+   "dividend_yield": null,
+   "per": 33.8,
+   "roe": 8.0,
+   "pbr": 2.7,
+   "dcf": {
+    "E1": 10500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 58.3,
+    "norm_per": 58.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 57.6,
+    "net_cash_added": -298840
+   }
   },
   "008730": {
    "name": "율촌화학",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 516230,
+    "op": 7278,
+    "ni": 5006,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 12140,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 301072,
+   "shares": 24800000,
+   "equity": 293281,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -288225,
+   "dividend_yield": null,
+   "per": 60.1,
+   "roe": 1.7,
+   "pbr": 1.03
   },
   "014820": {
    "name": "동원시스템즈",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 1409743,
+    "op": 72121,
+    "ni": 63267,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 21550,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 624762,
+   "shares": 28991282,
+   "equity": 908440,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -278723,
+   "dividend_yield": null,
+   "per": 9.9,
+   "roe": 7.0,
+   "pbr": 0.69,
+   "dcf": {
+    "E1": 60500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 10.3,
+    "norm_per": 10.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 121935,
+      "per_share": 4206,
+      "upside": -80.5
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 242259,
+      "per_share": 8356,
+      "upside": -61.2
+     }
+    },
+    "implied_g": 22.7,
+    "net_cash_added": -278723
+   }
   },
   "002710": {
    "name": "TCC스틸",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 657787,
+    "op": -12173,
+    "ni": -17357,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 9860,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 258467,
+   "shares": 26213697,
+   "equity": 246703,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -206932,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -7.0,
+   "pbr": 1.05,
+   "dcf": {
+    "E1": 12600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 20.5,
+    "norm_per": 20.5,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 39.9,
+    "net_cash_added": -206932
+   }
   },
   "243840": {
    "name": "신흥에스이씨",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 457280,
+    "op": 14870,
+    "ni": 19485,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 5900,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 227494,
+   "shares": 38558235,
+   "equity": 364658,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -337155,
+   "dividend_yield": null,
+   "per": 11.7,
+   "roe": 5.3,
+   "pbr": 0.62,
+   "dcf": {
+    "E1": 18700,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 12.2,
+    "norm_per": 12.2,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 34.3,
+    "net_cash_added": -337155
+   }
   },
   "091580": {
    "name": "상신이디피",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 291588,
+    "op": 22212,
+    "ni": 17282,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 25950,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 345867,
+   "shares": 13328219,
+   "equity": 179095,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -67590,
+   "dividend_yield": null,
+   "per": 20.0,
+   "roe": 9.6,
+   "pbr": 1.93,
+   "dcf": {
+    "E1": 14200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 24.4,
+    "norm_per": 24.4,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 26712,
+      "per_share": 2004,
+      "upside": -92.3
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 55032,
+      "per_share": 4129,
+      "upside": -84.1
+     }
+    },
+    "implied_g": 38.8,
+    "net_cash_added": -67590
+   }
   },
   "458650": {
    "name": "성우",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 89277,
+    "op": 2584,
+    "ni": 8301,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 6340,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 95390,
+   "shares": 15045670,
+   "equity": 226381,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 139854,
+   "dividend_yield": null,
+   "per": 11.5,
+   "roe": 3.7,
+   "pbr": 0.42
   },
   "065350": {
    "name": "신성델타테크",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 1040916,
+    "op": 33377,
+    "ni": 29389,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 28800,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 791538,
+   "shares": 27483948,
+   "equity": 268111,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -280263,
+   "dividend_yield": null,
+   "per": 26.9,
+   "roe": 11.0,
+   "pbr": 2.95,
+   "dcf": {
+    "E1": 14900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 53.1,
+    "norm_per": 53.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 56.1,
+    "net_cash_added": -280263
+   }
   },
   "312610": {
    "name": "에이에프더블류",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 17978,
+    "op": -9673,
+    "ni": -10093,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 37,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 750,
+   "shares": 20256888,
+   "equity": 42433,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 4839,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -23.8,
+   "pbr": 0.02
   },
   "054210": {
    "name": "이랜텍",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 926215,
+    "op": 60922,
+    "ni": 52453,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 5450,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 135634,
+   "shares": 24886881,
+   "equity": 334346,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -163527,
+   "dividend_yield": null,
+   "per": 2.6,
+   "roe": 15.7,
+   "pbr": 0.41,
+   "dcf": {
+    "E1": 26500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 5.1,
+    "norm_per": 5.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 16994,
+      "per_share": 683,
+      "upside": -87.5
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 71207,
+      "per_share": 2861,
+      "upside": -47.5
+     }
+    },
+    "implied_g": 15.6,
+    "net_cash_added": -163527
+   }
   },
   "047310": {
    "name": "파워로직스",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 784117,
+    "op": 16143,
+    "ni": 8501,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2740,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 100313,
+   "shares": 36610755,
+   "equity": 217350,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -35670,
+   "dividend_yield": null,
+   "per": 11.8,
+   "roe": 3.9,
+   "pbr": 0.46
   },
   "084850": {
    "name": "아이티엠반도체",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 529650,
+    "op": -14932,
+    "ni": -138094,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 4995,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 103340,
+   "shares": 20688721,
+   "equity": 27664,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -267034,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -499.2,
+   "pbr": 3.74
   },
   "417200": {
    "name": "LS머트리얼즈",
-   "group": "부품·케이스"
+   "group": "부품·케이스",
+   "ttm": {
+    "rev": 173413,
+    "op": 289,
+    "ni": 1197,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 9540,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 645406,
+   "shares": 67652659,
+   "equity": 184254,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -15451,
+   "dividend_yield": null,
+   "per": 539.2,
+   "roe": 0.6,
+   "pbr": 3.5,
+   "dcf": {
+    "E1": 6100,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 3개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 105.8,
+    "norm_per": 105.8,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 10810,
+      "per_share": 160,
+      "upside": -98.3
+     },
+     "base": {
+      "g": 4.0,
+      "value": 23412,
+      "per_share": 346,
+      "upside": -96.4
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 35083,
+      "per_share": 519,
+      "upside": -94.6
+     }
+    },
+    "implied_g": 75.0,
+    "net_cash_added": -15451
+   }
   },
   "299030": {
    "name": "하나기술",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 75806,
+    "op": -5477,
+    "ni": 2211,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10780,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 86185,
+   "shares": 7994910,
+   "equity": 98347,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -34556,
+   "dividend_yield": null,
+   "per": 39.0,
+   "roe": 2.2,
+   "pbr": 0.88
   },
   "137400": {
    "name": "피엔티",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 698657,
+    "op": 71165,
+    "ni": 83296,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 25300,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 590967,
+   "shares": 23358372,
+   "equity": 735867,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -250059,
+   "dividend_yield": null,
+   "per": 7.1,
+   "roe": 11.3,
+   "pbr": 0.8,
+   "dcf": {
+    "E1": 79900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 7.4,
+    "norm_per": 7.4,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 97825,
+      "per_share": 4188,
+      "upside": -83.4
+     },
+     "base": {
+      "g": 4.0,
+      "value": 264759,
+      "per_share": 11335,
+      "upside": -55.2
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 419367,
+      "per_share": 17954,
+      "upside": -29.0
+     }
+    },
+    "implied_g": 15.2,
+    "net_cash_added": -250059
+   }
   },
   "222080": {
    "name": "씨아이에스",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 292175,
+    "op": 30857,
+    "ni": 41855,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 7020,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 545957,
+   "shares": 77771623,
+   "equity": 533373,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 242798,
+   "dividend_yield": null,
+   "per": 13.0,
+   "roe": 7.8,
+   "pbr": 1.02,
+   "dcf": {
+    "E1": 20200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 27.0,
+    "norm_per": 27.0,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 305670,
+      "per_share": 3930,
+      "upside": -44.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 335840,
+      "per_share": 4318,
+      "upside": -38.5
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 363782,
+      "per_share": 4678,
+      "upside": -33.4
+     }
+    },
+    "implied_g": 31.5,
+    "net_cash_added": 242798
+   }
   },
   "382840": {
    "name": "원준",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 32033,
+    "op": -17831,
+    "ni": -31375,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 4155,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 63111,
+   "shares": 15189281,
+   "equity": 87415,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -16532,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -35.9,
+   "pbr": 0.72,
+   "dcf": {
+    "E1": 3600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 17.5,
+    "norm_per": 17.5,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 7302,
+      "per_share": 481,
+      "upside": -88.4
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 14460,
+      "per_share": 952,
+      "upside": -77.1
+     }
+    },
+    "implied_g": 32.1,
+    "net_cash_added": -16532
+   }
   },
   "251630": {
    "name": "브이원텍",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 62282,
+    "op": -12778,
+    "ni": -7444,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 3240,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 51138,
+   "shares": 15783457,
+   "equity": 100903,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -4565,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -7.4,
+   "pbr": 0.51,
+   "dcf": {
+    "E1": 300,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 170.5,
+    "norm_per": 170.5,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -4565
+   }
   },
   "196490": {
    "name": "디에이테크놀로지",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 31973,
+    "op": -7977,
+    "ni": -2074,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 96.0,
+   "price_date": "2026-10-06 15:30",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1088,
+   "shares": 11329838,
+   "equity": -5081,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -8995,
+   "dividend_yield": null,
+   "per": null,
+   "roe": 40.8,
+   "pbr": -0.21
   },
   "340930": {
    "name": "유일에너테크",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 35941,
+    "op": -10235,
+    "ni": -25988,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 806,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 55433,
+   "shares": 68775785,
+   "equity": 44385,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -32660,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -58.6,
+   "pbr": 1.25
   },
   "323280": {
    "name": "태성",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 72058,
+    "op": 2470,
+    "ni": 2505,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 45650,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 1394059,
+   "shares": 30537980,
+   "equity": 131919,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -19157,
+   "dividend_yield": null,
+   "per": 556.5,
+   "roe": 1.9,
+   "pbr": 10.57,
+   "dcf": {
+    "E1": 400,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 4개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 3485.1,
+    "norm_per": 3485.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": null,
+    "net_cash_added": -19157
+   }
   },
   "262260": {
    "name": "에이프로",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 105026,
+    "op": -11002,
+    "ni": -8498,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 2840,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 42617,
+   "shares": 15005879,
+   "equity": 60649,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -89148,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -14.0,
+   "pbr": 0.7,
+   "dcf": {
+    "E1": 2200,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 19.4,
+    "norm_per": 19.4,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     }
+    },
+    "implied_g": 44.2,
+    "net_cash_added": -89148
+   }
   },
   "259630": {
    "name": "엠플러스",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 184408,
+    "op": 24176,
+    "ni": 25898,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 8390,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 100781,
+   "shares": 12012095,
+   "equity": 117093,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 27354,
+   "dividend_yield": null,
+   "per": 3.9,
+   "roe": 22.1,
+   "pbr": 0.86,
+   "dcf": {
+    "E1": 5700,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 17.7,
+    "norm_per": 17.7,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 48468,
+      "per_share": 4035,
+      "upside": -51.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 58600,
+      "per_share": 4878,
+      "upside": -41.9
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 67984,
+      "per_share": 5660,
+      "upside": -32.5
+     }
+    },
+    "implied_g": 23.7,
+    "net_cash_added": 27354
+   }
   },
   "267320": {
    "name": "나인테크",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 71234,
+    "op": -7365,
+    "ni": -5407,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2100,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 120022,
+   "shares": 57153456,
+   "equity": 90955,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -10614,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -5.9,
+   "pbr": 1.32
   },
   "079810": {
    "name": "디이엔티",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 69640,
+    "op": 4309,
+    "ni": 12072,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 3140,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 66783,
+   "shares": 21268491,
+   "equity": 175985,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 63504,
+   "dividend_yield": null,
+   "per": 5.5,
+   "roe": 6.9,
+   "pbr": 0.38,
+   "dcf": {
+    "E1": 2900,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 23.0,
+    "norm_per": 23.0,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 70183,
+      "per_share": 3300,
+      "upside": 5.1
+     },
+     "base": {
+      "g": 4.0,
+      "value": 73387,
+      "per_share": 3451,
+      "upside": 9.9
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 76356,
+      "per_share": 3590,
+      "upside": 14.3
+     }
+    },
+    "implied_g": -22.3,
+    "net_cash_added": 63504
+   }
   },
   "277880": {
    "name": "티에스아이",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 311995,
+    "op": 14858,
+    "ni": 17972,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 3060,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 60180,
+   "shares": 19666534,
+   "equity": 137860,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -35071,
+   "dividend_yield": null,
+   "per": 3.3,
+   "roe": 13.0,
+   "pbr": 0.44,
+   "dcf": {
+    "E1": 6500,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 9.3,
+    "norm_per": 9.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 0,
+      "per_share": 0,
+      "upside": -100.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 8596,
+      "per_share": 437,
+      "upside": -85.7
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 21711,
+      "per_share": 1104,
+      "upside": -63.9
+     }
+    },
+    "implied_g": 22.0,
+    "net_cash_added": -35071
+   }
   },
   "282880": {
    "name": "코윈테크",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 178394,
+    "op": -31160,
+    "ni": 5385,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 8630,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 99527,
+   "shares": 11532662,
+   "equity": 174118,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -28656,
+   "dividend_yield": null,
+   "per": 18.5,
+   "roe": 3.1,
+   "pbr": 0.57,
+   "dcf": {
+    "E1": 7600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 13.1,
+    "norm_per": 13.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 4833,
+      "per_share": 419,
+      "upside": -95.1
+     },
+     "base": {
+      "g": 4.0,
+      "value": 20904,
+      "per_share": 1813,
+      "upside": -79.0
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 35787,
+      "per_share": 3103,
+      "upside": -64.0
+     }
+    },
+    "implied_g": 26.0,
+    "net_cash_added": -28656
+   }
   },
   "372170": {
    "name": "윤성에프앤씨",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 123211,
+    "op": -9849,
+    "ni": 6682,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 19090,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 152320,
+   "shares": 7979048,
+   "equity": 193928,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 53075,
+   "dividend_yield": null,
+   "per": 22.8,
+   "roe": 3.4,
+   "pbr": 0.79,
+   "dcf": {
+    "E1": 16800,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 4개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 9.1,
+    "norm_per": 9.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 117564,
+      "per_share": 14734,
+      "upside": -22.8
+     },
+     "base": {
+      "g": 4.0,
+      "value": 148509,
+      "per_share": 18612,
+      "upside": -2.5
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 177169,
+      "per_share": 22204,
+      "upside": 16.3
+     }
+    },
+    "implied_g": 4.9,
+    "net_cash_added": 53075
+   }
   },
   "217820": {
    "name": "원익피앤이",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 239671,
+    "op": -12918,
+    "ni": -9894,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 1977,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 88257,
+   "shares": 44641958,
+   "equity": 95929,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -94940,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -10.3,
+   "pbr": 0.92
   },
   "333620": {
    "name": "엔시스",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 57654,
+    "op": -1418,
+    "ni": -1950,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 4015,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 43257,
+   "shares": 10773775,
+   "equity": 55359,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -4031,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -3.5,
+   "pbr": 0.78,
+   "dcf": {
+    "E1": 2800,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 15.4,
+    "norm_per": 15.4,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 7772,
+      "per_share": 721,
+      "upside": -82.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 13436,
+      "per_share": 1247,
+      "upside": -68.9
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 18682,
+      "per_share": 1734,
+      "upside": -56.8
+     }
+    },
+    "implied_g": 27.1,
+    "net_cash_added": -4031
+   }
   },
   "290670": {
    "name": "대보마그네틱",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 13821,
+    "op": -10351,
+    "ni": -35453,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 4455,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 33285,
+   "shares": 7471472,
+   "equity": 13857,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -6703,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -255.8,
+   "pbr": 2.4
   },
   "071280": {
    "name": "로체시스템즈",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 145334,
+    "op": 16243,
+    "ni": 13767,
+    "period": "2025Q3~2026Q2"
+   },
+   "auto": true,
+   "price": 7420,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 113501,
+   "shares": 15296603,
+   "equity": 147471,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 58799,
+   "dividend_yield": null,
+   "per": 8.2,
+   "roe": 9.3,
+   "pbr": 0.77,
+   "dcf": {
+    "E1": 12600,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "임시 자동 가정(회사별 검토 전): 최근 5개 연도 지배순이익 평균(호황 2022년과 불황 2024~25년을 함께 담은 사이클 평균)을 정상 이익으로 썼어요. 회사별 사이클 판단이 끝나면 개별 가정으로 바뀌어요",
+    "fwd_per": 9.0,
+    "norm_per": 9.0,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 105609,
+      "per_share": 6904,
+      "upside": -7.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 128071,
+      "per_share": 8373,
+      "upside": 12.8
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 148875,
+      "per_share": 9733,
+      "upside": 31.2
+     }
+    },
+    "implied_g": -1.4,
+    "net_cash_added": 58799
+   }
   },
   "360070": {
    "name": "탑머티리얼",
-   "group": "장비"
+   "group": "장비",
+   "ttm": {
+    "rev": 27663,
+    "op": -39124,
+    "ni": -35560,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 8110,
+   "price_date": "2026-11-05 23:58",
+   "price_source": "네이버 금융 · Yahoo Finance",
+   "mcap": 65174,
+   "shares": 8036252,
+   "equity": 99056,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -18878,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -35.9,
+   "pbr": 0.66
   }
  },
  "industry_cycle": {}
