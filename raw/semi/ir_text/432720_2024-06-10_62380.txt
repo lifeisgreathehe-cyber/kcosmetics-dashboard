@@ -1,0 +1,742 @@
+[p1]
+
+
+[p2]
+본 자료는 기관투자자들을 대상으로 실시되는 presentation에서 정보 제공을 목적으로 주식회사 퀄리타스반도체 (이하 "회사")에 의해 작성됐으며 이의 반출, 복사
+또는 타인에 대한 재배포는 금지됨을 알려드리는 바입니다. 본 presentation의 참석은 위와 같은 제한 사항의 준수에 대한 동의로 받아들이며, 제한 사항에 대한
+위반은 관련 '자본시장과 금융투자업에 관한 법률'에 대한 위반에 해당될 수 있습니다.
+본 자료에 포함된 "예측정보"는 개별 확인 절차를 거치지 않은 정보들입니다. 이는 과거가 아닌 미래의 사건과 관계된 사항으로 회사의 미래 경영현황 및 재무실적을 의미하고, 
+표현상으로는 '예상', '전망', '계획', '기대', '(E)'등과 같은 단어를 포함합니다. 위 "예측정보"는 경영 환경의 변화 등에 따라 영향을 받으며 실제 미래 실적은 "예측정보"에 기재되거나
+암시된 내용과 중대한 차이가 발생할 수 있습니다. 
+미래 전망은 presentation 실시일 현재를 기준으로 작성된 것이며 시장 환경과 회사의 경영방향 등을 고려한 것으로 시장 환경의 변화와 전략 수정 등에 따라 변경될 수 있음을
+양지하시기 바랍니다.
+본 자료의 활용으로 인해 발생하는 손실에 대해 회사 및 회사의 임원들은 그 어떠한 책임도 부담하지 않음을 알려드립니다. (과실 및 기타의 경우 포함)
+본 문서는 주식의 모집 또는 매출, 매매 및 청약을 위한 권유를 하지 않으며, 문서의 그 어느 부분도 관련 계약 및 약정 또는 투자 결정을 위한 기초 또는 근거가 될 수 없음을
+알려드립니다.
+2
+
+[p3]
+Prologue
+Chapter 1. 초고속인터커넥트IP 선두기업
+Chapter 2. 경영실적
+Appendix 
+
+
+[p4]
+4
+반도체IP 산업
+주로 디스플레이 분야에서 영상데이터를
+전송하기 위한 목적으로 기술 발전
+(Full HD, Ultra HD, 4K, 8K 등)
+인공지능 어플리케이션(LLM, 자율주행,  
+On-device 등)의 출현으로 High-speed 
+Interconnect 기술 수요 폭발적 증가
+Previous
+ High-speed Interconnect 란?
+기술은 두 장치 간 방대한 데이터를 빠른 속도로 전송하는 기술
+최신 SoC트렌드–다양한 ASIC의등장
+다양한ASIC의등장으로IP 시장성장확대
+어플리케이션
+T P U F S D DPU기업 E x y n o s
+01 Corporate Identity
+High-speed Interface IP Provider = 반도체 IP + High-speed Interconnect
+Prologue
+A I/  머신러닝
+모바일
+SoC
+LLM
+AI
+SoC
+M ic r o  LE D
+디스플레이
+SoC
+자율주행
+자동차
+SoC
+High-speed Interconnect 
+PCB(Printed Circuit Board) 상에서
+여러 개의 반도체 칩이 모여 시스템을 구현
+기존 시스템을 하나의 칩으로 집적하여
+SoC(System on Chip)를 제작
+(모바일폰의 AP Processor 등)
+Current
+PreviousCurrent
+초고속인터커넥트기술의필수요소
+반도체 IP 회사
+SoC 내 특정 기능을 수행하는 부분 블록 회로(IP)를 설계하여
+SoC 설계사(팹리스)에 납품하는 회사
+High SpeedLow Power Low Latency
+Previous
+R I S C-V
+ A D A S
+
+[p5]
+5출처: Ipnest2023
+10%
+18%
+22% 22%
+15%
+13%
+초고속
+인터페이스
+시장규모
+$1,302M
+(2021)
+PCIe
+DDR
+Ethernet & Die-to-die
+USB
+MIPI
+기타
+인터페이스IP시장의핵심요소
+당사상위5개
+표준규격중
+PCIe, Ethernet, 
+MIPI, 기타
+(디스플레이칩셋포함)
+규격(약 M/S 50%)에
+대한사업영위
+18.0% 25.0%
+57.6% 49.5%
+17.5% 16.8%
+6.9% 8.7%
+2017 2022
+Interface Processor Physical Digital Other
+연도별글로벌IP 비중변화
+02 HighspeedInterface IP
+반도체 IP 중 High-speed Interface IP를전문으로하는기업
+Prologue
+퀄리타스 사업영역
+Processor (CPU 및GPU)
+스토리지(SSD 및HDD)
+서버/네트워크
+CXL 메모리
+MIPI
+Display
+USB
+DDR
+PCle
+100G
+SERDES
+UCle
+네트워크/데이터센터
+칩렛Die메모리
+USB 저장장치
+디스플레이
+카메라모듈
+SoC와외부기가간통신현황
+
+[p6]
+6
+CPU
+I-Cache D-Cache
+GPU
+Cache
+NPU
+A/V
+Codec DSP
+MCU Security
+Inter-connectivity
+HardmacroIP: 파운드리공정의특성을반영하여회로도면형태로존재하는IP
+SoftmacroIP: 파운드리공정과무관하게데이터형태로존재하는IP
+Interface PHY 위주의 IP 비즈니스구성
+<SoC 칩 내부 도식화 모습>
+출처: TSMC, A Modern SOC Block and IP Diagram
+SRAM NVM
+STD
+GPIO
+Analog
+RF M/S
+Interface Controller
+Interface PHY 
+& Controller
+USB
+SATA
+GDDR
+HBM
+DDRx
+LPDDRx
+MIPI
+PCIE
+CXL
+D2D
+Highspeed
+SERDES
+HDMI
+eDP
+03 퀄리타스반도체사업영역
+HardmacroIP인 Interface PHY IP 위주의포트폴리오구성
+Prologue
+Hardmacro IP
+아날로그특성중시 → 설계도면형태로제공
+IP 개발업체가미리반도체도면까지제작하여제공
+Softmacro IP
+디지털기능이중시 → 상위수준설계의형태로제공
+SoC 개발업체가반도체공정특성에맞게도면으로구현
+<HardmacroIP 구조>
+<SoftmacroIP 구조>
+Ethernet
+
+[p7]
+7
+고객사의
+파운드리 공정 선택
+해당 파운드리공정내
+활용가능Hardmacro IP 검토
+고객사수요충족
+Hardmacro IP 확보
+[ 파운드리 Hardmacro IP 
+Library 예시]
+Hardmacro IP 존재여부가파운드리경쟁력에직결
+파운드리가 Hardmacro IP 벤더의확보에전념하고 있는이유
+고객사 요구 사항
+반도체 IP 시장생태계
+Hardmacro IP 
+벤더와
+파운드리의
+선순환구조
+②
+IP벤더가
+파운드리공정내
+Hardmacro IP 
+확충
+③
+파운드리
+경쟁력 강화
+①
+고객사의
+파운드리 수요
+Anm
+Bnm
+Cnm
+Dnm
+Anm
+Bnm
+Cnm
+Dnm
+IP1 IP2 IP3 IP4 IP5
+IP1 IP2 IP3 IP4 IP5
+EMPTY EMPTY
+ 고객사요구사항불충족
+고객사요구사항만족
+IP제작완료
+04 파운드리와반도체 HardmacroIP 생태계
+HardmacroIP 벤더는삼성전자파운드리생태계선순환의필수요소
+Prologue
+① ③②
+고객사가 Cnm 공정을
+사용하기로 결정
+A사 B사 C사
+A사 B사 C사
+
+
+[p8]
+Chapter 1.
+초고속 인터커넥트
+IP 선두기업
+01. 국내 IP업계 內 최고의R&D 인력 확보
+02. 초고속인터페이스IP 포트폴리오솔루션확대
+03. 세계 정상급기술 경쟁력확보
+04. PCIe
+05. 칩렛
+06. 초고부가가치IP라이센싱기반 인공지능시장 진입
+07. 주요 반도체파운드리별 UCIe현황
+08. 글로벌Top-tier 시장 진출 추진
+
+[p9]
+9
+초고속인터페이스IP분야전문성을보유한국내최고의팀
+초고속인터커넥트IP 선두기업
+01 국내 IP업계 內최고의 R&D 인력확보
+한평수
+전무이사, CTO, Ph.D.
+· 연세대학교 박사
+· LG전자
+김두호
+CEO, Ph.D.
+· 연세대학교 박사
+· 삼성전자
+· 한국신용정보원
+최광천
+전무이사, Ph.D.
+· 연세대학교 박사
+· 삼성전자
+Application Engineering팀
+김재영
+상무이사, Ph.D.
+· 연세대학교 박사
+· NTT, Rohm
+Optical Interconnect 개발팀
+박용현
+이사, M.S.
+· 서강대학교 석사
+· LG전자
+Display IP 개발팀
+허철
+이사, M.S.
+· 부경대학교 석사
+· DB하이텍, LX세미콘
+Mobile IP 개발팀
+성창경
+상무이사, Ph.D.
+· 연세대학교 박사
+· 삼성전자
+SERDES IP 개발팀
+이재철
+상무이사, M.S.
+· 고려대학교 석사
+· 삼성전자, DB하이텍
+Controller IP 개발팀
+
+
+[p10]
+10
+02 초고속인터페이스IP 포트폴리오솔루션확대
+국내최대의 Interface PHY IP Portfolio 확보
+초고속인터커넥트IP 선두기업
+어플리케이션구분 IP구분 IP세분류 공정 개발현황 비고
+MIPI PHY D-PHY 28/14/8/5nm On Sale
+현세대고성능모바일카메라인터페이스
+MIPI PHY D-PHY 4nm In Development
+MIPI PHY C-PHY 8/5nm On Sale
+차세대초고성능모바일카메라인터페이스
+MIPI PHY C-PHY 4nm In Development
+MIPI Controller CSI - In Development 모바일카메라어플리케이션컨트롤러
+MIPI Controller DSI - In Development 모바일디스플레이어플리케이션컨트롤러
+TCON PHY eDPRX 14nm On Sale 현세대고화질디스플레이TCON 인터페이스
+Intra-Panel PHY Intra-Panel Interface TX 28/14nm On Sale 현세대고화질디스플레이Intra-Panel 인터페이스
+Intra-Panel PHY Intra-Panel Interface TX 8nm In Development 차세대초고화질디스플레이Intra-Panel 인터페이스
+PCIePHY PCIe4.0 14/5nm In Development
+현세대고성능칩셋범용인터페이스
+PCIePHY PCIe4.0 8nm On Sale
+PCIe/CXL PHY PCIe 6.0 5nm In Development 차세대초고성능칩셋범용인터페이스
+UCIePHY UCIe1.1 5nm In Development 차세대칩렛인터페이스
+SERDES PHY 100G SERDES 14nm In Development 데이터센터향Ethernet 규격초고속인터페이스
+
+
+[p11]
+11
+PCIe 6.0 이상 고도화의 필수 기술력
+03 세계정상급기술경쟁력확보
+100G SERDES와 PCIe6.0 PHY의개발을통해글로벌 Top-tier급기술적지위확보
+초고속인터커넥트IP 선두기업
+10G
+30G
+50G
+100G
+PCIe3.0
+DisplayPort 1.4
+MIPI
+PCIe4.0
+USB 3.1
+USB 3.2
+PCIe5.0
+USB 4.0
+PCIe6.0
+전송속도별 IP 주요회사
+글로벌
+7번째개발
+Top-tier급
+기술(PAM4)
+확보
+100G SERDES PHY
+200G SERDES PHY
+NRZ PAM4
+• 2개의 진폭 레벨 사용 • 4개의 진폭 레벨 사용
+• 고대역폭 활용/고속
+데이터 전송 가능
+• 50G 이상의 고속
+데이터 통신에서 활용
+Multi-level Signaling(PAM4) SERDES 
+• 고대역폭 활용에
+한계점 존재
+• 일반적인 데이터
+통신에서 활용
+
+[p12]
+12
+범용인터페이스중가장고속의인터페이스
+→ 全분야활용되는필수 IP
+• 인공지능시대에가장필수적으로사용될핵심인터페이스
+(Storage 인터페이스~CXL까지 확장진행중)
+(2018년부터적용된규격)
+(2019년부터적용된규격)
+(2022년부터적용된규격)
+PCIe 
+(Peripehral Component Interconnect Express)
+04 PCIe– (1) 개요
+기존인터페이스의한계를극복한차세대인터페이스등장의최대수혜
+초고속인터커넥트IP 선두기업
+• 현, 공식적으로 상용화된 칩셋이 없는 초고도의 기술 규격
+• 22년, 서버용 SSD에 탑재 시작
+• 23년, 인텔, HPC용 CPU로 ‘사파이어래피즈‘ 출시하여첫 적용
+• 현세대 개인용 기기에 적용되는 가장 최신 규격
+PCIe 
+PCIe UCIe <Soc칩내외부도식화>
+
+
+[p13]
+13
+IP구분 노드 21년 22년 23년 24년(E) 25년(E) 26년(E)
+PCIe 4.0 PHY IP
+14nm 개발착수 라이센싱시작
+8nm 라이센싱시작
+5nm 개발착수 라이센싱시작
+PCIe 6.0 PHY IP
+(CXL 3.0 PHY IP)
+5nm 개발착수 라이센싱시작
+4nm 개발착수 라이센싱시작
+PCIe 6.0/CXL 3.0
+개발로드맵
+PCIe 4.0 PCIe 5.0/CXL 2.0
+04 PCIe– (2) 시장침투전략
+현/차세대 IP 제품선점을통한시장지배적경쟁력확대
+초고속인터커넥트IP 선두기업
+• 21년 8nm공정에서 PCIe 4.0 PHY IP 
+첫 라이센싱
+• 23년 5/14nm공정에 Porting 작업 착수
+• 24년 5nm 공정에서 상반기 라이센싱 시작 예정
+• 하이엔드 IP 시장에 빠르게 진입하기 위해, PCIe 5.0 
+PHY IP 개발 대신 PCIe 6.0 PHY IP 개발
+• PCIe 6.0 PHY IP가 하위 버전을 호환하여, PCIe 6.0 
+PHY IP로 PCIe 5.0 PHY IP 시장 진출 계획
+• 23년 5nm 공정에서 PCIe 6.0 PHY IP 개발에
+착수하였으며, 24년 현재 라이센싱 계약 논의 중                   
+(24년 하반기 ~ 25년 중 라이센싱 예상)
+
+[p14]
+14
+58
+570
+2024(E) 2035(E)
+(단위: $ 억)
+연도별칩렛시장규모
+※ 출처 : Omdia
+향후 10년간
+약 10배
+성장전망
+<단일 Die> <멀티 Die(MCM)> <칩렛(Chiplet)>
+AI, 빅데이터등첨단어플리케이션을위한필수요소
+• 여러개별다이(Die)를 연결하여단일기능을수행하는
+단일모듈패키징
+• 단일칩 성능증가한계를극복하기위한후공정패키징기술
+성능 ↑ 제조 복잡성 ↓ 데이터 전송↑ 에너지 효율↑
+• 시스템을 단일 칩렛에서 구현
+ex) 다수의 연산(Core complex) 다이와
+          하나의 입출력(I/O) 다이로 구성
+05 칩렛– (1) 개요
+데이터전송량증가 + ICT기술발전으로칩렛수요폭발적증가
+초고속인터커넥트IP 선두기업
+• 독립된 작업을 수행하는 수 개의 다이(die)를 결합한 패키지
+• 독립된 다이 별 연산(Core complex) 및 입출력(I/O) 탑재
+• 시스템을 단일 칩 레벨에서 구현
+• 성능 향상을 위해서 칩 사이즈 확대 및 소자 초미세화 필요
+칩렛 (Chiplet)
+
+[p15]
+15
+05 칩렛– (2) UCIe
+Marketable 기술의선제적개발로시장지위선점
+초고속인터커넥트IP 선두기업
+2022년, 개방형칩렛간의 Die-to-Die 
+상호연결표준화를목표로하는
+UCIe컨소시엄출범
+국내 UCIe개발현황
+칩렛인터페이스 용
+시뮬레이션플랫폼 /
+PHY 및컨트롤러
+IP 개발
+칩렛인터페이스용
+패키징기술개발
+칩렛인터페이스용
+실리콘포토닉스
+기술개발
+IP구분 노드 23년 24년(E) 25년(E) 26년(E)
+UCIe 1.1 PHY IP
+5nm 개발착수 라이센싱 시작
+4nm 개발착수 라이센싱 시작
+• 칩렛생태계가활성화되기위한필수요소
+• 서로다른공정에서제작된칩이나칩렛간
+물리적연결및 통신을연결
+UCIe (Universal Chiplet Interconnect Express)
+<칩렛패키지내외부도식화>
+PCIe UCIe
+
+[p16]
+16
+06 초고부가가치IP라이센싱기반인공지능시장진입
+초고속인터커넥트IP 선두기업
+중장기
+차세대 IP 제품선점을통한시장지배적경쟁력확대
+PCIe 6.0 PHY IP UCIe PHY IP
+· 全분야에활용되는범용성높은IP
+· 평균계약단가: 기존제품(PCIe4.0) 比 2배
+· HBM과함께대표적인칩렛IP 규격
+· 초고가로가격형성전망
+칩렛생태계의필수인프라첨단인터커넥트기술의집약체
+차세대시장선점
+2023년데이터센터에영향을미치는상위 5대반도체기술
+※ 출처: Gartner
+※ 주1) CXL: PCIe 물리계층에 구축된 CPU-디바이스 간 저지연 고속 인터커넥트 기술로 PCIe PHY 규격을 사용함
+주2) UCIe (Universal Chiplet Interconnect Express)
+2020
+0%
+50%
+100%
+2021 2022 2023 2024 2025 2026 2027
+NOW
+Chiplets
+Hybrid Processing 
+Architectures
+CXL
+Non-x86 Processors
+Co-Packaged Optics
+포트폴리오확장
+차세대 표준 인터페이스
+규격으로 확장
+다양한전방산업진출
+AI, 자율주행 등
+첨단산업의 핵심 IP
+수주경쟁력확보
+기술 초격차 기반
+시장 지위 선점
+PCIe
+6.0
+CXL1)
+3.0 UCIe2)
+데이터
+센터 자율주행 AI
+글로벌
+Top-tier
+설계능력
+초미세공정
+설계 및
+검증
+국내 최초
+상용화로
+시장선점
+
+
+[p17]
+17
+07 주요반도체파운드리별 UCIe현황
+초고속인터커넥트IP 선두기업
+삼성전자, 인텔, TSMC 모두칩렛표준 UCIeIP 적용추진중
+ 5nm 기반으로 양산 준비중
+ 2nm 및 4나노 공정에 IP 최적화
+ 5nm 및 3nm 기반 양산 준비중
+ 인텔 3공정(4nm급)과 인텔 18A
+  (1.8nm급) 공정을위한IP 개발중
+UCIePHY IP전문담당 팀을 신설하여연구 인력을확보 하여
+가장 파급력높은 칩렛 IP 기술 개발을확보 해 나갈 예정
+글로벌AI 시장에서두각을나타내기시작한UCIePHY IP를
+파운드리의다양한공정에서확보하는것이필수
+
+[p18]
+18
+영업이익률
+30.0%
+0%
+100억원 100조원
+매출액
+15.0%
+2.9조원
+2.2조원
+120조원
+114조원
+구 분 내 용
+• 글로벌Top Hard IP Vendor
+• Main business는 반도체설계소프트웨어(EDA Tool) 회사이나Sub 
+business로 Interface 위주의IP 및 디자인하우스등 수행
+• TSMC, 삼성파운드리를포함한다양한파운드리향IP 비즈니스수행중
+• 글로벌Second Hard IP Vendor
+• Main business는 반도체설계소프트웨어(EDA Tool) 회사이나
+Sub business로 Interface 위주의IP 및디자인하우스등을수행
+• Synopsys에비해IP 사업규모는작은편이며, 주로TSMC 향사업영위
+• AI시장과데이터센터시장을타겟으로2017년에설립
+• PHY IP는SERDES, PCIe, UCIe, HBM와같은최고급IP 포트폴리오만보유
+• 최근,디자인하우스부문에투자하면서영업이익률은낮아진편
+• 2011년에설립되어USB, PCIe, MIPI, eDP등의인터페이스PHY IP를
+위주로사업을영위
+• 퀄리타스반도체와가장유사한회사이며, TSMC향사업영위
+• 2019년부터삼성파운드리의IP Vendor로활동시작
+• MIPI, eDP 등의IP부터양산이력을확보하기시작하여 PCIe, UCIe 등의
+고부가가치IP 양산이력확보를목표
+M31
+• 시총: 2.9조원
+• 매출: 680억원
+• 영업이익률: 28.0%
+Alphawave
+• 시총 2.2조원
+• 매출 4,200억원
+• 영업이익률 0.4%
+Cadence
+• 시총 114조원
+• 매출 54조원
+• 영업이익률 31.0%
+Synopsys
+• 시총 120조원
+• 매출 78조원
+• 영업이익률 23.0%
+08 글로벌 Top-tier 시장진출추진
+3高(高수요, 高성장, 高이익률)의특성을가지는 IP 산업
+초고속인터커넥트IP 선두기업
+※ 각 수치는 24년 3월 1일 기준이며 매출은 TTM 기준
+
+[p19]
+Chapter 2.
+경영실적
+01. 수익구조
+02. 실적 및 수주전망
+03. 요약 재무제표
+
+[p20]
+20
+01 수익구조
+IP비즈니스수익구조의핵심 = IP Reuse를통한 License fee(설계 Royalty)의반복적발생
+경영실적
+초기개발이후 
+라이센싱매출반복적발생
+(IP社 高 밸류에이션원인)
+ 小
+IPReuse 발생시,
+증분수익大 = License Fee
+증분비용小 = 단기적으로고정적
+반도체 IP 사업의수익구조특징
+· 설계Royalty는 반복적수익창출로고수익성
+· SoC 양산이전에대부분의현금을회수 → 원활한현금흐름
+高
+· 어플리케이션별로진보된공정사용→ 롱테일비즈니스
+· 고도화된공정은기존공정比 고수익성
+SoC 개발흐름
+IP
+라이센싱
+비용발생
+SoC 양산SoC 검증SoC 개발SoC 제품기획
+공정
+수익
+IP 개발 NRE1)
+설계 Royalty 
+(License Fee)
+IP 기술지원
+및 유지보수
+판매 Royalty 
+(IP Royalty)
+IP Reuse를통한
+반복적인수익창출
+HPC, 
+모바일 Display
+HPC, 
+모바일
+Display
+Automotive
+HPC, 
+모바일
+2018년 2025(E)년
+PMIC
+Display
+Automotive, 
+Display
+2015년 2022년
+Automotive
+AI, HPC, 
+모바일
+28nm
+14nm
+8nm
+5nm
+4nm
+
+[p21]
+21
+수주전망
+02 실적및수주전망
+경영실적
+지난해이연된프로젝트들의계약체결가시화
+→대형수주건을포함한수주증대예상
+2024년수주전망
+수주
+전망
+IP별
+수주
+예상
+전기 반도체 불황으로 인해 지연된 프로젝트들에 대한 계약
+체결이 2분기 현재 재개되기 시작
+대형 프로젝트 위주로 수주활동 회복세
+업황이 회복세에 있음에 따라 하반기 소규모 프로젝트 활성화도
+기대
+대형프로젝트를포함한계약수주본격적회복시작
+고객사다변화현황
+2024년고객사다변화현황
+본격적인고객사다변화개시
+PCIe 수주증대 / Display 수주견조
+PCIe 수주 본격화
+기존에는 매년 1~2건의 PCIe IP 프로젝트를 수주하였으나, 
+금년에는 배 이상의 프로젝트 수주가 가능할 것으로 예상
+4.0, 5.0 규격 위주로 고객사 수요 존재
+6.0 규격의 상용화 테스트 진행 중
+Display Chipset IP 프로젝트의 대형화
+Display Chipset IP의 공정 미세화, 스펙 상승 등으로 인해 계약
+규모가 상승하고 있는 추세
+대형 프로젝트 논의 중
+고객사
+확대
+전략
+국내
+빅벤더
+유치
+IP회사의 특성 상 팹리스 수가 많은 중화권 고객사 유치
+중요
+2024년 4월 중화권 영업대리점 계약 체결
+M사 등 계약체결 성과
+대리점을통한중화권고객사유치개시중
+국내대형고객사신규유치개시중
+국내 대형고객사와 신규 거래 논의 중
+기존에는 S사 외 직접 거래하는 대형고객사가 부재
+신규 대형고객사 유치 시, 안정적인 매출 기반 확보 가능
+
+[p22]
+22
+02 실적및수주전망
+경영실적
+향후진행되는개발진척사항및사업진행사항을다양한 IR과 PR 활동을통해적극알릴예정
+ 퀄리타스반도체, UCIe 표준 칩렛 인터페이스 개발 앞장 (2024.05.13)
+ 퀄리타스반도체, 중화권 SoC 기업과 12억 규모 IP 계약 (2024.05.17)
+ 퀄리타스반도체,중국 ASIC 개발 전문업체 MicroBT에 'MIPI IP' 라이선스 제공 (2024.05.13) 퀄리타스반도체, 중화권 업체에 12억원 규모 PCIe 4.0 PHY IP 공급 (2024.05.16)
+ 퀄리타스반도체, 인텔 AI CPU '루나 레이크' 호환 PHY v1.5a 개발 (2024.05.23)
+ 퀄리타스반도체, 반도체 전설 짐 켈러 '텐스토렌트'에 20억 투자 (2024.05.30) 퀄리타스반도체, 세계최초 5나노 공정 자율주행·AI 칩 설계 IP 솔루션 개발 완료 (2024.06.05)
+ 퀄리타스반도체, 224Gbps 서데스 파이 국책 과제 주관 업체로 선정 (2024.04.29)
+ 퀄리타스반도체, '암바렐라 차량AI 칩'에 IP 라이선스 지원 (2024.03.26)
+ 퀄리타스반도체, UCIe 5nm PHY IP 개발 중 (2024.04.30)
+ 퀄리타스반도체-TUV라인란드코리아, 자율주행 핵심부품 업무협약 (2024.04.26)
+ 퀄리타스반도체, 중국시장 공략 본격화…반도체 전문 유통기업과 계약 (2024.04.23)
+
+[p23]
+23
+요약재무상태표
+ 요약손익계산서
+구 분 2023 2022 2021 2020
+유동자산 33,386 7,920 3,666 1,654
+비유동자산 7,325 6,209 3,191 1,941
+자산총계 40,712 14,129 6,857 3,595
+유동부채 10,644 6,652 5,780 3,801
+비유동부채 2,345 11,462 4,884 1,079
+부채총계 12,989 18,114 10,664 4,880
+자본금 5,454 58 56 56
+자본잉여금 38,026 251 205 205
+기타자본항목 840 3,547 1,418 195
+이익잉여금 (16,598) (7,841) (5,486) (1,741)
+자본총계 27,723 (3,985) (3,807) (1,285)
+구 분 2023 2022 2021 2020
+매출액 10,775 10,789 3,952 1,316
+영업비용 21,961 14,460 8,694 2,283
+영업이익 (11,186) (3,671) (4,742) (967)
+영업외수익 4,788 2,738 1,713 83
+영업외비용 1,095 1,463 552 80
+법인세
+차감전순이익 (7,493) (2,396) (3,582) (964)
+법인세비용 615 (115) 73 (268)
+당기순이익 (8,109) (2,281) (3,655) (696)
+03 요약 재무제표
+Appendix
+(단위: 백만원)(단위: 백만원)

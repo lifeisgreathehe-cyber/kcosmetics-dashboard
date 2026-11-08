@@ -1,0 +1,687 @@
+[p1]
+February 2020
+
+[p2]
+Company Confidential
+Contents
+• 회사 소개
+• 4차 산업 혁명
+• 아나패스 핵심 기술 및 사업
+
+[p3]
+회사명 주식회사 아나패스
+설립일 2002년 11월 29일
+코스닥상장 2010년 11월 5일 (KOSDAQ: 123860)
+대표이사 이경호
+임직원 수 총 128명, 연구개발 77명 (2019년 12월말 기준)
+사업영역 반도체 설계 및 제조
+본사 주소 서울시 구로구 디지털로31길 61 드림마크원 빌딩 6층/7층
+홈페이지 www.anapass.com
+회사 개요
+AR/VR
+Automoti
+-ve
+5G 
+Display
+AiPi
+TM
+ OLED
+T2M
+PID
+2
+
+[p4]
+사업 영역
+Differentiated Value Added SoC Solution
+for Display & Mobile Application
+Innovative Display Standard Interface
+(AiPiTM, UPI, T2M)
+Mobile Application SoC
+- IoT & AI
+Large Flat Panel Display SoC
+- TV, MNT, PID
+OLED Display SoC
+- Tablet, NPC, VR, Automotive 
+OLED Mobile Display SoC
+- Smartphone
+3
+
+[p5]
+URLLC (Ultra Reliable Low Latency Communication)
+eMBB (enhanced Mobile Broadband)
+mMTC (massive Machine Type Communication)
+AGV (Automated Guided Vehicle)
+AR / VR for factory
+ Cloud computing for factory
+Advanced Robotics 
+Factory Sensors
+M2M Control
+4차 산업 혁명 (Industry 4.0) 의 핵심 기술 : 5G & IoT
+4
+
+[p6]
+4차 산업 혁명 (Industry 4.0) 의 핵심 기술 : OLED
+ Outstanding Color Gamut/Contrast performance of OLED is the best display solution for 5G Smart phone/VR/AR
+ 5G will eventually require  4K/8K, 120Hz Refresh Rate
+(Source : Samsung Display)
+(Source : Samsung Display/LG Display)
+ Low Power Consumption / Fast Response Time / Flexibility of OLED is the best display solution for general 5G Devices
+5
+
+[p7]
+Transmission Speed
+Overcoming the Barriers of Pre-Existing Technology 
+Number of Driver ICPCB Size Power & EMI Noise
+4~8 
+Times
+1
+Pre-existing 
+Methods
+AiPi
+Pre-Existing Interface AiPi 
+1/2~1/4
+AiPi
+1/3~1/4
+1
+AiPi
+1
+AiPi
+1/2
+Anapass Innovative Display Panel Interface : “AiPiTM”
+1
+Pre-existing 
+Methods
+Pre-existing 
+Methods
+Pre-existing 
+Methods
+Large Flat Panel Display SoC
+- TV, MNT, PID
+6
+
+[p8]
+대형디스플레이패널
+• Large Panel Display IC Product Roadmap
+ UHD (4K) Solution (양산) 
+ QUHD (8K) Solution (시제품 출시)
+ QD OLED  Solution (개발 예정)
+• Main Application
+– TV 
+– Premium Monitor Display Solution
+• High-end Gaming Monitor Solution
+– PID/DID Display IC Product Solution
+• Smart PID System 
+ Smart Office, Smart Home, Smart City
+ Wireless IoT Connectivity 
+ AI support
+ Demo @ IFA2017 & CES2018
+2.5 
+4.8 
+7.0 
+8.6 
+9.9 
+10.7 
+11.2 
+ -
+ 2.0
+ 4.0
+ 6.0
+ 8.0
+ 10.0
+ 12.0
+'17 '18 '19 '20 '21 '22 '23
+Gaming Monitor
+© 2019 IHS Market
+7
+
+[p9]
+OLED 스마트폰 시장은 급성장할 전망
+ 14억대 스마트폰의 OLED점유율은 2018년 27%에서 2020년 40%로 증가하며 2023년에 LCD를 추월할 것으로 전망
+ 2020년 전세계 OLED 출하량은 573백만대로 이 중 중국 set 업체의 OLED 출하량은 210백만대로 추정
+ 삼성디스플레이가OLED 스마트폰 시장에서 85% 수준의 시장점유율을 확보
+OLED Mobile Display 시장전망
+(Source: IHS Markit)
+0
+50
+100
+150
+200
+250
+삼성 화웨이 애플 오포 샤오미 비보 기타
+OLED 스마트폰 출하량 (2017~2020)
+2017 2018 2019(F) 2020(F)
+2023
+8
+
+[p10]
+TED IC for OLED Mobile Display
+ TED (TCON Embedded Driver) IC
+ OLED Display Panel을 구동하고 제어하는 가장 핵심칩.
+ Panel Timing Control, Memory, Source Driver, 
+Power Control, LTPS, Gamma 등 모든 기능을 집적함.
+ 5G 디스플레이 구현을 위한 TED IC의 한계 극복
+ 최근 디스플레이의 고해상도, 고주사율, 고성능, 대화면화 추세, 
+아울러 각종 보상 알고리즘과 기능이 추가 (특히 잔상 보상)
+→ 이를 위해 TED IC에 내장된 로직과 메모리 사이즈가 급증
+→ TED IC 사이즈가 기하급수적으로 커지고 원가 상승.
+ 한편, 화면 영역 극대화를 위한 베젤리스 디자인이 매우 중요해짐.
+→ TED IC 사이즈를 키우지 않으면서 대용량 메모리를 처리하는
+것이 관건이 됨.
+REG. / LTPSLTPS / CP
+Memory Memory
+Source Driver Source DriverGamma
+TCON
+MIPI
+TED
+9
+
+[p11]
+Anapass Innovative New TED IC Architecture 
+ Space-effective Solution
+Embedded Memory (SRAM)
+ Application Optimized Solution
+ 내장 메모리의 공정 한계 극복
+ 기존 외장 메모리 대비 Pin수 등의 Overhead 최소화 하면서도 고속, 저전력 구현
+External Memory
+(64M/128M)
+Anapass New Interface Solution 
+- Only 12pin
+Driver & Power
+TCON
+External 
+Memory
+Smaller minor axis (Y) of TED IC 
+ Vezel size & dead space reduction
+External Memory
+LPDDR (>512M)
+DDR Interface
+- Over 40pin
+Driver & Power
+TCON
+Driver & Power
+TCON
+Driver & Power
+TCON
+10
+
+[p12]
+아나패스·SDC, 모바일디스플레이 기술 공동 발표
+•모바일 디스플레이용 메모리와 구동 IC 경쟁력 확보
+•김세연 기자 | 공개 2017-06-23 09:50:10
+아나패스가 삼성디스플레이(SDC)와 공동으로 신개념 모바일 디스플레이 기술을 선보였다.
+아나패스는 최근 미국에서 개최된 세계 최대 규모의 디스플레이 전문학회 'SID(The Society for Information 
+Display) 2017'에서 삼성디스플레이와 공동으로 모바일 디스플레이용 메모리 인터페이스 및 구동 IC와 관련한
+논문을 발표했다고 23일 밝혔다.
+이번 논문은 '모바일 디스플레이 제품에 적용할 수 있는 혁신적인 메모리 인터페이스 기술과 이를 활용한 가격
+경쟁력이 있는 디스플레이 구동 IC (Driver IC) 구조'에 관한 것이다.
+아나패스와 삼성디스플레이가 소개한 메모리 인터페이스는 기존의 DDR 또는 LPDDR 메모리 인터페이스에
+비해 전송 속도와 전력 소모 등을 획기적으로 개선한 것이다. 기존에 비해 메모리 인터페이스 핀 수는 3분의 1 
+수준으로 줄였고, 구동 IC 크기도 20~30% 가량 축소됐다. IC 가격 및 패널 모듈의 원가개선과 '베젤리스
+(bezel-less)' 디자인 구현에 크게 기여할 수 있다는 점도 기대를 모으고 있다.
+아나패스 관계자는 "신개념 메모리 인터페이스 기술과 이를 적용한 디스플레이 구동 IC 구조는
+고화질·고해상도·대형화되는 스마트폰 디스플레이 분야에 최적화된 솔루션이며, 혁신적 기술력으로 인정받을
+수 있을 것"이라고 밝혔다.
+SID 2017 삼성디스플레이-아나패스 공동 논문 발표
+11
+
+[p13]
+OLED디스플레이패널
+OLED Display IC Product Roadmap
+ OLED Premium Tablet/Note PC Solution (양산 및 후속 모델 개발)
+ AMOLED High-end Tablet Display
+ OLED Automotive Solution (개발)
+ AMOLED Automotive Display
+ OLED VR/HMD Solution (개발)
+ AMOLED VR/HMD Display
+12
+
+[p14]
+모바일OLED디스플레이패널
+OLED Smartphone Display IC Product Roadmap
+ FHD+ Main Platform OLED Smartphone (양산 및 후속 모델 개발)
+ High-end model for Chinese market
+ WQHD Premium OLED Smartphone (양산 및 후속 모델 개발)
+ Premium Bezel-less high end model
+ 4K UHD High-End Premium OLED Smartphone (양산 및 후속 모델 개발)
+ High-end premium model for major set makers
+13
+
+[p15]
+GCT Semiconductor, Inc.
+
+
+[p16]
+GCT Corporate Overview
+GCT is a fabless semiconductor company founded in 2003, specializing in the design, 
+development and supply of Single Chip SOC (RF+BB) solutions for 4G/4.5G/4.75G/5G LTE
+and IoT SoC market.
+ Products: 4G/4.5G/4.75G/5G SoC, IoT SoC
+ Operations:
+ Headquarters: San Jose, California, USA (The Silicon Valley)
+ Research & Development Center : Seoul, Korea
+ Sales Offices : U.S., Korea, China, Taiwan, Japan
+ Foundries: Samsung LSI,  TSMC, UMC
+ Employees:
+ 150 worldwide, including 128 engineers (30+ Ph.Ds)
+ Technology:
+ 128 patents filed mainly on GCT proprietary CMOS RF, CMOS
+Single Chip and Proprietary OFDM Modem technology for 4G/4.5G/4.75G/5G and IoT SoC
+ 44 US patents issued, 1 pending
+ Major Investors
+ Strategic investors: Anapass, SK-Telecom, DoCoMo
+15
+
+[p17]
+5G Wireless Broadband Market Trend Driving Industry 4.0
+ 5G 시대의 Wireless Broadband
+ 5G 시장 확대로 인한 Wireless Broadband (CPE, MiFi, Router, etc.)의 성장
+ 한국을 제외한 대부분의 나라에서는 (특히 미국, 유럽 시장) 초고속 광케이블망이 미비
+ 유선 인터넷 망 Upgrade시 막대한 CAPEX 투자 필요
+ 기존의 3G/4G 무선망을 이용한 무선인터넷 서비스는 부족한 Bandwidth으로 서비스 품질에 한계가 있음
+ 4.75G/5G 스피드가 진정한 Unlimited 무선 인터넷 서비스를 제공
+ 유선 인터넷에 비하여 확실한 비용 절감 효과
+ 기존 유선 인터넷 인프라 Upgrade가 필요한 선진국은 무선 인터넷을 통해 성능 인터넷 인프라 성능
+Upgrade 
+ 유선 인터넷 인프라가 부족한 개발 도상국은 처음부터 저 비용 무선 인터넷을 전국적으로 확장
+ 미국의 Verizon, AT&T, T-Mobile 은 5G 서비스의 가장 큰 Application 을 가정용 CPE (가정용 무선 모뎀)로 규정
+16
+
+[p18]
+Wireless Broadband Market Expansion
+Expansion of Wireless Broad Band Market
+• Wireless Broad Band (4G LTEsingle-mode device) market
+starts to grow from 2014
+• 4G LTE single-mode device shipment is estimated to be over
+110M units in CY20
+1) Based upon Fixed-LTE, Total Consumer Gateway Shipment 
+Worldwide [ABI Research], Mobile hotspot router Market [Zion
+Research] reported in 2016
+2) Above Forecast does not include newly rising CBRS market
+5G Fixed Wireless Access Market Forecast (USD Million)
+5G Broadband Market Expansion
+• The 5G fixed wireless broadband access market is 
+estimated to grow from USD 398M in 2019 to USD 46,366M 
+by 2026 , at a CAGR of 97.47%
+17
+
+[p19]
+CAT3
+USB dongle
+CAT3
+Smartphone
+CAT3
+Mobile Router
+CAT4
+Module
+CAT4
+Outdoor CPE
+CAT4
+Smart meter
+CAT6
+VoLTE Router
+CAT4
+Mobile Router
+CAT4
+Indoor CPE
+CAT6
+Indoor UE Relay
+(MagicBox Gen1)
+CAT12
+Outdoor UE Relay
+(Mini-macor Gen2) CAT12 CAT12
+CAT4
+Mobile Router
+CAT6
+Mobile Router
+(WX01)
+CAT6
+Mobile Router
+(WX02)
+CAT6
+Indoor CPE
+CAT12
+Mobile Router
+(WX04)
+CAT12
+Mobile Router
+(WX05)
+CAT12
+Indoor CPE
+(Home 01)
+CAT4
+Mobile Router
+CAT6
+Mobile Router
+CAT1
+M2M CPE
+CAT4
+AI Speaker
+CAT4
+Beam Projector
+CAT4
+eMBMS tablet
+(4G/4.5G/4.75G)
+Commercially Proven  GCT Technology 
+From 4G to 5G Driving Industry 4.0 
+CY10  World’s 1st 4G  LTE
+CY15 World’s 1st 4.5G 
+4x4 MIMO
+CY17 World’s 1st 4.75G 
+4x4 MIMO
+CY17 US’s 1st 4.75G 8x4 MIMO CY19 CES Innovation Award
+CY19  Verizon 5G Home
+18
+
+[p20]
+Linkem
+ Sprint
+Wireless
+Broadband Devices
+CAT12 MiFi
+CAT12 MiFi
+CAT12 Indoor CPE
+B3, B18 B41
+• GDM7243A(4.75G)
+• CAT12 Device
+• 4x4MIMO MiFi
+• 4x4MIMO CPE
+B2, B4, B5, B13
+• GDM7243Q(4.5G)
+• CAT6 Device
+• Home Router
+• 4G + VoLTE
+B25, B26 B41
+• GDM7243A(4.75G)
+• CAT12 Device
+• 4x4MIMO, 8 Antenna
+• Magic Box
+(All IP UE relay for coverage 
+enhancement)
++ AI Speaker
+CAT12 Indoor UE Relay w/ AI Speaker
+B28, B3, B7
+• GDM7243Q(4.5G)
+• CAT6 Device
+• 4G+ADSL
+aggregation
++ IPTV
++ AI Speaker
+World’s Leading Commercially Proven  GCT Technology 
+From 4G to 5G Driving Industry 4.0 
+19
+
+[p21]
+Company Confidential 20
+Verizon 5G Wireless Broadband Expansion
+ Verizon is No. 1 mobile operator in 
+USA with more than 150M 
+subscribers and No. 4 fixed internet 
+operator with over +10M subscribers 
+with fiber.
+ Verizon has launched 5G Home 
+service at 15 cities and over 30 
+cities will be covered through 2019 
+and continue to aggressively expand 
+5G network.
+ Verizon has also plan to launch 5G 
+Home service wherever Verizon 5G 
+mobile network is deployed and 
+available to aggressively expand 
+Verizon’s broadband internet 
+market share.  
+Verizon also says they plan to continue the buildout of its 5G
+network after spending $8 billion on capital expenditures in
+the first half of 2019. “Verizon’s capital expenditures continu
+e to support the launch and build-out of its 5G Ultra Wideban
+d network, the growth in data and video traffic on the comp
+any’s 4G LTE network, the deployment of significant fiber in
+markets nationwide and the upgrade to Verizon’s Intelligent
+Edge Network architecture.”
+Verizon says download speeds on the service will range fro
+m 300Mbps up to 1Gbps. As with most of its mobile 5G citie
+s, however, uploads, for now, will be done on the company'
+s 4G LTE network. Higgins said the switch of uploads to the
+5G network is planned for 2020. Latency will also improve
+next year as Verizon switches the uploads to 5G.
+The company plans to turn on additional 5G Home cities in
+the future, and Higgins said it will migrate those in the first f
+our 5G Home cities to the modern, mobile network in the se
+cond half of next year.
+Unlike with the mobile network, there are no data caps for th
+e 5G Home service.
+
+
+[p22]
+Company Confidential 21
+Verizon 5G Wireless Broadband Vision
+ US broadband market continues to 
+keep growing, but is dominated by two 
+monopoly giant cable companies.  
+ Now, due to popular internet based 
+OTT (over the top) service such as 
+Netflix, YouTube etc, large number of 
+cable or satellite subscriptions move to 
+pure internet access with cheaper 
+subscriptions.
+ Verizon has the big ambition to quickly 
+penetrate and occupy this broadband 
+market currently monopolized by cable 
+companies with  Verizon’s 5G Home 
+service by fully utilizing extreme high 
+speed 5G network that Verizon is 
+aggressively deploying down the road.
+Number of fixed broadband subscriptions in t
+he United States from 2000 to 2018 (in million
+s)
+Number of broadband interne
+t subscriptions in the United S
+tates by cable provider (in 1,0
+00s)
+Cord cutting
+A large number of customers have been shifting from traditional
+cable subscriptions to over-the-top offerings in a move that’s
+popularly known as “cord cutting”. Popular streaming service
+providers Netflix, YouTube TV, Hulu Live TV and Amazon Prim
+e offer movies and TV shows directly to customers online at a
+cheaper rate than a cable or satellite connection.
+Starting on Oct. 24, residents in parts of Chicago will be able to sign up for the home Internet service with speeds up to 1 gigabit  
+per second, fast enough to download a high-definition movie in under a minute. Customers who already subscribe toVerizon for 
+phones pay $50 per month for the service, which otherwise costs $70.
+Relying on 5G wireless technology, the service doesn't require costly and time-consuming wired connections for installation.        
+Equipment for the Chicago service follows the industry standard known as the 3GPP New Radio standard that carriers are widel
+y adopting worldwide.
+
+
+[p23]
+Verizon
+CPE & HPC Design Win with GCT 4.5G
+Company Confidential
+Verizon 5G Home's expansion boosts 
+broadband with mobile tie-in
+The company's household 5G service has had a quirky 
+limitation. That changes in Chicago, the program's 
+fifth city.
+•BY ELI BLUMENTHAL
+OCTOBER 21, 2019 4:00 AM PD
+Verizon is expanding its 5G home broadband network, 
+with a twist. The wireless giant said Monday it will 
+expand its service to Chicago on Thursday, joining 
+parts of Houston, Indianapolis, Los Angeles and 
+Sacramento and making it the fifth city to get home 
+internet from its 5G network.
+Chicago's network, however, will be unlike the initial 
+5G Home cities Verizon launched last year. Unlike 
+those four, the new network will run off the same 5G 
+technology the company uses for its mobile network 
+(something called 5G NR), where the original cities 
+use a network (known as 5G TF) that's incompatible 
+with the one it's deploying around the country for 
+mobile devices.
+"We've always talked about how we're going to build
+one network for both mobile and home," Brian
+Higgins, Verizon's vice president of device and
+consumer product marketing, told CNET, noting that
+this expansion is something the company is "going to
+take into 2020 and beyond."
+GCT, 美 5G 시장 진출 본격화… 1위 무선사업자 댁내 모뎀에 칩셋 공급, 내년 자
+체 5G칩셋 출시 목표 (2019.11.04)
+코스닥 상장사 아나패스 관계사인 GCT세미컨덕터(www.gctsemi.com)가 미국
+1위 무선사업자의 댁내 모뎀 단말에 칩셋 공급자로 채택되면서 5G 시장에 진
+출하게 됐다. 내년 출시 목표인 자체 5G 칩셋 제품 마케팅에도 힘이 실릴 전망
+이다.
+4일 GCT세미컨덕터에 따르면 4.5G 칩셋인 GDM7243Q가 미국 1위 무선사업자
+의 5G 무선 댁내 모뎀에 채택돼 시장 공략을 본격화하고 있다. 해당 모뎀은 이
+달초 공식적으로 미국에서 출시된데 이어 최근 개최된 MWC LA에서도 성공적
+으로 소개됐다.
+GCT세미컨덕터가 자체 개발한 GDM7243 시리즈는 일본에 이어 미국에서도 시
+장 확대에도 나서게 됐다. 4.75G 통신 반도체 기술인 GDM7243A는 일본 유큐커
+뮤니케이션에 칩셋을 공급하고 있다.
+이번에 공급된 5G 무선 댁내 모뎀은 5G 네트워크와 동시에 4.5G LTE도 지원한
+다. 아직 미국 내에서 보편화되지 않은 5G 네트워크 커버리지를 4.5G LTE로 보
+완하는 제품이다. 향후에는 4.5G LTE 및 5G 신호를 와이파이(WiFi), 유선망으로
+변환해 다양한 인터넷 서비스까지 가능케 한다. GCT세미컨덕터가 공급하는
+GDM7243Q는 LTE TDD/FDD(Cat5/6/7)까지 동시에 지원하는 칩셋이다. GCT세미
+컨덕터는 수주 확대도 기대하고 있다. 이번 댁내 모뎀은 최신 표준인 WiFi6, 아
+마존의 음성인식기능도 지원하는데도 별도 공사없이 간편한 설치가 가능해
+확장성이 뛰어나다. 미국내 4차 산업혁명을 이끄는 5G 및 4G LTE 기반 무선 광
+대역 인터넷 서비스 확대 전망에 따라 댁내 모뎀의 적용대상도 늘어날 가능성
+이 높다. 자연스레 GCT세미컨덕터도 수주 확대를 기대해볼 수 있다.
+알렉스 썸(Alex Sum) GCT세미컨덕터 영업마케팅 부사장은 "미국 1위 사업자의
+5G 네트워크 진화에 발을 맞춰 제품을 공급하게 됐다"며 "네트워크 경쟁력 강
+화와 소비자 편의성을 혁신시킬 수 있는 제품 출시에 기여하게 됐다"고 말했
+다.
+GCT세미컨덕터는 내년에는 자체 5G 칩셋 개발에 속도를 낸다. 4G LTE 후방지
+원과 mmWave, sub-6GHz를 모두 지원하는 5G 칩셋 제품을 선보일 예정이다. 
+출시가 이뤄지면 4.5G/4.75G LTE와 5G 제품군을 투트랙으로 양산하게 된다. 
+GDM7243Q
+22
+
+[p24]
+Verizon-GCT 5G SoC Development and Strategic Collaboration Agreement 
+GCT세미컨덕터, 美 1위 무선 사업자와 5G 칩셋 공동 개발
+5G 최고 속도 구현하는 RF 및 모뎀 상용화 도전
+방글아 기자공개 2020-01-16 09:01:41
+코스닥 상장사 아나패스 관계사인 GCT세미컨덕터가 최근 미국 1위 무선 사업자와 5G 칩셋 솔루션 개
+발 협력 계약을 체결하고 5G 전 주파수를 최고 속도로 지원하는 무선송수신기(RF)와 모뎀 칩셋 상용화
+에 나선다.
+GCT세미컨덕터는 미국 무선 사업자 A사와 계약을 통해 개발비를 지원받아 4G 대비 10배 이상 빠르며
+전대역 5G 주파수를 지원하는 RF 및 모뎀 칩셋을 개발한다고 16일밝혔다.
+GCT세미컨덕터가 개발할 이번 제품은 세계 5G 표준 규격 (3GPP 5G NR Rel. 15)을 완벽히 지원하고
+6Gbps 이상의 가장 빠른 다운로드 속도를 낼 수 있는 것이 특징이다. 28GHz/39GHz 듀얼 대역 밀리미
+터파 (mmWave) 및 sub-6GHz 대역을 포함 모든 5G 주파수를 지원하는 것은 물론 4G LTE망과 연계를
+통해 4G 인프라에서도 원활한 무선인터넷 접속을 가능케 한다는 목표다.
+양사는 다양한 5G 단말기에 적용·보급하기 위한 상용화 계획에 중점을 두고 이번 협력을 진행할 계획
+이다. 존 슐레이퍼(John Schlaefer) GCT세미컨덕터 사장은 "미국 1위 사업자의 5G 네트워크 확대에
+주요한 파트너가 된 것에 매우 기쁘다"며 "모듈과 모바일라우터, 스마트폰, 무선 옥외 및 댁내 모뎀 등
+다양한 5G 단말기 확대에 기여할 것"이라고 밝혔다. 이어 "지난 수년간 4G부터 4.75G LTE까지 칩셋
+상용화 경험을 바탕으로 최고의 성능과 경쟁력을 갖춘 5G 칩셋을 개발할 것"이라고 강조했다.
+GCT세미컨덕터는 현재 4.5G/4.75G LTE 제품을 주력 생산해 전세계 주요 통신 사업자들에게 공급하
+고 있는 팹리스(Fabless) 반도체 기업이다. 4G LTE와 NR을 겨냥해 무선 주파수, 기저대역 모뎀, 디지
+털 신호 처리 기능을 한 개의 실리콘 다이에 통합해 시스템온칩(SoC) 솔루션으로 제공하고 있다.
+앞서 세계 최초로 LTE와 와이맥스(WiMAX)용 싱글칩 솔루션과 4x4 멀티안테나입출력(MIMO)를 지원
+하는 4.5G LTE 칩셋을 상용화했다. 올해는 4G를 넘어 5G 표준과 28GHz/39GHz 듀얼 대역 밀리미터
+파 및 sub-6GHz를 모두 지원하는 세계 최고 경쟁력의 5G 칩셋 제품을 올해 출시할 예정이다.
+23
+
+[p25]
+GCT IoT SoC Solution (GDM7243i) 
+Certified by Verizon
+GDM7243i+ GDM7243i+ module • CAT-M1/NB1/NB2
+• 25x15mm LGA, 23dBm+ power
+• GPS, BLE, 16MB Flash/8MB RAM
+ IoT향 전용칩셋인 GDM7243i로 공식인증 획득 및 상용화에 박
+차
+ LTE Cat-M 및 NB-IoT, BLE, GPS, Sigfox 등을 지 원하는 multi-
+mode 칩셋으로 글로벌 사업자 지원
+지난 9월, GCT세미컨덕터는 자사의 IoT향 칩셋인 GDM7243i가 미
+국 이동통신 사업 자인 Verizon으로부터 LTE Cat-M 칩셋인증을 획
+득하였다고 발표했다. GDM7243i 는 RF와 모뎀/메모리가 하나의
+실리콘으로 집적된 단일 칩으로 LTE Cat-M, NB-IoT, BLE, GPS, Sigf
+ox 등 다양한 표준들을 지원할 수 있다. 이는 시장에서 요구되는 다
+양 한 IoT표준들을 지원함으로써 사업자 및 단말제조사들의 부담
+을 덜고, 시장에 빠르 게 진입할 수 있도록 한다. 이번 Verizon의
+공식인증을 획득함으로써, 단말 제조사 들은 GDM7243i를 채택하
+여 세계 최대 시장인 미국향 IoT 단말 개발 및 인증기간을 단축할
+수 있고 다양한 사업기회를 포착할 수 있다.
+GCT의 마케팅 부사장인 Alex Sum씨는 “미국 Verizon과 협력하여
+공식 칩셋 인증 을 받게 되어 영광”이라며 “이를 기반으로 향후 Ve
+rizon이 펼치는 다양한 IoT단말 및 서비스에 채택될 수 있으며, 이
+를 확대 및 가속화하기 위해 노력할 것”이라고 밝 혔다. 또한 “LTE
+Cat-M 및 NB-IoT, BLE, GPS, VoLTE 등 시장에서 요구되는 다양한
+기능들을 직접 지원함으로써 고객들에게 시장경쟁력을 제고할 수
+있도록 할 것”이라 고 밝혔다.
+GDM7243i은 현재 개발용 키트가 주요 고객사들에게 제공되었고,
+주요 모듈 및 단 말제조사들과 개발 진행중에 있다. 이를 탑재한
+상용 모듈 및 제품들이 조만간 출시 될 예정이다.
+24
+
+[p26]
+4G(CAT4)
+150M/50MFDD
+4.5G (CAT6/7)
+300M/100MFDD
+4.75G(CAT12/15)
+600M/150MFDD
+4.9G (CAT19)
+1600M/300MFDD
+Sub-6GHz
+4.7G/2.5GFDD
+mmWave
+6.5G/3.5GFDD
+CAT-M1
+600k/1MHF
+CAT-NB1/2
+20k/60kHF,120k/160kHF
+IoT
+GCT Product Roadmap
+GDM7243S
+600M~2.7G
+GDM7243ST
+450M~3.9G
+GDM7243Q
+700M~2.7G
+4x4MIMO
+GDM7243QT
+700M~3.9G
+4x4MIMO
+GDM7243A
+700M~3.9G
+2CA 4x4
+GDM7243A+
+600M~5.9G
+2CA 4x4
+GDM7243AX
+600M~5.9G
+4CA 4x4
+H2/CY19
+GDM7243i
+600M~2.7G
+Rel. 14
+GDM7243i+
+600M~2.7G
++ PMIC, 16MB
+Flash + 8MB RAM
++ GPS, MBS, Sigfox, BLE
+GDM7259X
+Sub-6GHz+
+mmWave
+H2/CY20
+H2/CY19
+25
+
+[p27]
+OLED Display for Smart Phone/AR/VR/NPC/Tablet/Automotive
+5G/4G Wireless Broadband
+Display SOC & TED
+5G/4G RF-Modem SoC
+IoT SoC
+Company Vision for Industry 4.0
+Core Technology of Industry 4.0
+5G/IoT & OLED
+The largest Shareholder
+26
+
+[p28]
+이 종목의 더 많은 IR정보 확인하기
+주주와 기업을 연결하고 응원합니다.
+s
