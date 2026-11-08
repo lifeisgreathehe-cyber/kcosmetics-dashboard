@@ -49,3 +49,18 @@ def FZ(sc, why=None):
     why = why or {}
     assert len(sc) == 16, sc
     return "\n".join(f"{c} {why.get(i, _DEF[i][int(c)])}" for i, c in enumerate(sc))
+
+
+# IR 분석: 최신 IR 자료의 성장전략·달성 가능성, 과거 IR 대비 변화, 경쟁사·공급사·고객사 IR 교차검증
+#  latest   = [(날짜, 자료명, URL), ...]  최신 IR 원문(또는 원문을 옮긴 공시·컨콜 전문) 링크, 최신순
+#  strategy = [(전략, IR이 말한 세부 내용, 달성 가능성 근거, 등급 높음/중간/낮음), ...]
+#  changes  = [(항목, 예전 IR(시점·내용), 최신 IR, 어떻게 읽나), ...]
+#  cross    = [(상대 회사, 관계, 상대 IR·발표 내용, 검증 결과 일치/부분 일치/불일치/확인 중), ...]
+#  sources  = [(제목, URL), ...]  분석에 쓴 기사·자료
+def IR(summary, latest, strategy, changes, cross, sources, kind="IR"):
+    return dict(summary=summary, kind=kind,
+                latest=[dict(date=d, title=t, url=u) for d, t, u in latest],
+                strategy=[dict(item=a, detail=b, check=c, grade=g) for a, b, c, g in strategy],
+                changes=[dict(item=a, before=b, now=c, read=r) for a, b, c, r in changes],
+                cross=[dict(peer=p, rel=r, claim=c, result=v) for p, r, c, v in cross],
+                sources=[dict(title=t, url=u) for t, u in sources])
