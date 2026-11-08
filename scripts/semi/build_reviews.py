@@ -65,8 +65,8 @@ def sector_for(group, code):
 
 def main():
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/semi/data/companies.json")))["companies"]}
-    out = {"updated": "2026-11-05",
-           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-05까지 나온 3분기 잠정실적과 뉴스",
+    out = {"updated": "2026-11-07",
+           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-07까지 나온 3분기 잠정실적과 뉴스",
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
