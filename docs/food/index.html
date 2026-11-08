@@ -70,6 +70,7 @@ tbody tr.sel{background:var(--accent-soft)}
 #co-table th:first-child,#co-table td:first-child,#val-table th:first-child,#val-table td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 #co-table tbody tr.sel td:first-child,#co-table tbody tr:hover td:first-child{background:var(--accent-soft)}
 #co-table tbody tr:hover{background:var(--accent-soft)}
+.irt td{vertical-align:top;font-size:13px;line-height:1.5;min-width:90px;white-space:normal;text-align:left}.irt td:nth-child(2),.irt td:nth-child(4){min-width:200px}
 .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2)}
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
 .news a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
@@ -214,6 +215,7 @@ td.l,th.l{text-align:left}
         <div class="sl"><span class="ni-l">지배주주순이익</span> <span class="u">억원</span></div><div class="chart sm" style="height:140px"><canvas id="s-ni"></canvas></div></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
+      <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-value"></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
       <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
@@ -284,7 +286,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','food_index','bev_index','cpi','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist'];
+  const names=['meta','food_index','bev_index','cpi','export_price','import_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir_web','ir_analysis'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -510,6 +512,30 @@ function renderBiz(c){
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
    <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
 }
+function renderIR(c){
+  const el=$('#co-ir'); if(!el) return;
+  const W=D.ir_web||{}, L=(W.companies||{})[c.code]||[], A=((D.ir_analysis||{}).companies||{})[c.code];
+  const lk=(u,t)=>u?`<a href="${u}" target="_blank" rel="noopener" style="color:var(--accent)">${t}</a>`:t;
+  const tt=t=>(t||'').replace(/^[^,]+,\s*/,'');
+  const FE={'높음':'pos','보통':'neu','낮음':'neg'};
+  const irgo=`https://m.irgo.co.kr/IR-COMP/${c.code}`;
+  let h=`<h2>IR 자료 분석</h2>`;
+  const latest=L.find(i=>i.pdf)||L[0];
+  if(latest) h+=`<p class="sub">최신 IR 원문: ${latest.date} · ${lk(latest.pdf||latest.page,tt(latest.title))}${latest.pdf?' (PDF)':''} · ${lk(irgo,'IR 자료 전체 목록')} · 출처 ${W.source||'IRGO'}</p>`;
+  else h+=`<p class="sub">IR 원문: ${lk(irgo,'IRGO 회사 IR 자료 목록')}${W.fetched?'':' · 원문 자동 수집 대기 중'}</p>`;
+  if(A){
+    h+=`<p><b>${A.deck}</b> · ${A.summary}</p>`;
+    if(A.strategy.length) h+=`<h4>IR에서 제시한 성장전략과 달성 가능성</h4><div class="tbl"><table class="irt"><thead><tr><th class="l">전략·목표</th><th class="l">회사가 제시한 내용</th><th class="l">달성 가능성</th><th class="l">판단 근거</th></tr></thead><tbody>${A.strategy.map(s=>`<tr><td><b>${s.h}</b></td><td>${s.claim}</td><td><span class="tone ${FE[s.feas]||'neu'}">${s.feas}</span></td><td>${s.why}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.changes.length) h+=`<h4>과거 IR·계획과 비교해 바뀐 점</h4><ul>${A.changes.map(t=>`<li>${t}</li>`).join('')}</ul>`;
+    if(A.cross.length) h+=`<h4>경쟁사·공급사·고객사 자료로 교차검증</h4><div class="tbl"><table class="irt"><thead><tr><th class="l">상대</th><th class="l">상대 자료가 말하는 것</th><th class="l">관계</th><th class="l">교차검증 결과</th></tr></thead><tbody>${A.cross.map(s=>`<tr><td><b>${s.who}</b></td><td>${s.src}</td><td><span class="pill">${s.rel}</span></td><td>${s.read}</td></tr>`).join('')}</tbody></table></div>`;
+    h+=`<p style="margin-top:8px"><b>종합 판단</b> ${A.verdict}</p>`;
+    if(A.docs.length) h+=`<p class="sub">읽은 자료: ${A.docs.map(d=>`${d.date} ${lk(d.url,d.title)}`).join(' · ')} · 분석 기준일 ${A.asof}</p>`;
+    h+=`<p class="src">${D.ir_analysis.note}</p>`;
+  } else h+=`<p class="sub">IR 해석은 원문이 수집되는 대로 회사별로 추가하고 있어요.</p>`;
+  const more=L.filter(i=>i!==latest).slice(0,12);
+  if(more.length) h+=`<details class="fd"><summary>지난 IR 자료 원문 (${more.length}건)</summary><ul>${more.map(i=>`<li><span class="sub">${i.date}</span> ${lk(i.pdf||i.page,tt(i.title))}${i.pdf?' <span class="sub">PDF</span>':''}</li>`).join('')}</ul></details>`;
+  el.innerHTML=h;
+}
 function renderDeep(c){
   const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
   if(!x) return '';
@@ -654,7 +680,7 @@ function selectCo(code){
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderSnap(c);renderReview(c);renderBiz(c);renderValueReport(c);
+  renderCompanyTable();renderSnap(c);renderReview(c);renderBiz(c);renderIR(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];
