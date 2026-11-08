@@ -1,0 +1,22 @@
+name: fetch-ir
+on:
+  workflow_dispatch:
+    inputs:
+      industry: {description: "업종 (비우면 화장품)", required: false, default: ""}
+      codes: {description: "종목코드 쉼표 구분 (비우면 전체)", required: false, default: ""}
+permissions: {contents: write}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q pypdf
+      - run: python scripts/ir/irgo_fetch.py --industry "${{ inputs.industry }}" --codes "${{ inputs.codes }}"
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add raw docs || true
+          git diff --cached --quiet && exit 0
+          git commit -m "data: IR 자료 수집 ${{ inputs.industry }}"
+          for i in 1 2 3; do git pull --rebase -X theirs -q && git push -q && break; sleep 5; done
