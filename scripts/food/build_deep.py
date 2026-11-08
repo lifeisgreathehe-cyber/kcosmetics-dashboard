@@ -50,6 +50,19 @@ def main():
            "companies": val}
     with open(os.path.join(ROOT, "config", "food", "valuation.json"), "w", encoding="utf-8") as f:
         json.dump(cfg, f, ensure_ascii=False, indent=1)
+    from ir_data import IR
+    ira = {"updated": "2026-11-08",
+           "note": "IR 자료(실적 발표, 기업가치 제고 계획, 인베스터 데이)와 그 보도를 바탕으로 성장전략의 달성 가능성을 판단하고, 경쟁사·공급사·고객사 자료와 대조했어요. 원문 PDF는 IRGO(KIND 공시 IR)에서 자동으로 받아 링크해요.",
+           "companies": {}}
+    for code, x in IR.items():
+        ira["companies"][code] = {
+            "asof": x["asof"], "deck": x["deck"], "summary": x["summary"], "verdict": x["verdict"],
+            "strategy": [{"h": h, "claim": c, "feas": f, "why": w} for h, c, f, w in x["strategy"]],
+            "changes": x["changes"],
+            "cross": [{"who": a, "rel": b, "src": c, "read": d} for a, b, c, d in x["cross"]],
+            "docs": [{"date": d, "title": t, "url": u} for d, t, u in x["docs"]]}
+    with open(os.path.join(ROOT, "docs", "food", "data", "ir_analysis.json"), "w", encoding="utf-8") as f:
+        json.dump(ira, f, ensure_ascii=False, indent=1)
     print("deep.json", len(comps), "companies · valuation.json", len(val))
 
 

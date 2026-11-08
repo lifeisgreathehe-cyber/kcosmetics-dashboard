@@ -204,6 +204,7 @@ I("009150",
   cross=[
    ("이수페타시스 IR(같은 AI 서버 기판 공급망)", "이수페타시스 수주잔고가 1분기에만 55% 늘어 AI 서버 기판 수요가 강하다는 삼성전기 설명과 맞아요.", "일치", "https://file.alphasquare.co.kr/media/pdfs/company-ir/20260526%EC%9D%B4%EC%88%98%ED%8E%98%ED%83%80%EC%8B%9C%EC%8A%A4_UBS_Asian_Investment_Conference2026.pdf"),
    ("삼성전자·SK하이닉스 실적발표(AI 서버 수요)", "두 회사 모두 2027년 AI 투자가 기록적일 것이라고 해 2027년 최대 실적 전망을 뒷받침해요.", "일치", "https://news.skhynix.co.kr/q3-2026-business-results/"),
+   ("MLCC 리드타임 14개월 보도(고객 주문 현황)", "11월 8일 보도로 AI 서버용 고용량 MLCC 리드타임이 약 14개월로 늘었고 가격을 올려도 장기계약이 몰린다고 해, '2027년 MLCC 매출 절반 이상 장기계약' 목표를 뒷받침해요.", "일치", "https://n.news.naver.com/mnews/article/014/0005601022"),
    ("11월 6일 주가 급락(시장 반응)", "미국 데이터센터 규제·AI 정점 우려로 10%대 급락했어요. 회사 전망과 달리 시장은 2027년 이후 AI 투자 지속성을 의심하기 시작했어요.", "부분 일치", "https://n.news.naver.com/mnews/article/366/0001202991"),
   ],
   docs=[
