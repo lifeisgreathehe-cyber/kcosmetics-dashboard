@@ -104,7 +104,7 @@ N = [
 SPREADS = [
     dict(id="refining", name="정제마진(대리)", node="fuel", unit="달러/톤",
          formula=[("경질유(나프타·휘발유)", "exp", 0.4), ("중질유(경유·등유·항공유)", "exp", 0.6)], minus=[("원유", "imp", 1.0)],
-         note="휘발유 40%·경유 60%의 수출 단가에서 원유 수입 단가를 뺀 값이에요. 싱가포르 복합 정제마진과 방향이 같아요(1배럴 ≈ 0.136톤).",
+         note="휘발유 40%·경유 60%의 수출 단가에서 원유 수입 단가를 뺀 값이에요. 원유는 도입까지 1~2개월 시차가 있어 유가가 급등하면 실제보다 크게 보이니 수준보다 방향을 보세요(1배럴 ≈ 0.136톤).",
          companies=["010950", "096770", "078930"]),
     dict(id="eth", name="에틸렌 − 나프타", node="ethylene", unit="달러/톤",
          formula=[("에틸렌", "exp", 1.0)], minus=[("경질유(나프타·휘발유)", "imp", 1.0)],
@@ -125,7 +125,7 @@ SPREADS = [
     dict(id="sbr", name="SBR − (BD·SM)", node="rubber", unit="달러/톤",
          formula=[("SBR", "exp", 1.0)], minus=[("부타디엔", "exp", 0.77), ("SM", "exp", 0.23)], note="타이어용 합성고무. 원단위 BD 77%·SM 23%.", companies=["011780"]),
     dict(id="nbr", name="NB라텍스 − (BD·AN)", node="rubber", unit="달러/톤",
-         formula=[("NBR", "exp", 1.0)], minus=[("부타디엔", "exp", 0.67), ("AN", "exp", 0.33)], note="장갑용 NB라텍스와 같은 원료 구성(BD 67%·AN 33%).", companies=["011780"]),
+         formula=[("NBR", "exp", 1.0)], minus=[("부타디엔", "exp", 0.30), ("AN", "exp", 0.15)], note="NB라텍스는 물에 분산된 상태로 팔려 고형분이 약 45%예요. 그래서 라텍스 1톤에 BD 약 0.30톤·AN 약 0.15톤으로 계산했어요(HS 4002.51).", companies=["011780"]),
     dict(id="bd", name="부타디엔 − 나프타", node="bd", unit="달러/톤",
          formula=[("부타디엔", "exp", 1.0)], minus=[("경질유(나프타·휘발유)", "imp", 1.0)], note="NCC 부산물 가치. 높을수록 NCC에, 낮을수록 합성고무사에 유리해요.", companies=[]),
     dict(id="px", name="PX − 나프타", node="px", unit="달러/톤",

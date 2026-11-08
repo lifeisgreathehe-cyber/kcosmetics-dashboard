@@ -774,7 +774,8 @@ function goCo(code){location.hash='#companies';setTimeout(()=>{selectCo(code);co
 function priceSeries(item,side){
   const cu=D.customs_exports, x=cu&&cu.extra&&cu.extra[item];
   if(!x)return null; const a=x[side+'_price']; if(!a||!a.some(v=>v!=null))return null;
-  return a.map(v=>v==null?null:v*1000);
+  // 관세청 단가는 소량 거래 달에 튀는 값이 있어, 앞뒤 6개월 중앙값의 0.5~2배를 벗어나면 비워요
+  return a.map((v,i)=>{if(v==null)return null;const w=a.slice(Math.max(0,i-6),i+7).filter(x=>x!=null).sort((x,y)=>x-y);const md=w[Math.floor(w.length/2)];return md&&v/md>0.5&&v/md<2?v*1000:null});
 }
 function spreadSeries(sp){
   const cu=D.customs_exports; if(!cu||!cu.months)return null;
@@ -855,7 +856,7 @@ function drawSpread(id){
     scales:{x:{ticks:{color:t,maxRotation:0,autoSkipPadding:14},grid:{display:false}},y:{position:'left',title:{display:true,text:'스프레드',color:t},ticks:{color:t},grid:{color:ctx=>ctx.tick.value===0?t:g},border:{display:false}},
       y2:{position:'right',title:{display:true,text:'가격',color:t},ticks:{color:t},grid:{display:false},border:{display:false}}}}});
   const last=V[V.length-1]; const pctl=Math.round(ok.filter(v=>v<=last).length/ok.length*100);
-  $('#sp-src').innerHTML=`최근(${L[L.length-1]}) ${fmt(last)}달러/톤 · 기간 평균 ${fmt(avg)} · 기간 내 하위 ${pctl}% 수준 · 출처: ${vc.price_source}. ${vc.note}`;
+  $('#sp-src').innerHTML=`최근(${L[L.length-1]}) ${fmt(last)}달러/톤 · 기간 평균 ${fmt(avg)} · 기간 내 하위 ${pctl}% 수준 · 출처: ${vc.price_source}. ${vc.note} 거래가 적어 앞뒤 6개월 중앙값의 절반 미만이거나 2배를 넘는 달은 이상치로 보고 뺐어요.`;
 }
 function qAvg(months,vals){const q={};months.forEach((m,i)=>{const v=vals[i];if(v==null)return;const k=m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);(q[k]=q[k]||[]).push(v)});const o={};Object.entries(q).forEach(([k,a])=>{if(a.length>=2)o[k]=a.reduce((x,y)=>x+y,0)/a.length});return o}
 function corr(a,b){const n=a.length;if(n<6)return null;const ma=a.reduce((x,y)=>x+y,0)/n,mb=b.reduce((x,y)=>x+y,0)/n;let sab=0,saa=0,sbb=0;for(let i=0;i<n;i++){sab+=(a[i]-ma)*(b[i]-mb);saa+=(a[i]-ma)**2;sbb+=(b[i]-mb)**2}return {r:sab/Math.sqrt(saa*sbb),slope:sab/saa,n}}
