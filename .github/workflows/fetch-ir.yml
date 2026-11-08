@@ -4,7 +4,7 @@ on:
     inputs:
       industry: {description: "업종 (비우면 화장품)", required: false, default: ""}
       codes: {description: "종목코드 쉼표 구분 (비우면 전체)", required: false, default: ""}
-      args: {description: "추가 옵션 (예: --pdf 6, --probe)", required: false, default: "--pdf 6"}
+      args: {description: "추가 옵션 (예: --pdf 6, --probe)", required: false, default: "--pdf 5"}
 permissions: {contents: write}
 jobs:
   run:

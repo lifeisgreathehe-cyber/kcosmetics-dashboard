@@ -1,6 +1,6 @@
 """IRGO(m.irgo.co.kr) 회사별 IR 자료를 GitHub Actions에서 수집한다.
 - 목록: m.irgo.co.kr/IR-COMP/<코드> → raw/<업종>/irgo/<코드>.html
-- 상세: IR자료/<id>/TB/... 와 '해당기업 IR팀' 리포트 페이지 → 첨부 PDF 링크 → docs/<업종>/ir/<코드>/<날짜>_<id>.pdf
+- 상세: IR자료/<id>/TB/... 와 '해당기업 IR팀' 리포트 페이지 → 첨부 PDF 원본 링크(file.irgo.co.kr)
 - 텍스트: raw/<업종>/ir_text/<코드>_<날짜>_<id>.txt (pypdf)
 - 목록 JSON: docs/<업종>/data/ir_web.json {fetched, source, companies:{code:[{date,title,kind,page,pdf,text,kb,pages}]}}"""
 import json, os, re, sys, time, argparse, html, urllib.request, urllib.parse
@@ -69,12 +69,12 @@ for c in codes:
             except Exception as e:
                 print("  PDF 실패", u, e); continue
             if not b.startswith(b"%PDF"): continue
-            os.makedirs(f"{DOC}/ir/{c}", exist_ok=True)
-            fn = f"{it['date']}_{it['id']}.pdf"; open(f"{DOC}/ir/{c}/{fn}", "wb").write(b)
-            it["pdf"] = f"ir/{c}/{fn}"; it["kb"] = len(b) // 1024
+            # 원문 PDF는 저장소에 올리지 않고(용량) IRGO 원본 링크로 연결, 텍스트만 저장
+            it["pdf"] = u; it["kb"] = len(b) // 1024
             try:
+                import io
                 from pypdf import PdfReader
-                r = PdfReader(f"{DOC}/ir/{c}/{fn}"); it["pages"] = len(r.pages)
+                r = PdfReader(io.BytesIO(b)); it["pages"] = len(r.pages)
                 txt = "\n\n".join(f"[p{i+1}]\n" + (p.extract_text() or "") for i, p in enumerate(r.pages))
                 tp = f"{RAW}/ir_text/{c}_{it['date']}_{it['id']}.txt"; open(tp, "w", encoding="utf-8").write(txt); it["text"] = tp
             except Exception as e:
