@@ -21,6 +21,19 @@ def get(u, binary=False):
     p = urllib.parse.urlsplit(u); u = urllib.parse.urlunsplit(p._replace(path=urllib.parse.quote(p.path)))
     b = urllib.request.urlopen(urllib.request.Request(u, headers=UA), timeout=40).read()
     return b if binary else b.decode("utf-8", "replace")
+def normdate(s):
+    """'2026-08-12', '2026.08.12', '2일전', '3시간전', '어제', '방금' → YYYY-MM-DD (KST 기준)"""
+    import datetime as dt
+    s = (s or "").strip(); now = dt.datetime.utcnow() + dt.timedelta(hours=9)
+    m = re.search(r'(\d{4})[.\-/](\d{1,2})[.\-/](\d{1,2})', s)
+    if m: return f"{int(m[1]):04d}-{int(m[2]):02d}-{int(m[3]):02d}"
+    m = re.search(r'(\d+)\s*일\s*전', s)
+    if m: return (now - dt.timedelta(days=int(m[1]))).strftime("%Y-%m-%d")
+    if "어제" in s: return (now - dt.timedelta(days=1)).strftime("%Y-%m-%d")
+    if re.search(r'(시간|분|초)\s*전|방금|오늘', s): return now.strftime("%Y-%m-%d")
+    m = re.search(r'(\d+)\s*(주|개월|달)\s*전', s)
+    if m: return (now - dt.timedelta(days=int(m[1]) * (7 if m[2] == "주" else 30))).strftime("%Y-%m-%d")
+    return ""
 def items(h):
     out = []
     for m in re.finditer(r'data-href="(https://m\.irgo\.co\.kr/(IR자료|리포트)/(\d+)/[^"]+)">(.*?)</li>', h, re.S):
@@ -28,7 +41,7 @@ def items(h):
         t = re.search(r'<h3[^>]*>(.*?)</h3>', body, re.S); tail = re.search(r'tail_txt[^>]*>(.*?)</em>', body, re.S)
         title = html.unescape(re.sub(r'<[^>]+>', '', t.group(1))).strip() if t else ""
         who, _, date = (html.unescape(tail.group(1)).partition("I") if tail else ("", "", ""))
-        who, date = who.strip(), date.strip()
+        who, date = who.strip(), normdate(date)
         if kind == "리포트" and "IR팀" not in who: continue   # 증권사 리포트는 제외, 회사가 낸 실적자료만
         fn = re.search(r'\[A\d{6}\][^&<]*?\.pdf', body)
         out.append({"id": iid, "kind": "IR자료" if kind == "IR자료" else "실적자료", "date": date, "title": title,
@@ -56,7 +69,7 @@ for c in codes:
     # 최근 N건 + 과거 비교용으로 직전 3개 연도 각각에서 가장 늦은 자료 1건
     pick = set(range(min(a.pdf, len(its))))
     if its:
-        y0 = int(its[0]["date"][:4] or 0)
+        y0 = next((int(i["date"][:4]) for i in its if i["date"][:4].isdigit()), 0)
         for y in (y0 - 1, y0 - 2, y0 - 3):
             k = next((n for n, i in enumerate(its) if i["date"].startswith(str(y))), None)
             if k is not None: pick.add(k)

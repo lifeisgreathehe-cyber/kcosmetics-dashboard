@@ -71,6 +71,7 @@ tbody tr.sel{background:var(--accent-soft)}
 #co-table th:first-child,#co-table td:first-child,#val-table th:first-child,#val-table td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 #co-table tbody tr.sel td:first-child,#co-table tbody tr:hover td:first-child{background:var(--accent-soft)}
 #co-table tbody tr:hover{background:var(--accent-soft)}
+.irt td{vertical-align:top;font-size:13px;line-height:1.5;min-width:90px}.irt td:nth-child(2),.irt td:nth-child(4){min-width:200px}
 .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2)}
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
 .news a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
@@ -202,6 +203,7 @@ td.l,th.l{text-align:left}
         <select id="co-select" aria-label="회사 선택"></select></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
+      <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-value"></div>
       <div class="card full"><div class="row"><div><h2>주가와 실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가는 월말 종가(수정주가), 실적은 분기 기준 · 단위: 억원</p></div>
         <div class="segs" role="group" aria-label="기간" id="fc-range"><button class="seg" data-v="fin" aria-pressed="true">실적 기간</button><button class="seg" data-v="all" aria-pressed="false">주가 전체</button></div></div>
@@ -275,7 +277,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','export_regions'];
+  const names=['meta','mfds_industry','export_top10','production_by_type','online_cosmetics','crossborder_cosmetics','retail_index_cosmetics','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','export_regions','ir_web','ir_analysis'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
   const RAW='https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/data/';
@@ -478,6 +480,27 @@ function newsBlock(c,r){
    <ul class="nauto">${A.map(n=>`<li><span class="sub">${n.date.slice(5)} ${n.office||''}</span> ${link(n)}</li>`).join('')}</ul>`;
   return h;
 }
+function renderIR(c){
+  const el=$('#co-ir'); if(!el) return;
+  const L=((D.ir_web||{}).companies||{})[c.code]||[], A=((D.ir_analysis||{}).companies||{})[c.code];
+  const lk=(u,t)=>u?`<a href="${u}" target="_blank" rel="noopener" style="color:var(--accent)">${t}</a>`:t;
+  const FE={'높음':'pos','보통':'neu','낮음':'neg'}, VE={'일치':'pos','부분 일치':'neu','불일치':'neg','확인 불가':'neu'};
+  if(!L.length&&!A){el.innerHTML=`<h2>IR 자료 분석</h2><p class="sub">이 회사는 공개된 IR 자료를 아직 찾지 못했어요.</p>`;return}
+  let h=`<h2>IR 자료 분석</h2>`;
+  const latest=L.find(i=>i.pdf)||L[0];
+  if(latest) h+=`<p class="sub">최신 IR 자료: ${latest.date} · ${lk(latest.pdf||latest.page,latest.title.replace(/^[^,]+,\s*/,''))}${latest.pdf?' (PDF 원문)':''} · 출처 ${(D.ir_web||{}).source||'IRGO'}</p>`;
+  if(A){
+    h+=`<p>${A.summary}</p>`;
+    if(A.strategy&&A.strategy.length) h+=`<h4>IR에서 제시한 성장전략과 달성 가능성</h4><div class="tbl"><table class="irt"><thead><tr><th>전략</th><th>회사가 제시한 내용·목표</th><th>달성 가능성</th><th>판단 근거</th></tr></thead><tbody>${A.strategy.map(s=>`<tr><td><b>${s.h}</b></td><td>${s.claim}</td><td><span class="tone ${FE[s.feas]||'neu'}">${s.feas}</span></td><td>${s.why}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.changes&&A.changes.length) h+=`<h4>과거 IR과 비교해 바뀐 점</h4><div class="tbl"><table class="irt"><thead><tr><th>항목</th><th>과거</th><th>최근</th><th>어떻게 볼까</th></tr></thead><tbody>${A.changes.map(s=>`<tr><td><b>${s.h}</b></td><td>${s.before}</td><td>${s.now}</td><td>${s.read}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.cross&&A.cross.length) h+=`<h4>경쟁사·공급사·고객사 자료로 교차검증</h4><div class="tbl"><table class="irt"><thead><tr><th>검증 대상 주장</th><th>다른 회사 자료</th><th>결과</th><th>해석</th></tr></thead><tbody>${A.cross.map(s=>`<tr><td>${s.claim}</td><td>${s.src}</td><td><span class="tone ${VE[s.verdict]||'neu'}">${s.verdict}</span></td><td>${s.read}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.val) h+=`<p class="sub" style="margin-top:8px"><b>가치 판단 반영</b> ${A.val}</p>`;
+    h+=`<p class="sub">분석 기준일 ${A.asof} · 읽은 자료: ${(A.sources||[]).join(', ')}</p>`;
+  } else h+=`<p class="sub">자료 해석은 순서대로 추가하고 있어요.</p>`;
+  const more=L.filter(i=>i!==latest).slice(0,12);
+  if(more.length) h+=`<details class="zz"><summary>지난 IR 자료 원문 (${more.length}건)</summary><ul class="nauto">${more.map(i=>`<li><span class="sub">${i.date}</span> ${lk(i.pdf||i.page,i.title.replace(/^[^,]+,\s*/,''))}${i.pdf?' <span class="sub">PDF</span>':''}</li>`).join('')}</ul></details>`;
+  el.innerHTML=h;
+}
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
   if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}`;return}
@@ -593,7 +616,7 @@ function selectCo(code){
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderReview(c);renderBiz(c);renderValueReport(c);renderFin(c);
+  renderCompanyTable();renderReview(c);renderBiz(c);renderIR(c);renderValueReport(c);renderFin(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];
