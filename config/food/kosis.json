@@ -1,0 +1,89 @@
+[
+ {
+  "file": "food_index.json",
+  "title": "식료품 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C10",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "bev_index.json",
+  "title": "음료 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C11",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "cpi.json",
+  "title": "가공식품·외식 소비자물가지수",
+  "source": "국가데이터처 소비자물가조사 (2020=100, 전국)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22002",
+  "orgId": "101",
+  "tblId": "DT_1J22002",
+  "itmId": "T",
+  "objL1": "T10",
+  "objL2": "00+2121+2231+211",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C2_NM",
+  "rename": {}
+ },
+ {
+  "file": "import_price.json",
+  "title": "곡물·원당·유지·육류 수입물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 원화기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+  "orgId": "301",
+  "tblId": "DT_401Y017",
+  "itmId": "ALL",
+  "objL1": "13102134644ACC_CD.10111201AA+13102134644ACC_CD.10111202AA+13102134644ACC_CD.10111301AA+13102134644ACC_CD.30114101AA+13102134644ACC_CD.10113501AA+13102134644ACC_CD.30116201AA+13102134644ACC_CD.10121202AA+13102134644ACC_CD.10121201AA+13102134644ACC_CD.30111202AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "원화기준"
+  }
+ },
+ {
+  "file": "export_price.json",
+  "title": "음식료품 수출물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 달러기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+  "orgId": "301",
+  "tblId": "DT_402Y014",
+  "itmId": "ALL",
+  "objL1": "13102134642ACC_CD.3011AA+13102134642ACC_CD.301152AA+13102134642ACC_CD.301142AA+13102134642ACC_CD.301121AA+13102134642ACC_CD.301173AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "달러기준"
+  }
+ }
+]

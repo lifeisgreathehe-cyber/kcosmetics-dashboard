@@ -476,6 +476,8 @@ def update_customs(key):
             continue
         for f, src in (("exp", by_hs[lab]), ("imp", by_hs_imp.get(lab, {}))):
             extra[lab][f + "_price"] = [round(src[m] / w[f][m], 2) if w[f].get(m) and src.get(m) else None for m in months]
+    unit_price = {lab: [round(by_hs[lab][m] / wgt[lab]["exp"][m], 2) if wgt.get(lab, {}).get("exp", {}).get(m) and by_hs[lab].get(m) else None
+                        for m in months] for lab in totals if wgt.get(lab)}  # 수출 단가($/kg)
     total = [round(sum(by_hs[l].get(m, 0) for l in totals) / 1e6, 2) for m in months]
     out = {"title": CUSTOMS["title"], "source": CUSTOMS["source"],
            "url": "https://www.data.go.kr/data/15100475/openapi.do", "unit": "백만 달러", "months": months,
@@ -483,6 +485,8 @@ def update_customs(key):
            "imports": [round(imp_total.get(m, 0) / 1e6, 2) for m in months], "updated": TODAY.isoformat()}
     if extra:
         out["extra"] = extra
+    if unit_price:
+        out["unit_price"] = unit_price
     save("customs_exports.json", out)
 
     # 국가별
