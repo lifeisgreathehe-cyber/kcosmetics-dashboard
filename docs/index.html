@@ -205,8 +205,7 @@ td.l,th.l{text-align:left}
       <div class="card full rv" id="co-biz"></div>
       <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-value"></div>
-      <div class="card full"><div class="row"><div><h2>주가와 실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가는 월말 종가(수정주가), 실적은 분기 기준 · 단위: 억원</p></div>
-        <div class="segs" role="group" aria-label="기간" id="fc-range"><button class="seg" data-v="fin" aria-pressed="true">실적 기간</button><button class="seg" data-v="all" aria-pressed="false">주가 전체</button></div></div>
+      <div class="card full"><h2>실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요</p>
         <div id="fc"></div></div>
       <div class="card"><h2>연간 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a1"></canvas></div></div>
       <div class="card"><h2>연간 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-a2"></canvas></div></div>
@@ -563,15 +562,14 @@ function cycleBlock(v){
    </tbody></table></div>
    <p class="src">한 해 이익만 쓰면 호황기엔 비싸게, 불황기엔 싸게 평가하는 실수를 하기 쉬워요. 그래서 여러 해 평균 이익률(사이클 평균)과 앞으로의 전망을 회사 상황에 맞는 비중으로 섞었어요. 구조적으로 바뀐 회사는 변화 이후 기간만 평균했어요.</p>`;
 }
-let fcH=null,fcRange='fin';
+let fcH=null;
 function renderFin(c){
   if(!window.FinChart||!window.Chart)return;
   if(fcH)fcH.destroy();
   const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
-  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,range:fcRange});
-  $('#fc-sub').textContent=`주가는 월말 종가(수정주가${D.stock_hist?', '+D.stock_hist.source:''}), 실적은 분기 기준 · 단위: 억원${sh?'':' · 장기 주가는 다음 자동 수집 후 표시돼요'}`;
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 장기 주가는 다음 자동 수집 후 표시돼요');
 }
-document.addEventListener('click',e=>{const b=e.target.closest('#fc-range button');if(!b)return;fcRange=b.dataset.v;document.querySelectorAll('#fc-range button').forEach(x=>x.setAttribute('aria-pressed',x===b));const c=CO.companies.find(x=>x.code===cur);if(c)renderFin(c)});
 function quantBlock(v){
   const q=v.quant, M=(D.valuation||{}).quant_meta;
   if(!q) return '';
@@ -582,7 +580,7 @@ function quantBlock(v){
    ${q.oneoff?` 최근 4분기 순이익(${fmt(eok(q.ttm_ni))}억)이 영업이익과 크게 달라 일회성 손익이 섞인 것으로 보고, 핵심 이익 ${fmt(eok(q.core))}억으로 바꿔 계산했어요.`:''}
    ${q.conflict?` <b>위 판단과 기계식 모델이 반대 방향이에요.</b> 사람이 정한 가정(성장률·사이클 위치)이 맞는지 다시 볼 필요가 있어요.`:''}
    숫자로 정한 사이클 위치는 '${q.pos}'예요(최근 핵심 이익이 사이클 평균보다 높은지 × 이익이 늘고 있는지).</p>
-   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
+   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food|logistics|apparel)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
 }
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
@@ -629,7 +627,7 @@ function selectCo(code){
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
-  renderCompanyTable();renderReview(c);renderBiz(c);renderIR(c);renderValueReport(c);renderFin(c);
+  renderCompanyTable();renderFin(c);renderReview(c);renderBiz(c);renderIR(c);renderValueReport(c);
   const s=S();
   const ay=Object.keys(c.annual||{}).sort().slice(-10);
   const A=k=>c.annual[k];

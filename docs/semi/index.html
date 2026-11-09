@@ -53,8 +53,6 @@ nav.tabs a:focus-visible,button:focus-visible,select:focus-visible,tr:focus-visi
 .card .src{font-size:11.5px;color:var(--ink-3);margin-top:8px}
 .card .src a{color:var(--ink-2)}
 .chart{position:relative;height:300px}
-.glance .gp{position:relative;height:120px;border-top:1px solid var(--line)}
-.glance .gp:first-child{border-top:0}
 .chart.tall{height:360px}
 .odds{display:inline-block;font-size:11px;font-weight:600;padding:1px 7px;border-radius:99px;margin-left:6px}
 .odds.h{background:color-mix(in srgb,var(--up) 14%,transparent);color:var(--up)}.odds.m{background:var(--accent-soft);color:var(--ink-2)}.odds.l{background:color-mix(in srgb,var(--down) 14%,transparent);color:var(--down)}
@@ -231,9 +229,8 @@ td.l,th.l{text-align:left}
     <div class="grid" id="co-detail">
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
-      <div class="card full" id="co-glance"><div class="row"><div><h2>실적 한눈에 보기</h2><p class="sub" id="gl-sub">위: 월말 주가(로그 눈금, 수정주가) · 아래: 분기 매출액·매출총이익·영업이익·순이익(억원) · 같은 시간축</p></div><div class="segs" role="group" aria-label="기간 선택" id="gl-range"></div></div>
-        <div class="glance"><div class="gp" style="height:240px"><canvas id="g-px"></canvas></div><div class="gp"><canvas id="g-rev"></canvas></div><div class="gp"><canvas id="g-gp"></canvas></div><div class="gp"><canvas id="g-op"></canvas></div><div class="gp"><canvas id="g-ni"></canvas></div></div>
-        <div class="src" id="gl-src"></div></div>
+      <div class="card full" id="co-fc"><h2>실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요</p>
+        <div id="fc"></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-ir"></div>
       <div class="card full rv" id="co-biz"></div>
@@ -277,6 +274,7 @@ td.l,th.l{text-align:left}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="../shared/finchart.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -672,7 +670,7 @@ function quantBlock(v){
    ${q.oneoff?` 최근 4분기 순이익(${fmt(eok(q.ttm_ni))}억)이 영업이익과 크게 달라 일회성 손익이 섞인 것으로 보고, 핵심 이익 ${fmt(eok(q.core))}억으로 바꿔 계산했어요.`:''}
    ${q.conflict?` <b>위 판단과 기계식 모델이 반대 방향이에요.</b> 사람이 정한 가정(성장률·사이클 위치)이 맞는지 다시 볼 필요가 있어요.`:''}
    숫자로 정한 사이클 위치는 '${q.pos}'예요(최근 핵심 이익이 사이클 평균보다 높은지 × 이익이 늘고 있는지).</p>
-   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
+   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food|logistics|apparel)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
 }
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
@@ -714,40 +712,14 @@ function finTable(keys,get,prevKey){
     return `<td class="num">${fmt(eok(a[m]))}<br><span class="${cls(y)}" style="font-size:11px">${pct(y)}</span></td>`}).join('')}</tr>`).join('');
   return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
 }
-let glRange=0;
+let fcH=null;
 function renderGlance(c){
-  const R=[[60,'5년'],[120,'10년'],[0,'전체']];
-  $('#gl-range').innerHTML=R.map(([v,l])=>`<button class="seg" aria-pressed="${v===glRange}" data-v="${v}">${l}</button>`).join('');
-  $('#gl-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{glRange=+b.dataset.v;renderGlance(c)});
-  const Q=c.quarterly||{}, qk=Object.keys(Q).sort();
-  const qm=k=>k.slice(0,4)+'-'+String(+k.slice(5)*3).padStart(2,'0');
+  if(!window.FinChart||!window.Chart)return;
+  if(fcH)fcH.destroy();
   const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
-  const pm=sh?Object.fromEntries(sh.months.map((m,i)=>[m,sh.close[i]])):{};
-  const starts=[qk.length?qm(qk[0]):null, sh?sh.months[0]:null].filter(Boolean).sort();
-  if(!starts.length){$('#co-glance').hidden=true;return} $('#co-glance').hidden=false;
-  const now=new Date(), end=`${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}`;
-  let months=[]; for(let [y,m]=starts[0].split('-').map(Number);;){const k=`${y}-${String(m).padStart(2,'0')}`;months.push(k);if(k>=end)break;m++;if(m>12){m=1;y++}}
-  if(glRange) months=months.slice(-glRange);
-  const qv=f=>{const o={};qk.forEach(k=>{const v=Q[k][f];if(v!=null)o[qm(k)]=v/100});return months.map(m=>o[m]??null)};
-  const s=S(), ink3=css('--ink-3'), grid=css('--line');
-  const xo=(show)=>({ticks:{display:show,color:ink3,maxRotation:0,autoSkipPadding:14,font:{size:10.5},callback:function(v){const l=this.getLabelForValue(v);return l.endsWith('-01')||months.length<30?l.slice(0,4):''}},grid:{display:false}});
-  const panel=(id,label,data,color,isPx,last)=>{
-    const vals=data.filter(v=>v!=null);
-    const opt=baseOpts({plugins:{legend:{display:false},title:{display:true,text:label,align:'start',color:css('--ink-2'),font:{size:11.5,weight:'600'},padding:{top:4,bottom:2}},
-        tooltip:{callbacks:{label:x=>isPx?`${fmt(x.raw,0)}원`:`${label}: ${fmt(x.raw,0)}억원`}}},
-      scales:{x:xo(last),y:Object.assign({position:'right',grid:{color:grid},border:{display:false},ticks:{color:ink3,font:{size:10.5},maxTicksLimit:isPx?6:3,callback:v=>fmt(v,0)}},
-        isPx&&vals.length&&Math.min(...vals)>0?{type:'logarithmic',ticks:{color:ink3,font:{size:10.5},callback:(v)=>{const e=Math.floor(Math.log10(v)),m=+(v/10**e).toFixed(3);return [1,2,5].includes(m)?fmt(v,0):''}}}:{})}});
-    draw(id,{type:'line',data:{labels:months,datasets:[line(label,data,color,{pointRadius:isPx?0:2.2,borderWidth:isPx?1.6:1.4,tension:0,spanGaps:true})]},options:opt});
-  };
-  panel('g-px','주가(원)',months.map(m=>pm[m]??null),s[0],true,false);
-  panel('g-rev','매출액',qv('rev'),s[4],false,false);
-  panel('g-gp','매출총이익',qv('gp'),s[4],false,false);
-  panel('g-op','영업이익',qv('op'),s[4],false,false);
-  panel('g-ni',NI,qv('ni'),s[4],false,true);
-  const hi=sh?Math.max(...sh.close):null, lo=sh?Math.min(...sh.close):null;
-  $('#gl-src').textContent=(sh?`주가: ${D.stock_hist.source}, ${sh.months[0]}~${sh.months[sh.months.length-1]} · 최고 ${fmt(hi,0)}원(${sh.months[sh.close.indexOf(hi)]}) · 최저 ${fmt(lo,0)}원(${sh.months[sh.close.indexOf(lo)]})`:'주가 이력은 자동 수집(하루 6번)이 돌면 나타나요')+` · 실적: 분기 ${qk[0]||''}~${qk[qk.length-1]||''}`;
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 주가 이력은 자동 수집 후 표시돼요');
 }
-
 function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;
