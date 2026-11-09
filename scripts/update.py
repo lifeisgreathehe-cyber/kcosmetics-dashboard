@@ -191,6 +191,7 @@ def dart_shares(key, corp):
                     tot, tre = num(r.get("istc_totqy")), num(r.get("tesstk_co")) or 0
                     if tot:
                         out[k] = tot - tre
+                        out[k + "_issued"] = tot  # 자기주식 수 = 발행 − 유통 (보고서 이후 무상증자·병합 보정용)
             if not out.get("common"):  # 보통주 구분 없이 합계만 있는 보고서
                 for r in j.get("list", []):
                     se = (r.get("se") or "").replace(" ", "")
@@ -204,6 +205,29 @@ def dart_shares(key, corp):
 
 def to_m(v):
     return None if v is None else round(v / 1_000_000)
+
+
+def fx_convert(rec, ccy):
+    """외화 공시 회사의 실적·재무상태표를 원화(백만원)로 바꾼다. config/fx.json 연평균 환율."""
+    if not ccy or ccy == "KRW" or (rec.get("fin_ccy") or {}).get("converted"):
+        return rec
+    rates = json.loads((ROOT / "config" / "fx.json").read_text("utf-8")).get(ccy, {})
+    last = rates[max(rates)] if rates else None
+    rate = lambda y: rates.get(str(y)[:4], last)
+    for y, d in (rec.get("annual") or {}).items():
+        for f in ("rev", "gp", "op", "ni"):
+            if d.get(f) is not None:
+                d[f] = round(d[f] * rate(y))
+    for k, d in (rec.get("quarterly") or {}).items():
+        for f in ("rev", "gp", "op", "ni"):
+            if d.get(f) is not None:
+                d[f] = round(d[f] * rate(k))
+    bs = rec.get("bs") or {}
+    for f in ("equity", "cash", "st_fin", "debt"):
+        if bs.get(f) is not None:
+            bs[f] = round(bs[f] * rate(bs.get("period", "")))
+    rec["fin_ccy"] = {"ccy": ccy, "converted": True, "note": f"{ccy} 공시 → 연평균 환율로 원화 환산(config/fx.json)"}
+    return rec
 
 
 def update_dart(key):
@@ -262,6 +286,7 @@ def update_dart(key):
         sh = dart_shares(key, corp)
         if sh:
             rec["shares"] = sh
+        fx_convert(rec, c.get("fin_ccy"))
         if not rec["annual"] and not rec["quarterly"]:
             result.append(old.get(c["code"], rec))
         else:

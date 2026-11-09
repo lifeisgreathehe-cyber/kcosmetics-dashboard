@@ -18,7 +18,7 @@ UA = {"User-Agent": "Mozilla/5.0", "Referer": "https://m.stock.naver.com/"}
 PRICE_URL = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo"
 
 
-def get(url, params=None):
+def get(url, params=None, quiet=False):
     full = url + ("?" + urllib.parse.urlencode(params) if params else "")
     for i in range(2):
         try:
@@ -26,6 +26,8 @@ def get(url, params=None):
                 return json.loads(r.read().decode("utf-8"))
         except Exception as e:  # noqa: BLE001
             err = str(e)
+            if quiet:
+                return None
             time.sleep(1 + i)
     print("실패:", url[:70], err)
     return None
@@ -67,6 +69,19 @@ def main():
                 codes.setdefault(c["pref"], {"name": c["name"] + "우", "inds": [], "pref_of": c["code"]})["inds"].append(ind)
     out = {"fetched": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST"), "codes": {}}
     krx_ok = bool(key)
+    cfg_pref = {m["pref_of"] for m in codes.values() if m.get("pref_of")}
+    for code in [c for c, m in codes.items() if not m.get("pref_of") and c not in cfg_pref]:
+        # 설정에 없는 우선주 찾기(종목코드 끝자리 5·7·9·K)
+        for suf in ("5", "7", "9", "K"):
+            pc = code[:5] + suf
+            if pc == code or pc in codes:
+                continue
+            b = get(f"https://m.stock.naver.com/api/stock/{pc}/basic", quiet=True)
+            if b and (b.get("stockName") or "").rstrip().endswith(("우", "우B", "우(전환)")) and b.get("stockName", "").startswith(codes[code]["name"][:2]):
+                codes[code]["pref_found"] = pc
+                codes[pc] = {"name": b["stockName"], "inds": codes[code]["inds"], "pref_of": code}
+                break
+            time.sleep(0.05)
     for i, (code, meta) in enumerate(sorted(codes.items())):
         rec = dict(meta, naver=naver(code))
         if krx_ok:
