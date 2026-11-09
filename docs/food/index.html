@@ -116,7 +116,6 @@ th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
 td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 .newsread{list-style:none;padding-left:0}.newsread li{border-top:1px solid var(--line);padding:10px 0}.newsread li p{font-size:14px;color:var(--ink-2)}
-.snap .sl{font-size:12px;color:var(--ink-2);margin:8px 0 2px;font-weight:600}.snap .sl .u{font-weight:400;color:var(--ink-3)}.snap .chart.sm{height:120px}
 </style>
 </head>
 <body>
@@ -206,13 +205,8 @@ td.l,th.l{text-align:left}
     <div class="grid" id="co-detail">
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
-      <div class="card full" id="co-snap"><div class="row"><div><h2>실적 한눈에 보기</h2><p class="sub" id="snap-sub"></p></div>
-        <div class="segs" role="group" aria-label="실적 기간" id="snap-mode"><button class="seg" aria-pressed="true" data-m="a">연간</button><button class="seg" aria-pressed="false" data-m="q">분기</button></div></div>
-        <div class="snap"><div class="sl">주가 (월말 종가, 수정주가, 로그 눈금)</div><div class="chart" style="height:240px"><canvas id="s-px"></canvas></div>
-        <div class="sl">매출액 <span class="u">억원</span></div><div class="chart sm"><canvas id="s-rev"></canvas></div>
-        <div class="sl">매출총이익 <span class="u">억원</span></div><div class="chart sm"><canvas id="s-gp"></canvas></div>
-        <div class="sl">영업이익 <span class="u">억원</span></div><div class="chart sm"><canvas id="s-op"></canvas></div>
-        <div class="sl"><span class="ni-l">지배주주순이익</span> <span class="u">억원</span></div><div class="chart sm" style="height:140px"><canvas id="s-ni"></canvas></div></div></div>
+      <div class="card full" id="co-fc"><h2>실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요</p>
+        <div id="fc"></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
       <div class="card full rv" id="co-ir"></div>
@@ -257,6 +251,7 @@ td.l,th.l{text-align:left}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="../shared/finchart.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -636,41 +631,15 @@ function finTable(keys,get,prevKey){
     return `<td class="num">${fmt(eok(a[m]))}<br><span class="${cls(y)}" style="font-size:11px">${pct(y)}</span></td>`}).join('')}</tr>`).join('');
   return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
 }
-let snapMode='a';
-function renderSnap(c){
-  const s=S(), sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
-  const fin=snapMode==='q'
-    ? Object.keys(c.quarterly||{}).sort().map(k=>({x:+k.slice(0,4)+(+k.slice(-1)*3-1.5)/12,k,v:c.quarterly[k]}))
-    : Object.keys(c.annual||{}).sort().map(k=>({x:+k+0.5,k,v:c.annual[k]}));
-  let px=sh?sh.months.map((m,i)=>({x:+m.slice(0,4)+(+m.slice(5)-0.5)/12,y:sh.close[i],m})).filter(p=>p.y>0):[];
-  const xs=px.map(p=>p.x).concat(fin.map(p=>p.x));
-  const now=new Date().getFullYear()+1;
-  let x0=xs.length?Math.floor(Math.min(...xs)):now-10, x1=xs.length?Math.ceil(Math.max(...xs)+0.01):now;
-  x0=Math.max(x0,x1-20); px=px.filter(p=>p.x>=x0);
-  const xsc=(show)=>({type:'linear',min:x0,max:x1,ticks:{stepSize:1,color:css('--ink-3'),font:{size:11},maxRotation:0,autoSkip:true,display:show,align:'inner',callback:v=>Number.isInteger(v)?v:''},grid:{color:css('--line'),drawTicks:false},border:{color:css('--line')}});
-  const opt=(show,ylog,unit)=>baseOpts({plugins:{legend:{display:false},tooltip:{callbacks:{title:x=>x[0].raw.k||x[0].raw.m||'',label:x=>`${fmt(x.raw.y)}${unit}`}}},
-    interaction:{mode:'nearest',intersect:false,axis:'x'},
-    scales:{x:xsc(show),y:{type:ylog?'logarithmic':'linear',position:'right',afterFit:a=>{a.width=72},ticks:{color:css('--ink-3'),font:{size:10.5},maxTicksLimit:4,callback:v=>fmt(v)},grid:{color:css('--line')},border:{display:false}}}});
-  let sub='';
-  if(px.length){
-    const hi=px.reduce((a,b)=>b.y>a.y?b:a), lo=px.reduce((a,b)=>b.y<a.y?b:a);
-    sub=`최고 ${fmt(hi.y)}원 (${hi.m.replace('-','/')}) · 최저 ${fmt(lo.y)}원 (${lo.m.replace('-','/')}) · 최근 ${fmt(px[px.length-1].y)}원 · ${D.stock_hist.source}`;
-    draw('s-px',{type:'line',data:{datasets:[line('주가',px,s[0],{tension:0,borderWidth:1.6}),
-      {type:'scatter',label:'최고·최저',data:[hi,lo],pointRadius:5,pointStyle:'triangle',rotation:[0,180],backgroundColor:[css('--neg')||'#c0392b',css('--pos')||'#1f6feb'],borderWidth:0}]},options:opt(false,true,'원')});
-  } else { sub='주가 이력은 자동 수집 후 표시돼요.'; draw('s-px',{type:'line',data:{datasets:[]},options:opt(false,false,'원')}); }
-  if(!fin.length) sub+=' · 재무 데이터는 DART 수집 후 표시돼요.';
-  else sub+=` · 재무: ${fin[0].k}~${fin[fin.length-1].k} (${snapMode==='q'?'분기':'연간'})`;
-  $('#snap-sub').textContent=sub;
-  [['rev',0],['gp',2],['op',1],['ni',6]].forEach(([m,ci],i)=>{
-    const d=fin.filter(p=>p.v&&p.v[m]!=null).map(p=>({x:p.x,y:eok(p.v[m]),k:p.k}));
-    draw('s-'+m,{type:'line',data:{datasets:[line(m,d,s[ci],{tension:0,borderWidth:1.6,pointRadius:snapMode==='q'?2.2:3.5,pointBackgroundColor:s[ci]})]},options:opt(i===3,false,'억원')});
-  });
+let fcH=null;
+function renderSnap(c){  // 공용 모듈 docs/shared/finchart.js
+  if(!window.FinChart||!window.Chart)return;
+  if(fcH)fcH.destroy();
+  const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 주가 이력은 자동 수집 후 표시돼요')+(Object.keys(c.quarterly||{}).length?'':' · 분기 실적은 DART 수집 후 표시돼요');
 }
-function bindSnap(){
-  $('#snap-mode').querySelectorAll('button').forEach(b=>b.onclick=()=>{snapMode=b.dataset.m;
-    $('#snap-mode').querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
-    const c=CO.companies.find(x=>x.code===cur); if(c) renderSnap(c);});
-}
+function bindSnap(){}
 function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;
