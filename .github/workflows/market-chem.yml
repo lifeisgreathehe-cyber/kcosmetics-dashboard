@@ -1,0 +1,36 @@
+name: 화학 시황 선물가격
+
+on:
+  schedule:
+    - cron: "30 8 * * 1-5"   # 평일 17:30 KST (중국 선물 장 마감 이후)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: market-chem
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 선물 일봉 수집
+        run: python scripts/chem/market_futures.py
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/chem/data/market_recent.json
+          if git diff --cached --quiet; then
+            echo "변경 없음"
+          else
+            git commit -m "data: 화학 선물 시황 $(date -u +%Y-%m-%d)"
+            for i in 1 2 3; do git pull --rebase --autostash -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi
