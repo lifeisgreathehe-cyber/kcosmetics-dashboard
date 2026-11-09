@@ -1,0 +1,8 @@
+[
+  {"file":"service_volume.json","title":"운수업 서비스업생산지수 (불변지수 = 물량)","source":"국가데이터처 서비스업동향조사 (2020=100, 불변지수)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "orgId":"101","tblId":"DT_1KC2020","itmId":"T2","objL1":"H+H5011+H5012+H5110+H5120+H4930+H4940+H4921+H4922+H52+H5292","prdSe":"M","start":"201501","series_key":"C1_NM"},
+  {"file":"service_nominal.json","title":"운수업 서비스업생산지수 (경상지수 = 매출)","source":"국가데이터처 서비스업동향조사 (2020=100, 경상지수)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "orgId":"101","tblId":"DT_1KC2020","itmId":"T1","objL1":"H+H5011+H5012+H5110+H5120+H4930+H4940+H4921+H4922+H52+H5292","prdSe":"M","start":"201501","series_key":"C1_NM"},
+  {"file":"freight_ppi.json","title":"운송서비스 생산자물가지수 (운임)","source":"한국은행 생산자물가조사 (2020=100)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "orgId":"301","tblId":"DT_404Y016","itmId":"ALL","objL1":"13102134764ACC_CD.501AA+13102134764ACC_CD.50121201AA+13102134764ACC_CD.50121102AA+13102134764ACC_CD.50131101AA+13102134764ACC_CD.50131102AA+13102134764ACC_CD.50131103AA+13102134764ACC_CD.50152101AA+13102134764ACC_CD.50112201AA+13102134764ACC_CD.50142102AA+13102134764ACC_CD.50143101AA+13102134764ACC_CD.50112102AA","prdSe":"M","start":"201501","series_key":"C1_NM"}
+]
