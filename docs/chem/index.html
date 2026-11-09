@@ -343,7 +343,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','valuechain','ir_web'];
+  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','valuechain','ir_web','market_recent'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
   try{const r=await fetch('https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/chem/data/news.json?t='+Date.now());if(r.ok){const x=await r.json();if(!D.news||(x.fetched||'')>(D.news.fetched||''))D.news=x}}catch(e){}
@@ -779,15 +779,30 @@ function priceSeries(item,side){
   // 관세청 단가는 소량 거래 달에 튀는 값이 있어, 앞뒤 6개월 중앙값의 0.5~2배를 벗어나면 비워요
   return a.map((v,i)=>{if(v==null)return null;const w=a.slice(Math.max(0,i-6),i+7).filter(x=>x!=null).sort((x,y)=>x-y);const md=w[Math.floor(w.length/2)];return md&&v/md>0.5&&v/md<2?v*1000:null});
 }
+// 관세청 확정치 다음 달부터는 중국 선물 월평균 변화율로 연장(추정)
+function extMonths(last){const out=[];const now=new Date();const end=now.getFullYear()*12+now.getMonth();let y=+last.slice(0,4),m=+last.slice(5,7);for(let k=y*12+m;k<=end;k++){out.push(Math.floor(k/12)+'-'+String(k%12+1).padStart(2,'0'))}return out}
+function extPrice(item,base,lastM,months){
+  const mk=D.market_recent&&D.market_recent.series&&D.market_recent.series[item]; if(!mk||base==null)return null;
+  const b=mk.months[lastM]; if(!b)return null;
+  const r=months.map(m=>mk.months[m]?base*mk.months[m].avg/b.avg:null); return r.some(v=>v!=null)?{v:r,mk}:null;
+}
 function spreadSeries(sp){
   const cu=D.customs_exports; if(!cu||!cu.months)return null;
   const parts=[...sp.formula.map(f=>({...f,sign:1})),...sp.minus.map(f=>({...f,sign:-1}))];
   const P=parts.map(f=>priceSeries(f.item,f.side)); if(P.some(p=>!p))return null;
-  const prod=sp.formula.map((f,i)=>P[i]), feed=sp.minus.map((f,i)=>P[sp.formula.length+i]);
-  const v=cu.months.map((_,j)=>{let t=0;for(let i=0;i<parts.length;i++){const p=P[i][j];if(p==null)return null;t+=parts[i].sign*parts[i].w*p}return Math.round(t)});
-  const pr=cu.months.map((_,j)=>{let t=0;for(let i=0;i<prod.length;i++){const p=prod[i][j];if(p==null)return null;t+=sp.formula[i].w*p}return Math.round(t)});
-  const fd=sp.minus.length?cu.months.map((_,j)=>{let t=0;for(let i=0;i<feed.length;i++){const p=feed[i][j];if(p==null)return null;t+=sp.minus[i].w*p}return Math.round(t)}):null;
-  return {months:cu.months,v,pr,fd};
+  // 연장: 모든 구성 품목에 선물 대응이 있고, 관세청 마지막 달 값이 있어야
+  const lastM=cu.months[cu.months.length-1], add=extMonths(lastM); let ext=null;
+  if(add.length&&D.market_recent){
+    const E=parts.map((f,i)=>extPrice(f.item,P[i][P[i].length-1],lastM,add));
+    if(E.every(e=>e)){ext={E,months:add,proxies:[...new Map(E.map((e,i)=>[e.mk.sym,{item:parts[i].item,desc:e.mk.desc,direct:e.mk.direct,last:e.mk.last}])).values()],
+      partial:add.map(m=>{const n=Math.max(...E.map(e=>(e.mk.months[m]||{}).n||0));return n<15})}}
+  }
+  const months=ext?[...cu.months,...ext.months]:cu.months, nA=cu.months.length;
+  const PP=P.map((p,i)=>ext?[...p,...ext.E[i].v]:p);
+  const comb=(idx)=>months.map((_,j)=>{let t=0;for(const i of idx){const v=PP[i][j];if(v==null)return null;t+=parts[i].sign*parts[i].w*v}return Math.round(t)});
+  const all=parts.map((_,i)=>i), pi=sp.formula.map((_,i)=>i), fi=sp.minus.map((_,i)=>sp.formula.length+i);
+  const v=comb(all), pr=comb(pi).map(x=>x), fd=sp.minus.length?comb(fi).map(x=>x==null?null:-x):null;
+  return {months,v,pr,fd,nA,ext,est:months.map((_,j)=>j>=nA)};
 }
 let vcSel=null;
 function renderChain(){
@@ -841,6 +856,13 @@ function selNode(id,quiet){
 const NODATA='관세청 품목별 단가를 아직 수집하지 못했어요. 매주 월요일 자동 수집 후 표시돼요.';
 function chartBox(id){const c=document.getElementById(id);if(c)return c;return null}
 function resetCanvas(id,cls){const card=document.querySelector(cls);const w=card.querySelector('.chart');if(!w.querySelector('canvas'))w.innerHTML=`<canvas id="${id}" role="img"></canvas>`}
+const dashFrom=nA=>({borderDash:ctx=>ctx.p1DataIndex>=nA?[5,4]:undefined});
+function extNote(S0,sp){
+  const cu=D.customs_exports, lastM=cu.months[cu.months.length-1];
+  if(S0.ext){const pr=S0.ext.proxies.map(p=>`${p.desc}${p.direct?'':''}`).join(', ');
+    const nx=S0.ext.months[0]; return ` <b>${nx}부터(점선)</b>는 관세청 확정치가 아직 없어(매달 15일께 전월치 공개) ${pr} 선물의 월평균 변화율을 ${lastM} 관세청 단가에 곱해 추정했어요${S0.ext.partial.some(x=>x)?`(${S0.ext.months.filter((m,i)=>S0.ext.partial[i]).join('·')}은 ${S0.ext.proxies[0].last.date}까지 일부 기간 평균)`:''}. 확정치가 들어오면 자동으로 바뀌어요.`}
+  return ` 관세청 확정치는 ${lastM}까지예요(매달 15일께 전월치 공개). 이 스프레드의 구성 품목 중 ${(sp.formula.concat(sp.minus)).filter(f=>!(D.market_recent&&D.market_recent.series&&D.market_recent.series[f.item])).map(f=>f.item).join('·')}은(는) 대응하는 공개 선물이 없어 최근 달 추정을 붙이지 않았어요.`;
+}
 function drawSpread(id){
   const vc=D.valuechain, sp=vc.spreads.find(x=>x.id===id); resetCanvas('c-sp','#v-chain .card:nth-child(2)');
   $('#sp-sub').textContent=`${sp.name} · ${sp.unit}${sp.note?' · '+sp.note:''}`;
@@ -848,44 +870,63 @@ function drawSpread(id){
   if(!S0){empty('c-sp',NODATA);$('#sp-src').textContent=vc.price_source;return}
   const rg=+$('#sp-range').value, n=S0.months.length; let from=rg?Math.max(0,n-rg):0;
   while(from<n&&S0.v[from]==null)from++;
-  const L=S0.months.slice(from), V=S0.v.slice(from), ok=V.filter(v=>v!=null), avg=ok.reduce((a,b)=>a+b,0)/ok.length;
-  const ds=[line('스프레드',V,s[0],{borderWidth:2.2,yAxisID:'y'}),line(`기간 평균 ${fmt(avg)}`,L.map(()=>Math.round(avg)),css('--ink-3'),{borderDash:[4,4],borderWidth:1,yAxisID:'y'})];
-  ds.push(line('제품 가격',S0.pr.slice(from),s[2],{borderWidth:1.2,yAxisID:'y2'}));
-  if(S0.fd)ds.push(line('원재료 비용',S0.fd.slice(from),s[1],{borderWidth:1.2,yAxisID:'y2'}));
+  const L=S0.months.slice(from), V=S0.v.slice(from), nA=S0.nA-from, ok=V.filter(v=>v!=null), okA=V.slice(0,nA).filter(v=>v!=null), avg=okA.reduce((a,b)=>a+b,0)/okA.length;
+  const dsh=dashFrom(nA);
+  const ds=[line('스프레드',V,s[0],{borderWidth:2.2,yAxisID:'y',segment:dsh}),line(`기간 평균 ${fmt(avg)}`,L.map(()=>Math.round(avg)),css('--ink-3'),{borderDash:[4,4],borderWidth:1,yAxisID:'y'})];
+  ds.push(line('제품 가격',S0.pr.slice(from),s[2],{borderWidth:1.2,yAxisID:'y2',segment:dsh}));
+  if(S0.fd)ds.push(line('원재료 비용',S0.fd.slice(from),s[1],{borderWidth:1.2,yAxisID:'y2',segment:dsh}));
   const t=css('--ink-3'),g=css('--line');
   draw('c-sp',{type:'line',data:{labels:L,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
+    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{title:c=>c[0].label+(c[0].dataIndex>=nA?' (선물 변화율 추정)':''),label:c=>`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
     scales:{x:{ticks:{color:t,maxRotation:0,autoSkipPadding:14},grid:{display:false}},y:{position:'left',title:{display:true,text:'스프레드',color:t},ticks:{color:t},grid:{color:ctx=>ctx.tick.value===0?t:g},border:{display:false}},
       y2:{position:'right',title:{display:true,text:'가격',color:t},ticks:{color:t},grid:{display:false},border:{display:false}}}}});
-  const last=V[V.length-1]; const pctl=Math.round(ok.filter(v=>v<=last).length/ok.length*100);
-  $('#sp-src').innerHTML=`최근(${L[L.length-1]}) ${fmt(last)}달러/톤 · 기간 평균 ${fmt(avg)} · 기간 내 하위 ${pctl}% 수준 · 출처: ${vc.price_source}. ${vc.note} 거래가 적어 앞뒤 6개월 중앙값의 절반 미만이거나 2배를 넘는 달은 이상치로 보고 뺐어요.`;
+  const lastA=V[nA-1], last=V[V.length-1]; const pctl=v=>Math.round(okA.filter(x=>x<=v).length/okA.length*100);
+  const cur=nA<V.length&&last!=null?`최근 추정(${L[L.length-1]}) <b>${fmt(last)}</b>달러/톤 · 관세청 확정(${L[nA-1]}) ${fmt(lastA)}`:`최근(${L[nA-1]}) <b>${fmt(lastA)}</b>달러/톤`;
+  $('#sp-src').innerHTML=`${cur} · 기간 평균 ${fmt(avg)} · ${(q=>q>50?`기간 내 상위 ${101-q}%`:`기간 내 하위 ${q}%`)(pctl(last!=null?last:lastA))} 수준.${extNote(S0,sp)} 출처: ${vc.price_source}${S0.ext?' · '+D.market_recent.source+' (수집 '+D.market_recent.fetched+')':''}. ${vc.note} 거래가 적어 앞뒤 6개월 중앙값의 절반 미만이거나 2배를 넘는 달은 이상치로 보고 뺐어요.`;
 }
-function qAvg(months,vals){const q={};months.forEach((m,i)=>{const v=vals[i];if(v==null)return;const k=m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);(q[k]=q[k]||[]).push(v)});const o={};Object.entries(q).forEach(([k,a])=>{if(a.length>=2)o[k]=a.reduce((x,y)=>x+y,0)/a.length});return o}
-function corr(a,b){const n=a.length;if(n<6)return null;const ma=a.reduce((x,y)=>x+y,0)/n,mb=b.reduce((x,y)=>x+y,0)/n;let sab=0,saa=0,sbb=0;for(let i=0;i<n;i++){sab+=(a[i]-ma)*(b[i]-mb);saa+=(a[i]-ma)**2;sbb+=(b[i]-mb)**2}return {r:sab/Math.sqrt(saa*sbb),slope:sab/saa,n}}
+function qAvg(months,vals){const q={};const lm=months[months.length-1],last=lm.slice(0,4)+'Q'+Math.ceil(+lm.slice(5,7)/3);months.forEach((m,i)=>{const v=vals[i];if(v==null)return;const k=m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);(q[k]=q[k]||[]).push(v)});const o={};Object.entries(q).forEach(([k,a])=>{if(a.length>=2||k===last)o[k]=a.reduce((x,y)=>x+y,0)/a.length});return o}
+function corr(a,b){const n=a.length;if(n<6)return null;const ma=a.reduce((x,y)=>x+y,0)/n,mb=b.reduce((x,y)=>x+y,0)/n;let sab=0,saa=0,sbb=0;for(let i=0;i<n;i++){sab+=(a[i]-ma)*(b[i]-mb);saa+=(a[i]-ma)**2;sbb+=(b[i]-mb)**2}return {r:sab/Math.sqrt(saa*sbb),slope:sab/saa,icpt:mb-sab/saa*ma,n}}
 function drawProfit(code,id){
   const vc=D.valuechain, sp=vc.spreads.find(x=>x.id===id), nm=CONAME(); resetCanvas('c-pr','#v-chain .card:nth-child(3)');
   const co=((D.companies&&D.companies.companies)||[]).find(c=>c.code===code); const S0=spreadSeries(sp);
   if(!co){empty('c-pr','회사 실적이 없어요.');return}
-  const Q=co.quarterly||{}, qk=Object.keys(Q).sort(), mg=qk.map(k=>Q[k].rev?+(Q[k].op/Q[k].rev*100).toFixed(1):null);
+  const Q=co.quarterly||{}, qe=Object.keys(Q).sort();
+  const qk2=m=>m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);
+  const qs=S0?qAvg(S0.months,S0.v):{};
+  // 실적 분기 + 그 뒤 스프레드만 있는 분기(실적 미발표)까지 가로축에
+  const qk=[...new Set([...qe,...Object.keys(qs).filter(k=>k>qe[qe.length-1])])].sort();
+  const estQ=new Set(S0?S0.months.filter((m,i)=>S0.est[i]).map(qk2):[]);
+  const fstEst=S0&&S0.ext?S0.months[S0.nA]:null; const partQ=S0&&S0.ext?S0.months.filter((m,i)=>S0.est[i]&&S0.ext.partial[i-S0.nA]).map(qk2):[];
+  const mg=qk.map(k=>Q[k]&&Q[k].rev?+(Q[k].op/Q[k].rev*100).toFixed(1):null);
   const s=S(), t=css('--ink-3'), g=css('--line');
-  const qs=S0?qAvg(S0.months,S0.v):{}; const SPQ=qk.map(k=>qs[k]!=null?Math.round(qs[k]):null);
+  const SPQ=qk.map(k=>qs[k]!=null?Math.round(qs[k]):null);
+  const lastE=qk.indexOf(qe[qe.length-1]);
+  // 회귀식
+  const pick=lag=>{const a=[],b=[];qk.forEach((k,i)=>{const j=i-lag;if(j<0)return;const x=SPQ[j],y=mg[i];if(x!=null&&y!=null){a.push(x);b.push(y)}});return corr(a,b)};
+  const c0=S0?pick(0):null,c1=S0?pick(1):null; const best=c1&&c0&&Math.abs(c1.r)>Math.abs(c0.r)+0.05?{...c1,lag:1}:c0?{...c0,lag:0}:null;
+  const useEst=best&&Math.abs(best.r)>=0.4;
+  const pred=qk.map((k,i)=>{if(i<=lastE||!useEst)return null;const x=SPQ[i-best.lag];return x==null?null:+(best.icpt+best.slope*x).toFixed(1)});
   const ds=[{type:'bar',label:'영업이익률(%)',data:mg,backgroundColor:mg.map(v=>v<0?css('--down'):s[2]),yAxisID:'y',order:2}];
-  if(S0)ds.push(line(sp.name+' (분기 평균)',SPQ,s[0],{yAxisID:'y2',order:1,pointRadius:2}));
+  if(pred.some(v=>v!=null))ds.push({type:'bar',label:'추정 영업이익률(회귀, 실적 미발표)',data:pred,backgroundColor:'transparent',borderColor:s[2],borderWidth:1.5,borderDash:[4,3],yAxisID:'y',order:3,grouped:false});
+  const nAq=qk.findIndex(k=>estQ.has(k)&&!(qs[k]!=null&&S0.months.some((m,i)=>!S0.est[i]&&qk2(m)===k)));
+  if(S0)ds.push(line(sp.name+' (분기 평균)',SPQ,s[0],{yAxisID:'y2',order:1,pointRadius:qk.map(k=>estQ.has(k)?3.5:2),pointStyle:qk.map(k=>estQ.has(k)?'rectRot':'circle'),segment:{borderDash:ctx=>estQ.has(qk[ctx.p1DataIndex])?[5,4]:undefined}}));
   draw('c-pr',{data:{labels:qk,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y'?`영업이익률 ${fmt(c.raw,1)}%`:`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
+    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{
+      title:c=>{const k=c[0].label;const tags=[];if(!Q[k])tags.push('실적 미발표');if(estQ.has(k))tags.push(partQ.includes(k)?'스프레드 일부 추정·진행 중':'스프레드 일부 선물 추정');return k+(tags.length?' ('+tags.join(', ')+')':'')},
+      label:c=>c.dataset.yAxisID==='y'?`${c.dataset.label} ${fmt(c.raw,1)}%`:`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
     scales:{x:{ticks:{color:t,maxRotation:0,autoSkipPadding:10},grid:{display:false}},y:{position:'left',title:{display:true,text:'영업이익률 %',color:t},ticks:{color:t},grid:{color:ctx=>ctx.tick.value===0?t:g},border:{display:false}},
       y2:{position:'right',display:!!S0,title:{display:true,text:'스프레드 달러/톤',color:t},ticks:{color:t},grid:{display:false},border:{display:false}}}}});
   const box=$('#pr-stats');
   if(!S0){box.innerHTML=`<p class="pr-read">${NODATA} 그 전까지는 영업이익률만 보여 줘요.</p>`;return}
-  const pick=lag=>{const a=[],b=[];qk.forEach((k,i)=>{const j=i-lag;if(j<0)return;const x=SPQ[j],y=mg[i];if(x!=null&&y!=null){a.push(x);b.push(y)}});return corr(a,b)};
-  const c0=pick(0),c1=pick(1); const best=c1&&c0&&Math.abs(c1.r)>Math.abs(c0.r)+0.05?{...c1,lag:1}:c0?{...c0,lag:0}:null;
   if(!best){box.innerHTML='<p class="pr-read">겹치는 분기가 6개 미만이라 관계를 계산하지 않았어요.</p>';return}
   const st=Math.abs(best.r)>=0.7?'강한':Math.abs(best.r)>=0.4?'중간 정도의':'약한';
-  const lastSp=SPQ.filter(v=>v!=null).slice(-1)[0], avgSp=SPQ.filter(v=>v!=null).reduce((x,y,_,a)=>x+y/a.length,0);
+  const spE=SPQ[lastE], avgSp=SPQ.slice(0,lastE+1).filter(v=>v!=null).reduce((x,y,_,a)=>x+y/a.length,0);
+  const after=qk.slice(lastE+1).map((k,j)=>({k,v:SPQ[lastE+1+j],p:pred[lastE+1+j]})).filter(o=>o.v!=null);
+  const afterTxt=after.length?` <b>실적이 아직 안 나온 ${after.map(o=>o.k).join('·')}</b>의 스프레드는 ${after.map(o=>`${o.k} ${fmt(o.v)}달러/톤(${o.v>=spE?'+':''}${spE?((o.v/spE-1)*100).toFixed(0):'–'}% vs ${qk[lastE]})`).join(', ')}${partQ.length?` — ${partQ.join('·')}는 분기 중간까지의 값`:''}.${useEst&&after.some(o=>o.p!=null)?` 회귀식대로라면 영업이익률은 ${after.filter(o=>o.p!=null).map(o=>`${o.k} 약 ${fmt(o.p,1)}%`).join(', ')}로 추정돼요(점선 막대, 실적 발표 시 실제치로 교체). 재고평가·환율·일회성 손익은 반영되지 않아요.`:` 상관이 약해 이 스프레드만으로 영업이익률을 추정하지 않았어요.`}`:'';
   box.innerHTML=`<div class="kpi"><div class="l">상관계수 (같은 분기)</div><div class="v">${c0?c0.r.toFixed(2):'–'}</div><div class="s">${c0?c0.n:0}개 분기</div></div>
    <div class="kpi"><div class="l">상관계수 (스프레드 1분기 선행)</div><div class="v">${c1?c1.r.toFixed(2):'–'}</div><div class="s">원료 재고 시차(래깅) 반영</div></div>
    <div class="kpi"><div class="l">스프레드 100달러당 영업이익률</div><div class="v">${(best.slope*100>0?'+':'')+(best.slope*100).toFixed(1)}%p</div><div class="s">${best.lag?'1분기 선행':'같은 분기'} 기준 회귀 기울기</div></div>
-   <p class="pr-read">${nm[code]||code}의 영업이익률은 ${sp.name}와 ${st} 관계예요(r=${best.r.toFixed(2)}${best.lag?', 스프레드가 1분기 먼저 움직임':''}). 최근 분기 스프레드는 ${fmt(lastSp)}달러/톤으로 기간 평균 ${fmt(avgSp)}달러/톤${lastSp>=avgSp?'보다 높아 이익에 우호적인':'보다 낮아 이익에 불리한'} 구간이에요. ${Math.abs(best.r)<0.4?'상관이 약한 건 이 회사 이익에 다른 사업(자회사·다른 제품)이 크게 섞여 있거나 환율·재고 손익 영향이 크다는 뜻이에요.':''}</p>`;
+   <p class="pr-read">${nm[code]||code}의 영업이익률은 ${sp.name}와 ${st} 관계예요(r=${best.r.toFixed(2)}${best.lag?', 스프레드가 1분기 먼저 움직임':''}). 마지막 실적 분기(${qk[lastE]}) 스프레드는 ${fmt(spE)}달러/톤으로 기간 평균 ${fmt(avgSp)}달러/톤${spE>=avgSp?'보다 높았어요':'보다 낮았어요'}.${afterTxt} ${Math.abs(best.r)<0.4?'상관이 약한 건 이 회사 이익에 다른 사업(자회사·다른 제품)이 크게 섞여 있거나 환율·재고 손익 영향이 크다는 뜻이에요.':''}</p>`;
 }
 function renderSD(){
   const vc=D.valuechain, Y=['2026','2027','2028','2029'];
