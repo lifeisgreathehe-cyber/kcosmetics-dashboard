@@ -121,40 +121,37 @@ td.l,th.l{text-align:left}
 <body>
 <div class="wrap">
   <header class="top">
-    <h1><small>FAIR VALUE BACKTEST · 2025-11 → 2026-11</small>적정주가 1년 백테스트</h1>
-    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="../" style="color:var(--accent)">화장품 대시보드 →</a><br><a href="../semi/" style="color:var(--accent)">반도체 대시보드 →</a></div>
+    <h1><small>FAIR VALUE BACKTEST · 2023 → 2026</small>적정주가 백테스트</h1>
+    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="../" style="color:var(--accent)">화장품 대시보드 →</a><br><a href="../semi/" style="color:var(--accent)">반도체 대시보드 →</a><br><a href="../chem/" style="color:var(--accent)">화학·정유 대시보드 →</a><br><a href="../battery/" style="color:var(--accent)">2차전지 대시보드 →</a></div>
   </header>
-  <p class="lede">1년 전(2025년 11월 5일)으로 돌아가, 그날까지 공시된 실적과 그날 주가만으로 대시보드의 내재가치 모델을 다시 돌렸어요. 그 뒤 1년 동안 실제 주가가 어떻게 움직였는지와 맞춰 봤어요. 회사별로 손으로 정한 가정·사이클 판단·뉴스는 모두 1년 뒤에 알게 된 정보가 섞여 있어서 쓰지 않고, 업종 공통 규칙만 기계적으로 적용했어요.</p>
-  <div class="row" style="margin-bottom:16px">
+  <p class="lede">과거 세 시점(2023·2024·2025년 11월 초)으로 돌아가 그날까지 공시된 실적과 그날 주가만으로 적정가를 다시 계산하고, 1년 뒤 실제 주가와 맞춰 봤어요. 회사별로 손으로 정한 가정·사이클 판단·뉴스는 모두 나중에 알게 된 정보가 섞여 있어서 쓰지 않고, 업종 공통 규칙만 기계적으로 적용했어요.</p>
+  <div class="card rv" style="margin-bottom:16px" id="lessons"></div>
+  <div class="card" style="margin-bottom:16px"><h2>모델 변형 비교</h2><p class="sub">학습 = 2023·2024년 기준일 8개(업종×연도) 평균, 확인 = 2025년 기준일 4개 평균. 학습 성적으로 고른 뒤 확인 기간 성적을 봤어요. 순위 상관은 0이면 무작위, 업종 대비 적중은 50%가 동전 던지기</p><div class="tbl"><table id="t-var"></table></div></div>
+  <div class="row" style="margin-bottom:16px;gap:12px">
+    <div class="segs" id="y-segs" role="group" aria-label="기준일"></div>
     <div class="segs" id="ind-segs" role="group" aria-label="산업"></div>
-    <div class="segs" id="m-segs" role="group" aria-label="방법">
-      <button class="seg" data-m="B" aria-pressed="true">B · 정상화 이익</button>
-      <button class="seg" data-m="A" aria-pressed="false">A · 최근 4분기 이익</button>
-    </div>
+    <div class="segs" id="m-segs" role="group" aria-label="방법"></div>
   </div>
-  <div id="findings"></div>
   <div class="kpis" id="kpis"></div>
   <div class="grid">
-    <div class="card"><h2>판정별 1년 수익률</h2><p class="sub">적정가 대비 30% 이상 싸면 저평가, 30% 이상 비싸면 고평가. 막대는 평균, 점선은 같은 기간 지수</p><div class="chart"><canvas id="c-grp"></canvas></div></div>
-    <div class="card"><h2>괴리율과 실제 수익률</h2><p class="sub">가로: 2025-11-05 적정가 대비 상승 여력, 세로: 1년 실제 수익률. 오른쪽 위로 갈수록 모델이 맞은 것</p><div class="chart"><canvas id="c-sc"></canvas></div></div>
-    <div class="card full"><h2>세부 업종별</h2><p class="sub">같은 세부 업종 안에서도 싼 종목이 더 올랐는지. 표본이 5개 미만이면 상관을 계산하지 않았어요</p><div class="tbl"><table id="t-grp"></table></div></div>
-    <div class="card full"><h2>종목별 결과</h2><p class="sub">열 제목을 누르면 정렬돼요. 수익률은 배당 제외, 분할 조정 종가 기준</p><div class="tbl"><table id="t-rows"><thead></thead><tbody></tbody></table></div></div>
+    <div class="card"><h2>판정별 1년 수익률</h2><p class="sub">적정가 대비 30% 이상 싸면 저평가, 30% 이상 비싸면 고평가. 막대는 평균, 노란 막대는 중앙값</p><div class="chart"><canvas id="c-grp"></canvas></div></div>
+    <div class="card"><h2>괴리율과 실제 수익률</h2><p class="sub">가로: 기준일 적정가 대비 상승 여력, 세로: 1년 실제 수익률. 오른쪽 위·왼쪽 아래로 모일수록 모델이 맞은 것</p><div class="chart"><canvas id="c-sc"></canvas></div></div>
+    <div class="card full"><h2>종목별 결과</h2><p class="sub">열 제목을 누르면 정렬돼요. 수익률은 배당 제외, 분할 조정 종가 기준. 결과는 '업종 중앙값보다 싸 보였는데 업종 중앙값보다 더 올랐나'로 판정</p><div class="tbl"><table id="t-rows"><thead></thead><tbody></tbody></table></div></div>
     <div class="card full rv" id="risks"><h2>미래참조(look-ahead) 점검</h2>
       <h4>막은 것</h4>
       <ul>
-        <li><b>실적 공시 시점</b>: 분기 보고서는 분기말 45일, 4분기는 90일, 연간은 다음 해 3월 31일이 지나야 쓸 수 있게 했어요. 그래서 2025-11-05 기준으로는 2025년 2분기까지의 분기 실적(최근 4분기 = 2024Q3~2025Q2)과 2024년까지의 연간 실적만 들어가요. 3분기 실적(11월 14일 마감)은 쓰지 않았어요.</li>
+        <li><b>실적 공시 시점</b>: 분기 보고서는 분기말 45일, 4분기는 90일, 연간은 다음 해 3월 31일이 지나야 쓸 수 있게 했어요. 예를 들어 2025-11-05 기준이면 분기는 2025년 2분기까지, 연간은 2024년까지만 들어가요.</li>
         <li><b>주가</b>: 기준일 이전 마지막 거래일 종가만 썼어요.</li>
-        <li><b>회사별 가정</b>: 현재 설정 파일의 E1·성장률·사이클 위치·"호황 정점권" 같은 판단과 리뷰 뉴스는 2026년에 쓴 것이라 전부 뺐어요. 업종 공통 기본값(성장률·할인율·현금 전환율)만 썼어요. 반도체·화학·2차전지는 설정 파일에 원래 있던 기본값, 화장품은 기본값이 없어 g 5%·r 9.5%·c 0.75로 미리 정했어요(결과를 보고 고친 값이 아니에요).</li>
-        <li><b>제 지식</b>: 2026년 사건에 대한 제 기억은 계산에 쓰지 않았어요. 모든 숫자는 저장소 데이터와 스크립트(scripts/backtest/run.py)에서 나와요.</li>
+        <li><b>회사별 가정</b>: 설정 파일의 회사별 E1·성장률·사이클 위치와 리뷰 뉴스는 2026년에 쓴 것이라 전부 뺐어요. 업종 공통 기본값만 썼어요.</li>
+        <li><b>모델 선택</b>: 개선안은 2023·2024년 기준일 성적으로만 골랐고, 2025년 기준일은 고른 뒤 확인용으로만 봤어요. 다만 2025년 결과는 지난번에 이미 한 번 본 적이 있어서 완전히 깨끗한 확인 표본은 아니에요.</li>
+        <li><b>제 지식</b>: 2023~2026년 사건에 대한 제 기억은 계산에 쓰지 않았어요. 모든 숫자는 저장소 데이터와 scripts/backtest/의 스크립트에서 나와요.</li>
       </ul>
-      <h4>남아 있는 위험 (결과 해석 시 주의)</h4>
+      <h4>남아 있는 위험</h4>
       <ul>
-        <li><b>종목 선정 편향(가장 큼)</b>: 대상 기업 목록은 2026년 11월에 만든 것이에요. 그 사이 상장폐지·합병된 회사는 빠져 있고, 1년간 주목받아 목록에 들어온 회사가 있을 수 있어요. 평균 수익률이 실제 투자 가능했던 수준보다 높게 나올 수 있어요.</li>
-        <li><b>주식수</b>: 과거 주식수 기록이 없어 현재 DART 유통주식수를 썼어요. 1년 사이 유상증자·전환사채 전환·자사주 소각이 있었던 회사는 주당 적정가가 몇 % 틀어질 수 있어요.</li>
-        <li><b>순현금</b>: 과거 시점 재무상태표가 저장돼 있지 않아 순현금 가산을 뺐어요. 현금이 많은 회사는 적정가가 다소 낮게, 차입이 많은 회사는 높게 나와요.</li>
-        <li><b>실적 재작성</b>: 저장된 분기 실적은 나중 보고서에서 정정된 값일 수 있어요(보통 영향은 작아요).</li>
-        <li><b>업종 기본값</b>: 반도체·화학·2차전지 기본값은 2026년에 설정 파일에 적은 값이라 완전히 깨끗하지 않아요. 다만 업종 내 모든 회사에 같은 값이라 종목 간 순위(어느 종목이 더 싸 보였나)에는 영향이 없어요. 순위 결과는 사실상 "정상화 이익 수익률(정상 이익 ÷ 시가총액)"의 성과예요.</li>
-        <li><b>사람 판단을 뺀 대가</b>: 실제 대시보드는 회사별로 사이클 위치·구조 변화를 판단해요. 이 백테스트는 그 판단 없이 규칙만 시험한 것이라, "1년 전의 제가 회사별로 깊게 분석했다면"의 성적과는 달라요. 그 판단을 1년 전 정보만으로 공정하게 재현할 방법이 없어 일부러 뺐어요.</li>
+        <li><b>종목 선정 편향(가장 큼)</b>: 대상 기업 목록은 2026년 11월 것이에요. 그사이 상장폐지·합병된 회사는 빠져 있고, 기준일이 오래될수록 이 편향이 커져요.</li>
+        <li><b>주식수·순현금</b>: 과거 주식수와 재무상태표가 저장돼 있지 않아 현재 주식수를 쓰고 순현금 가산은 뺐어요.</li>
+        <li><b>업종 기본값</b>: 성장률·할인율 기본값은 2026년에 설정 파일에 적은 값이에요. 업종 안 모든 회사에 같아서 순위에는 영향이 없지만 적정가 수준에는 영향이 있어요.</li>
+        <li><b>표본 크기</b>: 업종×연도 하나에 30~90개 종목이라, 모델 간 차이가 0.05 정도의 순위 상관이면 우연으로도 생길 수 있는 크기예요.</li>
       </ul>
     </div>
     <div class="card full" id="skipped"></div>
@@ -166,64 +163,82 @@ const $=s=>document.querySelector(s), css=v=>getComputedStyle(document.documentE
 const f=(v,d=1)=>v==null?'–':(+v).toLocaleString('ko-KR',{maximumFractionDigits:d,minimumFractionDigits:d});
 const pct=(v,d=1)=>v==null?'–':`<span class="${v>0?'up':v<0?'down':''}">${v>0?'+':''}${f(v,d)}%</span>`;
 const won=v=>v==null?'–':Math.round(v).toLocaleString('ko-KR');
-let D, ind, m='B', charts={}, sortKey='upside', sortDir=-1;
-fetch('data/backtest.json').then(r=>r.json()).then(d=>{D=d;
-  $('#meta').textContent=`기준일 ${d.t0} → 평가일 ${d.t1} · 계산 ${d.built}`;
-  const inds=Object.entries(d.industries);
-  ind=inds.find(([k,v])=>v.rows.length)[0];
-  $('#ind-segs').innerHTML=inds.map(([k,v])=>`<button class="seg" data-i="${k}" aria-pressed="${k==ind}" ${v.rows.length?'':'disabled title="DART 실적 미수집"'}>${v.name}${v.rows.length?` (${v.rows.length})`:' · 데이터 없음'}</button>`).join('');
-  document.querySelectorAll('#ind-segs button').forEach(b=>b.onclick=()=>{if(b.disabled)return;ind=b.dataset.i;sync();});
-  document.querySelectorAll('#m-segs button').forEach(b=>b.onclick=()=>{m=b.dataset.m;sync();});
+let D, yr, ind='cosmetics', m, charts={}, sortKey='upside', sortDir=-1;
+fetch('data/backtest.json').then(r=>r.json()).then(d=>{D=d; m=d.chosen; yr=String(d.hold[0]);
+  $('#meta').textContent=`기준일 ${Object.values(d.years).map(y=>y.t0).join(' · ')} · 계산 ${d.built}`;
+  lessons(); variants();
+  $('#y-segs').innerHTML=Object.entries(d.years).map(([y,v])=>`<button class="seg" data-y="${y}">${y}.11 → ${+y+1}.11${d.hold.includes(+y)?' (확인)':' (학습)'}</button>`).join('');
+  $('#ind-segs').innerHTML=Object.entries(d.industries).map(([k,v])=>`<button class="seg" data-i="${k}">${v.name}</button>`).join('');
+  $('#m-segs').innerHTML=[[d.chosen,'개선 모델'],[d.base,'기존 모델']].map(([k,l])=>`<button class="seg" data-m="${k}">${l}</button>`).join('');
+  document.querySelectorAll('#y-segs button').forEach(b=>b.onclick=()=>{yr=b.dataset.y;sync()});
+  document.querySelectorAll('#ind-segs button').forEach(b=>b.onclick=()=>{ind=b.dataset.i;sync()});
+  document.querySelectorAll('#m-segs button').forEach(b=>b.onclick=()=>{m=b.dataset.m;sync()});
   sync();
 });
+function lessons(){
+  const S=D.summary, b=S.train[D.base], g=S.train[D.chosen], bh=S.hold[D.base], gh=S.hold[D.chosen];
+  const best=Object.entries(S.train).sort((a,c)=>(c[1].ic+c[1].hit_rel/100)-(a[1].ic+a[1].hit_rel/100))[0][0];
+  $('#lessons').innerHTML=`<h2>적중률이 낮았던 이유와 바꾼 것</h2>
+   <h4>1. 1년 뒤 주가 '수준'은 원래 거의 맞힐 수 없어요</h4>
+   <p>모든 업종·연도에서 적정가와 1년 뒤 주가의 오차(중앙값 약 ${f(b.mape,0)}%)가 "주가가 그대로"라고 찍은 오차(${f(b.naive,0)}%)보다 컸어요. 1년 주가 변화는 대부분 시장 전체와 업황 뉴스가 만들고, 적정가는 수년에 걸쳐 따라가는 기준점이에요. 학습 기간 회귀로 재 보면 업종 평균보다 적정가 대비 두 배 싸 보이는 종목의 1년 초과수익은 평균 ${f((Math.pow(2,D.beta)-1)*100,1)}%p 정도였어요(작지만 꾸준히 양수). 그래서 지난번처럼 '오르면 적중' 하는 절대 적중률은 시장 방향에 크게 좌우돼, 이번부터는 <b>업종 안 순위</b>(업종 중앙값보다 싸 보인 종목이 업종 중앙값보다 더 올랐나)로 성적을 매겨요.</p>
+   <h4>2. 순위로 보면 적정가에는 신호가 있어요</h4>
+   <p>기존 모델(사이클 평균 이익)의 순위 상관은 학습 ${f(b.ic,2)}, 확인 ${f(bh.ic,2)}로 12개 업종×연도 중 대부분에서 양수였어요. 업종 대비 적중률은 학습 ${f(b.hit_rel,0)}%, 확인 ${f(bh.hit_rel,0)}%예요.</p>
+   <h4>3. 시험한 개선안 7가지와 결과</h4>
+   <p>최근 4분기 이익(A), 일회성을 뺀 핵심 이익(C), 숫자로 정한 사이클 위치(D), 추세 성장률(E), 업종 상대가치 섞기(F), 사이클 평균+핵심 이익 반반(G), 사이클 평균+최근 2분기 연환산 반반(H)을 비교했어요. 이익 모멘텀(최근 이익 증가율)을 점수에 더하는 안도 따로 시험했는데 오히려 순위 상관이 떨어져서 버렸어요(이미 주가에 반영돼 있다는 뜻).</p>
+   <p>학습 성적 1위는 ${D.variants[best]}(${best})였지만 확인 기간에 기존보다 나빠졌어요. <b>${D.variants[D.chosen]}(${D.chosen})</b>는 학습(적중 ${f(b.hit_rel,0)}→${f(g.hit_rel,0)}%, 싼⅓−비싼⅓ ${f(b.spread,0)}→${f(g.spread,0)}%p)과 확인(적중 ${f(bh.hit_rel,0)}→${f(gh.hit_rel,0)}%) 모두에서 적중률이 올라 이것을 골랐어요. 순위 상관은 학습 ${f(b.ic,2)}→${f(g.ic,2)}, 확인 ${f(bh.ic,2)}→${f(gh.ic,2)}로 엇갈려요. <b>솔직히 개선 폭은 작고, 업종×연도별로 보면 기존 모델을 이긴 곳이 절반 정도라 우연과 구분하기 어려워요.</b> 대신 일회성 손익 하나로 적정가가 몇 배 튀는 문제(예: 순이익이 영업이익의 몇 배인 해)를 막아 줘서 판단을 덜 흔들어요.</p>
+   <h4>4. 기업분석에 반영한 방식</h4>
+   <p>각 대시보드의 회사별 내재가치 리포트에 "백테스트 검증 모델로 교차 점검"을 붙였어요. 기계식 적정가, 업종 안에서 싸 보이는 순위(0~100점), 과거 기울기로 본 1년 기대 초과수익, 일회성 손익 경고, 숫자로 정한 사이클 위치를 보여 주고, 사람이 정한 판단과 방향이 반대면 점검하라고 표시해요. 사람이 정한 적정가는 그대로 두었어요.</p>`;
+}
+function variants(){
+  const S=D.summary, row=(v)=>{const a=S.train[v],h=S.hold[v];return `<tr${v==D.chosen?' class="sel"':''}><td class="l">${v} · ${D.variants[v]}${v==D.base?' <span class="pill">기존</span>':''}${v==D.chosen?' <span class="pill">채택</span>':''}</td><td class="num">${f(a.ic,2)}</td><td class="num">${f(a.hit_rel,0)}%</td><td class="num">${pct(a.spread,0)}p</td><td class="num">${f(h.ic,2)}</td><td class="num">${f(h.hit_rel,0)}%</td><td class="num">${pct(h.spread,0)}p</td></tr>`};
+  $('#t-var').innerHTML=`<thead><tr><th class="l" rowspan="2">모델</th><th class="grp" colspan="3">학습 2023·2024</th><th class="grp" colspan="3">확인 2025</th></tr><tr><th>순위 상관</th><th>업종 대비 적중</th><th>싼⅓−비싼⅓</th><th>순위 상관</th><th>업종 대비 적중</th><th>싼⅓−비싼⅓</th></tr></thead><tbody>${Object.keys(D.variants).map(row).join('')}</tbody>`;
+}
 function sync(){
+  document.querySelectorAll('#y-segs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.y==yr));
   document.querySelectorAll('#ind-segs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.i==ind));
   document.querySelectorAll('#m-segs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m==m));
   render();
 }
 function render(){
-  const I=D.industries[ind], S=I[m], P=D.params[ind];
-  const fx=(D.findings||{})[ind]; $('#findings').innerHTML=fx?`<div class="note">${fx}</div>`:'';
-  const g=S.groups, ix=D.index;
+  const I=D.industries[ind].years[yr]||{rows:[]}, S=I[m], ix=D.index[yr]||{};
+  Object.values(charts).forEach(c=>c.destroy()); charts={};
+  if(!S){$('#kpis').innerHTML='<div class="kpi"><div class="l">데이터 부족</div><div class="v">–</div></div>';$('#t-rows tbody').innerHTML='';return}
+  const g=S.groups;
   $('#kpis').innerHTML=[
-    ['평가 종목',`${S.n}개`,`${I.rows.length}개 중 정상 이익이 양수인 회사 · 가정 g ${P.g}% r ${P.r}% c ${P.c}`],
-    ['방향 적중률 (절대)',`${f(S.hit_abs)}%`,'싸다고 본 종목이 오르고, 비싸다고 본 종목이 내린 비율'],
-    ['방향 적중률 (업종 대비)',`${f(S.hit_rel)}%`,'싸다고 본 종목이 업종 중앙값보다 더 오르고, 비싸다고 본 종목이 덜 오른 비율 (50%가 동전 던지기)'],
-    ['적정가 오차 중앙값',`${f(S.mape_fair)}%`,`"주가가 그대로" 가정의 오차 ${f(S.mape_naive)}% · 1년 뒤 주가가 적정가 ±20% 안 ${f(S.within20)}%`],
-    ['적정가 쪽으로 움직인 비율',`${f(S.closer)}%`,`1년 뒤 주가가 적정가 비관~낙관 범위 안 ${f(S.in_range)}%`],
-    ['순위 상관(스피어먼)',f(S.spearman,2),'싸 보일수록 더 올랐으면 +, 반대면 −'],
-    ['저평가 vs 고평가',`${pct(g.under.mean)} / ${pct(g.over.mean)}`,`평균 수익률 (각 ${g.under.n}·${g.over.n}개) · 상위⅓ ${pct(g.top3.mean)} vs 하위⅓ ${pct(g.bot3.mean)}`],
-    ['같은 기간 시장',`${pct(ix.KOSPI?.ret)} / ${pct(ix.KOSDAQ?.ret)}`,`코스피 / 코스닥 (Yahoo) · 이 업종 표본 평균 ${pct(I.eq_ret)}, 중앙값 ${pct(I.median_ret)}`],
+    ['평가 종목',`${S.n}개`,`${I.rows.length}개 중 정상 이익이 양수인 회사`],
+    ['업종 대비 적중률',`${f(S.hit_rel)}%`,'업종 중앙값보다 싸 보인 종목이 업종 중앙값보다 더 오르고, 비싸 보인 종목이 덜 오른 비율 (50%가 동전 던지기)'],
+    ['순위 상관(스피어먼)',f(S.ic,2),'싸 보일수록 더 올랐으면 +, 반대면 −'],
+    ['싼 ⅓ vs 비싼 ⅓',`${pct(g.top3.mean)} / ${pct(g.bot3.mean)}`,`평균 수익률 · 중앙값 ${pct(g.top3.median)} / ${pct(g.bot3.median)}`],
+    ['절대 적중률',`${f(S.hit_abs)}%`,'싸다(상승 여력 +)고 본 종목이 오르고 비싸다고 본 종목이 내린 비율. 시장 방향에 크게 좌우돼요'],
+    ['적정가 오차 중앙값',`${f(S.mape)}%`,`"주가가 그대로" 가정의 오차 ${f(S.naive)}%`],
+    ['같은 기간 시장',`${pct(ix.KOSPI)} / ${pct(ix.KOSDAQ)}`,`코스피 / 코스닥 · 이 업종 표본 평균 ${pct(I.mean_ret)}, 중앙값 ${pct(I.median_ret)}`],
   ].map(([l,v,s])=>`<div class="kpi"><div class="l">${l}</div><div class="v${String(v).includes(' / ')?' sm':''}">${v}</div><div class="s">${s}</div></div>`).join('');
   const C={ink:css('--ink-2'),line:css('--line'),up:css('--up'),dn:css('--down'),a:css('--s1'),b:css('--s4')};
   Chart.defaults.color=C.ink; Chart.defaults.borderColor=C.line; Chart.defaults.font.family=css('--font-body');
-  Object.values(charts).forEach(c=>c.destroy());
   const lab=[['under','저평가'],['mid','적정권'],['over','고평가'],['all','전체']];
-  const mk=I.rows.filter(r=>r.market=='KOSPI').length>=I.rows.length/2?'KOSPI':'KOSDAQ';
   charts.g=new Chart($('#c-grp'),{type:'bar',data:{labels:lab.map(([k,l])=>`${l} (${g[k].n})`),datasets:[
       {label:'평균 수익률',data:lab.map(([k])=>g[k].mean),backgroundColor:lab.map(([k])=>(g[k].mean??0)>=0?C.up:C.dn),borderRadius:4},
-      {label:'중앙값',data:lab.map(([k])=>g[k].median),backgroundColor:C.b,borderRadius:4},
-      {type:'line',label:`${mk} 지수`,data:lab.map(()=>ix[mk]?.ret),borderColor:C.ink,borderDash:[5,4],pointRadius:0,borderWidth:1.5}]},
+      {label:'중앙값',data:lab.map(([k])=>g[k].median),backgroundColor:C.b,borderRadius:4}]},
     options:{maintainAspectRatio:false,plugins:{tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${f(c.raw)}%`}}},scales:{y:{ticks:{callback:v=>v+'%'}}}}});
-  const rs=I.rows.filter(r=>r[m]);
-  charts.s=new Chart($('#c-sc'),{type:'scatter',data:{datasets:[{label:'종목',data:rs.map(r=>({x:Math.max(-100,Math.min(r[m].upside,300)),y:r.ret,n:r.name})),
-      backgroundColor:rs.map(r=>((r[m].upside>0)==(r.ret>0))?C.a:C.dn),pointRadius:4}]},
+  const rs=I.rows.filter(r=>r[m]); const mu=median(rs.map(r=>r[m].upside)), mr=I.median_ret;
+  charts.s=new Chart($('#c-sc'),{type:'scatter',data:{datasets:[{label:'종목',data:rs.map(r=>({x:Math.max(-100,Math.min(r[m].upside,300)),y:Math.min(r.ret,400),n:r.name})),
+      backgroundColor:rs.map(r=>((r[m].upside>mu)==(r.ret>mr))?C.a:C.dn),pointRadius:4}]},
     options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`${c.raw.n}: 여력 ${f(c.raw.x)}% → 실제 ${f(c.raw.y)}%`}}},
-      scales:{x:{title:{display:true,text:'적정가 대비 상승 여력 (300%에서 자름)'},ticks:{callback:v=>v+'%'}},y:{title:{display:true,text:'1년 수익률'},ticks:{callback:v=>v+'%'}}}}});
-  table(I);
-  $('#t-grp').innerHTML='<thead><tr><th>세부 업종</th><th>종목 수</th><th>1년 수익률 중앙값</th><th>순위 상관</th><th>싼 ⅓ 평균</th><th>비싼 ⅓ 평균</th><th>업종 대비 적중</th></tr></thead><tbody>'+
-    Object.entries(I.by_group||{}).sort((a,b)=>b[1].n-a[1].n).map(([k,v])=>{const s=v[m];return `<tr><td>${k}</td><td class="num">${v.n}</td><td class="num">${pct(v.ret)}</td><td class="num">${s?f(s.spearman,2):'–'}</td><td class="num">${s&&s.groups.top3.n?pct(s.groups.top3.mean):'–'}</td><td class="num">${s&&s.groups.bot3.n?pct(s.groups.bot3.mean):'–'}</td><td class="num">${s?f(s.hit_rel,0)+'%':'–'}</td></tr>`}).join('')+'</tbody>';
-  $('#skipped').innerHTML=`<h2>빠진 종목</h2><p class="sub">${I.skipped.length}개 · 정상 이익이 0 이하라 적정가를 낼 수 없던 종목 ${I.rows.filter(r=>!r[m]).length}개는 표에 "–"로 남겨 뒀어요</p>`+
-    (I.skipped.length?`<div class="tbl"><table><tbody>${I.skipped.map(s=>`<tr><td>${s.name} <span class="pill">${s.code}</span></td><td class="l">${s.why}</td></tr>`).join('')}</tbody></table></div>`:'');
+      scales:{x:{title:{display:true,text:'상승 여력 (300%에서 자름)'},ticks:{callback:v=>v+'%'}},y:{title:{display:true,text:'1년 수익률'},ticks:{callback:v=>v+'%'}}}}});
+  table(I,mu,mr);
+  const miss=I.rows.filter(r=>!r[m]).map(r=>r.name);
+  $('#skipped').innerHTML=`<h2>적정가를 못 낸 종목</h2><p class="sub">정상 이익이 0 이하 ${miss.length}개${miss.length?': '+miss.join(', '):''}. 기준일에 상장 전이거나 분기 실적·주가가 없는 회사는 표본에서 빠졌어요</p>`;
 }
-function table(I){
-  const cols=[['name','종목','l'],['group','분류','l'],['p0','T0 주가'],['per0','TTM PER'],['fair','적정가(기본)'],['upside','상승 여력'],['verdict','판정','l'],['p1','1년 뒤 주가'],['ret','수익률'],['ex_ret','업종 대비'],['max_up','기간 최고'],['max_dn','기간 최저'],['hit','결과','l']];
-  const val=(r,k)=>({fair:r[m]?.fair,upside:r[m]?.upside,verdict:r[m]?.verdict,hit:r[m]?((r[m].upside>0)==(r.ret>0)?1:0):null}[k]??r[k]);
+function median(a){const s=[...a].sort((x,y)=>x-y),n=s.length;return n?(n%2?s[(n-1)/2]:(s[n/2-1]+s[n/2])/2):0}
+function table(I,mu,mr){
+  const cols=[['name','종목','l'],['group','분류','l'],['p0','기준일 주가'],['per0','TTM PER'],['fair','적정가(기본)'],['upside','상승 여력'],['verdict','판정','l'],['pos','사이클(숫자)','l'],['p1','1년 뒤 주가'],['ret','수익률'],['ex_ret','업종 대비'],['hit','결과','l']];
+  const hitOf=r=>r[m]?((r[m].upside>mu)==(r.ret>mr)?1:0):null;
+  const val=(r,k)=>({fair:r[m]?.fair,upside:r[m]?.upside,verdict:r[m]?.verdict,hit:hitOf(r)}[k]??r[k]);
   const rows=[...I.rows].sort((a,b)=>{const x=val(a,sortKey),y=val(b,sortKey);if(x==null)return 1;if(y==null)return -1;return (x>y?1:x<y?-1:0)*sortDir;});
   $('#t-rows thead').innerHTML='<tr>'+cols.map(([k,l,c])=>`<th class="sort ${c||''}" data-k="${k}" aria-sort="${k==sortKey?(sortDir>0?'ascending':'descending'):'none'}">${l}<span class="sarr">${k==sortKey?(sortDir>0?'▲':'▼'):'↕'}</span></th>`).join('')+'</tr>';
-  $('#t-rows tbody').innerHTML=rows.map(r=>{const v=r[m];const hit=v?((v.upside>0)==(r.ret>0)):null;
-    return `<tr><td>${r.name}</td><td class="l">${r.group||''}</td><td class="num">${won(r.p0)}</td><td class="num">${f(r.per0)}</td><td class="num">${v?won(v.fair):'–'}</td><td class="num">${v?pct(v.upside,0):'적자'}</td><td class="l">${v?`<span class="tone ${v.verdict=='저평가'?'pos':v.verdict=='고평가'?'neg':'neu'}">${v.verdict}</span>`:''}</td><td class="num">${won(r.p1)}</td><td class="num">${pct(r.ret)}</td><td class="num">${pct(r.ex_ret)}</td><td class="num">${pct(r.max_up,0)}</td><td class="num">${pct(r.max_dn,0)}</td><td class="l">${hit==null?'':hit?'✓ 적중':'✗ 빗나감'}</td></tr>`}).join('');
-  document.querySelectorAll('#t-rows th.sort').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=k==sortKey?-sortDir:-1;sortKey=k;table(I);});
+  $('#t-rows tbody').innerHTML=rows.map(r=>{const v=r[m];const hit=hitOf(r);
+    return `<tr><td>${r.name}</td><td class="l">${r.group||''}</td><td class="num">${won(r.p0)}</td><td class="num">${f(r.per0)}</td><td class="num">${v?won(v.fair):'–'}</td><td class="num">${v?pct(v.upside,0):'적자'}</td><td class="l">${v?`<span class="tone ${v.verdict=='저평가'?'pos':v.verdict=='고평가'?'neg':'neu'}">${v.verdict}</span>`:''}</td><td class="l">${r.pos}</td><td class="num">${won(r.p1)}</td><td class="num">${pct(r.ret)}</td><td class="num">${pct(r.ex_ret)}</td><td class="l">${hit==null?'':hit?'✓ 적중':'✗ 빗나감'}</td></tr>`}).join('');
+  document.querySelectorAll('#t-rows th.sort').forEach(th=>th.onclick=()=>{const k=th.dataset.k;sortDir=k==sortKey?-sortDir:-1;sortKey=k;table(I,mu,mr);});
 }
 </script>
 </body>

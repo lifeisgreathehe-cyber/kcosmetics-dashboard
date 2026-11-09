@@ -114,6 +114,50 @@ def midcycle(annual, ttm_rev, cyc):
             "ni": round(avg / 100 * ttm_rev)}
 
 
+def quant_check(cos, out, cfg, dd):
+    """백테스트로 검증한 기계식 모델(scripts/backtest/model.py, 변형 G)로 회사별 교차 점검값을 rec["quant"]에 붙임.
+    사람이 정한 가정·사이클 판단과 독립적이라, 둘이 크게 엇갈리면 판단을 다시 보라는 신호로 씀. 본 적정가(dcf)는 그대로."""
+    import math, statistics as st, sys as _s
+    _s.path.insert(0, os.path.join(ROOT, "scripts", "backtest"))
+    from model import features, fair_value, auto_position, TAX
+    bt = load(P("docs", "backtest", "data", "backtest.json"), {}) or {}
+    ind = {"docs/data": "cosmetics"}.get("/".join(dd), dd[1] if len(dd) > 2 else "cosmetics")
+    dft = cfg.get("default") or {}
+    par = {"g": dft.get("g") or {"bear": 0.0, "base": 5.0, "bull": 10.0}, "r": dft.get("r", 10.5), "c": dft.get("c", 0.7)}
+    rows = []
+    for co in cos.get("companies", []):
+        rec = out["companies"].get(co["code"])
+        if not rec or not rec.get("mcap") or not rec.get("shares"):
+            continue
+        f = features(co.get("annual"), co.get("quarterly"))
+        if not f:
+            continue
+        v = fair_value(f, par, "G")
+        q = {"pos": auto_position(f), "period": f["period"], "core": round(f["core"]), "norm": round(f["norm"]) if f.get("norm") else None,
+             "ttm_ni": f["ttm_ni"], "oneoff": bool(f["ttm_op"] > 0 and (f["ttm_ni"] > 2 * f["ttm_op"] * TAX or f["ttm_ni"] < 0.3 * f["ttm_op"] * TAX))}
+        if v:
+            q.update(E=round(v["E"]), per_share=round(v["base"] * 1e6 / rec["shares"]), bear=round(v["bear"] * 1e6 / rec["shares"]),
+                     bull=round(v["bull"] * 1e6 / rec["shares"]), upside=round((v["base"] / rec["mcap"] - 1) * 100, 1))
+            rows.append((rec, q, math.log(v["base"] / rec["mcap"])))
+        rec["quant"] = q
+    if len(rows) >= 6:
+        med = st.median(x for _, _, x in rows)
+        srt = sorted(rows, key=lambda t: t[2])
+        beta = bt.get("beta", 0.065)
+        for i, (rec, q, lg) in enumerate(srt):
+            q["pct"] = round(i / (len(srt) - 1) * 100)  # 업종 안에서 얼마나 싸 보이나(100=가장 쌈)
+            q["tier"] = "싼 ⅓" if q["pct"] >= 200 / 3 else ("비싼 ⅓" if q["pct"] <= 100 / 3 else "가운데 ⅓")
+            q["exp_ex"] = round((math.exp(beta * max(-2, min(2, lg - med))) - 1) * 100, 1)  # 백테스트 기울기로 본 1년 업종 대비 기대 초과수익
+            hand = ((rec.get("dcf") or {}).get("scenarios") or {}).get("base", {}).get("upside")
+            if hand is not None and not rec.get("auto"):
+                q["conflict"] = (hand >= 30 and q["tier"] == "비싼 ⅓") or (hand <= -30 and q["tier"] == "싼 ⅓")
+    yrs = ((bt.get("industries") or {}).get(ind) or {}).get("years") or {}
+    hist = [(y, d.get("G")) for y, d in sorted(yrs.items()) if d.get("G")]
+    out["quant_meta"] = {"model": "사이클 평균 이익 50% + 핵심 이익(일회성 제거) 50%, 업종 공통 가정", "par": par, "beta": bt.get("beta"),
+                         "history": [{"year": y, "n": g["n"], "ic": g["ic"], "hit_rel": g["hit_rel"],
+                                      "top3": g["groups"]["top3"]["mean"], "bot3": g["groups"]["bot3"]["mean"]} for y, g in hist]}
+
+
 def main(industry="cosmetics"):
     dd = ("docs", "data") if industry == "cosmetics" else ("docs", industry, "data")
     cd = ("config",) if industry == "cosmetics" else ("config", industry)
@@ -284,6 +328,10 @@ def main(industry="cosmetics"):
                       **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec
+    try:
+        quant_check(cos, out, cfg, dd)
+    except Exception as e:  # noqa: BLE001  검증 모델 오류가 본 계산을 막지 않게
+        print("quant_check 실패:", e)
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
                         if c["code"] in out["companies"]}
     with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:

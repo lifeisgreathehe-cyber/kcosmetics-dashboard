@@ -1,12 +1,12 @@
 """백테스트용 과거 일별 주가 수집 (GitHub Actions에서 실행: 클라우드 세션은 Yahoo·네이버가 막혀 있음).
 
 출력: raw/backtest/prices.json  {code: {"src":..., "d":[YYYY-MM-DD...], "c":[종가(분할 조정)...]}}
-기간: 2025-09-01 ~ 실행일. 지수(KOSPI ^KS11, KOSDAQ ^KQ11) 포함. 우선주 코드도 함께.
+기간: 2023-09-01 ~ 실행일. 지수(KOSPI ^KS11, KOSDAQ ^KQ11) 포함. 우선주 코드도 함께.
 """
 import json, os, time, datetime as dt, urllib.request, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-START = dt.datetime(2025, 9, 1, tzinfo=dt.timezone.utc)
+START = dt.datetime(2023, 9, 1, tzinfo=dt.timezone.utc)
 YAHOO = "https://query1.finance.yahoo.com/v8/finance/chart/"
 NAVER = "https://api.finance.naver.com/siseJson.naver"
 KST = dt.timezone(dt.timedelta(hours=9))

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "method": "내재가치 가정. E1=정상화 지배순이익(억원, 사이클 평균적인 해 기준), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차는 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율(증설 부담이 큰 회사일수록 낮음). 2차전지는 전기차 보급 속도·리튬 가격·미국 보조금에 따라 이익이 크게 출렁이므로 최근 1년 실적이 아니라 회사별 사이클 위치를 판단한 정상화 이익을 쓰는 것이 원칙. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외.",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -83,6 +83,23 @@
     },
     "implied_g": 48.5,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 300171,
+    "norm": -191804,
+    "ttm_ni": -1683059,
+    "oneoff": true,
+    "E": 54183,
+    "per_share": 1404,
+    "bear": 949,
+    "bull": 1826,
+    "upside": -99.6,
+    "pct": 0,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2,
+    "conflict": false
    }
   },
   "006400": {
@@ -164,6 +181,23 @@
     },
     "implied_g": 34.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -309658,
+    "norm": 1273630,
+    "ttm_ni": 37647,
+    "oneoff": false,
+    "E": 481986,
+    "per_share": 37139,
+    "bear": 25097,
+    "bull": 48293,
+    "upside": -92.1,
+    "pct": 29,
+    "tier": "비싼 ⅓",
+    "exp_ex": -5.1,
+    "conflict": false
    }
   },
   "096770": {
@@ -245,6 +279,23 @@
     },
     "implied_g": 24.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 5117075,
+    "norm": 320060,
+    "ttm_ni": -1167289,
+    "oneoff": true,
+    "E": 2718568,
+    "per_share": 96872,
+    "bear": 65461,
+    "bull": 125964,
+    "upside": -11.6,
+    "pct": 93,
+    "tier": "싼 ⅓",
+    "exp_ex": 11.0,
+    "conflict": true
    }
   },
   "082920": {
@@ -326,6 +377,23 @@
     },
     "implied_g": 11.5,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 65719,
+    "norm": 43959,
+    "ttm_ni": 71297,
+    "oneoff": false,
+    "E": 54839,
+    "per_share": 7398,
+    "bear": 4999,
+    "bull": 9620,
+    "upside": -64.6,
+    "pct": 68,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.6,
+    "conflict": false
    }
   },
   "004490": {
@@ -407,6 +475,23 @@
     },
     "implied_g": -10.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 124109,
+    "norm": 140067,
+    "ttm_ni": 142467,
+    "oneoff": false,
+    "E": 132088,
+    "per_share": 59994,
+    "bear": 40540,
+    "bull": 78011,
+    "upside": 11.1,
+    "pct": 98,
+    "tier": "싼 ⅓",
+    "exp_ex": 12.7,
+    "conflict": false
    }
   },
   "001570": {
@@ -434,6 +519,14 @@
    "cycle": {
     "position": "평가 보류",
     "note": "2024·2025 사업연도 감사의견 거절로 상장폐지가 결정됐고(가처분으로 보류 중) 사업 방향도 바뀌고 있어 정상 이익을 추정할 근거가 없어요."
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q2~2026Q1",
+    "core": -46694,
+    "norm": -19214,
+    "ttm_ni": -62891,
+    "oneoff": false
    }
   },
   "003670": {
@@ -515,6 +608,23 @@
     },
     "implied_g": 68.5,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 45403,
+    "norm": 163925,
+    "ttm_ni": 44558,
+    "oneoff": false,
+    "E": 104664,
+    "per_share": 7135,
+    "bear": 4822,
+    "bull": 9278,
+    "upside": -95.6,
+    "pct": 17,
+    "tier": "비싼 ⅓",
+    "exp_ex": -8.7,
+    "conflict": false
    }
   },
   "247540": {
@@ -596,6 +706,23 @@
     },
     "implied_g": 57.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 72954,
+    "norm": 168538,
+    "ttm_ni": 43735,
+    "oneoff": false,
+    "E": 120746,
+    "per_share": 7485,
+    "bear": 5058,
+    "bull": 9732,
+    "upside": -91.1,
+    "pct": 34,
+    "tier": "가운데 ⅓",
+    "exp_ex": -4.4,
+    "conflict": false
    }
   },
   "086520": {
@@ -677,6 +804,23 @@
     },
     "implied_g": 62.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 181941,
+    "norm": 9030,
+    "ttm_ni": 140701,
+    "oneoff": false,
+    "E": 95485,
+    "per_share": 4274,
+    "bear": 2888,
+    "bull": 5558,
+    "upside": -93.7,
+    "pct": 27,
+    "tier": "비싼 ⅓",
+    "exp_ex": -6.5,
+    "conflict": false
    }
   },
   "066970": {
@@ -758,6 +902,23 @@
     },
     "implied_g": 37.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 189291,
+    "norm": -148466,
+    "ttm_ni": -322712,
+    "oneoff": true,
+    "E": 20413,
+    "per_share": 3138,
+    "bear": 2120,
+    "bull": 4080,
+    "upside": -95.9,
+    "pct": 15,
+    "tier": "비싼 ⅓",
+    "exp_ex": -9.1,
+    "conflict": false
    }
   },
   "450080": {
@@ -837,6 +998,23 @@
     },
     "implied_g": 57.0,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 29284,
+    "norm": -5229,
+    "ttm_ni": 71596,
+    "oneoff": false,
+    "E": 12028,
+    "per_share": 1030,
+    "bear": 696,
+    "bull": 1339,
+    "upside": -96.1,
+    "pct": 12,
+    "tier": "비싼 ⅓",
+    "exp_ex": -9.5,
+    "conflict": false
    }
   },
   "051910": {
@@ -918,6 +1096,23 @@
     },
     "implied_g": 16.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 636751,
+    "norm": 1872662,
+    "ttm_ni": -1512310,
+    "oneoff": true,
+    "E": 1254707,
+    "per_share": 97198,
+    "bear": 65681,
+    "bull": 126388,
+    "upside": -56.0,
+    "pct": 71,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.1,
+    "conflict": true
    }
   },
   "005070": {
@@ -999,6 +1194,23 @@
     },
     "implied_g": 49.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 4940,
+    "norm": 16442,
+    "ttm_ni": -7060,
+    "oneoff": true,
+    "E": 10691,
+    "per_share": 1952,
+    "bear": 1319,
+    "bull": 2539,
+    "upside": -94.0,
+    "pct": 22,
+    "tier": "비싼 ⅓",
+    "exp_ex": -6.9,
+    "conflict": false
    }
   },
   "005420": {
@@ -1080,6 +1292,14 @@
     },
     "implied_g": 50.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 1101,
+    "norm": -24824,
+    "ttm_ni": -19393,
+    "oneoff": true
    }
   },
   "101360": {
@@ -1161,6 +1381,14 @@
     },
     "implied_g": 48.0,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -9706,
+    "norm": 2832,
+    "ttm_ni": -14135,
+    "oneoff": false
    }
   },
   "005490": {
@@ -1242,6 +1470,23 @@
     },
     "implied_g": 9.0,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 1522872,
+    "norm": 2204956,
+    "ttm_ni": 1347453,
+    "oneoff": false,
+    "E": 1863914,
+    "per_share": 149460,
+    "bear": 100996,
+    "bull": 194345,
+    "upside": -43.9,
+    "pct": 78,
+    "tier": "싼 ⅓",
+    "exp_ex": 7.8,
+    "conflict": false
    }
   },
   "365340": {
@@ -1321,6 +1566,14 @@
     },
     "implied_g": 36.8,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": -27028,
+    "norm": -45306,
+    "ttm_ni": -42122,
+    "oneoff": false
    }
   },
   "107600": {
@@ -1400,6 +1653,14 @@
     },
     "implied_g": 33.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -8503,
+    "norm": -6839,
+    "ttm_ni": -12903,
+    "oneoff": false
    }
   },
   "078600": {
@@ -1481,6 +1742,23 @@
     },
     "implied_g": 47.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 15407,
+    "norm": 9102,
+    "ttm_ni": 10092,
+    "oneoff": false,
+    "E": 12254,
+    "per_share": 4763,
+    "bear": 3219,
+    "bull": 6193,
+    "upside": -93.8,
+    "pct": 24,
+    "tier": "비싼 ⅓",
+    "exp_ex": -6.6,
+    "conflict": false
    }
   },
   "121600": {
@@ -1562,6 +1840,23 @@
     },
     "implied_g": 39.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 11837,
+    "norm": 13139,
+    "ttm_ni": 15378,
+    "oneoff": false,
+    "E": 12488,
+    "per_share": 6288,
+    "bear": 4249,
+    "bull": 8177,
+    "upside": -90.4,
+    "pct": 37,
+    "tier": "가운데 ⅓",
+    "exp_ex": -3.9,
+    "conflict": false
    }
   },
   "418550": {
@@ -1641,6 +1936,14 @@
     },
     "implied_g": 32.0,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -6406,
+    "norm": -2224,
+    "ttm_ni": -6597,
+    "oneoff": false
    }
   },
   "348370": {
@@ -1721,6 +2024,14 @@
     },
     "implied_g": 31.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": -108285,
+    "norm": -144117,
+    "ttm_ni": -144598,
+    "oneoff": false
    }
   },
   "357780": {
@@ -1802,6 +2113,23 @@
     },
     "implied_g": 12.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 129399,
+    "norm": 152367,
+    "ttm_ni": 127645,
+    "oneoff": false,
+    "E": 140883,
+    "per_share": 111544,
+    "bear": 75375,
+    "bull": 145043,
+    "upside": -55.8,
+    "pct": 73,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.1,
+    "conflict": false
    }
   },
   "278280": {
@@ -1883,6 +2211,14 @@
     },
     "implied_g": 36.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -35894,
+    "norm": 6002,
+    "ttm_ni": -64596,
+    "oneoff": false
    }
   },
   "093370": {
@@ -1964,6 +2300,23 @@
     },
     "implied_g": 40.0,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 35131,
+    "norm": 29919,
+    "ttm_ni": 36451,
+    "oneoff": false,
+    "E": 32525,
+    "per_share": 1839,
+    "bear": 1243,
+    "bull": 2391,
+    "upside": -78.1,
+    "pct": 56,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.4,
+    "conflict": false
    }
   },
   "025900": {
@@ -2045,6 +2398,14 @@
     },
     "implied_g": 19.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -25165,
+    "norm": 20104,
+    "ttm_ni": -40388,
+    "oneoff": false
    }
   },
   "220260": {
@@ -2126,6 +2487,23 @@
     },
     "implied_g": 34.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 3985,
+    "norm": 3294,
+    "ttm_ni": 2150,
+    "oneoff": false,
+    "E": 3640,
+    "per_share": 688,
+    "bear": 465,
+    "bull": 895,
+    "upside": -81.5,
+    "pct": 51,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.3,
+    "conflict": false
    }
   },
   "011500": {
@@ -2207,6 +2585,23 @@
     },
     "implied_g": 25.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 9653,
+    "norm": 9582,
+    "ttm_ni": 9594,
+    "oneoff": false,
+    "E": 9617,
+    "per_share": 3729,
+    "bear": 2520,
+    "bull": 4849,
+    "upside": -66.8,
+    "pct": 66,
+    "tier": "가운데 ⅓",
+    "exp_ex": 4.1,
+    "conflict": false
    }
   },
   "457190": {
@@ -2285,6 +2680,23 @@
     },
     "implied_g": null,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 7747,
+    "norm": -3258,
+    "ttm_ni": 6611,
+    "oneoff": false,
+    "E": 2245,
+    "per_share": 450,
+    "bear": 304,
+    "bull": 586,
+    "upside": -99.3,
+    "pct": 7,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2,
+    "conflict": false
    }
   },
   "281740": {
@@ -2366,6 +2778,23 @@
     },
     "implied_g": 37.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 13286,
+    "norm": 26193,
+    "ttm_ni": 13709,
+    "oneoff": false,
+    "E": 19740,
+    "per_share": 1821,
+    "bear": 1231,
+    "bull": 2368,
+    "upside": -81.5,
+    "pct": 54,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.3,
+    "conflict": false
    }
   },
   "361610": {
@@ -2446,6 +2875,14 @@
     },
     "implied_g": 45.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -891410,
+    "norm": -70589,
+    "ttm_ni": -1580264,
+    "oneoff": false
    }
   },
   "393890": {
@@ -2525,6 +2962,14 @@
     },
     "implied_g": 21.7,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -115974,
+    "norm": -39061,
+    "ttm_ni": -148316,
+    "oneoff": false
    }
   },
   "089980": {
@@ -2606,6 +3051,23 @@
     },
     "implied_g": 27.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 8359,
+    "norm": 9312,
+    "ttm_ni": 9852,
+    "oneoff": false,
+    "E": 8836,
+    "per_share": 3426,
+    "bear": 2315,
+    "bull": 4455,
+    "upside": -72.1,
+    "pct": 61,
+    "tier": "가운데 ⅓",
+    "exp_ex": 3.0,
+    "conflict": false
    }
   },
   "020150": {
@@ -2687,6 +3149,14 @@
     },
     "implied_g": 45.4,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -75820,
+    "norm": 47300,
+    "ttm_ni": -81458,
+    "oneoff": false
    }
   },
   "336370": {
@@ -2768,6 +3238,14 @@
     },
     "implied_g": 39.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -13314,
+    "norm": 6491,
+    "ttm_ni": 41087,
+    "oneoff": false
    }
   },
   "011790": {
@@ -2849,6 +3327,14 @@
     },
     "implied_g": 48.8,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -481923,
+    "norm": -77347,
+    "ttm_ni": -805087,
+    "oneoff": false
    }
   },
   "006110": {
@@ -2930,6 +3416,14 @@
     },
     "implied_g": 56.4,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -16938,
+    "norm": 3705,
+    "ttm_ni": -22554,
+    "oneoff": false
    }
   },
   "018470": {
@@ -3011,6 +3505,23 @@
     },
     "implied_g": 47.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 18911,
+    "norm": 2670,
+    "ttm_ni": 18114,
+    "oneoff": false,
+    "E": 10791,
+    "per_share": 517,
+    "bear": 349,
+    "bull": 672,
+    "upside": -89.0,
+    "pct": 39,
+    "tier": "가운데 ⅓",
+    "exp_ex": -3.1,
+    "conflict": false
    }
   },
   "008730": {
@@ -3092,6 +3603,23 @@
     },
     "implied_g": 29.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 5341,
+    "norm": 9115,
+    "ttm_ni": 5006,
+    "oneoff": false,
+    "E": 7228,
+    "per_share": 1767,
+    "bear": 1194,
+    "bull": 2298,
+    "upside": -84.8,
+    "pct": 44,
+    "tier": "가운데 ⅓",
+    "exp_ex": -1.0,
+    "conflict": false
    }
   },
   "014820": {
@@ -3173,6 +3701,23 @@
     },
     "implied_g": 7.4,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 59761,
+    "norm": 63825,
+    "ttm_ni": 63267,
+    "oneoff": false,
+    "E": 61793,
+    "per_share": 12924,
+    "bear": 8734,
+    "bull": 16806,
+    "upside": -38.9,
+    "pct": 83,
+    "tier": "싼 ⅓",
+    "exp_ex": 8.4,
+    "conflict": false
    }
   },
   "002710": {
@@ -3254,6 +3799,14 @@
     },
     "implied_g": 26.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -13426,
+    "norm": 11597,
+    "ttm_ni": -17357,
+    "oneoff": false
    }
   },
   "243840": {
@@ -3335,6 +3888,23 @@
     },
     "implied_g": 16.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 15542,
+    "norm": 29424,
+    "ttm_ni": 19485,
+    "oneoff": false,
+    "E": 22483,
+    "per_share": 3536,
+    "bear": 2389,
+    "bull": 4598,
+    "upside": -34.4,
+    "pct": 85,
+    "tier": "싼 ⅓",
+    "exp_ex": 8.9,
+    "conflict": true
    }
   },
   "091580": {
@@ -3416,6 +3986,23 @@
     },
     "implied_g": 27.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 17304,
+    "norm": 14706,
+    "ttm_ni": 17282,
+    "oneoff": false,
+    "E": 16005,
+    "per_share": 7282,
+    "bear": 4920,
+    "bull": 9468,
+    "upside": -67.8,
+    "pct": 63,
+    "tier": "가운데 ⅓",
+    "exp_ex": 3.9,
+    "conflict": false
    }
   },
   "458650": {
@@ -3493,6 +4080,14 @@
     },
     "implied_g": 14.8,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 2016,
+    "norm": null,
+    "ttm_ni": 8301,
+    "oneoff": true
    }
   },
   "065350": {
@@ -3574,6 +4169,23 @@
     },
     "implied_g": 36.8,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 27712,
+    "norm": 16914,
+    "ttm_ni": 29389,
+    "oneoff": false,
+    "E": 22313,
+    "per_share": 4923,
+    "bear": 3327,
+    "bull": 6401,
+    "upside": -82.9,
+    "pct": 49,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.3,
+    "conflict": false
    }
   },
   "312610": {
@@ -3601,6 +4213,14 @@
    "cycle": {
     "position": "평가 보류",
     "note": "매출이 작고 적자가 계속돼 정상 이익을 추정할 근거가 부족해요."
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": -8819,
+    "norm": -4599,
+    "ttm_ni": -10093,
+    "oneoff": false
    }
   },
   "054210": {
@@ -3682,6 +4302,23 @@
     },
     "implied_g": -4.4,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 49986,
+    "norm": 11847,
+    "ttm_ni": 52453,
+    "oneoff": false,
+    "E": 30917,
+    "per_share": 7533,
+    "bear": 5090,
+    "bull": 9795,
+    "upside": 48.9,
+    "pct": 100,
+    "tier": "싼 ⅓",
+    "exp_ex": 13.9,
+    "conflict": false
    }
   },
   "047310": {
@@ -3763,6 +4400,23 @@
     },
     "implied_g": 15.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 10546,
+    "norm": 4103,
+    "ttm_ni": 8501,
+    "oneoff": false,
+    "E": 7325,
+    "per_share": 1213,
+    "bear": 820,
+    "bull": 1577,
+    "upside": -54.0,
+    "pct": 76,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.4,
+    "conflict": true
    }
   },
   "084850": {
@@ -3844,6 +4498,14 @@
     },
     "implied_g": 30.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -74870,
+    "norm": -4968,
+    "ttm_ni": -138094,
+    "oneoff": false
    }
   },
   "417200": {
@@ -3922,6 +4584,23 @@
     },
     "implied_g": 58.4,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": 225,
+    "norm": 7305,
+    "ttm_ni": 1197,
+    "oneoff": true,
+    "E": 3765,
+    "per_share": 337,
+    "bear": 228,
+    "bull": 439,
+    "upside": -96.3,
+    "pct": 10,
+    "tier": "비싼 ⅓",
+    "exp_ex": -9.7,
+    "conflict": false
    }
   },
   "299030": {
@@ -4003,6 +4682,14 @@
     },
     "implied_g": 31.5,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": -1031,
+    "norm": -6397,
+    "ttm_ni": 2211,
+    "oneoff": false
    }
   },
   "137400": {
@@ -4084,6 +4771,23 @@
     },
     "implied_g": -1.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 69402,
+    "norm": 76981,
+    "ttm_ni": 83296,
+    "oneoff": false,
+    "E": 73192,
+    "per_share": 19000,
+    "bear": 12839,
+    "bull": 24706,
+    "upside": -22.3,
+    "pct": 88,
+    "tier": "싼 ⅓",
+    "exp_ex": 10.1,
+    "conflict": false
    }
   },
   "222080": {
@@ -4165,6 +4869,23 @@
     },
     "implied_g": 18.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 32962,
+    "norm": -4922,
+    "ttm_ni": 41855,
+    "oneoff": false,
+    "E": 14020,
+    "per_share": 1093,
+    "bear": 739,
+    "bull": 1421,
+    "upside": -83.7,
+    "pct": 46,
+    "tier": "가운데 ⅓",
+    "exp_ex": -0.5,
+    "conflict": false
    }
   },
   "382840": {
@@ -4245,6 +4966,14 @@
     },
     "implied_g": 18.7,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -22642,
+    "norm": 3270,
+    "ttm_ni": -31375,
+    "oneoff": false
    }
   },
   "251630": {
@@ -4326,6 +5055,23 @@
     },
     "implied_g": 36.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": -8705,
+    "norm": 8780,
+    "ttm_ni": -7444,
+    "oneoff": false,
+    "E": 37,
+    "per_share": 14,
+    "bear": 10,
+    "bull": 19,
+    "upside": -99.5,
+    "pct": 5,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2,
+    "conflict": false
    }
   },
   "196490": {
@@ -4353,6 +5099,14 @@
    "cycle": {
     "position": "평가 보류",
     "note": "자본잠식 상태이고 적자가 이어져 정상 이익을 추정할 근거가 없어요."
+   },
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": -4148,
+    "norm": -9629,
+    "ttm_ni": -2074,
+    "oneoff": false
    }
   },
   "340930": {
@@ -4380,6 +5134,14 @@
    "cycle": {
     "position": "평가 보류",
     "note": "최근 6년 중 5년이 적자이고 상호 변경(DART 성원에너텍) 확인이 필요해 평가를 보류했어요."
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -16986,
+    "norm": -8883,
+    "ttm_ni": -25988,
+    "oneoff": false
    }
   },
   "323280": {
@@ -4459,6 +5221,23 @@
     },
     "implied_g": null,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 2216,
+    "norm": -216,
+    "ttm_ni": 2505,
+    "oneoff": false,
+    "E": 1000,
+    "per_share": 199,
+    "bear": 134,
+    "bull": 258,
+    "upside": -99.6,
+    "pct": 2,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2,
+    "conflict": false
    }
   },
   "262260": {
@@ -4540,6 +5319,14 @@
     },
     "implied_g": 9.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -8540,
+    "norm": 562,
+    "ttm_ni": -8498,
+    "oneoff": false
    }
   },
   "259630": {
@@ -4621,6 +5408,23 @@
     },
     "implied_g": 2.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 22378,
+    "norm": 5350,
+    "ttm_ni": 25898,
+    "oneoff": false,
+    "E": 13864,
+    "per_share": 6998,
+    "bear": 4729,
+    "bull": 9100,
+    "upside": -13.3,
+    "pct": 90,
+    "tier": "싼 ⅓",
+    "exp_ex": 10.9,
+    "conflict": false
    }
   },
   "267320": {
@@ -4702,6 +5506,14 @@
     },
     "implied_g": 47.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -5576,
+    "norm": -3815,
+    "ttm_ni": -5407,
+    "oneoff": false
    }
   },
   "079810": {
@@ -4783,6 +5595,14 @@
     },
     "implied_g": 14.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 3361,
+    "norm": -5709,
+    "ttm_ni": 12072,
+    "oneoff": true
    }
   },
   "277880": {
@@ -4864,6 +5684,23 @@
     },
     "implied_g": -0.7,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 14781,
+    "norm": 3364,
+    "ttm_ni": 17972,
+    "oneoff": false,
+    "E": 9072,
+    "per_share": 2797,
+    "bear": 1890,
+    "bull": 3637,
+    "upside": -7.2,
+    "pct": 95,
+    "tier": "싼 ⅓",
+    "exp_ex": 11.3,
+    "conflict": false
    }
   },
   "282880": {
@@ -4945,6 +5782,23 @@
     },
     "implied_g": 20.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -9460,
+    "norm": 11131,
+    "ttm_ni": 5385,
+    "oneoff": false,
+    "E": 836,
+    "per_share": 439,
+    "bear": 297,
+    "bull": 571,
+    "upside": -94.7,
+    "pct": 20,
+    "tier": "비싼 ⅓",
+    "exp_ex": -7.6,
+    "conflict": false
    }
   },
   "372170": {
@@ -5024,6 +5878,23 @@
     },
     "implied_g": -0.1,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -500,
+    "norm": 4444,
+    "ttm_ni": 6682,
+    "oneoff": false,
+    "E": 1972,
+    "per_share": 1499,
+    "bear": 1013,
+    "bull": 1949,
+    "upside": -91.6,
+    "pct": 32,
+    "tier": "비싼 ⅓",
+    "exp_ex": -4.7,
+    "conflict": false
    }
   },
   "217820": {
@@ -5105,6 +5976,23 @@
     },
     "implied_g": 22.8,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -9985,
+    "norm": 13493,
+    "ttm_ni": -9894,
+    "oneoff": false,
+    "E": 1754,
+    "per_share": 238,
+    "bear": 161,
+    "bull": 310,
+    "upside": -87.8,
+    "pct": 41,
+    "tier": "가운데 ⅓",
+    "exp_ex": -2.4,
+    "conflict": false
    }
   },
   "333620": {
@@ -5186,6 +6074,23 @@
     },
     "implied_g": 8.6,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q3~2026Q2",
+    "core": -1528,
+    "norm": 4983,
+    "ttm_ni": -1950,
+    "oneoff": false,
+    "E": 1728,
+    "per_share": 972,
+    "bear": 657,
+    "bull": 1264,
+    "upside": -75.1,
+    "pct": 59,
+    "tier": "가운데 ⅓",
+    "exp_ex": 2.2,
+    "conflict": false
    }
   },
   "290670": {
@@ -5267,6 +6172,14 @@
     },
     "implied_g": 9.3,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": -21763,
+    "norm": -1910,
+    "ttm_ni": -35453,
+    "oneoff": false
    }
   },
   "071280": {
@@ -5348,6 +6261,23 @@
     },
     "implied_g": 9.2,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 13218,
+    "norm": 7566,
+    "ttm_ni": 13767,
+    "oneoff": false,
+    "E": 10392,
+    "per_share": 4120,
+    "bear": 2784,
+    "bull": 5357,
+    "upside": -41.0,
+    "pct": 80,
+    "tier": "싼 ⅓",
+    "exp_ex": 8.1,
+    "conflict": false
    }
   },
   "360070": {
@@ -5427,6 +6357,14 @@
     },
     "implied_g": 21.9,
     "net_cash_added": 0
+   },
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -33038,
+    "norm": -8490,
+    "ttm_ni": -35560,
+    "oneoff": false
    }
   }
  },
@@ -5440,5 +6378,44 @@
   "동박·알루미늄박": "회복 초기. ESS용 수요와 AI 서버용 회로박 전환으로 공급이 빠듯해져 판가가 오르기 시작했어요.",
   "부품·케이스": "완만한 회복. 셀 공장 가동률을 따라가고, 전기차보다 ESS·가전 비중이 큰 회사는 덜 출렁여요.",
   "장비": "수주 공백기. 2022~24년 셀 증설 붐 이후 신규 발주가 크게 줄었고, 북미 ESS·LFP 라인 전환 투자가 다음 수주 사이클이에요."
+ },
+ "quant_meta": {
+  "model": "사이클 평균 이익 50% + 핵심 이익(일회성 제거) 50%, 업종 공통 가정",
+  "par": {
+   "g": {
+    "bear": -5.0,
+    "base": 4.0,
+    "bull": 10.0
+   },
+   "r": 11.0,
+   "c": 0.5
+  },
+  "beta": 0.065,
+  "history": [
+   {
+    "year": "2023",
+    "n": 41,
+    "ic": 0.361,
+    "hit_rel": 56.1,
+    "top3": -4.1,
+    "bot3": -38.0
+   },
+   {
+    "year": "2024",
+    "n": 43,
+    "ic": 0.222,
+    "hit_rel": 53.5,
+    "top3": 5.5,
+    "bot3": -8.8
+   },
+   {
+    "year": "2025",
+    "n": 42,
+    "ic": -0.02,
+    "hit_rel": 47.6,
+    "top3": -22.0,
+    "bot3": -14.2
+   }
+  ]
  }
 }
