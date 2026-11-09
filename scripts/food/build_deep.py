@@ -25,6 +25,16 @@ def main():
     for m in mods():
         comps.update(m.D)
         val.update(getattr(m, "V", {}))
+    # 공정위 담합 과징금(영업외 일회성)으로 최근 4개 분기 순이익이 적자인 회사: 사이클 부족 이익으로 2년 더 이어진다고 보면 안 돼요.
+    # 최근 4개 분기 영업이익 × 0.7(법인세·이자 근사)을 '일회성을 뺀 최근 이익'으로 써요(2026Q2 DART 기준, 억원).
+    FINE = {"001680": 1222, "003960": 644, "145990": 792, "008040": 224, "001790": 367}
+    for code, ni in FINE.items():
+        if code in val:
+            val[code]["ni_now"] = ni
+            val[code]["ni_now_note"] = "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)"
+    # 사조동아원은 2026년 6월 10:1 주식병합. DART 2분기 주식수(1억4,095만주)가 병합 전이라 병합 후 주식수를 써요.
+    if "008040" in val:
+        val["008040"]["snapshot"] = {"shares": 14094619}
     out = {"updated": "2026-11-08",
            "source": "DART 사업보고서·분기보고서, 각사 실적 발표, 2026년 7~11월 기사, KOSIS·관세청 업황 지표",
            "fisher_questions": FISHER,
@@ -33,7 +43,7 @@ def main():
            "companies": comps}
     with open(os.path.join(ROOT, "docs", "food", "data", "deep.json"), "w", encoding="utf-8") as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
-    cfg = {"note": VAL_NOTE, "terminal_growth": 2.0, "asof": "2026-11-08", "cycle_mode": True,
+    cfg = {"note": VAL_NOTE, "terminal_growth": 2.0, "asof": "2026-11-08", "cycle_mode": True, "debt_mode": "levered",
            "default": {"g": {"bear": -1.0, "base": 3.0, "bull": 6.0}, "r": 9.0, "c": 0.7, "cyc_pos": "중립",
                        "note": "자동 가정: 과거 10년 순이익률과 추세 매출로 계산한 사이클 평균 이익을 그대로 썼어요."},
            "industry_cycle": {
