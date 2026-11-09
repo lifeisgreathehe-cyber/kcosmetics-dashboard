@@ -70,7 +70,20 @@ def main():
     out = {"fetched": dt.datetime.now(dt.timezone(dt.timedelta(hours=9))).strftime("%Y-%m-%d %H:%M KST"), "codes": {}}
     krx_ok = bool(key)
     cfg_pref = {m["pref_of"] for m in codes.values() if m.get("pref_of")}
-    for code in [c for c, m in codes.items() if not m.get("pref_of") and c not in cfg_pref]:
+    prev = {}
+    try:  # 이미 우선주를 찾아본 종목은 지난 결과를 재사용(매일 수천 건 요청을 피함)
+        prev = json.loads((ROOT / "raw" / "audit" / "market_check.json").read_text("utf-8")).get("codes", {})
+    except Exception:  # noqa: BLE001
+        pass
+    for code, m in list(codes.items()):
+        p = prev.get(code) or {}
+        if p.get("pref_checked") and not m.get("pref_of"):
+            m["pref_checked"] = True
+            if p.get("pref_found"):
+                m["pref_found"] = p["pref_found"]
+                codes.setdefault(p["pref_found"], {"name": m["name"] + "우", "inds": m["inds"], "pref_of": code})
+    for code in [c for c, m in codes.items() if not m.get("pref_of") and c not in cfg_pref and not m.get("pref_checked")]:
+        codes[code]["pref_checked"] = True
         # 설정에 없는 우선주 찾기(종목코드 끝자리 5·7·9·K)
         for suf in ("5", "7", "9", "K"):
             pc = code[:5] + suf

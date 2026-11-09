@@ -64,9 +64,21 @@ def resolve_shares(dart_out, dart_issued, listed):
         if out > 0.5 * listed:
             return out, listed, None
     r = listed / dart_out
-    if 1.0 <= r <= 1.5:  # 차이는 자기주식으로 본다
-        return dart_out, listed, None
+    if 0.99 <= r <= 1.5:  # 차이는 자기주식으로 본다(네이버 시총이 억 단위 반올림이라 1% 오차 허용)
+        return dart_out, max(listed, dart_out), None
     return listed, listed, f"DART 유통주식수 {dart_out:,.0f}주 → 현재 상장 {listed:,.0f}주(보고서 이후 주식 수 변동)"
+
+
+
+def ttm_keys(Q):
+    """최근 4개 '연속' 분기(순이익 값이 있는)만 TTM으로 쓴다. 중간 분기가 비면 그 앞의 연속 4개 분기."""
+    qi = lambda k: int(k[:4]) * 4 + int(k[-1]) - 1
+    ks = [k for k in sorted(Q) if (Q[k] or {}).get("ni") is not None]
+    for i in range(len(ks) - 4, -1, -1):
+        w = ks[i:i + 4]
+        if qi(w[-1]) - qi(w[0]) == 3:
+            return w
+    return []
 
 
 NC_YIELD = 0.02
@@ -239,7 +251,7 @@ def main(industry="cosmetics"):
         code = co["code"]
         a = cfg.get("companies", {}).get(code)
         Q = co.get("quarterly", {}) or {}
-        ks = sorted(Q)[-4:]
+        ks = ttm_keys(Q)
         rec = {"name": co["name"], "group": co.get("group")}
         if len(ks) == 4:
             ttm = {m: sum((Q[k].get(m) or 0) for k in ks) for m in ("rev", "op", "ni")}

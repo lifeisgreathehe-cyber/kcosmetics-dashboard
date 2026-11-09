@@ -833,6 +833,11 @@ def quotes_yahoo(cfg, codes):
 def update_quotes():
     cfg = json.loads((CONFIG / "companies.json").read_text("utf-8"))
     codes = [c["code"] for c in cfg] + [c["pref"] for c in cfg if c.get("pref")]
+    try:  # 설정에 없지만 외부 대조(audit_market.py)에서 찾은 우선주도 시세를 받는다
+        mk = json.loads((ROOT / "raw" / "audit" / "market_check.json").read_text("utf-8")).get("codes", {})
+        codes += [mk[c]["pref_found"] for c in list(codes) if (mk.get(c) or {}).get("pref_found") and mk[c]["pref_found"] not in codes]
+    except Exception:  # noqa: BLE001
+        pass
     q = quotes_naver(codes)
     src = "네이버 금융" if q else None
     miss = [c for c in codes if c not in q]
