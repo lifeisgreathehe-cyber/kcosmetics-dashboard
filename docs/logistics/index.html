@@ -115,7 +115,6 @@ th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
 td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 .newsread{list-style:none;padding-left:0}.newsread li{border-top:1px solid var(--line);padding:10px 0}.newsread li p{font-size:14px;color:var(--ink-2)}
-.snap .sl{font-size:12px;color:var(--ink-2);margin:8px 0 2px;font-weight:600}.snap .sl .u{font-weight:400;color:var(--ink-3)}.snap .chart.sm{height:120px}
 .irt td{vertical-align:top;font-size:13px;line-height:1.5;min-width:90px}.irt td:nth-child(2),.irt td:nth-child(4){min-width:200px}.irlist{margin:6px 0 0;padding-left:18px}.irlist li{margin:3px 0;font-size:13px}
 </style>
 </head>
@@ -186,8 +185,7 @@ td.l,th.l{text-align:left}
     <div class="grid" id="co-detail">
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
-      <div class="card full" id="co-snap"><div class="row"><div><h2>주가와 실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가는 월말 종가(수정주가), 실적은 분기 기준 · 단위: 억원</p></div>
-        <div class="segs" role="group" aria-label="기간" id="fc-range"><button class="seg" data-v="fin" aria-pressed="true">실적 기간</button><button class="seg" data-v="all" aria-pressed="false">주가 전체</button></div></div>
+      <div class="card full" id="co-fc"><h2>실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요</p>
         <div id="fc"></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
@@ -555,17 +553,15 @@ function finTable(keys,get,prevKey){
     return `<td class="num">${fmt(eok(a[m]))}<br><span class="${cls(y)}" style="font-size:11px">${pct(y)}</span></td>`}).join('')}</tr>`).join('');
   return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
 }
-let fcH=null,fcRange='fin';
+let fcH=null;
 function renderSnap(c){  // 공용 모듈 docs/shared/finchart.js
   if(!window.FinChart||!window.Chart)return;
   if(fcH)fcH.destroy();
   const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
-  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,range:fcRange});
-  $('#fc-sub').textContent=`주가는 월말 종가(수정주가${D.stock_hist?', '+D.stock_hist.source:''}), 실적은 분기 기준 · 단위: 억원${sh?'':' · 장기 주가는 다음 자동 수집 후 표시돼요'}${Object.keys(c.quarterly||{}).length?'':' · 분기 실적은 DART 수집 후 표시돼요'}`;
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 주가 이력은 자동 수집 후 표시돼요')+(Object.keys(c.quarterly||{}).length?'':' · 분기 실적은 DART 수집 후 표시돼요');
 }
-function bindSnap(){
-  document.addEventListener('click',e=>{const b=e.target.closest('#fc-range button');if(!b)return;fcRange=b.dataset.v;document.querySelectorAll('#fc-range button').forEach(x=>x.setAttribute('aria-pressed',x===b));const c=CO.companies.find(x=>x.code===cur);if(c)renderSnap(c)});
-}
+function bindSnap(){}
 function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;

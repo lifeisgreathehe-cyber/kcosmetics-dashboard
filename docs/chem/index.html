@@ -269,9 +269,8 @@ details.sd > div p{margin:0 0 6px}
     <div class="grid" id="co-detail">
       <div class="card full"><div class="row"><div><h2 id="co-name" style="font-family:var(--font-display);font-size:24px"></h2><p class="sub" id="co-meta"></p></div>
         <select id="co-select" aria-label="회사 선택"></select></div></div>
-      <div class="card full" id="co-perf-card"><div class="row"><div><h2>주가와 실적 한눈에 보기</h2><p class="sub" id="co-perf-sub">위는 월말 주가(수정주가, 로그 눈금), 아래는 매출액·매출총이익·영업이익·지배주주순이익이에요. 단위: 억원</p></div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><div class="segs" role="group" aria-label="실적 주기" id="perf-freq"></div><div class="segs" role="group" aria-label="기간" id="perf-range"></div></div></div>
-        <div style="position:relative;height:680px"><canvas id="c-perf" role="img" aria-label="주가와 실적 추이"></canvas></div><p class="src" id="perf-src"></p></div>
+      <div class="card full" id="co-fc"><h2>실적 한눈에 보기</h2><p class="sub" id="fc-sub">주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요</p>
+        <div id="fc"></div></div>
       <div class="card full rv" id="co-review"></div>
       <div class="card full rv" id="co-biz"></div>
       <div class="card full rv" id="co-value"></div>
@@ -314,6 +313,7 @@ details.sd > div p{margin:0 0 6px}
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="../shared/finchart.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -638,49 +638,13 @@ function finTable(keys,get,prevKey){
   return `<table><thead>${head}</thead><tbody>${body}</tbody></table>`;
 }
 
-/* ---------------- 주가와 실적 한눈에 보기 ---------------- */
-let perfFreq='annual', perfRange='10';
+let fcH=null;
 function renderPerf(c){
-  const s=S(), H=(D.stock_hist&&D.stock_hist.series||{})[c.code];
-  const freqs=[['annual','연간'],['quarter','분기']], ranges=[['10','10년'],['all','전체']];
-  $('#perf-freq').innerHTML=freqs.map(([k,t])=>`<button class="seg" aria-pressed="${k===perfFreq}" data-k="${k}">${t}</button>`).join('');
-  $('#perf-range').innerHTML=ranges.map(([k,t])=>`<button class="seg" aria-pressed="${k===perfRange}" data-k="${k}">${t}</button>`).join('');
-  $('#perf-freq').querySelectorAll('button').forEach(b=>b.onclick=()=>{perfFreq=b.dataset.k;renderPerf(c)});
-  $('#perf-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{perfRange=b.dataset.k;renderPerf(c)});
-  // 실적: 연간은 그해 한가운데(6월), 분기는 분기 말 월에 찍는다
-  const E={};
-  if(perfFreq==='annual') Object.entries(c.annual||{}).forEach(([y,v])=>E[y+'-06']=v);
-  else Object.entries(c.quarterly||{}).forEach(([q,v])=>E[q.slice(0,4)+'-'+String(+q.slice(5)*3).padStart(2,'0')]=v);
-  const pm=H?H.months:[], em=Object.keys(E).sort();
-  let all=[...new Set([...pm,...em])].sort();
-  if(!all.length){$('#co-perf-sub').textContent='주가 이력과 DART 실적이 수집되면 그래프가 나와요.';if(charts['c-perf']){charts['c-perf'].destroy();delete charts['c-perf']}return}
-  if(perfRange==='10'){const last=all[all.length-1],cut=(+last.slice(0,4)-10)+last.slice(4);all=all.filter(m=>m>cut)}
-  // 빈 달을 채워 시간 간격을 일정하게
-  const months=[];let [y,m]=all[0].split('-').map(Number);const [ly,lm]=all[all.length-1].split('-').map(Number);
-  while(y<ly||(y===ly&&m<=lm)){months.push(y+'-'+String(m).padStart(2,'0'));m++;if(m>12){m=1;y++}}
-  const pmap=H?Object.fromEntries(H.months.map((k,i)=>[k,H.close[i]])):{};
-  const pr=months.map(k=>pmap[k]??null);
-  const ser=f=>months.map(k=>E[k]&&E[k][f]!=null?eok(E[k][f]):null);
-  const hasP=pr.some(v=>v!=null);
-  let hi=null,lo=null;pr.forEach((v,i)=>{if(v==null)return;if(hi==null||v>pr[hi])hi=i;if(lo==null||v<pr[lo])lo=i});
-  const pts=(color)=>({borderColor:color,backgroundColor:color,borderWidth:1.6,pointRadius:3,pointHoverRadius:5,tension:0,spanGaps:true});
-  const panels=[['rev','매출액',s[0]],['gp','매출총이익',s[2]],['op','영업이익',s[1]],['ni',NI,s[6]]];
-  const ds=[Object.assign(line('주가',pr,s[3]),{yAxisID:'yP',borderWidth:1.8,spanGaps:true,tension:0,
-      pointRadius:pr.map((v,i)=>i===hi||i===lo?4:0)})];
-  panels.forEach(([f,t,col],i)=>ds.push(Object.assign({type:'line',label:t,data:ser(f),yAxisID:'y'+i},pts(col))));
-  const g=css('--line'),ink=css('--ink-3'),narrow=document.getElementById('c-perf').parentElement.clientWidth<600;
-  const cmp=(v,unit)=>{const a=Math.abs(v);if(!narrow)return fmt(v);const sh=x=>(+x.toFixed(a>=100000?0:1)).toLocaleString('ko-KR');if(unit==='억'&&a>=10000)return sh(v/10000)+'조';if(unit==='원'&&a>=10000)return sh(v/10000)+'만';return fmt(v)};
-  const yrs=months.length/12, step=Math.max(1,Math.ceil(yrs/(narrow?5:12)));
-  const tag={id:'perfTag',afterDraw(ch){const x=ch.ctx;x.save();x.font='600 11.5px '+getComputedStyle(document.body).fontFamily;x.fillStyle=css('--ink-2');x.textBaseline='top';
-    Object.values(ch.scales).forEach(sc=>{if(sc.options.tag){x.fillText(sc.options.tag,ch.chartArea.left+2,sc.top+2)}});x.restore()}};
-  const yax=(extra)=>Object.assign({position:'right',stack:'perf',offset:true,afterFit:sc=>{sc.width=narrow?46:72},ticks:{color:ink,font:{size:10.5},maxTicksLimit:4,callback:v=>cmp(v,'억')},grid:{color:g},border:{display:false}},extra);
-  const scales={x:{type:'category',labels:months,ticks:{color:ink,maxRotation:0,autoSkip:false,font:{size:11},callback:(v,i)=>months[i].endsWith('-01')&&(+months[i].slice(0,4))%step===0?(narrow?"'"+months[i].slice(2,4):months[i].slice(0,4)):''},grid:{display:false},border:{color:g}},
-    yP:yax({type:hasP?'logarithmic':'linear',stackWeight:2.4,tag:'주가(원)',ticks:{color:ink,font:{size:10.5},maxTicksLimit:6,callback:v=>/^[1235]0*$/.test(String(Math.round(v)))?cmp(v,'원'):''}})};
-  panels.forEach(([f,t],i)=>scales['y'+i]=yax({stackWeight:1,tag:t,grid:{color:ctx=>ctx.tick.value===0?ink:g}}));
-  draw('c-perf',{type:'line',data:{labels:months,datasets:ds},plugins:[tag],options:baseOpts({interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:false},tooltip:{filter:x=>x.raw!=null,callbacks:{title:x=>x[0].label,label:x=>x.datasetIndex===0?`주가: ${fmt(x.raw)}원`:`${x.dataset.label}: ${fmt(x.raw)}억원`}}},scales})});
-  $('#co-perf-sub').textContent=`위는 월말 주가(수정주가, 로그 눈금)${hasP&&hi!=null?` · 최고 ${fmt(pr[hi])}원(${months[hi]}) · 최저 ${fmt(pr[lo])}원(${months[lo]})`:' · 주가 이력은 수집 대기 중이에요'}, 아래는 ${perfFreq==='annual'?'연간':'분기'} 매출액·매출총이익·영업이익·${NI}이에요. 단위: 억원${em.length?'':' · DART 실적 수집 대기 중이에요'}`;
-  $('#perf-src').textContent=`출처: ${D.stock_hist?D.stock_hist.source+' · 수집 '+D.stock_hist.updated:'주가 이력 수집 전'} · 실적은 DART 전자공시(연결)`;
+  if(!window.FinChart||!window.Chart)return;
+  if(fcH)fcH.destroy();
+  const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 주가 이력은 자동 수집 후 표시돼요');
 }
 function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
