@@ -23,7 +23,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-# --industry semi|chem : 업종별 대시보드 (config/<업종> → docs/<업종>/data, raw/<업종>/dart_docs)
+# --industry semi|chem|battery|logistics … : 업종별 (customs.json이 없는 업종은 관세청 수집을 건너뜀) 대시보드 (config/<업종> → docs/<업종>/data, raw/<업종>/dart_docs)
 INDUSTRY = sys.argv[sys.argv.index("--industry") + 1] if "--industry" in sys.argv else "cosmetics"
 if INDUSTRY == "cosmetics":
     DATA = ROOT / "docs" / "data"
@@ -950,7 +950,7 @@ def main():
     ran = []
     if os.getenv("KOSIS_API_KEY") and only in (None, "kosis"):
         update_kosis(os.environ["KOSIS_API_KEY"]); ran.append("KOSIS")
-    if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs"):
+    if os.getenv("DATA_GO_KR_KEY") and only in (None, "customs") and (INDUSTRY == "cosmetics" or _cc.exists()):
         update_customs(os.environ["DATA_GO_KR_KEY"]); ran.append("관세청")
     if os.getenv("DATA_GO_KR_KEY") and only in (None, "regions") and INDUSTRY == "cosmetics":
         if update_regions(os.environ["DATA_GO_KR_KEY"]):

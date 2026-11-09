@@ -246,6 +246,11 @@ def main(industry="cosmetics"):
                             "ttm_ni": t["ni"] if t else None, "E1_fwd": E1f, "E1_basis": basis}
         # 순현금은 따로 더하고, 그 이자(세후 약 2%)는 영업 이익에서 뺀다 (순차입이면 반대)
         nc = (net_cash or 0) if a.get("nc_adj", True) else 0  # 비지배지분이 큰 지주·연결사는 제외
+        if nc < 0 and cfg.get("debt_mode") == "levered":
+            # 순이익은 이미 이자비용을 뺀 값이에요. 그 이익을 자기자본비용으로 할인한 FCFE 가치에서 차입금을 또 빼면,
+            # 이자 되돌림(세후 2% × 현금전환율 ÷ (r−g))이 차입금보다 훨씬 작아 부채를 이중으로 벌점 줘요. 순차입이면 조정하지 않아요.
+            rec["net_debt_levered"] = nc
+            nc = 0
         E_op = E1 - nc * NC_YIELD
         # 반도체: 최근 4분기 순이익이 정상 이익보다 높거나 낮은 상태가 사이클 위치에 따라 몇 해 더 이어지는지
         xv, cy = 0, None

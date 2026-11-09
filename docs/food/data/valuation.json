@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라, DART 10년 연간 순이익률(가장 좋은 해·나쁜 해를 뺀 평균)과 추세 매출로 '사이클 평균 이익'을 계산하고, 회사별로 판단한 정상 순이익률(margin)이나 조정 배수(E1_adj)를 적용해요. 음식료는 경기보다 원가 사이클(곡물·원당·유지·환율 → 1~2분기 뒤 마진, 가격 인상 후 회복)과 과징금 같은 일회성 손익이 이익을 흔들어요. ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치(상승기·중립·하강기·바닥권 등)에 따라 1~3년만 이어진다고 보고 그 현재가치만 더하거나 빼요. ③ 성장률(g)은 해외 확장 같은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인, 6~10년차 성장률은 2%로 수렴, 순현금은 더하고 차입은 빼요.",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -7,492 +7,3575 @@
   "097950": {
    "name": "CJ제일제당",
    "group": "종합식품",
-   "cycle": {
-    "position": "바닥권",
-    "note": "바이오(라이신) 가격이 중국 공급 과잉으로 바닥이고, 과징금으로 2025년이 적자였어요. 최근 4개 분기 이익은 정상보다 낮아 2~3년에 걸쳐 회복된다고 봤어요.",
-    "basis": "정상 순이익률 1.6%(연결 매출 기준, 대한통운 비지배지분 제외 지배주주 몫)를 썼어요. 과징금이 반영된 2025년은 일회성이라 평균에서 빠지고, 담합 제재 후 소재 마진 하락을 반영해 과거 평균보다 조금 낮췄어요. 차입과 대한통운 연결로 순현금 조정은 하지 않았어요"
+   "ttm": {
+    "rev": 27370175,
+    "op": 1047043,
+    "ni": -679388,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.0,
+    "margin_range": [
+     -2.1,
+     5.0
+    ],
+    "trend_rev": 32115849,
+    "ttm_rev": 27370175,
+    "norm_ni": 658193,
+    "trend_g": 7.1
+   },
+   "price": 180900,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 2658665,
+   "shares": 14696879,
+   "equity": 7467763,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -5190550,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -9.1,
+   "pbr": 0.36,
+   "dcf": {
+    "E1": 513900,
+    "r": 9.0,
+    "c": 0.5,
+    "note": "정상 순이익률 1.6%(연결 매출 기준, 대한통운 비지배지분 제외 지배주주 몫)를 썼어요. 과징금이 반영된 2025년은 일회성이라 평균에서 빠지고, 담합 제재 후 소재 마진 하락을 반영해 과거 평균보다 조금 낮췄어요. 차입과 대한통운 연결로 순현금 조정은 하지 않았어요",
+    "fwd_per": 5.2,
+    "norm_per": 5.2,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 2810706,
+      "per_share": 191245,
+      "upside": 5.7
+     },
+     "base": {
+      "g": 4.0,
+      "value": 3494381,
+      "per_share": 237763,
+      "upside": 31.4
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 4094969,
+      "per_share": 278629,
+      "upside": 54.0
+     }
+    },
+    "implied_g": -1.0,
+    "cycle": {
+     "position": "바닥권",
+     "note": "바이오(라이신) 가격이 중국 공급 과잉으로 바닥이고, 과징금으로 2025년이 적자였어요. 최근 4개 분기 이익은 정상보다 낮아 2~3년에 걸쳐 회복된다고 봤어요.",
+     "path": [
+      0.7,
+      0.3
+     ],
+     "excess": -1193288,
+     "excess_value": -533821
+    },
+    "net_cash_added": 0
+   }
   },
   "001680": {
    "name": "대상",
    "group": "종합식품",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가가 아직 높아 이익이 줄어드는 구간이에요. 과징금 해(2025년)는 평균에서 빠졌어요.",
-    "basis": "정상 순이익률 3.0%를 썼어요. 전분당 담합 제재 뒤 소재 마진이 과거보다 낮아진다고 봤어요"
+   "ttm": {
+    "rev": 4470478,
+    "op": 174666,
+    "ni": -299837,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.5,
+    "margin_range": [
+     -6.9,
+     4.2
+    ],
+    "trend_rev": 4544048,
+    "ttm_rev": 4470478,
+    "norm_ni": 112313,
+    "trend_g": 5.6
+   },
+   "price": 17530,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 626563,
+   "shares": 36018248,
+   "equity": 1103805,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -811079,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -27.2,
+   "pbr": 0.57,
+   "net_debt_levered": -811079,
+   "ttm_news": {
+    "period": "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)",
+    "ni": 122200
+   },
+   "dcf": {
+    "E1": 136300,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "정상 순이익률 3.0%를 썼어요. 전분당 담합 제재 뒤 소재 마진이 과거보다 낮아진다고 봤어요",
+    "fwd_per": 4.6,
+    "norm_per": 4.6,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 941450,
+      "per_share": 26138,
+      "upside": 50.3
+     },
+     "base": {
+      "g": 3.0,
+      "value": 1132474,
+      "per_share": 31442,
+      "upside": 80.7
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 1241815,
+      "per_share": 34477,
+      "upside": 98.2
+     }
+    },
+    "implied_g": -9.9,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가가 아직 높아 이익이 줄어드는 구간이에요. 과징금 해(2025년)는 평균에서 빠졌어요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -14100,
+     "excess_value": -9003
+    },
+    "net_cash_added": 0
+   }
   },
   "007310": {
    "name": "오뚜기",
    "group": "종합식품",
-   "cycle": {
-    "position": "회복기",
-    "note": "원가 정점에서 가격 인상이 반영되기 시작하는 원가 사이클 회복 초입이에요.",
-    "basis": "정상 순이익률 5.0%를 썼어요. 공정위 조사로 가격 결정력이 약해진 점을 반영해 과거 평균보다 조금 낮췄어요"
+   "ttm": {
+    "rev": 3750781,
+    "op": 179293,
+    "ni": 73009,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 5.2,
+    "margin_range": [
+     1.9,
+     8.6
+    ],
+    "trend_rev": 3884428,
+    "ttm_rev": 3750781,
+    "norm_ni": 201790,
+    "trend_g": 7.4
+   },
+   "price": 319000,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1097145,
+   "shares": 3439327,
+   "equity": 2140453,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -278732,
+   "dividend_yield": null,
+   "per": 15.0,
+   "roe": 3.4,
+   "pbr": 0.51,
+   "net_debt_levered": -278732,
+   "dcf": {
+    "E1": 194200,
+    "r": 8.5,
+    "c": 0.7,
+    "note": "정상 순이익률 5.0%를 썼어요. 공정위 조사로 가격 결정력이 약해진 점을 반영해 과거 평균보다 조금 낮췄어요",
+    "fwd_per": 5.6,
+    "norm_per": 5.6,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 1811274,
+      "per_share": 526636,
+      "upside": 65.1
+     },
+     "base": {
+      "g": 3.0,
+      "value": 2101125,
+      "per_share": 610912,
+      "upside": 91.5
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 2317773,
+      "per_share": 673903,
+      "upside": 111.3
+     }
+    },
+    "implied_g": -10.0,
+    "cycle": {
+     "position": "회복기",
+     "note": "원가 정점에서 가격 인상이 반영되기 시작하는 원가 사이클 회복 초입이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -121191,
+     "excess_value": -91375
+    },
+    "net_cash_added": 0
+   }
   },
   "017810": {
    "name": "풀무원",
    "group": "종합식품",
-   "cycle": {
-    "position": "하강기",
-    "note": "콩·원가 부담이 커지는 구간이에요.",
-    "basis": "정상 순이익률 0.8%(미국 흑자 전환 반영)를 썼어요. 차입이 많아 현금 전환율은 0.55예요"
+   "ttm": {
+    "rev": 3491489,
+    "op": 106007,
+    "ni": 43757,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 0.7,
+    "margin_range": [
+     -0.7,
+     1.7
+    ],
+    "trend_rev": 3428918,
+    "ttm_rev": 3491489,
+    "norm_ni": 24074,
+    "trend_g": 5.8
+   },
+   "price": 8070,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 297729,
+   "shares": 36893263,
+   "equity": 337760,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -638056,
+   "dividend_yield": null,
+   "per": 6.8,
+   "roe": 13.0,
+   "pbr": 0.88,
+   "net_debt_levered": -638056,
+   "dcf": {
+    "E1": 27400,
+    "r": 9.5,
+    "c": 0.55,
+    "note": "정상 순이익률 0.8%(미국 흑자 전환 반영)를 썼어요. 차입이 많아 현금 전환율은 0.55예요",
+    "fwd_per": 10.9,
+    "norm_per": 10.9,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 192923,
+      "per_share": 5229,
+      "upside": -35.2
+     },
+     "base": {
+      "g": 4.0,
+      "value": 229767,
+      "per_share": 6228,
+      "upside": -22.8
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 262102,
+      "per_share": 7104,
+      "upside": -12.0
+     }
+    },
+    "implied_g": 9.9,
+    "cycle": {
+     "position": "하강기",
+     "note": "콩·원가 부담이 커지는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 16357,
+     "excess_value": 9574
+    },
+    "net_cash_added": 0
+   }
   },
   "006040": {
    "name": "동원산업",
    "group": "종합식품",
-   "cycle": {
-    "position": "중립",
-    "note": "참치 사이클은 회복 중이고 B2B는 안정적이에요. 2025년 소송 정산 이익은 일회성이라 평균에서 빠지도록 trimmed 평균을 썼어요.",
-    "basis": "정상 순이익률 3.3%(연결 매출 기준)를 썼어요. 연결 자회사가 많아 순현금 조정은 하지 않았어요"
+   "ttm": {
+    "rev": 10007722,
+    "op": 555264,
+    "ni": 431272,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 3.8,
+    "margin_range": [
+     0.8,
+     8.4
+    ],
+    "trend_rev": 11447497,
+    "ttm_rev": 10007722,
+    "norm_ni": 439451,
+    "trend_g": 23.1
+   },
+   "price": 36100,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1593484,
+   "shares": 44140819,
+   "equity": 3820404,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -2096706,
+   "dividend_yield": null,
+   "per": 3.7,
+   "roe": 11.3,
+   "pbr": 0.42,
+   "dcf": {
+    "E1": 377800,
+    "r": 9.0,
+    "c": 0.6,
+    "note": "정상 순이익률 3.3%(연결 매출 기준)를 썼어요. 연결 자회사가 많아 순현금 조정은 하지 않았어요",
+    "fwd_per": 4.2,
+    "norm_per": 4.2,
+    "scenarios": {
+     "bear": {
+      "g": 1.0,
+      "value": 3091090,
+      "per_share": 70028,
+      "upside": 94.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 3553659,
+      "per_share": 80507,
+      "upside": 123.0
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 4083496,
+      "per_share": 92511,
+      "upside": 156.3
+     }
+    },
+    "implied_g": -13.3,
+    "cycle": {
+     "position": "중립",
+     "note": "참치 사이클은 회복 중이고 B2B는 안정적이에요. 2025년 소송 정산 이익은 일회성이라 평균에서 빠지도록 trimmed 평균을 썼어요.",
+     "path": [],
+     "excess": 53472,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "003960": {
    "name": "사조대림",
    "group": "종합식품",
-   "cycle": {
-    "position": "하강기",
-    "note": "유지 원가 상승기라 이익이 줄어드는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 계열 할인을 반영해 r 10%예요"
+   "ttm": {
+    "rev": 3551162,
+    "op": 92022,
+    "ni": -205697,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.7,
+    "margin_range": [
+     -2.2,
+     6.2
+    ],
+    "trend_rev": 3427129,
+    "ttm_rev": 3551162,
+    "norm_ni": 92273,
+    "trend_g": 15.8
+   },
+   "price": 23050,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 206078,
+   "shares": 8940461,
+   "equity": 567608,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -498416,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -36.2,
+   "pbr": 0.36,
+   "net_debt_levered": -498416,
+   "ttm_news": {
+    "period": "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)",
+    "ni": 64400
+   },
+   "dcf": {
+    "E1": 92300,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 계열 할인을 반영해 r 10%예요",
+    "fwd_per": 2.2,
+    "norm_per": 2.2,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 587017,
+      "per_share": 65659,
+      "upside": 184.9
+     },
+     "base": {
+      "g": 2.0,
+      "value": 674542,
+      "per_share": 75448,
+      "upside": 227.3
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 739860,
+      "per_share": 82754,
+      "upside": 259.0
+     }
+    },
+    "implied_g": -24.1,
+    "cycle": {
+     "position": "하강기",
+     "note": "유지 원가 상승기라 이익이 줄어드는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -27900,
+     "excess_value": -17708
+    },
+    "net_cash_added": 0
+   }
   },
   "260970": {
    "name": "에스앤디",
    "group": "종합식품",
-   "cycle": {
-    "position": "상승기",
-    "note": "라면 수출 붐으로 이익이 평균보다 높은 구간이에요.",
-    "basis": "과거 평균 이익을 썼어요. 소형주·고객 집중을 반영해 r 10.5%예요"
+   "ttm": {
+    "rev": 172484,
+    "op": 28068,
+    "ni": 24240,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2021~2025",
+    "n": 5,
+    "margin": 13.5,
+    "margin_range": [
+     12.5,
+     14.7
+    ],
+    "trend_rev": 167572,
+    "ttm_rev": 172484,
+    "norm_ni": 22698,
+    "trend_g": 26.3
+   },
+   "price": 52600,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 152159,
+   "shares": 2892754,
+   "equity": 94015,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 58706,
+   "dividend_yield": null,
+   "per": 6.3,
+   "roe": 25.8,
+   "pbr": 1.62,
+   "dcf": {
+    "E1": 22700,
+    "r": 10.5,
+    "c": 0.6,
+    "note": "과거 평균 이익을 썼어요. 소형주·고객 집중을 반영해 r 10.5%예요",
+    "fwd_per": 6.7,
+    "norm_per": 6.7,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 199322,
+      "per_share": 68904,
+      "upside": 31.0
+     },
+     "base": {
+      "g": 6.0,
+      "value": 241766,
+      "per_share": 83576,
+      "upside": 58.9
+     },
+     "bull": {
+      "g": 10.0,
+      "value": 276978,
+      "per_share": 95749,
+      "upside": 82.0
+     }
+    },
+    "implied_g": -9.4,
+    "cycle": {
+     "position": "상승기",
+     "note": "라면 수출 붐으로 이익이 평균보다 높은 구간이에요.",
+     "path": [
+      1.0,
+      0.7,
+      0.3
+     ],
+     "excess": 1540,
+     "excess_value": 1571
+    },
+    "net_cash_added": 58706
+   }
   },
   "103840": {
    "name": "우양",
    "group": "종합식품",
-   "cycle": {
-    "position": "중립",
-    "note": "OEM 소형사라 사이클 판단은 중립으로 뒀어요.",
-    "basis": "과거 평균 이익을 썼어요. 소형주·OEM 위험을 반영해 r 11%예요"
+   "ttm": {
+    "rev": 193833,
+    "op": 3758,
+    "ni": 910,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2019~2025",
+    "n": 7,
+    "margin": 0.5,
+    "margin_range": [
+     -2.0,
+     3.1
+    ],
+    "trend_rev": 200944,
+    "ttm_rev": 193833,
+    "norm_ni": 989,
+    "trend_g": 7.7
+   },
+   "price": 1283,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 20998,
+   "shares": 16366428,
+   "equity": 45764,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -69084,
+   "dividend_yield": null,
+   "per": 23.1,
+   "roe": 2.0,
+   "pbr": 0.46,
+   "net_debt_levered": -69084,
+   "dcf": {
+    "E1": 1000,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "과거 평균 이익을 썼어요. 소형주·OEM 위험을 반영해 r 11%예요",
+    "fwd_per": 21.0,
+    "norm_per": 21.0,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 5848,
+      "per_share": 357,
+      "upside": -72.1
+     },
+     "base": {
+      "g": 4.0,
+      "value": 7276,
+      "per_share": 445,
+      "upside": -65.3
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 8669,
+      "per_share": 530,
+      "upside": -58.7
+     }
+    },
+    "implied_g": 28.6,
+    "cycle": {
+     "position": "중립",
+     "note": "OEM 소형사라 사이클 판단은 중립으로 뒀어요.",
+     "path": [],
+     "excess": -90,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "004370": {
    "name": "농심",
    "group": "라면",
-   "cycle": {
-    "position": "회복기",
-    "note": "밀·팜유 원가와 환율이 3분기를 정점으로 내려가고, 8월 가격 인상이 4분기부터 반영되는 원가 사이클 회복 구간이에요. 국내는 가격 규제로 이익률이 낮게 묶이지만 해외 비중이 커지며 정상 이익률 자체가 조금씩 올라가요.",
-    "basis": "정상 순이익률을 과거 평균(약 5%)보다 조금 높은 5.5%로 잡았어요. 해외 비중 상승을 반영했지만, 공정위 조사로 국내 가격 결정력이 약해진 점을 감안해 크게 올리진 않았어요"
+   "ttm": {
+    "rev": 3643646,
+    "op": 214406,
+    "ni": 196876,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 4.4,
+    "margin_range": [
+     3.0,
+     9.0
+    ],
+    "trend_rev": 3702681,
+    "ttm_rev": 3643646,
+    "norm_ni": 163918,
+    "trend_g": 6.3
+   },
+   "price": 404500,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 2359929,
+   "shares": 5834188,
+   "equity": 3010222,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 410511,
+   "dividend_yield": null,
+   "per": 12.0,
+   "roe": 6.5,
+   "pbr": 0.78,
+   "dcf": {
+    "E1": 203600,
+    "r": 8.5,
+    "c": 0.7,
+    "note": "정상 순이익률을 과거 평균(약 5%)보다 조금 높은 5.5%로 잡았어요. 해외 비중 상승을 반영했지만, 공정위 조사로 국내 가격 결정력이 약해진 점을 감안해 크게 올리진 않았어요",
+    "fwd_per": 11.6,
+    "norm_per": 11.6,
+    "scenarios": {
+     "bear": {
+      "g": 1.0,
+      "value": 2412490,
+      "per_share": 413509,
+      "upside": 2.2
+     },
+     "base": {
+      "g": 5.0,
+      "value": 2829349,
+      "per_share": 484960,
+      "upside": 19.9
+     },
+     "bull": {
+      "g": 9.0,
+      "value": 3328935,
+      "per_share": 570591,
+      "upside": 41.1
+     }
+    },
+    "implied_g": 0.4,
+    "cycle": {
+     "position": "회복기",
+     "note": "밀·팜유 원가와 환율이 3분기를 정점으로 내려가고, 8월 가격 인상이 4분기부터 반영되는 원가 사이클 회복 구간이에요. 국내는 가격 규제로 이익률이 낮게 묶이지만 해외 비중이 커지며 정상 이익률 자체가 조금씩 올라가요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -6724,
+     "excess_value": -5070
+    },
+    "net_cash_added": 410511
+   }
   },
   "003230": {
    "name": "삼양식품",
    "group": "라면",
-   "cycle": {
-    "position": "상승기",
-    "note": "원가 사이클과 무관하게 해외 수요가 커지는 구조적 성장 국면이에요. 현재 이익률(순이익률 약 19%)은 증설 전 공급 부족이 만든 높은 수준이라, 증설과 경쟁이 진행되면 내려온다고 보고 초과 이익은 2~3년만 반영했어요.",
-    "basis": "정상 순이익률을 16%로 잡았어요(과거 10년 평균 8~9%는 불닭 이전 구조라 쓰지 않았어요). 증설 투자가 이어져 현금 전환율은 0.6으로 낮췄어요"
+   "ttm": {
+    "rev": 2754410,
+    "op": 623426,
+    "ni": 487603,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 9.9,
+    "margin_range": [
+     5.1,
+     16.6
+    ],
+    "trend_rev": 2243514,
+    "ttm_rev": 2754410,
+    "norm_ni": 221191,
+    "trend_g": 23.2
+   },
+   "price": 1180000,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 8888955,
+   "shares": 7533013,
+   "equity": 1530797,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 34899,
+   "dividend_yield": null,
+   "per": 18.2,
+   "roe": 31.9,
+   "pbr": 5.81,
+   "dcf": {
+    "E1": 359000,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "정상 순이익률을 16%로 잡았어요(과거 10년 평균 8~9%는 불닭 이전 구조라 쓰지 않았어요). 증설 투자가 이어져 현금 전환율은 0.6으로 낮췄어요",
+    "fwd_per": 24.8,
+    "norm_per": 24.8,
+    "scenarios": {
+     "bear": {
+      "g": 5.0,
+      "value": 3456165,
+      "per_share": 458802,
+      "upside": -61.1
+     },
+     "base": {
+      "g": 12.0,
+      "value": 4688373,
+      "per_share": 622377,
+      "upside": -47.3
+     },
+     "bull": {
+      "g": 18.0,
+      "value": 6083240,
+      "per_share": 807544,
+      "upside": -31.6
+     }
+    },
+    "implied_g": 26.9,
+    "cycle": {
+     "position": "상승기",
+     "note": "원가 사이클과 무관하게 해외 수요가 커지는 구조적 성장 국면이에요. 현재 이익률(순이익률 약 19%)은 증설 전 공급 부족이 만든 높은 수준이라, 증설과 경쟁이 진행되면 내려온다고 보고 초과 이익은 2~3년만 반영했어요.",
+     "path": [
+      1.0,
+      0.7,
+      0.3
+     ],
+     "excess": 128603,
+     "excess_value": 133146
+    },
+    "net_cash_added": 34899
+   }
   },
   "271560": {
    "name": "오리온",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "회복기",
-    "note": "코코아·유지 원가가 2024~26년 높게 유지돼 이익률이 정점(2023~24년)보다 낮아진 원가 사이클 후반이에요. 원가가 내려오면 이익률이 회복될 여지가 있어 부족 이익은 1~2년 뒤 메워진다고 봤어요.",
-    "basis": "정상 순이익률 12%(과거 10년 평균 수준)를 썼어요. 순현금이 많아 따로 더했어요"
+   "ttm": {
+    "rev": 3577445,
+    "op": 603475,
+    "ni": 419179,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 11.3,
+    "margin_range": [
+     6.8,
+     16.9
+    ],
+    "trend_rev": 3774331,
+    "ttm_rev": 3577445,
+    "norm_ni": 425559,
+    "trend_g": 11.5
+   },
+   "price": 119400,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 4719737,
+   "shares": 39528788,
+   "equity": 4065553,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 708297,
+   "dividend_yield": null,
+   "per": 11.3,
+   "roe": 10.3,
+   "pbr": 1.16,
+   "dcf": {
+    "E1": 452900,
+    "r": 8.5,
+    "c": 0.7,
+    "note": "정상 순이익률 12%(과거 10년 평균 수준)를 썼어요. 순현금이 많아 따로 더했어요",
+    "fwd_per": 10.4,
+    "norm_per": 10.4,
+    "scenarios": {
+     "bear": {
+      "g": 1.0,
+      "value": 5189560,
+      "per_share": 131286,
+      "upside": 10.0
+     },
+     "base": {
+      "g": 5.0,
+      "value": 6125588,
+      "per_share": 154965,
+      "upside": 29.8
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 6947888,
+      "per_share": 175768,
+      "upside": 47.2
+     }
+    },
+    "implied_g": -1.3,
+    "cycle": {
+     "position": "회복기",
+     "note": "코코아·유지 원가가 2024~26년 높게 유지돼 이익률이 정점(2023~24년)보다 낮아진 원가 사이클 후반이에요. 원가가 내려오면 이익률이 회복될 여지가 있어 부족 이익은 1~2년 뒤 메워진다고 봤어요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -33721,
+     "excess_value": -25425
+    },
+    "net_cash_added": 708297
+   }
   },
   "001800": {
    "name": "오리온홀딩스",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "회복기",
-    "note": "오리온의 원가 사이클을 따라가요.",
-    "basis": "지배주주 순이익의 사이클 평균을 쓰고, 지주회사는 배당으로만 현금을 받아 현금 전환율을 0.4로 낮춰 지주 할인을 반영했어요"
+   "ttm": {
+    "rev": 3753727,
+    "op": 572641,
+    "ni": 140367,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 4.3,
+    "margin_range": [
+     2.3,
+     1312.9
+    ],
+    "trend_rev": 4363231,
+    "ttm_rev": 3753727,
+    "norm_ni": 189242,
+    "trend_g": 18.6
+   },
+   "price": 24600,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1479854,
+   "shares": 60156652,
+   "equity": 2548133,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 503291,
+   "dividend_yield": null,
+   "per": 10.5,
+   "roe": 5.5,
+   "pbr": 0.58,
+   "dcf": {
+    "E1": 189200,
+    "r": 9.5,
+    "c": 0.4,
+    "note": "지배주주 순이익의 사이클 평균을 쓰고, 지주회사는 배당으로만 현금을 받아 현금 전환율을 0.4로 낮춰 지주 할인을 반영했어요",
+    "fwd_per": 7.8,
+    "norm_per": 7.8,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 899972,
+      "per_share": 14960,
+      "upside": -39.2
+     },
+     "base": {
+      "g": 4.0,
+      "value": 1085002,
+      "per_share": 18036,
+      "upside": -26.7
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 1247382,
+      "per_share": 20736,
+      "upside": -15.7
+     }
+    },
+    "implied_g": 10.7,
+    "cycle": {
+     "position": "회복기",
+     "note": "오리온의 원가 사이클을 따라가요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -48833,
+     "excess_value": -20787
+    },
+    "net_cash_added": 0
+   }
   },
   "280360": {
    "name": "롯데웰푸드",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "회복기",
-    "note": "코코아·유지 원가 급등으로 이익이 바닥(2024~25년)을 찍고 회복하는 국면이에요. 최근 4개 분기 이익은 정상보다 낮아 부족분이 1~2년 안에 메워진다고 봤어요.",
-    "basis": "정상 순이익률 2.5%(합병 후 효율화 반영, 코코아 폭등기 제외)를 썼어요. 공장 통합 투자가 이어져 현금 전환율은 0.6이에요"
+   "ttm": {
+    "rev": 4359599,
+    "op": 159298,
+    "ni": 85563,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 1.6,
+    "margin_range": [
+     0.5,
+     2.1
+    ],
+    "trend_rev": 5608770,
+    "ttm_rev": 4359599,
+    "norm_ni": 87251,
+    "trend_g": 23.4
+   },
+   "price": 124500,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1100738,
+   "shares": 8841267,
+   "equity": 2266122,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1021671,
+   "dividend_yield": null,
+   "per": 12.9,
+   "roe": 3.8,
+   "pbr": 0.49,
+   "net_debt_levered": -1021671,
+   "dcf": {
+    "E1": 140200,
+    "r": 8.5,
+    "c": 0.6,
+    "note": "정상 순이익률 2.5%(합병 후 효율화 반영, 코코아 폭등기 제외)를 썼어요. 공장 통합 투자가 이어져 현금 전환율은 0.6이에요",
+    "fwd_per": 7.9,
+    "norm_per": 7.9,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 1142054,
+      "per_share": 129173,
+      "upside": 3.8
+     },
+     "base": {
+      "g": 4.0,
+      "value": 1386919,
+      "per_share": 156869,
+      "upside": 26.0
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 1602244,
+      "per_share": 181223,
+      "upside": 45.6
+     }
+    },
+    "implied_g": -0.8,
+    "cycle": {
+     "position": "회복기",
+     "note": "코코아·유지 원가 급등으로 이익이 바닥(2024~25년)을 찍고 회복하는 국면이에요. 최근 4개 분기 이익은 정상보다 낮아 부족분이 1~2년 안에 메워진다고 봤어요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -54637,
+     "excess_value": -35310
+    },
+    "net_cash_added": 0
+   }
   },
   "101530": {
    "name": "해태제과식품",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "회복기",
-    "note": "원가 상승을 가격에 늦게 넘긴 원가 사이클 후반이에요. 10월 가격 인상으로 회복이 시작돼요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 그대로 썼어요. 성장 동력이 약해 기준 성장률을 2%로 낮췄어요"
+   "ttm": {
+    "rev": 636513,
+    "op": 38537,
+    "ni": 21789,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.6,
+    "margin_range": [
+     -3.9,
+     5.0
+    ],
+    "trend_rev": 588184,
+    "ttm_rev": 636513,
+    "norm_ni": 9577,
+    "trend_g": -2.4
+   },
+   "price": 4745,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 125826,
+   "shares": 26517662,
+   "equity": 313004,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -194993,
+   "dividend_yield": null,
+   "per": 5.8,
+   "roe": 7.0,
+   "pbr": 0.4,
+   "net_debt_levered": -194993,
+   "dcf": {
+    "E1": 9600,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 그대로 썼어요. 성장 동력이 약해 기준 성장률을 2%로 낮췄어요",
+    "fwd_per": 13.1,
+    "norm_per": 13.1,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 74726,
+      "per_share": 2818,
+      "upside": -40.6
+     },
+     "base": {
+      "g": 2.0,
+      "value": 84583,
+      "per_share": 3190,
+      "upside": -32.8
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 91945,
+      "per_share": 3467,
+      "upside": -26.9
+     }
+    },
+    "implied_g": 11.4,
+    "cycle": {
+     "position": "회복기",
+     "note": "원가 상승을 가격에 늦게 넘긴 원가 사이클 후반이에요. 10월 가격 인상으로 회복이 시작돼요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 12189,
+     "excess_value": 7783
+    },
+    "net_cash_added": 0
+   }
   },
   "264900": {
    "name": "크라운제과",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "중립",
-    "note": "원가 사이클 후반이지만 이익 변동폭이 작은 편이라 중립으로 봤어요.",
-    "basis": "과거 10년 평균 이익을 그대로 썼어요"
+   "ttm": {
+    "rev": 439939,
+    "op": 11996,
+    "ni": 10226,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 4.2,
+    "margin_range": [
+     2.8,
+     6.5
+    ],
+    "trend_rev": 450070,
+    "ttm_rev": 439939,
+    "norm_ni": 18837,
+    "trend_g": 2.7
+   },
+   "price": 7060,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 84834,
+   "shares": 12016169,
+   "equity": 230287,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 12243,
+   "dividend_yield": null,
+   "per": 8.3,
+   "roe": 4.4,
+   "pbr": 0.37,
+   "dcf": {
+    "E1": 18800,
+    "r": 9.5,
+    "c": 0.65,
+    "note": "과거 10년 평균 이익을 그대로 썼어요",
+    "fwd_per": 4.5,
+    "norm_per": 4.5,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 152415,
+      "per_share": 12684,
+      "upside": 79.7
+     },
+     "base": {
+      "g": 2.0,
+      "value": 173054,
+      "per_share": 14402,
+      "upside": 104.0
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 188469,
+      "per_share": 15685,
+      "upside": 122.2
+     }
+    },
+    "implied_g": -15.6,
+    "cycle": {
+     "position": "중립",
+     "note": "원가 사이클 후반이지만 이익 변동폭이 작은 편이라 중립으로 봤어요.",
+     "path": [],
+     "excess": -8574,
+     "excess_value": 0
+    },
+    "net_cash_added": 12243
+   }
   },
   "005180": {
    "name": "빙그레",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "중립",
-    "note": "빙과 가격 정상화로 이익 체질이 2023년부터 좋아졌어요. 계절성 외에 큰 사이클은 없어요.",
-    "basis": "빙과 2강 체제 이후(2023년~) 이익 체질을 반영해 정상 순이익률 5.5%를 썼어요(과거 10년 평균 3%대보다 높게)"
+   "ttm": {
+    "rev": 1525924,
+    "op": 131558,
+    "ni": 87154,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 3.8,
+    "margin_range": [
+     -1.7,
+     7.1
+    ],
+    "trend_rev": 1579533,
+    "ttm_rev": 1525924,
+    "norm_ni": 60667,
+    "trend_g": 7.9
+   },
+   "price": 81600,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 721491,
+   "shares": 8841801,
+   "equity": 784868,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 194565,
+   "dividend_yield": null,
+   "per": 8.3,
+   "roe": 11.1,
+   "pbr": 0.92,
+   "dcf": {
+    "E1": 86900,
+    "r": 9.0,
+    "c": 0.7,
+    "note": "빙과 2강 체제 이후(2023년~) 이익 체질을 반영해 정상 순이익률 5.5%를 썼어요(과거 10년 평균 3%대보다 높게)",
+    "fwd_per": 8.3,
+    "norm_per": 8.3,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 950889,
+      "per_share": 107545,
+      "upside": 31.8
+     },
+     "base": {
+      "g": 3.0,
+      "value": 1064152,
+      "per_share": 120355,
+      "upside": 47.5
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 1193994,
+      "per_share": 135040,
+      "upside": 65.5
+     }
+    },
+    "implied_g": -7.8,
+    "cycle": {
+     "position": "중립",
+     "note": "빙과 가격 정상화로 이익 체질이 2023년부터 좋아졌어요. 계절성 외에 큰 사이클은 없어요.",
+     "path": [],
+     "excess": 254,
+     "excess_value": 0
+    },
+    "net_cash_added": 194565
+   }
   },
   "005610": {
    "name": "SPC삼립",
    "group": "제과·빙과·제빵",
-   "cycle": {
-    "position": "바닥권",
-    "note": "원가 상승과 그룹 리스크로 이익이 바닥이에요. 가격 인상으로 1~2년 안에 일부 회복된다고 봤어요.",
-    "basis": "정상 순이익률 1.2%(과거 평균보다 조금 낮게, 그룹 리스크 반영)를 썼어요"
+   "ttm": {
+    "rev": 3392197,
+    "op": 9705,
+    "ni": -9336,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.5,
+    "margin_range": [
+     -0.5,
+     2.6
+    ],
+    "trend_rev": 3745520,
+    "ttm_rev": 3392197,
+    "norm_ni": 55959,
+    "trend_g": 6.9
+   },
+   "price": 38050,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 308404,
+   "shares": 8105223,
+   "equity": 465535,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -112445,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -2.0,
+   "pbr": 0.66,
+   "net_debt_levered": -112445,
+   "dcf": {
+    "E1": 44900,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "정상 순이익률 1.2%(과거 평균보다 조금 낮게, 그룹 리스크 반영)를 썼어요",
+    "fwd_per": 6.9,
+    "norm_per": 6.9,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 240101,
+      "per_share": 29623,
+      "upside": -22.1
+     },
+     "base": {
+      "g": 1.0,
+      "value": 293130,
+      "per_share": 36166,
+      "upside": -5.0
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 339748,
+      "per_share": 41917,
+      "upside": 10.2
+     }
+    },
+    "implied_g": 2.0,
+    "cycle": {
+     "position": "바닥권",
+     "note": "원가 상승과 그룹 리스크로 이익이 바닥이에요. 가격 인상으로 1~2년 안에 일부 회복된다고 봤어요.",
+     "path": [
+      0.7,
+      0.3
+     ],
+     "excess": -54236,
+     "excess_value": -28776
+    },
+    "net_cash_added": 0
+   }
   },
   "267980": {
    "name": "매일유업",
    "group": "유가공",
-   "cycle": {
-    "position": "중립",
-    "note": "흰우유는 구조적 축소지만 믹스 개선으로 이익이 안정적이에요.",
-    "basis": "과거 10년 평균 이익을 썼어요(믹스 개선 효과는 기준 성장률에 반영)"
+   "ttm": {
+    "rev": 1876607,
+    "op": 73819,
+    "ni": 66394,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 3.7,
+    "margin_range": [
+     0.9,
+     4.8
+    ],
+    "trend_rev": 2029564,
+    "ttm_rev": 1876607,
+    "norm_ni": 74299,
+    "trend_g": 7.3
+   },
+   "price": 33600,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 245885,
+   "shares": 7318011,
+   "equity": 657564,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 97933,
+   "dividend_yield": null,
+   "per": 3.7,
+   "roe": 10.1,
+   "pbr": 0.37,
+   "dcf": {
+    "E1": 74300,
+    "r": 9.0,
+    "c": 0.65,
+    "note": "과거 10년 평균 이익을 썼어요(믹스 개선 효과는 기준 성장률에 반영)",
+    "fwd_per": 3.3,
+    "norm_per": 3.3,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 709982,
+      "per_share": 97018,
+      "upside": 188.7
+     },
+     "base": {
+      "g": 3.0,
+      "value": 801639,
+      "per_share": 109543,
+      "upside": 226.0
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 906713,
+      "per_share": 123902,
+      "upside": 268.8
+     }
+    },
+    "implied_g": -30.0,
+    "cycle": {
+     "position": "중립",
+     "note": "흰우유는 구조적 축소지만 믹스 개선으로 이익이 안정적이에요.",
+     "path": [],
+     "excess": -7906,
+     "excess_value": 0
+    },
+    "net_cash_added": 97933
+   }
   },
   "005990": {
    "name": "매일홀딩스",
    "group": "유가공",
-   "cycle": {
-    "position": "중립",
-    "note": "자회사 매일유업을 따라가요.",
-    "basis": "사이클 평균 이익에 지주 할인(현금 전환율 0.45)을 적용했어요"
+   "ttm": {
+    "rev": 2243920,
+    "op": 78404,
+    "ni": 37862,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.4,
+    "margin_range": [
+     0.0,
+     2.5
+    ],
+    "trend_rev": 2256817,
+    "ttm_rev": 2243920,
+    "norm_ni": 30826,
+    "trend_g": 4.5
+   },
+   "price": 9890,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 122203,
+   "shares": 12356222,
+   "equity": 443742,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 161161,
+   "dividend_yield": null,
+   "per": 3.2,
+   "roe": 8.5,
+   "pbr": 0.28,
+   "dcf": {
+    "E1": 30800,
+    "r": 9.5,
+    "c": 0.45,
+    "note": "사이클 평균 이익에 지주 할인(현금 전환율 0.45)을 적용했어요",
+    "fwd_per": 4.0,
+    "norm_per": 4.0,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 168627,
+      "per_share": 13647,
+      "upside": 38.0
+     },
+     "base": {
+      "g": 3.0,
+      "value": 193457,
+      "per_share": 15657,
+      "upside": 58.3
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 211988,
+      "per_share": 17156,
+      "upside": 73.5
+     }
+    },
+    "implied_g": -7.1,
+    "cycle": {
+     "position": "중립",
+     "note": "자회사 매일유업을 따라가요.",
+     "path": [],
+     "excess": 7062,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "003920": {
    "name": "남양유업",
    "group": "유가공",
-   "cycle": {
-    "position": "회복기",
-    "note": "구조적 문제(오너 리스크) 해소 뒤 이익이 정상 수준으로 올라오는 중이에요.",
-    "basis": "정상 순이익률 1.5%(한앤코 체제 비용 구조 기준)를 썼어요. 적자였던 과거 평균은 쓰지 않았어요"
+   "ttm": {
+    "rev": 949661,
+    "op": 5970,
+    "ni": 12862,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": -1.8,
+    "margin_range": [
+     -8.1,
+     3.0
+    ],
+    "trend_rev": 902080,
+    "ttm_rev": 949661,
+    "norm_ni": -16094,
+    "trend_g": -2.5
+   },
+   "price": 41550,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 284310,
+   "shares": 7450310,
+   "equity": 925339,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 21103,
+   "dividend_yield": null,
+   "per": 22.1,
+   "roe": 1.4,
+   "pbr": 0.31,
+   "dcf": {
+    "E1": 13500,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "정상 순이익률 1.5%(한앤코 체제 비용 구조 기준)를 썼어요. 적자였던 과거 평균은 쓰지 않았어요",
+    "fwd_per": 21.1,
+    "norm_per": 21.1,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 102612,
+      "per_share": 13773,
+      "upside": -63.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 128037,
+      "per_share": 17186,
+      "upside": -55.0
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 149213,
+      "per_share": 20028,
+      "upside": -47.5
+     }
+    },
+    "implied_g": 24.3,
+    "cycle": {
+     "position": "회복기",
+     "note": "구조적 문제(오너 리스크) 해소 뒤 이익이 정상 수준으로 올라오는 중이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -638,
+     "excess_value": -405
+    },
+    "net_cash_added": 21103
+   }
   },
   "005300": {
    "name": "롯데칠성",
    "group": "음료·주류",
-   "cycle": {
-    "position": "하강기",
-    "note": "내수 음료·주류 수요가 줄고 원가가 높은 하강기예요.",
-    "basis": "정상 순이익률 2.0%(필리핀 연결 후 구조 기준)를 썼어요. 설비 투자가 커 현금 전환율 0.55예요"
+   "ttm": {
+    "rev": 4038934,
+    "op": 183417,
+    "ni": 65383,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.3,
+    "margin_range": [
+     -5.9,
+     5.9
+    ],
+    "trend_rev": 3885706,
+    "ttm_rev": 4038934,
+    "norm_ni": 87679,
+    "trend_g": 7.0
+   },
+   "price": 109300,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1098923,
+   "shares": 10054194,
+   "equity": 1555901,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1327385,
+   "dividend_yield": null,
+   "per": 16.8,
+   "roe": 4.2,
+   "pbr": 0.71,
+   "net_debt_levered": -1327385,
+   "dcf": {
+    "E1": 77700,
+    "r": 9.5,
+    "c": 0.55,
+    "note": "정상 순이익률 2.0%(필리핀 연결 후 구조 기준)를 썼어요. 설비 투자가 커 현금 전환율 0.55예요",
+    "fwd_per": 14.1,
+    "norm_per": 14.1,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 467248,
+      "per_share": 46473,
+      "upside": -57.5
+     },
+     "base": {
+      "g": 2.0,
+      "value": 562591,
+      "per_share": 55956,
+      "upside": -48.8
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 646419,
+      "per_share": 64293,
+      "upside": -41.2
+     }
+    },
+    "implied_g": 16.6,
+    "cycle": {
+     "position": "하강기",
+     "note": "내수 음료·주류 수요가 줄고 원가가 높은 하강기예요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -12317,
+     "excess_value": -7209
+    },
+    "net_cash_added": 0
+   }
   },
   "000080": {
    "name": "하이트진로",
    "group": "음료·주류",
-   "cycle": {
-    "position": "하강기",
-    "note": "국내 주류 시장이 구조적으로 줄고 경기 둔화가 겹친 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 쓰고, 시장 축소를 반영해 기준 성장률을 0%로 뒀어요. 배당 성향이 높아 현금 전환율 0.75예요"
+   "ttm": {
+    "rev": 2448657,
+    "op": 166028,
+    "ni": 47076,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.2,
+    "margin_range": [
+     -2.1,
+     3.8
+    ],
+    "trend_rev": 2635561,
+    "ttm_rev": 2448657,
+    "norm_ni": 57273,
+    "trend_g": 3.7
+   },
+   "price": 16470,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1130656,
+   "shares": 68649427,
+   "equity": 1155060,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -650269,
+   "dividend_yield": null,
+   "per": 24.0,
+   "roe": 4.1,
+   "pbr": 0.98,
+   "net_debt_levered": -650269,
+   "dcf": {
+    "E1": 57300,
+    "r": 8.5,
+    "c": 0.75,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 쓰고, 시장 축소를 반영해 기준 성장률을 0%로 뒀어요. 배당 성향이 높아 현금 전환율 0.75예요",
+    "fwd_per": 19.7,
+    "norm_per": 19.7,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 513575,
+      "per_share": 7481,
+      "upside": -54.6
+     },
+     "base": {
+      "g": 0.0,
+      "value": 593230,
+      "per_share": 8641,
+      "upside": -47.5
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 684861,
+      "per_share": 9976,
+      "upside": -39.4
+     }
+    },
+    "implied_g": 13.6,
+    "cycle": {
+     "position": "하강기",
+     "note": "국내 주류 시장이 구조적으로 줄고 경기 둔화가 겹친 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -10224,
+     "excess_value": -8259
+    },
+    "net_cash_added": 0
+   }
   },
   "000140": {
    "name": "하이트진로홀딩스",
    "group": "음료·주류",
-   "cycle": {
-    "position": "하강기",
-    "note": "하이트진로를 따라가요.",
-    "basis": "사이클 평균 이익에 지주 할인(현금 전환율 0.45)을 적용했어요"
+   "ttm": {
+    "rev": 2435537,
+    "op": 171201,
+    "ni": -2541,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 9,
+    "margin": 0.5,
+    "margin_range": [
+     -1.1,
+     2.9
+    ],
+    "trend_rev": 2622731,
+    "ttm_rev": 2435537,
+    "norm_ni": 12841,
+    "trend_g": 3.7
+   },
+   "price": 7500,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 160253,
+   "shares": 21367004,
+   "equity": 580408,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1271629,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -0.4,
+   "pbr": 0.28,
+   "dcf": {
+    "E1": 12800,
+    "r": 9.5,
+    "c": 0.45,
+    "note": "사이클 평균 이익에 지주 할인(현금 전환율 0.45)을 적용했어요",
+    "fwd_per": 12.5,
+    "norm_per": 12.5,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 53745,
+      "per_share": 2515,
+      "upside": -66.5
+     },
+     "base": {
+      "g": 0.0,
+      "value": 62732,
+      "per_share": 2936,
+      "upside": -60.9
+     },
+     "bull": {
+      "g": 2.0,
+      "value": 69453,
+      "per_share": 3250,
+      "upside": -56.7
+     }
+    },
+    "implied_g": 19.3,
+    "cycle": {
+     "position": "하강기",
+     "note": "하이트진로를 따라가요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -15341,
+     "excess_value": -7347
+    },
+    "net_cash_added": 0
+   }
   },
   "033920": {
    "name": "무학",
    "group": "음료·주류",
-   "cycle": {
-    "position": "하강기",
-    "note": "지역 소주 시장이 구조적으로 줄어요.",
-    "basis": "과거 10년 평균 이익의 80%를 썼어요(시장 축소 반영)"
+   "ttm": {
+    "rev": 141284,
+    "op": 6146,
+    "ni": 33533,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 14.4,
+    "margin_range": [
+     -12.6,
+     44.6
+    ],
+    "trend_rev": 126774,
+    "ttm_rev": 141284,
+    "norm_ni": 18193,
+    "trend_g": -5.8
+   },
+   "price": 7260,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 199119,
+   "shares": 27426924,
+   "equity": 622191,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -79073,
+   "dividend_yield": null,
+   "per": 5.9,
+   "roe": 5.4,
+   "pbr": 0.32,
+   "net_debt_levered": -79073,
+   "dcf": {
+    "E1": 14600,
+    "r": 9.5,
+    "c": 0.7,
+    "note": "과거 10년 평균 이익의 80%를 썼어요(시장 축소 반영)",
+    "fwd_per": 13.6,
+    "norm_per": 13.6,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 117661,
+      "per_share": 4290,
+      "upside": -40.9
+     },
+     "base": {
+      "g": -1.0,
+      "value": 132882,
+      "per_share": 4845,
+      "upside": -33.3
+     },
+     "bull": {
+      "g": 2.0,
+      "value": 150371,
+      "per_share": 5483,
+      "upside": -24.5
+     }
+    },
+    "implied_g": 8.7,
+    "cycle": {
+     "position": "하강기",
+     "note": "지역 소주 시장이 구조적으로 줄어요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 18933,
+     "excess_value": 14104
+    },
+    "net_cash_added": 0
+   }
   },
   "000890": {
    "name": "보해양조",
    "group": "음료·주류",
+   "ttm": {
+    "rev": 95745,
+    "op": 3681,
+    "ni": 3576,
+    "period": "2025Q3~2026Q2"
+   },
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": -3.4,
+    "margin_range": [
+     -34.0,
+     10.8
+    ],
+    "trend_rev": 87242,
+    "ttm_rev": 95745,
+    "norm_ni": -2960,
+    "trend_g": -0.6
+   },
    "cycle": {
     "position": "바닥권",
     "note": "지역 소주 축소로 이익이 바닥이에요.",
     "basis": "과거 평균 이익의 70%를 썼어요(적자 반복 반영)"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
+   "price": 1190,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 32521,
+   "shares": 27328490,
+   "equity": 91623,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -15672,
+   "dividend_yield": null,
+   "per": 9.1,
+   "roe": 3.9,
+   "pbr": 0.35
   },
   "043650": {
    "name": "국순당",
    "group": "음료·주류",
-   "cycle": {
-    "position": "중립",
-    "note": "큰 사이클은 없어요.",
-    "basis": "과거 평균 이익을 썼어요"
+   "ttm": {
+    "rev": 65536,
+    "op": -2385,
+    "ni": 4203,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 5.2,
+    "margin_range": [
+     -6.2,
+     35.3
+    ],
+    "trend_rev": 68174,
+    "ttm_rev": 65536,
+    "norm_ni": 3527,
+    "trend_g": -0.1
+   },
+   "price": 3465,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 54541,
+   "shares": 15740466,
+   "equity": 237748,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 46599,
+   "dividend_yield": null,
+   "per": 13.0,
+   "roe": 1.8,
+   "pbr": 0.23,
+   "dcf": {
+    "E1": 3500,
+    "r": 10.0,
+    "c": 0.7,
+    "note": "과거 평균 이익을 썼어요",
+    "fwd_per": 15.6,
+    "norm_per": 15.6,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 65365,
+      "per_share": 4153,
+      "upside": 19.8
+     },
+     "base": {
+      "g": 2.0,
+      "value": 69069,
+      "per_share": 4388,
+      "upside": 26.6
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 72323,
+      "per_share": 4595,
+      "upside": 32.6
+     }
+    },
+    "implied_g": -21.9,
+    "cycle": {
+     "position": "중립",
+     "note": "큰 사이클은 없어요.",
+     "path": [],
+     "excess": 703,
+     "excess_value": 0
+    },
+    "net_cash_added": 46599
+   }
   },
   "189980": {
    "name": "흥국에프엔비",
    "group": "음료·주류",
-   "cycle": {
-    "position": "중립",
-    "note": "큰 사이클은 없어요.",
-    "basis": "과거 평균 이익을 썼어요. 소형주 r 11%"
+   "ttm": {
+    "rev": 96643,
+    "op": 5966,
+    "ni": 4419,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 7.8,
+    "margin_range": [
+     5.0,
+     12.3
+    ],
+    "trend_rev": 113110,
+    "ttm_rev": 96643,
+    "norm_ni": 8874,
+    "trend_g": 11.5
+   },
+   "price": 1008,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 40459,
+   "shares": 40137827,
+   "equity": 101648,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 4409,
+   "dividend_yield": null,
+   "per": 9.2,
+   "roe": 4.3,
+   "pbr": 0.4,
+   "dcf": {
+    "E1": 8900,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "과거 평균 이익을 썼어요. 소형주 r 11%",
+    "fwd_per": 4.5,
+    "norm_per": 4.5,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 53749,
+      "per_share": 1339,
+      "upside": 32.8
+     },
+     "base": {
+      "g": 3.0,
+      "value": 65782,
+      "per_share": 1639,
+      "upside": 62.6
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 74397,
+      "per_share": 1854,
+      "upside": 83.9
+     }
+    },
+    "implied_g": -9.3,
+    "cycle": {
+     "position": "중립",
+     "note": "큰 사이클은 없어요.",
+     "path": [],
+     "excess": -4481,
+     "excess_value": 0
+    },
+    "net_cash_added": 4409
+   }
   },
   "222980": {
    "name": "한국맥널티",
    "group": "음료·주류",
-   "cycle": {
-    "position": "바닥권",
-    "note": "원두 원가 급등으로 이익이 바닥이에요.",
-    "basis": "과거 평균 이익을 썼어요"
+   "ttm": {
+    "rev": 97261,
+    "op": -1217,
+    "ni": -415,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.2,
+    "margin_range": [
+     -4.6,
+     8.9
+    ],
+    "trend_rev": 103301,
+    "ttm_rev": 97261,
+    "norm_ni": 1262,
+    "trend_g": 14.3
+   },
+   "price": 1978,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 21205,
+   "shares": 10720667,
+   "equity": 40054,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -7345,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -1.0,
+   "pbr": 0.53,
+   "net_debt_levered": -7345,
+   "dcf": {
+    "E1": 1300,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "과거 평균 이익을 썼어요",
+    "fwd_per": 16.3,
+    "norm_per": 16.3,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 6380,
+      "per_share": 595,
+      "upside": -69.9
+     },
+     "base": {
+      "g": 3.0,
+      "value": 8155,
+      "per_share": 761,
+      "upside": -61.5
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 9426,
+      "per_share": 879,
+      "upside": -55.5
+     }
+    },
+    "implied_g": 23.6,
+    "cycle": {
+     "position": "바닥권",
+     "note": "원두 원가 급등으로 이익이 바닥이에요.",
+     "path": [
+      0.7,
+      0.3
+     ],
+     "excess": -1715,
+     "excess_value": -899
+    },
+    "net_cash_added": 0
+   }
   },
   "145990": {
    "name": "삼양사",
    "group": "소재(제분·제당·전분)",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물·원당 원가 상승기에 담합 제재가 겹쳐 이익이 줄어드는 구간이에요.",
-    "basis": "과거 평균 이익의 85%를 썼어요(담합 제재 후 범용 소재 마진 하향)"
+   "ttm": {
+    "rev": 2582537,
+    "op": 113267,
+    "ni": -313464,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.6,
+    "margin_range": [
+     -12.2,
+     4.5
+    ],
+    "trend_rev": 2717798,
+    "ttm_rev": 2582537,
+    "norm_ni": 71770,
+    "trend_g": 3.4
+   },
+   "price": 43350,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 419036,
+   "shares": 9666350,
+   "equity": 1641773,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -330895,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -19.1,
+   "pbr": 0.26,
+   "net_debt_levered": -330895,
+   "ttm_news": {
+    "period": "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)",
+    "ni": 79200
+   },
+   "dcf": {
+    "E1": 61000,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "과거 평균 이익의 85%를 썼어요(담합 제재 후 범용 소재 마진 하향)",
+    "fwd_per": 6.9,
+    "norm_per": 6.9,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 436989,
+      "per_share": 45207,
+      "upside": 4.3
+     },
+     "base": {
+      "g": 2.0,
+      "value": 499621,
+      "per_share": 51687,
+      "upside": 19.2
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 571415,
+      "per_share": 59114,
+      "upside": 36.4
+     }
+    },
+    "implied_g": -1.9,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물·원당 원가 상승기에 담합 제재가 겹쳐 이익이 줄어드는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 18200,
+     "excess_value": 11621
+    },
+    "net_cash_added": 0
+   }
   },
   "001130": {
    "name": "대한제분",
    "group": "소재(제분·제당·전분)",
-   "cycle": {
-    "position": "하강기",
-    "note": "원맥 가격 상승기 초반이라 마진이 눌리는 구간이에요.",
-    "basis": "과거 평균 이익의 80%를 썼어요(제재 후 마진 하향)"
+   "ttm": {
+    "rev": 1383602,
+    "op": 45642,
+    "ni": -40478,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 4.0,
+    "margin_range": [
+     -1.8,
+     7.9
+    ],
+    "trend_rev": 1511635,
+    "ttm_rev": 1383602,
+    "norm_ni": 60046,
+    "trend_g": 7.2
+   },
+   "price": 10560,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 174225,
+   "shares": 16498540,
+   "equity": 1020273,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 126497,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -4.0,
+   "pbr": 0.17,
+   "dcf": {
+    "E1": 48000,
+    "r": 9.0,
+    "c": 0.65,
+    "note": "과거 평균 이익의 80%를 썼어요(제재 후 마진 하향)",
+    "fwd_per": 3.6,
+    "norm_per": 3.6,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 415431,
+      "per_share": 25180,
+      "upside": 138.4
+     },
+     "base": {
+      "g": 1.0,
+      "value": 467955,
+      "per_share": 28363,
+      "upside": 168.6
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 507239,
+      "per_share": 30744,
+      "upside": 191.1
+     }
+    },
+    "implied_g": -28.4,
+    "cycle": {
+     "position": "하강기",
+     "note": "원맥 가격 상승기 초반이라 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -88478,
+     "excess_value": -61572
+    },
+    "net_cash_added": 126497
+   }
   },
   "008040": {
    "name": "사조동아원",
    "group": "소재(제분·제당·전분)",
-   "cycle": {
-    "position": "하강기",
-    "note": "원맥 상승·제재 구간이에요.",
-    "basis": "과거 평균 이익의 75%를 썼어요"
+   "ttm": {
+    "rev": 666844,
+    "op": 32071,
+    "ni": -164276,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.7,
+    "margin_range": [
+     -20.4,
+     7.4
+    ],
+    "trend_rev": 698106,
+    "ttm_rev": 666844,
+    "norm_ni": 11674,
+    "trend_g": 7.1
+   },
+   "price": 6870,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 96830,
+   "shares": 14094619,
+   "equity": 111932,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -65750,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -146.8,
+   "pbr": 0.87,
+   "net_debt_levered": -65750,
+   "ttm_news": {
+    "period": "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)",
+    "ni": 22400
+   },
+   "dcf": {
+    "E1": 8800,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "과거 평균 이익의 75%를 썼어요",
+    "fwd_per": 11.0,
+    "norm_per": 11.0,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 61330,
+      "per_share": 4351,
+      "upside": -36.7
+     },
+     "base": {
+      "g": 0.0,
+      "value": 68943,
+      "per_share": 4891,
+      "upside": -28.8
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 77676,
+      "per_share": 5511,
+      "upside": -19.8
+     }
+    },
+    "implied_g": 8.4,
+    "cycle": {
+     "position": "하강기",
+     "note": "원맥 상승·제재 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 13600,
+     "excess_value": 8632
+    },
+    "net_cash_added": 0
+   }
   },
   "001790": {
    "name": "대한제당",
    "group": "소재(제분·제당·전분)",
-   "cycle": {
-    "position": "하강기",
-    "note": "원당 상승기예요.",
-    "basis": "과거 평균 이익의 80%를 썼어요"
+   "ttm": {
+    "rev": 1326736,
+    "op": 52463,
+    "ni": -83677,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.4,
+    "margin_range": [
+     -4.5,
+     2.4
+    ],
+    "trend_rev": 1356716,
+    "ttm_rev": 1326736,
+    "norm_ni": 19417,
+    "trend_g": 1.1
+   },
+   "price": 2735,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 235872,
+   "shares": 86241915,
+   "equity": 493106,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -86904,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -17.0,
+   "pbr": 0.48,
+   "net_debt_levered": -86904,
+   "ttm_news": {
+    "period": "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)",
+    "ni": 36700
+   },
+   "dcf": {
+    "E1": 15500,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "과거 평균 이익의 80%를 썼어요",
+    "fwd_per": 15.2,
+    "norm_per": 15.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 112175,
+      "per_share": 1301,
+      "upside": -52.4
+     },
+     "base": {
+      "g": 0.0,
+      "value": 126685,
+      "per_share": 1469,
+      "upside": -46.3
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 143345,
+      "per_share": 1662,
+      "upside": -39.2
+     }
+    },
+    "implied_g": 14.9,
+    "cycle": {
+     "position": "하강기",
+     "note": "원당 상승기예요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 21200,
+     "excess_value": 13537
+    },
+    "net_cash_added": 0
+   }
   },
   "007160": {
    "name": "사조산업",
    "group": "수산",
-   "cycle": {
-    "position": "중립",
-    "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요"
+   "ttm": {
+    "rev": 704717,
+    "op": 27122,
+    "ni": -102845,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 3.1,
+    "margin_range": [
+     -4.1,
+     10.4
+    ],
+    "trend_rev": 645240,
+    "ttm_rev": 704717,
+    "norm_ni": 19756,
+    "trend_g": -1.4
+   },
+   "price": 40200,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 201000,
+   "shares": 5000000,
+   "equity": 494373,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -366239,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -20.8,
+   "pbr": 0.41,
+   "net_debt_levered": -366239,
+   "dcf": {
+    "E1": 19800,
+    "r": 10.0,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요",
+    "fwd_per": 10.2,
+    "norm_per": 10.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 108689,
+      "per_share": 21738,
+      "upside": -45.9
+     },
+     "base": {
+      "g": 1.0,
+      "value": 130125,
+      "per_share": 26025,
+      "upside": -35.3
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 148969,
+      "per_share": 29794,
+      "upside": -25.9
+     }
+    },
+    "implied_g": 10.7,
+    "cycle": {
+     "position": "중립",
+     "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
+     "path": [],
+     "excess": -122645,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "006090": {
    "name": "사조오양",
    "group": "수산",
-   "cycle": {
-    "position": "중립",
-    "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요"
+   "ttm": {
+    "rev": 411000,
+    "op": 11286,
+    "ni": 10120,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 4.0,
+    "margin_range": [
+     2.3,
+     7.7
+    ],
+    "trend_rev": 420518,
+    "ttm_rev": 411000,
+    "norm_ni": 16945,
+    "trend_g": 4.3
+   },
+   "price": 7700,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 72555,
+   "shares": 9422736,
+   "equity": 253329,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -112889,
+   "dividend_yield": null,
+   "per": 7.2,
+   "roe": 4.0,
+   "pbr": 0.29,
+   "net_debt_levered": -112889,
+   "dcf": {
+    "E1": 16900,
+    "r": 10.0,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요",
+    "fwd_per": 4.3,
+    "norm_per": 4.3,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 92770,
+      "per_share": 9845,
+      "upside": 27.9
+     },
+     "base": {
+      "g": 1.0,
+      "value": 111066,
+      "per_share": 11787,
+      "upside": 53.1
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 127150,
+      "per_share": 13494,
+      "upside": 75.2
+     }
+    },
+    "implied_g": -8.5,
+    "cycle": {
+     "position": "중립",
+     "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
+     "path": [],
+     "excess": -6780,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "014710": {
    "name": "사조씨푸드",
    "group": "수산",
-   "cycle": {
-    "position": "중립",
-    "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요"
+   "ttm": {
+    "rev": 285090,
+    "op": 17581,
+    "ni": -32453,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 1.3,
+    "margin_range": [
+     -13.1,
+     6.3
+    ],
+    "trend_rev": 194419,
+    "ttm_rev": 285090,
+    "norm_ni": 2575,
+    "trend_g": -5.7
+   },
+   "price": 9650,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 166159,
+   "shares": 17218543,
+   "equity": 197128,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -146573,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -16.5,
+   "pbr": 0.84,
+   "net_debt_levered": -146573,
+   "dcf": {
+    "E1": 2600,
+    "r": 10.0,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요. 선박 투자가 커 현금 전환율 0.55예요",
+    "fwd_per": 63.9,
+    "norm_per": 63.9,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 14272,
+      "per_share": 829,
+      "upside": -91.4
+     },
+     "base": {
+      "g": 1.0,
+      "value": 17087,
+      "per_share": 992,
+      "upside": -89.7
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 19562,
+      "per_share": 1136,
+      "upside": -88.2
+     }
+    },
+    "implied_g": 54.8,
+    "cycle": {
+     "position": "중립",
+     "note": "원양어업은 어가·어획량 사이클을 타요. 현재는 어획 부진에서 회복 중이라 중립으로 봤어요.",
+     "path": [],
+     "excess": -35053,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "003680": {
    "name": "한성기업",
    "group": "수산",
+   "ttm": {
+    "rev": 314474,
+    "op": 6842,
+    "ni": 3522,
+    "period": "2025Q3~2026Q2"
+   },
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": -0.2,
+    "margin_range": [
+     -6.4,
+     0.9
+    ],
+    "trend_rev": 313568,
+    "ttm_rev": 314474,
+    "norm_ni": -596,
+    "trend_g": 1.4
+   },
    "cycle": {
     "position": "중립",
     "note": "원가 사이클 중간이에요.",
     "basis": "과거 평균 이익을 썼어요"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
+   "price": 3150,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 17791,
+   "shares": 5648055,
+   "equity": 71524,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -99075,
+   "dividend_yield": null,
+   "per": 5.1,
+   "roe": 4.9,
+   "pbr": 0.25
   },
   "011150": {
    "name": "CJ씨푸드",
    "group": "수산",
-   "cycle": {
-    "position": "중립",
-    "note": "원가 사이클 중간이에요.",
-    "basis": "과거 평균 이익을 썼어요"
+   "ttm": {
+    "rev": 200320,
+    "op": -470,
+    "ni": 1757,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 2.1,
+    "margin_range": [
+     1.2,
+     4.9
+    ],
+    "trend_rev": 180910,
+    "ttm_rev": 200320,
+    "norm_ni": 3875,
+    "trend_g": 1.9
+   },
+   "price": 1702,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 61155,
+   "shares": 35931000,
+   "equity": 88461,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -34848,
+   "dividend_yield": null,
+   "per": 34.8,
+   "roe": 2.0,
+   "pbr": 0.69,
+   "net_debt_levered": -34848,
+   "dcf": {
+    "E1": 3900,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "과거 평균 이익을 썼어요",
+    "fwd_per": 15.7,
+    "norm_per": 15.7,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 24428,
+      "per_share": 680,
+      "upside": -60.1
+     },
+     "base": {
+      "g": 2.0,
+      "value": 29250,
+      "per_share": 814,
+      "upside": -52.2
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 32010,
+      "per_share": 891,
+      "upside": -47.7
+     }
+    },
+    "implied_g": 18.5,
+    "cycle": {
+     "position": "중립",
+     "note": "원가 사이클 중간이에요.",
+     "path": [],
+     "excess": -2143,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "136480": {
    "name": "하림",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "닭고기 시세가 상반기 고점을 지나 공급 증가로 내려오는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 1483862,
+    "op": 49928,
+    "ni": 18360,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 0.7,
+    "margin_range": [
+     -5.0,
+     2.7
+    ],
+    "trend_rev": 1511647,
+    "ttm_rev": 1483862,
+    "norm_ni": 11032,
+    "trend_g": 7.5
+   },
+   "price": 2605,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 276618,
+   "shares": 106187182,
+   "equity": 333681,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 92898,
+   "dividend_yield": null,
+   "per": 15.1,
+   "roe": 5.5,
+   "pbr": 0.83,
+   "dcf": {
+    "E1": 11000,
+    "r": 10.0,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 25.1,
+    "norm_per": 25.1,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 64665,
+      "per_share": 609,
+      "upside": -76.6
+     },
+     "base": {
+      "g": 2.0,
+      "value": 79907,
+      "per_share": 753,
+      "upside": -71.1
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 90857,
+      "per_share": 856,
+      "upside": -67.2
+     }
+    },
+    "implied_g": 31.1,
+    "cycle": {
+     "position": "하강기",
+     "note": "닭고기 시세가 상반기 고점을 지나 공급 증가로 내려오는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 7360,
+     "excess_value": 4282
+    },
+    "net_cash_added": 0
+   }
   },
   "003380": {
    "name": "하림지주",
    "group": "육류·사료",
-   "cycle": {
-    "position": "중립",
-    "note": "해운·축산 사이클이 섞여 있어 중립으로 봤어요.",
-    "basis": "사이클 평균 이익에 지주 할인(현금 전환율 0.4)을 적용했어요"
+   "ttm": {
+    "rev": 14345965,
+    "op": 972832,
+    "ni": 167371,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2017~2025",
+    "n": 9,
+    "margin": 1.3,
+    "margin_range": [
+     0.2,
+     2.9
+    ],
+    "trend_rev": 14814120,
+    "ttm_rev": 14345965,
+    "norm_ni": 186680,
+    "trend_g": 9.7
+   },
+   "price": 11220,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 1165200,
+   "shares": 103850281,
+   "equity": 3620103,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 2069609,
+   "dividend_yield": null,
+   "per": 7.0,
+   "roe": 4.6,
+   "pbr": 0.32,
+   "dcf": {
+    "E1": 186700,
+    "r": 10.5,
+    "c": 0.4,
+    "note": "사이클 평균 이익에 지주 할인(현금 전환율 0.4)을 적용했어요",
+    "fwd_per": 6.2,
+    "norm_per": 6.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 704064,
+      "per_share": 6780,
+      "upside": -39.6
+     },
+     "base": {
+      "g": 2.0,
+      "value": 878588,
+      "per_share": 8460,
+      "upside": -24.6
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 1003820,
+      "per_share": 9666,
+      "upside": -13.9
+     }
+    },
+    "implied_g": 8.4,
+    "cycle": {
+     "position": "중립",
+     "note": "해운·축산 사이클이 섞여 있어 중립으로 봤어요.",
+     "path": [],
+     "excess": -19329,
+     "excess_value": 0
+    },
+    "net_cash_added": 0
+   }
   },
   "027740": {
    "name": "마니커",
    "group": "육류·사료",
+   "ttm": {
+    "rev": 411717,
+    "op": 240,
+    "ni": -1978,
+    "period": "2025Q3~2026Q2"
+   },
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": -4.4,
+    "margin_range": [
+     -19.8,
+     0.4
+    ],
+    "trend_rev": 372388,
+    "ttm_rev": 411717,
+    "norm_ni": -16429,
+    "trend_g": 5.8
+   },
    "cycle": {
     "position": "하강기",
     "note": "닭값이 상반기 고점을 지나는 구간이에요.",
     "basis": "과거 평균 이익(최고·최저 해 제외)을 썼어요"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
+   "price": 1079,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 34252,
+   "shares": 31743799,
+   "equity": 37870,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -43996,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -5.2,
+   "pbr": 0.9
   },
   "088910": {
    "name": "동우팜투테이블",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "닭값이 상반기 고점을 지나는 구간이에요.",
-    "basis": "과거 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 336004,
+    "op": 12859,
+    "ni": 32648,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 3.8,
+    "margin_range": [
+     -3.7,
+     8.7
+    ],
+    "trend_rev": 348768,
+    "ttm_rev": 336004,
+    "norm_ni": 13184,
+    "trend_g": 4.2
+   },
+   "price": 1876,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 48254,
+   "shares": 25721764,
+   "equity": 256094,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 25691,
+   "dividend_yield": null,
+   "per": 1.5,
+   "roe": 12.7,
+   "pbr": 0.19,
+   "dcf": {
+    "E1": 13200,
+    "r": 11.0,
+    "c": 0.55,
+    "note": "과거 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 3.7,
+    "norm_per": 3.7,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 96577,
+      "per_share": 3755,
+      "upside": 100.1
+     },
+     "base": {
+      "g": 1.0,
+      "value": 111084,
+      "per_share": 4319,
+      "upside": 130.2
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 125279,
+      "per_share": 4871,
+      "upside": 159.6
+     }
+    },
+    "implied_g": -30.0,
+    "cycle": {
+     "position": "하강기",
+     "note": "닭값이 상반기 고점을 지나는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 19448,
+     "excess_value": 11182
+    },
+    "net_cash_added": 25691
+   }
   },
   "136490": {
    "name": "선진",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 2050644,
+    "op": 183478,
+    "ni": 85492,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 9,
+    "margin": 3.6,
+    "margin_range": [
+     0.7,
+     6.5
+    ],
+    "trend_rev": 2382262,
+    "ttm_rev": 2050644,
+    "norm_ni": 85660,
+    "trend_g": 13.0
+   },
+   "price": 9640,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 229232,
+   "shares": 23779208,
+   "equity": 627607,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 231641,
+   "dividend_yield": null,
+   "per": 2.7,
+   "roe": 13.6,
+   "pbr": 0.37,
+   "dcf": {
+    "E1": 85700,
+    "r": 10.5,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 2.7,
+    "norm_per": 2.7,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 444257,
+      "per_share": 18683,
+      "upside": 93.8
+     },
+     "base": {
+      "g": 1.0,
+      "value": 530334,
+      "per_share": 22302,
+      "upside": 131.4
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 605923,
+      "per_share": 25481,
+      "upside": 164.3
+     }
+    },
+    "implied_g": -18.5,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": -208,
+     "excess_value": -120
+    },
+    "net_cash_added": 0
+   }
   },
   "027710": {
    "name": "팜스토리",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 1438055,
+    "op": 41722,
+    "ni": 16826,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 0.8,
+    "margin_range": [
+     -0.6,
+     2.8
+    ],
+    "trend_rev": 1552035,
+    "ttm_rev": 1438055,
+    "norm_ni": 11680,
+    "trend_g": 6.9
+   },
+   "price": 1080,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 119450,
+   "shares": 110602261,
+   "equity": 285863,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -309439,
+   "dividend_yield": null,
+   "per": 7.1,
+   "roe": 5.9,
+   "pbr": 0.42,
+   "net_debt_levered": -309439,
+   "dcf": {
+    "E1": 11700,
+    "r": 10.5,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 10.2,
+    "norm_per": 10.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 63633,
+      "per_share": 575,
+      "upside": -46.7
+     },
+     "base": {
+      "g": 1.0,
+      "value": 75384,
+      "per_share": 682,
+      "upside": -36.9
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 85704,
+      "per_share": 775,
+      "upside": -28.3
+     }
+    },
+    "implied_g": 11.7,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 5126,
+     "excess_value": 2965
+    },
+    "net_cash_added": 0
+   }
   },
   "353810": {
    "name": "이지바이오",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 525038,
+    "op": 53115,
+    "ni": 39820,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2020~2025",
+    "n": 6,
+    "margin": 7.4,
+    "margin_range": [
+     5.1,
+     11.8
+    ],
+    "trend_rev": 529643,
+    "ttm_rev": 525038,
+    "norm_ni": 39050,
+    "trend_g": 39.8
+   },
+   "price": 4970,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 164417,
+   "shares": 33081920,
+   "equity": 126960,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -113038,
+   "dividend_yield": null,
+   "per": 4.1,
+   "roe": 31.4,
+   "pbr": 1.3,
+   "dcf": {
+    "E1": 39000,
+    "r": 10.5,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 4.2,
+    "norm_per": 4.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 202699,
+      "per_share": 6127,
+      "upside": 23.3
+     },
+     "base": {
+      "g": 1.0,
+      "value": 241871,
+      "per_share": 7311,
+      "upside": 47.1
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 276269,
+      "per_share": 8351,
+      "upside": 68.0
+     }
+    },
+    "implied_g": -7.8,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 820,
+     "excess_value": 474
+    },
+    "net_cash_added": 0
+   }
   },
   "073560": {
    "name": "우리손에프앤지",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 294855,
+    "op": 35107,
+    "ni": 27273,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 7.8,
+    "margin_range": [
+     0.6,
+     12.6
+    ],
+    "trend_rev": 307747,
+    "ttm_rev": 294855,
+    "norm_ni": 24053,
+    "trend_g": 4.6
+   },
+   "price": 1441,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 99771,
+   "shares": 69237643,
+   "equity": 336726,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -59504,
+   "dividend_yield": null,
+   "per": 3.7,
+   "roe": 8.1,
+   "pbr": 0.3,
+   "net_debt_levered": -59504,
+   "dcf": {
+    "E1": 24100,
+    "r": 10.5,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 4.1,
+    "norm_per": 4.1,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 126800,
+      "per_share": 1831,
+      "upside": 27.1
+     },
+     "base": {
+      "g": 1.0,
+      "value": 151006,
+      "per_share": 2181,
+      "upside": 51.4
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 172262,
+      "per_share": 2488,
+      "upside": 72.7
+     }
+    },
+    "implied_g": -8.6,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 3173,
+     "excess_value": 1835
+    },
+    "net_cash_added": 0
+   }
   },
   "005860": {
    "name": "한일사료",
    "group": "육류·사료",
-   "cycle": {
-    "position": "하강기",
-    "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
-    "basis": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요"
+   "ttm": {
+    "rev": 483843,
+    "op": 5506,
+    "ni": 5471,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 0.7,
+    "margin_range": [
+     -3.5,
+     29.0
+    ],
+    "trend_rev": 464661,
+    "ttm_rev": 483843,
+    "norm_ni": 3313,
+    "trend_g": 5.1
+   },
+   "price": 2045,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 80581,
+   "shares": 39403685,
+   "equity": 162522,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -6454,
+   "dividend_yield": null,
+   "per": 14.7,
+   "roe": 3.4,
+   "pbr": 0.5,
+   "net_debt_levered": -6454,
+   "dcf": {
+    "E1": 3300,
+    "r": 10.5,
+    "c": 0.55,
+    "note": "과거 10년 평균 이익(최고·최저 해 제외)을 썼어요",
+    "fwd_per": 24.4,
+    "norm_per": 24.4,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 18367,
+      "per_share": 466,
+      "upside": -77.2
+     },
+     "base": {
+      "g": 1.0,
+      "value": 21682,
+      "per_share": 550,
+      "upside": -73.1
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 24593,
+      "per_share": 624,
+      "upside": -69.5
+     }
+    },
+    "implied_g": 32.2,
+    "cycle": {
+     "position": "하강기",
+     "note": "곡물 원가 상승기라 사료 마진이 눌리는 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 2171,
+     "excess_value": 1256
+    },
+    "net_cash_added": 0
+   }
   },
   "051500": {
    "name": "CJ프레시웨이",
    "group": "식자재·급식",
-   "cycle": {
-    "position": "하강기",
-    "note": "외식 경기 둔화로 이익이 정상보다 낮은 구간이에요.",
-    "basis": "정상 순이익률 1.0%를 썼어요"
+   "ttm": {
+    "rev": 3556206,
+    "op": 98152,
+    "ni": 48343,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 9,
+    "margin": 0.8,
+    "margin_range": [
+     -1.6,
+     1.8
+    ],
+    "trend_rev": 3356439,
+    "ttm_rev": 3556206,
+    "norm_ni": 27102,
+    "trend_g": 3.8
+   },
+   "price": 20900,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 248116,
+   "shares": 11871586,
+   "equity": 432646,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -45816,
+   "dividend_yield": null,
+   "per": 5.1,
+   "roe": 11.2,
+   "pbr": 0.57,
+   "net_debt_levered": -45816,
+   "dcf": {
+    "E1": 33600,
+    "r": 9.5,
+    "c": 0.6,
+    "note": "정상 순이익률 1.0%를 썼어요",
+    "fwd_per": 7.4,
+    "norm_per": 7.4,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 254690,
+      "per_share": 21454,
+      "upside": 2.6
+     },
+     "base": {
+      "g": 3.0,
+      "value": 290805,
+      "per_share": 24496,
+      "upside": 17.2
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 332170,
+      "per_share": 27980,
+      "upside": 33.9
+     }
+    },
+    "implied_g": -0.6,
+    "cycle": {
+     "position": "하강기",
+     "note": "외식 경기 둔화로 이익이 정상보다 낮은 구간이에요.",
+     "path": [
+      0.8,
+      0.4
+     ],
+     "excess": 14743,
+     "excess_value": 9414
+    },
+    "net_cash_added": 0
+   }
   },
   "453340": {
    "name": "현대그린푸드",
    "group": "식자재·급식",
-   "cycle": {
-    "position": "중립",
-    "note": "구조적 개선 중이고 큰 사이클은 없어요.",
-    "basis": "정상 순이익률 4.0%(효율화 이후 체질)를 썼어요"
+   "ttm": {
+    "rev": 2423410,
+    "op": 128174,
+    "ni": 104658,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2023~2025",
+    "n": 3,
+    "margin": 3.1,
+    "margin_range": [
+     2.1,
+     3.7
+    ],
+    "trend_rev": 2476440,
+    "ttm_rev": 2423410,
+    "norm_ni": 75555,
+    "trend_g": 11.1
+   },
+   "price": 20400,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 655464,
+   "shares": 32130612,
+   "equity": 781806,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 59451,
+   "dividend_yield": null,
+   "per": 6.3,
+   "roe": 13.4,
+   "pbr": 0.84,
+   "dcf": {
+    "E1": 99100,
+    "r": 9.0,
+    "c": 0.7,
+    "note": "정상 순이익률 4.0%(효율화 이후 체질)를 썼어요",
+    "fwd_per": 6.6,
+    "norm_per": 6.6,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 951555,
+      "per_share": 29615,
+      "upside": 45.2
+     },
+     "base": {
+      "g": 4.0,
+      "value": 1133915,
+      "per_share": 35291,
+      "upside": 73.0
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 1294114,
+      "per_share": 40277,
+      "upside": 97.4
+     }
+    },
+    "implied_g": -8.7,
+    "cycle": {
+     "position": "중립",
+     "note": "구조적 개선 중이고 큰 사이클은 없어요.",
+     "path": [],
+     "excess": 5558,
+     "excess_value": 0
+    },
+    "net_cash_added": 59451
+   }
   },
   "033780": {
    "name": "KT&G",
    "group": "담배·인삼",
-   "cycle": {
-    "position": "중립",
-    "note": "담배는 경기 사이클을 거의 타지 않아요. 최근 이익은 해외 성장으로 사상 최대지만 일시적 호황이 아니라 구조적 증가라 초과 이익을 따로 넣지 않았어요.",
-    "basis": "정상 순이익률 18%(과거 10년 평균 수준, 일회성 손실 해 제외)를 추세 매출에 곱했어요. 배당 75%·자사주 소각 정책을 현금 전환율 0.85로 반영했어요"
+   "ttm": {
+    "rev": 6945851,
+    "op": 1487212,
+    "ni": 1435937,
+    "period": "2025Q3~2026Q2"
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "hist": {
+    "years": "2016~2025",
+    "n": 10,
+    "margin": 20.2,
+    "margin_range": [
+     15.4,
+     27.1
+    ],
+    "trend_rev": 6648021,
+    "ttm_rev": 6945851,
+    "norm_ni": 1342221,
+    "trend_g": 4.6
+   },
+   "price": 190700,
+   "price_date": "2026-11-09 06:26",
+   "price_source": "네이버 금융",
+   "mcap": 19796654,
+   "shares": 103810456,
+   "equity": 9675702,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 254793,
+   "dividend_yield": null,
+   "per": 13.8,
+   "roe": 14.8,
+   "pbr": 2.05,
+   "dcf": {
+    "E1": 1196600,
+    "r": 8.0,
+    "c": 0.85,
+    "note": "정상 순이익률 18%(과거 10년 평균 수준, 일회성 손실 해 제외)를 추세 매출에 곱했어요. 배당 75%·자사주 소각 정책을 현금 전환율 0.85로 반영했어요",
+    "fwd_per": 16.5,
+    "norm_per": 16.5,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 15587221,
+      "per_share": 150151,
+      "upside": -21.3
+     },
+     "base": {
+      "g": 4.0,
+      "value": 18832199,
+      "per_share": 181409,
+      "upside": -4.9
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 20692978,
+      "per_share": 199334,
+      "upside": 4.5
+     }
+    },
+    "implied_g": 5.1,
+    "cycle": {
+     "position": "중립",
+     "note": "담배는 경기 사이클을 거의 타지 않아요. 최근 이익은 해외 성장으로 사상 최대지만 일시적 호황이 아니라 구조적 증가라 초과 이익을 따로 넣지 않았어요.",
+     "path": [],
+     "excess": 239337,
+     "excess_value": 0
+    },
+    "net_cash_added": 254793
+   }
   }
  },
  "industry_cycle": {
