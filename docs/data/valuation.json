@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "method": "내재가치 가정. E1=향후 12개월 정상화 지배순이익(억원), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율. 스냅샷은 StockAnalysis 집계(가격일 표기), 금융위 시세 API·DART 재무상태표 수집 시 자동 대체. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외. 비지배지분이 큰 아모레퍼시픽홀딩스·한국콜마는 조정 제외. 사이클 조정: 연간 순이익률의 여러 해 평균(5년 이상이면 최고·최저 해를 뺀 평균)에 최근 4분기 매출을 곱해 '사이클 평균 이익'을 구하고, 회사별 비중(w_mid)만큼 E1과 섞어 정상화 이익을 정해요.",
  "terminal_growth": 2.0,
  "asof": "2026-11-07",
@@ -435,6 +435,7 @@
     "E1_fwd": 11000,
     "E1_basis": "사이클 평균 이익 30% + 전망 이익 70%"
    },
+   "net_debt_levered": -39592,
    "dcf": {
     "E1": 10389,
     "r": 11.0,
@@ -445,25 +446,25 @@
     "scenarios": {
      "bear": {
       "g": -5,
-      "value": 24547,
-      "per_share": 1027,
-      "upside": -75.7
+      "value": 59597,
+      "per_share": 2494,
+      "upside": -41.0
      },
      "base": {
       "g": 2,
-      "value": 47370,
-      "per_share": 1982,
-      "upside": -53.1
+      "value": 80803,
+      "per_share": 3381,
+      "upside": -20.0
      },
      "bull": {
       "g": 6,
-      "value": 64013,
-      "per_share": 2678,
-      "upside": -36.6
+      "value": 96268,
+      "per_share": 4028,
+      "upside": -4.7
      }
     },
-    "implied_g": 13.0,
-    "net_cash_added": -39592
+    "implied_g": 7.1,
+    "net_cash_added": 0
    }
   },
   "237880": {
@@ -839,6 +840,7 @@
     "E1_fwd": 185000,
     "E1_basis": "사이클 평균 이익 30% + 전망 이익 70%"
    },
+   "net_debt_levered": -600140,
    "dcf": {
     "E1": 161070,
     "r": 9.5,
@@ -849,25 +851,25 @@
     "scenarios": {
      "bear": {
       "g": 4,
-      "value": 917159,
-      "per_share": 80807,
-      "upside": -68.3
+      "value": 1412073,
+      "per_share": 124412,
+      "upside": -51.2
      },
      "base": {
       "g": 10,
-      "value": 1394351,
-      "per_share": 122850,
-      "upside": -51.8
+      "value": 1856171,
+      "per_share": 163539,
+      "upside": -35.9
      },
      "bull": {
       "g": 15,
-      "value": 1898965,
-      "per_share": 167310,
-      "upside": -34.4
+      "value": 2325789,
+      "per_share": 204915,
+      "upside": -19.6
      }
     },
-    "implied_g": 22.6,
-    "net_cash_added": -600140
+    "implied_g": 19.9,
+    "net_cash_added": 0
    }
   },
   "161890": {
@@ -997,6 +999,7 @@
     "E1_fwd": 72000,
     "E1_basis": "사이클 평균 이익 30% + 전망 이익 70%"
    },
+   "net_debt_levered": -134848,
    "dcf": {
     "E1": 65836,
     "r": 10.5,
@@ -1007,25 +1010,25 @@
     "scenarios": {
      "bear": {
       "g": 5,
-      "value": 463928,
-      "per_share": 43439,
-      "upside": -55.0
+      "value": 575212,
+      "per_share": 53859,
+      "upside": -44.2
      },
      "base": {
       "g": 12,
-      "value": 681603,
-      "per_share": 63820,
-      "upside": -33.9
+      "value": 784321,
+      "per_share": 73438,
+      "upside": -23.9
      },
      "bull": {
       "g": 20,
-      "value": 1023662,
-      "per_share": 95848,
-      "upside": -0.7
+      "value": 1112919,
+      "per_share": 104206,
+      "upside": 8.0
      }
     },
-    "implied_g": 20.1,
-    "net_cash_added": -134848
+    "implied_g": 18.2,
+    "net_cash_added": 0
    }
   },
   "352480": {
@@ -1498,6 +1501,7 @@
     "E1_fwd": 142000,
     "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
+   "net_debt_levered": -11498,
    "dcf": {
     "E1": 148019,
     "r": 9.5,
@@ -1508,25 +1512,25 @@
     "scenarios": {
      "bear": {
       "g": 5,
-      "value": 1915839,
-      "per_share": 29375,
-      "upside": 13.9
+      "value": 1924348,
+      "per_share": 29505,
+      "upside": 14.4
      },
      "base": {
       "g": 10,
-      "value": 2408765,
-      "per_share": 36933,
-      "upside": 43.2
+      "value": 2416509,
+      "per_share": 37052,
+      "upside": 43.6
      },
      "bull": {
       "g": 16,
-      "value": 3159956,
-      "per_share": 48451,
-      "upside": 87.8
+      "value": 3166534,
+      "per_share": 48552,
+      "upside": 88.2
      }
     },
-    "implied_g": 2.2,
-    "net_cash_added": -11498
+    "implied_g": 2.1,
+    "net_cash_added": 0
    }
   },
   "336570": {
@@ -1656,6 +1660,7 @@
     "E1_fwd": 30000,
     "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
+   "net_debt_levered": -74643,
    "dcf": {
     "E1": 27418,
     "r": 10.5,
@@ -1666,25 +1671,25 @@
     "scenarios": {
      "bear": {
       "g": 0,
-      "value": 143229,
-      "per_share": 22172,
-      "upside": -65.5
+      "value": 206622,
+      "per_share": 31985,
+      "upside": -50.3
      },
      "base": {
       "g": 8,
-      "value": 236126,
-      "per_share": 36552,
-      "upside": -43.2
+      "value": 294722,
+      "per_share": 45623,
+      "upside": -29.0
      },
      "bull": {
       "g": 15,
-      "value": 348592,
-      "per_share": 53962,
-      "upside": -16.1
+      "value": 401381,
+      "per_share": 62133,
+      "upside": -3.4
      }
     },
-    "implied_g": 18.4,
-    "net_cash_added": -74643
+    "implied_g": 15.8,
+    "net_cash_added": 0
    }
   },
   "200670": {
@@ -1821,6 +1826,7 @@
     "E1_fwd": 8000,
     "E1_basis": "전망 이익 100%"
    },
+   "net_debt_levered": -63174,
    "dcf": {
     "E1": 8000,
     "r": 11.0,
@@ -1831,25 +1837,25 @@
     "scenarios": {
      "bear": {
       "g": 5,
-      "value": 7249,
-      "per_share": 194,
-      "upside": -96.7
+      "value": 60818,
+      "per_share": 1631,
+      "upside": -72.5
      },
      "base": {
       "g": 15,
-      "value": 45796,
-      "per_share": 1228,
-      "upside": -79.3
+      "value": 94107,
+      "per_share": 2524,
+      "upside": -57.5
      },
      "bull": {
       "g": 30,
-      "value": 143186,
-      "per_share": 3840,
-      "upside": -35.4
+      "value": 178214,
+      "per_share": 4779,
+      "upside": -19.5
      }
     },
-    "implied_g": 37.8,
-    "net_cash_added": -63174
+    "implied_g": 35.3,
+    "net_cash_added": 0
    }
   },
   "099430": {
@@ -2347,6 +2353,7 @@
    "per": 6.1,
    "roe": 7.0,
    "pbr": 0.43,
+   "net_debt_levered": -132246,
    "dcf": {
     "E1": 46800,
     "r": 10.5,
@@ -2357,25 +2364,25 @@
     "scenarios": {
      "bear": {
       "g": 0,
-      "value": 240371,
-      "per_share": 7009,
-      "upside": -15.6
+      "value": 352684,
+      "per_share": 10283,
+      "upside": 23.9
      },
      "base": {
       "g": 5,
-      "value": 332988,
-      "per_share": 9709,
-      "upside": 17.0
+      "value": 440347,
+      "per_share": 12840,
+      "upside": 54.7
      },
      "bull": {
       "g": 10,
-      "value": 448476,
-      "per_share": 13077,
-      "upside": 57.5
+      "value": 549658,
+      "per_share": 16027,
+      "upside": 93.1
      }
     },
-    "implied_g": 2.5,
-    "net_cash_added": -132246
+    "implied_g": -4.9,
+    "net_cash_added": 0
    }
   },
   "044820": {
@@ -2581,6 +2588,7 @@
    "per": 13.5,
    "roe": 5.8,
    "pbr": 0.78,
+   "net_debt_levered": -59044,
    "dcf": {
     "E1": 5000,
     "r": 10.5,
@@ -2591,25 +2599,25 @@
     "scenarios": {
      "bear": {
       "g": 0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 37680,
+      "per_share": 3137,
+      "upside": -44.1
      },
      "base": {
       "g": 5,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 47046,
+      "per_share": 3917,
+      "upside": -30.2
      },
      "bull": {
       "g": 10,
-      "value": 13549,
-      "per_share": 1128,
-      "upside": -79.9
+      "value": 58724,
+      "per_share": 4889,
+      "upside": -12.8
      }
     },
-    "implied_g": 22.7,
-    "net_cash_added": -59044
+    "implied_g": 13.1,
+    "net_cash_added": 0
    }
   },
   "214370": {
@@ -2687,6 +2695,7 @@
    "per": 50.2,
    "roe": 1.0,
    "pbr": 0.48,
+   "net_debt_levered": -17499,
    "dcf": {
     "E1": 1400,
     "r": 10.5,
@@ -2697,25 +2706,25 @@
     "scenarios": {
      "bear": {
       "g": 0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 10550,
+      "per_share": 964,
+      "upside": -84.5
      },
      "base": {
       "g": 5,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 13173,
+      "per_share": 1203,
+      "upside": -80.7
      },
      "bull": {
       "g": 10,
-      "value": 3054,
-      "per_share": 279,
-      "upside": -95.5
+      "value": 16443,
+      "per_share": 1502,
+      "upside": -75.9
      }
     },
-    "implied_g": 43.8,
-    "net_cash_added": -17499
+    "implied_g": 43.7,
+    "net_cash_added": 0
    }
   },
   "052260": {
@@ -3040,6 +3049,7 @@
    "per": 6.1,
    "roe": 18.4,
    "pbr": 1.12,
+   "net_debt_levered": -678554,
    "dcf": {
     "E1": 195500,
     "r": 10.5,
@@ -3050,25 +3060,25 @@
     "scenarios": {
      "bear": {
       "g": 0,
-      "value": 897004,
-      "per_share": 77958,
-      "upside": -24.8
+      "value": 1473286,
+      "per_share": 128042,
+      "upside": 23.6
      },
      "base": {
       "g": 5,
-      "value": 1288623,
-      "per_share": 111993,
-      "upside": 8.1
+      "value": 1839485,
+      "per_share": 159868,
+      "upside": 54.3
      },
      "bull": {
       "g": 10,
-      "value": 1776949,
-      "per_share": 154433,
-      "upside": 49.1
+      "value": 2296113,
+      "per_share": 199553,
+      "upside": 92.6
      }
     },
-    "implied_g": 3.9,
-    "net_cash_added": -678554
+    "implied_g": -4.8,
+    "net_cash_added": 0
    }
   }
  },
