@@ -970,7 +970,11 @@ def main():
             ran.append("뉴스")
         if only == "news":
             return
-    if os.getenv("DART_API_KEY") and only in (None, "dart"):
+    # GitHub Actions(해외 IP)에서는 DART를 건너뛴다. 명시적으로 --only dart 를 줄 때만 실행.
+    skip_dart = os.getenv("GITHUB_ACTIONS") == "true" and only != "dart"
+    if skip_dart and os.getenv("DART_API_KEY"):
+        log("GitHub Actions: DART 수집 건너뜀(PC에서 --only dart 로 실행)")
+    if os.getenv("DART_API_KEY") and only in (None, "dart") and not skip_dart:
         ok = update_dart(os.environ["DART_API_KEY"].strip().split("=")[-1].strip())
         if ok:
             ran.append("DART")
