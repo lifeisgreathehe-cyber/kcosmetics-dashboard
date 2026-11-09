@@ -71,7 +71,7 @@ tbody tr.sel{background:var(--accent-soft)}
 #co-table th:first-child,#co-table td:first-child,#val-table th:first-child,#val-table td:first-child{position:sticky;left:0;background:var(--panel);z-index:1}
 #co-table tbody tr.sel td:first-child,#co-table tbody tr:hover td:first-child{background:var(--accent-soft)}
 #co-table tbody tr:hover{background:var(--accent-soft)}
-.irt td{vertical-align:top;font-size:13px;line-height:1.5;min-width:90px}.irt td:nth-child(2),.irt td:nth-child(4){min-width:200px}
+.irl{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;margin:6px 0 4px}.irl>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}.irl .nh{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}.irl p{margin:6px 0 0;font-size:13px;line-height:1.55}.irl .irc{color:var(--ink-2);font-weight:500}.irl .irb{color:var(--ink-2)}.irl .tone{white-space:nowrap}
 .pill{display:inline-block;font-size:11px;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2)}
 .news{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px}
 .news a{display:block;text-decoration:none;color:inherit;border:1px solid var(--line);border-radius:8px;padding:10px 12px}
@@ -128,7 +128,7 @@ td.l,th.l{text-align:left}
 <div class="wrap">
   <header class="top">
     <h1><small>KOREA COSMETICS · K-BEAUTY</small>국내 화장품 산업 대시보드</h1>
-    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="semi/" style="color:var(--accent)">반도체 대시보드 →</a><br><a href="chem/" style="color:var(--accent)">화학·정유 대시보드 →</a><br><a href="battery/" style="color:var(--accent)">2차전지 대시보드 →</a><br><a href="food/" style="color:var(--accent)">음식료 대시보드 →</a><br><a href="backtest/" style="color:var(--accent)">적정주가 1년 백테스트 →</a></div>
+    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="semi/" style="color:var(--accent)">반도체 대시보드 →</a><br><a href="chem/" style="color:var(--accent)">화학·정유 대시보드 →</a><br><a href="battery/" style="color:var(--accent)">2차전지 대시보드 →</a><br><a href="food/" style="color:var(--accent)">음식료 대시보드 →</a><br><a href="apparel/" style="color:var(--accent)">의류·패션 대시보드 →</a><br><a href="logistics/" style="color:var(--accent)">물류·운송 대시보드 →</a><br><a href="backtest/" style="color:var(--accent)">적정주가 1년 백테스트 →</a></div>
   </header>
   <nav class="tabs" aria-label="보기 선택">
     <a href="#industry" data-view="industry">산업 동향</a>
@@ -491,9 +491,9 @@ function renderIR(c){
   if(latest) h+=`<p class="sub">최신 IR 자료: ${latest.date} · ${lk(latest.pdf||latest.page,latest.title.replace(/^[^,]+,\s*/,''))}${latest.pdf?' (PDF 원문)':''} · 출처 ${(D.ir_web||{}).source||'IRGO'}</p>`;
   if(A){
     h+=`<p>${A.summary}</p>`;
-    if(A.strategy&&A.strategy.length) h+=`<h4>IR에서 제시한 성장전략과 달성 가능성</h4><div class="tbl"><table class="irt"><thead><tr><th>전략</th><th>회사가 제시한 내용·목표</th><th>달성 가능성</th><th>판단 근거</th></tr></thead><tbody>${A.strategy.map(s=>`<tr><td><b>${s.h}</b></td><td>${s.claim}</td><td><span class="tone ${FE[s.feas]||'neu'}">${s.feas}</span></td><td>${s.why}</td></tr>`).join('')}</tbody></table></div>`;
-    if(A.changes&&A.changes.length) h+=`<h4>과거 IR과 비교해 바뀐 점</h4><div class="tbl"><table class="irt"><thead><tr><th>항목</th><th>과거</th><th>최근</th><th>어떻게 볼까</th></tr></thead><tbody>${A.changes.map(s=>`<tr><td><b>${s.h}</b></td><td>${s.before}</td><td>${s.now}</td><td>${s.read}</td></tr>`).join('')}</tbody></table></div>`;
-    if(A.cross&&A.cross.length) h+=`<h4>경쟁사·공급사·고객사 자료로 교차검증</h4><div class="tbl"><table class="irt"><thead><tr><th>검증 대상 주장</th><th>다른 회사 자료</th><th>결과</th><th>해석</th></tr></thead><tbody>${A.cross.map(s=>`<tr><td>${s.claim}</td><td>${s.src}</td><td><span class="tone ${VE[s.verdict]||'neu'}">${s.verdict}</span></td><td>${s.read}</td></tr>`).join('')}</tbody></table></div>`;
+    if(A.strategy&&A.strategy.length) h+=`<h4>IR에서 제시한 성장전략과 달성 가능성</h4><div class="irl">${A.strategy.map(s=>`<div><div class="nh"><b>${s.h}</b><span class="tone ${FE[s.feas]||'neu'}">달성 가능성 ${s.feas}</span></div><p class="irc">${s.claim}</p><p>${s.why}</p></div>`).join('')}</div>`;
+    if(A.changes&&A.changes.length) h+=`<h4>과거 IR과 비교해 바뀐 점</h4><div class="irl">${A.changes.map(s=>`<div><div class="nh"><b>${s.h}</b></div><p class="irb"><span class="sub">과거</span> ${s.before}</p><p class="irb"><span class="sub">최근</span> ${s.now}</p><p>${s.read}</p></div>`).join('')}</div>`;
+    if(A.cross&&A.cross.length) h+=`<h4>경쟁사·공급사·고객사 자료로 교차검증</h4><div class="irl">${A.cross.map(s=>`<div><div class="nh"><b>${s.claim}</b><span class="tone ${VE[s.verdict]||'neu'}">${s.verdict}</span></div><p class="irb"><span class="sub">비교 자료</span> ${s.src}</p><p>${s.read}</p></div>`).join('')}</div>`;
     if(A.val) h+=`<p class="sub" style="margin-top:8px"><b>가치 판단 반영</b> ${A.val}</p>`;
     h+=`<p class="sub">분석 기준일 ${A.asof} · 읽은 자료: ${(A.sources||[]).join(', ')}</p>`;
   } else h+=`<p class="sub">자료 해석은 순서대로 추가하고 있어요.</p>`;

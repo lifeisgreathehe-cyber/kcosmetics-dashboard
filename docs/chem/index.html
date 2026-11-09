@@ -116,6 +116,46 @@ th.grp{text-align:center;border-bottom:1px solid var(--line);color:var(--ink-3)}
 td.l,th.l{text-align:left}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
 .fisher.ir th{text-align:left;font-size:11.5px;color:var(--ink-3);font-weight:600;padding:6px 8px}.fisher.ir td{vertical-align:top}.fisher.ir td.q{min-width:90px}@media(max-width:640px){.fisher.ir thead{display:none}.fisher.ir tr{display:block;padding:6px 0;border-bottom:1px solid var(--line)}.fisher.ir td{display:block;border:0!important;padding:2px 4px}}
+.vc-scroll{overflow-x:auto;margin:8px -4px 0;padding:0 4px 6px}
+.vc{position:relative;display:grid;grid-template-columns:repeat(5,minmax(150px,1fr));gap:10px 28px;min-width:880px}
+.vc-col{display:flex;flex-direction:column;gap:6px;position:relative;z-index:1}
+.vc-col h3{font-size:11.5px;font-weight:600;color:var(--ink-3);letter-spacing:.04em;margin:0 0 4px}
+.vc-n{font:inherit;font-size:12.5px;line-height:1.35;text-align:left;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:7px;padding:6px 9px;cursor:pointer}
+.vc-n small{display:block;font-size:10.5px;color:var(--ink-3)}
+.vc-n:hover{border-color:var(--accent)}
+.vc-n.on{background:var(--accent-soft);border-color:var(--accent);font-weight:600}
+.vc-n.rel{border-color:var(--accent)}
+.vc.focus .vc-n:not(.on):not(.rel){opacity:.38}
+.vc-lines{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;overflow:visible}
+.vc-lines path{fill:none;stroke:var(--line);stroke-width:1.2}
+.vc-lines path.hl{stroke:var(--accent);stroke-width:2}
+.vc-detail{margin-top:14px;border-top:1px solid var(--line);padding-top:12px}
+.vc-detail h3{font-size:16px;margin:0 0 4px}
+.vc-detail p{margin:0 0 8px;max-width:90ch}
+.vc-detail h4{font-size:12.5px;font-weight:600;color:var(--ink-2);margin:12px 0 4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;border:1px solid var(--line);color:var(--ink-2);background:var(--panel)}
+a.chip{text-decoration:none;color:var(--ink)} a.chip:hover{border-color:var(--accent)}
+.pr-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-top:10px}
+.pr-stats .kpi .v{font-size:20px}
+.pr-read{grid-column:1/-1;font-size:13px;color:var(--ink-2);margin:0}
+.sd-legend{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+.sdc{display:inline-block;min-width:52px;text-align:center;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:5px}
+.g-과잉{background:color-mix(in srgb,var(--down) 18%,transparent);color:var(--down)}
+.g-완화{background:color-mix(in srgb,var(--s4) 22%,transparent);color:var(--ink)}
+.g-균형{background:var(--accent-soft);color:var(--ink-2)}
+.g-타이트{background:color-mix(in srgb,var(--up) 18%,transparent);color:var(--up)}
+.g-na{background:transparent;border:1px dashed var(--line);color:var(--ink-3);font-weight:400}
+details.sd{border-bottom:1px solid var(--line)}
+details.sd summary{display:grid;grid-template-columns:minmax(150px,1.4fr) repeat(4,minmax(54px,.5fr));gap:8px;align-items:center;padding:8px 2px;cursor:pointer;list-style:none;font-size:13.5px}
+details.sd summary::-webkit-details-marker{display:none}
+details.sd summary b{font-weight:600}
+details.sd .sdh{display:grid;grid-template-columns:minmax(150px,1.4fr) repeat(4,minmax(54px,.5fr));gap:8px;font-size:11.5px;color:var(--ink-3);padding:4px 2px}
+details.sd > div{padding:4px 2px 14px;font-size:13px;max-width:100ch}
+details.sd > div p{margin:0 0 6px}
+.sdhead{display:grid;grid-template-columns:minmax(150px,1.4fr) repeat(4,minmax(54px,.5fr));gap:8px;font-size:11.5px;color:var(--ink-3);padding:4px 2px;border-bottom:1px solid var(--line)}
+.sd-legend .sdc{width:auto!important;min-width:52px!important}
+@media(max-width:560px){details.sd summary,.sdhead{grid-template-columns:minmax(100px,1fr) repeat(4,44px);gap:4px;font-size:12.5px}details.sd .sdc{min-width:0;width:100%;padding:2px 2px;font-size:10.5px}}
 </style>
 </head>
 <body>
@@ -126,6 +166,7 @@ td.l,th.l{text-align:left}
   </header>
   <nav class="tabs" aria-label="보기 선택">
     <a href="#industry" data-view="industry">산업 동향</a>
+    <a href="#chain" data-view="chain">밸류체인 · 스프레드 · 수급</a>
     <a href="#companies" data-view="companies">상장사 실적</a>
     <a href="#valuation" data-view="valuation">내재가치</a>
     <a href="#sources" data-view="sources">출처 · 갱신 방법</a>
@@ -188,6 +229,31 @@ td.l,th.l{text-align:left}
         <h2>출하 − 재고 순환</h2><p class="sub">출하지수 증감률에서 재고지수 증감률을 뺀 값(%p, 전년 동월 대비). 플러스면 재고가 줄며 경기가 좋아지는 국면이에요.</p>
         <div class="chart"><canvas id="c-cyc"></canvas></div>
         <div class="src" id="cyc-src"></div>
+      </div>
+    </div>
+  </section>
+  <section id="v-chain" data-viewpanel="chain" hidden>
+    <p class="lede">원유·나프타에서 최종 용도까지 제품이 어떻게 이어지는지, 각 제품을 누가 만들고 누가 쓰는지 보여 줘요. 제품을 누르면 설명, 생산·사용 기업, 원료와의 스프레드, 수급 전망이 함께 나와요.</p>
+    <div class="grid">
+      <div class="card full">
+        <h2>화학 · 정유 밸류체인</h2><p class="sub" id="vc-sub">제품을 누르면 연결된 앞뒤 단계가 강조돼요. 좁은 화면에서는 지도를 옆으로 밀어 보세요.</p>
+        <div class="vc-scroll"><div class="vc" id="vc"><svg class="vc-lines" id="vc-lines" aria-hidden="true"></svg></div></div>
+        <div class="vc-detail" id="vc-detail" aria-live="polite"></div>
+      </div>
+      <div class="card full">
+        <div class="row"><div><h2>제품 − 원재료 스프레드</h2><p class="sub" id="sp-sub"></p></div><div class="segs"><select id="sp-sel" aria-label="스프레드 선택"></select><select id="sp-range" aria-label="기간"><option value="120">10년</option><option value="60">5년</option><option value="0">전체</option></select></div></div>
+        <div class="chart tall"><canvas id="c-sp" role="img" aria-label="제품과 원재료 스프레드 추이"></canvas></div>
+        <div class="src" id="sp-src"></div>
+      </div>
+      <div class="card full">
+        <div class="row"><div><h2>과거 이익과 스프레드의 관계</h2><p class="sub">분기 평균 스프레드(선)와 회사의 영업이익률(막대). 상관계수가 1에 가까울수록 스프레드가 이익을 잘 설명해요.</p></div><select id="pr-sel" aria-label="회사·스프레드 선택"></select></div>
+        <div class="chart tall"><canvas id="c-pr" role="img" aria-label="분기 스프레드와 영업이익률"></canvas></div>
+        <div class="pr-stats" id="pr-stats"></div>
+      </div>
+      <div class="card full">
+        <h2>제품별 수급: 지금과 2026~2029년</h2><p class="sub">증설·폐쇄 계획을 감안한 연도별 판단이에요. 행을 누르면 현재 상황, 증설 계획, 읽는 법과 출처가 펼쳐져요.</p>
+        <div class="sd-legend"><span class="sdc g-과잉">과잉</span><span class="sdc g-완화">완화</span><span class="sdc g-균형">균형</span><span class="sdc g-타이트">타이트</span><span class="sdc g-na">자료 확인 중</span></div>
+        <div id="sd"></div>
       </div>
     </div>
   </section>
@@ -277,7 +343,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist'];
+  const names=['meta','refining_index','chem_index','export_price','crude_price','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','news','stock_hist','valuechain','ir_web','market_recent'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
   try{const r=await fetch('https://raw.githubusercontent.com/lifeisgreathehe-cyber/kcosmetics-dashboard/main/docs/chem/data/news.json?t='+Date.now());if(r.ok){const x=await r.json();if(!D.news||(x.fetched||'')>(D.news.fetched||''))D.news=x}}catch(e){}
@@ -503,6 +569,7 @@ function renderDeep(c){
    <p>${g.summary}</p>
    <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
    ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
+   ${(()=>{const W=((D.ir_web||{}).companies||{})[c.code]||[];if(!W.length)return x.ir?'':`<h4>IR 원문 자료</h4><p class="sub">KIND·IRGO에 올라온 회사 IR 자료가 없어요. 사업보고서(DART)를 기준으로 분석했어요.</p>`;return `<h4>IR 원문 자료 <span class="sub" style="font-weight:400">KIND·IRGO 게시본, 최신순</span></h4><ul class="nlist">${W.slice(0,8).map(w=>`<li><a href="${w.pdf||w.page}" target="_blank" rel="noopener">${(w.date||'').replace(/\./g,'-')} ${w.title||'IR 자료'}</a> <span class="sub">${w.kind||''}${w.pdf?` · PDF${w.pages?' '+w.pages+'쪽':''}`:''}</span></li>`).join('')}</ul>`})()}
    ${x.ir?(()=>{const r=x.ir,gt={'높음':'pos','중간':'neu','낮음':'neg'},vt2=v=>/^불일치/.test(v)?'neg':/^일치/.test(v)?'pos':'neu';return `<h4>IR 자료로 본 성장전략과 달성 가능성</h4><p>${r.summary}</p>
    ${r.latest.length?`<p class="sub">IR 원문: ${r.latest.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${l.date} ${l.title}</a>`).join(' · ')}</p>`:''}
    <table class="fisher ir"><thead><tr><th>전략</th><th>IR이 말한 내용</th><th>달성 가능성</th></tr></thead><tbody>${r.strategy.map(t=>`<tr><td class="q"><b>${t.item}</b></td><td>${t.detail}</td><td><span class="tone ${gt[t.grade]||'neu'}" style="font-size:10.5px">${t.grade}</span> ${t.check}</td></tr>`).join('')}</tbody></table>
@@ -636,6 +703,7 @@ function selectCo(code){
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
+  {const W=((D.ir_web||{}).companies||{})[c.code]||[];const w=W[0];if(w){const a=document.createElement('a');a.href=w.pdf||w.page;a.target='_blank';a.rel='noopener';a.style.color='var(--accent)';a.textContent=` · 최신 IR 원문(${(w.date||'').replace(/\./g,'-')})`;$('#co-meta').appendChild(a)}}
   $('#co-sub').textContent='단위: 억원, 원 · PER·ROE는 최근 4개 분기 지배주주순이익 합계, PBR은 최근 자기자본 기준 · 적정주가는 내재가치 기준 시나리오, 괴리율은 적정주가가 현재가보다 몇 % 높은지(+면 저평가) · '+quoteLine()+' · 열 제목을 누르면 정렬돼요';
   renderCompanyTable();renderPerf(c);renderReview(c);renderBiz(c);renderValueReport(c);
   const s=S();
@@ -712,15 +780,185 @@ function renderSources(){
   const m=D.meta; if(m) $('#run-meta').textContent=`마지막 자동 실행: ${m.last_run||'–'} · 갱신된 소스: ${(m.sources_updated||[]).join(', ')||'없음(키 미등록)'}`;
 }
 
+
+/* ---------------- 밸류체인 · 스프레드 · 수급 ---------------- */
+const CONAME=()=>{const m={};((D.companies&&D.companies.companies)||[]).forEach(c=>m[c.code]=c.name);return m};
+const coLink=(code,nm)=>/^\d{6}$/.test(code)?`<a class="chip" href="#companies" data-co="${code}">${nm[code]||code}</a>`:`<span class="chip">${code}</span>`;
+function goCo(code){location.hash='#companies';setTimeout(()=>{selectCo(code);const e=document.getElementById('co-detail');if(e)e.scrollIntoView({block:'start'})},60)}
+// 관세청 월별 단가($/kg) → 달러/톤
+function priceSeries(item,side){
+  const cu=D.customs_exports, x=cu&&cu.extra&&cu.extra[item];
+  if(!x)return null; const a=x[side+'_price']; if(!a||!a.some(v=>v!=null))return null;
+  // 관세청 단가는 소량 거래 달에 튀는 값이 있어, 앞뒤 6개월 중앙값의 0.5~2배를 벗어나면 비워요
+  return a.map((v,i)=>{if(v==null)return null;const w=a.slice(Math.max(0,i-6),i+7).filter(x=>x!=null).sort((x,y)=>x-y);const md=w[Math.floor(w.length/2)];return md&&v/md>0.5&&v/md<2?v*1000:null});
+}
+// 관세청 확정치 다음 달부터는 중국 선물 월평균 변화율로 연장(추정)
+function extMonths(last){const out=[];const now=new Date();const end=now.getFullYear()*12+now.getMonth();let y=+last.slice(0,4),m=+last.slice(5,7);for(let k=y*12+m;k<=end;k++){out.push(Math.floor(k/12)+'-'+String(k%12+1).padStart(2,'0'))}return out}
+function extPrice(item,base,lastM,months){
+  const mk=D.market_recent&&D.market_recent.series&&D.market_recent.series[item]; if(!mk||base==null)return null;
+  const b=mk.months[lastM]; if(!b)return null;
+  const r=months.map(m=>mk.months[m]?base*mk.months[m].avg/b.avg:null); return r.some(v=>v!=null)?{v:r,mk}:null;
+}
+function spreadSeries(sp){
+  const cu=D.customs_exports; if(!cu||!cu.months)return null;
+  const parts=[...sp.formula.map(f=>({...f,sign:1})),...sp.minus.map(f=>({...f,sign:-1}))];
+  const P=parts.map(f=>priceSeries(f.item,f.side)); if(P.some(p=>!p))return null;
+  // 연장: 모든 구성 품목에 선물 대응이 있고, 관세청 마지막 달 값이 있어야
+  const lastM=cu.months[cu.months.length-1], add=extMonths(lastM); let ext=null;
+  if(add.length&&D.market_recent){
+    const E=parts.map((f,i)=>extPrice(f.item,P[i][P[i].length-1],lastM,add));
+    if(E.every(e=>e)){ext={E,months:add,proxies:[...new Map(E.map((e,i)=>[e.mk.sym,{item:parts[i].item,desc:e.mk.desc,direct:e.mk.direct,last:e.mk.last}])).values()],
+      partial:add.map(m=>{const n=Math.max(...E.map(e=>(e.mk.months[m]||{}).n||0));return n<15})}}
+  }
+  const months=ext?[...cu.months,...ext.months]:cu.months, nA=cu.months.length;
+  const PP=P.map((p,i)=>ext?[...p,...ext.E[i].v]:p);
+  const comb=(idx)=>months.map((_,j)=>{let t=0;for(const i of idx){const v=PP[i][j];if(v==null)return null;t+=parts[i].sign*parts[i].w*v}return Math.round(t)});
+  const all=parts.map((_,i)=>i), pi=sp.formula.map((_,i)=>i), fi=sp.minus.map((_,i)=>sp.formula.length+i);
+  const v=comb(all), pr=comb(pi).map(x=>x), fd=sp.minus.length?comb(fi).map(x=>x==null?null:-x):null;
+  return {months,v,pr,fd,nA,ext,est:months.map((_,j)=>j>=nA)};
+}
+let vcSel=null;
+function renderChain(){
+  const vc=D.valuechain;
+  if(!vc){$('#vc').innerHTML='<p class="sub">밸류체인 데이터를 불러오지 못했어요.</p>';return}
+  const nm=CONAME(), box=$('#vc');
+  box.querySelectorAll('.vc-col').forEach(e=>e.remove());
+  vc.stages.forEach((st,i)=>{const col=document.createElement('div');col.className='vc-col';col.innerHTML=`<h3>${i+1}. ${st}</h3>`+vc.nodes.filter(n=>n.stage===i).map(n=>`<button type="button" class="vc-n" data-id="${n.id}">${n.name}${n.producers.length?`<small>상장사 ${n.producers.filter(c=>/^\d{6}$/.test(c)).length}곳</small>`:''}</button>`).join('');box.appendChild(col)});
+  box.querySelectorAll('.vc-n').forEach(b=>b.onclick=()=>selNode(b.dataset.id));
+  requestAnimationFrame(vcLines);
+  if(!renderChain._ro){renderChain._ro=new ResizeObserver(()=>vcLines());renderChain._ro.observe(box)}
+  // 스프레드 선택
+  const ss=$('#sp-sel'); ss.innerHTML=vc.spreads.map(sp=>`<option value="${sp.id}">${sp.name}</option>`).join('');
+  ss.onchange=()=>drawSpread(ss.value); $('#sp-range').onchange=()=>drawSpread(ss.value);
+  const ps=$('#pr-sel'); const pairs=[]; vc.spreads.forEach(sp=>(sp.companies||[]).forEach(c=>pairs.push([c,sp.id])));
+  ps.innerHTML=pairs.map(([c,id])=>`<option value="${c}|${id}">${nm[c]||c} · ${vc.spreads.find(x=>x.id===id).name}</option>`).join('');
+  ps.onchange=()=>drawProfit(...ps.value.split('|'));
+  drawSpread(ss.value); if(pairs.length)drawProfit(...pairs[0]);
+  renderSD(); selNode(vcSel||'ethylene',true);
+}
+function vcLines(){
+  const vc=D.valuechain, box=$('#vc'), svg=$('#vc-lines'); if(!vc||!box||box.offsetParent===null)return;
+  const r0=box.getBoundingClientRect(); const pos={};
+  box.querySelectorAll('.vc-n').forEach(b=>{const r=b.getBoundingClientRect();pos[b.dataset.id]={l:r.left-r0.left,r:r.right-r0.left,y:r.top-r0.top+r.height/2}});
+  const on=vcSel; let h='';
+  vc.nodes.forEach(n=>n.src.forEach(f=>{const a=pos[f],b=pos[n.id];if(!a||!b)return;
+    const x1=a.r,x2=b.l,mx=(x1+x2)/2, hl=on&&(n.id===on||f===on)?' class="hl"':'';
+    const d=x2>x1?`M${x1},${a.y} C${mx},${a.y} ${mx},${b.y} ${x2},${b.y}`:`M${a.l},${a.y} C${a.l-20},${a.y} ${b.l-20},${b.y} ${b.l},${b.y}`;
+    h+=`<path${hl} d="${d}"/>`}));
+  svg.innerHTML=h;
+  // 강조선을 위로
+  svg.querySelectorAll('path.hl').forEach(p=>svg.appendChild(p));
+}
+function selNode(id,quiet){
+  const vc=D.valuechain, n=vc.nodes.find(x=>x.id===id); if(!n)return; vcSel=id;
+  const nm=CONAME(), rel=new Set([...n.src,...vc.nodes.filter(x=>x.src.includes(id)).map(x=>x.id)]);
+  const box=$('#vc'); box.classList.add('focus');
+  box.querySelectorAll('.vc-n').forEach(b=>{b.classList.toggle('on',b.dataset.id===id);b.classList.toggle('rel',rel.has(b.dataset.id));b.setAttribute('aria-pressed',b.dataset.id===id)});
+  vcLines();
+  const up=n.src.map(s=>vc.nodes.find(x=>x.id===s).name), down=vc.nodes.filter(x=>x.src.includes(id)).map(x=>x.name);
+  const sps=vc.spreads.filter(sp=>sp.node===id), sd=vc.supply_demand.find(x=>x.node===id);
+  $('#vc-detail').innerHTML=`<h3>${n.name} <span class="sub" style="font-weight:400">${vc.stages[n.stage]}</span></h3><p>${n.desc}</p>
+   ${up.length||down.length?`<p class="sub">원료: ${up.join(', ')||'–'} → 쓰이는 곳: ${down.join(', ')||'–'}</p>`:''}
+   ${n.producers.length?`<h4>만드는 기업 (이 대시보드의 상장사)</h4><div class="chips">${n.producers.map(c=>coLink(c,nm)).join('')}</div>`:''}
+   ${n.users.length?`<h4>사용하는 기업·산업</h4><div class="chips">${n.users.map(u=>`<span class="chip">${u}</span>`).join('')}</div>`:''}
+   ${sps.length?`<h4>스프레드</h4><div class="chips">${sps.map(sp=>`<button type="button" class="seg" data-sp="${sp.id}">${sp.name} 차트 보기</button>`).join(' ')}</div>`:''}
+   ${sd?`<h4>수급 2026~2029</h4><div class="chips">${Object.entries(sd.years).map(([y,g])=>`<span class="sdc ${g?'g-'+g:'g-na'}">${y.slice(2)}년 ${g||'확인 중'}</span>`).join('')}</div><p style="margin-top:6px">${sd.read}</p>`:''}`;
+  $('#vc-detail').querySelectorAll('[data-co]').forEach(a=>a.onclick=e=>{e.preventDefault();goCo(a.dataset.co)});
+  $('#vc-detail').querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{$('#sp-sel').value=b.dataset.sp;drawSpread(b.dataset.sp);$('#c-sp').closest('.card').scrollIntoView({behavior:'smooth',block:'start'})});
+}
+const NODATA='관세청 품목별 단가를 아직 수집하지 못했어요. 매주 월요일 자동 수집 후 표시돼요.';
+function chartBox(id){const c=document.getElementById(id);if(c)return c;return null}
+function resetCanvas(id,cls){const card=document.querySelector(cls);const w=card.querySelector('.chart');if(!w.querySelector('canvas'))w.innerHTML=`<canvas id="${id}" role="img"></canvas>`}
+const dashFrom=nA=>({borderDash:ctx=>ctx.p1DataIndex>=nA?[5,4]:undefined});
+function extNote(S0,sp){
+  const cu=D.customs_exports, lastM=cu.months[cu.months.length-1];
+  if(S0.ext){const pr=S0.ext.proxies.map(p=>`${p.desc}${p.direct?'':''}`).join(', ');
+    const nx=S0.ext.months[0]; return ` <b>${nx}부터(점선)</b>는 관세청 확정치가 아직 없어(매달 15일께 전월치 공개) ${pr} 선물의 월평균 변화율을 ${lastM} 관세청 단가에 곱해 추정했어요${S0.ext.partial.some(x=>x)?`(${S0.ext.months.filter((m,i)=>S0.ext.partial[i]).join('·')}은 ${S0.ext.proxies[0].last.date}까지 일부 기간 평균)`:''}. 확정치가 들어오면 자동으로 바뀌어요.`}
+  return ` 관세청 확정치는 ${lastM}까지예요(매달 15일께 전월치 공개). 이 스프레드의 구성 품목 중 ${(sp.formula.concat(sp.minus)).filter(f=>!(D.market_recent&&D.market_recent.series&&D.market_recent.series[f.item])).map(f=>f.item).join('·')}은(는) 대응하는 공개 선물이 없어 최근 달 추정을 붙이지 않았어요.`;
+}
+function drawSpread(id){
+  const vc=D.valuechain, sp=vc.spreads.find(x=>x.id===id); resetCanvas('c-sp','#v-chain .card:nth-child(2)');
+  $('#sp-sub').textContent=`${sp.name} · ${sp.unit}${sp.note?' · '+sp.note:''}`;
+  const S0=spreadSeries(sp), s=S();
+  if(!S0){empty('c-sp',NODATA);$('#sp-src').textContent=vc.price_source;return}
+  const rg=+$('#sp-range').value, n=S0.months.length; let from=rg?Math.max(0,n-rg):0;
+  while(from<n&&S0.v[from]==null)from++;
+  const L=S0.months.slice(from), V=S0.v.slice(from), nA=S0.nA-from, ok=V.filter(v=>v!=null), okA=V.slice(0,nA).filter(v=>v!=null), avg=okA.reduce((a,b)=>a+b,0)/okA.length;
+  const dsh=dashFrom(nA);
+  const ds=[line('스프레드',V,s[0],{borderWidth:2.2,yAxisID:'y',segment:dsh}),line(`기간 평균 ${fmt(avg)}`,L.map(()=>Math.round(avg)),css('--ink-3'),{borderDash:[4,4],borderWidth:1,yAxisID:'y'})];
+  ds.push(line('제품 가격',S0.pr.slice(from),s[2],{borderWidth:1.2,yAxisID:'y2',segment:dsh}));
+  if(S0.fd)ds.push(line('원재료 비용',S0.fd.slice(from),s[1],{borderWidth:1.2,yAxisID:'y2',segment:dsh}));
+  const t=css('--ink-3'),g=css('--line');
+  draw('c-sp',{type:'line',data:{labels:L,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{title:c=>c[0].label+(c[0].dataIndex>=nA?' (선물 변화율 추정)':''),label:c=>`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
+    scales:{x:{ticks:{color:t,maxRotation:0,autoSkipPadding:14},grid:{display:false}},y:{position:'left',title:{display:true,text:'스프레드',color:t},ticks:{color:t},grid:{color:ctx=>ctx.tick.value===0?t:g},border:{display:false}},
+      y2:{position:'right',title:{display:true,text:'가격',color:t},ticks:{color:t},grid:{display:false},border:{display:false}}}}});
+  const lastA=V[nA-1], last=V[V.length-1]; const pctl=v=>Math.round(okA.filter(x=>x<=v).length/okA.length*100);
+  const cur=nA<V.length&&last!=null?`최근 추정(${L[L.length-1]}) <b>${fmt(last)}</b>달러/톤 · 관세청 확정(${L[nA-1]}) ${fmt(lastA)}`:`최근(${L[nA-1]}) <b>${fmt(lastA)}</b>달러/톤`;
+  $('#sp-src').innerHTML=`${cur} · 기간 평균 ${fmt(avg)} · ${(q=>q>50?`기간 내 상위 ${101-q}%`:`기간 내 하위 ${q}%`)(pctl(last!=null?last:lastA))} 수준.${extNote(S0,sp)} 출처: ${vc.price_source}${S0.ext?' · '+D.market_recent.source+' (수집 '+D.market_recent.fetched+')':''}. ${vc.note} 거래가 적어 앞뒤 6개월 중앙값의 절반 미만이거나 2배를 넘는 달은 이상치로 보고 뺐어요.`;
+}
+function qAvg(months,vals){const q={};const lm=months[months.length-1],last=lm.slice(0,4)+'Q'+Math.ceil(+lm.slice(5,7)/3);months.forEach((m,i)=>{const v=vals[i];if(v==null)return;const k=m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);(q[k]=q[k]||[]).push(v)});const o={};Object.entries(q).forEach(([k,a])=>{if(a.length>=2||k===last)o[k]=a.reduce((x,y)=>x+y,0)/a.length});return o}
+function corr(a,b){const n=a.length;if(n<6)return null;const ma=a.reduce((x,y)=>x+y,0)/n,mb=b.reduce((x,y)=>x+y,0)/n;let sab=0,saa=0,sbb=0;for(let i=0;i<n;i++){sab+=(a[i]-ma)*(b[i]-mb);saa+=(a[i]-ma)**2;sbb+=(b[i]-mb)**2}return {r:sab/Math.sqrt(saa*sbb),slope:sab/saa,icpt:mb-sab/saa*ma,n}}
+function drawProfit(code,id){
+  const vc=D.valuechain, sp=vc.spreads.find(x=>x.id===id), nm=CONAME(); resetCanvas('c-pr','#v-chain .card:nth-child(3)');
+  const co=((D.companies&&D.companies.companies)||[]).find(c=>c.code===code); const S0=spreadSeries(sp);
+  if(!co){empty('c-pr','회사 실적이 없어요.');return}
+  const Q=co.quarterly||{}, qe=Object.keys(Q).sort();
+  const qk2=m=>m.slice(0,4)+'Q'+Math.ceil(+m.slice(5,7)/3);
+  const qs=S0?qAvg(S0.months,S0.v):{};
+  // 실적 분기 + 그 뒤 스프레드만 있는 분기(실적 미발표)까지 가로축에
+  const qk=[...new Set([...qe,...Object.keys(qs).filter(k=>k>qe[qe.length-1])])].sort();
+  const estQ=new Set(S0?S0.months.filter((m,i)=>S0.est[i]).map(qk2):[]);
+  const fstEst=S0&&S0.ext?S0.months[S0.nA]:null; const partQ=S0&&S0.ext?S0.months.filter((m,i)=>S0.est[i]&&S0.ext.partial[i-S0.nA]).map(qk2):[];
+  const mg=qk.map(k=>Q[k]&&Q[k].rev?+(Q[k].op/Q[k].rev*100).toFixed(1):null);
+  const s=S(), t=css('--ink-3'), g=css('--line');
+  const SPQ=qk.map(k=>qs[k]!=null?Math.round(qs[k]):null);
+  const lastE=qk.indexOf(qe[qe.length-1]);
+  // 회귀식
+  const pick=lag=>{const a=[],b=[];qk.forEach((k,i)=>{const j=i-lag;if(j<0)return;const x=SPQ[j],y=mg[i];if(x!=null&&y!=null){a.push(x);b.push(y)}});return corr(a,b)};
+  const c0=S0?pick(0):null,c1=S0?pick(1):null; const best=c1&&c0&&Math.abs(c1.r)>Math.abs(c0.r)+0.05?{...c1,lag:1}:c0?{...c0,lag:0}:null;
+  const useEst=best&&Math.abs(best.r)>=0.4;
+  const pred=qk.map((k,i)=>{if(i<=lastE||!useEst)return null;const x=SPQ[i-best.lag];return x==null?null:+(best.icpt+best.slope*x).toFixed(1)});
+  const ds=[{type:'bar',label:'영업이익률(%)',data:mg,backgroundColor:mg.map(v=>v<0?css('--down'):s[2]),yAxisID:'y',order:2}];
+  if(pred.some(v=>v!=null))ds.push({type:'bar',label:'추정 영업이익률(회귀, 실적 미발표)',data:pred,backgroundColor:'transparent',borderColor:s[2],borderWidth:1.5,borderDash:[4,3],yAxisID:'y',order:3,grouped:false});
+  const nAq=qk.findIndex(k=>estQ.has(k)&&!(qs[k]!=null&&S0.months.some((m,i)=>!S0.est[i]&&qk2(m)===k)));
+  if(S0)ds.push(line(sp.name+' (분기 평균)',SPQ,s[0],{yAxisID:'y2',order:1,pointRadius:qk.map(k=>estQ.has(k)?3.5:2),pointStyle:qk.map(k=>estQ.has(k)?'rectRot':'circle'),segment:{borderDash:ctx=>estQ.has(qk[ctx.p1DataIndex])?[5,4]:undefined}}));
+  draw('c-pr',{data:{labels:qk,datasets:ds},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},tooltip:{callbacks:{
+      title:c=>{const k=c[0].label;const tags=[];if(!Q[k])tags.push('실적 미발표');if(estQ.has(k))tags.push(partQ.includes(k)?'스프레드 일부 추정·진행 중':'스프레드 일부 선물 추정');return k+(tags.length?' ('+tags.join(', ')+')':'')},
+      label:c=>c.dataset.yAxisID==='y'?`${c.dataset.label} ${fmt(c.raw,1)}%`:`${c.dataset.label}: ${fmt(c.raw)}달러/톤`}}},
+    scales:{x:{ticks:{color:t,maxRotation:0,autoSkipPadding:10},grid:{display:false}},y:{position:'left',title:{display:true,text:'영업이익률 %',color:t},ticks:{color:t},grid:{color:ctx=>ctx.tick.value===0?t:g},border:{display:false}},
+      y2:{position:'right',display:!!S0,title:{display:true,text:'스프레드 달러/톤',color:t},ticks:{color:t},grid:{display:false},border:{display:false}}}}});
+  const box=$('#pr-stats');
+  if(!S0){box.innerHTML=`<p class="pr-read">${NODATA} 그 전까지는 영업이익률만 보여 줘요.</p>`;return}
+  if(!best){box.innerHTML='<p class="pr-read">겹치는 분기가 6개 미만이라 관계를 계산하지 않았어요.</p>';return}
+  const st=Math.abs(best.r)>=0.7?'강한':Math.abs(best.r)>=0.4?'중간 정도의':'약한';
+  const spE=SPQ[lastE], avgSp=SPQ.slice(0,lastE+1).filter(v=>v!=null).reduce((x,y,_,a)=>x+y/a.length,0);
+  const after=qk.slice(lastE+1).map((k,j)=>({k,v:SPQ[lastE+1+j],p:pred[lastE+1+j]})).filter(o=>o.v!=null);
+  const afterTxt=after.length?` <b>실적이 아직 안 나온 ${after.map(o=>o.k).join('·')}</b>의 스프레드는 ${after.map(o=>`${o.k} ${fmt(o.v)}달러/톤(${o.v>=spE?'+':''}${spE?((o.v/spE-1)*100).toFixed(0):'–'}% vs ${qk[lastE]})`).join(', ')}${partQ.length?` — ${partQ.join('·')}는 분기 중간까지의 값`:''}.${useEst&&after.some(o=>o.p!=null)?` 회귀식대로라면 영업이익률은 ${after.filter(o=>o.p!=null).map(o=>`${o.k} 약 ${fmt(o.p,1)}%`).join(', ')}로 추정돼요(점선 막대, 실적 발표 시 실제치로 교체). 재고평가·환율·일회성 손익은 반영되지 않아요.`:` 상관이 약해 이 스프레드만으로 영업이익률을 추정하지 않았어요.`}`:'';
+  box.innerHTML=`<div class="kpi"><div class="l">상관계수 (같은 분기)</div><div class="v">${c0?c0.r.toFixed(2):'–'}</div><div class="s">${c0?c0.n:0}개 분기</div></div>
+   <div class="kpi"><div class="l">상관계수 (스프레드 1분기 선행)</div><div class="v">${c1?c1.r.toFixed(2):'–'}</div><div class="s">원료 재고 시차(래깅) 반영</div></div>
+   <div class="kpi"><div class="l">스프레드 100달러당 영업이익률</div><div class="v">${(best.slope*100>0?'+':'')+(best.slope*100).toFixed(1)}%p</div><div class="s">${best.lag?'1분기 선행':'같은 분기'} 기준 회귀 기울기</div></div>
+   <p class="pr-read">${nm[code]||code}의 영업이익률은 ${sp.name}와 ${st} 관계예요(r=${best.r.toFixed(2)}${best.lag?', 스프레드가 1분기 먼저 움직임':''}). 마지막 실적 분기(${qk[lastE]}) 스프레드는 ${fmt(spE)}달러/톤으로 기간 평균 ${fmt(avgSp)}달러/톤${spE>=avgSp?'보다 높았어요':'보다 낮았어요'}.${afterTxt} ${Math.abs(best.r)<0.4?'상관이 약한 건 이 회사 이익에 다른 사업(자회사·다른 제품)이 크게 섞여 있거나 환율·재고 손익 영향이 크다는 뜻이에요.':''}</p>`;
+}
+function renderSD(){
+  const vc=D.valuechain, Y=['2026','2027','2028','2029'];
+  $('#sd').innerHTML=`<div class="sdhead"><span>제품</span>${Y.map(y=>`<span>${y}</span>`).join('')}</div>`+vc.supply_demand.map(r=>`<details class="sd"><summary><b>${r.name}</b>${Y.map(y=>{const g=r.years[y];return `<span class="sdc ${g?'g-'+g:'g-na'}">${g||'확인 중'}</span>`}).join('')}</summary>
+   <div><p><b>지금</b> ${r.now}</p><p><b>증설·폐쇄</b> ${r.adds}</p><p><b>읽는 법</b> ${r.read}</p>${r.src.length?`<p class="sub">출처: ${r.src.map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.title}</a>`).join(' · ')}</p>`:''}
+   <p><button type="button" class="seg" data-node="${r.node}">밸류체인에서 보기</button></p></div></details>`).join('');
+  $('#sd').querySelectorAll('[data-node]').forEach(b=>b.onclick=()=>{selNode(b.dataset.node);$('#vc').closest('.card').scrollIntoView({behavior:'smooth',block:'start'})});
+}
+
 /* ---------------- 라우팅 ---------------- */
 const rendered={};
 function show(){
   const v=(location.hash||'#industry').slice(1);
-  const view=['industry','companies','valuation','sources'].includes(v)?v:'industry';
+  const view=['industry','chain','companies','valuation','sources'].includes(v)?v:'industry';
   document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
   document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
   if(!rendered[view]){rendered[view]=1;
     if(view==='industry'){renderKPIs();renderExports();renderIndustry();}
+    if(view==='chain')renderChain();
     if(view==='companies')renderCompanies();
     if(view==='valuation')renderValuation();
     if(view==='sources')renderSources();}

@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08",
+ "updated": "2026-11-09",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라, 지난 10년 순이익률(가장 좋은 해와 나쁜 해를 뺀 평균)과 추세 매출로 계산한 '사이클 평균 이익'에서 출발해, 사업 구조가 바뀐 회사는 그 이유를 적고 조정했어요. ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금이 사이클의 어디쯤인지(호황 정점권·상승기·중립·회복기·바닥권)에 따라 앞으로 1~3년만 이어진다고 보고 그 현재가치만 더하거나 뺐어요. ③ 성장률(g)은 사이클이 아닌 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고, 6~10년차 성장률은 2%로 수렴, 순현금은 더해요(차입은 빼요).",
  "terminal_growth": 2.0,
  "asof": "2026-11-05",
@@ -27,7 +27,7 @@
     "trend_g": 6.4
    },
    "price": 193500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1240220092,
    "shares": 6566563106,
@@ -120,7 +120,7 @@
     "trend_g": 18.8
    },
    "price": 1176000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 836224788,
    "shares": 711075500,
@@ -213,7 +213,7 @@
     "trend_g": -22.2
    },
    "price": 752000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 99094122,
    "shares": 131774099,
@@ -306,7 +306,7 @@
     "trend_g": 9.0
    },
    "price": 85800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3669526,
    "shares": 42768373,
@@ -395,7 +395,7 @@
     "trend_g": 13.0
    },
    "price": 23250,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 378145,
    "shares": 16264300,
@@ -491,7 +491,7 @@
     "trend_g": 17.7
    },
    "price": 27850,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 330269,
    "shares": 11858844,
@@ -574,7 +574,7 @@
     "trend_g": 11.7
    },
    "price": 10650,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 224724,
    "shares": 21100831,
@@ -663,7 +663,7 @@
     "trend_g": 17.2
    },
    "price": 52300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1761626,
    "shares": 33683104,
@@ -674,6 +674,7 @@
    "per": 6.8,
    "roe": 58.4,
    "pbr": 3.94,
+   "net_debt_levered": -20048,
    "dcf": {
     "E1": 45000,
     "r": 11.0,
@@ -684,24 +685,24 @@
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 530172,
-      "per_share": 15740,
-      "upside": -69.9
+      "value": 547354,
+      "per_share": 16250,
+      "upside": -68.9
      },
      "base": {
       "g": 5.0,
-      "value": 665823,
-      "per_share": 19767,
-      "upside": -62.2
+      "value": 681806,
+      "per_share": 20242,
+      "upside": -61.3
      },
      "bull": {
       "g": 12.0,
-      "value": 830626,
-      "per_share": 24660,
-      "upside": -52.8
+      "value": 845154,
+      "per_share": 25091,
+      "upside": -52.0
      }
     },
-    "implied_g": 33.5,
+    "implied_g": 33.4,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -712,7 +713,7 @@
      "excess": 215880,
      "excess_value": 225674
     },
-    "net_cash_added": -20048
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -755,7 +756,7 @@
     "trend_g": 14.6
    },
    "price": 14910,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 193470,
    "shares": 12975826,
@@ -766,6 +767,7 @@
    "per": 84.3,
    "roe": 1.3,
    "pbr": 1.07,
+   "net_debt_levered": -35222,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
@@ -776,24 +778,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 10994,
-      "per_share": 847,
-      "upside": -94.3
+      "value": 41038,
+      "per_share": 3163,
+      "upside": -78.8
      },
      "base": {
       "g": 15.0,
-      "value": 55001,
-      "per_share": 4239,
-      "upside": -71.6
+      "value": 80422,
+      "per_share": 6198,
+      "upside": -58.4
      },
      "bull": {
       "g": 30.0,
-      "value": 136315,
-      "per_share": 10505,
-      "upside": -29.5
+      "value": 153192,
+      "per_share": 11806,
+      "upside": -20.8
      }
     },
-    "implied_g": 37.0,
+    "implied_g": 35.6,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -804,7 +806,7 @@
      "excess": -3705,
      "excess_value": -3062
     },
-    "net_cash_added": -35222
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -838,7 +840,7 @@
     "trend_g": 22.1
    },
    "price": 13760,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 150337,
    "shares": 10925658,
@@ -849,6 +851,7 @@
    "per": null,
    "roe": -8.0,
    "pbr": 1.76,
+   "net_debt_levered": -19174,
    "dcf": {
     "E1": 5000,
     "r": 12.0,
@@ -859,24 +862,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 10638,
-      "per_share": 974,
-      "upside": -92.9
+      "value": 26993,
+      "per_share": 2471,
+      "upside": -82.0
      },
      "base": {
       "g": 15.0,
-      "value": 45975,
-      "per_share": 4208,
-      "upside": -69.4
+      "value": 59813,
+      "per_share": 5475,
+      "upside": -60.2
      },
      "bull": {
       "g": 30.0,
-      "value": 111267,
-      "per_share": 10184,
-      "upside": -26.0
+      "value": 120454,
+      "per_share": 11025,
+      "upside": -19.9
      }
     },
-    "implied_g": 36.1,
+    "implied_g": 35.1,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -887,7 +890,7 @@
      "excess": -11805,
      "excess_value": -9757
     },
-    "net_cash_added": -19174
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -921,7 +924,7 @@
     "trend_g": 11.7
    },
    "price": 5830,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 96522,
    "shares": 16556112,
@@ -932,6 +935,7 @@
    "per": 10.1,
    "roe": 7.7,
    "pbr": 0.77,
+   "net_debt_levered": -44527,
    "dcf": {
     "E1": 12000,
     "r": 10.5,
@@ -942,24 +946,24 @@
     "scenarios": {
      "bear": {
       "g": -2.0,
-      "value": 55049,
-      "per_share": 3325,
-      "upside": -43.0
+      "value": 92556,
+      "per_share": 5590,
+      "upside": -4.1
      },
      "base": {
       "g": 4.0,
-      "value": 86029,
-      "per_share": 5196,
-      "upside": -10.9
+      "value": 121396,
+      "per_share": 7332,
+      "upside": 25.8
      },
      "bull": {
       "g": 9.0,
-      "value": 118969,
-      "per_share": 7186,
-      "upside": 23.3
+      "value": 152061,
+      "per_share": 9185,
+      "upside": 57.5
      }
     },
-    "implied_g": 5.7,
+    "implied_g": -1.1,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -970,7 +974,7 @@
      "excess": -2421,
      "excess_value": -2037
     },
-    "net_cash_added": -44527
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -1013,7 +1017,7 @@
     "trend_g": 7.9
    },
    "price": 7160,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 105691,
    "shares": 14761296,
@@ -1024,6 +1028,7 @@
    "per": null,
    "roe": -41.6,
    "pbr": 0.76,
+   "net_debt_levered": -102223,
    "dcf": {
     "E1": 12000,
     "r": 11.0,
@@ -1034,24 +1039,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 12172,
-      "per_share": 825,
-      "upside": -88.5
+      "value": 97743,
+      "per_share": 6622,
+      "upside": -7.5
      },
      "base": {
       "g": 8.0,
-      "value": 60119,
-      "per_share": 4073,
-      "upside": -43.1
+      "value": 138710,
+      "per_share": 9397,
+      "upside": 31.2
      },
      "bull": {
       "g": 15.0,
-      "value": 118057,
-      "per_share": 7998,
-      "upside": 11.7
+      "value": 188214,
+      "per_share": 12750,
+      "upside": 78.1
      }
     },
-    "implied_g": 13.7,
+    "implied_g": 1.8,
     "cycle": {
      "position": "바닥권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -1059,7 +1064,7 @@
      "excess": -70082,
      "excess_value": 0
     },
-    "net_cash_added": -102223
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
@@ -1108,7 +1113,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 1413,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 46470,
    "shares": 32887431,
@@ -1157,7 +1162,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 3165,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 20651,
    "shares": 6524731,
@@ -1206,7 +1211,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2700,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 19681,
    "shares": 7289290,
@@ -1249,7 +1254,7 @@
     "trend_g": 11.6
    },
    "price": 17000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 343646,
    "shares": 20214445,
@@ -1344,7 +1349,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 5830,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 153600,
    "shares": 26346530,
@@ -1393,7 +1398,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 7890,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 111940,
    "shares": 14187572,
@@ -1442,7 +1447,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 763,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 6984,
    "shares": 9153171,
@@ -1491,7 +1496,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 85954,
    "shares": 30697929,
@@ -1540,7 +1545,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 3390,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 84768,
    "shares": 25005241,
@@ -1583,7 +1588,7 @@
     "trend_g": 3.6
    },
    "price": 9600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 112564,
    "shares": 11725444,
@@ -1701,7 +1706,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2165,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 86892,
    "shares": 40135001,
@@ -1750,7 +1755,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2155,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 13898,
    "shares": 6449231,
@@ -1793,7 +1798,7 @@
     "trend_g": 8.3
    },
    "price": 69300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3371839,
    "shares": 48655690,
@@ -1882,7 +1887,7 @@
     "trend_g": 2.5
    },
    "price": 137400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 6278345,
    "shares": 45693922,
@@ -1978,7 +1983,7 @@
     "trend_g": 15.0
    },
    "price": 81400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 2357891,
    "shares": 28966714,
@@ -2071,7 +2076,7 @@
     "trend_g": 11.1
    },
    "price": 76500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1730785,
    "shares": 22624647,
@@ -2160,7 +2165,7 @@
     "trend_g": 4.2
    },
    "price": 80300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1476862,
    "shares": 18391806,
@@ -2253,7 +2258,7 @@
     "trend_g": 0.4
    },
    "price": 33900,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 2758065,
    "shares": 81358836,
@@ -2342,7 +2347,7 @@
     "trend_g": 12.4
    },
    "price": 55400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1093268,
    "shares": 19734079,
@@ -2439,7 +2444,7 @@
     "trend_g": 1.8
    },
    "price": 8990,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 270382,
    "shares": 30075860,
@@ -2531,7 +2536,7 @@
     "trend_g": 9.9
    },
    "price": 31100,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 818762,
    "shares": 26326765,
@@ -2624,7 +2629,7 @@
     "trend_g": 1.0
    },
    "price": 124600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 2686674,
    "shares": 21562395,
@@ -2717,7 +2722,7 @@
     "trend_g": 6.4
    },
    "price": 28800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 2199831,
    "shares": 76383005,
@@ -2810,7 +2815,7 @@
     "trend_g": 27.7
    },
    "price": 5620,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 70894,
    "shares": 12614560,
@@ -2899,7 +2904,7 @@
     "trend_g": 3.9
    },
    "price": 18960,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 290880,
    "shares": 15341797,
@@ -2991,7 +2996,7 @@
     "trend_g": 10.0
    },
    "price": 10550,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 101303,
    "shares": 9602135,
@@ -3080,7 +3085,7 @@
     "trend_g": 9.0
    },
    "price": 7870,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 122882,
    "shares": 15614033,
@@ -3172,7 +3177,7 @@
     "trend_g": 13.0
    },
    "price": 9920,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 225589,
    "shares": 22740835,
@@ -3265,7 +3270,7 @@
     "trend_g": 15.1
    },
    "price": 7690,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 71005,
    "shares": 9233442,
@@ -3276,6 +3281,7 @@
    "per": null,
    "roe": -24.7,
    "pbr": 1.28,
+   "net_debt_levered": -20116,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
@@ -3286,24 +3292,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 17143,
+      "per_share": 1857,
+      "upside": -75.9
      },
      "base": {
       "g": 12.0,
-      "value": 21547,
-      "per_share": 2334,
-      "upside": -69.7
+      "value": 36736,
+      "per_share": 3979,
+      "upside": -48.3
      },
      "bull": {
       "g": 25.0,
-      "value": 60894,
-      "per_share": 6595,
-      "upside": -14.2
+      "value": 72486,
+      "per_share": 7850,
+      "upside": 2.1
      }
     },
-    "implied_g": 27.5,
+    "implied_g": 24.6,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3314,7 +3320,7 @@
      "excess": -17730,
      "excess_value": -12257
     },
-    "net_cash_added": -20116
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -3348,7 +3354,7 @@
     "trend_g": 14.9
    },
    "price": 34850,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 626025,
    "shares": 17963419,
@@ -3441,7 +3447,7 @@
     "trend_g": 6.1
    },
    "price": 7030,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 206795,
    "shares": 29416053,
@@ -3533,7 +3539,7 @@
     "trend_g": 8.3
    },
    "price": 20800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 445748,
    "shares": 21430175,
@@ -3544,6 +3550,7 @@
    "per": null,
    "roe": -1.7,
    "pbr": 1.64,
+   "net_debt_levered": -225871,
    "dcf": {
     "E1": 18000,
     "r": 11.0,
@@ -3554,24 +3561,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 127719,
+      "per_share": 5960,
+      "upside": -71.3
      },
      "base": {
       "g": 8.0,
-      "value": 15517,
-      "per_share": 724,
-      "upside": -96.5
+      "value": 189170,
+      "per_share": 8827,
+      "upside": -57.6
      },
      "bull": {
       "g": 15.0,
-      "value": 108408,
-      "per_share": 5059,
-      "upside": -75.7
+      "value": 263425,
+      "per_share": 12292,
+      "upside": -40.9
      }
     },
-    "implied_g": 30.8,
+    "implied_g": 26.6,
     "cycle": {
      "position": "회복기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3582,7 +3589,7 @@
      "excess": -22594,
      "excess_value": -18895
     },
-    "net_cash_added": -225871
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -3625,7 +3632,7 @@
     "trend_g": 6.1
    },
    "price": 15800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 172603,
    "shares": 10924243,
@@ -3714,7 +3721,7 @@
     "trend_g": 17.0
    },
    "price": 10830,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 140230,
    "shares": 12948323,
@@ -3803,7 +3810,7 @@
     "trend_g": 11.8
    },
    "price": 19760,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 154735,
    "shares": 7830739,
@@ -3814,6 +3821,7 @@
    "per": 6.4,
    "roe": 23.3,
    "pbr": 1.49,
+   "net_debt_levered": -68185,
    "dcf": {
     "E1": 17000,
     "r": 11.0,
@@ -3824,24 +3832,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 91008,
-      "per_share": 11622,
-      "upside": -41.2
+      "value": 148086,
+      "per_share": 18911,
+      "upside": -4.3
      },
      "base": {
       "g": 8.0,
-      "value": 153701,
-      "per_share": 19628,
-      "upside": -0.7
+      "value": 206123,
+      "per_share": 26322,
+      "upside": 33.2
      },
      "bull": {
       "g": 15.0,
-      "value": 229457,
-      "per_share": 29302,
-      "upside": 48.3
+      "value": 276253,
+      "per_share": 35278,
+      "upside": 78.5
      }
     },
-    "implied_g": 8.1,
+    "implied_g": 1.1,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3853,7 +3861,7 @@
      "excess": 7120,
      "excess_value": 9617
     },
-    "net_cash_added": -68185
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -3896,7 +3904,7 @@
     "trend_g": 13.8
    },
    "price": 163300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 15489495,
    "shares": 94853002,
@@ -3989,7 +3997,7 @@
     "trend_g": -0.6
    },
    "price": 29200,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1043622,
    "shares": 35740474,
@@ -4000,6 +4008,7 @@
    "per": null,
    "roe": -5.6,
    "pbr": 4.97,
+   "net_debt_levered": -197900,
    "dcf": {
     "E1": 25000,
     "r": 12.0,
@@ -4010,24 +4019,24 @@
     "scenarios": {
      "bear": {
       "g": 5.0,
-      "value": 5825,
-      "per_share": 163,
-      "upside": -99.4
+      "value": 172249,
+      "per_share": 4819,
+      "upside": -83.5
      },
      "base": {
       "g": 18.0,
-      "value": 175836,
-      "per_share": 4920,
-      "upside": -83.2
+      "value": 319022,
+      "per_share": 8926,
+      "upside": -69.4
      },
      "bull": {
       "g": 30.0,
-      "value": 435400,
-      "per_share": 12182,
-      "upside": -58.3
+      "value": 543110,
+      "per_share": 15196,
+      "upside": -48.0
      }
     },
-    "implied_g": 46.4,
+    "implied_g": 45.8,
     "cycle": {
      "position": "회복기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4038,7 +4047,7 @@
      "excess": -36732,
      "excess_value": -26565
     },
-    "net_cash_added": -197900
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -4081,7 +4090,7 @@
     "trend_g": 2.8
    },
    "price": 294000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3621948,
    "shares": 12319550,
@@ -4174,7 +4183,7 @@
     "trend_g": 3.2
    },
    "price": 22850,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 233435,
    "shares": 10215978,
@@ -4185,6 +4194,7 @@
    "per": null,
    "roe": -3.4,
    "pbr": 1.57,
+   "net_debt_levered": -58391,
    "dcf": {
     "E1": 20000,
     "r": 12.0,
@@ -4195,24 +4205,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 79886,
-      "per_share": 7820,
-      "upside": -65.8
+      "value": 129694,
+      "per_share": 12695,
+      "upside": -44.4
      },
      "base": {
       "g": 12.0,
-      "value": 183568,
-      "per_share": 17969,
-      "upside": -21.4
+      "value": 227656,
+      "per_share": 22284,
+      "upside": -2.5
      },
      "bull": {
       "g": 25.0,
-      "value": 372759,
-      "per_share": 36488,
-      "upside": 59.7
+      "value": 406409,
+      "per_share": 39782,
+      "upside": 74.1
      }
     },
-    "implied_g": 16.1,
+    "implied_g": 12.5,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4223,7 +4233,7 @@
      "excess": -25035,
      "excess_value": -17307
     },
-    "net_cash_added": -58391
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -4266,7 +4276,7 @@
     "trend_g": 25.8
    },
    "price": 192600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1340472,
    "shares": 6959874,
@@ -4357,7 +4367,7 @@
     "trend_g": 2.9
    },
    "price": 21000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1389397,
    "shares": 66161750,
@@ -4450,7 +4460,7 @@
     "trend_g": 20.1
    },
    "price": 38550,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 482017,
    "shares": 12503677,
@@ -4461,6 +4471,7 @@
    "per": null,
    "roe": -16.2,
    "pbr": 11.3,
+   "net_debt_levered": -16754,
    "dcf": {
     "E1": 10000,
     "r": 12.0,
@@ -4471,24 +4482,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 47526,
-      "per_share": 3801,
-      "upside": -90.1
+      "value": 61817,
+      "per_share": 4944,
+      "upside": -87.2
      },
      "base": {
       "g": 15.0,
-      "value": 115365,
-      "per_share": 9226,
-      "upside": -76.1
+      "value": 127457,
+      "per_share": 10194,
+      "upside": -73.6
      },
      "bull": {
       "g": 25.0,
-      "value": 190520,
-      "per_share": 15237,
-      "upside": -60.5
+      "value": 200175,
+      "per_share": 16009,
+      "upside": -58.5
      }
     },
-    "implied_g": 46.1,
+    "implied_g": 46.0,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4499,7 +4510,7 @@
      "excess": -16899,
      "excess_value": -11683
     },
-    "net_cash_added": -16754
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -4533,7 +4544,7 @@
     "trend_g": 5.8
    },
    "price": 7150,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 160107,
    "shares": 22392557,
@@ -4544,6 +4555,7 @@
    "per": 1260.7,
    "roe": 0.2,
    "pbr": 3.05,
+   "net_debt_levered": -21249,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
@@ -4554,24 +4566,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 8597,
-      "per_share": 384,
-      "upside": -94.6
+      "value": 26722,
+      "per_share": 1193,
+      "upside": -83.3
      },
      "base": {
       "g": 10.0,
-      "value": 25844,
-      "per_share": 1154,
-      "upside": -83.9
+      "value": 42313,
+      "per_share": 1890,
+      "upside": -73.6
      },
      "bull": {
       "g": 20.0,
-      "value": 52129,
-      "per_share": 2328,
-      "upside": -67.4
+      "value": 66073,
+      "per_share": 2951,
+      "upside": -58.7
      }
     },
-    "implied_g": 41.6,
+    "implied_g": 41.1,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4582,7 +4594,7 @@
      "excess": -3873,
      "excess_value": -2678
     },
-    "net_cash_added": -21249
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -4625,7 +4637,7 @@
     "trend_g": 12.9
    },
    "price": 6430,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 84573,
    "shares": 13152931,
@@ -4636,6 +4648,7 @@
    "per": 449.9,
    "roe": 0.4,
    "pbr": 1.72,
+   "net_debt_levered": -16893,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
@@ -4646,24 +4659,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 12355,
-      "per_share": 939,
-      "upside": -85.4
+      "value": 26765,
+      "per_share": 2035,
+      "upside": -68.4
      },
      "base": {
       "g": 10.0,
-      "value": 29263,
-      "per_share": 2225,
-      "upside": -65.4
+      "value": 42356,
+      "per_share": 3220,
+      "upside": -49.9
      },
      "bull": {
       "g": 20.0,
-      "value": 55030,
-      "per_share": 4184,
-      "upside": -34.9
+      "value": 66116,
+      "per_share": 5027,
+      "upside": -21.8
      }
     },
-    "implied_g": 28.0,
+    "implied_g": 25.7,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4674,7 +4687,7 @@
      "excess": -3812,
      "excess_value": -2635
     },
-    "net_cash_added": -16893
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -4717,7 +4730,7 @@
     "trend_g": 7.5
    },
    "price": 49350,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 444150,
    "shares": 9000000,
@@ -4806,7 +4819,7 @@
     "trend_g": 8.1
    },
    "price": 13800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 169592,
    "shares": 12289301,
@@ -4817,6 +4830,7 @@
    "per": 31.1,
    "roe": 6.2,
    "pbr": 1.92,
+   "net_debt_levered": -10961,
    "dcf": {
     "E1": 5500,
     "r": 11.0,
@@ -4827,24 +4841,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 35623,
-      "per_share": 2899,
-      "upside": -79.0
+      "value": 44799,
+      "per_share": 3645,
+      "upside": -73.6
      },
      "base": {
       "g": 8.0,
-      "value": 55148,
-      "per_share": 4488,
-      "upside": -67.5
+      "value": 63575,
+      "per_share": 5173,
+      "upside": -62.5
      },
      "bull": {
       "g": 15.0,
-      "value": 78742,
-      "per_share": 6407,
-      "upside": -53.6
+      "value": 86265,
+      "per_share": 7019,
+      "upside": -49.1
      }
     },
-    "implied_g": 31.5,
+    "implied_g": 30.9,
     "cycle": {
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -4852,7 +4866,7 @@
      "excess": -49,
      "excess_value": 0
     },
-    "net_cash_added": -10961
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -4901,7 +4915,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 6050,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 30701,
    "shares": 5074554,
@@ -4952,7 +4966,7 @@
     "trend_g": -4.4
    },
    "price": 9420,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 191535,
    "shares": 20332817,
@@ -4963,6 +4977,7 @@
    "per": null,
    "roe": -3.8,
    "pbr": 1.83,
+   "net_debt_levered": -26425,
    "dcf": {
     "E1": 6000,
     "r": 11.5,
@@ -4973,24 +4988,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 17105,
-      "per_share": 841,
-      "upside": -91.1
+      "value": 39446,
+      "per_share": 1940,
+      "upside": -79.4
      },
      "base": {
       "g": 10.0,
-      "value": 44317,
-      "per_share": 2180,
-      "upside": -76.9
+      "value": 64455,
+      "per_share": 3170,
+      "upside": -66.3
      },
      "bull": {
       "g": 20.0,
-      "value": 85884,
-      "per_share": 4224,
-      "upside": -55.2
+      "value": 102658,
+      "per_share": 5049,
+      "upside": -46.4
      }
     },
-    "implied_g": 35.3,
+    "implied_g": 34.3,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5001,7 +5016,7 @@
      "excess": -9946,
      "excess_value": -6915
     },
-    "net_cash_added": -26425
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -5035,7 +5050,7 @@
     "trend_g": 17.2
    },
    "price": 12260,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 529545,
    "shares": 43192902,
@@ -5151,7 +5166,7 @@
     "trend_g": 13.2
    },
    "price": 26150,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 716797,
    "shares": 27410957,
@@ -5162,6 +5177,7 @@
    "per": 24.6,
    "roe": 13.8,
    "pbr": 3.38,
+   "net_debt_levered": -25643,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 67123
@@ -5176,24 +5192,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 190668,
-      "per_share": 6956,
-      "upside": -73.4
+      "value": 212395,
+      "per_share": 7749,
+      "upside": -70.4
      },
      "base": {
       "g": 10.0,
-      "value": 276638,
-      "per_share": 10092,
-      "upside": -61.4
+      "value": 296215,
+      "per_share": 10806,
+      "upside": -58.7
      },
      "bull": {
       "g": 20.0,
-      "value": 408273,
-      "per_share": 14895,
-      "upside": -43.0
+      "value": 424559,
+      "per_share": 15489,
+      "upside": -40.8
      }
     },
-    "implied_g": 34.3,
+    "implied_g": 34.0,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5205,7 +5221,7 @@
      "excess": 47123,
      "excess_value": 59672
     },
-    "net_cash_added": -25643
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -5254,7 +5270,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 3765,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 115631,
    "shares": 30712170,
@@ -5290,7 +5306,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 4795,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 42232,
    "shares": 8807605,
@@ -5362,7 +5378,7 @@
     "trend_g": 115.5
    },
    "price": 8510,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 67013,
    "shares": 7874611,
@@ -5445,7 +5461,7 @@
     "trend_g": 9.8
    },
    "price": 9780,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 801426,
    "shares": 81945350,
@@ -5538,7 +5554,7 @@
     "trend_g": 13.5
    },
    "price": 48000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3642989,
    "shares": 75895600,
@@ -5629,7 +5645,7 @@
     "trend_g": 10.3
    },
    "price": 126300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 2670292,
    "shares": 21142451,
@@ -5726,7 +5742,7 @@
     "trend_g": 13.2
    },
    "price": 169400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1873806,
    "shares": 11061429,
@@ -5819,7 +5835,7 @@
     "trend_g": 17.5
    },
    "price": 41600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 345811,
    "shares": 8312766,
@@ -5912,7 +5928,7 @@
     "trend_g": 13.8
    },
    "price": 18910,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 398830,
    "shares": 21090955,
@@ -5923,6 +5939,7 @@
    "per": 24.1,
    "roe": 23.0,
    "pbr": 5.55,
+   "net_debt_levered": -15751,
    "dcf": {
     "E1": 9000,
     "r": 11.5,
@@ -5933,24 +5950,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 66353,
-      "per_share": 3146,
-      "upside": -83.4
+      "value": 79670,
+      "per_share": 3777,
+      "upside": -80.0
      },
      "base": {
       "g": 8.0,
-      "value": 96013,
-      "per_share": 4552,
-      "upside": -75.9
+      "value": 108327,
+      "per_share": 5136,
+      "upside": -72.8
      },
      "bull": {
       "g": 15.0,
-      "value": 131786,
-      "per_share": 6248,
-      "upside": -67.0
+      "value": 142890,
+      "per_share": 6775,
+      "upside": -64.2
      }
     },
-    "implied_g": 41.0,
+    "implied_g": 40.9,
     "cycle": {
      "position": "상승기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -5962,7 +5979,7 @@
      "excess": 7553,
      "excess_value": 10129
     },
-    "net_cash_added": -15751
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -6005,7 +6022,7 @@
     "trend_g": 18.2
    },
    "price": 11830,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 710253,
    "shares": 60038299,
@@ -6098,7 +6115,7 @@
     "trend_g": 65.8
    },
    "price": 6780,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 40130,
    "shares": 5918890,
@@ -6187,7 +6204,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2495,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 49900,
    "shares": 20000000,
@@ -6230,7 +6247,7 @@
     "trend_g": 4.5
    },
    "price": 7910,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 70074,
    "shares": 8858925,
@@ -6241,6 +6258,7 @@
    "per": null,
    "roe": -1.5,
    "pbr": 0.76,
+   "net_debt_levered": -67354,
    "dcf": {
     "E1": 3000,
     "r": 12.0,
@@ -6251,24 +6269,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 17273,
+      "per_share": 1950,
+      "upside": -75.4
      },
      "base": {
       "g": 10.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 28235,
+      "per_share": 3187,
+      "upside": -59.7
      },
      "bull": {
       "g": 20.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 44942,
+      "per_share": 5073,
+      "upside": -35.9
      }
     },
-    "implied_g": 37.0,
+    "implied_g": 30.1,
     "cycle": {
      "position": "회복기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -6279,7 +6297,7 @@
      "excess": -4387,
      "excess_value": -3399
     },
-    "net_cash_added": -67354
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -6328,7 +6346,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 5810,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 49257,
    "shares": 8477977,
@@ -6371,7 +6389,7 @@
     "trend_g": 7.8
    },
    "price": 252500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1933811,
    "shares": 7658656,
@@ -6463,7 +6481,7 @@
     "trend_g": 6.9
    },
    "price": 32350,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1648884,
    "shares": 50970126,
@@ -6474,6 +6492,7 @@
    "per": 7.9,
    "roe": 17.1,
    "pbr": 1.35,
+   "net_debt_levered": -239633,
    "dcf": {
     "E1": 145000,
     "r": 10.0,
@@ -6484,24 +6503,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 958073,
-      "per_share": 18797,
-      "upside": -41.9
+      "value": 1159385,
+      "per_share": 22746,
+      "upside": -29.7
      },
      "base": {
       "g": 5.0,
-      "value": 1260839,
-      "per_share": 24737,
-      "upside": -23.5
+      "value": 1452464,
+      "per_share": 28496,
+      "upside": -11.9
      },
      "bull": {
       "g": 9.0,
-      "value": 1556537,
-      "per_share": 30538,
-      "upside": -5.6
+      "value": 1738701,
+      "per_share": 34112,
+      "upside": 5.4
      }
     },
-    "implied_g": 10.1,
+    "implied_g": 7.8,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6509,7 +6528,7 @@
      "excess": 64108,
      "excess_value": 0
     },
-    "net_cash_added": -239633
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -6552,7 +6571,7 @@
     "trend_g": 7.1
    },
    "price": 173500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1861141,
    "shares": 10727036,
@@ -6563,6 +6582,7 @@
    "per": 12.0,
    "roe": 14.1,
    "pbr": 1.7,
+   "net_debt_levered": -197910,
    "dcf": {
     "E1": 150000,
     "r": 9.5,
@@ -6573,24 +6593,24 @@
     "scenarios": {
      "bear": {
       "g": 1.0,
-      "value": 1174718,
-      "per_share": 109510,
-      "upside": -36.9
+      "value": 1337338,
+      "per_share": 124670,
+      "upside": -28.1
      },
      "base": {
       "g": 6.0,
-      "value": 1527469,
-      "per_share": 142394,
-      "upside": -17.9
+      "value": 1681020,
+      "per_share": 156709,
+      "upside": -9.7
      },
      "bull": {
       "g": 10.0,
-      "value": 1872007,
-      "per_share": 174513,
-      "upside": 0.6
+      "value": 2016700,
+      "per_share": 188002,
+      "upside": 8.4
      }
     },
-    "implied_g": 9.9,
+    "implied_g": 8.2,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6598,7 +6618,7 @@
      "excess": 4478,
      "excess_value": 0
     },
-    "net_cash_added": -197910
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
@@ -6641,7 +6661,7 @@
     "trend_g": 7.3
    },
    "price": 36050,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 515076,
    "shares": 14287836,
@@ -6652,6 +6672,7 @@
    "per": 9.0,
    "roe": 11.9,
    "pbr": 1.07,
+   "net_debt_levered": -77799,
    "dcf": {
     "E1": 52000,
     "r": 10.0,
@@ -6662,24 +6683,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 356712,
-      "per_share": 24966,
-      "upside": -30.7
+      "value": 422070,
+      "per_share": 29540,
+      "upside": -18.1
      },
      "base": {
       "g": 5.0,
-      "value": 464961,
-      "per_share": 32542,
-      "upside": -9.7
+      "value": 527174,
+      "per_share": 36897,
+      "upside": 2.3
      },
      "bull": {
       "g": 9.0,
-      "value": 570683,
-      "per_share": 39942,
-      "upside": 10.8
+      "value": 629824,
+      "per_share": 44081,
+      "upside": 22.3
      }
     },
-    "implied_g": 7.0,
+    "implied_g": 4.5,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6691,7 +6712,7 @@
      "excess": 5246,
      "excess_value": 6290
     },
-    "net_cash_added": -77799
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -6734,7 +6755,7 @@
     "trend_g": 11.0
    },
    "price": 38100,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 734928,
    "shares": 19289452,
@@ -6745,6 +6766,7 @@
    "per": 11.4,
    "roe": 10.5,
    "pbr": 1.2,
+   "net_debt_levered": -67760,
    "dcf": {
     "E1": 65000,
     "r": 10.0,
@@ -6755,24 +6777,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 553287,
-      "per_share": 28683,
-      "upside": -24.7
+      "value": 608342,
+      "per_share": 31538,
+      "upside": -17.2
      },
      "base": {
       "g": 9.0,
-      "value": 783708,
-      "per_share": 40629,
-      "upside": 6.6
+      "value": 834057,
+      "per_share": 43239,
+      "upside": 13.5
      },
      "bull": {
       "g": 15.0,
-      "value": 1045421,
-      "per_share": 54197,
-      "upside": 42.2
+      "value": 1090425,
+      "per_share": 56530,
+      "upside": 48.4
      }
     },
-    "implied_g": 7.7,
+    "implied_g": 6.2,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6784,7 +6806,7 @@
      "excess": -804,
      "excess_value": -1033
     },
-    "net_cash_added": -67760
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
@@ -6827,7 +6849,7 @@
     "trend_g": 12.2
    },
    "price": 144200,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1612072,
    "shares": 11179416,
@@ -6923,7 +6945,7 @@
     "trend_g": 23.3
    },
    "price": 21200,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 557306,
    "shares": 26288000,
@@ -6934,6 +6956,7 @@
    "per": 11.5,
    "roe": 9.1,
    "pbr": 1.04,
+   "net_debt_levered": -743254,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
@@ -6944,24 +6967,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 523036,
+      "per_share": 19896,
+      "upside": -6.1
      },
      "base": {
       "g": 7.0,
-      "value": 65728,
-      "per_share": 2500,
-      "upside": -88.2
+      "value": 656127,
+      "per_share": 24959,
+      "upside": 17.7
      },
      "bull": {
       "g": 12.0,
-      "value": 269130,
-      "per_share": 10238,
-      "upside": -51.7
+      "value": 821670,
+      "per_share": 31256,
+      "upside": 47.4
      }
     },
-    "implied_g": 17.7,
+    "implied_g": 3.4,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -6972,7 +6995,7 @@
      "excess": -16652,
      "excess_value": -12258
     },
-    "net_cash_added": -743254
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -6989,7 +7012,7 @@
     "pct": 88,
     "tier": "싼 ⅓",
     "exp_ex": 6.6,
-    "conflict": true
+    "conflict": false
    }
   },
   "101160": {
@@ -7015,7 +7038,7 @@
     "trend_g": 17.8
    },
    "price": 23450,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 387183,
    "shares": 16510993,
@@ -7108,7 +7131,7 @@
     "trend_g": 21.4
    },
    "price": 17180,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 346508,
    "shares": 20169252,
@@ -7119,6 +7142,7 @@
    "per": 10.8,
    "roe": 11.2,
    "pbr": 1.21,
+   "net_debt_levered": -526492,
    "dcf": {
     "E1": 60000,
     "r": 10.5,
@@ -7129,24 +7153,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 20886,
-      "per_share": 1036,
-      "upside": -94.0
+      "value": 462358,
+      "per_share": 22924,
+      "upside": 33.4
      },
      "base": {
       "g": 8.0,
-      "value": 263702,
-      "per_share": 13074,
-      "upside": -23.9
+      "value": 668922,
+      "per_share": 33165,
+      "upside": 93.0
      },
      "bull": {
       "g": 14.0,
-      "value": 510156,
-      "per_share": 25294,
-      "upside": 47.2
+      "value": 878581,
+      "per_share": 43560,
+      "upside": 153.6
      }
     },
-    "implied_g": 10.2,
+    "implied_g": -6.2,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7157,7 +7181,7 @@
      "excess": -28020,
      "excess_value": -22099
     },
-    "net_cash_added": -526492
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -7200,7 +7224,7 @@
     "trend_g": 21.8
    },
    "price": 19130,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 602520,
    "shares": 31496097,
@@ -7289,7 +7313,7 @@
     "trend_g": 5.7
    },
    "price": 8670,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 237463,
    "shares": 27389012,
@@ -7386,7 +7410,7 @@
     "trend_g": 18.7
    },
    "price": 30800,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 649133,
    "shares": 21075750,
@@ -7508,7 +7532,7 @@
     "trend_g": 25.3
    },
    "price": 6960,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 316242,
    "shares": 45437002,
@@ -7519,6 +7543,7 @@
    "per": null,
    "roe": -43.1,
    "pbr": 1.39,
+   "net_debt_levered": -232037,
    "ttm_news": {
     "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
     "ni": 25000
@@ -7533,24 +7558,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 23246,
-      "per_share": 512,
-      "upside": -92.6
+      "value": 215314,
+      "per_share": 4739,
+      "upside": -31.9
      },
      "base": {
       "g": 8.0,
-      "value": 132094,
-      "per_share": 2907,
-      "upside": -58.2
+      "value": 307120,
+      "per_share": 6759,
+      "upside": -2.9
      },
      "bull": {
       "g": 15.0,
-      "value": 263872,
-      "per_share": 5807,
-      "upside": -16.6
+      "value": 418266,
+      "per_share": 9205,
+      "upside": 32.3
      }
     },
-    "implied_g": 17.3,
+    "implied_g": 8.7,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7561,7 +7586,7 @@
      "excess": 0,
      "excess_value": 0
     },
-    "net_cash_added": -232037
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -7604,7 +7629,7 @@
     "trend_g": 3.1
    },
    "price": 10490,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 117798,
    "shares": 11229508,
@@ -7696,7 +7721,7 @@
     "trend_g": 19.4
    },
    "price": 9820,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 645474,
    "shares": 65730510,
@@ -7707,6 +7732,7 @@
    "per": 47.1,
    "roe": 9.0,
    "pbr": 4.24,
+   "net_debt_levered": -184647,
    "dcf": {
     "E1": 20000,
     "r": 11.0,
@@ -7717,24 +7743,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 147791,
+      "per_share": 2248,
+      "upside": -77.1
      },
      "base": {
       "g": 10.0,
-      "value": 90641,
-      "per_share": 1379,
-      "upside": -86.0
+      "value": 231611,
+      "per_share": 3524,
+      "upside": -64.1
      },
      "bull": {
       "g": 18.0,
-      "value": 207063,
-      "per_share": 3150,
-      "upside": -67.9
+      "value": 329887,
+      "per_share": 5019,
+      "upside": -48.9
      }
     },
-    "implied_g": 35.7,
+    "implied_g": 33.8,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7745,7 +7771,7 @@
      "excess": -6291,
      "excess_value": -4932
     },
-    "net_cash_added": -184647
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -7788,7 +7814,7 @@
     "trend_g": 11.5
    },
    "price": 8400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 900945,
    "shares": 107255330,
@@ -7799,6 +7825,7 @@
    "per": 24.7,
    "roe": 10.0,
    "pbr": 2.46,
+   "net_debt_levered": -248033,
    "dcf": {
     "E1": 30000,
     "r": 10.5,
@@ -7809,24 +7836,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 15430,
-      "per_share": 144,
-      "upside": -98.3
+      "value": 226080,
+      "per_share": 2108,
+      "upside": -74.9
      },
      "base": {
       "g": 6.0,
-      "value": 95854,
-      "per_share": 894,
-      "upside": -89.4
+      "value": 295092,
+      "per_share": 2751,
+      "upside": -67.2
      },
      "bull": {
       "g": 12.0,
-      "value": 200501,
-      "per_share": 1869,
-      "upside": -77.7
+      "value": 384890,
+      "per_share": 3589,
+      "upside": -57.3
      }
     },
-    "implied_g": 33.9,
+    "implied_g": 31.8,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7834,7 +7861,7 @@
      "excess": 6451,
      "excess_value": 0
     },
-    "net_cash_added": -248033
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -7877,7 +7904,7 @@
     "trend_g": 7.9
    },
    "price": 29850,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 376349,
    "shares": 12608000,
@@ -7888,6 +7915,7 @@
    "per": 6.9,
    "roe": 9.9,
    "pbr": 0.69,
+   "net_debt_levered": -12252,
    "dcf": {
     "E1": 52000,
     "r": 10.0,
@@ -7898,24 +7926,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 438217,
-      "per_share": 34757,
-      "upside": 16.4
+      "value": 448370,
+      "per_share": 35562,
+      "upside": 19.1
      },
      "base": {
       "g": 6.0,
-      "value": 577189,
-      "per_share": 45780,
-      "upside": 53.4
+      "value": 586690,
+      "per_share": 46533,
+      "upside": 55.9
      },
      "bull": {
       "g": 12.0,
-      "value": 758308,
-      "per_share": 60145,
-      "upside": 101.5
+      "value": 766959,
+      "per_share": 60831,
+      "upside": 103.8
      }
     },
-    "implied_g": -3.3,
+    "implied_g": -3.9,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7927,7 +7955,7 @@
      "excess": 2251,
      "excess_value": 2892
     },
-    "net_cash_added": -12252
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
@@ -7970,7 +7998,7 @@
     "trend_g": 16.2
    },
    "price": 5450,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 51253,
    "shares": 9404253,
@@ -7981,6 +8009,7 @@
    "per": 36.3,
    "roe": 1.3,
    "pbr": 0.46,
+   "net_debt_levered": -6919,
    "dcf": {
     "E1": 8000,
     "r": 11.0,
@@ -7991,24 +8020,24 @@
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 43304,
-      "per_share": 4605,
-      "upside": -15.5
+      "value": 49295,
+      "per_share": 5242,
+      "upside": -3.8
      },
      "base": {
       "g": 4.0,
-      "value": 62786,
-      "per_share": 6676,
-      "upside": 22.5
+      "value": 68447,
+      "per_share": 7278,
+      "upside": 33.5
      },
      "bull": {
       "g": 10.0,
-      "value": 85017,
-      "per_share": 9040,
-      "upside": 65.9
+      "value": 90299,
+      "per_share": 9602,
+      "upside": 76.2
      }
     },
-    "implied_g": 0.1,
+    "implied_g": -2.2,
     "cycle": {
      "position": "바닥권",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8019,7 +8048,7 @@
      "excess": -6587,
      "excess_value": -4318
     },
-    "net_cash_added": -6919
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -8062,7 +8091,7 @@
     "trend_g": 6.4
    },
    "price": 2190,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 31314,
    "shares": 14298752,
@@ -8110,7 +8139,7 @@
     "trend_g": 10.4
    },
    "price": 17150,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 287606,
    "shares": 16770027,
@@ -8121,6 +8150,7 @@
    "per": 30.2,
    "roe": 4.1,
    "pbr": 1.24,
+   "net_debt_levered": -366633,
    "dcf": {
     "E1": 10000,
     "r": 10.5,
@@ -8131,24 +8161,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 75360,
+      "per_share": 4494,
+      "upside": -73.8
      },
      "base": {
       "g": 6.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 98364,
+      "per_share": 5865,
+      "upside": -65.8
      },
      "bull": {
       "g": 12.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 128297,
+      "per_share": 7650,
+      "upside": -55.4
      }
     },
-    "implied_g": 37.3,
+    "implied_g": 30.7,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8156,7 +8186,7 @@
      "excess": -490,
      "excess_value": 0
     },
-    "net_cash_added": -366633
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -8199,7 +8229,7 @@
     "trend_g": 6.7
    },
    "price": 7080,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 143165,
    "shares": 20221090,
@@ -8210,6 +8240,7 @@
    "per": 44.6,
    "roe": 6.5,
    "pbr": 2.91,
+   "net_debt_levered": -33966,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
@@ -8220,24 +8251,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 26949,
+      "per_share": 1333,
+      "upside": -81.2
      },
      "base": {
       "g": 12.0,
-      "value": 19151,
-      "per_share": 947,
-      "upside": -86.6
+      "value": 45316,
+      "per_share": 2241,
+      "upside": -68.3
      },
      "bull": {
       "g": 25.0,
-      "value": 58359,
-      "per_share": 2886,
-      "upside": -59.2
+      "value": 78833,
+      "per_share": 3899,
+      "upside": -44.9
      }
     },
-    "implied_g": 41.0,
+    "implied_g": 39.6,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8248,7 +8279,7 @@
      "excess": -792,
      "excess_value": -614
     },
-    "net_cash_added": -33966
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -8282,7 +8313,7 @@
     "trend_g": 10.2
    },
    "price": 10080,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 236097,
    "shares": 23422275,
@@ -8371,7 +8402,7 @@
     "trend_g": 2.5
    },
    "price": 10580,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 83501,
    "shares": 7892377,
@@ -8460,7 +8491,7 @@
     "trend_g": -1.8
    },
    "price": 10590,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 228165,
    "shares": 21545310,
@@ -8471,6 +8502,7 @@
    "per": 12.5,
    "roe": 8.6,
    "pbr": 1.07,
+   "net_debt_levered": -46973,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
@@ -8481,24 +8513,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 120761,
-      "per_share": 5605,
-      "upside": -47.1
+      "value": 160149,
+      "per_share": 7433,
+      "upside": -29.8
      },
      "base": {
       "g": 6.0,
-      "value": 172371,
-      "per_share": 8000,
-      "upside": -24.5
+      "value": 209443,
+      "per_share": 9721,
+      "upside": -8.2
      },
      "bull": {
       "g": 12.0,
-      "value": 239525,
-      "per_share": 11117,
-      "upside": 5.0
+      "value": 273584,
+      "per_share": 12698,
+      "upside": 19.9
      }
     },
-    "implied_g": 11.1,
+    "implied_g": 7.9,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8509,7 +8541,7 @@
      "excess": -1695,
      "excess_value": -1337
     },
-    "net_cash_added": -46973
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "바닥권",
@@ -8552,7 +8584,7 @@
     "trend_g": 7.4
    },
    "price": 7810,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 99191,
    "shares": 12700504,
@@ -8563,6 +8595,7 @@
    "per": 33.4,
    "roe": 3.7,
    "pbr": 1.25,
+   "net_debt_levered": -79061,
    "dcf": {
     "E1": 5000,
     "r": 11.5,
@@ -8573,24 +8606,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 34637,
+      "per_share": 2727,
+      "upside": -65.1
      },
      "base": {
       "g": 10.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 54176,
+      "per_share": 4266,
+      "upside": -45.4
      },
      "bull": {
       "g": 18.0,
-      "value": 22836,
-      "per_share": 1798,
-      "upside": -77.0
+      "value": 77035,
+      "per_share": 6065,
+      "upside": -22.3
      }
     },
-    "implied_g": 31.2,
+    "implied_g": 23.9,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8601,7 +8634,7 @@
      "excess": -2030,
      "excess_value": -1582
     },
-    "net_cash_added": -79061
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -8644,7 +8677,7 @@
     "trend_g": -4.4
    },
    "price": 33600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 686985,
    "shares": 20445981,
@@ -8733,7 +8766,7 @@
     "trend_g": 9.5
    },
    "price": 15640,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 316684,
    "shares": 20248339,
@@ -8822,7 +8855,7 @@
     "trend_g": 21.4
    },
    "price": 25200,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1675307,
    "shares": 66480426,
@@ -8833,6 +8866,7 @@
    "per": 9.8,
    "roe": 31.0,
    "pbr": 3.03,
+   "net_debt_levered": -799138,
    "dcf": {
     "E1": 45000,
     "r": 11.0,
@@ -8843,24 +8877,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 229084,
+      "per_share": 3446,
+      "upside": -86.3
      },
      "base": {
       "g": 10.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 354814,
+      "per_share": 5337,
+      "upside": -78.8
      },
      "bull": {
       "g": 18.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 502228,
+      "per_share": 7555,
+      "upside": -70.0
      }
     },
-    "implied_g": 49.5,
+    "implied_g": 47.3,
     "cycle": {
      "position": "상승기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -8868,7 +8902,7 @@
      "excess": 126154,
      "excess_value": 0
     },
-    "net_cash_added": -799138
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -8911,7 +8945,7 @@
     "trend_g": 29.8
    },
    "price": 63500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1222097,
    "shares": 19245628,
@@ -8922,6 +8956,7 @@
    "per": 35.7,
    "roe": 7.6,
    "pbr": 2.71,
+   "net_debt_levered": -79838,
    "dcf": {
     "E1": 45000,
     "r": 10.5,
@@ -8932,24 +8967,24 @@
     "scenarios": {
      "bear": {
       "g": 3.0,
-      "value": 257222,
-      "per_share": 13365,
-      "upside": -79.0
+      "value": 325277,
+      "per_share": 16901,
+      "upside": -73.4
      },
      "base": {
       "g": 12.0,
-      "value": 425785,
-      "per_share": 22124,
-      "upside": -65.2
+      "value": 488063,
+      "per_share": 25360,
+      "upside": -60.1
      },
      "bull": {
       "g": 22.0,
-      "value": 706068,
-      "per_share": 36687,
-      "upside": -42.2
+      "value": 758742,
+      "per_share": 39424,
+      "upside": -37.9
      }
     },
-    "implied_g": 33.9,
+    "implied_g": 33.2,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -8960,7 +8995,7 @@
      "excess": -10770,
      "excess_value": -6795
     },
-    "net_cash_added": -79838
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -9003,7 +9038,7 @@
     "trend_g": -1.3
    },
    "price": 6190,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1014943,
    "shares": 163964999,
@@ -9086,7 +9121,7 @@
     "trend_g": 13.7
    },
    "price": 2555,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 148395,
    "shares": 58080410,
@@ -9097,6 +9132,7 @@
    "per": null,
    "roe": -41.4,
    "pbr": 0.52,
+   "net_debt_levered": -223970,
    "dcf": {
     "E1": 15000,
     "r": 11.0,
@@ -9107,24 +9143,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 91634,
+      "per_share": 1578,
+      "upside": -38.3
      },
      "base": {
       "g": 8.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 130041,
+      "per_share": 2239,
+      "upside": -12.4
      },
      "bull": {
       "g": 15.0,
-      "value": 5173,
-      "per_share": 89,
-      "upside": -96.5
+      "value": 176450,
+      "per_share": 3038,
+      "upside": 18.9
      }
     },
-    "implied_g": 26.3,
+    "implied_g": 11.0,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -9132,7 +9168,7 @@
      "excess": -132890,
      "excess_value": 0
     },
-    "net_cash_added": -223970
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -9172,7 +9208,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 16630,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 383475,
    "shares": 23059202,
@@ -9223,7 +9259,7 @@
     "trend_g": 5.2
    },
    "price": 17660,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 215170,
    "shares": 12184045,
@@ -9234,6 +9270,7 @@
    "per": 14.4,
    "roe": 8.3,
    "pbr": 1.19,
+   "net_debt_levered": -28608,
    "dcf": {
     "E1": 8000,
     "r": 12.0,
@@ -9244,24 +9281,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 22957,
-      "per_share": 1884,
-      "upside": -89.3
+      "value": 48411,
+      "per_share": 3973,
+      "upside": -77.5
      },
      "base": {
       "g": 10.0,
-      "value": 48016,
-      "per_share": 3941,
-      "upside": -77.7
+      "value": 71798,
+      "per_share": 5893,
+      "upside": -66.6
      },
      "bull": {
       "g": 20.0,
-      "value": 86205,
-      "per_share": 7075,
-      "upside": -59.9
+      "value": 107438,
+      "per_share": 8818,
+      "upside": -50.1
      }
     },
-    "implied_g": 38.9,
+    "implied_g": 37.4,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -9272,7 +9309,7 @@
      "excess": 6954,
      "excess_value": 4311
     },
-    "net_cash_added": -28608
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -9315,7 +9352,7 @@
     "trend_g": 21.3
    },
    "price": 7600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 321944,
    "shares": 42361029,
@@ -9326,6 +9363,7 @@
    "per": 31.1,
    "roe": 12.7,
    "pbr": 3.94,
+   "net_debt_levered": -67145,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
@@ -9336,24 +9374,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 35780,
+      "per_share": 845,
+      "upside": -88.9
      },
      "base": {
       "g": 10.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 53320,
+      "per_share": 1259,
+      "upside": -83.4
      },
      "bull": {
       "g": 20.0,
-      "value": 30216,
-      "per_share": 713,
-      "upside": -90.6
+      "value": 80050,
+      "per_share": 1890,
+      "upside": -75.1
      }
     },
-    "implied_g": 55.3,
+    "implied_g": 55.6,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -9364,7 +9402,7 @@
      "excess": 4364,
      "excess_value": 2705
     },
-    "net_cash_added": -67145
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -9413,7 +9451,7 @@
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
    "price": 2090,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 57030,
    "shares": 27286943,
@@ -9456,7 +9494,7 @@
     "trend_g": 7.9
    },
    "price": 74600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3686503,
    "shares": 49416925,
@@ -9553,7 +9591,7 @@
     "trend_g": 6.8
    },
    "price": 97700,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 3653684,
    "shares": 37396973,
@@ -9564,6 +9602,7 @@
    "per": null,
    "roe": -7.8,
    "pbr": 5.63,
+   "net_debt_levered": -460700,
    "ttm_news": {
     "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
     "ni": 130000
@@ -9578,24 +9617,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 185911,
-      "per_share": 4971,
-      "upside": -94.9
+      "value": 590323,
+      "per_share": 15785,
+      "upside": -83.8
      },
      "base": {
       "g": 10.0,
-      "value": 518556,
-      "per_share": 13866,
-      "upside": -85.8
+      "value": 892076,
+      "per_share": 23854,
+      "upside": -75.6
      },
      "bull": {
       "g": 18.0,
-      "value": 908569,
-      "per_share": 24295,
-      "upside": -75.1
+      "value": 1245869,
+      "per_share": 33315,
+      "upside": -65.9
      }
     },
-    "implied_g": 45.1,
+    "implied_g": 44.5,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -9607,7 +9646,7 @@
      "excess": 40000,
      "excess_value": 40521
     },
-    "net_cash_added": -460700
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -9650,7 +9689,7 @@
     "trend_g": 8.7
    },
    "price": 64600,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 4742236,
    "shares": 73409219,
@@ -9743,7 +9782,7 @@
     "trend_g": 6.4
    },
    "price": 894000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 66776164,
    "shares": 74693696,
@@ -9836,7 +9875,7 @@
     "trend_g": 10.9
    },
    "price": 35300,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 600100,
    "shares": 17000000,
@@ -9847,6 +9886,7 @@
    "per": 11.2,
    "roe": 9.3,
    "pbr": 1.04,
+   "net_debt_levered": -129854,
    "dcf": {
     "E1": 65000,
     "r": 10.5,
@@ -9857,24 +9897,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 335368,
-      "per_share": 19728,
-      "upside": -44.1
+      "value": 447048,
+      "per_share": 26297,
+      "upside": -25.5
      },
      "base": {
       "g": 8.0,
-      "value": 537057,
-      "per_share": 31592,
-      "upside": -10.5
+      "value": 640989,
+      "per_share": 37705,
+      "upside": 6.8
      },
      "bull": {
       "g": 14.0,
-      "value": 741769,
-      "per_share": 43633,
-      "upside": 23.6
+      "value": 837836,
+      "per_share": 49284,
+      "upside": 39.6
      }
     },
-    "implied_g": 10.0,
+    "implied_g": 6.5,
     "cycle": {
      "position": "회복기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -9885,7 +9925,7 @@
      "excess": -11416,
      "excess_value": -7803
     },
-    "net_cash_added": -129854
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
@@ -9928,7 +9968,7 @@
     "trend_g": 14.5
    },
    "price": 62400,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 1496515,
    "shares": 23982620,
@@ -9939,6 +9979,7 @@
    "per": 17.6,
    "roe": 17.2,
    "pbr": 3.03,
+   "net_debt_levered": -184793,
    "dcf": {
     "E1": 40000,
     "r": 11.0,
@@ -9949,24 +9990,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 127750,
-      "per_share": 5327,
-      "upside": -91.5
+      "value": 289966,
+      "per_share": 12091,
+      "upside": -80.6
      },
      "base": {
       "g": 8.0,
-      "value": 239632,
-      "per_share": 9992,
-      "upside": -84.0
+      "value": 392384,
+      "per_share": 16361,
+      "upside": -73.8
      },
      "bull": {
       "g": 14.0,
-      "value": 352989,
-      "per_share": 14719,
-      "upside": -76.4
+      "value": 496153,
+      "per_share": 20688,
+      "upside": -66.8
      }
     },
-    "implied_g": 42.8,
+    "implied_g": 42.0,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -9978,7 +10019,7 @@
      "excess": 45022,
      "excess_value": 45609
     },
-    "net_cash_added": -184793
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -10021,7 +10062,7 @@
     "trend_g": 7.7
    },
    "price": 28050,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 272720,
    "shares": 9722630,
@@ -10032,6 +10073,7 @@
    "per": 8.3,
    "roe": 22.7,
    "pbr": 1.88,
+   "net_debt_levered": -81123,
    "ttm_news": {
     "period": "2025Q4~2026Q3",
     "ni": 38067
@@ -10046,24 +10088,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 124061,
-      "per_share": 12760,
-      "upside": -54.5
+      "value": 193621,
+      "per_share": 19914,
+      "upside": -29.0
      },
      "base": {
       "g": 8.0,
-      "value": 203588,
-      "per_share": 20940,
-      "upside": -25.3
+      "value": 268301,
+      "per_share": 27595,
+      "upside": -1.6
      },
      "bull": {
       "g": 15.0,
-      "value": 299685,
-      "per_share": 30823,
-      "upside": 9.9
+      "value": 358542,
+      "per_share": 36877,
+      "upside": 31.5
      }
     },
-    "implied_g": 13.2,
+    "implied_g": 8.4,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -10075,7 +10117,7 @@
      "excess": 13067,
      "excess_value": 15444
     },
-    "net_cash_added": -81123
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -10118,7 +10160,7 @@
     "trend_g": 4.9
    },
    "price": 11590,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 235349,
    "shares": 20306182,
@@ -10129,6 +10171,7 @@
    "per": null,
    "roe": -2.1,
    "pbr": 1.08,
+   "net_debt_levered": -195642,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
@@ -10139,24 +10182,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 30892,
+      "per_share": 1521,
+      "upside": -86.9
      },
      "base": {
       "g": 8.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 46528,
+      "per_share": 2291,
+      "upside": -80.2
      },
      "bull": {
       "g": 15.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 65352,
+      "per_share": 3218,
+      "upside": -72.2
      }
     },
-    "implied_g": 46.7,
+    "implied_g": 44.4,
     "cycle": {
      "position": "회복기",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -10167,7 +10210,7 @@
      "excess": -10642,
      "excess_value": -7696
     },
-    "net_cash_added": -195642
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
@@ -10210,7 +10253,7 @@
     "trend_g": 5.7
    },
    "price": 34000,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 365750,
    "shares": 10757343,
@@ -10303,7 +10346,7 @@
     "trend_g": 8.0
    },
    "price": 23150,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 395338,
    "shares": 17077232,
@@ -10396,7 +10439,7 @@
     "trend_g": 6.7
    },
    "price": 5500,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 82242,
    "shares": 14953000,
@@ -10485,7 +10528,7 @@
     "trend_g": 18.1
    },
    "price": 6640,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 647699,
    "shares": 97545067,
@@ -10577,7 +10620,7 @@
     "trend_g": 19.4
    },
    "price": 11430,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 165026,
    "shares": 14438000,
@@ -10669,7 +10712,7 @@
     "trend_g": 15.1
    },
    "price": 23200,
-   "price_date": "2026-11-08 18:56",
+   "price_date": "2026-11-09 05:39",
    "price_source": "네이버 금융",
    "mcap": 195551,
    "shares": 8428933,

@@ -143,6 +143,12 @@ td.l,th.l{text-align:left}
         <div class="src" id="exp-src"></div>
       </div>
       <div class="card full">
+        <div class="row"><div><h2>품목별 수출 추이</h2><p class="sub" id="item-sub"></p></div><div class="segs" role="group" aria-label="품목 선택" id="item-pick"></div></div>
+        <div class="chart" id="item-wrap"><canvas id="c-item" aria-label="품목별 월별 수출 추이 차트" role="img"></canvas></div>
+        <div class="tbl" id="item-tbl"></div>
+        <div class="tbl" id="item-sum"></div>
+      </div>
+      <div class="card full">
         <h2>숫자로 보는 최근 동향</h2><p class="sub">기사·보도자료·실적 발표에서 수치화할 수 있는 항목. 카드를 누르면 원문이 열려요.</p>
         <div class="news" id="news"></div>
       </div>
@@ -331,6 +337,42 @@ function renderCycle(){
    <p class="src">${c.note||''}</p>`;
 }
 let expRange=120;
+let expItem='라면';
+function renderItem(){
+  const cu=D.customs_exports; if(!cu||!cu.series) return;
+  const order=[RAMEN,'과자·빵','소스·조미료','김','음료','소주 등 증류주','맥주','아이스크림','커피조제품','인삼'];
+  const keys=order.filter(k=>cu.series[k]).concat(Object.keys(cu.series).filter(k=>!order.includes(k)));
+  if(!cu.series[expItem]) expItem=keys[0];
+  $('#item-pick').innerHTML=keys.map(k=>`<button class="seg" aria-pressed="${k===expItem}" data-k="${k}">${k}</button>`).join('');
+  $('#item-pick').querySelectorAll('button').forEach(b=>b.onclick=()=>{expItem=b.dataset.k;renderItem()});
+  const a=cu.series[expItem], n=cu.months.length, from=expRange?Math.max(0,n-expRange):0, s=S();
+  const labels=cu.months.slice(from);
+  const ma12=a.map((v,i)=>{if(i<11)return null;const w=a.slice(i-11,i+1);return w.some(x=>x==null)?null:w.reduce((x,y)=>x+y,0)/12});
+  const yo=a.map((v,i)=>ys(a,i));
+  const up=(cu.unit_price||{})[expItem];
+  draw('c-item',{type:'bar',data:{labels,datasets:[
+      bar('월 수출(백만$)',a.slice(from),s[keys.indexOf(expItem)%8],{yAxisID:'y',order:3}),
+      line('12개월 평균',ma12.slice(from).map(v=>v==null?null:+v.toFixed(1)),css('--ink-2'),{yAxisID:'y',order:2,borderDash:[4,3]}),
+      line('전년 동월 대비(%)',yo.slice(from),css('--accent'),{yAxisID:'y2',order:1,borderWidth:1.5})]},
+    options:baseOpts({scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:10,font:{size:11}},grid:{display:false}},
+      y:{position:'left',title:{display:true,text:'백만 달러',color:css('--ink-3')},ticks:{color:css('--ink-3')},grid:{color:css('--line')},border:{display:false}},
+      y2:{position:'right',title:{display:true,text:'YoY %',color:css('--ink-3')},ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{display:false},border:{display:false}}},
+      plugins:{legend:{position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}},
+        tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y2'?`${c.dataset.label}: ${pct(c.raw)}`:`${c.dataset.label}: ${fmt(c.raw,1)}`}}}})});
+  const sumY=(arr,i)=>{if(i<23)return null;const c=arr.slice(i-11,i+1),p=arr.slice(i-23,i-11);if(c.some(x=>x==null)||p.some(x=>x==null))return null;return yoy(c.reduce((x,y)=>x+y,0),p.reduce((x,y)=>x+y,0))};
+  const L=n-1;
+  $('#item-sub').textContent=`${labels[0]} ~ ${labels[labels.length-1]} · ${expItem} 월별 수출액(막대), 12개월 평균(점선), 전년 동월 대비 증감률(선) · 기간은 위 차트의 3년·10년·전체를 따라가요`;
+  const last=cu.months.slice(-13);
+  $('#item-tbl').innerHTML=`<table><thead><tr><th>${expItem}</th>${last.map(m=>`<th>${m.slice(2)}</th>`).join('')}</tr></thead><tbody>
+    <tr><td>수출(백만$)</td>${last.map(m=>`<td class="num">${fmt(a[cu.months.indexOf(m)],1)}</td>`).join('')}</tr>
+    <tr><td>YoY</td>${last.map(m=>{const y=ys(a,cu.months.indexOf(m));return `<td class="num ${cls(y)}">${pct(y)}</td>`}).join('')}</tr>
+    ${up?`<tr><td>단가($/kg)</td>${last.map(m=>`<td class="num">${fmt(up[cu.months.indexOf(m)],2)}</td>`).join('')}</tr>`:''}</tbody></table>`;
+  const rows=keys.map(k=>{const x=cu.series[k];const t12=x.slice(-12).reduce((p,v)=>p+(v||0),0);return {k,last:x[L],y:ys(x,L),t12,y12:sumY(x,L),sh:t12}});
+  const tot=rows.reduce((p,r)=>p+r.t12,0);
+  $('#item-sum').innerHTML=`<table><thead><tr><th class="l">품목 (${cu.months[L]} 기준)</th><th>최근월(백만$)</th><th>최근월 YoY</th><th>최근 12개월(백만$)</th><th>12개월 YoY</th><th>비중</th></tr></thead><tbody>
+    ${rows.map(r=>`<tr${r.k===expItem?' style="font-weight:600"':''}><td class="l"><a href="#industry" data-k="${r.k}" style="color:var(--accent)">${r.k}</a></td><td class="num">${fmt(r.last,1)}</td><td class="num ${cls(r.y)}">${pct(r.y)}</td><td class="num">${fmt(r.t12,0)}</td><td class="num ${cls(r.y12)}">${pct(r.y12)}</td><td class="num">${(r.t12/tot*100).toFixed(1)}%</td></tr>`).join('')}</tbody></table>`;
+  $('#item-sum').querySelectorAll('a[data-k]').forEach(el=>el.onclick=e=>{e.preventDefault();expItem=el.dataset.k;renderItem();$('#item-pick').scrollIntoView({block:'nearest'})});
+}
 function renderExports(){
   const cu=D.customs_exports, ne=D.news_exports, s=S();
   if(cu&&cu.total&&cu.total.length){
@@ -338,7 +380,7 @@ function renderExports(){
     const labels=cu.months.slice(from);
     const R=[[36,'3년'],[120,'10년'],[0,'전체']];
     $('#exp-range').innerHTML=R.map(([v,l])=>`<button class="seg" aria-pressed="${v===expRange}" data-v="${v}">${l}</button>`).join('');
-    $('#exp-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{expRange=+b.dataset.v;renderExports()});
+    $('#exp-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{expRange=+b.dataset.v;renderExports();renderItem()});
     const order=[RAMEN,'과자·빵','소스·조미료','김','음료','소주 등 증류주','맥주','아이스크림','커피조제품','인삼'];
     const keys=order.filter(k=>cu.series[k]).concat(Object.keys(cu.series).filter(k=>!order.includes(k)));
     const ds=keys.map((k,i)=>bar(k,cu.series[k].slice(from).map(v=>v==null?null:v/100),s[i%8],{stack:'a'}));
@@ -531,7 +573,7 @@ function renderIR(c){
     h+=`<p style="margin-top:8px"><b>종합 판단</b> ${A.verdict}</p>`;
     if(A.docs.length) h+=`<p class="sub">읽은 자료: ${A.docs.map(d=>`${d.date} ${lk(d.url,d.title)}`).join(' · ')} · 분석 기준일 ${A.asof}</p>`;
     h+=`<p class="src">${D.ir_analysis.note}</p>`;
-  } else h+=`<p class="sub">IR 해석은 원문이 수집되는 대로 회사별로 추가하고 있어요.</p>`;
+  } else { const ly=latest?+latest.date.slice(0,4):0; h+= !L.length?`<p>KIND·IRGO에 올라온 IR 자료(실적 발표·기업설명회 자료)를 찾지 못했어요. 투자자 소통이 적은 회사라는 신호이고, 분석은 DART 사업보고서와 뉴스 기준이에요.</p>`: ly&&ly<2025?`<p>마지막 IR 자료가 ${latest.date}로 오래됐어요. 최근 성장전략은 IR이 아니라 DART 사업보고서와 뉴스로 판단했고, 오래된 자료는 과거 전략을 확인하는 용도로만 링크했어요.</p>`:`<p class="sub">최근 IR 원문이 수집돼 있어요. 해석은 순서대로 추가하고 있어요.</p>`; }
   const more=L.filter(i=>i!==latest).slice(0,12);
   if(more.length) h+=`<details class="fd"><summary>지난 IR 자료 원문 (${more.length}건)</summary><ul>${more.map(i=>`<li><span class="sub">${i.date}</span> ${lk(i.pdf||i.page,tt(i.title))}${i.pdf?' <span class="sub">PDF</span>':''}</li>`).join('')}</ul></details>`;
   el.innerHTML=h;
@@ -636,7 +678,7 @@ function renderValueReport(c){
    ${cycleBlock(v)}
    ${quantBlock(v)}
    <h4>해석</h4><p>${gap} ${d.note}.</p>
-   <h4>가정</h4><p>정상화 이익 ${fmt(eok(d.E1))}억원(${v.cycle?v.cycle.E1_basis+', ':''}${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
+   <h4>가정</h4><p>정상화 이익 ${fmt(eok(d.E1))}억원(${v.cycle?v.cycle.E1_basis+', ':''}${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산`:''}${v.net_debt_levered?`, 순차입 ${fmt(eok(-v.net_debt_levered))}억원은 이자비용이 이미 순이익에서 빠져 있어 따로 빼지 않았어요(차입이 많은 만큼 위험은 자기자본비용으로 반영)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/food/valuation.json에서 바꿀 수 있어요.</p>`;
 }
 function finTable(keys,get,prevKey){
@@ -754,7 +796,7 @@ function renderValuation(){
    <li><b>내재가치(주주잉여현금흐름 할인)</b>: 향후 12개월 정상화 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
    <li><b>역DCF 내재 성장률</b>: 같은 틀에서 현재 시가총액을 정확히 정당화하는 1~5년차 연평균 이익 성장률이에요. 이 숫자가 기준 가정보다 크면 시장이 더 높은 성장을 기대하고 있다는 뜻이에요.</li>
    <li><b>판단 기준</b>: 기준 적정가가 현재가보다 20% 이상 높으면 '저평가 구간', 20% 이상 낮으면 '기대 선반영', 그 사이는 '적정 범위'예요.</li>
-   <li><b>순현금</b>: 순현금은 주주가치에 더하고 순차입은 빼요. 대신 그 이자 효과(세후 약 2%)는 이익에서 제외해 이중 계산을 피했어요. 비지배지분이 큰 지주·연결사(CJ제일제당, 오리온홀딩스, 매일홀딩스, 하이트진로홀딩스, 하림지주 등)는 연결 현금·차입이 지배주주 몫과 달라 조정하지 않았어요.</li>
+   <li><b>순현금·순차입</b>: 순현금은 주주가치에 더하고, 그 이자수익(세후 약 2%)은 이익에서 빼 이중 계산을 피했어요. 순차입은 따로 빼지 않아요. 순이익에 이미 이자비용이 빠져 있어서, 차입금을 또 빼면 부채를 두 번 벌점 주게 돼요. 비지배지분이 큰 지주·연결사(CJ제일제당, 오리온홀딩스, 매일홀딩스, 하이트진로홀딩스, 하림지주 등)는 연결 현금·차입이 지배주주 몫과 달라 조정하지 않았어요.</li>
    <li><b>사이클 조정</b>: 한 해 이익만으로 평가하지 않아요. 연간 순이익률의 여러 해 평균(5년 이상이면 최고·최저 해 제외)에 최근 4개 분기 매출을 곱해 사이클 평균 이익을 구하고, 회사별 비중(구조적 변화가 있거나 이력이 짧은 회사는 낮게)만큼 향후 12개월 전망 이익과 섞어 정상화 이익으로 써요. 구조가 바뀐 회사는 변화 이후 기간만, 일회성 이익·손실이 큰 해는 빼고 평균해요.</li>
    <li><b>최신 정보 반영</b>: 정상화 이익과 성장 시나리오는 ${V.asof||V.updated} 기준 3분기 잠정실적·컨센서스, 원재료·환율·가격 인상 기사를 읽고 회사별 사이클 위치를 정했어요. 음식료는 경기보다 <b>원가 사이클</b>(곡물·원당·유지·환율이 오르면 1~2분기 뒤 마진이 눌리고, 가격 인상 후 회복)이 이익을 흔들어요. 회사별 근거 기사는 상세 리포트의 '최신 기사'에서 볼 수 있어요.</li></ul>
    <p class="src">참고용 추정이며 투자 권유가 아니에요.</p>`;
@@ -774,7 +816,7 @@ function show(){
   document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
   document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
   if(!rendered[view]){rendered[view]=1;
-    if(view==='industry'){renderKPIs();renderCycle();renderExports();renderIndustry();}
+    if(view==='industry'){renderKPIs();renderCycle();renderExports();renderItem();renderIndustry();}
     if(view==='companies')renderCompanies();
     if(view==='valuation')renderValuation();
     if(view==='sources')renderSources();}
