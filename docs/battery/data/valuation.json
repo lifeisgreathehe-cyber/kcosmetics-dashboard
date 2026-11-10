@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-10",
  "method": "내재가치 가정. E1=정상화 지배순이익(억원, 사이클 평균적인 해 기준), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차는 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율(증설 부담이 큰 회사일수록 낮음). 2차전지는 전기차 보급 속도·리튬 가격·미국 보조금에 따라 이익이 크게 출렁이므로 최근 1년 실적이 아니라 회사별 사이클 위치를 판단한 정상화 이익을 쓰는 것이 원칙. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외.",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -13,10 +13,10 @@
     "ni": -1683059,
     "period": "2025Q3~2026Q2"
    },
-   "price": 318000,
-   "price_date": "2026-11-10 01:54",
+   "price": 328000,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 74412000,
+   "mcap": 76752000,
    "shares": 234000000,
    "equity": 22342149,
    "equity_source": "DART 2026Q2",
@@ -24,7 +24,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.5,
-   "pbr": 3.33,
+   "pbr": 3.44,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -59,29 +59,29 @@
     "r": 9.5,
     "c": 0.5,
     "note": "2028년 매출 약 40조원, AMPC 제외 영업이익률 4%(1.6조원)에 미국 생산 보조금(AMPC, 연 3조원 안팎)의 60%만 더하고 이자·세금·합작법인 비지배지분 몫을 빼 지배순이익 1.6조원을 정상 이익으로 봤어요. AMPC는 2030년부터 줄어드는 한시 제도라 전부 영구 이익으로 보지 않았어요. ESS 수주잔고 160GWh와 북미 ESS 생산능력(2027년 말 70GWh 이상)이 근거예요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 46.5,
-    "norm_per": 46.5,
+    "fwd_per": 48.0,
+    "norm_per": 48.0,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 11166322,
       "per_share": 47719,
-      "upside": -85.0
+      "upside": -85.5
      },
      "base": {
       "g": 13,
       "value": 17597568,
       "per_share": 75203,
-      "upside": -76.4
+      "upside": -77.1
      },
      "bull": {
       "g": 25,
       "value": 29939557,
       "per_share": 127947,
-      "upside": -59.8
+      "upside": -61.0
      }
     },
-    "implied_g": 46.9,
+    "implied_g": 47.7,
     "net_cash_added": 0
    },
    "quant": {
@@ -111,18 +111,18 @@
     "ni": 37647,
     "period": "2025Q3~2026Q2"
    },
-   "price": 409000,
-   "price_date": "2026-11-10 01:54",
+   "price": 449000,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 31838490,
+   "mcap": 34948089,
    "shares": 78693635,
    "equity": 24298832,
    "equity_source": "DART 2026Q2",
    "net_cash": -10502815,
    "dividend_yield": null,
-   "per": 845.7,
+   "per": 928.3,
    "roe": 0.2,
-   "pbr": 1.31,
+   "pbr": 1.44,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -157,29 +157,29 @@
     "r": 10.0,
     "c": 0.5,
     "note": "배터리 정상 매출 18조원 × 순이익률 4%(약 7,200억원)에 삼성디스플레이 지분법이익(연 5,000~6,000억원)을 더해 1.3조원으로 봤어요. 2022~23년(약 2조원)은 전기차 호황 이익이라 정상으로 보지 않았어요. 4분기 LFP ESS 라인 가동과 북미 ESS 수주가 회복의 근거예요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 22.7,
-    "norm_per": 22.7,
+    "fwd_per": 25.0,
+    "norm_per": 25.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 7995762,
       "per_share": 101606,
-      "upside": -74.9
+      "upside": -77.1
      },
      "base": {
       "g": 10,
       "value": 12540815,
       "per_share": 159363,
-      "upside": -60.6
+      "upside": -64.1
      },
      "bull": {
       "g": 22,
       "value": 21313601,
       "per_share": 270843,
-      "upside": -33.1
+      "upside": -39.0
      }
     },
-    "implied_g": 31.4,
+    "implied_g": 33.6,
     "net_cash_added": 0
    },
    "quant": {
@@ -193,10 +193,10 @@
     "per_share": 37139,
     "bear": 25097,
     "bull": 48293,
-    "upside": -90.8,
-    "pct": 32,
+    "upside": -91.6,
+    "pct": 29,
     "tier": "비싼 ⅓",
-    "exp_ex": -4.5,
+    "exp_ex": -4.8,
     "conflict": false
    }
   },
@@ -209,10 +209,10 @@
     "ni": -1167289,
     "period": "2025Q3~2026Q2"
    },
-   "price": 106600,
-   "price_date": "2026-11-10 01:54",
+   "price": 109500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 18085120,
+   "mcap": 18576821,
    "shares": 170169232,
    "equity": 26190732,
    "equity_source": "DART 2026Q2",
@@ -220,7 +220,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.5,
-   "pbr": 0.69,
+   "pbr": 0.71,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -255,29 +255,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "정유·윤활유 사이클 평균 이익(약 1.5조원)에 SK온의 손익분기 수준을 더하고, 차입 이자와 비지배지분을 빼 지배순이익 1조원으로 봤어요. 2026년 정유 호황 이익은 정상으로 보지 않았어요. SKIET 합병과 SK온 흑자 지속 여부가 핵심 변수예요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 18.1,
-    "norm_per": 18.1,
+    "fwd_per": 18.6,
+    "norm_per": 18.6,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 5656646,
       "per_share": 33241,
-      "upside": -68.7
+      "upside": -69.5
      },
      "base": {
       "g": 5,
       "value": 8064968,
       "per_share": 47394,
-      "upside": -55.4
+      "upside": -56.6
      },
      "bull": {
       "g": 15,
       "value": 12547991,
       "per_share": 73738,
-      "upside": -30.6
+      "upside": -32.5
      }
     },
-    "implied_g": 23.4,
+    "implied_g": 24.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -291,10 +291,10 @@
     "per_share": 96872,
     "bear": 65461,
     "bull": 125964,
-    "upside": -8.8,
-    "pct": 90,
+    "upside": -11.3,
+    "pct": 93,
     "tier": "싼 ⅓",
-    "exp_ex": 10.9,
+    "exp_ex": 11.0,
     "conflict": true
    }
   },
@@ -307,18 +307,18 @@
     "ni": 71297,
     "period": "2025Q3~2026Q2"
    },
-   "price": 20100,
-   "price_date": "2026-11-10 01:54",
+   "price": 21450,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 903458,
+   "mcap": 964138,
    "shares": 44948159,
    "equity": 358842,
    "equity_source": "DART 2026Q2",
    "net_cash": 150410,
    "dividend_yield": null,
-   "per": 12.7,
+   "per": 13.5,
    "roe": 19.9,
-   "pbr": 2.52,
+   "pbr": 2.69,
    "cycle": {
     "phase": "성장 지속",
     "note": "",
@@ -353,29 +353,29 @@
     "r": 10.0,
     "c": 0.7,
     "note": "리튬 1차전지(스마트미터·군수·방산) 회사라 전기차 사이클과 거의 무관해요. 최근 4개 분기 순이익(약 710억원)이 정상 수준이라고 봤고, 방산 수출 증가로 성장을 이어 간다고 가정했어요",
-    "fwd_per": 12.9,
-    "norm_per": 12.9,
+    "fwd_per": 13.8,
+    "norm_per": 13.8,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 640747,
       "per_share": 14255,
-      "upside": -29.1
+      "upside": -33.5
      },
      "base": {
       "g": 8,
       "value": 802524,
       "per_share": 17854,
-      "upside": -11.2
+      "upside": -16.8
      },
      "bull": {
       "g": 12,
       "value": 959982,
       "per_share": 21358,
-      "upside": 6.3
+      "upside": -0.4
      }
     },
-    "implied_g": 10.6,
+    "implied_g": 12.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -389,10 +389,10 @@
     "per_share": 7398,
     "bear": 4999,
     "bull": 9620,
-    "upside": -63.2,
+    "upside": -65.5,
     "pct": 68,
     "tier": "싼 ⅓",
-    "exp_ex": 4.5,
+    "exp_ex": 4.4,
     "conflict": false
    }
   },
@@ -405,10 +405,10 @@
     "ni": 142467,
     "period": "2025Q3~2026Q2"
    },
-   "price": 53300,
-   "price_date": "2026-11-10 01:54",
+   "price": 53800,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 711579,
+   "mcap": 718255,
    "shares": 13350457,
    "equity": 1684427,
    "equity_source": "DART 2026Q2",
@@ -416,7 +416,7 @@
    "dividend_yield": null,
    "per": 5.0,
    "roe": 8.5,
-   "pbr": 0.42,
+   "pbr": 0.43,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -458,22 +458,22 @@
       "g": 0,
       "value": 1149733,
       "per_share": 86119,
-      "upside": 61.6
+      "upside": 60.1
      },
      "base": {
       "g": 3,
       "value": 1319022,
       "per_share": 98800,
-      "upside": 85.4
+      "upside": 83.6
      },
      "bull": {
       "g": 6,
       "value": 1512918,
       "per_share": 113323,
-      "upside": 112.6
+      "upside": 110.6
      }
     },
-    "implied_g": -10.6,
+    "implied_g": -10.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -487,10 +487,10 @@
     "per_share": 59994,
     "bear": 40540,
     "bull": 78011,
-    "upside": 12.6,
+    "upside": 11.5,
     "pct": 98,
     "tier": "싼 ⅓",
-    "exp_ex": 12.4,
+    "exp_ex": 12.7,
     "conflict": false
    }
   },
@@ -504,7 +504,7 @@
     "period": "2025Q2~2026Q1"
    },
    "price": 9900,
-   "price_date": "2026-11-10 01:54",
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 632041,
    "shares": 63842570,
@@ -538,18 +538,18 @@
     "ni": 44558,
     "period": "2025Q3~2026Q2"
    },
-   "price": 152200,
-   "price_date": "2026-11-10 01:54",
+   "price": 166500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 13537609,
+   "mcap": 14809540,
    "shares": 88946185,
    "equity": 4199286,
    "equity_source": "DART 2026Q2",
    "net_cash": -3405825,
    "dividend_yield": null,
-   "per": 303.8,
+   "per": 332.4,
    "roe": 1.1,
-   "pbr": 3.22,
+   "pbr": 3.53,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -584,29 +584,29 @@
     "r": 10.0,
     "c": 0.5,
     "note": "2028년 양극재 매출 5.5조원 × 순이익률 2.4%에 내화물·라임화성(기초소재) 이익 약 200억원을 더해 1,500억원으로 봤어요. 3분기 이익에는 고객사 보상금(일회성)이 있어 빼고 봤어요. 2027년 LFP 양산과 북미 수요 회복으로 이후 5년 성장률을 높게(기준 15%) 잡았어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 90.3,
-    "norm_per": 90.3,
+    "fwd_per": 98.7,
+    "norm_per": 98.7,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 980735,
       "per_share": 11026,
-      "upside": -92.8
+      "upside": -93.4
      },
      "base": {
       "g": 15,
       "value": 1679167,
       "per_share": 18878,
-      "upside": -87.6
+      "upside": -88.7
      },
      "bull": {
       "g": 30,
       "value": 3218115,
       "per_share": 36180,
-      "upside": -76.2
+      "upside": -78.3
      }
     },
-    "implied_g": 66.6,
+    "implied_g": 69.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -620,10 +620,10 @@
     "per_share": 7135,
     "bear": 4822,
     "bull": 9278,
-    "upside": -95.3,
+    "upside": -95.7,
     "pct": 17,
     "tier": "비싼 ⅓",
-    "exp_ex": -8.6,
+    "exp_ex": -8.9,
     "conflict": false
    }
   },
@@ -636,18 +636,18 @@
     "ni": 43735,
     "period": "2025Q3~2026Q2"
    },
-   "price": 75800,
-   "price_date": "2026-11-10 01:54",
+   "price": 81200,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 7415104,
+   "mcap": 7943357,
    "shares": 97824591,
    "equity": 1795197,
    "equity_source": "DART 2026Q2",
    "net_cash": -2403590,
    "dividend_yield": null,
-   "per": 169.5,
+   "per": 181.6,
    "roe": 2.4,
-   "pbr": 4.13,
+   "pbr": 4.42,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -682,29 +682,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "하이니켈·LFP 양극재 정상 매출 5.5조원 × 순이익률 2.5%로 1,400억원을 정상 이익으로 봤어요. 2022년(2,323억원)은 메탈 가격 급등기라 정상이 아니에요. 증권가가 공통으로 2028년부터 출하 급증을 보는 만큼, 회복이 늦어진 점은 높은 할인율로 반영했어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 53.0,
-    "norm_per": 53.0,
+    "fwd_per": 56.7,
+    "norm_per": 56.7,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 860927,
       "per_share": 8801,
-      "upside": -88.4
+      "upside": -89.2
      },
      "base": {
       "g": 14,
       "value": 1401058,
       "per_share": 14322,
-      "upside": -81.1
+      "upside": -82.4
      },
      "bull": {
       "g": 30,
       "value": 2788842,
       "per_share": 28509,
-      "upside": -62.4
+      "upside": -64.9
      }
     },
-    "implied_g": 54.5,
+    "implied_g": 56.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -718,10 +718,10 @@
     "per_share": 7485,
     "bear": 5058,
     "bull": 9732,
-    "upside": -90.1,
+    "upside": -90.8,
     "pct": 34,
     "tier": "가운데 ⅓",
-    "exp_ex": -4.0,
+    "exp_ex": -4.2,
     "conflict": false
    }
   },
@@ -734,18 +734,18 @@
     "ni": 140701,
     "period": "2025Q3~2026Q2"
    },
-   "price": 60100,
-   "price_date": "2026-11-10 01:54",
+   "price": 65500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 8141505,
+   "mcap": 8873022,
    "shares": 135465978,
    "equity": 2229190,
    "equity_source": "DART 2026Q2",
    "net_cash": -3066130,
    "dividend_yield": null,
-   "per": 57.9,
+   "per": 63.1,
    "roe": 6.3,
-   "pbr": 3.65,
+   "pbr": 3.98,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -780,29 +780,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "지주회사라 에코프로비엠(지분 약 45%)·머티리얼즈·에이치엔 이익 중 지배 몫과 2027년 인도네시아 BNSI 제련 이익(니켈 가격 민감, 보수 반영)을 합쳐 1,400억원으로 봤어요. 지주사 할인 대신 할인율을 1%p 높였어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 58.2,
-    "norm_per": 58.2,
+    "fwd_per": 63.4,
+    "norm_per": 63.4,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 712707,
       "per_share": 5261,
-      "upside": -91.2
+      "upside": -92.0
      },
      "base": {
       "g": 12,
       "value": 1204544,
       "per_share": 8892,
-      "upside": -85.2
+      "upside": -86.4
      },
      "bull": {
       "g": 28,
       "value": 2390721,
       "per_share": 17648,
-      "upside": -70.6
+      "upside": -73.1
      }
     },
-    "implied_g": 59.0,
+    "implied_g": 61.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -816,10 +816,10 @@
     "per_share": 4274,
     "bear": 2888,
     "bull": 5558,
-    "upside": -92.9,
+    "upside": -93.5,
     "pct": 27,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.1,
+    "exp_ex": -6.3,
     "conflict": false
    }
   },
@@ -832,10 +832,10 @@
     "ni": -322712,
     "period": "2025Q3~2026Q2"
    },
-   "price": 69900,
-   "price_date": "2026-11-10 01:54",
+   "price": 76200,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 2757181,
+   "mcap": 3005682,
    "shares": 39444649,
    "equity": 776013,
    "equity_source": "DART 2026Q2",
@@ -843,7 +843,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -41.6,
-   "pbr": 3.55,
+   "pbr": 3.87,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -878,29 +878,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "NCM(46파이 포함)과 LFP를 합한 2028년 매출 5조원 × 순이익률 2.4%로 1,200억원을 봤어요. LFP 25만톤 수주와 2028년 생산능력 12만톤이 물량 근거지만 LFP는 마진이 낮아요. 증설 부담과 차입이 커서 할인율을 11%로 높였어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 23.0,
-    "norm_per": 23.0,
+    "fwd_per": 25.0,
+    "norm_per": 25.0,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 696481,
       "per_share": 17657,
-      "upside": -74.7
+      "upside": -76.8
      },
      "base": {
       "g": 15,
       "value": 1176335,
       "per_share": 29822,
-      "upside": -57.3
+      "upside": -60.9
      },
      "bull": {
       "g": 30,
       "value": 2227677,
       "per_share": 56476,
-      "upside": -19.2
+      "upside": -25.9
      }
     },
-    "implied_g": 35.2,
+    "implied_g": 37.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -914,10 +914,10 @@
     "per_share": 3138,
     "bear": 2120,
     "bull": 4080,
-    "upside": -95.5,
+    "upside": -95.9,
     "pct": 15,
     "tier": "비싼 ⅓",
-    "exp_ex": -8.8,
+    "exp_ex": -9.1,
     "conflict": false
    }
   },
@@ -930,18 +930,18 @@
     "ni": 71596,
     "period": "2025Q3~2026Q2"
    },
-   "price": 24400,
-   "price_date": "2026-11-10 01:54",
+   "price": 26150,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1727858,
+   "mcap": 1851783,
    "shares": 70813870,
    "equity": 1160582,
    "equity_source": "DART 2026Q2",
    "net_cash": -900946,
    "dividend_yield": null,
-   "per": 24.1,
+   "per": 25.9,
    "roe": 6.2,
-   "pbr": 1.49,
+   "pbr": 1.6,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -974,29 +974,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "전구체·제련 정상 매출 1.1조원 × 순이익률 3.2%로 350억원을 봤어요. 계열사(비엠) 의존이 커서 북미 신규 고객 매출(4분기 시작)이 실제로 늘어야 이 가정이 맞아요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 49.4,
-    "norm_per": 49.4,
+    "fwd_per": 52.9,
+    "norm_per": 52.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 178177,
       "per_share": 2516,
-      "upside": -89.7
+      "upside": -90.4
      },
      "base": {
       "g": 13,
       "value": 314542,
       "per_share": 4442,
-      "upside": -81.8
+      "upside": -83.0
      },
      "bull": {
       "g": 30,
       "value": 649739,
       "per_share": 9175,
-      "upside": -62.4
+      "upside": -64.9
      }
     },
-    "implied_g": 54.6,
+    "implied_g": 56.5,
     "net_cash_added": 0
    },
    "quant": {
@@ -1010,10 +1010,10 @@
     "per_share": 1030,
     "bear": 696,
     "bull": 1339,
-    "upside": -95.8,
+    "upside": -96.1,
     "pct": 12,
     "tier": "비싼 ⅓",
-    "exp_ex": -9.2,
+    "exp_ex": -9.4,
     "conflict": false
    }
   },
@@ -1026,10 +1026,10 @@
     "ni": -1512310,
     "period": "2025Q3~2026Q2"
    },
-   "price": 222000,
-   "price_date": "2026-11-10 01:54",
+   "price": 234500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 16451300,
+   "mcap": 17361362,
    "shares": 78275100,
    "equity": 35430227,
    "equity_source": "DART 2026Q2",
@@ -1037,7 +1037,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.3,
-   "pbr": 0.46,
+   "pbr": 0.49,
    "cycle": {
     "phase": "하강·구조조정",
     "note": "",
@@ -1072,29 +1072,29 @@
     "r": 10.0,
     "c": 0.6,
     "note": "LG엔솔 지분(약 79%) 몫 정상 이익 약 1.26조원 + 첨단소재·생명과학 약 3,500억원 − 차입 이자 약 3,000억원으로 1.2조원을 봤어요. 석유화학은 중국·중동 증설에 따른 구조적 공급 과잉이라 이익 0으로 가정했어요. LG엔솔 지분 시가(약 64조원)가 시가총액보다 훨씬 커 '지주사 할인'이 매우 큰 상태예요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 13.7,
-    "norm_per": 13.7,
+    "fwd_per": 14.5,
+    "norm_per": 14.5,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 7516236,
       "per_share": 96023,
-      "upside": -54.3
+      "upside": -56.7
      },
      "base": {
       "g": 6,
       "value": 10777807,
       "per_share": 137691,
-      "upside": -34.5
+      "upside": -37.9
      },
      "bull": {
       "g": 16,
       "value": 16849906,
       "per_share": 215265,
-      "upside": 2.4
+      "upside": -2.9
      }
     },
-    "implied_g": 15.5,
+    "implied_g": 16.7,
     "net_cash_added": 0
    },
    "quant": {
@@ -1108,10 +1108,10 @@
     "per_share": 97198,
     "bear": 65681,
     "bull": 126388,
-    "upside": -53.8,
+    "upside": -56.2,
     "pct": 73,
     "tier": "싼 ⅓",
-    "exp_ex": 6.1,
+    "exp_ex": 6.0,
     "conflict": true
    }
   },
@@ -1124,10 +1124,10 @@
     "ni": -7060,
     "period": "2025Q3~2026Q2"
    },
-   "price": 30450,
-   "price_date": "2026-11-10 01:54",
+   "price": 33300,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1011026,
+   "mcap": 1105654,
    "shares": 33202811,
    "equity": 540549,
    "equity_source": "DART 2026Q2",
@@ -1135,7 +1135,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -1.3,
-   "pbr": 1.87,
+   "pbr": 2.05,
    "cycle": {
     "phase": "저점 통과",
     "note": "",
@@ -1170,29 +1170,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "양극재·MLCC용 이형필름 정상 매출 6,500억원 × 순이익률 3.8%로 250억원을 봤어요. 2022~23년(약 270억원)과 비슷한 수준이에요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 40.4,
-    "norm_per": 40.4,
+    "fwd_per": 44.2,
+    "norm_per": 44.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 134571,
       "per_share": 4053,
-      "upside": -86.7
+      "upside": -87.8
      },
      "base": {
       "g": 12,
       "value": 229101,
       "per_share": 6900,
-      "upside": -77.3
+      "upside": -79.3
      },
      "bull": {
       "g": 25,
       "value": 403056,
       "per_share": 12139,
-      "upside": -60.1
+      "upside": -63.5
      }
     },
-    "implied_g": 47.5,
+    "implied_g": 49.8,
     "net_cash_added": 0
    },
    "quant": {
@@ -1206,10 +1206,10 @@
     "per_share": 1952,
     "bear": 1319,
     "bull": 2539,
-    "upside": -93.6,
+    "upside": -94.1,
     "pct": 22,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.7,
+    "exp_ex": -7.0,
     "conflict": false
    }
   },
@@ -1222,10 +1222,10 @@
     "ni": -19393,
     "period": "2025Q3~2026Q2"
    },
-   "price": 8230,
-   "price_date": "2026-11-10 01:54",
+   "price": 8760,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 315739,
+   "mcap": 336072,
    "shares": 38364359,
    "equity": 234528,
    "equity_source": "DART 2026Q2",
@@ -1233,7 +1233,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -8.3,
-   "pbr": 1.35,
+   "pbr": 1.43,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -1268,29 +1268,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "이산화티타늄과 황산코발트(전구체 원료) 회사로 메탈 가격에 민감해요. 2021~22년 평균 순이익(약 110억원)보다 낮은 80억원을 정상 이익으로 봤어요",
-    "fwd_per": 39.5,
-    "norm_per": 39.5,
+    "fwd_per": 42.0,
+    "norm_per": 42.0,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 35742,
       "per_share": 932,
-      "upside": -88.7
+      "upside": -89.4
      },
      "base": {
       "g": 3,
       "value": 46432,
       "per_share": 1210,
-      "upside": -85.3
+      "upside": -86.2
      },
      "bull": {
       "g": 8,
       "value": 57796,
       "per_share": 1506,
-      "upside": -81.7
+      "upside": -82.8
      }
     },
-    "implied_g": 48.8,
+    "implied_g": 50.4,
     "net_cash_added": 0
    },
    "quant": {
@@ -1311,10 +1311,10 @@
     "ni": -14135,
     "period": "2025Q3~2026Q2"
    },
-   "price": 8830,
-   "price_date": "2026-11-10 01:54",
+   "price": 9000,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 154946,
+   "mcap": 157929,
    "shares": 17547646,
    "equity": 207889,
    "equity_source": "DART 2026Q2",
@@ -1322,7 +1322,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -6.8,
-   "pbr": 0.75,
+   "pbr": 0.76,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -1357,29 +1357,29 @@
     "r": 11.5,
     "c": 0.4,
     "note": "전구체·환경 촉매 정상 매출 1,500억원 × 순이익률 4%로 60억원을 봤어요. 전구체 고객 확대가 확인돼야 해요",
-    "fwd_per": 25.8,
-    "norm_per": 25.8,
+    "fwd_per": 26.3,
+    "norm_per": 26.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 23180,
       "per_share": 1321,
-      "upside": -85.0
+      "upside": -85.3
      },
      "base": {
       "g": 8,
       "value": 32733,
       "per_share": 1865,
-      "upside": -78.9
+      "upside": -79.3
      },
      "bull": {
       "g": 15,
       "value": 44254,
       "per_share": 2522,
-      "upside": -71.4
+      "upside": -72.0
      }
     },
-    "implied_g": 45.4,
+    "implied_g": 45.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -1400,18 +1400,18 @@
     "ni": 1347453,
     "period": "2025Q3~2026Q2"
    },
-   "price": 258000,
-   "price_date": "2026-11-10 01:54",
+   "price": 269500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 19510161,
+   "mcap": 20379800,
    "shares": 75620779,
    "equity": 57465538,
    "equity_source": "DART 2026Q2",
    "net_cash": -15890942,
    "dividend_yield": null,
-   "per": 14.5,
+   "per": 15.1,
    "roe": 2.3,
-   "pbr": 0.34,
+   "pbr": 0.35,
    "cycle": {
     "phase": "철강 바닥권",
     "note": "",
@@ -1446,29 +1446,29 @@
     "r": 9.5,
     "c": 0.5,
     "note": "철강 사이클 평균(호황 2021년 6.6조원, 불황 2025년 0.66조원)을 감안해 지배순이익 2.2조원을 정상 이익으로 봤어요. 리튬(아르헨티나 염호·광양 수산화리튬)은 리튬 가격 회복 전까지 이익 기여를 작게 잡았어요",
-    "fwd_per": 8.9,
-    "norm_per": 8.9,
+    "fwd_per": 9.3,
+    "norm_per": 9.3,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 12212530,
       "per_share": 161497,
-      "upside": -37.4
+      "upside": -40.1
      },
      "base": {
       "g": 3,
       "value": 15353692,
       "per_share": 203035,
-      "upside": -21.3
+      "upside": -24.7
      },
      "bull": {
       "g": 7,
       "value": 18432693,
       "per_share": 243752,
-      "upside": -5.5
+      "upside": -9.6
      }
     },
-    "implied_g": 8.2,
+    "implied_g": 9.2,
     "net_cash_added": 0
    },
    "quant": {
@@ -1482,7 +1482,7 @@
     "per_share": 149460,
     "bear": 100996,
     "bull": 194345,
-    "upside": -42.1,
+    "upside": -44.5,
     "pct": 78,
     "tier": "싼 ⅓",
     "exp_ex": 7.7,
@@ -1498,10 +1498,10 @@
     "ni": -42122,
     "period": "2025Q3~2026Q2"
    },
-   "price": 25150,
-   "price_date": "2026-11-10 01:54",
+   "price": 26400,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 324966,
+   "mcap": 341117,
    "shares": 12921115,
    "equity": 158333,
    "equity_source": "DART 2026Q2",
@@ -1509,7 +1509,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -26.6,
-   "pbr": 2.05,
+   "pbr": 2.15,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -1542,29 +1542,29 @@
     "r": 11.5,
     "c": 0.5,
     "note": "재활용 메탈(니켈·코발트·리튬) 정상 가격에서 매출 3,000억원 × 순이익률 5%로 150억원을 봤어요. 2022년(393억원)은 메탈 고점이라 정상이 아니에요",
-    "fwd_per": 21.7,
-    "norm_per": 21.7,
+    "fwd_per": 22.7,
+    "norm_per": 22.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 72439,
       "per_share": 5606,
-      "upside": -77.7
+      "upside": -78.8
      },
      "base": {
       "g": 10,
       "value": 111516,
       "per_share": 8631,
-      "upside": -65.7
+      "upside": -67.3
      },
      "bull": {
       "g": 18,
       "value": 157233,
       "per_share": 12169,
-      "upside": -51.6
+      "upside": -53.9
      }
     },
-    "implied_g": 35.4,
+    "implied_g": 36.6,
     "net_cash_added": 0
    },
    "quant": {
@@ -1585,10 +1585,10 @@
     "ni": -12903,
     "period": "2025Q3~2026Q2"
    },
-   "price": 9390,
-   "price_date": "2026-11-10 01:54",
+   "price": 9950,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 53054,
+   "mcap": 56218,
    "shares": 5650054,
    "equity": 46399,
    "equity_source": "DART 2026Q2",
@@ -1596,7 +1596,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -27.8,
-   "pbr": 1.14,
+   "pbr": 1.21,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -1629,29 +1629,29 @@
     "r": 12.0,
     "c": 0.5,
     "note": "폐배터리 재활용·반도체 폐산 재활용 정상 매출 600억원 × 순이익률 5%로 30억원을 봤어요",
-    "fwd_per": 17.7,
-    "norm_per": 17.7,
+    "fwd_per": 18.7,
+    "norm_per": 18.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 13781,
       "per_share": 2439,
-      "upside": -74.0
+      "upside": -75.5
      },
      "base": {
       "g": 8,
       "value": 19366,
       "per_share": 3428,
-      "upside": -63.5
+      "upside": -65.6
      },
      "bull": {
       "g": 15,
       "value": 26089,
       "per_share": 4617,
-      "upside": -50.8
+      "upside": -53.6
      }
     },
-    "implied_g": 32.0,
+    "implied_g": 33.5,
     "net_cash_added": 0
    },
    "quant": {
@@ -1672,18 +1672,18 @@
     "ni": 10092,
     "period": "2025Q3~2026Q2"
    },
-   "price": 71900,
-   "price_date": "2026-11-10 01:54",
+   "price": 79700,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1121715,
+   "mcap": 1243403,
    "shares": 15601046,
    "equity": 282504,
    "equity_source": "DART 2026Q2",
    "net_cash": -254924,
    "dividend_yield": null,
-   "per": 111.1,
+   "per": 123.2,
    "roe": 3.6,
-   "pbr": 3.97,
+   "pbr": 4.4,
    "cycle": {
     "phase": "성장기",
     "note": "",
@@ -1718,29 +1718,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "실리콘 음극재가 고용량 배터리(46파이·프리미엄 전기차)에 확대되는 구조적 성장 제품이에요. 2027년 매출 4,000억원 × 순이익률 7.5%로 300억원을 봤어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 37.4,
-    "norm_per": 37.4,
+    "fwd_per": 41.4,
+    "norm_per": 41.4,
     "scenarios": {
      "bear": {
       "g": 5,
       "value": 201624,
       "per_share": 12924,
-      "upside": -82.0
+      "upside": -83.8
      },
      "base": {
       "g": 18,
       "value": 357647,
       "per_share": 22925,
-      "upside": -68.1
+      "upside": -71.2
      },
      "bull": {
       "g": 32,
       "value": 649701,
       "per_share": 41645,
-      "upside": -42.1
+      "upside": -47.7
      }
     },
-    "implied_g": 45.5,
+    "implied_g": 48.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -1754,10 +1754,10 @@
     "per_share": 4763,
     "bear": 3219,
     "bull": 6193,
-    "upside": -93.4,
+    "upside": -94.0,
     "pct": 24,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.5,
+    "exp_ex": -6.9,
     "conflict": false
    }
   },
@@ -1770,18 +1770,18 @@
     "ni": 15378,
     "period": "2025Q3~2026Q2"
    },
-   "price": 59800,
-   "price_date": "2026-11-10 01:54",
+   "price": 64200,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 720111,
+   "mcap": 773095,
    "shares": 12041985,
    "equity": 265479,
    "equity_source": "DART 2026Q2",
    "net_cash": 95618,
    "dividend_yield": null,
-   "per": 46.8,
+   "per": 50.3,
    "roe": 5.8,
-   "pbr": 2.71,
+   "pbr": 2.91,
    "cycle": {
     "phase": "성장기",
     "note": "",
@@ -1816,29 +1816,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "CNT 도전재와 태양전지용 타깃·실버 페이스트로 3분기 영업이익 66억원을 냈어요. 연간 환산 순이익 약 220억원을 정상 수준으로 봤어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 32.7,
-    "norm_per": 32.7,
+    "fwd_per": 35.1,
+    "norm_per": 35.1,
     "scenarios": {
      "bear": {
       "g": 5,
       "value": 177429,
       "per_share": 14734,
-      "upside": -75.4
+      "upside": -77.0
      },
      "base": {
       "g": 15,
       "value": 276056,
       "per_share": 22924,
-      "upside": -61.7
+      "upside": -64.3
      },
      "bull": {
       "g": 28,
       "value": 483438,
       "per_share": 40146,
-      "upside": -32.9
+      "upside": -37.5
      }
     },
-    "implied_g": 37.6,
+    "implied_g": 39.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -1852,10 +1852,10 @@
     "per_share": 6288,
     "bear": 4249,
     "bull": 8177,
-    "upside": -89.5,
+    "upside": -90.2,
     "pct": 37,
     "tier": "가운데 ⅓",
-    "exp_ex": -3.6,
+    "exp_ex": -3.8,
     "conflict": false
    }
   },
@@ -1868,10 +1868,10 @@
     "ni": -6597,
     "period": "2025Q3~2026Q2"
    },
-   "price": 3585,
-   "price_date": "2026-11-10 01:54",
+   "price": 3845,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 106907,
+   "mcap": 114660,
    "shares": 29820573,
    "equity": 167404,
    "equity_source": "DART 2026Q2",
@@ -1879,7 +1879,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.9,
-   "pbr": 0.64,
+   "pbr": 0.68,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -1912,29 +1912,29 @@
     "r": 11.5,
     "c": 0.5,
     "note": "CNT 도전재 정상 매출 1,000억원 × 순이익률 6%로 60억원을 봤어요. 2023년(174억원)은 고객 재고 확충기 이익이에요",
-    "fwd_per": 17.8,
-    "norm_per": 17.8,
+    "fwd_per": 19.1,
+    "norm_per": 19.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 28976,
       "per_share": 972,
-      "upside": -72.9
+      "upside": -74.7
      },
      "base": {
       "g": 10,
       "value": 44606,
       "per_share": 1496,
-      "upside": -58.3
+      "upside": -61.1
      },
      "bull": {
       "g": 18,
       "value": 62893,
       "per_share": 2109,
-      "upside": -41.2
+      "upside": -45.1
      }
     },
-    "implied_g": 30.6,
+    "implied_g": 32.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -1955,10 +1955,10 @@
     "ni": -144598,
     "period": "2025Q3~2026Q2"
    },
-   "price": 14900,
-   "price_date": "2026-11-10 01:54",
+   "price": 15400,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 326474,
+   "mcap": 337429,
    "shares": 21910993,
    "equity": 434722,
    "equity_source": "DART 2026Q2",
@@ -1966,7 +1966,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -33.3,
-   "pbr": 0.75,
+   "pbr": 0.78,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -2000,29 +2000,29 @@
     "r": 12.0,
     "c": 0.5,
     "note": "전해액 정상 매출 6,000억원 × 순이익률 3.3%로 200억원을 봤어요. 북미 공장 가동률과 중국산 대비 가격 경쟁력이 불확실해 할인율을 높였어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 16.3,
-    "norm_per": 16.3,
+    "fwd_per": 16.9,
+    "norm_per": 16.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 91875,
       "per_share": 4193,
-      "upside": -71.9
+      "upside": -72.8
      },
      "base": {
       "g": 12,
       "value": 153102,
       "per_share": 6987,
-      "upside": -53.1
+      "upside": -54.6
      },
      "bull": {
       "g": 28,
       "value": 299841,
       "per_share": 13684,
-      "upside": -8.2
+      "upside": -11.1
      }
     },
-    "implied_g": 30.1,
+    "implied_g": 30.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -2043,18 +2043,18 @@
     "ni": 127645,
     "period": "2025Q3~2026Q2"
    },
-   "price": 249500,
-   "price_date": "2026-11-10 01:54",
+   "price": 265500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1910835,
+   "mcap": 2033373,
    "shares": 7658656,
    "equity": 1149347,
    "equity_source": "DART 2026Q2",
    "net_cash": 315388,
    "dividend_yield": null,
-   "per": 15.0,
+   "per": 15.9,
    "roe": 11.1,
-   "pbr": 1.66,
+   "pbr": 1.77,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -2089,29 +2089,29 @@
     "r": 9.5,
     "c": 0.7,
     "note": "매출 대부분이 반도체·디스플레이 소재라 2차전지 사이클 영향이 작아요. 최근 5년 순이익 범위(800~1,700억원)의 중간인 1,300억원을 정상 이익으로 봤어요",
-    "fwd_per": 14.7,
-    "norm_per": 14.7,
+    "fwd_per": 15.6,
+    "norm_per": 15.6,
     "scenarios": {
      "bear": {
       "g": 2,
       "value": 1213333,
       "per_share": 158426,
-      "upside": -36.5
+      "upside": -40.3
      },
      "base": {
       "g": 5,
       "value": 1391838,
       "per_share": 181734,
-      "upside": -27.2
+      "upside": -31.6
      },
      "bull": {
       "g": 9,
       "value": 1670227,
       "per_share": 218084,
-      "upside": -12.6
+      "upside": -17.9
      }
     },
-    "implied_g": 12.0,
+    "implied_g": 13.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -2125,11 +2125,11 @@
     "per_share": 111544,
     "bear": 75375,
     "bull": 145043,
-    "upside": -55.3,
+    "upside": -58.0,
     "pct": 71,
     "tier": "싼 ⅓",
-    "exp_ex": 5.9,
-    "conflict": false
+    "exp_ex": 5.7,
+    "conflict": true
    }
   },
   "278280": {
@@ -2141,10 +2141,10 @@
     "ni": -64596,
     "period": "2025Q3~2026Q2"
    },
-   "price": 29050,
-   "price_date": "2026-11-10 01:54",
+   "price": 30100,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 353972,
+   "mcap": 366767,
    "shares": 12184939,
    "equity": 451969,
    "equity_source": "DART 2026Q2",
@@ -2152,7 +2152,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -14.3,
-   "pbr": 0.78,
+   "pbr": 0.81,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -2187,29 +2187,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "전해질 첨가제(LiFSI 등) 정상 매출 2,500억원 × 순이익률 6%로 150억원을 봤어요. 2021~22년(약 400억원)은 판가 고점이라 정상이 아니에요",
-    "fwd_per": 23.6,
-    "norm_per": 23.6,
+    "fwd_per": 24.5,
+    "norm_per": 24.5,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 76361,
       "per_share": 6267,
-      "upside": -78.4
+      "upside": -79.2
      },
      "base": {
       "g": 10,
       "value": 118271,
       "per_share": 9706,
-      "upside": -66.6
+      "upside": -67.8
      },
      "bull": {
       "g": 18,
       "value": 167409,
       "per_share": 13739,
-      "upside": -52.7
+      "upside": -54.4
      }
     },
-    "implied_g": 35.8,
+    "implied_g": 36.7,
     "net_cash_added": 0
    },
    "quant": {
@@ -2230,18 +2230,18 @@
     "ni": 36451,
     "period": "2025Q3~2026Q2"
    },
-   "price": 7960,
-   "price_date": "2026-11-10 01:54",
+   "price": 8760,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 853752,
+   "mcap": 939557,
    "shares": 107255330,
    "equity": 365524,
    "equity_source": "DART 2026Q2",
    "net_cash": -248033,
    "dividend_yield": null,
-   "per": 23.4,
+   "per": 25.8,
    "roe": 10.0,
-   "pbr": 2.34,
+   "pbr": 2.57,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -2276,29 +2276,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "냉매(불소화합물)·반도체 특수가스·LiPF6 회사예요. 2022년(970억원)은 LiPF6 판가 급등기라 빼고, 냉매·특수가스 회복을 반영해 300억원을 봤어요",
-    "fwd_per": 28.5,
-    "norm_per": 28.5,
+    "fwd_per": 31.3,
+    "norm_per": 31.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 161486,
       "per_share": 1506,
-      "upside": -81.1
+      "upside": -82.8
      },
      "base": {
       "g": 6,
       "value": 210780,
       "per_share": 1965,
-      "upside": -75.3
+      "upside": -77.6
      },
      "bull": {
       "g": 12,
       "value": 274921,
       "per_share": 2563,
-      "upside": -67.8
+      "upside": -70.7
      }
     },
-    "implied_g": 38.6,
+    "implied_g": 41.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -2312,10 +2312,10 @@
     "per_share": 1839,
     "bear": 1243,
     "bull": 2391,
-    "upside": -76.9,
+    "upside": -79.0,
     "pct": 56,
     "tier": "가운데 ⅓",
-    "exp_ex": 1.4,
+    "exp_ex": 1.1,
     "conflict": false
    }
   },
@@ -2328,10 +2328,10 @@
     "ni": -40388,
     "period": "2025Q3~2026Q2"
    },
-   "price": 5110,
-   "price_date": "2026-11-10 01:54",
+   "price": 5290,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 233737,
+   "mcap": 241970,
    "shares": 45741078,
    "equity": 814980,
    "equity_source": "DART 2026Q2",
@@ -2339,7 +2339,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -5.0,
-   "pbr": 0.29,
+   "pbr": 0.3,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -2374,29 +2374,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "MDF 등 목재 사업 이익(약 250억원)에 전해액(동화일렉트로라이트) 손익분기를 가정하고 이자를 빼 200억원을 봤어요",
-    "fwd_per": 11.7,
-    "norm_per": 11.7,
+    "fwd_per": 12.1,
+    "norm_per": 12.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 101815,
       "per_share": 2226,
-      "upside": -56.4
+      "upside": -57.9
      },
      "base": {
       "g": 4,
       "value": 121275,
       "per_share": 2651,
-      "upside": -48.1
+      "upside": -49.9
      },
      "bull": {
       "g": 8,
       "value": 144490,
       "per_share": 3159,
-      "upside": -38.2
+      "upside": -40.3
      }
     },
-    "implied_g": 19.1,
+    "implied_g": 19.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -2417,18 +2417,18 @@
     "ni": 2150,
     "period": "2025Q3~2026Q2"
    },
-   "price": 3575,
-   "price_date": "2026-11-10 01:54",
+   "price": 3755,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 114658,
+   "mcap": 120431,
    "shares": 32072040,
    "equity": 101039,
    "equity_source": "DART 2026Q2",
    "net_cash": 10291,
    "dividend_yield": null,
-   "per": 53.3,
+   "per": 56.0,
    "roe": 2.1,
-   "pbr": 1.13,
+   "pbr": 1.19,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -2463,29 +2463,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "정밀화학 소재 회사로 일회성 손실을 뺀 평균 순이익 약 45억원을 정상 이익으로 봤어요",
-    "fwd_per": 25.5,
-    "norm_per": 25.5,
+    "fwd_per": 26.8,
+    "norm_per": 26.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 27490,
       "per_share": 857,
-      "upside": -76.0
+      "upside": -77.2
      },
      "base": {
       "g": 6,
       "value": 35741,
       "per_share": 1114,
-      "upside": -68.8
+      "upside": -70.3
      },
      "bull": {
       "g": 12,
       "value": 46461,
       "per_share": 1449,
-      "upside": -59.5
+      "upside": -61.4
      }
     },
-    "implied_g": 33.2,
+    "implied_g": 34.4,
     "net_cash_added": 0
    },
    "quant": {
@@ -2499,7 +2499,7 @@
     "per_share": 688,
     "bear": 465,
     "bull": 895,
-    "upside": -80.8,
+    "upside": -81.7,
     "pct": 51,
     "tier": "가운데 ⅓",
     "exp_ex": 0.2,
@@ -2515,18 +2515,18 @@
     "ni": 9594,
     "period": "2025Q3~2026Q2"
    },
-   "price": 10640,
-   "price_date": "2026-11-10 01:54",
+   "price": 11470,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 166378,
+   "mcap": 179357,
    "shares": 15637042,
    "equity": 182360,
    "equity_source": "DART 2026Q2",
    "net_cash": -9132,
    "dividend_yield": null,
-   "per": 17.3,
+   "per": 18.7,
    "roe": 5.3,
-   "pbr": 0.91,
+   "pbr": 0.98,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -2561,29 +2561,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "계면활성제 등 정밀화학 본업이 안정적이고, 전해액 용매는 아직 작아요. 최근 분기 개선을 감안해 90억원을 봤어요",
-    "fwd_per": 18.5,
-    "norm_per": 18.5,
+    "fwd_per": 19.9,
+    "norm_per": 19.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 58135,
       "per_share": 3718,
-      "upside": -65.1
+      "upside": -67.6
      },
      "base": {
       "g": 5,
       "value": 72585,
       "per_share": 4642,
-      "upside": -56.4
+      "upside": -59.5
      },
      "bull": {
       "g": 10,
       "value": 90603,
       "per_share": 5794,
-      "upside": -45.5
+      "upside": -49.5
      }
     },
-    "implied_g": 23.9,
+    "implied_g": 25.7,
     "net_cash_added": 0
    },
    "quant": {
@@ -2597,10 +2597,10 @@
     "per_share": 3729,
     "bear": 2520,
     "bull": 4849,
-    "upside": -64.9,
-    "pct": 63,
+    "upside": -67.5,
+    "pct": 66,
     "tier": "가운데 ⅓",
-    "exp_ex": 4.2,
+    "exp_ex": 4.0,
     "conflict": false
    }
   },
@@ -2613,18 +2613,18 @@
     "ni": 6611,
     "period": "2025Q3~2026Q2"
    },
-   "price": 58600,
-   "price_date": "2026-11-10 01:54",
+   "price": 62700,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1770826,
+   "mcap": 1894723,
    "shares": 30218872,
    "equity": 138485,
    "equity_source": "DART 2026Q2",
    "net_cash": 16639,
    "dividend_yield": null,
-   "per": 267.9,
+   "per": 286.6,
    "roe": 4.8,
-   "pbr": 12.79,
+   "pbr": 13.68,
    "cycle": {
     "phase": "초기 성장",
     "note": "",
@@ -2656,26 +2656,26 @@
     "r": 11.0,
     "c": 0.5,
     "note": "본업(정밀화학) 순이익 약 120억원을 정상 이익으로 봤어요. 전고체 배터리용 황화리튬은 상용화(2027년 이후) 전이라 이익에 넣지 않았고, 높은 성장 시나리오(낙관 30%)로만 반영했어요",
-    "fwd_per": 147.6,
-    "norm_per": 147.6,
+    "fwd_per": 157.9,
+    "norm_per": 157.9,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 69648,
       "per_share": 2305,
-      "upside": -96.1
+      "upside": -96.3
      },
      "base": {
       "g": 15,
       "value": 117633,
       "per_share": 3893,
-      "upside": -93.4
+      "upside": -93.8
      },
      "bull": {
       "g": 30,
       "value": 222768,
       "per_share": 7372,
-      "upside": -87.4
+      "upside": -88.2
      }
     },
     "implied_g": null,
@@ -2692,7 +2692,7 @@
     "per_share": 450,
     "bear": 304,
     "bull": 586,
-    "upside": -99.2,
+    "upside": -99.3,
     "pct": 7,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
@@ -2708,18 +2708,18 @@
     "ni": 13709,
     "period": "2025Q3~2026Q2"
    },
-   "price": 9130,
-   "price_date": "2026-11-10 01:54",
+   "price": 9820,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 600120,
+   "mcap": 645474,
    "shares": 65730510,
    "equity": 152127,
    "equity_source": "DART 2026Q2",
    "net_cash": -184647,
    "dividend_yield": null,
-   "per": 43.8,
+   "per": 47.1,
    "roe": 9.0,
-   "pbr": 3.94,
+   "pbr": 4.24,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -2754,29 +2754,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "반도체용 TMA 등 전구체와 태양광·LED용 소재가 주력이에요. 최근 5년 평균 순이익 약 200억원을 정상 이익으로 봤어요",
-    "fwd_per": 30.0,
-    "norm_per": 30.0,
+    "fwd_per": 32.3,
+    "norm_per": 32.3,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 147587,
       "per_share": 2245,
-      "upside": -75.4
+      "upside": -77.1
      },
      "base": {
       "g": 8,
       "value": 184272,
       "per_share": 2803,
-      "upside": -69.3
+      "upside": -71.5
      },
      "bull": {
       "g": 14,
       "value": 240181,
       "per_share": 3654,
-      "upside": -60.0
+      "upside": -62.8
      }
     },
-    "implied_g": 35.5,
+    "implied_g": 37.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -2790,10 +2790,10 @@
     "per_share": 1821,
     "bear": 1231,
     "bull": 2368,
-    "upside": -80.1,
+    "upside": -81.5,
     "pct": 54,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.4,
+    "exp_ex": 0.3,
     "conflict": false
    }
   },
@@ -2806,10 +2806,10 @@
     "ni": -1580264,
     "period": "2025Q3~2026Q2"
    },
-   "price": 12390,
-   "price_date": "2026-11-10 01:54",
+   "price": 12720,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1013342,
+   "mcap": 1040332,
    "shares": 81787100,
    "equity": 1287921,
    "equity_source": "DART 2026Q2",
@@ -2817,7 +2817,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -122.7,
-   "pbr": 0.79,
+   "pbr": 0.81,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -2851,29 +2851,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "분리막 정상 매출 6,000억원 × 순이익률 5%로 300억원을 봤어요. 2021년(954억원)은 독과점 시기 이익이고, 중국 업체의 저가 공세로 정상 마진이 구조적으로 낮아졌다고 봐요. 2분기 대규모 손상차손은 일회성으로 뺐어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 33.8,
-    "norm_per": 33.8,
+    "fwd_per": 34.7,
+    "norm_per": 34.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 152723,
       "per_share": 1867,
-      "upside": -84.9
+      "upside": -85.3
      },
      "base": {
       "g": 8,
       "value": 216734,
       "per_share": 2650,
-      "upside": -78.6
+      "upside": -79.2
      },
      "bull": {
       "g": 22,
       "value": 397483,
       "per_share": 4860,
-      "upside": -60.8
+      "upside": -61.8
      }
     },
-    "implied_g": 44.8,
+    "implied_g": 45.4,
     "net_cash_added": 0
    },
    "quant": {
@@ -2894,10 +2894,10 @@
     "ni": -148316,
     "period": "2025Q3~2026Q2"
    },
-   "price": 6320,
-   "price_date": "2026-11-10 01:54",
+   "price": 7170,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 213889,
+   "mcap": 242655,
    "shares": 33843144,
    "equity": 902789,
    "equity_source": "DART 2026Q2",
@@ -2905,7 +2905,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -16.4,
-   "pbr": 0.24,
+   "pbr": 0.27,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -2938,29 +2938,29 @@
     "r": 12.0,
     "c": 0.4,
     "note": "습식 분리막 정상 매출 4,000억원 × 순이익률 6%로 250억원을 봤어요. 2022~23년(500~700억원)은 증설 초기 고마진이라 정상이 아니에요",
-    "fwd_per": 8.6,
-    "norm_per": 8.6,
+    "fwd_per": 9.7,
+    "norm_per": 9.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 91875,
       "per_share": 2715,
-      "upside": -57.0
+      "upside": -62.1
      },
      "base": {
       "g": 6,
       "value": 118553,
       "per_share": 3503,
-      "upside": -44.6
+      "upside": -51.1
      },
      "bull": {
       "g": 12,
       "value": 153102,
       "per_share": 4524,
-      "upside": -28.4
+      "upside": -36.9
      }
     },
-    "implied_g": 19.9,
+    "implied_g": 22.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -2981,18 +2981,18 @@
     "ni": 9852,
     "period": "2025Q3~2026Q2"
    },
-   "price": 11940,
-   "price_date": "2026-11-10 01:54",
+   "price": 12660,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 186728,
+   "mcap": 197988,
    "shares": 15638896,
    "equity": 209982,
    "equity_source": "DART 2026Q2",
    "net_cash": -65818,
    "dividend_yield": null,
-   "per": 19.0,
+   "per": 20.1,
    "roe": 4.7,
-   "pbr": 0.89,
+   "pbr": 0.94,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -3027,29 +3027,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "분리막이 아닌 배터리 부품(ESS 소재·가스켓)과 2차전지 외 정밀부품 회사예요. 미국 법인 흑자 전환을 감안해 평균(약 80억원)보다 조금 높은 90억원을 봤어요",
-    "fwd_per": 20.7,
-    "norm_per": 20.7,
+    "fwd_per": 22.0,
+    "norm_per": 22.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 58135,
       "per_share": 3717,
-      "upside": -68.9
+      "upside": -70.6
      },
      "base": {
       "g": 6,
       "value": 75881,
       "per_share": 4852,
-      "upside": -59.4
+      "upside": -61.7
      },
      "bull": {
       "g": 12,
       "value": 98972,
       "per_share": 6329,
-      "upside": -47.0
+      "upside": -50.0
      }
     },
-    "implied_g": 26.6,
+    "implied_g": 28.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -3063,10 +3063,10 @@
     "per_share": 3426,
     "bear": 2315,
     "bull": 4455,
-    "upside": -71.3,
+    "upside": -72.9,
     "pct": 61,
     "tier": "가운데 ⅓",
-    "exp_ex": 2.8,
+    "exp_ex": 2.7,
     "conflict": false
    }
   },
@@ -3079,10 +3079,10 @@
     "ni": -81458,
     "period": "2025Q3~2026Q2"
    },
-   "price": 31450,
-   "price_date": "2026-11-10 01:54",
+   "price": 35500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1646894,
+   "mcap": 1858974,
    "shares": 52365463,
    "equity": 1722135,
    "equity_source": "DART 2026Q2",
@@ -3090,7 +3090,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -4.7,
-   "pbr": 0.96,
+   "pbr": 1.08,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -3125,29 +3125,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "동박 정상 매출 1.3조원 × 순이익률 3.5%로 450억원을 봤어요. 판가 인상과 회로박 전환으로 2027년 2분기 흑자 전환(회사 목표)이 근거지만 2021년(628억원) 수준까지는 보지 않았어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 36.6,
-    "norm_per": 36.6,
+    "fwd_per": 41.3,
+    "norm_per": 41.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 242228,
       "per_share": 4626,
-      "upside": -85.3
+      "upside": -87.0
      },
      "base": {
       "g": 10,
       "value": 377512,
       "per_share": 7209,
-      "upside": -77.1
+      "upside": -79.7
      },
      "bull": {
       "g": 28,
       "value": 824043,
       "per_share": 15736,
-      "upside": -50.0
+      "upside": -55.7
      }
     },
-    "implied_g": 44.9,
+    "implied_g": 48.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -3168,18 +3168,18 @@
     "ni": 41087,
     "period": "2025Q3~2026Q2"
    },
-   "price": 6020,
-   "price_date": "2026-11-10 01:54",
+   "price": 6530,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 422678,
+   "mcap": 458486,
    "shares": 70212298,
    "equity": 747822,
    "equity_source": "DART 2026Q2",
    "net_cash": -821103,
    "dividend_yield": null,
-   "per": 10.3,
+   "per": 11.2,
    "roe": 5.5,
-   "pbr": 0.57,
+   "pbr": 0.61,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -3214,29 +3214,29 @@
     "r": 11.0,
     "c": 0.4,
     "note": "동박(헝가리)과 OLED 소재 정상 이익 200억원을 봤어요. 유럽 전기차 수요가 약해 동박 흑자 전환 시점이 불확실해요",
-    "fwd_per": 21.1,
-    "norm_per": 21.1,
+    "fwd_per": 22.9,
+    "norm_per": 22.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 81452,
       "per_share": 1160,
-      "upside": -80.7
+      "upside": -82.2
      },
      "base": {
       "g": 8,
       "value": 115592,
       "per_share": 1646,
-      "upside": -72.7
+      "upside": -74.8
      },
      "bull": {
       "g": 15,
       "value": 156845,
       "per_share": 2234,
-      "upside": -62.9
+      "upside": -65.8
      }
     },
-    "implied_g": 38.6,
+    "implied_g": 40.6,
     "net_cash_added": 0
    },
    "quant": {
@@ -3257,10 +3257,10 @@
     "ni": -805087,
     "period": "2025Q3~2026Q2"
    },
-   "price": 63000,
-   "price_date": "2026-11-10 01:54",
+   "price": 71300,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 3058951,
+   "mcap": 3461956,
    "shares": 48554778,
    "equity": 1994280,
    "equity_source": "DART 2026Q2",
@@ -3268,7 +3268,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -40.4,
-   "pbr": 1.53,
+   "pbr": 1.74,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -3303,29 +3303,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "SK넥실리스 동박이 판가 인상으로 흑자 전환하고, 반도체 소재·글라스기판이 붙는다는 가정에서 800억원을 봤어요. 차입이 커서 이자 부담을 빼고 계산했어요. 낙관 시나리오는 회사가 IR에서 제시한 중장기 목표(물량·매출)를 대부분 달성하는 경우예요",
-    "fwd_per": 38.2,
-    "norm_per": 38.2,
+    "fwd_per": 43.3,
+    "norm_per": 43.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 407261,
       "per_share": 8388,
-      "upside": -86.7
+      "upside": -88.2
      },
      "base": {
       "g": 10,
       "value": 630781,
       "per_share": 12991,
-      "upside": -79.4
+      "upside": -81.8
      },
      "bull": {
       "g": 28,
       "value": 1366126,
       "per_share": 28136,
-      "upside": -55.3
+      "upside": -60.5
      }
     },
-    "implied_g": 47.9,
+    "implied_g": 51.2,
     "net_cash_added": 0
    },
    "quant": {
@@ -3346,10 +3346,10 @@
     "ni": -22554,
     "period": "2025Q3~2026Q2"
    },
-   "price": 37450,
-   "price_date": "2026-11-10 01:54",
+   "price": 40050,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 566373,
+   "mcap": 605694,
    "shares": 15123455,
    "equity": 221563,
    "equity_source": "DART 2026Q2",
@@ -3357,7 +3357,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -10.2,
-   "pbr": 2.56,
+   "pbr": 2.73,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -3392,29 +3392,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "양극용 알루미늄박 정상 매출 3,500억원 × 순이익률 3.4%로 120억원을 봤어요. 2022년(172억원)은 호황 이익이에요",
-    "fwd_per": 47.2,
-    "norm_per": 47.2,
+    "fwd_per": 50.5,
+    "norm_per": 50.5,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 61089,
       "per_share": 4039,
-      "upside": -89.2
+      "upside": -89.9
      },
      "base": {
       "g": 6,
       "value": 79426,
       "per_share": 5252,
-      "upside": -86.0
+      "upside": -86.9
      },
      "bull": {
       "g": 12,
       "value": 103247,
       "per_share": 6827,
-      "upside": -81.8
+      "upside": -83.0
      }
     },
-    "implied_g": 53.4,
+    "implied_g": 55.2,
     "net_cash_added": 0
    },
    "quant": {
@@ -3435,18 +3435,18 @@
     "ni": 18114,
     "period": "2025Q3~2026Q2"
    },
-   "price": 4840,
-   "price_date": "2026-11-10 01:54",
+   "price": 4945,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 612898,
+   "mcap": 626194,
    "shares": 126631721,
    "equity": 227026,
    "equity_source": "DART 2026Q2",
    "net_cash": -298840,
    "dividend_yield": null,
-   "per": 33.8,
+   "per": 34.6,
    "roe": 8.0,
-   "pbr": 2.7,
+   "pbr": 2.76,
    "cycle": {
     "phase": "회복",
     "note": "",
@@ -3481,29 +3481,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "알루미늄 압연(일반재 비중이 큼) 회사예요. 최근 분기 개선을 반영해 130억원을 봤어요",
-    "fwd_per": 47.1,
-    "norm_per": 47.1,
+    "fwd_per": 48.2,
+    "norm_per": 48.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 79416,
       "per_share": 627,
-      "upside": -87.0
+      "upside": -87.3
      },
      "base": {
       "g": 4,
       "value": 94594,
       "per_share": 747,
-      "upside": -84.6
+      "upside": -84.9
      },
      "bull": {
       "g": 8,
       "value": 112702,
       "per_share": 890,
-      "upside": -81.6
+      "upside": -82.0
      }
     },
-    "implied_g": 48.6,
+    "implied_g": 49.2,
     "net_cash_added": 0
    },
    "quant": {
@@ -3517,10 +3517,10 @@
     "per_share": 517,
     "bear": 349,
     "bull": 672,
-    "upside": -89.3,
+    "upside": -89.6,
     "pct": 39,
     "tier": "가운데 ⅓",
-    "exp_ex": -3.6,
+    "exp_ex": -3.4,
     "conflict": false
    }
   },
@@ -3533,18 +3533,18 @@
     "ni": 5006,
     "period": "2025Q3~2026Q2"
    },
-   "price": 11310,
-   "price_date": "2026-11-10 01:54",
+   "price": 11540,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 280488,
+   "mcap": 286192,
    "shares": 24800000,
    "equity": 293281,
    "equity_source": "DART 2026Q2",
    "net_cash": -288225,
    "dividend_yield": null,
-   "per": 56.0,
+   "per": 57.2,
    "roe": 1.7,
-   "pbr": 0.96,
+   "pbr": 0.98,
    "cycle": {
     "phase": "회복 초기",
     "note": "",
@@ -3579,29 +3579,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "포장재 본업과 파우치 필름(셀 파우치 외장재) 정상 이익 150억원을 봤어요. 파우치 필름 국산화 수요가 근거예요",
-    "fwd_per": 18.7,
-    "norm_per": 18.7,
+    "fwd_per": 19.1,
+    "norm_per": 19.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 80743,
       "per_share": 3256,
-      "upside": -71.2
+      "upside": -71.8
      },
      "base": {
       "g": 5,
       "value": 100812,
       "per_share": 4065,
-      "upside": -64.1
+      "upside": -64.8
      },
      "bull": {
       "g": 10,
       "value": 125837,
       "per_share": 5074,
-      "upside": -55.1
+      "upside": -56.0
      }
     },
-    "implied_g": 28.5,
+    "implied_g": 29.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -3615,10 +3615,10 @@
     "per_share": 1767,
     "bear": 1194,
     "bull": 2298,
-    "upside": -84.4,
+    "upside": -84.7,
     "pct": 44,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.1,
+    "exp_ex": -1.0,
     "conflict": false
    }
   },
@@ -3631,18 +3631,18 @@
     "ni": 63267,
     "period": "2025Q3~2026Q2"
    },
-   "price": 20750,
-   "price_date": "2026-11-10 01:54",
+   "price": 20900,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 601569,
+   "mcap": 605918,
    "shares": 28991282,
    "equity": 908440,
    "equity_source": "DART 2026Q2",
    "net_cash": -278723,
    "dividend_yield": null,
-   "per": 9.5,
+   "per": 9.6,
    "roe": 7.0,
-   "pbr": 0.66,
+   "pbr": 0.67,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -3677,29 +3677,29 @@
     "r": 9.5,
     "c": 0.6,
     "note": "식품 포장재 중심이라 이익이 안정적이고, 배터리 캔·알루미늄 사업은 일부예요. 최근 5년 평균(약 630억원)을 정상 이익으로 봤어요",
-    "fwd_per": 10.0,
-    "norm_per": 10.0,
+    "fwd_per": 10.1,
+    "norm_per": 10.1,
     "scenarios": {
      "bear": {
       "g": 1,
       "value": 458516,
       "per_share": 15816,
-      "upside": -23.8
+      "upside": -24.3
      },
      "base": {
       "g": 4,
       "value": 526010,
       "per_share": 18144,
-      "upside": -12.6
+      "upside": -13.2
      },
      "bull": {
       "g": 7,
       "value": 603252,
       "per_share": 20808,
-      "upside": 0.3
+      "upside": -0.4
      }
     },
-    "implied_g": 6.9,
+    "implied_g": 7.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -3713,10 +3713,10 @@
     "per_share": 12924,
     "bear": 8734,
     "bull": 16806,
-    "upside": -37.7,
+    "upside": -38.2,
     "pct": 83,
     "tier": "싼 ⅓",
-    "exp_ex": 8.2,
+    "exp_ex": 8.4,
     "conflict": false
    }
   },
@@ -3729,10 +3729,10 @@
     "ni": -17357,
     "period": "2025Q3~2026Q2"
    },
-   "price": 8890,
-   "price_date": "2026-11-10 01:54",
+   "price": 9490,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 233040,
+   "mcap": 248768,
    "shares": 26213697,
    "equity": 246703,
    "equity_source": "DART 2026Q2",
@@ -3740,7 +3740,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.0,
-   "pbr": 0.94,
+   "pbr": 1.01,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -3775,29 +3775,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "원통형 배터리 캔용 니켈도금 강판이 주력이에요. 46파이 확대 수요를 감안해 평균(약 140억원)과 비슷한 150억원을 봤어요",
-    "fwd_per": 15.5,
-    "norm_per": 15.5,
+    "fwd_per": 16.6,
+    "norm_per": 16.6,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 76361,
       "per_share": 2913,
-      "upside": -67.2
+      "upside": -69.3
      },
      "base": {
       "g": 4,
       "value": 90956,
       "per_share": 3470,
-      "upside": -61.0
+      "upside": -63.4
      },
      "bull": {
       "g": 8,
       "value": 108367,
       "per_share": 4134,
-      "upside": -53.5
+      "upside": -56.4
      }
     },
-    "implied_g": 25.8,
+    "implied_g": 27.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -3818,18 +3818,18 @@
     "ni": 19485,
     "period": "2025Q3~2026Q2"
    },
-   "price": 4915,
-   "price_date": "2026-11-10 01:54",
+   "price": 5240,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 189514,
+   "mcap": 202045,
    "shares": 38558235,
    "equity": 364658,
    "equity_source": "DART 2026Q2",
    "net_cash": -337155,
    "dividend_yield": null,
-   "per": 9.7,
+   "per": 10.4,
    "roe": 5.3,
-   "pbr": 0.52,
+   "pbr": 0.55,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -3864,29 +3864,29 @@
     "r": 11.0,
     "c": 0.5,
     "note": "원통형 배터리 캡어셈블리와 각형 부품 회사예요. 2022~23년 평균(약 250억원)보다 낮은 200억원을 봤어요",
-    "fwd_per": 9.5,
-    "norm_per": 9.5,
+    "fwd_per": 10.1,
+    "norm_per": 10.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 101815,
       "per_share": 2641,
-      "upside": -46.3
+      "upside": -49.6
      },
      "base": {
       "g": 5,
       "value": 126703,
       "per_share": 3286,
-      "upside": -33.1
+      "upside": -37.3
      },
      "bull": {
       "g": 10,
       "value": 157695,
       "per_share": 4090,
-      "upside": -16.8
+      "upside": -22.0
      }
     },
-    "implied_g": 14.2,
+    "implied_g": 15.7,
     "net_cash_added": 0
    },
    "quant": {
@@ -3900,10 +3900,10 @@
     "per_share": 3536,
     "bear": 2389,
     "bull": 4598,
-    "upside": -28.1,
+    "upside": -32.5,
     "pct": 85,
     "tier": "싼 ⅓",
-    "exp_ex": 9.2,
+    "exp_ex": 9.0,
     "conflict": true
    }
   },
@@ -3916,18 +3916,18 @@
     "ni": 17282,
     "period": "2025Q3~2026Q2"
    },
-   "price": 20550,
-   "price_date": "2026-11-10 01:54",
+   "price": 22650,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 273895,
+   "mcap": 301884,
    "shares": 13328219,
    "equity": 179095,
    "equity_source": "DART 2026Q2",
    "net_cash": -67590,
    "dividend_yield": null,
-   "per": 15.8,
+   "per": 17.5,
    "roe": 9.6,
-   "pbr": 1.53,
+   "pbr": 1.69,
    "cycle": {
     "phase": "회복",
     "note": "",
@@ -3962,29 +3962,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "원통형 배터리 캔 회사예요. 최근 분기 회복을 반영해 2022~23년 평균(약 250억원)보다 낮은 170억원을 봤어요",
-    "fwd_per": 16.1,
-    "norm_per": 16.1,
+    "fwd_per": 17.8,
+    "norm_per": 17.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 91508,
       "per_share": 6866,
-      "upside": -66.6
+      "upside": -69.7
      },
      "base": {
       "g": 6,
       "value": 119442,
       "per_share": 8962,
-      "upside": -56.4
+      "upside": -60.4
      },
      "bull": {
       "g": 12,
       "value": 155789,
       "per_share": 11689,
-      "upside": -43.1
+      "upside": -48.4
      }
     },
-    "implied_g": 25.0,
+    "implied_g": 27.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -3998,10 +3998,10 @@
     "per_share": 7282,
     "bear": 4920,
     "bull": 9468,
-    "upside": -64.6,
-    "pct": 66,
+    "upside": -67.9,
+    "pct": 63,
     "tier": "가운데 ⅓",
-    "exp_ex": 4.3,
+    "exp_ex": 3.9,
     "conflict": false
    }
   },
@@ -4015,7 +4015,7 @@
     "period": "2025Q3~2026Q2"
    },
    "price": 6080,
-   "price_date": "2026-11-10 01:54",
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 91478,
    "shares": 15045670,
@@ -4099,18 +4099,18 @@
     "ni": 29389,
     "period": "2025Q3~2026Q2"
    },
-   "price": 27300,
-   "price_date": "2026-11-10 01:54",
+   "price": 28350,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 750312,
+   "mcap": 779170,
    "shares": 27483948,
    "equity": 268111,
    "equity_source": "DART 2026Q2",
    "net_cash": -280263,
    "dividend_yield": null,
-   "per": 25.5,
+   "per": 26.5,
    "roe": 11.0,
-   "pbr": 2.8,
+   "pbr": 2.91,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -4145,29 +4145,29 @@
     "r": 10.5,
     "c": 0.6,
     "note": "가전 부품(세탁기·냉장고)과 배터리 부품이 주력이에요. 최근 4개 분기 이익(약 300억원)에서 일회성을 빼 250억원을 봤어요. 초전도체 테마 기대는 반영하지 않았어요",
-    "fwd_per": 30.0,
-    "norm_per": 30.0,
+    "fwd_per": 31.2,
+    "norm_per": 31.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 161486,
       "per_share": 5876,
-      "upside": -78.5
+      "upside": -79.3
      },
      "base": {
       "g": 5,
       "value": 201624,
       "per_share": 7336,
-      "upside": -73.1
+      "upside": -74.1
      },
      "bull": {
       "g": 10,
       "value": 251675,
       "per_share": 9157,
-      "upside": -66.5
+      "upside": -67.7
      }
     },
-    "implied_g": 35.5,
+    "implied_g": 36.4,
     "net_cash_added": 0
    },
    "quant": {
@@ -4181,7 +4181,7 @@
     "per_share": 4923,
     "bear": 3327,
     "bull": 6401,
-    "upside": -82.0,
+    "upside": -82.6,
     "pct": 49,
     "tier": "가운데 ⅓",
     "exp_ex": -0.2,
@@ -4198,7 +4198,7 @@
     "period": "2025Q3~2026Q2"
    },
    "price": 37,
-   "price_date": "2026-11-10 01:54",
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 750,
    "shares": 20256888,
@@ -4232,18 +4232,18 @@
     "ni": 52453,
     "period": "2025Q3~2026Q2"
    },
-   "price": 5050,
-   "price_date": "2026-11-10 01:54",
+   "price": 5310,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 125679,
+   "mcap": 132149,
    "shares": 24886881,
    "equity": 334346,
    "equity_source": "DART 2026Q2",
    "net_cash": -163527,
    "dividend_yield": null,
-   "per": 2.4,
+   "per": 2.5,
    "roe": 15.7,
-   "pbr": 0.38,
+   "pbr": 0.4,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -4278,29 +4278,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "휴대폰 배터리팩·충전기 회사예요. 최근 2년 평균 이익(약 270억원)을 기준으로 250억원을 봤어요",
-    "fwd_per": 5.0,
-    "norm_per": 5.0,
+    "fwd_per": 5.3,
+    "norm_per": 5.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 152723,
       "per_share": 6137,
-      "upside": 21.5
+      "upside": 15.6
      },
      "base": {
       "g": 4,
       "value": 181912,
       "per_share": 7310,
-      "upside": 44.7
+      "upside": 37.7
      },
      "bull": {
       "g": 8,
       "value": 216734,
       "per_share": 8709,
-      "upside": 72.5
+      "upside": 64.0
      }
     },
-    "implied_g": -4.5,
+    "implied_g": -3.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -4314,7 +4314,7 @@
     "per_share": 7533,
     "bear": 5090,
     "bull": 9795,
-    "upside": 49.2,
+    "upside": 41.9,
     "pct": 100,
     "tier": "싼 ⅓",
     "exp_ex": 13.9,
@@ -4330,18 +4330,18 @@
     "ni": 8501,
     "period": "2025Q3~2026Q2"
    },
-   "price": 2580,
-   "price_date": "2026-11-10 01:54",
+   "price": 2675,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 94456,
+   "mcap": 97934,
    "shares": 36610755,
    "equity": 217350,
    "equity_source": "DART 2026Q2",
    "net_cash": -35670,
    "dividend_yield": null,
-   "per": 11.1,
+   "per": 11.5,
    "roe": 3.9,
-   "pbr": 0.43,
+   "pbr": 0.45,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -4376,29 +4376,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "배터리 보호회로(PCM)·카메라모듈 회사로 마진이 얇아요. 2023~24년 평균 순이익(약 130억원)보다 낮은 80억원을 봤어요",
-    "fwd_per": 11.8,
-    "norm_per": 11.8,
+    "fwd_per": 12.2,
+    "norm_per": 12.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 48871,
       "per_share": 1335,
-      "upside": -48.3
+      "upside": -50.1
      },
      "base": {
       "g": 4,
       "value": 58212,
       "per_share": 1590,
-      "upside": -38.4
+      "upside": -40.6
      },
      "bull": {
       "g": 8,
       "value": 69355,
       "per_share": 1894,
-      "upside": -26.6
+      "upside": -29.2
      }
     },
-    "implied_g": 15.1,
+    "implied_g": 15.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -4412,10 +4412,10 @@
     "per_share": 1213,
     "bear": 820,
     "bull": 1577,
-    "upside": -53.0,
+    "upside": -54.6,
     "pct": 76,
     "tier": "싼 ⅓",
-    "exp_ex": 6.2,
+    "exp_ex": 6.3,
     "conflict": true
    }
   },
@@ -4428,10 +4428,10 @@
     "ni": -138094,
     "period": "2025Q3~2026Q2"
    },
-   "price": 4840,
-   "price_date": "2026-11-10 01:54",
+   "price": 4985,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 100133,
+   "mcap": 103133,
    "shares": 20688721,
    "equity": 27664,
    "equity_source": "DART 2026Q2",
@@ -4439,7 +4439,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -499.2,
-   "pbr": 3.62,
+   "pbr": 3.73,
    "cycle": {
     "phase": "바닥권",
     "note": "",
@@ -4474,29 +4474,29 @@
     "r": 12.0,
     "c": 0.5,
     "note": "배터리 보호회로 패키지(PMP) 회사예요. 자기자본이 작고 손실이 이어져 정상 이익을 60억원으로 낮게 잡았어요",
-    "fwd_per": 16.7,
-    "norm_per": 16.7,
+    "fwd_per": 17.2,
+    "norm_per": 17.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 27563,
       "per_share": 1332,
-      "upside": -72.5
+      "upside": -73.3
      },
      "base": {
       "g": 4,
       "value": 32662,
       "per_share": 1579,
-      "upside": -67.4
+      "upside": -68.3
      },
      "bull": {
       "g": 8,
       "value": 38732,
       "per_share": 1872,
-      "upside": -61.3
+      "upside": -62.4
      }
     },
-    "implied_g": 30.6,
+    "implied_g": 31.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -4517,18 +4517,18 @@
     "ni": 1197,
     "period": "2025Q3~2026Q2"
    },
-   "price": 8660,
-   "price_date": "2026-11-10 01:54",
+   "price": 9640,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 585872,
+   "mcap": 652172,
    "shares": 67652659,
    "equity": 184254,
    "equity_source": "DART 2026Q2",
    "net_cash": -15451,
    "dividend_yield": null,
-   "per": 489.5,
+   "per": 544.8,
    "roe": 0.6,
-   "pbr": 3.18,
+   "pbr": 3.54,
    "cycle": {
     "phase": "초기 성장",
     "note": "",
@@ -4560,29 +4560,29 @@
     "r": 10.5,
     "c": 0.5,
     "note": "울트라커패시터(UC)와 전기차 알루미늄 부품 회사예요. AI 데이터센터 백업전원용 UC 수요를 감안해 2023년(122억원)과 비슷한 100억원을 봤어요",
-    "fwd_per": 58.6,
-    "norm_per": 58.6,
+    "fwd_per": 65.2,
+    "norm_per": 65.2,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 61495,
       "per_share": 909,
-      "upside": -89.5
+      "upside": -90.6
      },
      "base": {
       "g": 12,
       "value": 91640,
       "per_share": 1355,
-      "upside": -84.4
+      "upside": -85.9
      },
      "bull": {
       "g": 20,
       "value": 130034,
       "per_share": 1922,
-      "upside": -77.8
+      "upside": -80.1
      }
     },
-    "implied_g": 57.1,
+    "implied_g": 60.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -4596,10 +4596,10 @@
     "per_share": 337,
     "bear": 228,
     "bull": 439,
-    "upside": -96.1,
+    "upside": -96.5,
     "pct": 10,
     "tier": "비싼 ⅓",
-    "exp_ex": -9.7,
+    "exp_ex": -10.0,
     "conflict": false
    }
   },
@@ -4612,18 +4612,18 @@
     "ni": 2211,
     "period": "2025Q3~2026Q2"
    },
-   "price": 9990,
-   "price_date": "2026-11-10 01:54",
+   "price": 10500,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 79869,
+   "mcap": 83947,
    "shares": 7994910,
    "equity": 98347,
    "equity_source": "DART 2026Q2",
    "net_cash": -34556,
    "dividend_yield": null,
-   "per": 36.1,
+   "per": 38.0,
    "roe": 2.2,
-   "pbr": 0.81,
+   "pbr": 0.85,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -4658,29 +4658,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "2차전지 활성화(화성) 장비 회사예요. 적자가 이어져 수주 회복 시 정상 이익을 40억원으로 낮게 잡았어요",
-    "fwd_per": 20.0,
-    "norm_per": 20.0,
+    "fwd_per": 21.0,
+    "norm_per": 21.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 22050,
       "per_share": 2758,
-      "upside": -72.4
+      "upside": -73.7
      },
      "base": {
       "g": 6,
       "value": 28453,
       "per_share": 3559,
-      "upside": -64.4
+      "upside": -66.1
      },
      "bull": {
       "g": 12,
       "value": 36744,
       "per_share": 4596,
-      "upside": -54.0
+      "upside": -56.2
      }
     },
-    "implied_g": 30.5,
+    "implied_g": 31.8,
     "net_cash_added": 0
    },
    "quant": {
@@ -4701,18 +4701,18 @@
     "ni": 83296,
     "period": "2025Q3~2026Q2"
    },
-   "price": 22950,
-   "price_date": "2026-11-10 01:54",
+   "price": 24350,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 536075,
+   "mcap": 568776,
    "shares": 23358372,
    "equity": 735867,
    "equity_source": "DART 2026Q2",
    "net_cash": -250059,
    "dividend_yield": null,
-   "per": 6.4,
+   "per": 6.8,
    "roe": 11.3,
-   "pbr": 0.73,
+   "pbr": 0.77,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -4747,29 +4747,29 @@
     "r": 10.5,
     "c": 0.7,
     "note": "코터(전극 코팅 장비) 1위 회사예요. 2024년(1,420억원)은 증설 붐 이익이라 빼고, 2022~25년 평균(약 860억원)보다 조금 낮은 800억원을 봤어요",
-    "fwd_per": 6.7,
-    "norm_per": 6.7,
+    "fwd_per": 7.1,
+    "norm_per": 7.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 602879,
       "per_share": 25810,
-      "upside": 12.5
+      "upside": 6.0
      },
      "base": {
       "g": 4,
       "value": 720025,
       "per_share": 30825,
-      "upside": 34.3
+      "upside": 26.6
      },
      "bull": {
       "g": 9,
       "value": 898902,
       "per_share": 38483,
-      "upside": 67.7
+      "upside": 58.0
      }
     },
-    "implied_g": -2.7,
+    "implied_g": -1.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -4783,10 +4783,10 @@
     "per_share": 19000,
     "bear": 12839,
     "bull": 24706,
-    "upside": -17.2,
+    "upside": -22.0,
     "pct": 88,
     "tier": "싼 ⅓",
-    "exp_ex": 10.2,
+    "exp_ex": 10.1,
     "conflict": false
    }
   },
@@ -4799,18 +4799,18 @@
     "ni": 41855,
     "period": "2025Q3~2026Q2"
    },
-   "price": 6300,
-   "price_date": "2026-11-10 01:54",
+   "price": 6770,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 489961,
+   "mcap": 526514,
    "shares": 77771623,
    "equity": 533373,
    "equity_source": "DART 2026Q2",
    "net_cash": 242798,
    "dividend_yield": null,
-   "per": 11.7,
+   "per": 12.6,
    "roe": 7.8,
-   "pbr": 0.92,
+   "pbr": 0.99,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -4845,29 +4845,29 @@
     "r": 10.5,
     "c": 0.7,
     "note": "전극 공정(압연·슬리팅) 장비 회사예요(DART 상호 SFA넥셀로 변경 확인 필요). 2023~25년 평균 순이익(약 380억원)보다 낮은 300억원을 봤어요",
-    "fwd_per": 16.3,
-    "norm_per": 16.3,
+    "fwd_per": 17.6,
+    "norm_per": 17.6,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 226080,
       "per_share": 2907,
-      "upside": -53.9
+      "upside": -57.1
      },
      "base": {
       "g": 4,
       "value": 270010,
       "per_share": 3472,
-      "upside": -44.9
+      "upside": -48.7
      },
      "bull": {
       "g": 9,
       "value": 337088,
       "per_share": 4334,
-      "upside": -31.2
+      "upside": -36.0
      }
     },
-    "implied_g": 17.5,
+    "implied_g": 19.2,
     "net_cash_added": 0
    },
    "quant": {
@@ -4881,10 +4881,10 @@
     "per_share": 1093,
     "bear": 739,
     "bull": 1421,
-    "upside": -82.6,
+    "upside": -83.9,
     "pct": 46,
     "tier": "가운데 ⅓",
-    "exp_ex": -0.5,
+    "exp_ex": -0.6,
     "conflict": false
    }
   },
@@ -4897,10 +4897,10 @@
     "ni": -31375,
     "period": "2025Q3~2026Q2"
    },
-   "price": 3790,
-   "price_date": "2026-11-10 01:54",
+   "price": 3875,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 57567,
+   "mcap": 58858,
    "shares": 15189281,
    "equity": 87415,
    "equity_source": "DART 2026Q2",
@@ -4908,7 +4908,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -35.9,
-   "pbr": 0.66,
+   "pbr": 0.67,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -4942,29 +4942,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "양극재 소성로(RHK) 장비 회사예요. 2022~23년 평균(약 100억원)의 절반인 50억원을 봤어요. 양극재 증설이 미뤄져 수주가 비어 있어요",
-    "fwd_per": 11.5,
-    "norm_per": 11.5,
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 27563,
       "per_share": 1815,
-      "upside": -52.1
+      "upside": -53.2
      },
      "base": {
       "g": 5,
       "value": 34082,
       "per_share": 2244,
-      "upside": -40.8
+      "upside": -42.1
      },
      "bull": {
       "g": 10,
       "value": 42179,
       "per_share": 2777,
-      "upside": -26.7
+      "upside": -28.3
      }
     },
-    "implied_g": 17.3,
+    "implied_g": 17.8,
     "net_cash_added": 0
    },
    "quant": {
@@ -4985,10 +4985,10 @@
     "ni": -7444,
     "period": "2025Q3~2026Q2"
    },
-   "price": 3115,
-   "price_date": "2026-11-10 01:54",
+   "price": 3130,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 49165,
+   "mcap": 49402,
    "shares": 15783457,
    "equity": 100903,
    "equity_source": "DART 2026Q2",
@@ -5031,29 +5031,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "배터리 검사(엑스레이) 장비 회사예요. 적자가 이어져 정상 이익을 20억원으로 낮게 봤어요",
-    "fwd_per": 24.6,
-    "norm_per": 24.6,
+    "fwd_per": 24.7,
+    "norm_per": 24.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 11025,
       "per_share": 699,
-      "upside": -77.6
+      "upside": -77.7
      },
      "base": {
       "g": 5,
       "value": 13633,
       "per_share": 864,
-      "upside": -72.3
+      "upside": -72.4
      },
      "bull": {
       "g": 10,
       "value": 16872,
       "per_share": 1069,
-      "upside": -65.7
+      "upside": -65.8
      }
     },
-    "implied_g": 35.7,
+    "implied_g": 35.8,
     "net_cash_added": 0
    },
    "quant": {
@@ -5068,7 +5068,7 @@
     "bear": 10,
     "bull": 19,
     "upside": -99.5,
-    "pct": 2,
+    "pct": 5,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
     "conflict": false
@@ -5119,7 +5119,7 @@
     "period": "2025Q3~2026Q2"
    },
    "price": 806,
-   "price_date": "2026-11-10 01:54",
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 55433,
    "shares": 68775785,
@@ -5153,18 +5153,18 @@
     "ni": 2505,
     "period": "2025Q3~2026Q2"
    },
-   "price": 42850,
-   "price_date": "2026-11-10 01:54",
+   "price": 44800,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 1308552,
+   "mcap": 1368102,
    "shares": 30537980,
    "equity": 131919,
    "equity_source": "DART 2026Q2",
    "net_cash": -19157,
    "dividend_yield": null,
-   "per": 522.4,
+   "per": 546.1,
    "roe": 1.9,
-   "pbr": 9.92,
+   "pbr": 10.37,
    "cycle": {
     "phase": "초기 성장",
     "note": "",
@@ -5197,26 +5197,26 @@
     "r": 11.0,
     "c": 0.5,
     "note": "PCB 장비 본업 이익(약 60억원)만 정상 이익으로 넣었어요. 복합동박·글라스기판 장비는 양산 수주가 확인되기 전이라 높은 성장 시나리오로만 반영했어요. 700억원 전환사채 희석도 감안해야 해요",
-    "fwd_per": 218.1,
-    "norm_per": 218.1,
+    "fwd_per": 228.0,
+    "norm_per": 228.0,
     "scenarios": {
      "bear": {
       "g": 5,
       "value": 38011,
       "per_share": 1245,
-      "upside": -97.1
+      "upside": -97.2
      },
      "base": {
       "g": 15,
       "value": 58817,
       "per_share": 1926,
-      "upside": -95.5
+      "upside": -95.7
      },
      "bull": {
       "g": 25,
       "value": 90303,
       "per_share": 2957,
-      "upside": -93.1
+      "upside": -93.4
      }
     },
     "implied_g": null,
@@ -5233,8 +5233,8 @@
     "per_share": 199,
     "bear": 134,
     "bull": 258,
-    "upside": -99.5,
-    "pct": 5,
+    "upside": -99.6,
+    "pct": 2,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
     "conflict": false
@@ -5249,10 +5249,10 @@
     "ni": -8498,
     "period": "2025Q3~2026Q2"
    },
-   "price": 2570,
-   "price_date": "2026-11-10 01:54",
+   "price": 2650,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 38565,
+   "mcap": 39766,
    "shares": 15005879,
    "equity": 60649,
    "equity_source": "DART 2026Q2",
@@ -5260,7 +5260,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -14.0,
-   "pbr": 0.64,
+   "pbr": 0.66,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5295,29 +5295,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "화성(충방전) 장비 회사예요. 2023~24년 평균(약 95억원)의 절반 수준인 50억원을 봤어요",
-    "fwd_per": 7.7,
-    "norm_per": 7.7,
+    "fwd_per": 8.0,
+    "norm_per": 8.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 27563,
       "per_share": 1837,
-      "upside": -28.5
+      "upside": -30.7
      },
      "base": {
       "g": 5,
       "value": 34082,
       "per_share": 2271,
-      "upside": -11.6
+      "upside": -14.3
      },
      "bull": {
       "g": 10,
       "value": 42179,
       "per_share": 2811,
-      "upside": 9.4
+      "upside": 6.1
      }
     },
-    "implied_g": 7.9,
+    "implied_g": 8.6,
     "net_cash_added": 0
    },
    "quant": {
@@ -5338,18 +5338,18 @@
     "ni": 25898,
     "period": "2025Q3~2026Q2"
    },
-   "price": 7640,
-   "price_date": "2026-11-10 01:54",
+   "price": 8140,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 91772,
+   "mcap": 97778,
    "shares": 12012095,
    "equity": 117093,
    "equity_source": "DART 2026Q2",
    "net_cash": 27354,
    "dividend_yield": null,
-   "per": 3.5,
+   "per": 3.8,
    "roe": 22.1,
-   "pbr": 0.78,
+   "pbr": 0.84,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5384,29 +5384,29 @@
     "r": 11.0,
     "c": 0.7,
     "note": "파우치 조립 장비 회사예요. 수주 변동이 커서 2022~25년 평균(약 90억원)과 최근 실적을 섞어 120억원을 봤어요",
-    "fwd_per": 7.6,
-    "norm_per": 7.6,
+    "fwd_per": 8.1,
+    "norm_per": 8.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 85525,
       "per_share": 7120,
-      "upside": -6.8
+      "upside": -12.5
      },
      "base": {
       "g": 5,
       "value": 106431,
       "per_share": 8860,
-      "upside": 16.0
+      "upside": 8.8
      },
      "bull": {
       "g": 10,
       "value": 132464,
       "per_share": 11028,
-      "upside": 44.3
+      "upside": 35.5
      }
     },
-    "implied_g": 1.6,
+    "implied_g": 3.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -5420,10 +5420,10 @@
     "per_share": 6998,
     "bear": 4729,
     "bull": 9100,
-    "upside": -8.4,
-    "pct": 93,
+    "upside": -14.0,
+    "pct": 90,
     "tier": "싼 ⅓",
-    "exp_ex": 10.9,
+    "exp_ex": 10.8,
     "conflict": false
    }
   },
@@ -5436,10 +5436,10 @@
     "ni": -5407,
     "period": "2025Q3~2026Q2"
    },
-   "price": 1958,
-   "price_date": "2026-11-10 01:54",
+   "price": 2020,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 111906,
+   "mcap": 115450,
    "shares": 57153456,
    "equity": 90955,
    "equity_source": "DART 2026Q2",
@@ -5447,7 +5447,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -5.9,
-   "pbr": 1.23,
+   "pbr": 1.27,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5482,29 +5482,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "2차전지·디스플레이 장비 회사예요. 평균 이익이 0 근처라 30억원으로 낮게 봤어요",
-    "fwd_per": 37.3,
-    "norm_per": 37.3,
+    "fwd_per": 38.5,
+    "norm_per": 38.5,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 16538,
       "per_share": 289,
-      "upside": -85.2
+      "upside": -85.7
      },
      "base": {
       "g": 5,
       "value": 20449,
       "per_share": 358,
-      "upside": -81.7
+      "upside": -82.3
      },
      "bull": {
       "g": 10,
       "value": 25308,
       "per_share": 443,
-      "upside": -77.4
+      "upside": -78.1
      }
     },
-    "implied_g": 46.2,
+    "implied_g": 47.0,
     "net_cash_added": 0
    },
    "quant": {
@@ -5525,18 +5525,18 @@
     "ni": 12072,
     "period": "2025Q3~2026Q2"
    },
-   "price": 2875,
-   "price_date": "2026-11-10 01:54",
+   "price": 3050,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 61147,
+   "mcap": 64869,
    "shares": 21268491,
    "equity": 175985,
    "equity_source": "DART 2026Q2",
    "net_cash": 63504,
    "dividend_yield": null,
-   "per": 5.1,
+   "per": 5.4,
    "roe": 6.9,
-   "pbr": 0.35,
+   "pbr": 0.37,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5571,29 +5571,29 @@
     "r": 11.5,
     "c": 0.6,
     "note": "2차전지 레이저 노칭 장비 회사예요(DART 상호 변경 여부 확인 필요). 2023~25년 평균(약 60억원)을 정상 이익으로 봤어요",
-    "fwd_per": 10.2,
-    "norm_per": 10.2,
+    "fwd_per": 10.8,
+    "norm_per": 10.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 34771,
       "per_share": 1635,
-      "upside": -43.1
+      "upside": -46.4
      },
      "base": {
       "g": 5,
       "value": 43131,
       "per_share": 2028,
-      "upside": -29.5
+      "upside": -33.5
      },
      "bull": {
       "g": 10,
       "value": 53528,
       "per_share": 2517,
-      "upside": -12.5
+      "upside": -17.5
      }
     },
-    "implied_g": 13.1,
+    "implied_g": 14.5,
     "net_cash_added": 0
    },
    "quant": {
@@ -5614,18 +5614,18 @@
     "ni": 17972,
     "period": "2025Q3~2026Q2"
    },
-   "price": 2860,
-   "price_date": "2026-11-10 01:54",
+   "price": 2940,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 56246,
+   "mcap": 57820,
    "shares": 19666534,
    "equity": 137860,
    "equity_source": "DART 2026Q2",
    "net_cash": -35071,
    "dividend_yield": null,
-   "per": 3.1,
+   "per": 3.2,
    "roe": 13.0,
-   "pbr": 0.41,
+   "pbr": 0.42,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5660,29 +5660,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "믹싱(슬러리) 장비 회사예요. 2024년(294억원)은 일회성이 섞여 빼고 100억원을 봤어요",
-    "fwd_per": 5.6,
-    "norm_per": 5.6,
+    "fwd_per": 5.8,
+    "norm_per": 5.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 61089,
       "per_share": 3106,
-      "upside": 8.6
+      "upside": 5.7
      },
      "base": {
       "g": 5,
       "value": 76022,
       "per_share": 3866,
-      "upside": 35.2
+      "upside": 31.5
      },
      "bull": {
       "g": 10,
       "value": 94617,
       "per_share": 4811,
-      "upside": 68.2
+      "upside": 63.6
      }
     },
-    "implied_g": -1.9,
+    "implied_g": -1.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -5696,10 +5696,10 @@
     "per_share": 2797,
     "bear": 1890,
     "bull": 3637,
-    "upside": -2.2,
+    "upside": -4.9,
     "pct": 95,
     "tier": "싼 ⅓",
-    "exp_ex": 11.4,
+    "exp_ex": 11.5,
     "conflict": false
    }
   },
@@ -5712,18 +5712,18 @@
     "ni": 5385,
     "period": "2025Q3~2026Q2"
    },
-   "price": 8000,
-   "price_date": "2026-11-10 01:54",
+   "price": 8410,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 92261,
+   "mcap": 96990,
    "shares": 11532662,
    "equity": 174118,
    "equity_source": "DART 2026Q2",
    "net_cash": -28656,
    "dividend_yield": null,
-   "per": 17.1,
+   "per": 18.0,
    "roe": 3.1,
-   "pbr": 0.53,
+   "pbr": 0.56,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5758,29 +5758,29 @@
     "r": 11.5,
     "c": 0.6,
     "note": "물류 자동화 장비 회사예요(DART 상호 코윈로보틱스로 변경 확인 필요). 2022~25년 평균(약 80억원)보다 조금 낮게 봤어요",
-    "fwd_per": 13.2,
-    "norm_per": 13.2,
+    "fwd_per": 13.9,
+    "norm_per": 13.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 40566,
       "per_share": 3517,
-      "upside": -56.0
+      "upside": -58.2
      },
      "base": {
       "g": 5,
       "value": 50320,
       "per_share": 4363,
-      "upside": -45.5
+      "upside": -48.1
      },
      "bull": {
       "g": 10,
       "value": 62449,
       "per_share": 5415,
-      "upside": -32.3
+      "upside": -35.6
      }
     },
-    "implied_g": 19.1,
+    "implied_g": 20.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -5794,10 +5794,10 @@
     "per_share": 439,
     "bear": 297,
     "bull": 571,
-    "upside": -94.5,
+    "upside": -94.8,
     "pct": 20,
     "tier": "비싼 ⅓",
-    "exp_ex": -7.6,
+    "exp_ex": -7.7,
     "conflict": false
    }
   },
@@ -5810,18 +5810,18 @@
     "ni": 6682,
     "period": "2025Q3~2026Q2"
    },
-   "price": 17070,
-   "price_date": "2026-11-10 01:54",
+   "price": 17910,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 136202,
+   "mcap": 142905,
    "shares": 7979048,
    "equity": 193928,
    "equity_source": "DART 2026Q2",
    "net_cash": 53075,
    "dividend_yield": null,
-   "per": 20.4,
+   "per": 21.4,
    "roe": 3.4,
-   "pbr": 0.7,
+   "pbr": 0.74,
    "cycle": {
     "phase": "회복",
     "note": "",
@@ -5854,29 +5854,29 @@
     "r": 11.0,
     "c": 0.7,
     "note": "건식 전극·믹싱 장비 회사예요. 2분기 수주 회복(영업익 171억원)을 감안해 2022~24년 평균(약 290억원)보다 낮은 200억원을 봤어요",
-    "fwd_per": 6.8,
-    "norm_per": 6.8,
+    "fwd_per": 7.1,
+    "norm_per": 7.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 142541,
       "per_share": 17864,
-      "upside": 4.7
+      "upside": -0.3
      },
      "base": {
       "g": 5,
       "value": 177385,
       "per_share": 22231,
-      "upside": 30.2
+      "upside": 24.1
      },
      "bull": {
       "g": 10,
       "value": 220773,
       "per_share": 27669,
-      "upside": 62.1
+      "upside": 54.5
      }
     },
-    "implied_g": -1.0,
+    "implied_g": 0.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -5890,11 +5890,11 @@
     "per_share": 1499,
     "bear": 1013,
     "bull": 1949,
-    "upside": -91.2,
-    "pct": 29,
+    "upside": -91.6,
+    "pct": 32,
     "tier": "비싼 ⅓",
     "exp_ex": -4.8,
-    "conflict": true
+    "conflict": false
    }
   },
   "217820": {
@@ -5906,10 +5906,10 @@
     "ni": -9894,
     "period": "2025Q3~2026Q2"
    },
-   "price": 1816,
-   "price_date": "2026-11-10 01:54",
+   "price": 1803,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 81070,
+   "mcap": 80489,
    "shares": 44641958,
    "equity": 95929,
    "equity_source": "DART 2026Q2",
@@ -5917,7 +5917,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -10.3,
-   "pbr": 0.85,
+   "pbr": 0.84,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5952,29 +5952,29 @@
     "r": 12.0,
     "c": 0.6,
     "note": "화성·충방전 장비 회사예요. 평균 이익이 0 근처라 60억원으로 낮게 봤어요",
-    "fwd_per": 13.5,
-    "norm_per": 13.5,
+    "fwd_per": 13.4,
+    "norm_per": 13.4,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 33075,
       "per_share": 741,
-      "upside": -59.2
+      "upside": -58.9
      },
      "base": {
       "g": 5,
       "value": 40899,
       "per_share": 916,
-      "upside": -49.6
+      "upside": -49.2
      },
      "bull": {
       "g": 10,
       "value": 50615,
       "per_share": 1134,
-      "upside": -37.6
+      "upside": -37.1
      }
     },
-    "implied_g": 21.1,
+    "implied_g": 20.9,
     "net_cash_added": 0
    },
    "quant": {
@@ -5988,10 +5988,10 @@
     "per_share": 238,
     "bear": 161,
     "bull": 310,
-    "upside": -86.9,
+    "upside": -86.8,
     "pct": 41,
     "tier": "가운데 ⅓",
-    "exp_ex": -2.3,
+    "exp_ex": -1.9,
     "conflict": false
    }
   },
@@ -6004,10 +6004,10 @@
     "ni": -1950,
     "period": "2025Q3~2026Q2"
    },
-   "price": 3900,
-   "price_date": "2026-11-10 01:54",
+   "price": 3840,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 42018,
+   "mcap": 41371,
    "shares": 10773775,
    "equity": 55359,
    "equity_source": "DART 2026Q2",
@@ -6015,7 +6015,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.5,
-   "pbr": 0.76,
+   "pbr": 0.75,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -6050,29 +6050,29 @@
     "r": 11.5,
     "c": 0.6,
     "note": "배터리 검사·BMS 장비 회사예요. 2020~24년 평균(약 50억원)을 정상 이익으로 봤어요",
-    "fwd_per": 8.4,
-    "norm_per": 8.4,
+    "fwd_per": 8.3,
+    "norm_per": 8.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 28976,
       "per_share": 2689,
-      "upside": -31.0
+      "upside": -30.0
      },
      "base": {
       "g": 5,
       "value": 35943,
       "per_share": 3336,
-      "upside": -14.5
+      "upside": -13.1
      },
      "bull": {
       "g": 10,
       "value": 44606,
       "per_share": 4140,
-      "upside": 6.2
+      "upside": 7.8
      }
     },
-    "implied_g": 8.6,
+    "implied_g": 8.3,
     "net_cash_added": 0
    },
    "quant": {
@@ -6086,10 +6086,10 @@
     "per_share": 972,
     "bear": 657,
     "bull": 1264,
-    "upside": -75.1,
+    "upside": -74.7,
     "pct": 59,
     "tier": "가운데 ⅓",
-    "exp_ex": 1.9,
+    "exp_ex": 2.3,
     "conflict": false
    }
   },
@@ -6102,10 +6102,10 @@
     "ni": -35453,
     "period": "2025Q3~2026Q2"
    },
-   "price": 4295,
-   "price_date": "2026-11-10 01:54",
+   "price": 4300,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 32090,
+   "mcap": 32127,
    "shares": 7471472,
    "equity": 13857,
    "equity_source": "DART 2026Q2",
@@ -6155,19 +6155,19 @@
       "g": 0,
       "value": 22050,
       "per_share": 2951,
-      "upside": -31.3
+      "upside": -31.4
      },
      "base": {
       "g": 5,
       "value": 27266,
       "per_share": 3649,
-      "upside": -15.0
+      "upside": -15.1
      },
      "bull": {
       "g": 10,
       "value": 33743,
       "per_share": 4516,
-      "upside": 5.2
+      "upside": 5.0
      }
     },
     "implied_g": 8.8,
@@ -6191,18 +6191,18 @@
     "ni": 13767,
     "period": "2025Q3~2026Q2"
    },
-   "price": 7000,
-   "price_date": "2026-11-10 01:54",
+   "price": 7260,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 107076,
+   "mcap": 111053,
    "shares": 15296603,
    "equity": 147471,
    "equity_source": "DART 2026Q2",
    "net_cash": 58799,
    "dividend_yield": null,
-   "per": 7.8,
+   "per": 8.1,
    "roe": 9.3,
-   "pbr": 0.73,
+   "pbr": 0.75,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -6237,29 +6237,29 @@
     "r": 11.0,
     "c": 0.7,
     "note": "반도체·2차전지 물류 자동화 장비 회사로 이익이 꾸준해요. 최근 5년 평균(약 120억원)보다 조금 낮게 봤어요",
-    "fwd_per": 10.7,
-    "norm_per": 10.7,
+    "fwd_per": 11.1,
+    "norm_per": 11.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 71271,
       "per_share": 4659,
-      "upside": -33.4
+      "upside": -35.8
      },
      "base": {
       "g": 5,
       "value": 88692,
       "per_share": 5798,
-      "upside": -17.2
+      "upside": -20.1
      },
      "bull": {
       "g": 10,
       "value": 110387,
       "per_share": 7216,
-      "upside": 3.1
+      "upside": -0.6
      }
     },
-    "implied_g": 9.3,
+    "implied_g": 10.1,
     "net_cash_added": 0
    },
    "quant": {
@@ -6273,7 +6273,7 @@
     "per_share": 4120,
     "bear": 2784,
     "bull": 5357,
-    "upside": -41.1,
+    "upside": -43.3,
     "pct": 80,
     "tier": "싼 ⅓",
     "exp_ex": 7.8,
@@ -6289,10 +6289,10 @@
     "ni": -35560,
     "period": "2025Q3~2026Q2"
    },
-   "price": 7880,
-   "price_date": "2026-11-10 01:54",
+   "price": 7940,
+   "price_date": "2026-11-11 00:15",
    "price_source": "네이버 금융 · Yahoo Finance",
-   "mcap": 63326,
+   "mcap": 63808,
    "shares": 8036252,
    "equity": 99056,
    "equity_source": "DART 2026Q2",
@@ -6333,29 +6333,29 @@
     "r": 12.0,
     "c": 0.5,
     "note": "양극재 공정 장비 회사예요. 2022~23년 평균(약 140억원)보다 크게 낮은 50억원을 봤어요",
-    "fwd_per": 12.7,
-    "norm_per": 12.7,
+    "fwd_per": 12.8,
+    "norm_per": 12.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 22969,
       "per_share": 2858,
-      "upside": -63.7
+      "upside": -64.0
      },
      "base": {
       "g": 5,
       "value": 28402,
       "per_share": 3534,
-      "upside": -55.1
+      "upside": -55.5
      },
      "bull": {
       "g": 10,
       "value": 35149,
       "per_share": 4374,
-      "upside": -44.5
+      "upside": -44.9
      }
     },
-    "implied_g": 23.9,
+    "implied_g": 24.1,
     "net_cash_added": 0
    },
    "quant": {
