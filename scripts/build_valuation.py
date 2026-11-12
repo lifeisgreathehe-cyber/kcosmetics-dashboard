@@ -18,6 +18,69 @@ def load(p, default=None):
         return default
 
 
+
+def _num(s):
+    try:
+        return float(str(s).replace(",", "").strip())
+    except Exception:  # noqa: BLE001
+        return None
+
+
+def _eok(s):
+    """네이버 '7조 5,807억' → 백만원"""
+    import re
+    if not s or s == "N/A":
+        return None
+    s = s.replace(",", "").replace(" ", "")
+    t = 0.0
+    m = re.search(r"([\d.]+)조", s)
+    t += float(m.group(1)) * 1e4 if m else 0
+    m = re.search(r"([\d.]+)억", s)
+    t += float(m.group(1)) if m else 0
+    return t * 100 if t else None
+
+
+def listed_shares(mk, code):
+    """외부(네이버 금융) 시가총액 ÷ 주가로 본 현재 상장주식수(자기주식 포함). raw/audit/market_check.json."""
+    n = ((mk.get(code) or {}).get("naver") or {})
+    mv, px = _eok((n.get("infos") or {}).get("marketValue")), _num((n.get("basic") or {}).get("closePrice"))
+    return round(mv * 1e6 / px) if mv and px else None
+
+
+def resolve_shares(dart_out, dart_issued, listed):
+    """유통주식수(자기주식 제외)와 상장주식수를 정한다.
+
+    DART 유통주식수는 마지막 정기보고서 시점 값이라 그 뒤의 무상증자·액면병합·유상증자를 모른다.
+    네이버 상장주식수(현재, 자기주식 포함)가 있으면 그것을 기준으로 하고, 자기주식만 DART에서 뺀다.
+    반환 (유통, 상장, 메모)
+    """
+    if not listed:
+        return dart_out, dart_out, None
+    if not dart_out:
+        return listed, listed, "DART 주식수 없음: 상장주식수 사용"
+    if dart_issued and dart_issued >= dart_out:
+        tre = dart_issued - dart_out
+        out = listed - tre
+        if out > 0.5 * listed:
+            return out, listed, None
+    r = listed / dart_out
+    if 0.99 <= r <= 1.5:  # 차이는 자기주식으로 본다(네이버 시총이 억 단위 반올림이라 1% 오차 허용)
+        return dart_out, max(listed, dart_out), None
+    return listed, listed, f"DART 유통주식수 {dart_out:,.0f}주 → 현재 상장 {listed:,.0f}주(보고서 이후 주식 수 변동)"
+
+
+
+def ttm_keys(Q):
+    """최근 4개 '연속' 분기(순이익 값이 있는)만 TTM으로 쓴다. 중간 분기가 비면 그 앞의 연속 4개 분기."""
+    qi = lambda k: int(k[:4]) * 4 + int(k[-1]) - 1
+    ks = [k for k in sorted(Q) if (Q[k] or {}).get("ni") is not None]
+    for i in range(len(ks) - 4, -1, -1):
+        w = ks[i:i + 4]
+        if qi(w[-1]) - qi(w[0]) == 3:
+            return w
+    return []
+
+
 NC_YIELD = 0.02
 
 
@@ -137,8 +200,8 @@ def quant_check(cos, out, cfg, dd):
              "ttm_ni": f["ttm_ni"], "oneoff": bool(f["ttm_op"] > 0 and (f["ttm_ni"] > 2 * f["ttm_op"] * TAX or f["ttm_ni"] < 0.3 * f["ttm_op"] * TAX))}
         if v:
             q.update(E=round(v["E"]), per_share=round(v["base"] * 1e6 / rec["shares"]), bear=round(v["bear"] * 1e6 / rec["shares"]),
-                     bull=round(v["bull"] * 1e6 / rec["shares"]), upside=round((v["base"] / rec["mcap"] - 1) * 100, 1))
-            rows.append((rec, q, math.log(v["base"] / rec["mcap"])))
+                     bull=round(v["bull"] * 1e6 / rec["shares"]), upside=round((v["base"] / rec.get("mcap_eff", rec["mcap"]) - 1) * 100, 1))
+            rows.append((rec, q, math.log(v["base"] / rec.get("mcap_eff", rec["mcap"]))))
         rec["quant"] = q
     if len(rows) >= 6:
         med = st.median(x for _, _, x in rows)
@@ -168,7 +231,12 @@ def main(industry="cosmetics"):
     cfg = load(P(*cd, "valuation.json"), {}) or {}
     gT = cfg.get("terminal_growth", 2.0)
     # DART에서 주식수를 못 읽은 회사는 설정 파일의 shares(보통주 유통주식수)를 쓴다
-    manual = {c["code"]: c["shares"] for c in (load(P(*cd, "companies.json"), []) or []) if c.get("shares")}
+    ccfg = load(P(*cd, "companies.json"), []) or []
+    manual = {c["code"]: c["shares"] for c in ccfg if c.get("shares")}
+    manual_pref = {c["code"]: c["pref_shares"] for c in ccfg if c.get("pref_shares")}
+    pref_cfg = {c["code"]: c["pref"] for c in ccfg if c.get("pref")}
+    # 외부 대조(네이버 금융 상장주식수·우선주 종가): scripts/audit_market.py가 매일 갱신
+    mk = (load(P("raw", "audit", "market_check.json"), {}) or {}).get("codes", {})
     out = {"updated": datetime.date.today().isoformat(), "method": cfg.get("note", ""),
            "terminal_growth": gT, "asof": cfg.get("asof"), "companies": {}}
     out["industry_cycle"] = cfg.get("industry_cycle", {})
@@ -183,7 +251,7 @@ def main(industry="cosmetics"):
         code = co["code"]
         a = cfg.get("companies", {}).get(code)
         Q = co.get("quarterly", {}) or {}
-        ks = sorted(Q)[-4:]
+        ks = ttm_keys(Q)
         rec = {"name": co["name"], "group": co.get("group")}
         if len(ks) == 4:
             ttm = {m: sum((Q[k].get(m) or 0) for k in ks) for m in ("rev", "op", "ni")}
@@ -223,27 +291,43 @@ def main(industry="cosmetics"):
         px = prices.get(code)
         qt = quotes.get(code)
         dsh = co.get("shares") or {}  # DART 유통주식수 (보통주·우선주)
-        shares0 = (px or {}).get("shares") or snap.get("shares") or dsh.get("common") or manual.get(code)
+        lst = listed_shares(mk, code)
+        sh_out, sh_lst, sh_note = resolve_shares(dsh.get("common") or snap.get("shares") or manual.get(code),
+                                                 dsh.get("common_issued"), lst)
+        if px and px.get("shares") and not lst:
+            sh_lst = px["shares"]
+        shares0 = sh_out
         if not shares0:
             out["companies"][code] = rec
             continue
-        pref = co.get("pref")
-        pref_sh = dsh.get("pref") if pref else None
+        pref = co.get("pref") or pref_cfg.get(code) or (mk.get(code) or {}).get("pref_found")
+        p_lst = listed_shares(mk, pref) if pref else None
+        p_out, p_lst, _ = resolve_shares(dsh.get("pref") or manual_pref.get(code), dsh.get("pref_issued"), p_lst) if pref else (None, None, None)
         pq = quotes.get(pref) if pref else None
+        pprice = (pq or {}).get("price")
+        if pref and not pprice:  # 우선주 시세가 없으면 네이버 대조 파일의 종가
+            pprice = _num((((mk.get(pref) or {}).get("naver") or {}).get("basic") or {}).get("closePrice"))
         if qt and qt.get("price"):
             price, pdate, psrc = qt["price"], qt.get("time"), qsrc or "실시간 시세"
-            mcap = round(price * shares0 / 1e6)
-            if pref_sh and pq and pq.get("price"):  # 우선주 시가총액 합산
-                mcap += round(pq["price"] * pref_sh / 1e6)
         elif px and px.get("price"):
-            price, pdate = px["price"], px.get("date")
-            mcap = px.get("mcap") or round(price * shares0 / 1e6)
-            psrc = "금융위원회 주식시세정보"
+            price, pdate, psrc = px["price"], px.get("date"), "금융위원회 주식시세정보"
         elif snap.get("price"):
-            price, pdate, mcap, psrc = snap["price"], snap["price_date"], snap["mcap"], "StockAnalysis 스냅샷"
+            price, pdate, psrc = snap["price"], snap["price_date"], "StockAnalysis 스냅샷"
         else:
             out["companies"][code] = rec
             continue
+        # 시가총액(표시) = 상장주식수(자기주식 포함) × 주가 + 우선주 — 네이버·거래소 표기와 같은 기준
+        # 평가 기준 시가총액 = 유통주식수(자기주식 제외) × 주가 + 우선주 → PER·PBR·적정가 괴리율에 사용
+        mcap = round(price * (sh_lst or shares0) / 1e6)
+        mcap_eff = round(price * shares0 / 1e6)
+        if pref and p_out:
+            pp = pprice or price  # 우선주 시세를 끝내 못 구하면 보통주 가격으로(보수적)
+            mcap += round(pp * (p_lst or p_out) / 1e6)
+            mcap_eff += round(pp * p_out / 1e6)
+        sh_chk = {"dart_common": dsh.get("common"), "dart_period": dsh.get("period"), "listed": lst,
+                  "pref": pref, "pref_shares": p_out, "pref_price": pprice}
+        if sh_note:
+            sh_chk["note"] = sh_note
         bs = co.get("bs") or {}
         equity = bs.get("equity") or snap.get("equity")
         eq_src = f"DART {bs.get('period')}" if bs.get("equity") else "스냅샷(PBR 역산)"
@@ -253,16 +337,19 @@ def main(industry="cosmetics"):
                 net_cash = min(net_cash, snap["net_cash"])
         else:
             net_cash = snap.get("net_cash")
-        shares = shares0 + (pref_sh or 0)  # 주당 가치는 보통주+우선주 기준
-        rec.update(price=price, price_date=pdate, price_source=psrc, mcap=mcap, shares=shares,
+        # 주당 가치: 평가 기준 시가총액을 보통주 가격으로 나눈 '보통주 환산 유통주식수'로 나눈다
+        # (우선주는 시장가 비율만큼 가치를 나눠 가짐) → 적정주가/현재가 − 1 = 괴리율이 정확히 맞는다
+        shares = round(mcap_eff * 1e6 / price)
+        rec.update(price=price, price_date=pdate, price_source=psrc, mcap=mcap, mcap_eff=mcap_eff, shares=shares,
+                   shares_check=sh_chk,
                    equity=equity, equity_source=eq_src, net_cash=net_cash,
                    dividend_yield=snap.get("dividend_yield"))
         t = rec.get("ttm")
         if t:
             ni = t["ni"]
-            rec["per"] = round(mcap / ni, 1) if ni > 0 else None
+            rec["per"] = round(mcap_eff / ni, 1) if ni > 0 else None
             rec["roe"] = round(ni / equity * 100, 1) if equity else None
-        rec["pbr"] = round(mcap / equity, 2) if equity else None
+        rec["pbr"] = round(mcap_eff / equity, 2) if equity and equity > 0 else None
         if a and a.get("skip"):
             rec["skip"] = a["skip"]
             rec["cycle"] = {"position": a.get("cyc_pos"), "note": a.get("cycle_note", "")}
@@ -320,11 +407,11 @@ def main(industry="cosmetics"):
             v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT) + nc + xv
             v = max(v, 0)
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
-                     "upside": round((v / mcap - 1) * 100, 1)}
+                     "upside": round((v / mcap_eff - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
-                      "fwd_per": round(mcap / E1f, 1) if E1f else None,
-                      "norm_per": round(mcap / E1, 1) if E1 > 0 else None, "scenarios": sc,
-                      "implied_g": implied_growth(mcap - nc - xv, E_op, a["r"], a["c"], gT),
+                      "fwd_per": round(mcap_eff / E1f, 1) if E1f else None,
+                      "norm_per": round(mcap_eff / E1, 1) if E1 > 0 else None, "scenarios": sc,
+                      "implied_g": implied_growth(mcap_eff - nc - xv, E_op, a["r"], a["c"], gT),
                       **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec

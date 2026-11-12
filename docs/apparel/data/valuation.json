@@ -6,95 +6,1521 @@
  "companies": {
   "111770": {
    "name": "영원무역",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 70500,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 3123977,
+   "mcap_eff": 3123977,
+   "shares": 44311730,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 44311724,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "OEM 정상 이익(연 영업이익 6,000억원 안팎)에서 스캇 적자가 절반으로 줄어든 2026~27년 평균을 정상 이익으로 봤어요. 스캇 흑자 전환은 낙관 시나리오에만 넣었어요",
+    "w_mid": 0.4,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 370000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 370000,
+    "r": 9.5,
+    "c": 0.65,
+    "note": "OEM 정상 이익(연 영업이익 6,000억원 안팎)에서 스캇 적자가 절반으로 줄어든 2026~27년 평균을 정상 이익으로 봤어요. 스캇 흑자 전환은 낙관 시나리오에만 넣었어요",
+    "fwd_per": 8.4,
+    "norm_per": 8.4,
+    "scenarios": {
+     "bear": {
+      "g": 1.0,
+      "value": 3063141,
+      "per_share": 69127,
+      "upside": -1.9
+     },
+     "base": {
+      "g": 5.0,
+      "value": 3678428,
+      "per_share": 83013,
+      "upside": 17.7
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 4217897,
+      "per_share": 95187,
+      "upside": 35.0
+     }
+    },
+    "implied_g": 1.4,
+    "net_cash_added": 0
+   }
   },
   "009970": {
    "name": "영원무역홀딩스",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 182000,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 2227938,
+   "mcap_eff": 2227938,
+   "shares": 12241418,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 12241417,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "영원무역 정상 이익의 지배 몫과 노스페이스 국내 이익을 더했어요. 지주사라 연결 순현금은 반영하지 않았어요",
+    "w_mid": 0.4,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 200000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 200000,
+    "r": 10.0,
+    "c": 0.55,
+    "note": "영원무역 정상 이익의 지배 몫과 노스페이스 국내 이익을 더했어요. 지주사라 연결 순현금은 반영하지 않았어요",
+    "fwd_per": 11.1,
+    "norm_per": 11.1,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 1256477,
+      "per_share": 102641,
+      "upside": -43.6
+     },
+     "base": {
+      "g": 3.5,
+      "value": 1471204,
+      "per_share": 120182,
+      "upside": -34.0
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 1646609,
+      "per_share": 134511,
+      "upside": -26.1
+     }
+    },
+    "implied_g": 12.7,
+    "net_cash_added": 0
+   }
   },
   "105630": {
    "name": "한세실업",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 8380,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 335200,
+   "mcap_eff": 335200,
+   "shares": 40000000,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 40000000,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "과거 평균 영업이익률(6% 안팎)보다 낮은 5.5%를 정상으로 보고 이자비용을 뺀 이익이에요. 2026년 이익(사이클 바닥)보다 높지만 2023년 고점보다는 낮아요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 80000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 80000,
+    "r": 11.0,
+    "c": 0.55,
+    "note": "과거 평균 영업이익률(6% 안팎)보다 낮은 5.5%를 정상으로 보고 이자비용을 뺀 이익이에요. 2026년 이익(사이클 바닥)보다 높지만 2023년 고점보다는 낮아요",
+    "fwd_per": 4.2,
+    "norm_per": 4.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 393165,
+      "per_share": 9829,
+      "upside": 17.3
+     },
+     "base": {
+      "g": 3.0,
+      "value": 510753,
+      "per_share": 12769,
+      "upside": 52.4
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 582454,
+      "per_share": 14561,
+      "upside": 73.8
+     }
+    },
+    "implied_g": -6.7,
+    "net_cash_added": 0
+   }
   },
   "016450": {
    "name": "한세예스24홀딩스",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 4235,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 169400,
+   "mcap_eff": 169400,
+   "shares": 40000000,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 40000000,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "한세실업 정상 이익의 지배 몫과 예스24 지분 몫을 더하고 지주사 비용을 뺐어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 33000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 33000,
+    "r": 11.5,
+    "c": 0.5,
+    "note": "한세실업 정상 이익의 지배 몫과 예스24 지분 몫을 더하고 지주사 비용을 뺐어요",
+    "fwd_per": 5.1,
+    "norm_per": 5.1,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 140159,
+      "per_share": 3504,
+      "upside": -17.3
+     },
+     "base": {
+      "g": 2.0,
+      "value": 173684,
+      "per_share": 4342,
+      "upside": 2.5
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 197684,
+      "per_share": 4942,
+      "upside": 16.7
+     }
+    },
+    "implied_g": 1.4,
+    "net_cash_added": 0
+   }
   },
   "241590": {
    "name": "화승엔터프라이즈",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 2600,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 157548,
+   "mcap_eff": 157548,
+   "shares": 60595385,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 60595238,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "정상 영업이익률 5%와 이자비용을 반영한 이익이에요. 2025년 바닥 이익이 아니라 회복 후 평균을 썼어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 28000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 28000,
+    "r": 12.0,
+    "c": 0.45,
+    "note": "정상 영업이익률 5%와 이자비용을 반영한 이익이에요. 2025년 바닥 이익이 아니라 회복 후 평균을 썼어요",
+    "fwd_per": 5.6,
+    "norm_per": 5.6,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 97837,
+      "per_share": 1615,
+      "upside": -37.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 137179,
+      "per_share": 2264,
+      "upside": -12.9
+     },
+     "bull": {
+      "g": 9.0,
+      "value": 169759,
+      "per_share": 2802,
+      "upside": 7.8
+     }
+    },
+    "implied_g": 7.2,
+    "net_cash_added": 0
+   }
   },
   "007980": {
    "name": "태평양물산",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 1587,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 74433,
+   "mcap_eff": 74433,
+   "shares": 46901701,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 46901500,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 8000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 8000,
+    "r": 12.5,
+    "c": 0.5,
+    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
+    "fwd_per": 9.3,
+    "norm_per": 9.3,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 29698,
+      "per_share": 633,
+      "upside": -60.1
+     },
+     "base": {
+      "g": 2.0,
+      "value": 38095,
+      "per_share": 812,
+      "upside": -48.8
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 43201,
+      "per_share": 921,
+      "upside": -42.0
+     }
+    },
+    "implied_g": 17.9,
+    "net_cash_added": 0
+   }
   },
   "111110": {
    "name": "호전실업",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 6370,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 57748,
+   "mcap_eff": 57748,
+   "shares": 9065620,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 9065574,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "과거 평균 순이익률(약 2%)을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 7000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 7000,
+    "r": 12.5,
+    "c": 0.5,
+    "note": "과거 평균 순이익률(약 2%)을 정상으로 봤어요",
+    "fwd_per": 8.2,
+    "norm_per": 8.2,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 25985,
+      "per_share": 2866,
+      "upside": -55.0
+     },
+     "base": {
+      "g": 2.0,
+      "value": 33333,
+      "per_share": 3677,
+      "upside": -42.3
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 37801,
+      "per_share": 4170,
+      "upside": -34.5
+     }
+    },
+    "implied_g": 15.1,
+    "net_cash_added": 0
+   }
   },
   "009270": {
    "name": "신원",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 1008,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 115711,
+   "mcap_eff": 115711,
+   "shares": 114792659,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 114792899,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 5000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 5000,
+    "r": 12.5,
+    "c": 0.5,
+    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
+    "fwd_per": 23.1,
+    "norm_per": 23.1,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 17815,
+      "per_share": 155,
+      "upside": -84.6
+     },
+     "base": {
+      "g": 0.0,
+      "value": 21903,
+      "per_share": 191,
+      "upside": -81.1
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 24827,
+      "per_share": 216,
+      "upside": -78.5
+     }
+    },
+    "implied_g": 40.3,
+    "net_cash_added": 0
+   }
   },
   "004060": {
    "name": "SG세계물산",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 1915,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 38781,
+   "mcap_eff": 38781,
+   "shares": 20251175,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 20251177,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률(약 1%)을 정상으로 봤어요",
+    "w_mid": 0.7,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 2000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 2000,
+    "r": 13.0,
+    "c": 0.5,
+    "note": "과거 평균 순이익률(약 1%)을 정상으로 봤어요",
+    "fwd_per": 19.4,
+    "norm_per": 19.4,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 6564,
+      "per_share": 324,
+      "upside": -83.1
+     },
+     "base": {
+      "g": 0.0,
+      "value": 8373,
+      "per_share": 413,
+      "upside": -78.4
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 9474,
+      "per_share": 468,
+      "upside": -75.6
+     }
+    },
+    "implied_g": 37.4,
+    "net_cash_added": 0
+   }
   },
   "194370": {
    "name": "제이에스코퍼레이션",
-   "group": "OEM·ODM 수출"
+   "group": "OEM·ODM 수출",
+   "price": 10750,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 311969,
+   "mcap_eff": 311969,
+   "shares": 29020372,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 29020333,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 17000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 17000,
+    "r": 12.0,
+    "c": 0.55,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 18.4,
+    "norm_per": 18.4,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 75706,
+      "per_share": 2609,
+      "upside": -75.7
+     },
+     "base": {
+      "g": 3.0,
+      "value": 97557,
+      "per_share": 3362,
+      "upside": -68.7
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 110847,
+      "per_share": 3820,
+      "upside": -64.5
+     }
+    },
+    "implied_g": 30.6,
+    "net_cash_added": 0
+   }
   },
   "020000": {
    "name": "한섬",
-   "group": "패션 대형사"
+   "group": "패션 대형사",
+   "price": 17160,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 368560,
+   "mcap_eff": 368560,
+   "shares": 21477855,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 21477861,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "2018~2025년 평균 순이익률(약 5%)을 정상 수준으로 보고, 2026년 회복 이익(바닥권)보다는 높게 잡았어요. 고가 브랜드의 사이클 중간 이익이에요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 70000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 70000,
+    "r": 10.0,
+    "c": 0.65,
+    "note": "2018~2025년 평균 순이익률(약 5%)을 정상 수준으로 보고, 2026년 회복 이익(바닥권)보다는 높게 잡았어요. 고가 브랜드의 사이클 중간 이익이에요",
+    "fwd_per": 5.3,
+    "norm_per": 5.3,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 519725,
+      "per_share": 24198,
+      "upside": 41.0
+     },
+     "base": {
+      "g": 4.0,
+      "value": 622415,
+      "per_share": 28979,
+      "upside": 68.9
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 712445,
+      "per_share": 33171,
+      "upside": 93.3
+     }
+    },
+    "implied_g": -7.7,
+    "net_cash_added": 0
+   }
   },
   "031430": {
    "name": "신세계인터내셔날",
-   "group": "패션 대형사"
+   "group": "패션 대형사",
+   "price": 9740,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 340800,
+   "mcap_eff": 340800,
+   "shares": 34989733,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 34989691,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "자주 매각 후 사업 구조로 영업이익률 4% 안팎을 정상으로 봤어요. 2019~2022년 고점(수입 브랜드 호황)보다 낮게 잡았어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 45000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 45000,
+    "r": 10.5,
+    "c": 0.6,
+    "note": "자주 매각 후 사업 구조로 영업이익률 4% 안팎을 정상으로 봤어요. 2019~2022년 고점(수입 브랜드 호황)보다 낮게 잡았어요",
+    "fwd_per": 7.6,
+    "norm_per": 7.6,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 266043,
+      "per_share": 7603,
+      "upside": -21.9
+     },
+     "base": {
+      "g": 4.0,
+      "value": 347155,
+      "per_share": 9922,
+      "upside": 1.9
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 414613,
+      "per_share": 11850,
+      "upside": 21.7
+     }
+    },
+    "implied_g": 3.6,
+    "net_cash_added": 0
+   }
   },
   "093050": {
    "name": "LF",
-   "group": "패션 대형사"
+   "group": "패션 대형사",
+   "price": 20600,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 602328,
+   "mcap_eff": 602328,
+   "shares": 29239223,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 29239234,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "패션 정상 영업이익률 5%와 코람코 평균 이익을 더했어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 115000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 115000,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "패션 정상 영업이익률 5%와 코람코 평균 이익을 더했어요",
+    "fwd_per": 5.2,
+    "norm_per": 5.2,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 753450,
+      "per_share": 25768,
+      "upside": 25.1
+     },
+     "base": {
+      "g": 3.0,
+      "value": 902277,
+      "per_share": 30858,
+      "upside": 49.8
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 1032873,
+      "per_share": 35325,
+      "upside": 71.5
+     }
+    },
+    "implied_g": -6.0,
+    "net_cash_added": 0
+   }
   },
   "383220": {
    "name": "F&F",
-   "group": "패션 대형사"
+   "group": "패션 대형사",
+   "price": 60100,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 2302241,
+   "mcap_eff": 2302241,
+   "shares": 38306839,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 38306836,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "2023~2025년 평균 지배순이익을 정상으로 보고, 중국 성숙을 반영해 성장률을 낮췄어요",
+    "w_mid": 0.4,
+    "follow": null,
+    "industry": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 340000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 340000,
+    "r": 10.5,
+    "c": 0.75,
+    "note": "2023~2025년 평균 지배순이익을 정상으로 보고, 중국 성숙을 반영해 성장률을 낮췄어요",
+    "fwd_per": 6.8,
+    "norm_per": 6.8,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 2404074,
+      "per_share": 62758,
+      "upside": 4.4
+     },
+     "base": {
+      "g": 3.0,
+      "value": 3136233,
+      "per_share": 81871,
+      "upside": 36.2
+     },
+     "bull": {
+      "g": 7.0,
+      "value": 3745893,
+      "per_share": 97787,
+      "upside": 62.7
+     }
+    },
+    "implied_g": -4.0,
+    "net_cash_added": 0
+   }
   },
   "007700": {
    "name": "F&F홀딩스",
-   "group": "패션 대형사"
+   "group": "패션 대형사",
+   "price": 13190,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 515965,
+   "mcap_eff": 515965,
+   "shares": 39117892,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 39117871,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "F&F 정상 이익의 지분 몫에 지주사 비용을 뺐어요",
+    "w_mid": 0.4,
+    "follow": null,
+    "industry": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 105000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 105000,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "F&F 정상 이익의 지분 몫에 지주사 비용을 뺐어요",
+    "fwd_per": 4.9,
+    "norm_per": 4.9,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 562940,
+      "per_share": 14391,
+      "upside": 9.1
+     },
+     "base": {
+      "g": 2.5,
+      "value": 715478,
+      "per_share": 18290,
+      "upside": 38.7
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 833968,
+      "per_share": 21319,
+      "upside": 61.6
+     }
+    },
+    "implied_g": -5.0,
+    "net_cash_added": 0
+   }
   },
   "081660": {
    "name": "미스토홀딩스",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 37600,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 1996227,
+   "mcap_eff": 1996227,
+   "shares": 53091144,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 53091149,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "아쿠쉬네트 정상 이익의 지분 몫(약 절반)과 휠라 부문 소폭 흑자를 더했어요. 비지배지분이 커 연결 순현금은 반영하지 않았어요",
+    "w_mid": 0.4,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 270000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 270000,
+    "r": 10.0,
+    "c": 0.7,
+    "note": "아쿠쉬네트 정상 이익의 지분 몫(약 절반)과 휠라 부문 소폭 흑자를 더했어요. 비지배지분이 커 연결 순현금은 반영하지 않았어요",
+    "fwd_per": 7.4,
+    "norm_per": 7.4,
+    "scenarios": {
+     "bear": {
+      "g": -1.0,
+      "value": 2063797,
+      "per_share": 38873,
+      "upside": 3.4
+     },
+     "base": {
+      "g": 3.5,
+      "value": 2527796,
+      "per_share": 47612,
+      "upside": 26.6
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 2829174,
+      "per_share": 53289,
+      "upside": 41.7
+     }
+    },
+    "implied_g": -1.7,
+    "net_cash_added": 0
+   }
   },
   "298540": {
    "name": "더네이쳐홀딩스",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 5950,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 86179,
+   "mcap_eff": 86179,
+   "shares": 14483866,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 14483926,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "하강기",
+    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2021~22년 고점은 반영하지 않았어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 15000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 15000,
+    "r": 12.5,
+    "c": 0.6,
+    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2021~22년 고점은 반영하지 않았어요",
+    "fwd_per": 5.7,
+    "norm_per": 5.7,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 61568,
+      "per_share": 4251,
+      "upside": -28.6
+     },
+     "base": {
+      "g": 0.0,
+      "value": 78850,
+      "per_share": 5444,
+      "upside": -8.5
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 93206,
+      "per_share": 6435,
+      "upside": 8.2
+     }
+    },
+    "implied_g": 2.1,
+    "net_cash_added": 0
+   }
   },
   "036620": {
    "name": "감성코퍼레이션",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 3550,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 319061,
+   "mcap_eff": 319061,
+   "shares": 89876338,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 89876204,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "최근 3개년 평균 이익을 정상으로 봤어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 22000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 22000,
+    "r": 12.0,
+    "c": 0.6,
+    "note": "최근 3개년 평균 이익을 정상으로 봤어요",
+    "fwd_per": 14.5,
+    "norm_per": 14.5,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 102496,
+      "per_share": 1140,
+      "upside": -67.9
+     },
+     "base": {
+      "g": 3.0,
+      "value": 137728,
+      "per_share": 1532,
+      "upside": -56.8
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 170419,
+      "per_share": 1896,
+      "upside": -46.6
+     }
+    },
+    "implied_g": 22.8,
+    "net_cash_added": 0
+   }
   },
   "337930": {
    "name": "브랜드엑스코퍼레이션",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 1862,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 54058,
+   "mcap_eff": 54058,
+   "shares": 29032223,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 29032258,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "최근 평균 순이익률(약 4%)을 정상으로 봤어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 10000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 10000,
+    "r": 12.5,
+    "c": 0.6,
+    "note": "최근 평균 순이익률(약 4%)을 정상으로 봤어요",
+    "fwd_per": 5.4,
+    "norm_per": 5.4,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 44546,
+      "per_share": 1534,
+      "upside": -17.6
+     },
+     "base": {
+      "g": 3.0,
+      "value": 59586,
+      "per_share": 2052,
+      "upside": 10.2
+     },
+     "bull": {
+      "g": 8.0,
+      "value": 73517,
+      "per_share": 2532,
+      "upside": 36.0
+     }
+    },
+    "implied_g": 0.7,
+    "net_cash_added": 0
+   }
   },
   "110790": {
    "name": "크리스에프앤씨",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 2710,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 63480,
+   "mcap_eff": 63480,
+   "shares": 23424354,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 23424408,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "골프 붐 이전(2018~19년) 수준의 이익을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 5000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 5000,
+    "r": 12.5,
+    "c": 0.6,
+    "note": "골프 붐 이전(2018~19년) 수준의 이익을 정상으로 봤어요",
+    "fwd_per": 12.7,
+    "norm_per": 12.7,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 20523,
+      "per_share": 876,
+      "upside": -67.7
+     },
+     "base": {
+      "g": 0.0,
+      "value": 26283,
+      "per_share": 1122,
+      "upside": -58.6
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 31069,
+      "per_share": 1326,
+      "upside": -51.1
+     }
+    },
+    "implied_g": 21.0,
+    "net_cash_added": 0
+   }
   },
   "267790": {
    "name": "배럴",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 2930,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 22493,
+   "mcap_eff": 22493,
+   "shares": 7676792,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 7676768,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 2000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 2000,
+    "r": 13.0,
+    "c": 0.6,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 11.2,
+    "norm_per": 11.2,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 8200,
+      "per_share": 1068,
+      "upside": -63.5
+     },
+     "base": {
+      "g": 2.0,
+      "value": 10909,
+      "per_share": 1421,
+      "upside": -51.5
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 12872,
+      "per_share": 1677,
+      "upside": -42.8
+     }
+    },
+    "implied_g": 19.4,
+    "net_cash_added": 0
+   }
   },
   "306040": {
    "name": "에스제이그룹",
-   "group": "스포츠·아웃도어·골프"
+   "group": "스포츠·아웃도어·골프",
+   "price": 1783,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 16552,
+   "mcap_eff": 16552,
+   "shares": 9283231,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 9283196,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "하강기",
+    "note": "유행 이후 매출 수준에서 순이익률 4%를 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 4000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 4000,
+    "r": 13.0,
+    "c": 0.6,
+    "note": "유행 이후 매출 수준에서 순이익률 4%를 정상으로 봤어요",
+    "fwd_per": 4.1,
+    "norm_per": 4.1,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 15754,
+      "per_share": 1697,
+      "upside": -4.8
+     },
+     "base": {
+      "g": 0.0,
+      "value": 20096,
+      "per_share": 2165,
+      "upside": 21.4
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 23697,
+      "per_share": 2553,
+      "upside": 43.2
+     }
+    },
+    "implied_g": -4.8,
+    "net_cash_added": 0
+   }
   },
   "033290": {
    "name": "코웰패션",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 1568,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 88067,
+   "mcap_eff": 88067,
+   "shares": 56165179,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 56165268,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "최근 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 26000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 26000,
+    "r": 11.5,
+    "c": 0.6,
+    "note": "최근 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 3.4,
+    "norm_per": 3.4,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 126990,
+      "per_share": 2261,
+      "upside": 44.2
+     },
+     "base": {
+      "g": 1.0,
+      "value": 157291,
+      "per_share": 2801,
+      "upside": 78.6
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 179003,
+      "per_share": 3187,
+      "upside": 103.3
+     }
+    },
+    "implied_g": -12.8,
+    "net_cash_added": 0
+   }
   },
   "005390": {
    "name": "신성통상",
@@ -102,43 +1528,663 @@
   },
   "093240": {
    "name": "형지엘리트",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 1324,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 16251,
+   "mcap_eff": 16251,
+   "shares": 12274169,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 12274096,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 3000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 3000,
+    "r": 12.5,
+    "c": 0.5,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 5.4,
+    "norm_per": 5.4,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 10689,
+      "per_share": 871,
+      "upside": -34.2
+     },
+     "base": {
+      "g": 0.0,
+      "value": 13142,
+      "per_share": 1071,
+      "upside": -19.1
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 14896,
+      "per_share": 1214,
+      "upside": -8.3
+     }
+    },
+    "implied_g": 5.1,
+    "net_cash_added": 0
+   }
   },
   "011080": {
    "name": "형지I&C",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 675,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 4792,
+   "mcap_eff": 4792,
+   "shares": 7099259,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 7098930,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.7,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 1000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 1000,
+    "r": 13.0,
+    "c": 0.5,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 4.8,
+    "norm_per": 4.8,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 3282,
+      "per_share": 462,
+      "upside": -31.5
+     },
+     "base": {
+      "g": 0.0,
+      "value": 4187,
+      "per_share": 590,
+      "upside": -12.6
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 4737,
+      "per_share": 667,
+      "upside": -1.1
+     }
+    },
+    "implied_g": 3.3,
+    "net_cash_added": 0
+   }
   },
   "014990": {
    "name": "인디에프",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 2480,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 37223,
+   "mcap_eff": 37223,
+   "shares": 15009274,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 15009242,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "손익분기 수준을 정상으로 봤어요",
+    "w_mid": 0.7,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 500,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 500,
+    "r": 13.0,
+    "c": 0.5,
+    "note": "손익분기 수준을 정상으로 봤어요",
+    "fwd_per": 74.4,
+    "norm_per": 74.4,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 1641,
+      "per_share": 109,
+      "upside": -95.6
+     },
+     "base": {
+      "g": 0.0,
+      "value": 2093,
+      "per_share": 139,
+      "upside": -94.4
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 2368,
+      "per_share": 158,
+      "upside": -93.6
+     }
+    },
+    "implied_g": 73.9,
+    "net_cash_added": 0
+   }
   },
   "016090": {
    "name": "대현",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 1402,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 62066,
+   "mcap_eff": 62066,
+   "shares": 44269615,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 44269341,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 7000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 7000,
+    "r": 12.0,
+    "c": 0.6,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 8.9,
+    "norm_per": 8.9,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 32612,
+      "per_share": 737,
+      "upside": -47.5
+     },
+     "base": {
+      "g": 1.0,
+      "value": 40256,
+      "per_share": 909,
+      "upside": -35.1
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 45726,
+      "per_share": 1033,
+      "upside": -26.3
+     }
+    },
+    "implied_g": 11.2,
+    "net_cash_added": 0
+   }
   },
   "005800": {
    "name": "신영와코루",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 14090,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 126863,
+   "mcap_eff": 126863,
+   "shares": 9003762,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 9003774,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 5500,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 5500,
+    "r": 11.5,
+    "c": 0.6,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 23.1,
+    "norm_per": 23.1,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 26863,
+      "per_share": 2984,
+      "upside": -78.8
+     },
+     "base": {
+      "g": 0.0,
+      "value": 31873,
+      "per_share": 3540,
+      "upside": -74.9
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 36267,
+      "per_share": 4028,
+      "upside": -71.4
+     }
+    },
+    "implied_g": 32.5,
+    "net_cash_added": 0
+   }
   },
   "026040": {
    "name": "제이에스티나",
-   "group": "캐주얼·여성·속옷·잡화"
+   "group": "캐주얼·여성·속옷·잡화",
+   "price": 1750,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 28872,
+   "mcap_eff": 28872,
+   "shares": 16498286,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 16498316,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "손익분기 수준을 정상으로 봤어요",
+    "w_mid": 0.7,
+    "follow": null,
+    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 500,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 500,
+    "r": 13.0,
+    "c": 0.5,
+    "note": "손익분기 수준을 정상으로 봤어요",
+    "fwd_per": 57.7,
+    "norm_per": 57.7,
+    "scenarios": {
+     "bear": {
+      "g": -6.0,
+      "value": 1641,
+      "per_share": 99,
+      "upside": -94.3
+     },
+     "base": {
+      "g": 0.0,
+      "value": 2093,
+      "per_share": 127,
+      "upside": -92.7
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 2468,
+      "per_share": 150,
+      "upside": -91.5
+     }
+    },
+    "implied_g": 66.6,
+    "net_cash_added": 0
+   }
   },
   "003240": {
    "name": "태광산업",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 873000,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 972046,
+   "mcap_eff": 972046,
+   "shares": 1113455,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 1113455,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "바닥권",
+    "note": "본업은 손익분기, 이익의 대부분을 금융·투자 수익으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 35000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 35000,
+    "r": 11.0,
+    "c": 0.5,
+    "note": "본업은 손익분기, 이익의 대부분을 금융·투자 수익으로 봤어요",
+    "fwd_per": 27.8,
+    "norm_per": 27.8,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 149743,
+      "per_share": 134485,
+      "upside": -84.6
+     },
+     "base": {
+      "g": 0.0,
+      "value": 178177,
+      "per_share": 160021,
+      "upside": -81.7
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 203140,
+      "per_share": 182441,
+      "upside": -79.1
+     }
+    },
+    "implied_g": 39.9,
+    "net_cash_added": 0
+   }
   },
   "001530": {
    "name": "DI동일",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 23900,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 495093,
+   "mcap_eff": 495093,
+   "shares": 20715188,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 20715177,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "최근 평균 이익을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 15000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 15000,
+    "r": 11.5,
+    "c": 0.5,
+    "note": "최근 평균 이익을 정상으로 봤어요",
+    "fwd_per": 33.0,
+    "norm_per": 33.0,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 61053,
+      "per_share": 2947,
+      "upside": -87.7
+     },
+     "base": {
+      "g": 1.0,
+      "value": 75621,
+      "per_share": 3650,
+      "upside": -84.7
+     },
+     "bull": {
+      "g": 5.0,
+      "value": 89856,
+      "per_share": 4338,
+      "upside": -81.9
+     }
+    },
+    "implied_g": 46.0,
+    "net_cash_added": 0
+   }
   },
   "003200": {
    "name": "일신방직",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 10240,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 235148,
+   "mcap_eff": 235148,
+   "shares": 22963672,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 22963710,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "본업 평균 이익과 금융 수익을 더했어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 14000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 14000,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "본업 평균 이익과 금융 수익을 더했어요",
+    "fwd_per": 16.8,
+    "norm_per": 16.8,
+    "scenarios": {
+     "bear": {
+      "g": -4.0,
+      "value": 71877,
+      "per_share": 3130,
+      "upside": -69.4
+     },
+     "base": {
+      "g": 0.0,
+      "value": 85525,
+      "per_share": 3724,
+      "upside": -63.6
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 97507,
+      "per_share": 4246,
+      "upside": -58.5
+     }
+    },
+    "implied_g": 23.3,
+    "net_cash_added": 0
+   }
   },
   "000050": {
    "name": "경방",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 7660,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 210052,
+   "mcap_eff": 210052,
+   "shares": 27421932,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 27421981,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "임대 이익 평균을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 13000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 13000,
+    "r": 10.0,
+    "c": 0.6,
+    "note": "임대 이익 평균을 정상으로 봤어요",
+    "fwd_per": 16.2,
+    "norm_per": 16.2,
+    "scenarios": {
+     "bear": {
+      "g": -2.0,
+      "value": 81426,
+      "per_share": 2969,
+      "upside": -61.2
+     },
+     "base": {
+      "g": 1.0,
+      "value": 93202,
+      "per_share": 3399,
+      "upside": -55.6
+     },
+     "bull": {
+      "g": 3.0,
+      "value": 101996,
+      "per_share": 3720,
+      "upside": -51.4
+     }
+    },
+    "implied_g": 19.2,
+    "net_cash_added": 0
+   }
   },
   "000950": {
    "name": "전방",
@@ -148,19 +2194,225 @@
     "note": "본업 적자와 구조조정으로 정상 이익을 정할 수 없어 적정가를 계산하지 않았어요.",
     "basis": ""
    },
-   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요"
+   "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
+   "price": 31100,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 52220,
+   "mcap_eff": 52220,
+   "shares": 1679100,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 1679092,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null
   },
   "035150": {
    "name": "백산",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 10000,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 197672,
+   "mcap_eff": 197672,
+   "shares": 19767200,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 19767206,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "회복기",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.5,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 13000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 13000,
+    "r": 11.5,
+    "c": 0.55,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 15.2,
+    "norm_per": 15.2,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 60736,
+      "per_share": 3073,
+      "upside": -69.3
+     },
+     "base": {
+      "g": 3.0,
+      "value": 78578,
+      "per_share": 3975,
+      "upside": -60.2
+     },
+     "bull": {
+      "g": 6.0,
+      "value": 89444,
+      "per_share": 4525,
+      "upside": -54.8
+     }
+    },
+    "implied_g": 24.5,
+    "net_cash_added": 0
+   }
   },
   "065950": {
    "name": "웰크론",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 1016,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 28675,
+   "mcap_eff": 28675,
+   "shares": 28223425,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 28223350,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "w_mid": 0.7,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 2000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 2000,
+    "r": 13.0,
+    "c": 0.5,
+    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "fwd_per": 14.3,
+    "norm_per": 14.3,
+    "scenarios": {
+     "bear": {
+      "g": -5.0,
+      "value": 6833,
+      "per_share": 242,
+      "upside": -76.2
+     },
+     "base": {
+      "g": 1.0,
+      "value": 8724,
+      "per_share": 309,
+      "upside": -69.6
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 9874,
+      "per_share": 350,
+      "upside": -65.6
+     }
+    },
+    "implied_g": 29.8,
+    "net_cash_added": 0
+   }
   },
   "004700": {
    "name": "조광피혁",
-   "group": "섬유·소재·가죽"
+   "group": "섬유·소재·가죽",
+   "price": 68000,
+   "price_date": "2026-11-12 20:09",
+   "price_source": "네이버 금융",
+   "mcap": 452190,
+   "mcap_eff": 452190,
+   "shares": 6649853,
+   "shares_check": {
+    "dart_common": null,
+    "dart_period": null,
+    "listed": 6649852,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null,
+    "note": "DART 주식수 없음: 상장주식수 사용"
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": null,
+   "dividend_yield": null,
+   "pbr": null,
+   "cycle": {
+    "phase": "중립",
+    "note": "투자평가 손익을 뺀 본업 평균 이익을 정상으로 봤어요",
+    "w_mid": 0.6,
+    "follow": null,
+    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
+    "midcycle": null,
+    "ttm_margin": null,
+    "ttm_ni": null,
+    "E1_fwd": 11000,
+    "E1_basis": "전망 이익 100%"
+   },
+   "dcf": {
+    "E1": 11000,
+    "r": 11.0,
+    "c": 0.6,
+    "note": "투자평가 손익을 뺀 본업 평균 이익을 정상으로 봤어요",
+    "fwd_per": 41.1,
+    "norm_per": 41.1,
+    "scenarios": {
+     "bear": {
+      "g": -3.0,
+      "value": 58975,
+      "per_share": 8869,
+      "upside": -87.0
+     },
+     "base": {
+      "g": 1.0,
+      "value": 70197,
+      "per_share": 10556,
+      "upside": -84.5
+     },
+     "bull": {
+      "g": 4.0,
+      "value": 80041,
+      "per_share": 12037,
+      "upside": -82.3
+     }
+    },
+    "implied_g": 45.1,
+    "net_cash_added": 0
+   }
   }
  },
  "industry_cycle": {

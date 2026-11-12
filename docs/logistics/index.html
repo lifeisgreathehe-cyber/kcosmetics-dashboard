@@ -541,7 +541,7 @@ function renderValueReport(c){
   $('#co-value').innerHTML=`<h2>내재가치 리포트</h2><p class="sub">주가 ${fmt(v.price)}원 (${v.price_date}, ${v.price_source}) · 자기자본 ${v.equity_source}</p>
    <h3><span class="tone ${vc}">${vt}</span>기준 적정가 ${fmt(S0.base.per_share)}원, 현재가 대비 ${pct(S0.base.upside)}</h3>
    <div class="vgrid">
-     ${kp('시가총액',fmt(eok(v.mcap))+'억',`순현금 ${fmt(eok(v.net_cash))}억`)}
+     ${kp('시가총액',fmt(eok(v.mcap))+'억',`${v.mcap_eff&&Math.abs(v.mcap_eff/v.mcap-1)>0.02?`자사주 제외 ${fmt(eok(v.mcap_eff))}억 · `:''}${(v.shares_check||{}).pref?'우선주 포함 · ':''}순현금 ${fmt(eok(v.net_cash))}억`)}
      ${kp('PER (TTM)',v.per!=null?v.per.toFixed(1)+'배':'적자',`TTM 순이익 ${fmt(eok(v.ttm&&v.ttm.ni))}억`)}
      ${kp('ROE (TTM)',ratio(v.roe,1,'%'),`PBR ${ratio(v.pbr,2,'배')}`)}
      ${kp('정상화 PER',d.norm_per!=null?d.norm_per.toFixed(1)+'배':'–',`정상화 이익 ${fmt(eok(d.E1))}억 기준 · 전망 PER ${d.fwd_per.toFixed(1)}배`)}
