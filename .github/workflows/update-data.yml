@@ -23,8 +23,10 @@ jobs:
         with:
           python-version: "3.12"
       - name: 데이터 수집
+        # DART는 해외 IP에서 느리거나 막혀 사용자 PC에서 수집해요(--only dart). 여기서는 KOSIS·관세청·주가만.
+        timeout-minutes: 40
+        continue-on-error: true
         env:
-          DART_API_KEY: ${{ secrets.DART_API_KEY }}
           KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
         run: python scripts/update.py

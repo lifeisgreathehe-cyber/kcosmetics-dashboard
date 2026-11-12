@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-12",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라 회사별로 '운임·여객 사이클이 평균적인 해'의 이익을 썼어요. 해운은 SCFI·BDI 같은 운임, 항공은 유가·환율·탑승률, 택배는 단가 경쟁에 따라 이익이 몇 배씩 출렁이기 때문이에요. 정상 이익을 사람이 직접 정한 회사는 그 근거를, 나머지는 과거 10년 순이익률(가장 좋은 해와 나쁜 해 제외) × 추세 매출로 자동 계산했어요. ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금이 사이클의 어디쯤인지에 따라 1~3년만 이어진다고 보고 그 현재가치만 더하거나 빼요. ③ 성장률(g)은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인, 순현금은 더해요. 순차입금은 빼지 않아요(정상 이익이 이미 이자비용을 뺀 순이익이라, 빼면 부채를 두 번 반영하게 돼요. 항공사처럼 리스·차입이 큰 회사에서 차이가 커요).",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -7,16 +7,16 @@
   "011200": {
    "name": "HMM",
    "group": "해운",
-   "price": 21000,
-   "price_date": "2026-11-09 12:26",
+   "price": 21100,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 19807971,
-   "mcap_eff": 19807971,
-   "shares": 943236714,
+   "mcap": 19902319,
+   "mcap_eff": 19902319,
+   "shares": 943237867,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 943236715,
+    "listed": 943237864,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -32,29 +32,29 @@
     "r": 10.0,
     "c": 0.55,
     "note": "정상 이익 1.2조원은 2023~2025년(전쟁 전 '평시') 평균 영업이익 약 1조원과 벌크 부문 성장, 현금 12조원의 이자수익을 합친 수준이에요. 2026년 3분기 같은 분기 1조원 이익은 1~2년만 이어진다고 보고 초과분만 따로 더했어요. 2030년까지 29조원 선대 투자로 현금 전환율은 낮게(55%) 잡았어요",
-    "fwd_per": 16.5,
-    "norm_per": 16.5,
+    "fwd_per": 16.6,
+    "norm_per": 16.6,
     "scenarios": {
      "bear": {
       "g": -5,
       "value": 6022526,
       "per_share": 6385,
-      "upside": -69.6
+      "upside": -69.7
      },
      "base": {
       "g": 0,
       "value": 7538861,
       "per_share": 7993,
-      "upside": -61.9
+      "upside": -62.1
      },
      "bull": {
       "g": 3,
       "value": 8630472,
       "per_share": 9150,
-      "upside": -56.4
+      "upside": -56.6
      }
     },
-    "implied_g": 21.7,
+    "implied_g": 21.8,
     "net_cash_added": 0
    }
   },
@@ -67,16 +67,16 @@
     "basis": "최근 10년 순이익률(최고·최저 해 제외) × 추세 매출로 정상 이익을 자동 계산했어요. LNG선 장기계약 비중 확대로 과거보다 변동성은 줄었지만 신조 투자 차입(이자비용)이 커서 현금 전환율은 50%로 낮췄어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 4905,
-   "price_date": "2026-11-09 12:26",
+   "price": 5020,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 2622074,
-   "mcap_eff": 2622074,
-   "shares": 534571662,
+   "mcap": 2683569,
+   "mcap_eff": 2683569,
+   "shares": 534575498,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 534571723,
+    "listed": 534575569,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -97,16 +97,16 @@
     "basis": "장기계약 위주라 과거 순이익률 평균이 정상 이익을 잘 대표해요. 다만 선박 투자 차입이 커서 현금 전환율은 50%로 잡았어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1845,
-   "price_date": "2026-11-09 12:26",
+   "price": 1898,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 594813,
-   "mcap_eff": 594813,
-   "shares": 322391870,
+   "mcap": 612584,
+   "mcap_eff": 612584,
+   "shares": 322752371,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 322392135,
+    "listed": 322752193,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -127,16 +127,16 @@
     "basis": "자동 정상 이익. 신조선 인도에 따른 감가상각·이자 부담 때문에 현금 전환율은 45%로 낮췄어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 11270,
-   "price_date": "2026-11-09 12:26",
+   "price": 11360,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 254432,
-   "mcap_eff": 254432,
-   "shares": 22576043,
+   "mcap": 256493,
+   "mcap_eff": 256493,
+   "shares": 22578609,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 22576029,
+    "listed": 22578616,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -157,16 +157,16 @@
     "basis": "자동 정상 이익에 10%를 깎았어요(과거 워크아웃 이력·선대 노후화 위험). 탱커 호황 초과 이익은 1~2년만 반영해요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1575,
-   "price_date": "2026-11-09 12:26",
+   "price": 1538,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 378660,
-   "mcap_eff": 378660,
-   "shares": 240419048,
+   "mcap": 369743,
+   "mcap_eff": 369743,
+   "shares": 240405072,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 240418782,
+    "listed": 240405320,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -187,16 +187,16 @@
     "basis": "자동 정상 이익. 상장 기간이 짧아 연간 이력이 적어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1607,
-   "price_date": "2026-11-09 12:26",
+   "price": 1592,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 11649,
-   "mcap_eff": 11649,
-   "shares": 7248911,
+   "mcap": 11512,
+   "mcap_eff": 11512,
+   "shares": 7231156,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 7249071,
+    "listed": 7231150,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -211,19 +211,19 @@
   "003490": {
    "name": "대한항공",
    "group": "항공",
-   "price": 29450,
-   "price_date": "2026-11-09 12:26",
+   "price": 31700,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 10876655,
-   "mcap_eff": 10876655,
-   "shares": 369326146,
+   "mcap": 11709313,
+   "mcap_eff": 11709313,
+   "shares": 369378959,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
     "listed": 368219178,
     "pref": "003495",
     "pref_shares": 1110733,
-    "pref_price": 29350,
+    "pref_price": 33100,
     "note": "DART 주식수 없음: 상장주식수 사용"
    },
    "equity": null,
@@ -236,29 +236,29 @@
     "r": 10.0,
     "c": 0.5,
     "note": "정상 이익 1.1조원은 대한항공 단독 2023~2025년 평균 순이익(약 1.1~1.3조원)에 아시아나 통합 후 손실 흡수(초기 2~3년)와 시너지를 상쇄해 잡은 값이에요. 3분기 순이익 9,297억원에는 환율 하락에 따른 외화환산이익 같은 일회성이 커서 그대로 쓰지 않았어요. 항공기 투자 부담으로 현금 전환율은 50%",
-    "fwd_per": 9.9,
-    "norm_per": 9.9,
+    "fwd_per": 10.6,
+    "norm_per": 10.6,
     "scenarios": {
      "bear": {
       "g": -4,
       "value": 5248544,
-      "per_share": 14211,
-      "upside": -51.7
+      "per_share": 14209,
+      "upside": -55.2
      },
      "base": {
       "g": 3,
       "value": 7192060,
-      "per_share": 19473,
-      "upside": -33.9
+      "per_share": 19471,
+      "upside": -38.6
      },
      "bull": {
       "g": 6,
       "value": 8233047,
-      "per_share": 22292,
-      "upside": -24.3
+      "per_share": 22289,
+      "upside": -29.7
      }
     },
-    "implied_g": 12.2,
+    "implied_g": 13.9,
     "net_cash_added": 0
    }
   },
@@ -271,16 +271,16 @@
     "basis": ""
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 7895,
-   "price_date": "2026-11-09 12:26",
+   "price": 8450,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 1626290,
-   "mcap_eff": 1626290,
-   "shares": 205989867,
+   "mcap": 1740614,
+   "mcap_eff": 1740614,
+   "shares": 205989822,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 205989848,
+    "listed": 205989783,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -295,16 +295,16 @@
   "089590": {
    "name": "제주항공",
    "group": "항공",
-   "price": 7010,
-   "price_date": "2026-11-09 12:26",
+   "price": 7390,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 566098,
-   "mcap_eff": 566098,
-   "shares": 80755777,
+   "mcap": 595961,
+   "mcap_eff": 595961,
+   "shares": 80644249,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 80755814,
+    "listed": 80644217,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -320,41 +320,41 @@
     "r": 11.0,
     "c": 0.5,
     "note": "정상 이익 600억원은 사고·코로나 이전 2016~2019년 평균 순이익(약 600~1,000억원)보다 낮춰 잡은 값이에요. LCC 경쟁 심화와 통합 진에어 출범으로 예전 같은 이익률은 어렵다고 봤어요",
-    "fwd_per": 9.4,
-    "norm_per": 9.4,
+    "fwd_per": 9.9,
+    "norm_per": 9.9,
     "scenarios": {
      "bear": {
       "g": -5,
       "value": 245851,
-      "per_share": 3044,
-      "upside": -56.6
+      "per_share": 3049,
+      "upside": -58.7
      },
      "base": {
       "g": 5,
       "value": 380110,
-      "per_share": 4707,
-      "upside": -32.9
+      "per_share": 4713,
+      "upside": -36.2
      },
      "bull": {
       "g": 10,
       "value": 473086,
-      "per_share": 5858,
-      "upside": -16.4
+      "per_share": 5866,
+      "upside": -20.6
      }
     },
-    "implied_g": 14.1,
+    "implied_g": 15.3,
     "net_cash_added": 0
    }
   },
   "272450": {
    "name": "진에어",
    "group": "항공",
-   "price": 6270,
-   "price_date": "2026-11-09 12:26",
+   "price": 8120,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 327263,
-   "mcap_eff": 327263,
-   "shares": 52195056,
+   "mcap": 423824,
+   "mcap_eff": 423824,
+   "shares": 52195074,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
@@ -374,45 +374,45 @@
     "r": 11.0,
     "c": 0.5,
     "note": "정상 이익 700억원은 2023~2024년 순이익(약 1,000~1,300억원)보다 낮춘 값으로, 통합 전 단독 기준이에요. 합병 신주 5,032만주가 발행되면 주식 수가 거의 2배가 되고 두 회사의 결손금(약 5,700억원)도 넘어와요. 통합 후 노선 재편 효과가 확인되면 다시 계산할게요",
-    "fwd_per": 4.7,
-    "norm_per": 4.7,
+    "fwd_per": 6.1,
+    "norm_per": 6.1,
     "scenarios": {
      "bear": {
       "g": -5,
       "value": 286826,
       "per_share": 5495,
-      "upside": -12.4
+      "upside": -32.3
      },
      "base": {
       "g": 5,
       "value": 443462,
       "per_share": 8496,
-      "upside": 35.5
+      "upside": 4.6
      },
      "bull": {
       "g": 12,
       "value": 602272,
       "per_share": 11539,
-      "upside": 84.0
+      "upside": 42.1
      }
     },
-    "implied_g": -2.0,
+    "implied_g": 4.0,
     "net_cash_added": 0
    }
   },
   "091810": {
    "name": "티웨이항공",
    "group": "항공",
-   "price": 2400,
-   "price_date": "2026-11-09 12:26",
+   "price": 2525,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 245100,
-   "mcap_eff": 245100,
-   "shares": 102125000,
+   "mcap": 257821,
+   "mcap_eff": 257821,
+   "shares": 102107327,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 102125000,
+    "listed": 102107438,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -428,29 +428,29 @@
     "r": 12.5,
     "c": 0.45,
     "note": "정상 이익 300억원은 매출 2조원대에 순이익률 1.5% 정도를 가정한 보수적인 값이에요. 대주주 교체 뒤 증자 가능성과 장거리 노선 수익성이 아직 검증되지 않아 할인율을 12.5%로 높였어요",
-    "fwd_per": 8.2,
-    "norm_per": 8.2,
+    "fwd_per": 8.6,
+    "norm_per": 8.6,
     "scenarios": {
      "bear": {
       "g": -8,
       "value": 85159,
       "per_share": 834,
-      "upside": -65.3
+      "upside": -67.0
      },
      "base": {
       "g": 5,
       "value": 145804,
       "per_share": 1428,
-      "upside": -40.5
+      "upside": -43.4
      },
      "bull": {
       "g": 12,
       "value": 195751,
       "per_share": 1917,
-      "upside": -20.1
+      "upside": -24.1
      }
     },
-    "implied_g": 17.4,
+    "implied_g": 18.6,
     "net_cash_added": 0
    }
   },
@@ -463,16 +463,16 @@
     "basis": ""
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1710,
-   "price_date": "2026-11-09 12:26",
+   "price": 1839,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 278623,
-   "mcap_eff": 278623,
-   "shares": 162937427,
+   "mcap": 299553,
+   "mcap_eff": 299553,
+   "shares": 162889070,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 162937500,
+    "listed": 162889166,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -487,16 +487,16 @@
   "180640": {
    "name": "한진칼",
    "group": "항공",
-   "price": 213500,
-   "price_date": "2026-11-09 12:26",
+   "price": 198000,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 14309255,
-   "mcap_eff": 14309255,
-   "shares": 67022272,
+   "mcap": 13274457,
+   "mcap_eff": 13274457,
+   "shares": 67042712,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 66762319,
+    "listed": 66762410,
     "pref": "18064K",
     "pref_shares": 530086,
     "pref_price": 104700.0,
@@ -512,29 +512,29 @@
     "r": 10.0,
     "c": 0.45,
     "note": "정상 이익 2,800억원은 대한항공 정상 이익 1.1조원 × 지분율 약 26%에 한진·칼호텔 등 자회사 몫을 더한 값이에요. 지주회사 할인(배당으로만 현금이 올라옴)을 반영해 현금 전환율을 45%로 낮췄어요",
-    "fwd_per": 51.1,
-    "norm_per": 51.1,
+    "fwd_per": 47.4,
+    "norm_per": 47.4,
     "scenarios": {
      "bear": {
       "g": -4,
       "value": 1202394,
-      "per_share": 17940,
-      "upside": -91.6
+      "per_share": 17935,
+      "upside": -90.9
      },
      "base": {
       "g": 3,
       "value": 1647636,
-      "per_share": 24583,
-      "upside": -88.5
+      "per_share": 24576,
+      "upside": -87.6
      },
      "bull": {
       "g": 6,
       "value": 1886116,
-      "per_share": 28142,
-      "upside": -86.8
+      "per_share": 28133,
+      "upside": -85.8
      }
     },
-    "implied_g": 54.2,
+    "implied_g": 52.2,
     "net_cash_added": 0
    }
   },
@@ -547,16 +547,16 @@
     "basis": ""
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1354,
-   "price_date": "2026-11-09 12:26",
+   "price": 1275,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 30670,
-   "mcap_eff": 30670,
-   "shares": 22651403,
+   "mcap": 28868,
+   "mcap_eff": 28868,
+   "shares": 22641569,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 22651515,
+    "listed": 22641509,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -577,16 +577,16 @@
     "basis": "자동 정상 이익. 계열 고객 비중이 높아 이익은 안정적이에요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 91500,
-   "price_date": "2026-11-09 12:26",
+   "price": 105300,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 289767,
-   "mcap_eff": 289767,
-   "shares": 3166852,
+   "mcap": 333373,
+   "mcap_eff": 333373,
+   "shares": 3165935,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 3166848,
+    "listed": 3165939,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -601,16 +601,16 @@
   "000120": {
    "name": "CJ대한통운",
    "group": "택배·종합물류",
-   "price": 68200,
-   "price_date": "2026-11-09 12:26",
+   "price": 67600,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 1555850,
-   "mcap_eff": 1555850,
-   "shares": 22813050,
+   "mcap": 1542100,
+   "mcap_eff": 1542100,
+   "shares": 22812130,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 22813056,
+    "listed": 22812130,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -626,29 +626,29 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 2,200억원은 2026~2027년 증권가 지배순이익 전망(1,971억 → 2,266억원) 중간값이에요. 자사주 12.6%는 주식 수에서 빼고 계산돼요(DART 유통주식수)",
-    "fwd_per": 7.1,
-    "norm_per": 7.1,
+    "fwd_per": 7.0,
+    "norm_per": 7.0,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 1400018,
-      "per_share": 61369,
-      "upside": -10.0
+      "per_share": 61372,
+      "upside": -9.2
      },
      "base": {
       "g": 3,
       "value": 1842443,
-      "per_share": 80763,
-      "upside": 18.4
+      "per_share": 80766,
+      "upside": 19.5
      },
      "bull": {
       "g": 6,
       "value": 2113282,
-      "per_share": 92635,
-      "upside": 35.8
+      "per_share": 92639,
+      "upside": 37.0
      }
     },
-    "implied_g": -0.7,
+    "implied_g": -0.9,
     "net_cash_added": 0
    }
   },
@@ -661,16 +661,16 @@
     "basis": "자동 정상 이익. 부동산 매각 같은 일회성 이익이 끼는 해가 있어 최고·최저 해를 뺀 평균을 써요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 17270,
-   "price_date": "2026-11-09 12:26",
+   "price": 19880,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 267965,
-   "mcap_eff": 267965,
-   "shares": 15516213,
+   "mcap": 308527,
+   "mcap_eff": 308527,
+   "shares": 15519467,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 15516241,
+    "listed": 15519443,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -685,11 +685,11 @@
   "086280": {
    "name": "현대글로비스",
    "group": "택배·종합물류",
-   "price": 191800,
-   "price_date": "2026-11-09 12:26",
+   "price": 203000,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 14385000,
-   "mcap_eff": 14385000,
+   "mcap": 15225000,
+   "mcap_eff": 15225000,
    "shares": 75000000,
    "shares_check": {
     "dart_common": null,
@@ -710,29 +710,29 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 1.45조원은 2024~2025년 순이익(약 1.4~1.5조원) 수준이에요. 3분기 순이익에는 환율 효과가 섞여 있어 그대로 쓰지 않았어요. 비계열 매출 확대(2030년 40% 목표)는 기준 성장률 3%에 담았어요",
-    "fwd_per": 9.9,
-    "norm_per": 9.9,
+    "fwd_per": 10.5,
+    "norm_per": 10.5,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 9227392,
       "per_share": 123032,
-      "upside": -35.9
+      "upside": -39.4
      },
      "base": {
       "g": 3,
       "value": 12143375,
       "per_share": 161912,
-      "upside": -15.6
+      "upside": -20.2
      },
      "bull": {
       "g": 6,
       "value": 13928450,
       "per_share": 185713,
-      "upside": -3.2
+      "upside": -8.5
      }
     },
-    "implied_g": 6.7,
+    "implied_g": 8.0,
     "net_cash_added": 0
    }
   },
@@ -745,19 +745,19 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 12120,
-   "price_date": "2026-11-09 12:26",
+   "price": 12010,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 261378,
-   "mcap_eff": 261378,
-   "shares": 21565842,
+   "mcap": 259302,
+   "mcap_eff": 259302,
+   "shares": 21590508,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 19119601,
+    "listed": 19118869,
     "pref": "004365",
     "pref_shares": 3687500,
-    "pref_price": 8040,
+    "pref_price": 8050,
     "note": "DART 주식수 없음: 상장주식수 사용"
    },
    "equity": null,
@@ -775,16 +775,16 @@
     "basis": "자동 정상 이익. 차입이 많아 현금 전환율을 55%로 낮췄어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1484,
-   "price_date": "2026-11-09 12:26",
+   "price": 1452,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 71216,
-   "mcap_eff": 71216,
-   "shares": 47989218,
+   "mcap": 69629,
+   "mcap_eff": 69629,
+   "shares": 47953857,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 47989093,
+    "listed": 47953615,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -805,16 +805,16 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 3575,
-   "price_date": "2026-11-09 12:26",
+   "price": 3690,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 107250,
-   "mcap_eff": 107250,
-   "shares": 30000000,
+   "mcap": 110752,
+   "mcap_eff": 110752,
+   "shares": 30014092,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 30000000,
+    "listed": 30014225,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -835,16 +835,16 @@
     "basis": "자동 정상 이익. 운임 상승기 초과 이익은 2년만 반영해요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1875,
-   "price_date": "2026-11-09 12:26",
+   "price": 1864,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 72555,
-   "mcap_eff": 72555,
-   "shares": 38696000,
+   "mcap": 72161,
+   "mcap_eff": 72161,
+   "shares": 38712983,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 38695885,
+    "listed": 38713137,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -865,16 +865,16 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 2250,
-   "price_date": "2026-11-09 12:26",
+   "price": 2460,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 26541,
-   "mcap_eff": 26541,
-   "shares": 11796000,
+   "mcap": 29073,
+   "mcap_eff": 29073,
+   "shares": 11818293,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 11796009,
+    "listed": 11818182,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -895,16 +895,16 @@
     "basis": "자동 정상 이익. 철강 수요 부진이 길어지고 있어 성장률을 낮게 잡았어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 1750,
-   "price_date": "2026-11-09 12:26",
+   "price": 1789,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 52057,
-   "mcap_eff": 52057,
-   "shares": 29746857,
+   "mcap": 53228,
+   "mcap_eff": 53228,
+   "shares": 29752935,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 29746835,
+    "listed": 29753016,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -925,16 +925,16 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 18550,
-   "price_date": "2026-11-09 12:26",
+   "price": 18590,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 122392,
-   "mcap_eff": 122392,
-   "shares": 6597951,
+   "mcap": 122690,
+   "mcap_eff": 122690,
+   "shares": 6599785,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 6597938,
+    "listed": 6599783,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -965,16 +965,16 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 4015,
-   "price_date": "2026-11-09 12:26",
+   "price": 3610,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 141471,
-   "mcap_eff": 141471,
-   "shares": 35235616,
+   "mcap": 127205,
+   "mcap_eff": 127205,
+   "shares": 35236842,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 35235669,
+    "listed": 35236876,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -995,16 +995,16 @@
     "basis": "자동 정상 이익. 지주회사라 순현금 가산은 하지 않았어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 6150,
-   "price_date": "2026-11-09 12:26",
+   "price": 6030,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 160179,
-   "mcap_eff": 160179,
-   "shares": 26045366,
+   "mcap": 157017,
+   "mcap_eff": 157017,
+   "shares": 26039303,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 26045381,
+    "listed": 26039280,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -1025,16 +1025,16 @@
     "basis": "자동 정상 이익"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 27850,
-   "price_date": "2026-11-09 12:26",
+   "price": 28050,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 80478,
-   "mcap_eff": 80478,
-   "shares": 2889695,
+   "mcap": 81269,
+   "mcap_eff": 81269,
+   "shares": 2897291,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 2889693,
+    "listed": 2897297,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -1055,16 +1055,16 @@
     "basis": "자동 정상 이익. 영업 가치보다 자산 가치가 커서 적정가가 실제 가치를 과소평가할 수 있어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 162500,
-   "price_date": "2026-11-09 12:26",
+   "price": 167000,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 232286,
-   "mcap_eff": 232286,
-   "shares": 1429452,
+   "mcap": 238659,
+   "mcap_eff": 238659,
+   "shares": 1429096,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 1429452,
+    "listed": 1429098,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
@@ -1085,16 +1085,16 @@
     "basis": "자동 정상 이익. 수주 산업이라 성장률 폭을 넓게 잡았어요"
    },
    "pending": "DART 연간·분기 실적 수집 후 정상 이익을 계산해요",
-   "price": 15250,
-   "price_date": "2026-11-09 12:26",
+   "price": 15040,
+   "price_date": "2026-11-12 20:09",
    "price_source": "네이버 금융",
-   "mcap": 1698460,
-   "mcap_eff": 1698460,
-   "shares": 111374426,
+   "mcap": 1675131,
+   "mcap_eff": 1675131,
+   "shares": 111378391,
    "shares_check": {
     "dart_common": null,
     "dart_period": null,
-    "listed": 111374408,
+    "listed": 111378378,
     "pref": null,
     "pref_shares": null,
     "pref_price": null,
