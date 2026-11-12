@@ -45,3 +45,25 @@ cd docs && python -m http.server
 - 설정: `config/chem/` (companies.json 61개사: 정유·윤활유/유통·석유화학·정밀/스페셜티·합성섬유·도료·비료), kosis.json(석유정제·화학 생산/출하/재고지수, 석유제품·화학 수출물가, 원유 수입물가), customs.json(HS 2710·29·39·4002 수출, 2709 원유 수입, 국가별 HS 39)
 - 내재가치 자동 가정은 최근 1년 이익이 아니라 최근 7개 연도 지배순이익 평균(사이클 평균)을 정상 이익으로 씀 (`config/chem/valuation.json`의 `default.E1_years`)
 - DART 수집(국내 PC): `python scripts\update.py --industry chem --only dart`
+
+## DART 수집 한 번에 하기 (국내 PC)
+DART는 해외 IP를 막아서 PC에서 받아 올려야 해요. 저장소 폴더에서 아래 한 줄이면 7개 업종 수집 → 커밋 → push까지 끝나요.
+```
+scripts\dart_all.bat
+```
+- `--latest`: 이미 10년치가 있는 회사는 올해 분기(새 분기보고서)만 받아 덧붙여요. 처음 받는 회사는 10년치를 받아요.
+- `update.py`는 PC 안의 파일만 바꿔요. `git add/commit/push`를 하지 않으면 대시보드에 안 보여요(배치 파일은 자동으로 해요).
+
+### git이 꼬였을 때 (MERGE_HEAD exists 등)
+받은 데이터를 백업 → 최신 main으로 되돌림 → 백업에서 DART 실적만 되살림 → push.
+```
+xcopy docs C:\Users\ceter\Desktop\dart_backup\docs /E /I /Y
+xcopy raw C:\Users\ceter\Desktop\dart_backup\raw /E /I /Y
+git merge --abort
+git fetch origin
+git reset --hard origin/main
+python scripts\restore_dart.py C:\Users\ceter\Desktop\dart_backup
+git add docs raw
+git commit -m "DART restore"
+git push
+```
