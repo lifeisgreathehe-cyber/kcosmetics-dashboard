@@ -587,6 +587,15 @@ def main(industry="cosmetics"):
     except Exception as e:  # noqa: BLE001
         import traceback; traceback.print_exc()
         print("marks 실패:", e)
+    try:
+        # 투자지표 타일·버핏/린치/피셔 숫자 체크(실적 랭킹 대시보드 형식 참고). 적정가는 바꾸지 않아요.
+        import sys as _s
+        _s.path.insert(0, os.path.join(ROOT, "scripts"))
+        import checks
+        checks.apply(cos, out, cfg, ROOT, dd)
+    except Exception as e:  # noqa: BLE001
+        import traceback; traceback.print_exc()
+        print("checks 실패:", e)
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
                         if c["code"] in out["companies"]}
     with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:
