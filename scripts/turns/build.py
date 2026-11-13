@@ -147,6 +147,16 @@ class Co:
         r = self.Q.get(qk(n))
         return None if not r or r.get(f) is None else r[f]
 
+    def earn(self, n, f):
+        """n분기까지 1년 실적: 4분기 합, 분기 자료가 없으면 그 직전 연간 실적. (값, 라벨)"""
+        for k in range(3):  # 아직 발표 전이면 직전 분기까지
+            v = self.ttm(n - k, f)
+            if v is not None:
+                return v, qk(n - k)
+        y = str(n // 4 if n % 4 == 3 else n // 4 - 1)
+        a = (self.A.get(y) or {}).get(f)
+        return (a, f"{y}년") if a is not None else (None, None)
+
     def ttm(self, n, f):
         s = 0
         for i in range(4):
@@ -384,73 +394,175 @@ def news_in(news, m0, m1, limit=4):
             continue
         seen.add(k)
         out.append({"d": d, "t": x.get("title", ""), "u": x.get("url", ""), "src": x.get("office") or x.get("src") or "",
-                    "cat": cat or "해석", "read": x.get("read", "")})
+                    "cat": cat or "해석", "read": x.get("read", ""), "imp": x.get("impact", "")})
         if len(out) >= limit:
             break
     out.sort(key=lambda z: z["d"])
     return out
 
 
-# ---------------------------------------------------------------- 해설 만들기
-def describe(U, ind, co, m0, m1, kind, t, news, qq=None):
-    """구간 [m0, m1] 의 주가 움직임을 근거별로 설명한다."""
-    F = []          # [{tag, text}]
-    drivers = []    # (크기, 짧은 문장)
-    r = co.ret(m0, m1)
-    p0, p1 = co.px.get(m0), co.px.get(m1)
-    iname = IND_NAME.get(ind, ind)
+# ---------------------------------------------------------------- 해설 만들기: 6개 요인
+CATS = [("cycle", "업황"), ("trend", "트렌드"), ("news", "뉴스"), ("val", "밸류에이션"), ("cat", "촉매제"), ("macro", "거시·시장")]
+CNAME = dict(CATS)
 
-    # 1) 시장·업종·사업군 비교
+
+def _sg(x, th=0.0):
+    return 0 if x is None or abs(x) < th else (1 if x > 0 else -1)
+
+
+def _evline(e):
+    return f"{e['d'].replace('-', '.')} {e['title']}: {e['text']}"
+
+
+def pick_events(ind, co, m0, m1, r):
+    """구간을 설명할 사건만 고른다.
+    · 날짜가 분명한 사건(촉매제·거시)은 구간 시작 1개월 전~구간 끝 사이에 일어난 것만.
+    · 업황·트렌드처럼 이어지는 배경은 구간 전에 시작했어도 구간과 겹치고 주가 방향과 맞을 때만.
+    · 방향이 엇갈리는(±) 시장 사건은 다른 근거가 있으면 뺀다. 변곡점 원인은 대개 시작점 근처라 시작에 가까운 순으로."""
+    lo, hi = madd(m0, -1), m1
+    up = (r or 0) > 0
+    out = []
+    for e in EVENTS:
+        d, end = e["d"], e.get("end", e["d"])
+        if end < lo or d > hi:
+            continue
+        sc = e["scope"]
+        ok = sc == "all" or sc == f"ind:{ind}" or (sc.startswith("code:") and co.code in sc[5:].split(","))
+        if not ok or (e.get("groups") and co.group not in e["groups"]) or (e.get("not_groups") and co.group in e["not_groups"]):
+            continue
+        inside = d >= lo
+        match = e["dir"] == "±" or (e["dir"] == "+") == up
+        if not inside and not (e["cat"] in ("cycle", "trend") and match and e["dir"] != "±"):
+            continue
+        out.append(dict(e, _in=inside, _match=match))
+    def dist(e):
+        y, m = int(e["d"][:4]), int(e["d"][5:7])
+        return abs((y - int(m0[:4])) * 12 + m - int(m0[5:7]))
+    out.sort(key=lambda e: (not e["_match"], e["scope"] == "all", dist(e)))
+    return out
+
+
+def describe(U, ind, co, m0, m1, news, qq=None):
+    r = co.ret(m0, m1)
+    up = (r or 0) > 0
+    iname = IND_NAME.get(ind, ind)
+    C = {k: {"k": k, "s": 0, "w": 0.0, "t": "", "b": "", "ev": []} for k, _ in CATS}
+    ev = pick_events(ind, co, m0, m1, r)
+    by = lambda c: [e for e in ev if e["cat"] == c]
+
+    # ---- 시장 위치(코스피·업종·사업군)
     rm, mname = U.index_ret(co.market, m0, m1)
     if rm is None:
         rm, nn = U.med(U.all, m0, m1, co.code)
-        mname = f"7개 산업 대시보드 전체 {nn}개사 중앙값" if rm is not None else None
+        mname = f"7개 대시보드 전체 {nn}개사 중앙값" if rm is not None else None
     ri, ni_ = U.med(U.by_ind.get(ind, []), m0, m1, co.code)
     grp = [c for c in U.by_ind.get(ind, []) if c.group == co.group]
     rg, ng = U.med(grp, m0, m1, co.code) if co.group else (None, 0)
     base = rg if rg is not None and ng >= 3 else ri
-    resid = None
-    if r is not None:
-        parts = []
-        if rm is not None:
-            parts.append(f"{mname} {pct(rm)}")
-        if ri is not None:
-            parts.append(f"{iname} 업종({ni_}개사 중앙값) {pct(ri)}")
-        if rg is not None and ng >= 3:
-            parts.append(f"같은 사업군 '{co.group}'({ng}개사) {pct(rg)}")
-        if base is not None:
-            resid = (1 + r) / (1 + base) - 1
-            ind_part = (1 + base) / (1 + rm) - 1 if rm is not None else None
-            who = []
-            if rm is not None and abs(rm) >= 0.10:
-                who.append(("시장 전체", abs(math.log1p(rm)), rm))
-            if ind_part is not None and abs(ind_part) >= 0.10:
-                who.append(("업종 공통", abs(math.log1p(ind_part)), ind_part))
-            if abs(resid) >= 0.10:
-                who.append(("회사 고유", abs(math.log1p(resid)), resid))
-            who.sort(key=lambda w: -w[1])
-            if who:
-                tot = sum(w[1] for w in who) or 1
-                share = ", ".join(f"{w[0]} {w[1] / tot * 100:.0f}%" for w in who)
-                lead = who[0]
-                if lead[0] == "회사 고유":
-                    concl = f"업종·시장 대비 상대 성과가 {pct(resid)}로 이 회사만의 이유가 컸어요"
-                elif lead[0] == "업종 공통":
-                    concl = f"{iname} 업종 전체가 {'함께 오른' if ind_part > 0 else '함께 빠진'} 영향이 가장 컸어요"
-                else:
-                    concl = f"시장 전체가 {'오른' if rm > 0 else '빠진'} 흐름의 영향이 가장 컸어요"
-                F.append({"tag": "시장·업종 비교", "text": f"같은 기간 {', '.join(parts)}. 움직임을 나눠 보면 {share} 정도라, {concl}."})
-                drivers.append((lead[1] + 0.01, concl))
-            else:
-                F.append({"tag": "시장·업종 비교", "text": f"같은 기간 {', '.join(parts)}로, 이 회사 움직임은 업종·시장과 큰 차이가 없었어요."})
+    resid = (1 + r) / (1 + base) - 1 if r is not None and base is not None else None
+    ind_part = ((1 + base) / (1 + rm) - 1) if base is not None and rm is not None else base
 
-    # 2) 이익 × PER 분해
+    # ---- 거시·시장
+    M = C["macro"]
+    bits = []
+    if rm is not None:
+        bits.append(f"같은 기간 {mname}는 {pct(rm)} 움직였어요")
+    fx0, fx1 = U.mval("USDKRW", m0), U.mval("USDKRW", m1)
+    if fx0 and fx1 and abs(fx1 / fx0 - 1) >= 0.05:
+        w_ = fx1 > fx0
+        s_ = FX_SENS.get(ind, 0)
+        eff = ("수출 비중이 큰 회사의 원화 환산 이익엔 플러스" if s_ > 0 else "원재료 수입 비용엔 부담" if s_ < 0 else "회사별로 득실이 갈리는 변화") if w_ else \
+              ("수출 비중이 큰 회사의 이익엔 마이너스" if s_ > 0 else "원재료 수입 비용엔 도움" if s_ < 0 else "회사별로 득실이 갈리는 변화")
+        bits.append(f"원/달러는 {fx0:,.0f}원에서 {fx1:,.0f}원으로 {'올라(원화 약세)' if w_ else '내려(원화 강세)'} {eff}였고, 원화 {'약세 땐 외국인 자금이 빠지기' if w_ else '강세 땐 외국인 자금이 들어오기'} 쉬워요")
+    u0, u1 = U.mval("US10Y", m0), U.mval("US10Y", m1)
+    if u0 is not None and u1 is not None and abs(u1 - u0) >= 0.5:
+        bits.append(f"미국 10년 금리가 {u0:.2f}%에서 {u1:.2f}%로 {'올라 성장주 배수를 누르는' if u1 > u0 else '내려 성장주 배수를 받쳐 주는'} 환경이었어요")
+    o0, o1 = U.mval("BRENT", m0), U.mval("BRENT", m1)
+    if o0 and o1 and abs(o1 / o0 - 1) >= 0.25 and ind in OIL_SENS:
+        bits.append(f"브렌트유가 ${o0:.0f}에서 ${o1:.0f}로 {pct(o1 / o0 - 1)} 움직였는데, 이는 {OIL_SENS[ind]} 요인이에요")
+    mev = [e for e in by("macro") if e["_in"] and (e["_match"] or e["dir"] == "±")]
+    mev = [e for e in mev if e["dir"] != "±"][:2] or mev[:1]
+    M["ev"] = [_evline(e) for e in mev]
+    M["t"] = ". ".join(bits) + ("." if bits else "")
+    if rm is not None and abs(rm) >= 0.05:
+        M["s"], M["w"] = _sg(rm), 0.8 * abs(math.log1p(rm))
+        M["b"] = f"시장 전체 {'상승' if rm > 0 else '하락'}({mname.split('(')[0].split(' ')[0] if '대시보드' not in mname else '전체 중앙값'} {pct(rm)}{', ' + mev[0]['title'] if mev and mev[0]['dir'] in '+-' and (mev[0]['dir'] == '+') == (rm > 0) else ''})"
+    elif mev:
+        M["b"] = mev[0]["title"]
+
+    # ---- 업황: 업종 주가·업종 매출·이 회사 이익 + 업황 사건
+    Y = C["cycle"]
     ek = co.ek
-    # 띠(엇갈린 구간)는 차트와 같은 분기 실적끼리, 고점·저점 구간은 그 달에 발표돼 있던 실적으로 비교
     q0, q1 = qq or (reported_q(m0), reported_q(m1))
-    e0 = co.ttm(q0, ek) if ek else None
-    e1 = co.ttm(q1, ek) if ek else None
+    e0, l0 = co.earn(q0, ek) if ek else (None, None)
+    e1, l1 = co.earn(q1, ek) if ek else (None, None)
     en = {"op": "영업이익", "ni": "순이익", "rev": "매출"}.get(ek, "이익")
+    de = chg(e0, e1) if e0 is not None and e1 is not None and q1 > q0 and l0 != l1 else None
+    rv = []
+    for c in U.by_ind.get(ind, []):
+        a, b = c.earn(q0, "rev")[0], c.earn(q1, "rev")[0]
+        if a and b and a > 0 and q1 > q0:
+            rv.append(b / a - 1)
+    rvm = stx.median(rv) if len(rv) >= 5 else None
+    bits = []
+    if ri is not None:
+        bits.append(f"{iname} 업종 주가는 중앙값 {pct(ri)}" + (f"(시장 대비 {pct(ind_part)})" if rm is not None and ind_part is not None else ""))
+    if rvm is not None:
+        phase = "확장" if rvm >= 0.1 else "회복" if rvm >= 0.03 else "위축" if rvm <= -0.05 else "정체"
+        bits.append(f"업종 회사들의 매출(4분기 합)은 중앙값 {pct(rvm)}로 업황이 {phase} 국면이었어요")
+    if de is not None:
+        bits.append(f"이 회사 {en}(1년치)은 {l0} {eok(e0)} → {l1} {eok(e1)}" + (f"({pct(de)})" if e0 > 0 and e1 > 0 else " (흑자 전환)" if e0 <= 0 < e1 else " (적자 전환)" if e1 <= 0 < e0 else ""))
+    yev = by("cycle")[:2]
+    Y["ev"] = [_evline(e) for e in yev]
+    Y["t"] = ". ".join(bits) + ("." if bits else "")
+    # 업황 점수: 업종 매출 흐름 + 이 회사 이익 흐름 + 업종 주가(시장 몫은 거시에서 따로) + 업황 사건
+    clip = lambda x, a=1.0: max(-a, min(a, x))
+    sc_ = (0.8 * clip(math.log1p(rvm), 0.8) if rvm is not None and abs(rvm) >= 0.03 else 0) \
+        + ((0.9 * math.log1p(de) if e0 > 0 and e1 > 0 else 0.7 * _sg(de)) if de is not None and abs(de) >= 0.1 else 0) \
+        + (0.3 * clip(math.log1p(ind_part), 0.8) if ind_part is not None and abs(ind_part) >= 0.1 else 0)
+    sc_ += sum((0.25 if e["dir"] == "+" else -0.25) for e in yev if e["dir"] in "+-")
+    Y["s"], Y["w"] = _sg(sc_, 0.05), abs(sc_)
+    if Y["s"]:
+        good = Y["s"] > 0
+        ev_t = yev[0]["title"] + ", " if yev and yev[0]["_match"] and yev[0]["dir"] != "±" else ""
+        co_t = (f"{en} {pct(de) if e0 > 0 and e1 > 0 else '흑자 전환' if e1 > 0 else '적자 전환'}" if de is not None and e0 and e1 else "")
+        if rvm is not None and _sg(rvm, 0.03) == Y["s"]:
+            Y["b"] = f"{iname} 업황 {'호조' if good else '부진'}({ev_t}업종 매출 {pct(rvm)}{', ' + co_t if co_t else ''})"
+        elif co_t:
+            Y["b"] = f"이 회사 실적 {'개선' if good else '악화'}({ev_t}{co_t}" + (f", 업종 매출은 {pct(rvm)}" if rvm is not None else "") + ")"
+        else:
+            Y["b"] = f"{iname} 업황 {'호조' if good else '부진'}({ev_t.rstrip(', ') or '업종 주가 ' + pct(ri)})"
+
+    # ---- 트렌드: 구조적 변화·테마
+    T = C["trend"]
+    tev = by("trend")[:2]
+    T["ev"] = [_evline(e) for e in tev]
+    months = (int(m1[:4]) - int(m0[:4])) * 12 + int(m1[5:7]) - int(m0[5:7])
+    if tev:
+        s_ = sum((1 if e["dir"] == "+" else -1) for e in tev if e["dir"] in "+-")
+        T["s"], T["w"] = _sg(s_), 0.35 * len([e for e in tev if e["_match"]]) + (0.3 if any(e["scope"].startswith("code:") for e in tev) else 0)
+        T["b"] = tev[0]["title"]
+        T["t"] = "주가에 영향을 준 구조적 흐름(일시적 이벤트가 아닌, 수요·경쟁 구도의 변화)이에요."
+    elif resid is not None and abs(resid) >= 0.5 and months >= 12:
+        T["t"] = (f"업종 대비 {pct(resid)}의 초과 {'상승' if resid > 0 else '하락'}이 {months}개월 이어졌어요. 일회성 사건보다는 제품·시장 지위 변화 같은 "
+                  "지속적인 흐름이 있었을 가능성이 높지만, 연표·뉴스에서 확인된 트렌드는 없어 추정이에요.")
+        T["s"], T["w"], T["b"] = _sg(resid), 0.1, f"업종 대비 {months}개월 초과 {'상승' if resid > 0 else '하락'}(원인 추정)"
+
+    # ---- 뉴스
+    N = C["news"]
+    nw = news_in(news, m0, m1)
+    imp = {"pos": 1, "neg": -1}
+    pos = sum(imp.get(x.get("imp"), 0) for x in nw)
+    N["ev"] = [f"{x['d']} [{x['cat']}] {x['t']}" + (f": {x['read']}" if x["read"] else "") for x in nw]
+    N["u"] = [x["u"] for x in nw]
+    if nw:
+        key = [x for x in nw if x["cat"] in ("실적", "수주·계약", "자본·지배구조", "규제·정책")] or nw
+        N["s"], N["w"] = _sg(pos), min(0.6, 0.15 * len(nw)) if pos else 0.1
+        N["b"] = f"'{key[-1]['t'][:34]}' 등 회사 뉴스"
+        N["t"] = f"이 시기 회사 관련 기사 {len(nw)}건을 골랐어요" + (f". 해석상 {'긍정' if pos > 0 else '부정'} 기사가 더 많았어요" if pos else "") + "."
+
+    # ---- 밸류에이션
+    V = C["val"]
     if qq:
         def _per(m, q):
             ni, p = co.ttm(q, "ni"), co.px.get(m)
@@ -458,175 +570,134 @@ def describe(U, ind, co, m0, m1, kind, t, news, qq=None):
         per0, per1 = _per(m0, q0), _per(m1, q1)
     else:
         per0, per1 = co.per_at(m0), co.per_at(m1)
-    de = chg(e0, e1)
-    if e0 is not None and e1 is not None and q1 > q0:
-        etxt = f"{qk(q0)}→{qk(q1)} {en}(4분기 합) {eok(e0)} → {eok(e1)}" + (f"({pct(de)})" if e0 > 0 and e1 > 0 else
-                                                                         " (흑자 전환)" if e0 <= 0 < e1 else " (적자 전환)" if e1 <= 0 < e0 else "")
-        if per0 and per1:
-            dper = per1 / per0 - 1
-            etxt += f", PER은 {per0:.1f}배 → {per1:.1f}배({pct(dper)})"
-            if r is not None and e0 > 0 and e1 > 0:
-                le, lp = math.log1p(de), math.log1p(dper)
-                if abs(lp) > abs(le) * 1.5 and abs(lp) > 0.1:
-                    msg = (f"이익보다 시장이 매기는 배수(PER)가 {'올라간(기대 상승)' if dper > 0 else '내려간(기대 하락)'} 영향이 더 컸어요")
-                elif abs(le) > abs(lp) * 1.5 and abs(le) > 0.1:
-                    msg = f"주가는 대체로 이익 변화를 따라 움직였어요"
-                else:
-                    msg = "이익 변화와 배수(PER) 변화가 함께 작용했어요"
-                etxt += f". {msg}"
-                drivers.append((max(abs(lp), abs(le)) * 0.9, msg))
-        elif (co.ni_ttm_at(m0)[0] or 0) <= 0 or (co.ni_ttm_at(m1)[0] or 0) <= 0:
-            etxt += ". 순이익이 적자인 시기가 있어 PER로는 설명할 수 없고, 주가가 이익보다 앞날의 기대·우려로 움직인 구간이에요"
-        F.append({"tag": "이익과 PER", "text": etxt + "."})
-    elif not co.Q:
-        # 분기 실적이 없는 오래된 구간 → 연간 실적
-        y0, y1 = str(int(m0[:4]) - 1), str(int(m1[:4]) - 1)
-        a0, a1 = (co.A.get(y0) or {}).get("op"), (co.A.get(y1) or {}).get("op")
-        if a0 is not None and a1 is not None and y1 > y0:
-            F.append({"tag": "이익과 PER", "text": f"연간 영업이익 {y0}년 {eok(a0)} → {y1}년 {eok(a1)}" + (f"({pct(chg(a0, a1))})" if a0 > 0 and a1 > 0 else "") + "."})
+    hist = sorted(x for x in (co.per_at(m) for m in co.months) if x and 0 < x < 300)
+    rank = sum(1 for x in hist if x <= per0) / len(hist) if per0 and len(hist) >= 24 else None
+    med = stx.median(hist) if len(hist) >= 24 else None
+    bits = []
+    if per0 and per1:
+        dper = per1 / per0 - 1
+        bits.append(f"PER이 {per0:.1f}배에서 {per1:.1f}배로 {pct(dper)} {'높아졌어요(시장이 더 비싸게 쳐 줌)' if dper > 0 else '낮아졌어요(시장이 덜 쳐 줌)'}")
+        if de is not None and e0 and e1 and e0 > 0 and e1 > 0 and r is not None:
+            le, lp = abs(math.log1p(de)), abs(math.log1p(dper))
+            sh = lp / (le + lp) if le + lp > 0 else 0
+            bits.append(f"주가 변화 중 이익 몫이 {100 - sh * 100:.0f}%, 배수(PER) 몫이 {sh * 100:.0f}%예요")
+        V["s"], V["w"] = _sg(dper, 0.1), abs(math.log1p(dper))
+        V["b"] = f"PER {per0:.0f}배→{per1:.0f}배 {'재평가' if dper > 0 else '축소'}"
+    if rank is not None:
+        lvl = "비싼 편(상위 20%)" if rank >= 0.8 else "싼 편(하위 20%)" if rank <= 0.2 else "중간 수준"
+        tail = ""
+        if rank >= 0.8 and not up:
+            tail = ". 기대가 많이 들어간 가격이라 작은 실망에도 배수가 빠지기 쉬운 자리였어요"
+        elif rank <= 0.2 and up:
+            tail = ". 비관이 많이 반영된 가격이라 작은 개선에도 배수가 회복되기 쉬운 자리였어요"
+        elif rank >= 0.8 and up:
+            tail = ". 이미 비싼 가격에서 더 오른 것이라 실적이 기대를 따라와야 유지되는 구간이었어요"
+        elif rank <= 0.2 and not up:
+            tail = ". 이미 싼 가격에서 더 빠진 건 시장이 이익 자체가 더 줄 것으로 봤다는 뜻이에요"
+        bits.insert(0, f"출발점({kor_m(m0)}) PER {per0:.1f}배는 이 회사 {len(hist) // 12}년여 PER 중앙값 {med:.1f}배 대비 {lvl}이었어요{tail}")
+        if (rank >= 0.8 and not up) or (rank <= 0.2 and up):
+            V["w"] += 0.2
+            V["s"] = V["s"] or (1 if up else -1)
+    if not per0 or not per1:
+        if ek and ((co.ni_ttm_at(m0)[0] or 0) <= 0 or (co.ni_ttm_at(m1)[0] or 0) <= 0):
+            bits.append("순이익이 적자인 시기가 있어 PER을 쓸 수 없어요. 이익보다 앞날의 기대·우려로 움직인 구간이에요")
+    V["t"] = ". ".join(bits) + ("." if bits else "") + (" (PER은 현재 주식 수로 계산한 추정치)" if bits and per0 else "")
 
-    # 3) 밸류에이션 위치(자기 역사 대비)
-    hist = [co.per_at(m) for m in co.months]
-    hist = sorted(x for x in hist if x and 0 < x < 300)
-    if per0 and len(hist) >= 24:
-        rank = sum(1 for x in hist if x <= per0) / len(hist)
-        med = stx.median(hist)
-        lvl = "역사적으로 비싼 편(상위 20%)" if rank >= 0.8 else "역사적으로 싼 편(하위 20%)" if rank <= 0.2 else "역사적 중간 수준"
-        vtxt = f"구간 시작({kor_m(m0)}) PER {per0:.1f}배는 이 회사 {len(hist) // 12}년여 월별 PER 중앙값 {med:.1f}배 대비 {lvl}이었어요"
-        if r is not None:
-            if rank >= 0.8 and r < 0:
-                vtxt += ". 높은 기대가 이미 가격에 들어 있어 작은 실망에도 배수가 빠지기 쉬운 자리였어요"
-                drivers.append((abs(math.log1p(r)) * 0.6, "출발점 밸류에이션이 높아 기대가 꺾이며 배수가 낮아졌어요"))
-            elif rank <= 0.2 and r > 0:
-                vtxt += ". 비관이 많이 반영된 가격이라 작은 개선에도 배수가 회복되기 쉬운 자리였어요"
-                drivers.append((abs(math.log1p(r)) * 0.6, "출발점 밸류에이션이 낮아 개선 신호에 배수가 회복됐어요"))
-            elif rank >= 0.8 and r > 0:
-                vtxt += ". 이미 비싼 가격에서 더 오른 것이라, 이후 실적이 기대를 따라오는지가 중요했어요"
-            elif rank <= 0.2 and r < 0:
-                vtxt += ". 이미 싼 가격에서 더 빠진 것이라, 시장이 이익 자체가 더 줄 것으로 봤다는 뜻이에요"
-        F.append({"tag": "밸류에이션", "text": vtxt + ". (PER은 현재 주식 수로 계산한 추정치예요)"})
-
-    # 4) 실적 발표 반응(서프라이즈·쇼크 대리 지표)
-    rx = []
+    # ---- 촉매제: 실적 발표 반응·회사 사건·업종의 날짜 있는 사건
+    K = C["cat"]
+    bits, sc_, best = [], 0.0, None
     if ek:
+        rx = []
         for n in range(q0 + 1, q1 + 1):
-            am = madd(qend(n), 2)  # 발표 달(분기 끝 + 2개월 무렵)
-            pm = madd(am, -1)
+            am, pm = madd(qend(n), 2), madd(qend(n), 1)
             if am < m0 or am > m1 or am not in co.px or pm not in co.px:
                 continue
             v, pv = co.val(n, "op"), co.val(n - 4, "op")
             if v is None:
                 continue
             mr = co.px[am] / co.px[pm] - 1
-            peers = [c.ret(pm, am) for c in U.by_ind.get(ind, []) if c.code != co.code]
-            peers = [x for x in peers if x is not None]
+            peers = [x for x in (c.ret(pm, am) for c in U.by_ind.get(ind, []) if c.code != co.code) if x is not None]
             ex = mr - stx.median(peers) if len(peers) >= 3 else mr
             rx.append((abs(ex), n, v, pv, mr, ex, am))
-    if rx:
         rx.sort(reverse=True)
-        _, n, v, pv, mr, ex, am = rx[0]
-        y = chg(pv, v)
-        yt = (f"전년 대비 {pct(y)}" if pv and pv > 0 and v > 0 else "흑자 전환" if pv is not None and pv <= 0 < v
-              else "적자 전환" if pv is not None and v <= 0 < pv else "적자 지속" if v <= 0 else "")
-        rev = co.val(n, "rev")
-        bits = [b for b in (yt, f"영업이익률 {v / rev * 100:.1f}%" if rev else "") if b]
-        txt = f"구간 안에서 주가 반응이 가장 컸던 실적은 {qk(n)} 영업이익 {eok(v)}{'(' + ', '.join(bits) + ')' if bits else ''}예요. 발표 무렵인 {kor_m(am)} 주가 {pct(mr)}, 업종보다 {pp(ex)}"
-        if abs(ex) >= 0.08:
-            good = ex > 0
-            txt += f"로 시장 기대를 {'웃돈 서프라이즈' if good else '밑돈 실망(쇼크)'}로 받아들여졌을 가능성이 커요"
-            if r is None or (ex > 0) == (r > 0):
-                drivers.append((abs(ex) * 1.2, f"{qk(n)} 실적 발표({kor_m(am)}) 뒤 업종보다 {pp(ex)} {'반응 — 서프라이즈' if good else '반응 — 실망'}"))
-        else:
-            txt += "로, 실적 발표 자체가 큰 전환점은 아니었어요"
-        F.append({"tag": "실적 발표 반응", "text": txt + ". (컨센서스 자료가 없어 발표 달 업종 대비 주가 반응으로 추정)"})
+        for _, n, v, pv, mr, ex, am in rx[:2]:
+            if abs(ex) < 0.08:
+                continue
+            yt = (f"전년 대비 {pct(chg(pv, v))}" if pv and pv > 0 and v > 0 else "흑자 전환" if pv is not None and pv <= 0 < v
+                  else "적자 전환" if pv is not None and v <= 0 < pv else "적자 지속" if v <= 0 else "")
+            bits.append(f"{qk(n)} 영업이익 {eok(v)}({yt}) 발표 무렵인 {kor_m(am)} 주가가 업종보다 {pp(ex)} {'더 올라 시장 기대를 웃돈 서프라이즈로' if ex > 0 else '더 빠져 기대에 못 미친 실망으로'} 받아들여졌어요(컨센서스 대신 발표 달 반응으로 추정)")
+            sc_ += max(-0.6, min(0.6, ex)) * 1.5
+            best = best or f"{qk(n)} 실적 {'서프라이즈' if ex > 0 else '실망'}(발표 달 업종 대비 {pp(ex)})"
+    kev = [e for e in by("catalyst") if e["_in"]][:3]
+    K["ev"] = [_evline(e) for e in kev]
+    for e in kev:
+        if e["dir"] in "+-":
+            sc_ += (0.6 if e["scope"].startswith("code:") else 0.35) * (1 if e["dir"] == "+" else -1)
+    K["t"] = ". ".join(bits) + ("." if bits else "")
+    K["s"], K["w"] = _sg(sc_, 0.05), abs(sc_)
+    if K["s"]:
+        cand = [e for e in kev if e["_match"] and e["dir"] != "±"]
+        K["b"] = cand[0]["title"] if cand and (cand[0]["scope"].startswith("code:") or not best) else (best or (kev[0]["title"] if kev else ""))
 
-    # 5) 사후 확인 — 시장이 미리 반영했나
+    # ---- 사후 확인
+    after = ""
+    d2 = None
     if ek and e1 is not None:
-        e2 = co.ttm(q1 + 4, ek)
-        if e2 is not None:
+        if l1 == qk(q1 if l1 == qk(q1) else qn(l1) if re.fullmatch(r"\d{4}Q[1-4]", l1 or "") else 0):
+            e2, l2 = co.ttm(qn(l1) + 4, ek), qk(qn(l1) + 4)
+        elif l1 and l1.endswith("년"):
+            l2 = f"{int(l1[:4]) + 1}년"
+            e2 = (co.A.get(l2[:4]) or {}).get(ek)
+        else:
+            e2, l2 = None, None
+        if e2 is not None and r is not None:
             d2 = chg(e1, e2)
             r2 = co.ret(m1, madd(m1, 12)) if madd(m1, 12) in co.px else None
-            if r is not None and d2 is not None:
-                same = (r > 0) == (d2 > 0)
-                txt = f"구간이 끝난 뒤 1년({qk(q1)}→{qk(q1 + 4)}) {en}은 {pct(d2) if e1 > 0 and e2 > 0 else eok(e1) + '→' + eok(e2)}"
-                if r2 is not None:
-                    txt += f", 주가는 {pct(r2)}"
-                if abs(d2) >= 0.1:
-                    txt += (". 주가가 이익 변화를 미리 반영한 셈이에요" if same else
-                            ". 주가 방향과 이후 이익 방향이 반대라, 이 구간의 움직임은 결과적으로 과했던 셈이에요")
-                else:
-                    txt += ". 이후 이익은 크게 달라지지 않았어요"
-                F.append({"tag": "사후 확인", "text": txt + "."})
+            after = f"구간 뒤 1년({l1}→{l2}) {en}은 {pct(d2) if e1 > 0 and e2 > 0 else eok(e1) + '→' + eok(e2)}" + (f", 주가는 {pct(r2)}" if r2 is not None else "")
+            if abs(d2 or 0) >= 0.1:
+                after += ". 주가가 이익 변화를 미리 반영한 셈이에요." if (r > 0) == (d2 > 0) else ". 이후 이익은 반대로 움직여, 이 구간의 주가 움직임은 결과적으로 과했던 셈이에요."
+            else:
+                after += ". 이후 이익은 크게 달라지지 않았어요."
 
-    # 6) 거시
-    mt = []
-    fx0, fx1 = U.mval("USDKRW", m0), U.mval("USDKRW", m1)
-    if fx0 and fx1 and abs(fx1 / fx0 - 1) >= 0.05:
-        w = fx1 > fx0
-        s = FX_SENS.get(ind, 0)
-        eff = ("수출 비중이 큰 회사엔 원화 환산 이익 증가 요인" if s > 0 else "원재료 수입 비용 증가 요인" if s < 0 else "업체별로 득실이 갈리는 요인") if w else \
-              ("수출 비중이 큰 회사엔 이익 감소 요인" if s > 0 else "원재료 수입 비용 감소 요인" if s < 0 else "업체별로 득실이 갈리는 요인")
-        mt.append(f"원/달러 {fx0:,.0f}원 → {fx1:,.0f}원({pct(fx1 / fx0 - 1)}, 원화 {'약세' if w else '강세'}): {eff}이고, 원화 {'약세' if w else '강세'}는 보통 외국인 자금 {'이탈' if w else '유입'}과 함께 와요")
-    k0, k1 = U.mval("KR10Y", m0), U.mval("KR10Y", m1)
-    u0, u1 = U.mval("US10Y", m0), U.mval("US10Y", m1)
-    if u0 is not None and u1 is not None and abs(u1 - u0) >= 0.5:
-        mt.append(f"미국 10년 금리 {u0:.2f}% → {u1:.2f}%({u1 - u0:+.2f}%p): 금리가 {'오르면 먼 미래 이익의 현재가치가 줄어 성장주 배수가 눌리고' if u1 > u0 else '내리면 성장주 배수가 회복되기 쉽고'}")
-    elif k0 is not None and k1 is not None and abs(k1 - k0) >= 0.5:
-        mt.append(f"한국 10년 금리 {k0:.2f}% → {k1:.2f}%({k1 - k0:+.2f}%p)")
-    o0, o1 = U.mval("BRENT", m0), U.mval("BRENT", m1)
-    if o0 and o1 and abs(o1 / o0 - 1) >= 0.25 and ind in OIL_SENS:
-        mt.append(f"브렌트유 ${o0:.0f} → ${o1:.0f}({pct(o1 / o0 - 1)}): {OIL_SENS[ind]} 요인")
-    if mt:
-        F.append({"tag": "거시 지표", "text": ". ".join(mt) + "."})
-
-    # 7) 사건 연표
-    ev = match_events(ind, co, m0, m1, r)
-    srcs = []
-    if ev:
-        co_ev = [e for e in ev if e["scope"].startswith("code:")]
-        oth = [e for e in ev if not e["scope"].startswith("code:")]
-        for e in co_ev[:3]:
-            F.append({"tag": "회사 사건", "text": f"{e['d'].replace('-', '.')} {e['title']} — {e['text']}"})
-        ind_ev = [e for e in oth if e["scope"] != "all"][:3]
-        mk_ev = [e for e in oth if e["scope"] == "all"][:2]
-        oth = sorted(ind_ev + mk_ev, key=lambda e: e["d"])
-        for e in oth:
-            F.append({"tag": "업종 사건" if e["scope"] != "all" else "거시·시장 사건", "text": f"{e['d'].replace('-', '.')} {e['title']} — {e['text']}"})
-        for e in (co_ev + oth)[:6]:
-            if e.get("src"):
-                srcs.append({"t": e["title"], "u": e["src"]})
-        top = co_ev[0] if co_ev else (ind_ev + mk_ev)[0]
-        e_dir = top.get("dir", "")
-        if (e_dir == "+" and (r or 0) > 0) or (e_dir == "-" and (r or 0) < 0) or e_dir in ("±", ""):
-            drivers.append((1.0 if co_ev else 0.5, f"{top['d'][:7].replace('-', '.')} {top['title']}"))
-
-    # 8) 뉴스
-    nw = news_in(news, m0, m1)
-    if nw and not any(f["tag"] == "회사 사건" for f in F):
-        key = [x for x in nw if x["cat"] in ("실적", "수주·계약", "자본·지배구조", "규제·정책")] or nw
-        x = key[-1]
-        drivers.append((0.45, f"뉴스: {x['d'][:7].replace('-', '.')} {x['t'][:40]}"))
-    for x in nw:
-        F.append({"tag": f"뉴스 · {x['cat']}", "text": f"{x['d']} {x['t']}" + (f" — {x['read']}" if x['read'] else ""), "u": x["u"]})
-
-    # 9) 불확실성
-    explained_co = any(f["tag"] in ("회사 사건", "실적 발표 반응") for f in F) or nw
+    # ---- 요약(헤드라인)
+    d0 = 1 if up else -1
+    drive = sorted([c for c in C.values() if c["s"] == d0 and c["w"] >= 0.08 and c["b"]], key=lambda c: -c["w"])
+    oppo = sorted([c for c in C.values() if c["s"] == -d0 and c["w"] >= 0.12 and c["b"]], key=lambda c: -c["w"])
+    for c in C.values():
+        c["lvl"] = 0 if not c["s"] else 3 if c["w"] >= 0.45 else 2 if c["w"] >= 0.2 else 1
+    if drive:
+        lead = ", ".join(f"{'①②'[i]} {CNAME[c['k']]} — {c['b']}" for i, c in enumerate(drive[:2]))
+        head = f"{'상승' if up else '하락'}을 이끈 핵심 요인: {lead}."
+        cy = C["cycle"]
+        if cy["s"] == -d0 and d2 is not None and _sg(d2, 0.1) == d0:
+            dtx = pct(d2) if e1 > 0 and e2 > 0 else f"{eok(e1)}→{eok(e2)}"
+            head += (f" 당시 업황·실적은 아직 좋았지만, 시장은 다가올 이익 감소를 먼저 반영했어요(이후 1년 {en} {dtx})." if not up else
+                     f" 당시 업황·실적은 아직 나빴지만, 시장은 회복을 먼저 반영했어요(이후 1년 {en} {dtx}).")
+            oppo = [c for c in oppo if c["k"] != "cycle"]
+        if oppo:
+            head += f" 반대로 작용한 요인: {CNAME[oppo[0]['k']]} — {oppo[0]['b']} ({'부담이었지만 흐름을 바꾸진 못함' if up else '버팀목이었지만 하락을 막진 못함'})."
+    else:
+        head = "뚜렷하게 주가를 움직인 요인을 찾지 못했어요."
     unc = None
-    if resid is not None and abs(resid) >= 0.2 and not explained_co:
-        unc = (f"업종·시장으로 설명되지 않는 회사 고유 몫(업종·시장 대비 상대 성과 {pct(resid)})이 큰데, 이 시기를 설명할 회사 사건·뉴스를 확인하지 못했어요. "
-               "수급(대주주·기관 매매, 오버행), 테마성 매매, 공시되지 않은 사업 변화일 수 있어 원인은 불확실해요.")
-    elif not drivers:
-        unc = "뚜렷한 단일 원인을 찾지 못했어요. 아래 숫자는 사실이지만, 원인 연결은 추정이에요."
-    if unc:
-        F.append({"tag": "불확실", "text": unc})
+    company_ev = C["cat"]["ev"] or C["news"]["ev"] or C["trend"]["ev"]
+    if resid is not None and abs(resid) >= 0.2 and not company_ev and not C["cat"]["t"]:
+        unc = (f"업종·시장 대비 상대 성과가 {pct(resid)}로 회사 고유 요인이 컸는데, 이 시기 회사 사건·뉴스·실적 반응에서 원인을 확인하지 못했어요. "
+               "수급(대주주·기관 매매, 오버행)이나 테마성 매매일 수 있어 원인은 불확실해요.")
+    elif not drive:
+        unc = "어느 요인도 뚜렷하지 않아 원인 연결은 추정이에요."
+    for c in C.values():
+        if not c["t"] and not c["ev"]:
+            c["t"] = "이 시기에 이 요인으로 볼 근거를 찾지 못했어요."
+            c["none"] = True
+    cats = [{kk: v for kk, v in C[k].items() if kk != "w" and v not in ("", [], None)} | {"w": round(C[k]["w"], 2)} for k, _ in CATS]
+    return {"sum": head, "cats": cats, "after": after, "unc": unc, "drive": [c["k"] for c in drive[:2]]}
 
-    drivers.sort(key=lambda d: -d[0])
-    seen, top3 = set(), []
-    for _, d in drivers:
-        if d not in seen:
-            seen.add(d)
-            top3.append(d)
-    return F, top3[:3], srcs, unc is not None, resid
+
+def look_text(t, drive):
+    nm = "·".join(CNAME[k] for k in drive) or "주된 요인"
+    if t in ("up", "warn"):
+        return f"이 상승을 이끈 {nm} 요인이 지금도 살아 있는지가 다음 흐름을 가르는 열쇠예요. 요인이 꺾이면(예: 업황 정점, 배수 과열, 촉매 소멸) 되돌림이 올 수 있어요."
+    return f"이 하락을 부른 {nm} 요인이 이익 자체를 훼손한 것인지, 기대(배수)만 낮춘 것인지에 따라 회복 경로가 달라져요. 그 요인이 풀리는 신호를 지켜보세요."
 
 
 def build_company(U, ind, co, news):
@@ -643,18 +714,13 @@ def build_company(U, ind, co, news):
         en = {"op": "영업이익", "ni": "순이익", "rev": "매출"}[ek]
         e0, e1 = co.ttm(b["q0"] - 4, ek), co.ttm(b["q1"], ek)
         r = co.ret(m0, m1)
-        F, drv, srcs, unc, resid = describe(U, ind, co, m0, m1, "band", b["t"], news, (b["q0"] - 4, b["q1"]))
+        D = describe(U, ind, co, m0, m1, news, (b["q0"] - 4, b["q1"]))
         de = chg(e0, e1)
         head = f"{en}(4분기 합) {pct(de) if e0 and e1 and e0 > 0 and e1 > 0 else eok(e0) + '→' + eok(e1)}인데 주가 {pct(r)}"
-        why = "; ".join(drv) if drv else "원인 불확실"
         lbl = "실적↑ 주가↓" if b["t"] == "opp" else "실적↓ 주가↑"
-        if b["t"] == "opp":
-            look = "이후 이익이 계속 늘었는지(사후 확인)를 보면, 이런 구간이 저가 매수 기회였는지 이익 정점 신호였는지 구분할 수 있어요."
-        else:
-            look = "실적이 아직 안 좋은데 주가가 먼저 오른 구간이에요. 이후 이익 회복이 따라왔는지(사후 확인)가 기대가 맞았는지를 말해 줘요."
-        events.append({"kind": "band", "t": b["t"], "q0": qk(b["q0"]), "q1": qk(b["q1"]), "m0": m0, "m1": m1,
-                       "title": f"{qk(b['q0'])}{'' if b['q0'] == b['q1'] else '~' + qk(b['q1'])} {lbl}",
-                       "head": head, "why": why, "look": look, "f": F, "src": srcs, "unc": unc})
+        events.append(dict({"kind": "band", "t": b["t"], "q0": qk(b["q0"]), "q1": qk(b["q1"]), "m0": m0, "m1": m1,
+                            "title": f"{qk(b['q0'])}{'' if b['q0'] == b['q1'] else '~' + qk(b['q1'])} {lbl}", "head": head,
+                            "look": look_text("warn" if b["t"] == "warn" else "down", D["drive"])}, **D))
     # ② 큰 흐름의 고점·저점 (차트가 그리는 기간 = 4분기 합 실적이 시작되는 분기부터)
     ts = [qn(k) for k in co.Q if co.ttm(qn(k), "rev") is not None and co.pq(qn(k))[0]]
     cstart = qend(min(ts) - 1) if ts else ""
@@ -665,17 +731,14 @@ def build_company(U, ind, co, news):
         if g.get("from_start") and abs(co.ret(m0, m1) or 0) < ZZ:
             continue  # 데이터 시작점에서 출발한 밋밋한 구간은 변곡점이 아님
         r = co.ret(m0, m1)
-        F, drv, srcs, unc, resid = describe(U, ind, co, m0, m1, "leg", g["t"], news)
+        D = describe(U, ind, co, m0, m1, news)
         p0, p1 = co.px[m0], co.px[m1]
         start = "데이터 시작" if g.get("from_start") else ("고점" if g["t"] == "down" else "저점")
         months = (int(m1[:4]) - int(m0[:4])) * 12 + int(m1[5:7]) - int(m0[5:7])
         head = f"{kor_m(m0)} {start} {p0:,.0f}원 → {kor_m(m1)}{' 현재' if g['open'] else ''} {p1:,.0f}원({pct(r)}, {months}개월)"
-        why = "; ".join(drv) if drv else "원인 불확실"
-        look = ("상승을 이끈 요인(이익 증가인지, 배수 확대인지)이 지금도 유효한지 보면 다음 흐름을 판단하는 데 도움이 돼요." if g["t"] == "up" else
-                "하락을 부른 요인이 이익 자체의 훼손이었는지, 배수(기대)의 조정이었는지에 따라 회복 경로가 달라져요.")
-        events.append({"kind": "leg", "t": g["t"], "m0": m0, "m1": m1, "open": g["open"], "pivot": not g.get("from_start"),
-                       "title": f"{kor_m(m0)}~{kor_m(m1)}{' (진행 중)' if g['open'] else ''} {'상승' if g['t'] == 'up' else '하락'} {pct(r)}",
-                       "head": head, "why": why, "look": look, "f": F, "src": srcs, "unc": unc})
+        events.append(dict({"kind": "leg", "t": g["t"], "m0": m0, "m1": m1, "open": g["open"], "pivot": not g.get("from_start"),
+                            "title": f"{kor_m(m0)}~{kor_m(m1)}{' (진행 중)' if g['open'] else ''} {'상승' if g['t'] == 'up' else '하락'} {pct(r)}",
+                            "head": head, "look": look_text(g["t"], D["drive"])}, **D))
     events.sort(key=lambda e: (e["m0"], e["kind"]))
     for i, e in enumerate(events):
         e["id"] = i + 1
@@ -852,7 +915,7 @@ def news_for(data, code):
     for x in rv.get("news") or []:
         if x.get("date") and x.get("title"):
             out.append({"date": x["date"], "title": x["title"], "url": x.get("url", ""), "office": x.get("src", ""),
-                        "read": x.get("read", "")})
+                        "read": x.get("read", ""), "impact": x.get("impact", "")})
     return out
 
 
