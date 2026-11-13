@@ -29,9 +29,9 @@
    "price": 21100,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 19902321,
-   "mcap_eff": 19902321,
-   "shares": 943237962,
+   "mcap": 19902319,
+   "mcap_eff": 19902319,
+   "shares": 943237867,
    "shares_check": {
     "dart_common": 943237970,
     "dart_period": "2026-11012",
@@ -234,8 +234,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 612584,
-   "mcap_eff": 612574,
-   "shares": 322747102,
+   "mcap_eff": 612584,
+   "shares": 322752371,
    "shares_check": {
     "dart_common": 322747340,
     "dart_period": "2026-11012",
@@ -333,8 +333,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 256493,
-   "mcap_eff": 256481,
-   "shares": 22577553,
+   "mcap_eff": 250718,
+   "shares": 22070246,
    "shares_check": {
     "dart_common": 22577525,
     "dart_period": "2026-11012",
@@ -349,36 +349,36 @@
    "dividend_yield": null,
    "per": 2.3,
    "roe": 16.9,
-   "pbr": 0.39,
+   "pbr": 0.38,
    "net_debt_levered": -2401712,
    "dcf": {
     "E1": 62300,
     "r": 10.0,
     "c": 0.45,
     "note": "자동 정상 이익. 신조선 인도에 따른 감가상각·이자 부담 때문에 현금 전환율은 45%로 낮췄어요",
-    "fwd_per": 4.1,
-    "norm_per": 4.1,
+    "fwd_per": 4.0,
+    "norm_per": 4.0,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 292663,
-      "per_share": 12963,
-      "upside": 14.1
+      "per_share": 13261,
+      "upside": 16.7
      },
      "base": {
       "g": 3,
       "value": 366599,
-      "per_share": 16237,
-      "upside": 42.9
+      "per_share": 16611,
+      "upside": 46.2
      },
      "bull": {
       "g": 6,
       "value": 419661,
-      "per_share": 18588,
-      "upside": 63.6
+      "per_share": 19015,
+      "upside": 67.4
      }
     },
-    "implied_g": -4.9,
+    "implied_g": -5.5,
     "cycle": {
      "position": "중립",
      "note": "LPG·LNG·암모니아 가스선 장기 대선이 중심이라 운임보다 선대 증가(신조 인도)와 금리가 이익을 결정해요.",
@@ -396,13 +396,13 @@
     "ttm_ni": 111415,
     "oneoff": false,
     "E": 80869,
-    "per_share": 25283,
-    "bear": 20261,
-    "bull": 28887,
-    "upside": 122.6,
+    "per_share": 25865,
+    "bear": 20727,
+    "bull": 29551,
+    "upside": 127.7,
     "pct": 95,
     "tier": "싼 ⅓",
-    "exp_ex": 4.0,
+    "exp_ex": 4.2,
     "conflict": false
    }
   },
@@ -437,9 +437,9 @@
    "price": 1538,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 369773,
-   "mcap_eff": 369773,
-   "shares": 240424577,
+   "mcap": 369743,
+   "mcap_eff": 369743,
+   "shares": 240405072,
    "shares_check": {
     "dart_common": 240424899,
     "dart_period": "2026-11012",
@@ -498,8 +498,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 11512,
-   "mcap_eff": 11374,
-   "shares": 7144472,
+   "mcap_eff": 11470,
+   "shares": 7204774,
    "shares_check": {
     "dart_common": 7144590,
     "dart_period": "2026-11012",
@@ -521,26 +521,26 @@
     "r": 11.0,
     "c": 0.6,
     "note": "자동 정상 이익. 상장 기간이 짧아 연간 이력이 적어요",
-    "fwd_per": 0.8,
-    "norm_per": 0.8,
+    "fwd_per": 0.9,
+    "norm_per": 0.9,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 75030,
-      "per_share": 10502,
-      "upside": 559.7
+      "per_share": 10414,
+      "upside": 554.1
      },
      "base": {
       "g": 3,
       "value": 93328,
-      "per_share": 13063,
-      "upside": 720.5
+      "per_share": 12954,
+      "upside": 713.7
      },
      "bull": {
       "g": 6,
       "value": 106430,
-      "per_share": 14897,
-      "upside": 835.7
+      "per_share": 14772,
+      "upside": 827.9
      }
     },
     "implied_g": -30.0,
@@ -561,10 +561,10 @@
     "ttm_ni": -17144,
     "oneoff": false,
     "E": 770,
-    "per_share": 761,
-    "bear": 609,
-    "bull": 869,
-    "upside": -52.2,
+    "per_share": 754,
+    "bear": 604,
+    "bull": 862,
+    "upside": -52.6,
     "pct": 25,
     "tier": "비싼 ⅓",
     "exp_ex": -5.9,
@@ -596,15 +596,15 @@
    "price": 31700,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 11709360,
-   "mcap_eff": 11709360,
-   "shares": 369380442,
+   "mcap": 11709313,
+   "mcap_eff": 11709311,
+   "shares": 369378896,
    "shares_check": {
     "dart_common": 368220609,
     "dart_period": "2026-11012",
     "listed": 368219178,
     "pref": "003495",
-    "pref_shares": 1110791,
+    "pref_shares": 1110730,
     "pref_price": 33100
    },
    "equity": 10512545,
@@ -702,8 +702,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1740614,
-   "mcap_eff": 1739863,
-   "shares": 205900947,
+   "mcap_eff": 1739856,
+   "shares": 205900118,
    "shares_check": {
     "dart_common": 205900990,
     "dart_period": "2026-11012",
@@ -754,8 +754,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 595961,
-   "mcap_eff": 595421,
-   "shares": 80571177,
+   "mcap_eff": 595444,
+   "shares": 80574290,
    "shares_check": {
     "dart_common": 80571111,
     "dart_period": "2026-11012",
@@ -795,7 +795,7 @@
      "bull": {
       "g": 10,
       "value": 402906,
-      "per_share": 5001,
+      "per_share": 5000,
       "upside": -32.3
      }
     },
@@ -847,8 +847,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 423824,
-   "mcap_eff": 418453,
-   "shares": 51533621,
+   "mcap_eff": 418413,
+   "shares": 51528695,
    "shares_check": {
     "dart_common": 51533634,
     "dart_period": "2026-11012",
@@ -875,19 +875,19 @@
      "bear": {
       "g": -5,
       "value": 265919,
-      "per_share": 5160,
-      "upside": -36.5
+      "per_share": 5161,
+      "upside": -36.4
      },
      "base": {
       "g": 5,
       "value": 420259,
-      "per_share": 8155,
+      "per_share": 8156,
       "upside": 0.4
      },
      "bull": {
       "g": 12,
       "value": 576741,
-      "per_share": 11192,
+      "per_share": 11193,
       "upside": 37.8
      }
     },
@@ -939,16 +939,15 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 257821,
-   "mcap_eff": 257821,
-   "shares": 102107327,
+   "mcap_eff": 257303,
+   "shares": 101902178,
    "shares_check": {
     "dart_common": 412764093,
     "dart_period": "2026-11012",
     "listed": 102107438,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 412,764,093주 → 현재 상장 102,107,438주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
    "equity": 90517,
    "equity_source": "DART 2026Q2",
@@ -956,7 +955,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -489.9,
-   "pbr": 2.85,
+   "pbr": 2.84,
    "dcf": {
     "E1": 30000,
     "r": 12.5,
@@ -968,20 +967,20 @@
      "bear": {
       "g": -8,
       "value": 331989,
-      "per_share": 3251,
-      "upside": 28.8
+      "per_share": 3258,
+      "upside": 29.0
      },
      "base": {
       "g": 5,
       "value": 374206,
-      "per_share": 3665,
-      "upside": 45.1
+      "per_share": 3672,
+      "upside": 45.4
      },
      "bull": {
       "g": 12,
       "value": 408976,
-      "per_share": 4005,
-      "upside": 58.6
+      "per_share": 4013,
+      "upside": 58.9
      }
     },
     "implied_g": -30.0,
@@ -1038,8 +1037,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 299553,
-   "mcap_eff": 299494,
-   "shares": 162856987,
+   "mcap_eff": 299446,
+   "shares": 162830886,
    "shares_check": {
     "dart_common": 162856856,
     "dart_period": "2026-11012",
@@ -1089,15 +1088,15 @@
    "price": 198000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 13289168,
-   "mcap_eff": 13289142,
-   "shares": 67116879,
+   "mcap": 13289140,
+   "mcap_eff": 13288284,
+   "shares": 67112545,
    "shares_check": {
     "dart_common": 66762276,
     "dart_period": "2026-11012",
     "listed": 66762410,
     "pref": "18064K",
-    "pref_shares": 530297,
+    "pref_shares": 523617,
     "pref_price": 132400
    },
    "equity": 3344074,
@@ -1118,19 +1117,19 @@
      "bear": {
       "g": -4,
       "value": 1202394,
-      "per_share": 17915,
+      "per_share": 17916,
       "upside": -91.0
      },
      "base": {
       "g": 3,
       "value": 1647636,
-      "per_share": 24549,
+      "per_share": 24550,
       "upside": -87.6
      },
      "bull": {
       "g": 6,
       "value": 1886116,
-      "per_share": 28102,
+      "per_share": 28104,
       "upside": -85.8
      }
     },
@@ -1154,7 +1153,7 @@
     "E": 45142,
     "per_share": 4748,
     "bear": 3805,
-    "bull": 5424,
+    "bull": 5425,
     "upside": -97.6,
     "pct": 0,
     "tier": "비싼 ⅓",
@@ -1194,16 +1193,15 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 28868,
-   "mcap_eff": 28868,
-   "shares": 22641569,
+   "mcap_eff": 28867,
+   "shares": 22640784,
    "shares_check": {
     "dart_common": 113162985,
     "dart_period": "2026-11012",
     "listed": 22641509,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 113,162,985주 → 현재 상장 22,641,509주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
    "equity": 47000,
    "equity_source": "DART 2026Q3",
@@ -1247,8 +1245,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 333373,
-   "mcap_eff": 322030,
-   "shares": 3058215,
+   "mcap_eff": 321986,
+   "shares": 3057797,
    "shares_check": {
     "dart_common": 3058211,
     "dart_period": "2026-11012",
@@ -1275,19 +1273,19 @@
      "bear": {
       "g": -2,
       "value": 235705,
-      "per_share": 77073,
+      "per_share": 77083,
       "upside": -26.8
      },
      "base": {
       "g": 3,
       "value": 271684,
-      "per_share": 88837,
+      "per_share": 88849,
       "upside": -15.6
      },
      "bull": {
       "g": 6,
       "value": 297535,
-      "per_share": 97290,
+      "per_share": 97304,
       "upside": -7.6
      }
     },
@@ -1309,9 +1307,9 @@
     "ttm_ni": 45872,
     "oneoff": false,
     "E": 32577,
-    "per_share": 75194,
-    "bear": 60257,
-    "bull": 85912,
+    "per_share": 75204,
+    "bear": 60265,
+    "bull": 85923,
     "upside": -28.6,
     "pct": 45,
     "tier": "가운데 ⅓",
@@ -1345,8 +1343,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1542100,
-   "mcap_eff": 1348291,
-   "shares": 19945133,
+   "mcap_eff": 1348276,
+   "shares": 19944911,
    "shares_check": {
     "dart_common": 19945129,
     "dart_period": "2026-11012",
@@ -1374,19 +1372,19 @@
      "bear": {
       "g": -3,
       "value": 1400018,
-      "per_share": 70193,
+      "per_share": 70194,
       "upside": 3.8
      },
      "base": {
       "g": 3,
       "value": 1842443,
-      "per_share": 92376,
+      "per_share": 92377,
       "upside": 36.7
      },
      "bull": {
       "g": 6,
       "value": 2113282,
-      "per_share": 105955,
+      "per_share": 105956,
       "upside": 56.7
      }
     },
@@ -1408,9 +1406,9 @@
     "ttm_ni": 222941,
     "oneoff": false,
     "E": 231252,
-    "per_share": 81843,
-    "bear": 65585,
-    "bull": 93508,
+    "per_share": 81844,
+    "bear": 65586,
+    "bull": 93509,
     "upside": 21.1,
     "pct": 50,
     "tier": "가운데 ⅓",
@@ -1444,8 +1442,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 308527,
-   "mcap_eff": 298999,
-   "shares": 15040191,
+   "mcap_eff": 299016,
+   "shares": 15041046,
    "shares_check": {
     "dart_common": 15040215,
     "dart_period": "2026-11012",
@@ -1479,13 +1477,13 @@
      "base": {
       "g": 3,
       "value": 194186,
-      "per_share": 12911,
+      "per_share": 12910,
       "upside": -35.1
      },
      "bull": {
       "g": 5,
       "value": 212503,
-      "per_share": 14129,
+      "per_share": 14128,
       "upside": -28.9
      }
     },
@@ -1507,9 +1505,9 @@
     "ttm_ni": -10851,
     "oneoff": true,
     "E": 52874,
-    "per_share": 24816,
-    "bear": 19886,
-    "bull": 28353,
+    "per_share": 24814,
+    "bear": 19885,
+    "bull": 28351,
     "upside": 24.8,
     "pct": 60,
     "tier": "가운데 ⅓",
@@ -1644,15 +1642,15 @@
    "price": 12010,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 259316,
-   "mcap_eff": 249852,
-   "shares": 20803664,
+   "mcap": 259302,
+   "mcap_eff": 249877,
+   "shares": 20805745,
    "shares_check": {
     "dart_common": 18330870,
     "dart_period": "2026-11012",
     "listed": 19118869,
     "pref": "004365",
-    "pref_shares": 3689250,
+    "pref_shares": 3687500,
     "pref_price": 8050
    },
    "equity": 1249717,
@@ -1673,19 +1671,19 @@
      "bear": {
       "g": -2,
       "value": 498261,
-      "per_share": 23951,
+      "per_share": 23948,
       "upside": 99.4
      },
      "base": {
       "g": 2,
       "value": 593442,
-      "per_share": 28526,
+      "per_share": 28523,
       "upside": 137.5
      },
      "bull": {
       "g": 4,
       "value": 647917,
-      "per_share": 31144,
+      "per_share": 31141,
       "upside": 159.3
      }
     },
@@ -1707,9 +1705,9 @@
     "ttm_ni": 62087,
     "oneoff": true,
     "E": 46596,
-    "per_share": 15810,
-    "bear": 12670,
-    "bull": 18064,
+    "per_share": 15809,
+    "bear": 12669,
+    "bull": 18062,
     "upside": 31.6,
     "pct": 70,
     "tier": "싼 ⅓",
@@ -1743,8 +1741,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 69629,
-   "mcap_eff": 69398,
-   "shares": 47794766,
+   "mcap_eff": 69372,
+   "shares": 47776860,
    "shares_check": {
     "dart_common": 47794806,
     "dart_period": "2026-11012",
@@ -1779,7 +1777,7 @@
       "g": 2,
       "value": 74412,
       "per_share": 1557,
-      "upside": 7.2
+      "upside": 7.3
      },
      "bull": {
       "g": 4,
@@ -1806,7 +1804,7 @@
     "ttm_ni": 7057,
     "oneoff": false,
     "E": 12976,
-    "per_share": 1916,
+    "per_share": 1917,
     "bear": 1536,
     "bull": 2190,
     "upside": 32.0,
@@ -1842,8 +1840,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 110752,
-   "mcap_eff": 110700,
-   "shares": 30000000,
+   "mcap_eff": 110752,
+   "shares": 30014092,
    "shares_check": {
     "dart_common": 30000000,
     "dart_period": "2026-11012",
@@ -1871,19 +1869,19 @@
      "bear": {
       "g": -2,
       "value": 100801,
-      "per_share": 3360,
-      "upside": -8.9
+      "per_share": 3358,
+      "upside": -9.0
      },
      "base": {
       "g": 2,
       "value": 120353,
-      "per_share": 4012,
+      "per_share": 4010,
       "upside": 8.7
      },
      "bull": {
       "g": 4,
       "value": 131533,
-      "per_share": 4384,
+      "per_share": 4382,
       "upside": 18.8
      }
     },
@@ -1905,10 +1903,10 @@
     "ttm_ni": 28494,
     "oneoff": false,
     "E": 25153,
-    "per_share": 5918,
-    "bear": 4743,
-    "bull": 6762,
-    "upside": 60.4,
+    "per_share": 5915,
+    "bear": 4740,
+    "bull": 6759,
+    "upside": 60.3,
     "pct": 80,
     "tier": "싼 ⅓",
     "exp_ex": 1.8,
@@ -1940,9 +1938,9 @@
    "price": 1864,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 72176,
-   "mcap_eff": 72176,
-   "shares": 38721030,
+   "mcap": 72161,
+   "mcap_eff": 72161,
+   "shares": 38712983,
    "shares_check": {
     "dart_common": 38720811,
     "dart_period": "2026-11014",
@@ -1970,20 +1968,20 @@
      "bear": {
       "g": -5,
       "value": 269064,
-      "per_share": 6949,
-      "upside": 272.8
+      "per_share": 6950,
+      "upside": 272.9
      },
      "base": {
       "g": 2,
       "value": 386436,
-      "per_share": 9980,
-      "upside": 435.4
+      "per_share": 9982,
+      "upside": 435.5
      },
      "bull": {
       "g": 6,
       "value": 472027,
-      "per_share": 12190,
-      "upside": 554.0
+      "per_share": 12193,
+      "upside": 554.1
      }
     },
     "implied_g": -27.7,
@@ -2008,10 +2006,10 @@
     "ttm_ni": 6068,
     "oneoff": false,
     "E": 33978,
-    "per_share": 6194,
-    "bear": 4964,
-    "bull": 7077,
-    "upside": 232.3,
+    "per_share": 6195,
+    "bear": 4965,
+    "bull": 7079,
+    "upside": 232.4,
     "pct": 100,
     "tier": "싼 ⅓",
     "exp_ex": 6.8,
@@ -2044,8 +2042,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 29073,
-   "mcap_eff": 29028,
-   "shares": 11800000,
+   "mcap_eff": 28581,
+   "shares": 11618293,
    "shares_check": {
     "dart_common": 11800000,
     "dart_period": "2026-11012",
@@ -2067,29 +2065,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "자동 정상 이익",
-    "fwd_per": 9.7,
-    "norm_per": 9.7,
+    "fwd_per": 9.5,
+    "norm_per": 9.5,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 16798,
-      "per_share": 1424,
-      "upside": -42.1
+      "per_share": 1446,
+      "upside": -41.2
      },
      "base": {
       "g": 2,
       "value": 20000,
-      "per_share": 1695,
-      "upside": -31.1
+      "per_share": 1721,
+      "upside": -30.0
      },
      "bull": {
       "g": 4,
       "value": 21829,
-      "per_share": 1850,
-      "upside": -24.8
+      "per_share": 1879,
+      "upside": -23.6
      }
     },
-    "implied_g": 10.5,
+    "implied_g": 10.2,
     "cycle": {
      "position": "중립",
      "note": "현대차·기아 계열 물류 위탁과 포워딩. 매출은 크지만 이익률이 1~2%로 얇아요.",
@@ -2134,8 +2132,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 53228,
-   "mcap_eff": 51155,
-   "shares": 28594187,
+   "mcap_eff": 51164,
+   "shares": 28599217,
    "shares_check": {
     "dart_common": 28594132,
     "dart_period": "2026-11012",
@@ -2199,7 +2197,7 @@
     "E": 9103,
     "per_share": 2247,
     "bear": 1801,
-    "bull": 2568,
+    "bull": 2567,
     "upside": 25.6,
     "pct": 65,
     "tier": "가운데 ⅓",
@@ -2233,8 +2231,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 122690,
-   "mcap_eff": 116931,
-   "shares": 6289995,
+   "mcap_eff": 116927,
+   "shares": 6289779,
    "shares_check": {
     "dart_common": 6290000,
     "dart_period": "2026-11012",
@@ -2268,13 +2266,13 @@
      "base": {
       "g": 2,
       "value": 125882,
-      "per_share": 20013,
+      "per_share": 20014,
       "upside": 7.7
      },
      "bull": {
       "g": 4,
       "value": 137576,
-      "per_share": 21872,
+      "per_share": 21873,
       "upside": 17.7
      }
     },
@@ -2296,9 +2294,9 @@
     "ttm_ni": 45779,
     "oneoff": false,
     "E": 31318,
-    "per_share": 35146,
-    "bear": 28165,
-    "bull": 40156,
+    "per_share": 35147,
+    "bear": 28166,
+    "bull": 40157,
     "upside": 89.1,
     "pct": 90,
     "tier": "싼 ⅓",
@@ -2361,8 +2359,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 127205,
-   "mcap_eff": 120570,
-   "shares": 33398892,
+   "mcap_eff": 114018,
+   "shares": 31583934,
    "shares_check": {
     "dart_common": 33398928,
     "dart_period": "2026-11012",
@@ -2375,38 +2373,38 @@
    "equity_source": "DART 2026Q2",
    "net_cash": -43167,
    "dividend_yield": null,
-   "per": 1.3,
+   "per": 1.2,
    "roe": 15.8,
-   "pbr": 0.2,
+   "pbr": 0.19,
    "net_debt_levered": -43167,
    "dcf": {
     "E1": 13800,
     "r": 11.0,
     "c": 0.5,
     "note": "자동 정상 이익",
-    "fwd_per": 8.7,
-    "norm_per": 8.7,
+    "fwd_per": 8.3,
+    "norm_per": 8.3,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 61655,
-      "per_share": 1846,
-      "upside": -48.9
+      "per_share": 1952,
+      "upside": -45.9
      },
      "base": {
       "g": 1,
       "value": 73388,
-      "per_share": 2197,
-      "upside": -39.1
+      "per_share": 2324,
+      "upside": -35.6
      },
      "bull": {
       "g": 3,
       "value": 80095,
-      "per_share": 2398,
-      "upside": -33.6
+      "per_share": 2536,
+      "upside": -29.8
      }
     },
-    "implied_g": 12.4,
+    "implied_g": 11.1,
     "cycle": {
      "position": "중립",
      "note": "철강 물류(포스코 협력)와 비계열 물류. 철강 물량에 연동돼요.",
@@ -2424,13 +2422,13 @@
     "ttm_ni": 94058,
     "oneoff": true,
     "E": 7606,
-    "per_share": 1607,
-    "bear": 1288,
-    "bull": 1837,
-    "upside": -55.5,
+    "per_share": 1700,
+    "bear": 1362,
+    "bull": 1942,
+    "upside": -52.9,
     "pct": 20,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.3,
+    "exp_ex": -6.0,
     "conflict": false
    }
   },
@@ -2459,9 +2457,9 @@
    "price": 6030,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 157032,
-   "mcap_eff": 157032,
-   "shares": 26041791,
+   "mcap": 157017,
+   "mcap_eff": 157017,
+   "shares": 26039303,
    "shares_check": {
     "dart_common": 26041812,
     "dart_period": "2026-11012",
@@ -2488,7 +2486,7 @@
      "bear": {
       "g": -2,
       "value": 66806,
-      "per_share": 2565,
+      "per_share": 2566,
       "upside": -57.5
      },
      "base": {
@@ -2500,7 +2498,7 @@
      "bull": {
       "g": 6,
       "value": 95273,
-      "per_share": 3658,
+      "per_share": 3659,
       "upside": -39.3
      }
     },
@@ -2522,7 +2520,7 @@
     "ttm_ni": 15419,
     "oneoff": false,
     "E": 15515,
-    "per_share": 4205,
+    "per_share": 4206,
     "bear": 3370,
     "bull": 4805,
     "upside": -30.3,
@@ -2564,8 +2562,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 81269,
-   "mcap_eff": 73182,
-   "shares": 2608984,
+   "mcap_eff": 73231,
+   "shares": 2610731,
    "shares_check": {
     "dart_common": 2609000,
     "dart_period": "2026-11012",
@@ -2622,8 +2620,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 238659,
-   "mcap_eff": 238318,
-   "shares": 1427054,
+   "mcap_eff": 238298,
+   "shares": 1426934,
    "shares_check": {
     "dart_common": 1427054,
     "dart_period": "2026-11012",
@@ -2674,8 +2672,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1675131,
-   "mcap_eff": 1656605,
-   "shares": 110146609,
+   "mcap_eff": 1656641,
+   "shares": 110149003,
    "shares_check": {
     "dart_common": 110146635,
     "dart_period": "2026-11012",

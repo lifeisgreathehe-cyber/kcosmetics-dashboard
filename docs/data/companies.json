@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-09",
+"updated": "2026-11-13",
 "companies": [
 {
 "code": "090430",
@@ -13,6 +13,7 @@
 "코스알엑스",
 "라네즈"
 ],
+"pref": "090435",
 "annual": {
 "2016": {
 "rev": 5645440,
@@ -315,7 +316,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 58375274
+"common": 58375274,
+"common_issued": 58492759
 }
 },
 {
@@ -328,6 +330,7 @@
 "아모레퍼시픽그룹",
 "아모레"
 ],
+"pref": "002795",
 "annual": {
 "2016": {
 "rev": 6697561,
@@ -630,7 +633,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 76281253
+"common": 76281253,
+"common_issued": 76458180
 }
 },
 {
@@ -645,6 +649,7 @@
 "더페이스샵",
 "힌스"
 ],
+"pref": "051905",
 "annual": {
 "2016": {
 "rev": 6094059,
@@ -948,7 +953,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 14659784,
-"pref": 2096259
+"common_issued": 14975523,
+"pref": 2096259,
+"pref_issued": 2096259
 }
 },
 {
@@ -1173,7 +1180,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 37438155
+"common": 37438155,
+"common_issued": 37438155
 }
 },
 {
@@ -1441,19 +1449,26 @@
 "gp": 85962,
 "op": 4527,
 "ni": 4611
+},
+"2026Q3": {
+"rev": 190362,
+"gp": 77588,
+"op": -3297,
+"ni": -9815
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 412915,
-"cash": 116396,
-"st_fin": 8411,
-"debt": 2266
+"period": "2026Q3",
+"equity": 402360,
+"cash": 70859,
+"st_fin": 8111,
+"debt": 2230
 },
 "shares": {
 "period": "2026-11012",
-"common": 25192568
+"common": 25192568,
+"common_issued": 26409935
 }
 },
 {
@@ -1763,7 +1778,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 23902651
+"common": 23902651,
+"common_issued": 24054799
 }
 },
 {
@@ -2078,7 +2094,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 17524623
+"common": 17524623,
+"common_issued": 18071353
 }
 },
 {
@@ -2395,7 +2412,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 34636358
+"common": 34636358,
+"common_issued": 34941838
 }
 },
 {
@@ -2705,7 +2723,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15641256
+"common": 15641256,
+"common_issued": 16027989
 }
 },
 {
@@ -2826,7 +2845,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15448872
+"common": 15448872,
+"common_issued": 16393260
 }
 },
 {
@@ -3136,7 +3156,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 11345662
+"common": 11345662,
+"common_issued": 11349509
 }
 },
 {
@@ -3446,7 +3467,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 23605077
+"common": 23605077,
+"common_issued": 23605077
 }
 },
 {
@@ -3756,7 +3778,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 10680000
+"common": 10680000,
+"common_issued": 10680000
 }
 },
 {
@@ -3934,7 +3957,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 13369365
+"common": 13369365,
+"common_issued": 13629901
 }
 },
 {
@@ -4172,7 +4196,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12398386
+"common": 12398386,
+"common_issued": 12400000
 }
 },
 {
@@ -4930,7 +4955,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 10389648,
-"pref": 1175647
+"common_issued": 10389648,
+"pref": 1175647,
+"pref_issued": 1175647
 }
 },
 {
@@ -5240,7 +5267,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 10803292
+"common": 10803292,
+"common_issued": 12304033
 }
 },
 {
@@ -5524,7 +5552,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 65219695
+"common": 65219695,
+"common_issued": 65235659
 }
 },
 {
@@ -5676,7 +5705,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 88231173
+"common": 88231173,
+"common_issued": 89280646
 }
 },
 {
@@ -6300,7 +6330,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 11001273
+"common": 11001273,
+"common_issued": 11229930
 }
 },
 {
@@ -6520,7 +6551,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 37287099
+"common": 37287099,
+"common_issued": 37287099
 }
 },
 {
@@ -6701,7 +6733,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 61540462
+"common": 61540462,
+"common_issued": 61640722
 }
 },
 {
@@ -6895,7 +6928,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 7999808
+"common": 7999808,
+"common_issued": 8128000
 }
 },
 {
@@ -6980,7 +7014,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12410551
+"common": 12410551,
+"common_issued": 12493915
 }
 },
 {
@@ -7290,7 +7325,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 17616685
+"common": 17616685,
+"common_issued": 21929315
 }
 },
 {
@@ -7600,7 +7636,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 16067071
+"common": 16067071,
+"common_issued": 16068000
 }
 },
 {
@@ -7910,7 +7947,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 32200000
+"common": 32200000,
+"common_issued": 40000000
 }
 },
 {
@@ -8086,7 +8124,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 16553659
+"common": 16553659,
+"common_issued": 16681385
 }
 },
 {
@@ -8388,19 +8427,26 @@
 "gp": 37071,
 "op": 10408,
 "ni": 9240
+},
+"2026Q3": {
+"rev": 57855,
+"gp": 32741,
+"op": 6461,
+"ni": 715
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 75852,
-"cash": 27502,
+"period": "2026Q3",
+"equity": 75964,
+"cash": 25362,
 "st_fin": null,
-"debt": 11150
+"debt": 21112
 },
 "shares": {
 "period": "2026-11012",
-"common": 23315163
+"common": 23315163,
+"common_issued": 26014161
 }
 },
 {
@@ -8714,7 +8760,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 45110727
+"common": 45110727,
+"common_issued": 45230420
 }
 },
 {
@@ -9027,7 +9074,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 34296259
+"common": 34296259,
+"common_issued": 34296259
 }
 },
 {
@@ -9337,7 +9385,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 9554839
+"common": 9554839,
+"common_issued": 9603921
 }
 },
 {
@@ -9345,6 +9394,11 @@
 "name": "잉글우드랩",
 "group": "ODM·OEM",
 "market": "KOSDAQ",
+"fin_ccy": {
+"ccy": "USD",
+"converted": true,
+"note": "USD 공시 → 연평균 환율로 원화 환산(config/fx.json)"
+},
 "annual": {
 "2016": {
 "rev": 78914,
@@ -9635,24 +9689,26 @@
 "gp": 14500,
 "op": 8700,
 "ni": 5800
+},
+"2026Q3": {
+"rev": 46400,
+"gp": 11600,
+"op": 5800,
+"ni": -1450
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 169650,
+"period": "2026Q3",
+"equity": 178350,
 "cash": 42050,
 "st_fin": 5800,
-"debt": 15950
+"debt": 17400
 },
 "shares": {
-"period": "2026-11012",
-"common": 19867866
-},
-"fin_ccy": {
-"ccy": "USD",
-"converted": true,
-"note": "USD 공시 → 연평균 환율로 원화 환산(config/fx.json)"
+"period": "2026-11014",
+"common": 19867866,
+"common_issued": 19867866
 }
 },
 {
@@ -9962,7 +10018,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 22660000
+"common": 22660000,
+"common_issued": 22660000
 }
 },
 {
@@ -10242,7 +10299,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 18843789
+"common": 18843789,
+"common_issued": 19341591
 }
 },
 {
@@ -10432,7 +10490,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12010260
+"common": 12010260,
+"common_issued": 12203280
 }
 },
 {
@@ -10742,7 +10801,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 48870784
+"common": 48870784,
+"common_issued": 53715000
 }
 },
 {
@@ -11052,7 +11112,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 10948169
+"common": 10948169,
+"common_issued": 11086579
 }
 },
 {
@@ -11362,7 +11423,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 30000000
+"common": 30000000,
+"common_issued": 30000000
 }
 },
 {
@@ -11540,19 +11602,26 @@
 "gp": 6687,
 "op": 4998,
 "ni": 3540
+},
+"2026Q3": {
+"rev": 23077,
+"gp": 6449,
+"op": 4466,
+"ni": 3500
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 71313,
-"cash": 16613,
+"period": "2026Q3",
+"equity": 74823,
+"cash": 20791,
 "st_fin": null,
-"debt": 13350
+"debt": 11350
 },
 "shares": {
-"period": "2026-11012",
-"common": 17863600
+"period": "2026-11014",
+"common": 17863600,
+"common_issued": 17863600
 }
 },
 {
@@ -11700,19 +11769,26 @@
 "gp": 3829,
 "op": 2103,
 "ni": 1970
+},
+"2026Q3": {
+"rev": 4258,
+"gp": 2946,
+"op": 1228,
+"ni": 1088
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 72929,
-"cash": 12438,
-"st_fin": 1404,
+"period": "2026Q3",
+"equity": 74016,
+"cash": 12022,
+"st_fin": 1628,
 "debt": 0
 },
 "shares": {
-"period": "2026-11012",
-"common": 8528949
+"period": "2026-11014",
+"common": 8528949,
+"common_issued": 8695700
 }
 },
 {
@@ -11944,7 +12020,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 8408463
+"common": 8408463,
+"common_issued": 8922463
 }
 },
 {
@@ -12198,7 +12275,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 26737464
+"common": 26737464,
+"common_issued": 26969704
 }
 },
 {
@@ -12508,7 +12586,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 17199046
+"common": 17199046,
+"common_issued": 17199046
 }
 },
 {
@@ -12608,7 +12687,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 14844207
+"common": 14844207,
+"common_issued": 14845791
 }
 },
 {
@@ -12828,7 +12908,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 68394886
+"common": 68394886,
+"common_issued": 68394886
 }
 },
 {
@@ -13142,7 +13223,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 11506270
+"common": 11506270,
+"common_issued": 11586575
 }
 }
 ]

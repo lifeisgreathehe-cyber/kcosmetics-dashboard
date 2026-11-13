@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라, 지난 10년 순이익률(가장 좋은 해와 나쁜 해를 뺀 평균)과 추세 매출로 계산한 '사이클 평균 이익'에서 출발해, 사업 구조가 바뀐 회사는 그 이유를 적고 조정했어요. ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금이 사이클의 어디쯤인지(호황 정점권·상승기·중립·회복기·바닥권)에 따라 앞으로 1~3년만 이어진다고 보고 그 현재가치만 더하거나 뺐어요. ③ 성장률(g)은 사이클이 아닌 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고, 6~10년차 성장률은 2%로 수렴, 순현금은 더해요(차입은 빼요).",
  "terminal_growth": 2.0,
  "asof": "2026-11-05",
@@ -30,14 +30,14 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1341493257,
-   "mcap_eff": 1324542330,
-   "shares": 6414248571,
+   "mcap_eff": 1324542352,
+   "shares": 6414248678,
    "shares_check": {
     "dart_common": 5764191903,
     "dart_period": "2026-11012",
     "listed": 5846278454,
     "pref": "005935",
-    "pref_shares": 802371203,
+    "pref_shares": 802371523,
     "pref_price": 167300
    },
    "equity": 565064740,
@@ -100,7 +100,7 @@
     "bear": 113153,
     "bull": 176349,
     "upside": -31.6,
-    "pct": 72,
+    "pct": 70,
     "tier": "싼 ⅓",
     "exp_ex": 3.8,
     "conflict": false
@@ -132,8 +132,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 906541029,
-   "mcap_eff": 882444696,
-   "shares": 711075500,
+   "mcap_eff": 904522089,
+   "shares": 728865503,
    "shares_check": {
     "dart_common": 711075500,
     "dart_period": "2026-11012",
@@ -146,37 +146,37 @@
    "equity_source": "DART 2026Q2",
    "net_cash": 8272412,
    "dividend_yield": null,
-   "per": 5.4,
+   "per": 5.6,
    "roe": 61.7,
-   "pbr": 3.36,
+   "pbr": 3.45,
    "dcf": {
     "E1": 60000000,
     "r": 10.0,
     "c": 0.6,
     "note": "10년 평균 순이익률 21%, 추세 매출 98조원으로는 정상 이익이 21조원이지만 HBM 1위로 이익 체질이 바뀐 점을 반영해 정상 매출 200조원 × 순이익률 30% = 60조원으로 잡았어요. 3분기 영업이익률 80%는 정상 수준이 아니라 호황 초과 이익으로 보고 2028년까지만 반영했어요.",
-    "fwd_per": 14.7,
-    "norm_per": 14.7,
+    "fwd_per": 15.1,
+    "norm_per": 15.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 585431406,
-      "per_share": 823304,
-      "upside": -33.7
+      "per_share": 803209,
+      "upside": -35.3
      },
      "base": {
       "g": 6.0,
       "value": 712759053,
-      "per_share": 1002368,
-      "upside": -19.2
+      "per_share": 977902,
+      "upside": -21.2
      },
      "bull": {
       "g": 12.0,
       "value": 878702662,
-      "per_share": 1235738,
-      "upside": -0.4
+      "per_share": 1205576,
+      "upside": -2.9
      }
     },
-    "implied_g": 12.1,
+    "implied_g": 12.8,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 서버 수요로 D램·HBM 가격과 이익이 역사상 최고 수준이에요. 2027~28년 물량 상당 부분이 장기계약으로 팔려 호황이 1~2년 더 이어질 가능성이 높지만, 과거 사이클처럼 공급이 늘면 이익이 크게 줄어드는 구간이 다시 올 수 있어요. 그래서 지금 이익이 아니라 호황과 불황을 평균한 이익으로 가치를 매기고, 남은 호황 기간의 초과 이익만 따로 더했어요.",
@@ -198,13 +198,13 @@
     "ttm_ni": 161965390,
     "oneoff": false,
     "E": 75995098,
-    "per_share": 1005586,
-    "bear": 805398,
-    "bull": 1255210,
-    "upside": -19.0,
-    "pct": 79,
+    "per_share": 981042,
+    "bear": 785740,
+    "bull": 1224573,
+    "upside": -20.9,
+    "pct": 78,
     "tier": "싼 ⅓",
-    "exp_ex": 5.0,
+    "exp_ex": 4.8,
     "conflict": false
    }
   },
@@ -234,8 +234,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 101977222,
-   "mcap_eff": 101861379,
-   "shares": 131774100,
+   "mcap_eff": 101834768,
+   "shares": 131739674,
    "shares_check": {
     "dart_common": 131774099,
     "dart_period": "2026-11012",
@@ -262,19 +262,19 @@
      "bear": {
       "g": 0.0,
       "value": 77576077,
-      "per_share": 588705,
+      "per_share": 588859,
       "upside": -23.8
      },
      "base": {
       "g": 5.0,
       "value": 91435940,
-      "per_share": 693884,
+      "per_share": 694065,
       "upside": -10.2
      },
      "bull": {
       "g": 10.0,
       "value": 108742153,
-      "per_share": 825216,
+      "per_share": 825432,
       "upside": 6.8
      }
     },
@@ -300,13 +300,13 @@
     "ttm_ni": 32823646,
     "oneoff": false,
     "E": 16281777,
-    "per_share": 1162576,
-    "bear": 931134,
-    "bull": 1451170,
+    "per_share": 1162879,
+    "bear": 931377,
+    "bull": 1451549,
     "upside": 50.4,
-    "pct": 94,
+    "pct": 93,
     "tier": "싼 ⅓",
-    "exp_ex": 9.3,
+    "exp_ex": 9.2,
     "conflict": false
    }
   },
@@ -336,8 +336,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3549996,
-   "mcap_eff": 3489899,
-   "shares": 42768370,
+   "mcap_eff": 3489921,
+   "shares": 42768640,
    "shares_check": {
     "dart_common": 42768373,
     "dart_period": "2026-11012",
@@ -368,13 +368,13 @@
      "bear": {
       "g": 1.0,
       "value": 3235808,
-      "per_share": 75659,
+      "per_share": 75658,
       "upside": -7.3
      },
      "base": {
       "g": 5.0,
       "value": 3748605,
-      "per_share": 87649,
+      "per_share": 87648,
       "upside": 7.4
      },
      "bull": {
@@ -437,9 +437,9 @@
    "price": 24000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 390343,
-   "mcap_eff": 390343,
-   "shares": 16264292,
+   "mcap": 390302,
+   "mcap_eff": 390302,
+   "shares": 16262583,
    "shares_check": {
     "dart_common": 16264300,
     "dart_period": "2026-11012",
@@ -470,20 +470,20 @@
      "bear": {
       "g": -5.0,
       "value": 395290,
-      "per_share": 24304,
+      "per_share": 24307,
       "upside": 1.3
      },
      "base": {
       "g": 1.0,
       "value": 506152,
-      "per_share": 31120,
+      "per_share": 31124,
       "upside": 29.7
      },
      "bull": {
       "g": 6.0,
       "value": 624715,
-      "per_share": 38410,
-      "upside": 60.0
+      "per_share": 38414,
+      "upside": 60.1
      }
     },
     "implied_g": -5.3,
@@ -507,10 +507,10 @@
     "ttm_ni": 58062,
     "oneoff": false,
     "E": 106844,
-    "per_share": 61811,
-    "bear": 49506,
-    "bull": 77154,
-    "upside": 157.5,
+    "per_share": 61817,
+    "bear": 49511,
+    "bull": 77162,
+    "upside": 157.6,
     "pct": 98,
     "tier": "싼 ⅓",
     "exp_ex": 13.1,
@@ -542,9 +542,9 @@
    "price": 29800,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 353394,
-   "mcap_eff": 353394,
-   "shares": 11858859,
+   "mcap": 353358,
+   "mcap_eff": 353358,
+   "shares": 11857651,
    "shares_check": {
     "dart_common": 11858844,
     "dart_period": "2026-11012",
@@ -571,23 +571,23 @@
      "bear": {
       "g": 5.0,
       "value": 69116,
-      "per_share": 5828,
+      "per_share": 5829,
       "upside": -80.4
      },
      "base": {
       "g": 20.0,
       "value": 103213,
-      "per_share": 8703,
+      "per_share": 8704,
       "upside": -70.8
      },
      "bull": {
       "g": 35.0,
       "value": 165197,
-      "per_share": 13930,
-      "upside": -53.3
+      "per_share": 13932,
+      "upside": -53.2
      }
     },
-    "implied_g": 57.7,
+    "implied_g": 57.6,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -635,8 +635,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 245555,
-   "mcap_eff": 242660,
-   "shares": 21100870,
+   "mcap_eff": 242629,
+   "shares": 21098174,
    "shares_check": {
     "dart_common": 21100831,
     "dart_period": "2026-11012",
@@ -669,13 +669,13 @@
      "base": {
       "g": 10.0,
       "value": 93696,
-      "per_share": 4440,
+      "per_share": 4441,
       "upside": -61.4
      },
      "bull": {
       "g": 18.0,
       "value": 127669,
-      "per_share": 6050,
+      "per_share": 6051,
       "upside": -47.4
      }
     },
@@ -701,9 +701,9 @@
     "bear": 2349,
     "bull": 3661,
     "upside": -74.5,
-    "pct": 35,
+    "pct": 34,
     "tier": "가운데 ⅓",
-    "exp_ex": -2.6,
+    "exp_ex": -2.7,
     "conflict": false
    }
   },
@@ -711,10 +711,10 @@
    "name": "제주반도체",
    "group": "파운드리·팹리스",
    "ttm": {
-    "rev": 673133,
-    "op": 216821,
-    "ni": 260880,
-    "period": "2025Q3~2026Q2"
+    "rev": 908313,
+    "op": 362802,
+    "ni": 305426,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -724,33 +724,33 @@
      -4.4,
      13.9
     ],
-    "trend_rev": 335619,
-    "ttm_rev": 673133,
-    "norm_ni": 25431,
-    "trend_g": 17.2
+    "trend_rev": 380731,
+    "ttm_rev": 908313,
+    "norm_ni": 28849,
+    "trend_g": 18.8
    },
    "price": 60100,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 2070035,
-   "mcap_eff": 2024355,
-   "shares": 33683111,
+   "mcap_eff": 2027050,
+   "shares": 33727953,
    "shares_check": {
-    "dart_common": 33683104,
-    "dart_period": "2026-11012",
+    "dart_common": 33727610,
+    "dart_period": "2026-11014",
     "listed": 34443182,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 446897,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -20048,
+   "equity": 514188,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -68425,
    "dividend_yield": null,
-   "per": 7.8,
-   "roe": 58.4,
-   "pbr": 4.53,
-   "net_debt_levered": -20048,
+   "per": 6.6,
+   "roe": 59.4,
+   "pbr": 3.94,
+   "net_debt_levered": -68425,
    "dcf": {
     "E1": 45000,
     "r": 11.0,
@@ -761,24 +761,24 @@
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 547354,
-      "per_share": 16250,
-      "upside": -73.0
+      "value": 593921,
+      "per_share": 17609,
+      "upside": -70.7
      },
      "base": {
       "g": 5.0,
-      "value": 681806,
-      "per_share": 20242,
-      "upside": -66.3
+      "value": 728373,
+      "per_share": 21596,
+      "upside": -64.1
      },
      "bull": {
       "g": 12.0,
-      "value": 845154,
-      "per_share": 25091,
-      "upside": -58.3
+      "value": 891721,
+      "per_share": 26439,
+      "upside": -56.0
      }
     },
-    "implied_g": 37.2,
+    "implied_g": 36.6,
     "cycle": {
      "position": "호황 정점권",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -786,27 +786,27 @@
       1.0,
       0.5
      ],
-     "excess": 215880,
-     "excess_value": 225674
+     "excess": 260426,
+     "excess_value": 272241
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 215000,
-    "norm": 25431,
-    "ttm_ni": 260880,
+    "period": "2025Q4~2026Q3",
+    "core": 294206,
+    "norm": 28849,
+    "ttm_ni": 305426,
     "oneoff": false,
-    "E": 120216,
-    "per_share": 33581,
-    "bear": 26896,
-    "bull": 41917,
-    "upside": -44.1,
-    "pct": 62,
-    "tier": "가운데 ⅓",
-    "exp_ex": 2.4,
-    "conflict": false
+    "E": 161528,
+    "per_share": 45062,
+    "bear": 36091,
+    "bull": 56247,
+    "upside": -25.0,
+    "pct": 72,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.4,
+    "conflict": true
    }
   },
   "200710": {
@@ -835,8 +835,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 224990,
-   "mcap_eff": 216826,
-   "shares": 12975823,
+   "mcap_eff": 216866,
+   "shares": 12978217,
    "shares_check": {
     "dart_common": 12975826,
     "dart_period": "2026-11012",
@@ -864,20 +864,20 @@
      "bear": {
       "g": 0.0,
       "value": 41038,
-      "per_share": 3163,
+      "per_share": 3162,
       "upside": -81.1
      },
      "base": {
       "g": 15.0,
       "value": 80422,
-      "per_share": 6198,
+      "per_share": 6197,
       "upside": -62.9
      },
      "bull": {
       "g": 30.0,
       "value": 153192,
-      "per_share": 11806,
-      "upside": -29.3
+      "per_share": 11804,
+      "upside": -29.4
      }
     },
     "implied_g": 38.5,
@@ -927,9 +927,9 @@
    "price": 15320,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 167381,
-   "mcap_eff": 167381,
-   "shares": 10925653,
+   "mcap": 167336,
+   "mcap_eff": 167336,
+   "shares": 10922715,
    "shares_check": {
     "dart_common": 10925658,
     "dart_period": "2026-11012",
@@ -963,13 +963,13 @@
      "base": {
       "g": 15.0,
       "value": 59813,
-      "per_share": 5475,
+      "per_share": 5476,
       "upside": -64.3
      },
      "bull": {
       "g": 30.0,
       "value": 120454,
-      "per_share": 11025,
+      "per_share": 11028,
       "upside": -28.0
      }
     },
@@ -1021,8 +1021,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 113103,
-   "mcap_eff": 105297,
-   "shares": 16556132,
+   "mcap_eff": 105314,
+   "shares": 16558805,
    "shares_check": {
     "dart_common": 16556112,
     "dart_period": "2026-11012",
@@ -1056,13 +1056,13 @@
      "base": {
       "g": 4.0,
       "value": 121396,
-      "per_share": 7332,
+      "per_share": 7331,
       "upside": 15.3
      },
      "bull": {
       "g": 9.0,
       "value": 152061,
-      "per_share": 9185,
+      "per_share": 9183,
       "upside": 44.4
      }
     },
@@ -1087,13 +1087,13 @@
     "ttm_ni": 9579,
     "oneoff": false,
     "E": 10822,
-    "per_share": 6150,
-    "bear": 4926,
-    "bull": 7677,
+    "per_share": 6149,
+    "bear": 4925,
+    "bull": 7676,
     "upside": -3.3,
-    "pct": 85,
+    "pct": 84,
     "tier": "싼 ⅓",
-    "exp_ex": 6.2,
+    "exp_ex": 6.1,
     "conflict": false
    }
   },
@@ -1123,8 +1123,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 117651,
-   "mcap_eff": 114695,
-   "shares": 14761261,
+   "mcap_eff": 114675,
+   "shares": 14758687,
    "shares_check": {
     "dart_common": 14761296,
     "dart_period": "2026-11012",
@@ -1152,19 +1152,19 @@
      "bear": {
       "g": 0.0,
       "value": 97743,
-      "per_share": 6622,
+      "per_share": 6623,
       "upside": -14.8
      },
      "base": {
       "g": 8.0,
       "value": 138710,
-      "per_share": 9397,
-      "upside": 20.9
+      "per_share": 9399,
+      "upside": 21.0
      },
      "bull": {
       "g": 15.0,
       "value": 188214,
-      "per_share": 12751,
+      "per_share": 12753,
       "upside": 64.1
      }
     },
@@ -1186,12 +1186,12 @@
     "ttm_ni": -58082,
     "oneoff": true,
     "E": 7615,
-    "per_share": 4854,
-    "bear": 3887,
-    "bull": 6059,
+    "per_share": 4855,
+    "bear": 3888,
+    "bull": 6060,
     "upside": -37.5,
-    "pct": 67,
-    "tier": "싼 ⅓",
+    "pct": 66,
+    "tier": "가운데 ⅓",
     "exp_ex": 3.2,
     "conflict": false
    }
@@ -1228,8 +1228,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 48956,
-   "mcap_eff": 48904,
-   "shares": 32887693,
+   "mcap_eff": 48956,
+   "shares": 32922663,
    "shares_check": {
     "dart_common": 32887431,
     "dart_period": "2026-11012",
@@ -1244,7 +1244,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -71.8,
-   "pbr": 3.56,
+   "pbr": 3.57,
    "quant": {
     "pos": "상승기",
     "period": "2025Q3~2026Q2",
@@ -1286,8 +1286,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 27702,
-   "mcap_eff": 22119,
-   "shares": 6524779,
+   "mcap_eff": 22136,
+   "shares": 6529794,
    "shares_check": {
     "dart_common": 6524731,
     "dart_period": "2026-11012",
@@ -1344,8 +1344,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 19438,
-   "mcap_eff": 18879,
-   "shares": 7289189,
+   "mcap_eff": 18854,
+   "shares": 7279537,
    "shares_check": {
     "dart_common": 7289290,
     "dart_period": "2026-11012",
@@ -1396,8 +1396,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 402051,
-   "mcap_eff": 388724,
-   "shares": 20214457,
+   "mcap_eff": 388677,
+   "shares": 20212012,
    "shares_check": {
     "dart_common": 20214445,
     "dart_period": "2026-11012",
@@ -1424,19 +1424,19 @@
      "bear": {
       "g": -5.0,
       "value": 89557,
-      "per_share": 4430,
+      "per_share": 4431,
       "upside": -77.0
      },
      "base": {
       "g": 5.0,
       "value": 106900,
-      "per_share": 5288,
+      "per_share": 5289,
       "upside": -72.5
      },
      "bull": {
       "g": 15.0,
       "value": 133776,
-      "per_share": 6618,
+      "per_share": 6619,
       "upside": -65.6
      }
     },
@@ -1462,7 +1462,7 @@
     "bear": 1684,
     "bull": 2625,
     "upside": -89.1,
-    "pct": 10,
+    "pct": 8,
     "tier": "비싼 ⅓",
     "exp_ex": -7.9,
     "conflict": false
@@ -1500,8 +1500,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 168920,
-   "mcap_eff": 168881,
-   "shares": 26346490,
+   "mcap_eff": 168920,
+   "shares": 26352574,
    "shares_check": {
     "dart_common": 26346530,
     "dart_period": "2026-11012",
@@ -1557,9 +1557,9 @@
    "price": 9040,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 128256,
-   "mcap_eff": 128256,
-   "shares": 14187611,
+   "mcap": 128250,
+   "mcap_eff": 128250,
+   "shares": 14186947,
    "shares_check": {
     "dart_common": 14187572,
     "dart_period": "2026-11012",
@@ -1616,8 +1616,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 6925,
-   "mcap_eff": 6920,
-   "shares": 9153439,
+   "mcap_eff": 6922,
+   "shares": 9156085,
    "shares_check": {
     "dart_common": 9153171,
     "dart_period": "2026-11012",
@@ -1674,8 +1674,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 92066,
-   "mcap_eff": 91787,
-   "shares": 30697993,
+   "mcap_eff": 91837,
+   "shares": 30714716,
    "shares_check": {
     "dart_common": 30697929,
     "dart_period": "2026-11012",
@@ -1732,8 +1732,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 96356,
-   "mcap_eff": 91519,
-   "shares": 25005191,
+   "mcap_eff": 91563,
+   "shares": 25017213,
    "shares_check": {
     "dart_common": 25005241,
     "dart_period": "2026-11012",
@@ -1784,8 +1784,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 123688,
-   "mcap_eff": 119600,
-   "shares": 11725490,
+   "mcap_eff": 119629,
+   "shares": 11728333,
    "shares_check": {
     "dart_common": 11725444,
     "dart_period": "2026-11012",
@@ -1812,23 +1812,23 @@
      "bear": {
       "g": 0.0,
       "value": 51783,
-      "per_share": 4416,
+      "per_share": 4415,
       "upside": -56.7
      },
      "base": {
       "g": 10.0,
       "value": 69563,
-      "per_share": 5933,
-      "upside": -41.8
+      "per_share": 5931,
+      "upside": -41.9
      },
      "bull": {
       "g": 20.0,
       "value": 96658,
-      "per_share": 8243,
+      "per_share": 8241,
       "upside": -19.2
      }
     },
-    "implied_g": 26.1,
+    "implied_g": 26.2,
     "cycle": {
      "position": "회복기",
      "note": "AI 칩을 빼면 스마트폰·가전·자동차·디스플레이용 칩 수요는 2023년 이후 회복이 더뎌요. 메모리 값이 올라 완제품 원가가 오르면서 비메모리 칩 주문은 오히려 눌려 있어요.",
@@ -1911,8 +1911,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 85099,
-   "mcap_eff": 85086,
-   "shares": 40134906,
+   "mcap_eff": 85061,
+   "shares": 40123113,
    "shares_check": {
     "dart_common": 40135001,
     "dart_period": "2026-11012",
@@ -1969,8 +1969,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 15925,
-   "mcap_eff": 14317,
-   "shares": 6449099,
+   "mcap_eff": 15925,
+   "shares": 7173423,
    "shares_check": {
     "dart_common": 6449231,
     "dart_period": "2026-11012",
@@ -1985,7 +1985,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -28.3,
-   "pbr": 0.8,
+   "pbr": 0.89,
    "quant": {
     "pos": "하강기",
     "period": "2025Q3~2026Q2",
@@ -2021,8 +2021,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3803949,
-   "mcap_eff": 3770816,
-   "shares": 48655690,
+   "mcap_eff": 3770762,
+   "shares": 48654994,
    "shares_check": {
     "dart_common": 48655690,
     "dart_period": "2026-11012",
@@ -2065,7 +2065,7 @@
      "bull": {
       "g": 16.0,
       "value": 2084675,
-      "per_share": 42845,
+      "per_share": 42846,
       "upside": -44.7
      }
     },
@@ -2091,7 +2091,7 @@
     "bear": 11795,
     "bull": 18382,
     "upside": -81.0,
-    "pct": 25,
+    "pct": 26,
     "tier": "비싼 ⅓",
     "exp_ex": -4.5,
     "conflict": false
@@ -2123,8 +2123,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 7920413,
-   "mcap_eff": 7786244,
-   "shares": 45693920,
+   "mcap_eff": 7786275,
+   "shares": 45694102,
    "shares_check": {
     "dart_common": 45693922,
     "dart_period": "2026-11012",
@@ -2228,8 +2228,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 2578048,
-   "mcap_eff": 2578038,
-   "shares": 28966719,
+   "mcap_eff": 2578048,
+   "shares": 28966831,
    "shares_check": {
     "dart_common": 28966714,
     "dart_period": "2026-11012",
@@ -2268,7 +2268,7 @@
      "bull": {
       "g": 14.0,
       "value": 1929203,
-      "per_share": 66601,
+      "per_share": 66600,
       "upside": -25.2
      }
     },
@@ -2330,8 +2330,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1808125,
-   "mcap_eff": 1785085,
-   "shares": 22624651,
+   "mcap_eff": 1785134,
+   "shares": 22625272,
    "shares_check": {
     "dart_common": 22624647,
     "dart_period": "2026-11012",
@@ -2358,19 +2358,19 @@
      "bear": {
       "g": 2.0,
       "value": 926305,
-      "per_share": 40942,
+      "per_share": 40941,
       "upside": -48.1
      },
      "base": {
       "g": 9.0,
       "value": 1141482,
-      "per_share": 50453,
+      "per_share": 50452,
       "upside": -36.1
      },
      "bull": {
       "g": 15.0,
       "value": 1385880,
-      "per_share": 61255,
+      "per_share": 61254,
       "upside": -22.4
      }
     },
@@ -2392,9 +2392,9 @@
     "ttm_ni": 111248,
     "oneoff": true,
     "E": 49098,
-    "per_share": 20419,
+    "per_share": 20418,
     "bear": 16354,
-    "bull": 25488,
+    "bull": 25487,
     "upside": -74.1,
     "pct": 37,
     "tier": "가운데 ⅓",
@@ -2406,10 +2406,10 @@
    "name": "테스",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 405469,
-    "op": 69427,
-    "ni": 80765,
-    "period": "2025Q3~2026Q2"
+    "rev": 462044,
+    "op": 85626,
+    "ni": 80619,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -2419,17 +2419,17 @@
      1.1,
      19.7
     ],
-    "trend_rev": 316765,
-    "ttm_rev": 405469,
-    "norm_ni": 46201,
-    "trend_g": 4.2
+    "trend_rev": 332801,
+    "ttm_rev": 462044,
+    "norm_ni": 48540,
+    "trend_g": 4.8
    },
    "price": 89400,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1730780,
-   "mcap_eff": 1644227,
-   "shares": 18391801,
+   "mcap_eff": 1644223,
+   "shares": 18391756,
    "shares_check": {
     "dart_common": 18391806,
     "dart_period": "2026-11012",
@@ -2438,13 +2438,13 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 467634,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 128181,
+   "equity": 482040,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 104696,
    "dividend_yield": null,
    "per": 20.4,
-   "roe": 17.3,
-   "pbr": 3.52,
+   "roe": 16.7,
+   "pbr": 3.41,
    "dcf": {
     "E1": 60000,
     "r": 10.5,
@@ -2455,24 +2455,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 651106,
-      "per_share": 35402,
-      "upside": -60.4
+      "value": 631468,
+      "per_share": 34334,
+      "upside": -61.6
      },
      "base": {
       "g": 7.0,
-      "value": 831414,
-      "per_share": 45206,
-      "upside": -49.4
+      "value": 813250,
+      "per_share": 44218,
+      "upside": -50.5
      },
      "bull": {
       "g": 13.0,
-      "value": 1036532,
-      "per_share": 56358,
-      "upside": -37.0
+      "value": 1020046,
+      "per_share": 55462,
+      "upside": -38.0
      }
     },
-    "implied_g": 25.1,
+    "implied_g": 25.3,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2481,26 +2481,26 @@
       0.7,
       0.3
      ],
-     "excess": 20765,
-     "excess_value": 28251
+     "excess": 20619,
+     "excess_value": 28052
     },
-    "net_cash_added": 128181
+    "net_cash_added": 104696
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 67459,
-    "norm": 46201,
-    "ttm_ni": 80765,
+    "period": "2025Q4~2026Q3",
+    "core": 73704,
+    "norm": 48540,
+    "ttm_ni": 80619,
     "oneoff": false,
-    "E": 56830,
-    "per_share": 29074,
-    "bear": 23286,
-    "bull": 36291,
-    "upside": -67.5,
-    "pct": 43,
+    "E": 61122,
+    "per_share": 31270,
+    "bear": 25045,
+    "bull": 39032,
+    "upside": -65.0,
+    "pct": 44,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.1,
+    "exp_ex": -0.6,
     "conflict": false
    }
   },
@@ -2530,8 +2530,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3254925,
-   "mcap_eff": 3217742,
-   "shares": 81358837,
+   "mcap_eff": 3217702,
+   "shares": 81357826,
    "shares_check": {
     "dart_common": 81358836,
     "dart_period": "2026-11012",
@@ -2570,7 +2570,7 @@
      "bull": {
       "g": 14.0,
       "value": 1675366,
-      "per_share": 20592,
+      "per_share": 20593,
       "upside": -47.9
      }
     },
@@ -2628,8 +2628,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1498724,
-   "mcap_eff": 1493870,
-   "shares": 19734082,
+   "mcap_eff": 1493835,
+   "shares": 19733620,
    "shares_check": {
     "dart_common": 19734079,
     "dart_period": "2026-11012",
@@ -2660,19 +2660,19 @@
      "bear": {
       "g": 2.0,
       "value": 815970,
-      "per_share": 41348,
+      "per_share": 41349,
       "upside": -45.4
      },
      "base": {
       "g": 7.0,
       "value": 1003462,
-      "per_share": 50849,
+      "per_share": 50850,
       "upside": -32.8
      },
      "bull": {
       "g": 12.0,
       "value": 1236976,
-      "per_share": 62682,
+      "per_share": 62684,
       "upside": -17.2
      }
     },
@@ -2699,10 +2699,10 @@
     "oneoff": false,
     "E": 73574,
     "per_share": 35080,
-    "bear": 28096,
-    "bull": 43788,
+    "bear": 28097,
+    "bull": 43789,
     "upside": -53.7,
-    "pct": 56,
+    "pct": 55,
     "tier": "가운데 ⅓",
     "exp_ex": 1.2,
     "conflict": false
@@ -2734,8 +2734,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 317360,
-   "mcap_eff": 307676,
-   "shares": 30075855,
+   "mcap_eff": 307732,
+   "shares": 30081329,
    "shares_check": {
     "dart_common": 30075860,
     "dart_period": "2026-11012",
@@ -2750,7 +2750,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -3.5,
-   "pbr": 0.96,
+   "pbr": 0.97,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
@@ -2762,19 +2762,19 @@
      "bear": {
       "g": 0.0,
       "value": 143937,
-      "per_share": 4786,
+      "per_share": 4785,
       "upside": -53.2
      },
      "base": {
       "g": 8.0,
       "value": 212206,
-      "per_share": 7056,
+      "per_share": 7054,
       "upside": -31.0
      },
      "bull": {
       "g": 15.0,
       "value": 294856,
-      "per_share": 9804,
+      "per_share": 9802,
       "upside": -4.2
      }
     },
@@ -2803,7 +2803,7 @@
     "bear": 458,
     "bull": 713,
     "upside": -94.4,
-    "pct": 5,
+    "pct": 4,
     "tier": "비싼 ⅓",
     "exp_ex": -11.8,
     "conflict": false
@@ -2835,8 +2835,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1034408,
-   "mcap_eff": 1025427,
-   "shares": 26326752,
+   "mcap_eff": 1034408,
+   "shares": 26557330,
    "shares_check": {
     "dart_common": 26326765,
     "dart_period": "2026-11012",
@@ -2849,37 +2849,37 @@
    "equity_source": "DART 2026Q2",
    "net_cash": 190119,
    "dividend_yield": null,
-   "per": 15.1,
+   "per": 15.3,
    "roe": 26.3,
-   "pbr": 3.99,
+   "pbr": 4.02,
    "dcf": {
     "E1": 40000,
     "r": 11.0,
     "c": 0.8,
     "note": "8년 평균 이익은 243억원이지만 SK하이닉스 식각 장비 공급 확대로 매출이 추세의 2배 가까이 늘었어요. 정상 매출 2,000억원 × 20% = 400억원으로 봤어요.",
-    "fwd_per": 25.6,
-    "norm_per": 25.6,
+    "fwd_per": 25.9,
+    "norm_per": 25.9,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 522489,
-      "per_share": 19846,
-      "upside": -49.0
+      "per_share": 19674,
+      "upside": -49.5
      },
      "base": {
       "g": 10.0,
       "value": 684307,
-      "per_share": 25993,
-      "upside": -33.3
+      "per_share": 25767,
+      "upside": -33.8
      },
      "bull": {
       "g": 20.0,
       "value": 932080,
-      "per_share": 35404,
-      "upside": -9.1
+      "per_share": 35097,
+      "upside": -9.9
      }
     },
-    "implied_g": 22.9,
+    "implied_g": 23.2,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -2901,13 +2901,13 @@
     "ttm_ni": 67787,
     "oneoff": false,
     "E": 42448,
-    "per_share": 15171,
-    "bear": 12151,
-    "bull": 18937,
-    "upside": -61.1,
-    "pct": 51,
+    "per_share": 15039,
+    "bear": 12045,
+    "bull": 18772,
+    "upside": -61.4,
+    "pct": 50,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.1,
+    "exp_ex": 0.0,
     "conflict": false
    }
   },
@@ -2937,8 +2937,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3055414,
-   "mcap_eff": 3055391,
-   "shares": 21562392,
+   "mcap_eff": 3055414,
+   "shares": 21562555,
    "shares_check": {
     "dart_common": 21562395,
     "dart_period": "2026-11012",
@@ -2965,13 +2965,13 @@
      "bear": {
       "g": 0.0,
       "value": 850501,
-      "per_share": 39444,
+      "per_share": 39443,
       "upside": -72.2
      },
      "base": {
       "g": 8.0,
       "value": 1111164,
-      "per_share": 51533,
+      "per_share": 51532,
       "upside": -63.6
      },
      "bull": {
@@ -3007,7 +3007,7 @@
     "bear": 22956,
     "bull": 35777,
     "upside": -79.8,
-    "pct": 27,
+    "pct": 28,
     "tier": "비싼 ⅓",
     "exp_ex": -4.1,
     "conflict": false
@@ -3039,8 +3039,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 2324851,
-   "mcap_eff": 2299128,
-   "shares": 76382990,
+   "mcap_eff": 2299116,
+   "shares": 76382591,
    "shares_check": {
     "dart_common": 76383005,
     "dart_period": "2026-11012",
@@ -3111,7 +3111,7 @@
     "upside": -85.0,
     "pct": 14,
     "tier": "비싼 ⅓",
-    "exp_ex": -5.9,
+    "exp_ex": -6.0,
     "conflict": false
    }
   },
@@ -3119,10 +3119,10 @@
    "name": "지오엘리먼트",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 60910,
-    "op": 7973,
-    "ni": 7271,
-    "period": "2025Q3~2026Q2"
+    "rev": 60225,
+    "op": 8570,
+    "ni": 7690,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2021~2025",
@@ -3132,32 +3132,32 @@
      7.5,
      24.5
     ],
-    "trend_rev": 57244,
-    "ttm_rev": 60910,
-    "norm_ni": 8908,
-    "trend_g": 27.7
+    "trend_rev": 58866,
+    "ttm_rev": 60225,
+    "norm_ni": 9160,
+    "trend_g": 26.6
    },
    "price": 5910,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 74602,
-   "mcap_eff": 74552,
-   "shares": 12614552,
+   "mcap_eff": 74602,
+   "shares": 12623012,
    "shares_check": {
     "dart_common": 12614560,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 12622951,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 62831,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 14229,
+   "equity": 64407,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 16217,
    "dividend_yield": null,
-   "per": 10.3,
-   "roe": 11.6,
-   "pbr": 1.19,
+   "per": 9.7,
+   "roe": 11.9,
+   "pbr": 1.16,
    "dcf": {
     "E1": 8500,
     "r": 11.5,
@@ -3168,48 +3168,48 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 73741,
-      "per_share": 5846,
-      "upside": -1.1
+      "value": 75441,
+      "per_share": 5976,
+      "upside": 1.1
      },
      "base": {
       "g": 10.0,
-      "value": 105844,
-      "per_share": 8391,
-      "upside": 42.0
+      "value": 107388,
+      "per_share": 8507,
+      "upside": 43.9
      },
      "bull": {
       "g": 18.0,
-      "value": 143403,
-      "per_share": 11368,
-      "upside": 92.4
+      "value": 144766,
+      "per_share": 11468,
+      "upside": 94.1
      }
     },
-    "implied_g": 0.3,
+    "implied_g": -0.3,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
      "path": [],
-     "excess": -1229,
+     "excess": -810,
      "excess_value": 0
     },
-    "net_cash_added": 14229
+    "net_cash_added": 16217
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": 6745,
-    "norm": 8908,
-    "ttm_ni": 7271,
+    "period": "2025Q4~2026Q3",
+    "core": 7187,
+    "norm": 9160,
+    "ttm_ni": 7690,
     "oneoff": false,
-    "E": 7826,
-    "per_share": 5838,
-    "bear": 4676,
-    "bull": 7287,
-    "upside": -1.2,
+    "E": 8174,
+    "per_share": 6093,
+    "bear": 4880,
+    "bull": 7605,
+    "upside": 3.1,
     "pct": 86,
     "tier": "싼 ⅓",
-    "exp_ex": 6.3,
+    "exp_ex": 6.6,
     "conflict": false
    }
   },
@@ -3239,8 +3239,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 365220,
-   "mcap_eff": 361299,
-   "shares": 15341783,
+   "mcap_eff": 361329,
+   "shares": 15343057,
    "shares_check": {
     "dart_common": 15341797,
     "dart_period": "2026-11012",
@@ -3267,19 +3267,19 @@
      "bear": {
       "g": 0.0,
       "value": 229716,
-      "per_share": 14973,
+      "per_share": 14972,
       "upside": -36.4
      },
      "base": {
       "g": 6.0,
       "value": 287980,
-      "per_share": 18771,
+      "per_share": 18769,
       "upside": -20.3
      },
      "bull": {
       "g": 12.0,
       "value": 363793,
-      "per_share": 23713,
+      "per_share": 23711,
       "upside": 0.7
      }
     },
@@ -3304,11 +3304,11 @@
     "ttm_ni": 19357,
     "oneoff": true,
     "E": 17691,
-    "per_share": 10850,
-    "bear": 8690,
-    "bull": 13543,
+    "per_share": 10849,
+    "bear": 8689,
+    "bull": 13542,
     "upside": -53.9,
-    "pct": 55,
+    "pct": 54,
     "tier": "가운데 ⅓",
     "exp_ex": 1.2,
     "conflict": false
@@ -3318,10 +3318,10 @@
    "name": "씨앤지하이테크",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 165569,
-    "op": 24313,
-    "ni": 19880,
-    "period": "2025Q3~2026Q2"
+    "rev": 189449,
+    "op": 23542,
+    "ni": 28311,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2017~2025",
@@ -3331,17 +3331,17 @@
      4.6,
      11.3
     ],
-    "trend_rev": 194531,
-    "ttm_rev": 165569,
-    "norm_ni": 16572,
-    "trend_g": 10.0
+    "trend_rev": 206152,
+    "ttm_rev": 189449,
+    "norm_ni": 17562,
+    "trend_g": 10.6
    },
    "price": 11740,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 114124,
-   "mcap_eff": 112729,
-   "shares": 9602129,
+   "mcap_eff": 112726,
+   "shares": 9601874,
    "shares_check": {
     "dart_common": 9602135,
     "dart_period": "2026-11012",
@@ -3350,13 +3350,13 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 146887,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 20876,
+   "equity": 161332,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 24980,
    "dividend_yield": null,
-   "per": 5.7,
-   "roe": 13.5,
-   "pbr": 0.77,
+   "per": 4.0,
+   "roe": 17.5,
+   "pbr": 0.7,
    "dcf": {
     "E1": 18000,
     "r": 10.5,
@@ -3367,48 +3367,48 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 172306,
-      "per_share": 17945,
-      "upside": 52.8
+      "value": 175703,
+      "per_share": 18299,
+      "upside": 55.9
      },
      "base": {
       "g": 6.0,
-      "value": 218531,
-      "per_share": 22759,
-      "upside": 93.9
+      "value": 221712,
+      "per_share": 23091,
+      "upside": 96.7
      },
      "bull": {
       "g": 12.0,
-      "value": 278679,
-      "per_share": 29023,
-      "upside": 147.2
+      "value": 281579,
+      "per_share": 29325,
+      "upside": 149.8
      }
     },
-    "implied_g": -11.4,
+    "implied_g": -12.4,
     "cycle": {
      "position": "중립",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
      "path": [],
-     "excess": 1880,
+     "excess": 10311,
      "excess_value": 0
     },
-    "net_cash_added": 20876
+    "net_cash_added": 24980
    },
    "quant": {
-    "pos": "하강기",
-    "period": "2025Q3~2026Q2",
-    "core": 19422,
-    "norm": 16572,
-    "ttm_ni": 19880,
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": 23337,
+    "norm": 17562,
+    "ttm_ni": 28311,
     "oneoff": false,
-    "E": 17997,
-    "per_share": 17636,
-    "bear": 14125,
-    "bull": 22013,
-    "upside": 50.2,
-    "pct": 93,
+    "E": 20450,
+    "per_share": 20039,
+    "bear": 16050,
+    "bull": 25014,
+    "upside": 70.7,
+    "pct": 96,
     "tier": "싼 ⅓",
-    "exp_ex": 9.3,
+    "exp_ex": 10.1,
     "conflict": false
    }
   },
@@ -3438,8 +3438,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 170242,
-   "mcap_eff": 149270,
-   "shares": 15614017,
+   "mcap_eff": 149248,
+   "shares": 15611715,
    "shares_check": {
     "dart_common": 15614033,
     "dart_period": "2026-11012",
@@ -3466,23 +3466,23 @@
      "bear": {
       "g": 0.0,
       "value": 179459,
-      "per_share": 11493,
+      "per_share": 11495,
       "upside": 20.2
      },
      "base": {
       "g": 7.0,
       "value": 225802,
-      "per_share": 14461,
+      "per_share": 14464,
       "upside": 51.3
      },
      "bull": {
       "g": 13.0,
       "value": 278522,
-      "per_share": 17838,
+      "per_share": 17841,
       "upside": 86.6
      }
     },
-    "implied_g": -6.1,
+    "implied_g": -6.2,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3503,11 +3503,11 @@
     "ttm_ni": 1301,
     "oneoff": false,
     "E": 9627,
-    "per_share": 5801,
-    "bear": 4646,
-    "bull": 7241,
+    "per_share": 5802,
+    "bear": 4647,
+    "bull": 7242,
     "upside": -39.3,
-    "pct": 64,
+    "pct": 63,
     "tier": "가운데 ⅓",
     "exp_ex": 3.0,
     "conflict": false
@@ -3517,10 +3517,10 @@
    "name": "저스템",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 73383,
-    "op": 14260,
-    "ni": 11962,
-    "period": "2025Q3~2026Q2"
+    "rev": 87485,
+    "op": 20974,
+    "ni": 16037,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2022~2025",
@@ -3530,17 +3530,17 @@
      -9.4,
      13.7
     ],
-    "trend_rev": 57036,
-    "ttm_rev": 73383,
-    "norm_ni": 850,
-    "trend_g": 13.0
+    "trend_rev": 64573,
+    "ttm_rev": 87485,
+    "norm_ni": 962,
+    "trend_g": 17.1
    },
    "price": 12030,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 276064,
-   "mcap_eff": 273572,
-   "shares": 22740815,
+   "mcap_eff": 274518,
+   "shares": 22819451,
    "shares_check": {
     "dart_common": 22740835,
     "dart_period": "2026-11012",
@@ -3549,41 +3549,41 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 70613,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 8094,
+   "equity": 74943,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 7808,
    "dividend_yield": null,
-   "per": 22.9,
-   "roe": 16.9,
-   "pbr": 3.87,
+   "per": 17.1,
+   "roe": 21.4,
+   "pbr": 3.66,
    "dcf": {
     "E1": 8000,
     "r": 11.5,
     "c": 0.8,
     "note": "4년 중 2년이 적자라 평균은 의미가 작아요. 매출 700억원대 × 11%를 정상 이익으로 봤어요.",
-    "fwd_per": 34.2,
-    "norm_per": 34.2,
+    "fwd_per": 34.3,
+    "norm_per": 34.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 73971,
-      "per_share": 3253,
-      "upside": -73.0
+      "value": 79194,
+      "per_share": 3470,
+      "upside": -71.2
      },
      "base": {
       "g": 12.0,
-      "value": 115038,
-      "per_share": 5059,
-      "upside": -57.9
+      "value": 120291,
+      "per_share": 5271,
+      "upside": -56.2
      },
      "bull": {
       "g": 22.0,
-      "value": 169208,
-      "per_share": 7441,
-      "upside": -38.1
+      "value": 174501,
+      "per_share": 7647,
+      "upside": -36.4
      }
     },
-    "implied_g": 34.3,
+    "implied_g": 33.9,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3592,26 +3592,26 @@
       0.7,
       0.3
      ],
-     "excess": 3962,
-     "excess_value": 5313
+     "excess": 8037,
+     "excess_value": 10778
     },
-    "net_cash_added": 8094
+    "net_cash_added": 7808
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 11542,
-    "norm": 850,
-    "ttm_ni": 11962,
+    "period": "2025Q4~2026Q3",
+    "core": 16198,
+    "norm": 962,
+    "ttm_ni": 16037,
     "oneoff": false,
-    "E": 6196,
-    "per_share": 2564,
-    "bear": 2053,
-    "bull": 3200,
-    "upside": -78.7,
-    "pct": 29,
-    "tier": "비싼 ⅓",
-    "exp_ex": -3.8,
+    "E": 8580,
+    "per_share": 3538,
+    "bear": 2834,
+    "bull": 4416,
+    "upside": -70.6,
+    "pct": 40,
+    "tier": "가운데 ⅓",
+    "exp_ex": -1.8,
     "conflict": false
    }
   },
@@ -3619,10 +3619,10 @@
    "name": "오로스테크놀로지",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 39570,
-    "op": -16523,
-    "ni": -13730,
-    "period": "2025Q3~2026Q2"
+    "rev": 48855,
+    "op": -10299,
+    "ni": -8077,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2020~2025",
@@ -3632,61 +3632,61 @@
      -12.3,
      9.6
     ],
-    "trend_rev": 56210,
-    "ttm_rev": 39570,
-    "norm_ni": 1408,
-    "trend_g": 15.1
+    "trend_rev": 62267,
+    "ttm_rev": 48855,
+    "norm_ni": 1560,
+    "trend_g": 16.8
    },
    "price": 9640,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 90268,
-   "mcap_eff": 89010,
-   "shares": 9233402,
+   "mcap_eff": 88985,
+   "shares": 9230809,
    "shares_check": {
     "dart_common": 9233442,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 9363868,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 55558,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -20116,
+   "equity": 55324,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -18915,
    "dividend_yield": null,
    "per": null,
-   "roe": -24.7,
-   "pbr": 1.6,
-   "net_debt_levered": -20116,
+   "roe": -14.6,
+   "pbr": 1.61,
+   "net_debt_levered": -18915,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
     "c": 0.8,
     "note": "6년 평균 순이익률 2.5%예요. 흑자였던 해 수준(매출 550억원 × 7%)을 정상으로 봤어요.",
-    "fwd_per": 22.3,
-    "norm_per": 22.3,
+    "fwd_per": 22.2,
+    "norm_per": 22.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 17143,
-      "per_share": 1857,
-      "upside": -80.7
+      "value": 21051,
+      "per_share": 2281,
+      "upside": -76.3
      },
      "base": {
       "g": 12.0,
-      "value": 36736,
-      "per_share": 3979,
-      "upside": -58.7
+      "value": 40644,
+      "per_share": 4403,
+      "upside": -54.3
      },
      "bull": {
       "g": 25.0,
-      "value": 72486,
-      "per_share": 7850,
-      "upside": -18.6
+      "value": 76394,
+      "per_share": 8276,
+      "upside": -14.1
      }
     },
-    "implied_g": 29.3,
+    "implied_g": 28.3,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -3694,17 +3694,17 @@
       0.7,
       0.3
      ],
-     "excess": -17730,
-     "excess_value": -12257
+     "excess": -12077,
+     "excess_value": -8349
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "바닥권",
-    "period": "2025Q3~2026Q2",
-    "core": -13309,
-    "norm": 1408,
-    "ttm_ni": -13730,
+    "pos": "회복기",
+    "period": "2025Q4~2026Q3",
+    "core": -8055,
+    "norm": 1560,
+    "ttm_ni": -8077,
     "oneoff": false
    }
   },
@@ -3734,8 +3734,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 763906,
-   "mcap_eff": 744584,
-   "shares": 17963426,
+   "mcap_eff": 744567,
+   "shares": 17963016,
    "shares_check": {
     "dart_common": 17963419,
     "dart_period": "2026-11012",
@@ -3762,19 +3762,19 @@
      "bear": {
       "g": 2.0,
       "value": 528038,
-      "per_share": 29395,
+      "per_share": 29396,
       "upside": -29.1
      },
      "base": {
       "g": 8.0,
       "value": 668167,
-      "per_share": 37196,
+      "per_share": 37197,
       "upside": -10.3
      },
      "bull": {
       "g": 14.0,
       "value": 849959,
-      "per_share": 47316,
+      "per_share": 47317,
       "upside": 14.2
      }
     },
@@ -3800,11 +3800,11 @@
     "ttm_ni": 55636,
     "oneoff": false,
     "E": 50219,
-    "per_share": 26304,
+    "per_share": 26305,
     "bear": 21068,
-    "bull": 32834,
+    "bull": 32835,
     "upside": -36.5,
-    "pct": 68,
+    "pct": 67,
     "tier": "싼 ⅓",
     "exp_ex": 3.3,
     "conflict": false
@@ -3836,8 +3836,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 257859,
-   "mcap_eff": 247389,
-   "shares": 29416052,
+   "mcap_eff": 247362,
+   "shares": 29412842,
    "shares_check": {
     "dart_common": 29416053,
     "dart_period": "2026-11012",
@@ -3864,19 +3864,19 @@
      "bear": {
       "g": 0.0,
       "value": 210674,
-      "per_share": 7162,
+      "per_share": 7163,
       "upside": -14.8
      },
      "base": {
       "g": 6.0,
       "value": 270019,
-      "per_share": 9179,
-      "upside": 9.1
+      "per_share": 9180,
+      "upside": 9.2
      },
      "bull": {
       "g": 12.0,
       "value": 347238,
-      "per_share": 11804,
+      "per_share": 11806,
       "upside": 40.4
      }
     },
@@ -3901,11 +3901,11 @@
     "ttm_ni": 16949,
     "oneoff": false,
     "E": 19724,
-    "per_share": 6309,
-    "bear": 5053,
-    "bull": 7875,
+    "per_share": 6310,
+    "bear": 5054,
+    "bull": 7876,
     "upside": -25.0,
-    "pct": 74,
+    "pct": 73,
     "tier": "싼 ⅓",
     "exp_ex": 4.4,
     "conflict": false
@@ -3937,8 +3937,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 537993,
-   "mcap_eff": 532540,
-   "shares": 21430181,
+   "mcap_eff": 532536,
+   "shares": 21430020,
    "shares_check": {
     "dart_common": 21430175,
     "dart_period": "2026-11012",
@@ -4009,7 +4009,7 @@
     "upside": -78.6,
     "pct": 30,
     "tier": "비싼 ⅓",
-    "exp_ex": -3.7,
+    "exp_ex": -3.8,
     "conflict": false
    }
   },
@@ -4039,8 +4039,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 207053,
-   "mcap_eff": 207014,
-   "shares": 10924222,
+   "mcap_eff": 207053,
+   "shares": 10926280,
    "shares_check": {
     "dart_common": 10924243,
     "dart_period": "2026-11012",
@@ -4067,19 +4067,19 @@
      "bear": {
       "g": 0.0,
       "value": 231547,
-      "per_share": 21196,
-      "upside": 11.9
+      "per_share": 21192,
+      "upside": 11.8
      },
      "base": {
       "g": 6.0,
       "value": 270832,
-      "per_share": 24792,
+      "per_share": 24787,
       "upside": 30.8
      },
      "bull": {
       "g": 12.0,
       "value": 321951,
-      "per_share": 29471,
+      "per_share": 29466,
       "upside": 55.5
      }
     },
@@ -4101,11 +4101,11 @@
     "ttm_ni": 16739,
     "oneoff": false,
     "E": 17490,
-    "per_share": 15065,
-    "bear": 12066,
-    "bull": 18804,
+    "per_share": 15062,
+    "bear": 12063,
+    "bull": 18801,
     "upside": -20.5,
-    "pct": 78,
+    "pct": 79,
     "tier": "싼 ⅓",
     "exp_ex": 4.8,
     "conflict": false
@@ -4137,8 +4137,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 160714,
-   "mcap_eff": 156934,
-   "shares": 12948350,
+   "mcap_eff": 156967,
+   "shares": 12951073,
    "shares_check": {
     "dart_common": 12948323,
     "dart_period": "2026-11012",
@@ -4165,19 +4165,19 @@
      "bear": {
       "g": 0.0,
       "value": 50563,
-      "per_share": 3905,
+      "per_share": 3904,
       "upside": -67.8
      },
      "base": {
       "g": 10.0,
       "value": 72693,
-      "per_share": 5614,
+      "per_share": 5613,
       "upside": -53.7
      },
      "bull": {
       "g": 18.0,
       "value": 98584,
-      "per_share": 7614,
+      "per_share": 7612,
       "upside": -37.2
      }
     },
@@ -4201,8 +4201,8 @@
     "E": 4696,
     "per_share": 3412,
     "bear": 2733,
-    "bull": 4260,
-    "upside": -71.8,
+    "bull": 4259,
+    "upside": -71.9,
     "pct": 39,
     "tier": "가운데 ⅓",
     "exp_ex": -2.0,
@@ -4213,10 +4213,10 @@
    "name": "케이엔제이",
    "group": "전공정 장비",
    "ttm": {
-    "rev": 114426,
-    "op": 25287,
-    "ni": 24120,
-    "period": "2025Q3~2026Q2"
+    "rev": 131646,
+    "op": 29598,
+    "ni": 22261,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2019~2025",
@@ -4226,61 +4226,61 @@
      -11.7,
      30.3
     ],
-    "trend_rev": 89199,
-    "ttm_rev": 114426,
-    "norm_ni": 12564,
-    "trend_g": 11.8
+    "trend_rev": 96342,
+    "ttm_rev": 131646,
+    "norm_ni": 13570,
+    "trend_g": 13.0
    },
    "price": 24700,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 198224,
-   "mcap_eff": 193419,
-   "shares": 7830729,
+   "mcap_eff": 191989,
+   "shares": 7772834,
    "shares_check": {
-    "dart_common": 7830739,
-    "dart_period": "2026-11012",
+    "dart_common": 7772990,
+    "dart_period": "2026-11014",
     "listed": 8025253,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 103700,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -68185,
+   "equity": 107739,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -61394,
    "dividend_yield": null,
-   "per": 8.0,
-   "roe": 23.3,
-   "pbr": 1.87,
-   "net_debt_levered": -68185,
+   "per": 8.6,
+   "roe": 20.7,
+   "pbr": 1.78,
+   "net_debt_levered": -61394,
    "dcf": {
     "E1": 17000,
     "r": 11.0,
     "c": 0.8,
     "note": "7년 평균 기준 126억원이지만 최근 이익률이 30%로 올라 170억원으로 봤어요.",
-    "fwd_per": 11.4,
-    "norm_per": 11.4,
+    "fwd_per": 11.3,
+    "norm_per": 11.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 148086,
-      "per_share": 18911,
-      "upside": -23.4
+      "value": 145575,
+      "per_share": 18729,
+      "upside": -24.2
      },
      "base": {
       "g": 8.0,
-      "value": 206123,
-      "per_share": 26322,
-      "upside": 6.6
+      "value": 203612,
+      "per_share": 26195,
+      "upside": 6.1
      },
      "bull": {
       "g": 15.0,
-      "value": 276253,
-      "per_share": 35278,
-      "upside": 42.8
+      "value": 273742,
+      "per_share": 35218,
+      "upside": 42.6
      }
     },
-    "implied_g": 6.5,
+    "implied_g": 6.6,
     "cycle": {
      "position": "상승기",
      "note": "메모리 회사들이 호황 이익으로 2026~27년 설비투자를 늘리고 있어 장비 주문은 상승기예요. 장비 실적은 메모리 가격보다 6~12개월 늦게 움직이고, 메모리 가격이 꺾인 뒤 1년 안팎에 투자 축소가 따라와요.",
@@ -4289,26 +4289,26 @@
       0.7,
       0.3
      ],
-     "excess": 7120,
-     "excess_value": 9617
+     "excess": 5261,
+     "excess_value": 7106
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 21922,
-    "norm": 12564,
-    "ttm_ni": 24120,
+    "period": "2025Q4~2026Q3",
+    "core": 22674,
+    "norm": 13570,
+    "ttm_ni": 22261,
     "oneoff": false,
-    "E": 17243,
-    "per_share": 20718,
-    "bear": 16594,
-    "bull": 25862,
-    "upside": -16.1,
-    "pct": 80,
+    "E": 18122,
+    "per_share": 21937,
+    "bear": 17570,
+    "bull": 27382,
+    "upside": -11.2,
+    "pct": 83,
     "tier": "싼 ⅓",
-    "exp_ex": 5.2,
+    "exp_ex": 5.6,
     "conflict": false
    }
   },
@@ -4338,8 +4338,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 17118097,
-   "mcap_eff": 17035599,
-   "shares": 94853001,
+   "mcap_eff": 17035625,
+   "shares": 94853146,
    "shares_check": {
     "dart_common": 94853002,
     "dart_period": "2026-11012",
@@ -4408,7 +4408,7 @@
     "bear": 12941,
     "bull": 20169,
     "upside": -91.0,
-    "pct": 8,
+    "pct": 6,
     "tier": "비싼 ⅓",
     "exp_ex": -9.0,
     "conflict": false
@@ -4440,8 +4440,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1393185,
-   "mcap_eff": 1343842,
-   "shares": 35740479,
+   "mcap_eff": 1343810,
+   "shares": 35739628,
    "shares_check": {
     "dart_common": 35740474,
     "dart_period": "2026-11012",
@@ -4469,7 +4469,7 @@
      "bear": {
       "g": 5.0,
       "value": 172249,
-      "per_share": 4819,
+      "per_share": 4820,
       "upside": -87.2
      },
      "base": {
@@ -4510,7 +4510,7 @@
     "bear": 3905,
     "bull": 6086,
     "upside": -87.0,
-    "pct": 12,
+    "pct": 11,
     "tier": "비싼 ⅓",
     "exp_ex": -6.8,
     "conflict": false
@@ -4542,8 +4542,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 4465880,
-   "mcap_eff": 4465837,
-   "shares": 12319550,
+   "mcap_eff": 4465880,
+   "shares": 12319669,
    "shares_check": {
     "dart_common": 12319550,
     "dart_period": "2026-11012",
@@ -4570,19 +4570,19 @@
      "bear": {
       "g": 2.0,
       "value": 1060623,
-      "per_share": 86093,
+      "per_share": 86092,
       "upside": -76.3
      },
      "base": {
       "g": 9.0,
       "value": 1313915,
-      "per_share": 106653,
+      "per_share": 106652,
       "upside": -70.6
      },
      "bull": {
       "g": 15.0,
       "value": 1601605,
-      "per_share": 130005,
+      "per_share": 130004,
       "upside": -64.1
      }
     },
@@ -4610,7 +4610,7 @@
     "E": 69852,
     "per_share": 53350,
     "bear": 42729,
-    "bull": 66594,
+    "bull": 66593,
     "upside": -85.3,
     "pct": 13,
     "tier": "비싼 ⅓",
@@ -4644,8 +4644,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 270331,
-   "mcap_eff": 263572,
-   "shares": 10215969,
+   "mcap_eff": 263597,
+   "shares": 10216938,
    "shares_check": {
     "dart_common": 10215978,
     "dart_period": "2026-11012",
@@ -4673,19 +4673,19 @@
      "bear": {
       "g": 0.0,
       "value": 129694,
-      "per_share": 12695,
+      "per_share": 12694,
       "upside": -50.8
      },
      "base": {
       "g": 12.0,
       "value": 227656,
-      "per_share": 22284,
+      "per_share": 22282,
       "upside": -13.6
      },
      "bull": {
       "g": 25.0,
       "value": 406409,
-      "per_share": 39782,
+      "per_share": 39778,
       "upside": 54.2
      }
     },
@@ -4710,11 +4710,11 @@
     "ttm_ni": -5035,
     "oneoff": false,
     "E": 9170,
-    "per_share": 8446,
-    "bear": 6765,
-    "bull": 10543,
+    "per_share": 8445,
+    "bear": 6764,
+    "bull": 10542,
     "upside": -67.3,
-    "pct": 44,
+    "pct": 43,
     "tier": "가운데 ⅓",
     "exp_ex": -1.1,
     "conflict": false
@@ -4746,8 +4746,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1470566,
-   "mcap_eff": 1461574,
-   "shares": 6959876,
+   "mcap_eff": 1461621,
+   "shares": 6960100,
    "shares_check": {
     "dart_common": 6959874,
     "dart_period": "2026-11012",
@@ -4762,7 +4762,7 @@
    "dividend_yield": null,
    "per": 63.0,
    "roe": 6.8,
-   "pbr": 4.29,
+   "pbr": 4.3,
    "dcf": {
     "E1": 38000,
     "r": 10.0,
@@ -4774,19 +4774,19 @@
      "bear": {
       "g": 5.0,
       "value": 473161,
-      "per_share": 67984,
+      "per_share": 67982,
       "upside": -67.6
      },
      "base": {
       "g": 13.0,
       "value": 655297,
-      "per_share": 94154,
+      "per_share": 94151,
       "upside": -55.2
      },
      "bull": {
       "g": 19.0,
       "value": 838898,
-      "per_share": 120533,
+      "per_share": 120530,
       "upside": -42.6
      }
     },
@@ -4810,9 +4810,9 @@
     "ttm_ni": 23193,
     "oneoff": false,
     "E": 29453,
-    "per_share": 39818,
-    "bear": 31891,
-    "bull": 49702,
+    "per_share": 39816,
+    "bear": 31890,
+    "bull": 49700,
     "upside": -81.0,
     "pct": 24,
     "tier": "비싼 ⅓",
@@ -4846,8 +4846,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1650579,
-   "mcap_eff": 1601114,
-   "shares": 66161736,
+   "mcap_eff": 1601151,
+   "shares": 66163264,
    "shares_check": {
     "dart_common": 66161750,
     "dart_period": "2026-11012",
@@ -4916,7 +4916,7 @@
     "bear": 3978,
     "bull": 6200,
     "upside": -79.5,
-    "pct": 28,
+    "pct": 29,
     "tier": "비싼 ⅓",
     "exp_ex": -4.0,
     "conflict": false
@@ -4926,10 +4926,10 @@
    "name": "인텍플러스",
    "group": "후공정·검사 장비",
    "ttm": {
-    "rev": 71975,
-    "op": -7858,
-    "ni": -6899,
-    "period": "2025Q3~2026Q2"
+    "rev": 90217,
+    "op": 603,
+    "ni": 1165,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -4939,61 +4939,61 @@
      -39.7,
      18.9
     ],
-    "trend_rev": 121117,
-    "ttm_rev": 71975,
-    "norm_ni": -1642,
-    "trend_g": 20.1
+    "trend_rev": 133129,
+    "ttm_rev": 90217,
+    "norm_ni": -1804,
+    "trend_g": 20.9
    },
    "price": 47600,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 619523,
-   "mcap_eff": 595175,
-   "shares": 12503676,
+   "mcap_eff": 616557,
+   "shares": 12952878,
    "shares_check": {
-    "dart_common": 12503677,
-    "dart_period": "2026-11012",
+    "dart_common": 12936062,
+    "dart_period": "2026-11014",
     "listed": 13015190,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 42640,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -16754,
+   "equity": 53019,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -17819,
    "dividend_yield": null,
-   "per": null,
-   "roe": -16.2,
-   "pbr": 13.96,
-   "net_debt_levered": -16754,
+   "per": 529.2,
+   "roe": 2.2,
+   "pbr": 11.63,
+   "net_debt_levered": -17819,
    "dcf": {
     "E1": 10000,
     "r": 12.0,
     "c": 0.8,
     "note": "2019~22년 이익률 13~19%였지만 최근 3년 적자예요. 매출 1,000억원 × 10%를 회복 시 정상 이익으로 봤어요.",
-    "fwd_per": 59.5,
-    "norm_per": 59.5,
+    "fwd_per": 61.7,
+    "norm_per": 61.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 61817,
-      "per_share": 4944,
-      "upside": -89.6
+      "value": 67392,
+      "per_share": 5203,
+      "upside": -89.1
      },
      "base": {
       "g": 15.0,
-      "value": 127457,
-      "per_share": 10194,
-      "upside": -78.6
+      "value": 133032,
+      "per_share": 10270,
+      "upside": -78.4
      },
      "bull": {
       "g": 25.0,
-      "value": 200175,
-      "per_share": 16009,
-      "upside": -66.4
+      "value": 205750,
+      "per_share": 15884,
+      "upside": -66.6
      }
     },
-    "implied_g": 51.4,
+    "implied_g": 52.1,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5001,18 +5001,18 @@
       0.7,
       0.3
      ],
-     "excess": -16899,
-     "excess_value": -11683
+     "excess": -8835,
+     "excess_value": -6108
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "바닥권",
-    "period": "2025Q3~2026Q2",
-    "core": -6514,
-    "norm": -1642,
-    "ttm_ni": -6899,
-    "oneoff": false
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": 470,
+    "norm": -1804,
+    "ttm_ni": 1165,
+    "oneoff": true
    }
   },
   "168360": {
@@ -5040,9 +5040,9 @@
    "price": 8270,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 185186,
-   "mcap_eff": 185186,
-   "shares": 22392503,
+   "mcap": 185130,
+   "mcap_eff": 185130,
+   "shares": 22385732,
    "shares_check": {
     "dart_common": 22392557,
     "dart_period": "2026-11012",
@@ -5055,7 +5055,7 @@
    "equity_source": "DART 2026Q2",
    "net_cash": -21249,
    "dividend_yield": null,
-   "per": 1458.2,
+   "per": 1457.7,
    "roe": 0.2,
    "pbr": 3.53,
    "net_debt_levered": -21249,
@@ -5070,23 +5070,23 @@
      "bear": {
       "g": 0.0,
       "value": 26722,
-      "per_share": 1193,
+      "per_share": 1194,
       "upside": -85.6
      },
      "base": {
       "g": 10.0,
       "value": 42313,
       "per_share": 1890,
-      "upside": -77.2
+      "upside": -77.1
      },
      "bull": {
       "g": 20.0,
       "value": 66073,
-      "per_share": 2951,
+      "per_share": 2952,
       "upside": -64.3
      }
     },
-    "implied_g": 44.8,
+    "implied_g": 44.7,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5107,11 +5107,11 @@
     "ttm_ni": 127,
     "oneoff": true,
     "E": 3337,
-    "per_share": 1402,
+    "per_share": 1403,
     "bear": 1123,
-    "bull": 1750,
+    "bull": 1751,
     "upside": -83.0,
-    "pct": 19,
+    "pct": 18,
     "tier": "비싼 ⅓",
     "exp_ex": -5.2,
     "conflict": false
@@ -5121,10 +5121,10 @@
    "name": "제너셈",
    "group": "후공정·검사 장비",
    "ttm": {
-    "rev": 59777,
-    "op": 1384,
-    "ni": 188,
-    "period": "2025Q3~2026Q2"
+    "rev": 69158,
+    "op": 4323,
+    "ni": 1190,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -5134,33 +5134,33 @@
      -30.7,
      20.5
     ],
-    "trend_rev": 75036,
-    "ttm_rev": 59777,
-    "norm_ni": -242,
-    "trend_g": 12.9
+    "trend_rev": 79899,
+    "ttm_rev": 69158,
+    "norm_ni": -257,
+    "trend_g": 13.4
    },
    "price": 6490,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 85363,
-   "mcap_eff": 85363,
-   "shares": 13153005,
+   "mcap": 85352,
+   "mcap_eff": 85347,
+   "shares": 13150539,
    "shares_check": {
     "dart_common": 13152931,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 13151326,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 49292,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -16893,
+   "equity": 50042,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -7950,
    "dividend_yield": null,
-   "per": 454.1,
-   "roe": 0.4,
-   "pbr": 1.73,
-   "net_debt_levered": -16893,
+   "per": 71.7,
+   "roe": 2.4,
+   "pbr": 1.71,
+   "net_debt_levered": -7950,
    "dcf": {
     "E1": 4000,
     "r": 12.0,
@@ -5171,24 +5171,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 26765,
-      "per_share": 2035,
-      "upside": -68.6
+      "value": 27457,
+      "per_share": 2088,
+      "upside": -67.8
      },
      "base": {
       "g": 10.0,
-      "value": 42356,
-      "per_share": 3220,
-      "upside": -50.4
+      "value": 43048,
+      "per_share": 3273,
+      "upside": -49.6
      },
      "bull": {
       "g": 20.0,
-      "value": 66116,
-      "per_share": 5027,
-      "upside": -22.5
+      "value": 66808,
+      "per_share": 5080,
+      "upside": -21.7
      }
     },
-    "implied_g": 25.9,
+    "implied_g": 25.7,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5196,26 +5196,26 @@
       0.7,
       0.3
      ],
-     "excess": -3812,
-     "excess_value": -2635
+     "excess": -2810,
+     "excess_value": -1943
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 1080,
-    "norm": -242,
-    "ttm_ni": 188,
-    "oneoff": true,
-    "E": 419,
-    "per_share": 300,
-    "bear": 240,
-    "bull": 374,
-    "upside": -95.4,
-    "pct": 3,
+    "period": "2025Q4~2026Q3",
+    "core": 2281,
+    "norm": -257,
+    "ttm_ni": 1190,
+    "oneoff": false,
+    "E": 1012,
+    "per_share": 724,
+    "bear": 580,
+    "bull": 904,
+    "upside": -88.8,
+    "pct": 9,
     "tier": "비싼 ⅓",
-    "exp_ex": -12.2,
+    "exp_ex": -7.8,
     "conflict": false
    }
   },
@@ -5223,10 +5223,10 @@
    "name": "프로텍",
    "group": "후공정·검사 장비",
    "ttm": {
-    "rev": 275411,
-    "op": 72076,
-    "ni": 87174,
-    "period": "2025Q3~2026Q2"
+    "rev": 302523,
+    "op": 80968,
+    "ni": 87983,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -5236,10 +5236,10 @@
      12.7,
      27.1
     ],
-    "trend_rev": 225021,
-    "ttm_rev": 275411,
-    "norm_ni": 38796,
-    "trend_g": 7.5
+    "trend_rev": 234983,
+    "ttm_rev": 302523,
+    "norm_ni": 40513,
+    "trend_g": 7.9
    },
    "price": 60600,
    "price_date": "2026-11-13 00:38",
@@ -5249,19 +5249,19 @@
    "shares": 9000000,
    "shares_check": {
     "dart_common": 9000000,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 9000000,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 397499,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 106573,
+   "equity": 408117,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 126578,
    "dividend_yield": null,
-   "per": 6.3,
-   "roe": 21.9,
-   "pbr": 1.37,
+   "per": 6.2,
+   "roe": 21.6,
+   "pbr": 1.34,
    "dcf": {
     "E1": 45000,
     "r": 10.0,
@@ -5272,48 +5272,48 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 522790,
-      "per_share": 58088,
-      "upside": -4.1
+      "value": 538910,
+      "per_share": 59879,
+      "upside": -1.2
      },
      "base": {
       "g": 8.0,
-      "value": 703360,
-      "per_share": 78151,
-      "upside": 29.0
+      "value": 717795,
+      "per_share": 79755,
+      "upside": 31.6
      },
      "bull": {
       "g": 15.0,
-      "value": 922385,
-      "per_share": 102487,
-      "upside": 69.1
+      "value": 934776,
+      "per_share": 103864,
+      "upside": 71.4
      }
     },
-    "implied_g": 1.2,
+    "implied_g": 0.3,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
      "path": [],
-     "excess": 42174,
+     "excess": 42983,
      "excess_value": 0
     },
-    "net_cash_added": 106573
+    "net_cash_added": 126578
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 71697,
-    "norm": 38796,
-    "ttm_ni": 87174,
+    "period": "2025Q4~2026Q3",
+    "core": 75569,
+    "norm": 40513,
+    "ttm_ni": 87983,
     "oneoff": false,
-    "E": 55246,
-    "per_share": 57758,
-    "bear": 46259,
-    "bull": 72095,
-    "upside": -4.7,
-    "pct": 84,
+    "E": 58041,
+    "per_share": 60680,
+    "bear": 48600,
+    "bull": 75743,
+    "upside": 0.1,
+    "pct": 85,
     "tier": "싼 ⅓",
-    "exp_ex": 6.1,
+    "exp_ex": 6.4,
     "conflict": false
    }
   },
@@ -5342,9 +5342,9 @@
    "price": 15890,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 195277,
-   "mcap_eff": 195277,
-   "shares": 12289301,
+   "mcap": 195230,
+   "mcap_eff": 195230,
+   "shares": 12286344,
    "shares_check": {
     "dart_common": 12289301,
     "dart_period": "2026-11012",
@@ -5359,7 +5359,7 @@
    "dividend_yield": null,
    "per": 35.8,
    "roe": 6.2,
-   "pbr": 2.21,
+   "pbr": 2.2,
    "net_debt_levered": -10961,
    "dcf": {
     "E1": 5500,
@@ -5372,19 +5372,19 @@
      "bear": {
       "g": 0.0,
       "value": 44799,
-      "per_share": 3645,
+      "per_share": 3646,
       "upside": -77.1
      },
      "base": {
       "g": 8.0,
       "value": 63575,
-      "per_share": 5173,
+      "per_share": 5174,
       "upside": -67.4
      },
      "bull": {
       "g": 15.0,
       "value": 86265,
-      "per_share": 7019,
+      "per_share": 7021,
       "upside": -55.8
      }
     },
@@ -5406,11 +5406,11 @@
     "ttm_ni": 5451,
     "oneoff": false,
     "E": 4975,
-    "per_share": 3809,
+    "per_share": 3810,
     "bear": 3051,
-    "bull": 4754,
+    "bull": 4756,
     "upside": -76.0,
-    "pct": 33,
+    "pct": 32,
     "tier": "비싼 ⅓",
     "exp_ex": -3.0,
     "conflict": false
@@ -5448,16 +5448,15 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 175544,
-   "mcap_eff": 175544,
-   "shares": 27775949,
+   "mcap_eff": 175441,
+   "shares": 27759652,
    "shares_check": {
     "dart_common": 5074554,
     "dart_period": "2026-11012",
     "listed": 27776000,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 5,074,554주 → 현재 상장 27,776,000주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
    "equity": 146127,
    "equity_source": "DART 2026Q2",
@@ -5474,11 +5473,11 @@
     "ttm_ni": 25340,
     "oneoff": false,
     "E": 7379,
-    "per_share": 2500,
-    "bear": 2002,
-    "bull": 3120,
+    "per_share": 2501,
+    "bear": 2003,
+    "bull": 3122,
     "upside": -60.4,
-    "pct": 52,
+    "pct": 51,
     "tier": "가운데 ⅓",
     "exp_ex": 0.2
    }
@@ -5487,10 +5486,10 @@
    "name": "유니테스트",
    "group": "후공정·검사 장비",
    "ttm": {
-    "rev": 131525,
-    "op": -7359,
-    "ni": -3946,
-    "period": "2025Q3~2026Q2"
+    "rev": 149623,
+    "op": 8195,
+    "ni": 6717,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -5500,33 +5499,33 @@
      -28.6,
      18.6
     ],
-    "trend_rev": 114731,
-    "ttm_rev": 131525,
-    "norm_ni": 1629,
-    "trend_g": -4.4
+    "trend_rev": 118541,
+    "ttm_rev": 149623,
+    "norm_ni": 1683,
+    "trend_g": -3.8
    },
    "price": 11100,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 234564,
-   "mcap_eff": 225694,
-   "shares": 20332793,
+   "mcap_eff": 225669,
+   "shares": 20330541,
    "shares_check": {
     "dart_common": 20332817,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 21131880,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 104463,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -26425,
+   "equity": 113650,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -15190,
    "dividend_yield": null,
-   "per": null,
-   "roe": -3.8,
-   "pbr": 2.16,
-   "net_debt_levered": -26425,
+   "per": 33.6,
+   "roe": 5.9,
+   "pbr": 1.99,
+   "net_debt_levered": -15190,
    "dcf": {
     "E1": 6000,
     "r": 11.5,
@@ -5537,24 +5536,24 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 39446,
-      "per_share": 1940,
-      "upside": -82.5
+      "value": 46860,
+      "per_share": 2305,
+      "upside": -79.2
      },
      "base": {
       "g": 10.0,
-      "value": 64455,
-      "per_share": 3170,
-      "upside": -71.4
+      "value": 71869,
+      "per_share": 3535,
+      "upside": -68.2
      },
      "bull": {
       "g": 20.0,
-      "value": 102658,
-      "per_share": 5049,
-      "upside": -54.5
+      "value": 110072,
+      "per_share": 5414,
+      "upside": -51.2
      }
     },
-    "implied_g": 38.2,
+    "implied_g": 37.4,
     "cycle": {
      "position": "바닥권",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5562,18 +5561,27 @@
       0.7,
       0.3
      ],
-     "excess": -9946,
-     "excess_value": -6915
+     "excess": 717,
+     "excess_value": 499
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": -4843,
-    "norm": 1629,
-    "ttm_ni": -3946,
-    "oneoff": false
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": 6555,
+    "norm": 1683,
+    "ttm_ni": 6717,
+    "oneoff": false,
+    "E": 4119,
+    "per_share": 1906,
+    "bear": 1527,
+    "bull": 2379,
+    "upside": -82.8,
+    "pct": 19,
+    "tier": "비싼 ⅓",
+    "exp_ex": -5.1,
+    "conflict": false
    }
   },
   "253590": {
@@ -5602,8 +5610,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 694873,
-   "mcap_eff": 684176,
-   "shares": 43192929,
+   "mcap_eff": 684161,
+   "shares": 43191982,
    "shares_check": {
     "dart_common": 43192902,
     "dart_period": "2026-11012",
@@ -5636,7 +5644,7 @@
      "base": {
       "g": 10.0,
       "value": 200218,
-      "per_share": 4635,
+      "per_share": 4636,
       "upside": -70.7
      },
      "bull": {
@@ -5704,52 +5712,51 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 745214,
-   "mcap_eff": 745214,
-   "shares": 13051033,
+   "mcap_eff": 739491,
+   "shares": 12950806,
    "shares_check": {
-    "dart_common": null,
-    "dart_period": null,
+    "dart_common": 12950797,
+    "dart_period": "2026-11012",
     "listed": 13051031,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 주식수 없음: 상장주식수 사용"
+    "pref_price": null
    },
    "equity": 202946,
    "equity_source": "DART 2026Q2",
    "net_cash": 40899,
    "dividend_yield": null,
-   "per": 35.9,
+   "per": 35.6,
    "roe": 10.2,
-   "pbr": 3.67,
+   "pbr": 3.64,
    "dcf": {
     "E1": 10000,
     "r": 11.5,
     "c": 0.8,
     "note": "10년 평균 순이익률 10%, 추세 매출 716억원 → 72억원이에요. 매출이 커진 점을 반영해 100억원으로 봤어요.",
-    "fwd_per": 74.5,
-    "norm_per": 74.5,
+    "fwd_per": 73.9,
+    "norm_per": 73.9,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 111847,
-      "per_share": 8570,
-      "upside": -85.0
+      "per_share": 8636,
+      "upside": -84.9
      },
      "base": {
       "g": 8.0,
       "value": 141083,
-      "per_share": 10810,
-      "upside": -81.1
+      "per_share": 10894,
+      "upside": -80.9
      },
      "bull": {
       "g": 15.0,
       "value": 176345,
-      "per_share": 13512,
-      "upside": -76.3
+      "per_share": 13617,
+      "upside": -76.2
      }
     },
-    "implied_g": 55.8,
+    "implied_g": 55.6,
     "cycle": {
      "position": "중립",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5767,13 +5774,13 @@
     "ttm_ni": 20770,
     "oneoff": true,
     "E": 7807,
-    "per_share": 5629,
-    "bear": 4508,
-    "bull": 7026,
+    "per_share": 5672,
+    "bear": 4543,
+    "bull": 7080,
     "upside": -90.1,
-    "pct": 9,
+    "pct": 7,
     "tier": "비싼 ⅓",
-    "exp_ex": -8.5,
+    "exp_ex": -8.4,
     "conflict": false
    }
   },
@@ -5781,10 +5788,10 @@
    "name": "디아이",
    "group": "후공정·검사 장비",
    "ttm": {
-    "rev": 477312,
-    "op": 72795,
-    "ni": 29184,
-    "period": "2025Q3~2026Q2"
+    "rev": 585968,
+    "op": 122133,
+    "ni": 58149,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -5794,65 +5801,60 @@
      0.3,
      11.4
     ],
-    "trend_rev": 362833,
-    "ttm_rev": 477312,
-    "norm_ni": 11517,
-    "trend_g": 13.2
+    "trend_rev": 395724,
+    "ttm_rev": 585968,
+    "norm_ni": 12561,
+    "trend_g": 14.2
    },
    "price": 30750,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 870257,
-   "mcap_eff": 842887,
-   "shares": 27410959,
+   "mcap_eff": 844168,
+   "shares": 27452618,
    "shares_check": {
-    "dart_common": 27410957,
-    "dart_period": "2026-11012",
+    "dart_common": 27451597,
+    "dart_period": "2026-11014",
     "listed": 28301031,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 211879,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -25643,
+   "equity": 247192,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 50912,
    "dividend_yield": null,
-   "per": 28.9,
-   "roe": 13.8,
-   "pbr": 3.98,
-   "net_debt_levered": -25643,
-   "ttm_news": {
-    "period": "2025Q4~2026Q3",
-    "ni": 67123
-   },
+   "per": 14.5,
+   "roe": 23.5,
+   "pbr": 3.42,
    "dcf": {
     "E1": 20000,
     "r": 11.0,
     "c": 0.75,
     "note": "10년 평균 이익률이 3%로 낮아 정상 이익은 115억원이에요. HBM 번인 테스터 매출 확대를 반영해 200억원으로 봤어요.",
-    "fwd_per": 42.1,
-    "norm_per": 42.1,
+    "fwd_per": 42.2,
+    "norm_per": 42.2,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 212395,
-      "per_share": 7749,
-      "upside": -74.8
+      "value": 244167,
+      "per_share": 8894,
+      "upside": -71.1
      },
      "base": {
       "g": 10.0,
-      "value": 296215,
-      "per_share": 10806,
-      "upside": -64.9
+      "value": 323720,
+      "per_share": 11792,
+      "upside": -61.7
      },
      "bull": {
       "g": 20.0,
-      "value": 424559,
-      "per_share": 15489,
-      "upside": -49.6
+      "value": 445530,
+      "per_share": 16229,
+      "upside": -47.2
      }
     },
-    "implied_g": 38.3,
+    "implied_g": 38.4,
     "cycle": {
      "position": "상승기",
      "note": "HBM과 AI 칩 후공정 투자는 상승기지만, 스마트폰·PC용 일반 후공정 투자는 아직 약해요. 회사마다 어느 쪽 고객 비중이 큰지에 따라 위치가 달라요.",
@@ -5861,26 +5863,26 @@
       0.7,
       0.3
      ],
-     "excess": 47123,
-     "excess_value": 59672
+     "excess": 38149,
+     "excess_value": 48308
     },
-    "net_cash_added": 0
+    "net_cash_added": 50912
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 42982,
-    "norm": 11517,
-    "ttm_ni": 29184,
+    "period": "2025Q4~2026Q3",
+    "core": 76706,
+    "norm": 12561,
+    "ttm_ni": 58149,
     "oneoff": false,
-    "E": 27249,
-    "per_share": 9354,
-    "bear": 7492,
-    "bull": 11676,
-    "upside": -69.6,
-    "pct": 40,
+    "E": 44634,
+    "per_share": 15298,
+    "bear": 12252,
+    "bull": 19095,
+    "upside": -50.3,
+    "pct": 60,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.5,
+    "exp_ex": 1.7,
     "conflict": false
    }
   },
@@ -5916,16 +5918,15 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 23416,
-   "mcap_eff": 23416,
-   "shares": 6162105,
+   "mcap_eff": 23256,
+   "shares": 6120000,
    "shares_check": {
     "dart_common": 30712170,
     "dart_period": "2026-11012",
     "listed": 6162019,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 30,712,170주 → 현재 상장 6,162,019주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
    "equity": 23836,
    "equity_source": "DART 2026Q2",
@@ -6019,17 +6020,16 @@
    "price": 4300,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 62757,
-   "mcap_eff": 62757,
-   "shares": 14594651,
+   "mcap": 62793,
+   "mcap_eff": 62793,
+   "shares": 14603023,
    "shares_check": {
-    "dart_common": null,
-    "dart_period": null,
+    "dart_common": 14603043,
+    "dart_period": "2026-11012",
     "listed": 14594595,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 주식수 없음: 상장주식수 사용"
+    "pref_price": null
    },
    "equity": 23099,
    "equity_source": "DART 2026Q2",
@@ -6073,8 +6073,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 57365,
-   "mcap_eff": 57327,
-   "shares": 7874588,
+   "mcap_eff": 57365,
+   "shares": 7879808,
    "shares_check": {
     "dart_common": 7874611,
     "dart_period": "2026-11012",
@@ -6089,7 +6089,7 @@
    "dividend_yield": null,
    "per": 16.8,
    "roe": 9.2,
-   "pbr": 1.55,
+   "pbr": 1.56,
    "dcf": {
     "E1": 3000,
     "r": 12.5,
@@ -6101,19 +6101,19 @@
      "bear": {
       "g": 0.0,
       "value": 32776,
-      "per_share": 4162,
-      "upside": -42.8
+      "per_share": 4159,
+      "upside": -42.9
      },
      "base": {
       "g": 15.0,
       "value": 49593,
-      "per_share": 6298,
+      "per_share": 6294,
       "upside": -13.5
      },
      "bull": {
       "g": 30.0,
       "value": 80569,
-      "per_share": 10232,
+      "per_share": 10225,
       "upside": 40.5
      }
     },
@@ -6165,8 +6165,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 986225,
-   "mcap_eff": 984983,
-   "shares": 81945341,
+   "mcap_eff": 985023,
+   "shares": 81948669,
    "shares_check": {
     "dart_common": 81945350,
     "dart_period": "2026-11012",
@@ -6232,10 +6232,10 @@
     "oneoff": false,
     "E": 26755,
     "per_share": 3072,
-    "bear": 2461,
+    "bear": 2460,
     "bull": 3835,
     "upside": -74.4,
-    "pct": 36,
+    "pct": 35,
     "tier": "가운데 ⅓",
     "exp_ex": -2.6,
     "conflict": false
@@ -6267,8 +6267,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3947741,
-   "mcap_eff": 3931392,
-   "shares": 75895598,
+   "mcap_eff": 3931359,
+   "shares": 75894961,
    "shares_check": {
     "dart_common": 75895600,
     "dart_period": "2026-11012",
@@ -6295,19 +6295,19 @@
      "bear": {
       "g": 4.0,
       "value": 2712311,
-      "per_share": 35737,
+      "per_share": 35738,
       "upside": -31.0
      },
      "base": {
       "g": 10.0,
       "value": 3440075,
-      "per_share": 45326,
+      "per_share": 45327,
       "upside": -12.5
      },
      "bull": {
       "g": 15.0,
       "value": 4210694,
-      "per_share": 55480,
+      "per_share": 55481,
       "upside": 7.1
      }
     },
@@ -6333,7 +6333,7 @@
     "E": 157806,
     "per_share": 19564,
     "bear": 15669,
-    "bull": 24420,
+    "bull": 24421,
     "upside": -62.2,
     "pct": 48,
     "tier": "가운데 ⅓",
@@ -6367,8 +6367,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 3016327,
-   "mcap_eff": 3008571,
-   "shares": 21142453,
+   "mcap_eff": 3008557,
+   "shares": 21142354,
    "shares_check": {
     "dart_common": 21142451,
     "dart_period": "2026-11012",
@@ -6405,13 +6405,13 @@
      "base": {
       "g": 11.0,
       "value": 1223396,
-      "per_share": 57864,
+      "per_share": 57865,
       "upside": -59.3
      },
      "bull": {
       "g": 18.0,
       "value": 1529956,
-      "per_share": 72364,
+      "per_share": 72365,
       "upside": -49.1
      }
     },
@@ -6441,9 +6441,9 @@
     "bear": 19152,
     "bull": 29848,
     "upside": -83.2,
-    "pct": 18,
+    "pct": 17,
     "tier": "비싼 ⅓",
-    "exp_ex": -5.2,
+    "exp_ex": -5.3,
     "conflict": false
    }
   },
@@ -6472,9 +6472,9 @@
    "price": 237000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 2621559,
-   "mcap_eff": 2621559,
-   "shares": 11061430,
+   "mcap": 2621519,
+   "mcap_eff": 2621519,
+   "shares": 11061262,
    "shares_check": {
     "dart_common": 11061429,
     "dart_period": "2026-11012",
@@ -6501,19 +6501,19 @@
      "bear": {
       "g": -2.0,
       "value": 633800,
-      "per_share": 57298,
+      "per_share": 57299,
       "upside": -75.8
      },
      "base": {
       "g": 6.0,
       "value": 846744,
-      "per_share": 76549,
+      "per_share": 76550,
       "upside": -67.7
      },
      "bull": {
       "g": 12.0,
       "value": 1063620,
-      "per_share": 96156,
+      "per_share": 96157,
       "upside": -59.4
      }
     },
@@ -6539,12 +6539,12 @@
     "ttm_ni": 104654,
     "oneoff": false,
     "E": 70772,
-    "per_share": 60201,
-    "bear": 48216,
-    "bull": 75145,
+    "per_share": 60202,
+    "bear": 48217,
+    "bull": 75146,
     "upside": -74.6,
-    "pct": 34,
-    "tier": "가운데 ⅓",
+    "pct": 33,
+    "tier": "비싼 ⅓",
     "exp_ex": -2.7,
     "conflict": false
    }
@@ -6574,9 +6574,9 @@
    "price": 48300,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 401507,
-   "mcap_eff": 401507,
-   "shares": 8312774,
+   "mcap": 401468,
+   "mcap_eff": 401468,
+   "shares": 8311967,
    "shares_check": {
     "dart_common": 8312766,
     "dart_period": "2026-11012",
@@ -6603,20 +6603,20 @@
      "bear": {
       "g": 0.0,
       "value": 178817,
-      "per_share": 21511,
+      "per_share": 21513,
       "upside": -55.5
      },
      "base": {
       "g": 8.0,
       "value": 238646,
-      "per_share": 28708,
+      "per_share": 28711,
       "upside": -40.6
      },
      "bull": {
       "g": 15.0,
       "value": 310942,
-      "per_share": 37405,
-      "upside": -22.6
+      "per_share": 37409,
+      "upside": -22.5
      }
     },
     "implied_g": 21.6,
@@ -6641,9 +6641,9 @@
     "ttm_ni": 27121,
     "oneoff": false,
     "E": 15072,
-    "per_share": 17060,
-    "bear": 13663,
-    "bull": 21294,
+    "per_share": 17061,
+    "bear": 13665,
+    "bull": 21296,
     "upside": -64.7,
     "pct": 45,
     "tier": "가운데 ⅓",
@@ -6677,8 +6677,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 454511,
-   "mcap_eff": 454510,
-   "shares": 21090951,
+   "mcap_eff": 454511,
+   "shares": 21090998,
    "shares_check": {
     "dart_common": 21090955,
     "dart_period": "2026-11012",
@@ -6750,7 +6750,7 @@
     "upside": -84.0,
     "pct": 15,
     "tier": "비싼 ⅓",
-    "exp_ex": -5.5,
+    "exp_ex": -5.6,
     "conflict": false
    }
   },
@@ -6780,8 +6780,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 990515,
-   "mcap_eff": 987630,
-   "shares": 60038298,
+   "mcap_eff": 987561,
+   "shares": 60034103,
    "shares_check": {
     "dart_common": 60038299,
     "dart_period": "2026-11012",
@@ -6820,7 +6820,7 @@
      "bull": {
       "g": 18.0,
       "value": 383013,
-      "per_share": 6379,
+      "per_share": 6380,
       "upside": -61.2
      }
     },
@@ -6846,7 +6846,7 @@
     "ttm_ni": 29751,
     "oneoff": false,
     "E": 18787,
-    "per_share": 2944,
+    "per_share": 2945,
     "bear": 2358,
     "bull": 3675,
     "upside": -82.1,
@@ -6882,8 +6882,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 48697,
-   "mcap_eff": 48653,
-   "shares": 5918856,
+   "mcap_eff": 48697,
+   "shares": 5924209,
    "shares_check": {
     "dart_common": 5918890,
     "dart_period": "2026-11012",
@@ -6898,7 +6898,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -9.4,
-   "pbr": 1.76,
+   "pbr": 1.77,
    "dcf": {
     "E1": 3000,
     "r": 12.5,
@@ -6910,23 +6910,23 @@
      "bear": {
       "g": 0.0,
       "value": 21414,
-      "per_share": 3618,
+      "per_share": 3615,
       "upside": -56.0
      },
      "base": {
       "g": 15.0,
       "value": 39151,
-      "per_share": 6615,
-      "upside": -19.5
+      "per_share": 6609,
+      "upside": -19.6
      },
      "bull": {
       "g": 30.0,
       "value": 71822,
-      "per_share": 12134,
-      "upside": 47.6
+      "per_share": 12124,
+      "upside": 47.5
      }
     },
-    "implied_g": 20.3,
+    "implied_g": 20.4,
     "cycle": {
      "position": "회복기",
      "note": "테스트 소켓·프로브카드는 칩이 새로 나올 때마다 사는 소모품이라 장비보다 사이클이 완만해요. AI 칩과 메모리 생산이 늘면서 2026년은 상승기예요.",
@@ -7032,8 +7032,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 73335,
-   "mcap_eff": 72555,
-   "shares": 8858974,
+   "mcap_eff": 72505,
+   "shares": 8852869,
    "shares_check": {
     "dart_common": 8858925,
     "dart_period": "2026-11012",
@@ -7061,20 +7061,20 @@
      "bear": {
       "g": 0.0,
       "value": 17273,
-      "per_share": 1950,
+      "per_share": 1951,
       "upside": -76.2
      },
      "base": {
       "g": 10.0,
       "value": 28235,
-      "per_share": 3187,
+      "per_share": 3189,
       "upside": -61.1
      },
      "bull": {
       "g": 20.0,
       "value": 44942,
-      "per_share": 5073,
-      "upside": -38.1
+      "per_share": 5077,
+      "upside": -38.0
      }
     },
     "implied_g": 30.9,
@@ -7140,8 +7140,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 50821,
-   "mcap_eff": 50783,
-   "shares": 8477963,
+   "mcap_eff": 50759,
+   "shares": 8473957,
    "shares_check": {
     "dart_common": 8477977,
     "dart_period": "2026-11012",
@@ -7192,8 +7192,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 2209090,
-   "mcap_eff": 2175058,
-   "shares": 7658655,
+   "mcap_eff": 2175036,
+   "shares": 7658577,
    "shares_check": {
     "dart_common": 7658656,
     "dart_period": "2026-11012",
@@ -7220,19 +7220,19 @@
      "bear": {
       "g": 1.0,
       "value": 1626382,
-      "per_share": 212359,
+      "per_share": 212361,
       "upside": -25.2
      },
      "base": {
       "g": 6.0,
       "value": 1966853,
-      "per_share": 256814,
+      "per_share": 256817,
       "upside": -9.6
      },
      "bull": {
       "g": 10.0,
       "value": 2299398,
-      "per_share": 300235,
+      "per_share": 300238,
       "upside": 5.7
      }
     },
@@ -7257,11 +7257,11 @@
     "ttm_ni": 127645,
     "oneoff": false,
     "E": 140883,
-    "per_share": 173084,
-    "bear": 138627,
-    "bull": 216050,
+    "per_share": 173086,
+    "bear": 138628,
+    "bull": 216052,
     "upside": -39.1,
-    "pct": 65,
+    "pct": 64,
     "tier": "가운데 ⅓",
     "exp_ex": 3.0,
     "conflict": false
@@ -7292,9 +7292,9 @@
    "price": 36150,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 1842570,
-   "mcap_eff": 1842570,
-   "shares": 50970124,
+   "mcap": 1842568,
+   "mcap_eff": 1842568,
+   "shares": 50970069,
    "shares_check": {
     "dart_common": 50970126,
     "dart_period": "2026-11012",
@@ -7370,10 +7370,10 @@
    "name": "한솔케미칼",
    "group": "소재·부품",
    "ttm": {
-    "rev": 931889,
-    "op": 159849,
-    "ni": 154478,
-    "period": "2025Q3~2026Q2"
+    "rev": 943932,
+    "op": 159587,
+    "ni": 152915,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -7383,17 +7383,17 @@
      10.4,
      19.8
     ],
-    "trend_rev": 944915,
-    "ttm_rev": 931889,
-    "norm_ni": 143957,
+    "trend_rev": 959915,
+    "ttm_rev": 943932,
+    "norm_ni": 146243,
     "trend_g": 7.1
    },
    "price": 183100,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1976359,
-   "mcap_eff": 1964120,
-   "shares": 10727034,
+   "mcap_eff": 1964091,
+   "shares": 10726876,
    "shares_check": {
     "dart_common": 10727036,
     "dart_period": "2026-11012",
@@ -7402,14 +7402,14 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 1094877,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -197910,
+   "equity": 1138336,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -202783,
    "dividend_yield": null,
-   "per": 12.7,
-   "roe": 14.1,
-   "pbr": 1.79,
-   "net_debt_levered": -197910,
+   "per": 12.8,
+   "roe": 13.4,
+   "pbr": 1.73,
+   "net_debt_levered": -202783,
    "dcf": {
     "E1": 150000,
     "r": 9.5,
@@ -7421,19 +7421,19 @@
      "bear": {
       "g": 1.0,
       "value": 1337338,
-      "per_share": 124670,
+      "per_share": 124672,
       "upside": -31.9
      },
      "base": {
       "g": 6.0,
       "value": 1681020,
-      "per_share": 156709,
+      "per_share": 156711,
       "upside": -14.4
      },
      "bull": {
       "g": 10.0,
       "value": 2016700,
-      "per_share": 188002,
+      "per_share": 188004,
       "upside": 2.7
      }
     },
@@ -7442,24 +7442,24 @@
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
      "path": [],
-     "excess": 4478,
+     "excess": 2915,
      "excess_value": 0
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 139580,
-    "norm": 143957,
-    "ttm_ni": 154478,
+    "period": "2025Q4~2026Q3",
+    "core": 138696,
+    "norm": 146243,
+    "ttm_ni": 152915,
     "oneoff": false,
-    "E": 141769,
-    "per_share": 124351,
-    "bear": 99596,
-    "bull": 155220,
-    "upside": -32.1,
-    "pct": 71,
+    "E": 142470,
+    "per_share": 124968,
+    "bear": 100090,
+    "bull": 155989,
+    "upside": -31.7,
+    "pct": 69,
     "tier": "싼 ⅓",
     "exp_ex": 3.8,
     "conflict": false
@@ -7490,9 +7490,9 @@
    "price": 42000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 600089,
-   "mcap_eff": 600089,
-   "shares": 14287833,
+   "mcap": 600033,
+   "mcap_eff": 600033,
+   "shares": 14286500,
    "shares_check": {
     "dart_common": 14287836,
     "dart_period": "2026-11012",
@@ -7520,19 +7520,19 @@
      "bear": {
       "g": 0.0,
       "value": 422070,
-      "per_share": 29540,
+      "per_share": 29543,
       "upside": -29.7
      },
      "base": {
       "g": 5.0,
       "value": 527174,
-      "per_share": 36897,
-      "upside": -12.2
+      "per_share": 36900,
+      "upside": -12.1
      },
      "bull": {
       "g": 9.0,
       "value": 629824,
-      "per_share": 44081,
+      "per_share": 44085,
       "upside": 5.0
      }
     },
@@ -7558,9 +7558,9 @@
     "ttm_ni": 57246,
     "oneoff": false,
     "E": 54719,
-    "per_share": 36035,
-    "bear": 28861,
-    "bull": 44980,
+    "per_share": 36038,
+    "bear": 28864,
+    "bull": 44984,
     "upside": -14.2,
     "pct": 82,
     "tier": "싼 ⅓",
@@ -7572,10 +7572,10 @@
    "name": "하나머티리얼즈",
    "group": "소재·부품",
    "ttm": {
-    "rev": 334244,
-    "op": 80179,
-    "ni": 64196,
-    "period": "2025Q3~2026Q2"
+    "rev": 359267,
+    "op": 95283,
+    "ni": 48335,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2017~2025",
@@ -7585,33 +7585,32 @@
      12.6,
      26.1
     ],
-    "trend_rev": 333551,
-    "ttm_rev": 334244,
-    "norm_ni": 61768,
-    "trend_g": 11.0
+    "trend_rev": 347573,
+    "ttm_rev": 359267,
+    "norm_ni": 64365,
+    "trend_g": 11.2
    },
    "price": 43250,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 855376,
-   "mcap_eff": 834269,
-   "shares": 19289457,
+   "mcap_eff": 834261,
+   "shares": 19289272,
    "shares_check": {
     "dart_common": 19289452,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 19777483,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 613170,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -67760,
+   "equity": 595104,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 44295,
    "dividend_yield": null,
-   "per": 13.0,
-   "roe": 10.5,
-   "pbr": 1.36,
-   "net_debt_levered": -67760,
+   "per": 17.3,
+   "roe": 8.1,
+   "pbr": 1.4,
    "dcf": {
     "E1": 65000,
     "r": 10.0,
@@ -7622,24 +7621,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 608342,
-      "per_share": 31538,
-      "upside": -27.1
+      "value": 623955,
+      "per_share": 32347,
+      "upside": -25.2
      },
      "base": {
       "g": 9.0,
-      "value": 834057,
-      "per_share": 43239,
-      "upside": -0.0
+      "value": 846594,
+      "per_share": 43889,
+      "upside": 1.5
      },
      "bull": {
       "g": 15.0,
-      "value": 1090425,
-      "per_share": 56530,
-      "upside": 30.7
+      "value": 1099468,
+      "per_share": 56999,
+      "upside": 31.8
      }
     },
-    "implied_g": 9.0,
+    "implied_g": 8.7,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7648,24 +7647,24 @@
       0.7,
       0.3
      ],
-     "excess": -804,
-     "excess_value": -1033
+     "excess": -16665,
+     "excess_value": -21410
     },
-    "net_cash_added": 0
+    "net_cash_added": 44295
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 63368,
-    "norm": 61768,
-    "ttm_ni": 64196,
+    "period": "2025Q4~2026Q3",
+    "core": 61328,
+    "norm": 64365,
+    "ttm_ni": 48335,
     "oneoff": false,
-    "E": 62568,
-    "per_share": 30520,
-    "bear": 24444,
-    "bull": 38096,
-    "upside": -29.4,
-    "pct": 73,
+    "E": 62846,
+    "per_share": 30656,
+    "bear": 24553,
+    "bull": 38266,
+    "upside": -29.1,
+    "pct": 71,
     "tier": "싼 ⅓",
     "exp_ex": 4.0,
     "conflict": false
@@ -7675,10 +7674,10 @@
    "name": "티씨케이",
    "group": "소재·부품",
    "ttm": {
-    "rev": 340563,
-    "op": 96316,
-    "ni": 83161,
-    "period": "2025Q3~2026Q2"
+    "rev": 371424,
+    "op": 104158,
+    "ni": 89030,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -7688,36 +7687,32 @@
      23.2,
      30.2
     ],
-    "trend_rev": 361615,
-    "ttm_rev": 340563,
-    "norm_ni": 98510,
-    "trend_g": 12.2
+    "trend_rev": 378527,
+    "ttm_rev": 371424,
+    "norm_ni": 103118,
+    "trend_g": 12.5
    },
    "price": 177300,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 1982110,
-   "mcap_eff": 1982110,
-   "shares": 11179413,
+   "mcap": 1982108,
+   "mcap_eff": 1982108,
+   "shares": 11179402,
    "shares_check": {
     "dart_common": 11179416,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 11179402,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 551454,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 300462,
+   "equity": 574325,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 318502,
    "dividend_yield": null,
-   "per": 23.8,
-   "roe": 15.1,
-   "pbr": 3.59,
-   "ttm_news": {
-    "period": "2025Q4~2026Q3",
-    "ni": 89023
-   },
+   "per": 22.3,
+   "roe": 15.5,
+   "pbr": 3.45,
    "dcf": {
     "E1": 95000,
     "r": 9.5,
@@ -7728,24 +7723,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 1303617,
-      "per_share": 116609,
-      "upside": -34.2
+      "value": 1317575,
+      "per_share": 117857,
+      "upside": -33.5
      },
      "base": {
       "g": 7.0,
-      "value": 1562590,
-      "per_share": 139774,
-      "upside": -21.2
+      "value": 1575498,
+      "per_share": 140929,
+      "upside": -20.5
      },
      "bull": {
       "g": 12.0,
-      "value": 1885554,
-      "per_share": 168663,
-      "upside": -4.9
+      "value": 1897152,
+      "per_share": 169701,
+      "upside": -4.3
      }
     },
-    "implied_g": 13.3,
+    "implied_g": 13.2,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -7753,26 +7748,26 @@
       0.8,
       0.4
      ],
-     "excess": -5977,
-     "excess_value": -5407
+     "excess": -5970,
+     "excess_value": -5400
     },
-    "net_cash_added": 300462
+    "net_cash_added": 318502
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": 79144,
-    "norm": 98510,
-    "ttm_ni": 83161,
+    "period": "2025Q4~2026Q3",
+    "core": 85137,
+    "norm": 103118,
+    "ttm_ni": 89030,
     "oneoff": false,
-    "E": 88827,
-    "per_share": 74761,
-    "bear": 59878,
-    "bull": 93320,
-    "upside": -57.8,
-    "pct": 54,
+    "E": 94127,
+    "per_share": 79222,
+    "bear": 63451,
+    "bull": 98888,
+    "upside": -55.3,
+    "pct": 53,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.6,
+    "exp_ex": 1.0,
     "conflict": false
    }
   },
@@ -7802,8 +7797,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 645416,
-   "mcap_eff": 645370,
-   "shares": 26287984,
+   "mcap_eff": 645416,
+   "shares": 26289857,
    "shares_check": {
     "dart_common": 26288000,
     "dart_period": "2026-11012",
@@ -7831,19 +7826,19 @@
      "bear": {
       "g": 2.0,
       "value": 523036,
-      "per_share": 19896,
+      "per_share": 19895,
       "upside": -19.0
      },
      "base": {
       "g": 7.0,
       "value": 656127,
-      "per_share": 24959,
+      "per_share": 24957,
       "upside": 1.7
      },
      "bull": {
       "g": 12.0,
       "value": 821670,
-      "per_share": 31256,
+      "per_share": 31254,
       "upside": 27.3
      }
     },
@@ -7868,13 +7863,13 @@
     "ttm_ni": 48348,
     "oneoff": false,
     "E": 77587,
-    "per_share": 27770,
-    "bear": 22242,
-    "bull": 34664,
+    "per_share": 27768,
+    "bear": 22240,
+    "bull": 34661,
     "upside": 13.1,
     "pct": 89,
     "tier": "싼 ⅓",
-    "exp_ex": 7.3,
+    "exp_ex": 7.2,
     "conflict": false
    }
   },
@@ -7903,9 +7898,9 @@
    "price": 25800,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 425984,
-   "mcap_eff": 425984,
-   "shares": 16511008,
+   "mcap": 425935,
+   "mcap_eff": 425935,
+   "shares": 16509109,
    "shares_check": {
     "dart_common": 16510993,
     "dart_period": "2026-11012",
@@ -7932,20 +7927,20 @@
      "bear": {
       "g": 0.0,
       "value": 615397,
-      "per_share": 37272,
+      "per_share": 37276,
       "upside": 44.5
      },
      "base": {
       "g": 8.0,
       "value": 837525,
-      "per_share": 50725,
+      "per_share": 50731,
       "upside": 96.6
      },
      "bull": {
       "g": 14.0,
       "value": 1062981,
-      "per_share": 64380,
-      "upside": 149.5
+      "per_share": 64388,
+      "upside": 149.6
      }
     },
     "implied_g": -10.3,
@@ -7970,9 +7965,9 @@
     "ttm_ni": 75855,
     "oneoff": false,
     "E": 59701,
-    "per_share": 34022,
-    "bear": 27249,
-    "bull": 42467,
+    "per_share": 34026,
+    "bear": 27252,
+    "bull": 42472,
     "upside": 31.9,
     "pct": 92,
     "tier": "싼 ⅓",
@@ -8006,53 +8001,52 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1032442,
-   "mcap_eff": 1032442,
-   "shares": 51365274,
+   "mcap_eff": 1024883,
+   "shares": 50989204,
    "shares_check": {
     "dart_common": 20169252,
     "dart_period": "2026-11012",
     "listed": 51365269,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 20,169,252주 → 현재 상장 51,365,269주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
    "equity": 286701,
    "equity_source": "DART 2026Q2",
    "net_cash": -526492,
    "dividend_yield": null,
-   "per": 32.3,
+   "per": 32.0,
    "roe": 11.2,
-   "pbr": 3.6,
+   "pbr": 3.57,
    "net_debt_levered": -526492,
    "dcf": {
     "E1": 60000,
     "r": 10.5,
     "c": 0.75,
     "note": "10년 평균 순이익률 13%지만 지배주주 몫이 줄어 최근 이익률은 5%예요. 매출 6,500억원 × 9%를 정상으로 봤어요.",
-    "fwd_per": 17.2,
-    "norm_per": 17.2,
+    "fwd_per": 17.1,
+    "norm_per": 17.1,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 462358,
-      "per_share": 9001,
-      "upside": -55.2
+      "per_share": 9068,
+      "upside": -54.9
      },
      "base": {
       "g": 8.0,
       "value": 668922,
-      "per_share": 13023,
-      "upside": -35.2
+      "per_share": 13119,
+      "upside": -34.7
      },
      "bull": {
       "g": 14.0,
       "value": 878581,
-      "per_share": 17105,
-      "upside": -14.9
+      "per_share": 17231,
+      "upside": -14.3
      }
     },
-    "implied_g": 17.6,
+    "implied_g": 17.4,
     "cycle": {
      "position": "회복기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8073,13 +8067,13 @@
     "ttm_ni": 31980,
     "oneoff": false,
     "E": 66913,
-    "per_share": 12257,
-    "bear": 9817,
-    "bull": 15300,
-    "upside": -39.0,
-    "pct": 66,
+    "per_share": 12348,
+    "bear": 9890,
+    "bull": 15413,
+    "upside": -38.6,
+    "pct": 65,
     "tier": "가운데 ⅓",
-    "exp_ex": 3.0,
+    "exp_ex": 3.1,
     "conflict": false
    }
   },
@@ -8109,8 +8103,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 702699,
-   "mcap_eff": 662993,
-   "shares": 31496105,
+   "mcap_eff": 662268,
+   "shares": 31461663,
    "shares_check": {
     "dart_common": 31496097,
     "dart_period": "2026-11012",
@@ -8137,20 +8131,20 @@
      "bear": {
       "g": 0.0,
       "value": 156795,
-      "per_share": 4978,
-      "upside": -76.4
+      "per_share": 4984,
+      "upside": -76.3
      },
      "base": {
       "g": 8.0,
       "value": 222514,
-      "per_share": 7065,
+      "per_share": 7073,
       "upside": -66.4
      },
      "bull": {
       "g": 14.0,
       "value": 289099,
-      "per_share": 9179,
-      "upside": -56.4
+      "per_share": 9189,
+      "upside": -56.3
      }
     },
     "implied_g": 33.6,
@@ -8171,11 +8165,11 @@
     "ttm_ni": 16151,
     "oneoff": true,
     "E": 34217,
-    "per_share": 10222,
-    "bear": 8187,
-    "bull": 12759,
+    "per_share": 10233,
+    "bear": 8196,
+    "bull": 12773,
     "upside": -51.4,
-    "pct": 59,
+    "pct": 58,
     "tier": "가운데 ⅓",
     "exp_ex": 1.5,
     "conflict": false
@@ -8207,8 +8201,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 275541,
-   "mcap_eff": 268138,
-   "shares": 27388968,
+   "mcap_eff": 268158,
+   "shares": 27391011,
    "shares_check": {
     "dart_common": 27389012,
     "dart_period": "2026-11012",
@@ -8245,13 +8239,13 @@
      "base": {
       "g": 8.0,
       "value": 257763,
-      "per_share": 9411,
+      "per_share": 9410,
       "upside": -3.9
      },
      "bull": {
       "g": 14.0,
       "value": 325058,
-      "per_share": 11868,
+      "per_share": 11867,
       "upside": 21.2
      }
     },
@@ -8278,10 +8272,10 @@
     "oneoff": false,
     "E": 16473,
     "per_share": 5659,
-    "bear": 4533,
-    "bull": 7064,
+    "bear": 4532,
+    "bull": 7063,
     "upside": -42.2,
-    "pct": 63,
+    "pct": 62,
     "tier": "가운데 ⅓",
     "exp_ex": 2.7,
     "conflict": false
@@ -8291,10 +8285,10 @@
    "name": "에스앤에스텍",
    "group": "소재·부품",
    "ttm": {
-    "rev": 253264,
-    "op": 50192,
-    "ni": 62865,
-    "period": "2025Q3~2026Q2"
+    "rev": 253713,
+    "op": 49677,
+    "ni": 58200,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -8304,32 +8298,32 @@
      5.8,
      23.9
     ],
-    "trend_rev": 237659,
-    "ttm_rev": 253264,
-    "norm_ni": 32381,
-    "trend_g": 18.7
+    "trend_rev": 245165,
+    "ttm_rev": 253713,
+    "norm_ni": 33403,
+    "trend_g": 18.5
    },
    "price": 36600,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 780878,
-   "mcap_eff": 771372,
-   "shares": 21075738,
+   "mcap_eff": 771394,
+   "shares": 21076339,
    "shares_check": {
     "dart_common": 21075750,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 21335463,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 335439,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 72968,
+   "equity": 341880,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 72053,
    "dividend_yield": null,
-   "per": 12.3,
-   "roe": 18.7,
-   "pbr": 2.3,
+   "per": 13.3,
+   "roe": 17.0,
+   "pbr": 2.26,
    "dcf": {
     "E1": 55000,
     "r": 10.5,
@@ -8340,24 +8334,24 @@
     "scenarios": {
      "bear": {
       "g": 2.0,
-      "value": 587580,
-      "per_share": 27879,
-      "upside": -23.8
+      "value": 580491,
+      "per_share": 27542,
+      "upside": -24.7
      },
      "base": {
       "g": 10.0,
-      "value": 802326,
-      "per_share": 38069,
-      "upside": 4.0
+      "value": 795310,
+      "per_share": 37735,
+      "upside": 3.1
      },
      "bull": {
       "g": 18.0,
-      "value": 1104928,
-      "per_share": 52427,
-      "upside": 43.2
+      "value": 1098016,
+      "per_share": 52097,
+      "upside": 42.3
      }
     },
-    "implied_g": 9.0,
+    "implied_g": 9.2,
     "cycle": {
      "position": "상승기",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -8366,26 +8360,26 @@
       0.7,
       0.3
      ],
-     "excess": 7865,
-     "excess_value": 10700
+     "excess": 3200,
+     "excess_value": 4354
     },
-    "net_cash_added": 72968
+    "net_cash_added": 72053
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 51007,
-    "norm": 32381,
-    "ttm_ni": 62865,
+    "period": "2025Q4~2026Q3",
+    "core": 48474,
+    "norm": 33403,
+    "ttm_ni": 58200,
     "oneoff": false,
-    "E": 41694,
-    "per_share": 18614,
-    "bear": 14908,
-    "bull": 23235,
-    "upside": -49.1,
+    "E": 40939,
+    "per_share": 18276,
+    "bear": 14638,
+    "bull": 22813,
+    "upside": -50.1,
     "pct": 61,
     "tier": "가운데 ⅓",
-    "exp_ex": 1.8,
+    "exp_ex": 1.7,
     "conflict": false
    }
   },
@@ -8421,16 +8415,15 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 184495,
-   "mcap_eff": 184495,
-   "shares": 20476693,
+   "mcap_eff": 184046,
+   "shares": 20426859,
    "shares_check": {
-    "dart_common": null,
-    "dart_period": null,
+    "dart_common": 20426809,
+    "dart_period": "2026-11012",
     "listed": 20476744,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 주식수 없음: 상장주식수 사용"
+    "pref_price": null
    },
    "equity": 99288,
    "equity_source": "DART 2026Q2",
@@ -8438,7 +8431,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -83.3,
-   "pbr": 1.86,
+   "pbr": 1.85,
    "quant": {
     "pos": "바닥권",
     "period": "2025Q3~2026Q2",
@@ -8473,9 +8466,9 @@
    "price": 7730,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 351228,
-   "mcap_eff": 351228,
-   "shares": 45436999,
+   "mcap": 351179,
+   "mcap_eff": 351179,
+   "shares": 45430660,
    "shares_check": {
     "dart_common": 45437002,
     "dart_period": "2026-11012",
@@ -8513,13 +8506,13 @@
      "base": {
       "g": 8.0,
       "value": 307120,
-      "per_share": 6759,
-      "upside": -12.6
+      "per_share": 6760,
+      "upside": -12.5
      },
      "bull": {
       "g": 15.0,
       "value": 418266,
-      "per_share": 9205,
+      "per_share": 9207,
       "upside": 19.1
      }
     },
@@ -8544,11 +8537,11 @@
     "ttm_ni": -97680,
     "oneoff": true,
     "E": 18380,
-    "per_share": 3806,
-    "bear": 3048,
-    "bull": 4751,
+    "per_share": 3807,
+    "bear": 3049,
+    "bull": 4752,
     "upside": -50.8,
-    "pct": 60,
+    "pct": 59,
     "tier": "가운데 ⅓",
     "exp_ex": 1.6,
     "conflict": false
@@ -8580,8 +8573,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 131228,
-   "mcap_eff": 127343,
-   "shares": 11229541,
+   "mcap_eff": 127346,
+   "shares": 11229806,
    "shares_check": {
     "dart_common": 11229508,
     "dart_period": "2026-11012",
@@ -8620,7 +8613,7 @@
      "bull": {
       "g": 12.0,
       "value": 109775,
-      "per_share": 9776,
+      "per_share": 9775,
       "upside": -13.8
      }
     },
@@ -8647,9 +8640,9 @@
     "E": 5533,
     "per_share": 4636,
     "bear": 3713,
-    "bull": 5787,
+    "bull": 5786,
     "upside": -59.1,
-    "pct": 53,
+    "pct": 52,
     "tier": "가운데 ⅓",
     "exp_ex": 0.4,
     "conflict": false
@@ -8681,8 +8674,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 712545,
-   "mcap_eff": 712519,
-   "shares": 65730535,
+   "mcap_eff": 712544,
+   "shares": 65732841,
    "shares_check": {
     "dart_common": 65730510,
     "dart_period": "2026-11012",
@@ -8782,9 +8775,9 @@
    "price": 9140,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 980314,
-   "mcap_eff": 980314,
-   "shares": 107255361,
+   "mcap": 980299,
+   "mcap_eff": 980299,
+   "shares": 107253720,
    "shares_check": {
     "dart_common": 107255330,
     "dart_period": "2026-11012",
@@ -8881,9 +8874,9 @@
    "price": 33950,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 428042,
-   "mcap_eff": 428042,
-   "shares": 12608012,
+   "mcap": 427993,
+   "mcap_eff": 427993,
+   "shares": 12606568,
    "shares_check": {
     "dart_common": 12608000,
     "dart_period": "2026-11012",
@@ -8915,19 +8908,19 @@
      "bear": {
       "g": 0.0,
       "value": 450896,
-      "per_share": 35763,
-      "upside": 5.3
+      "per_share": 35767,
+      "upside": 5.4
      },
      "base": {
       "g": 6.0,
       "value": 589216,
-      "per_share": 46733,
+      "per_share": 46739,
       "upside": 37.7
      },
      "bull": {
       "g": 12.0,
       "value": 769485,
-      "per_share": 61031,
+      "per_share": 61038,
       "upside": 79.8
      }
     },
@@ -8953,9 +8946,9 @@
     "ttm_ni": 54251,
     "oneoff": false,
     "E": 50272,
-    "per_share": 37517,
-    "bear": 30048,
-    "bull": 46830,
+    "per_share": 37521,
+    "bear": 30051,
+    "bull": 46835,
     "upside": 10.5,
     "pct": 88,
     "tier": "싼 ⅓",
@@ -8989,8 +8982,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 57800,
-   "mcap_eff": 54357,
-   "shares": 9404325,
+   "mcap_eff": 54341,
+   "shares": 9401557,
    "shares_check": {
     "dart_common": 9404253,
     "dart_period": "2026-11012",
@@ -9018,20 +9011,20 @@
      "bear": {
       "g": -3.0,
       "value": 49295,
-      "per_share": 5242,
+      "per_share": 5243,
       "upside": -9.3
      },
      "base": {
       "g": 4.0,
       "value": 68447,
-      "per_share": 7278,
-      "upside": 25.9
+      "per_share": 7280,
+      "upside": 26.0
      },
      "bull": {
       "g": 10.0,
       "value": 90299,
-      "per_share": 9602,
-      "upside": 66.1
+      "per_share": 9605,
+      "upside": 66.2
      }
     },
     "implied_g": -0.9,
@@ -9055,10 +9048,10 @@
     "ttm_ni": 1413,
     "oneoff": false,
     "E": 12385,
-    "per_share": 12392,
-    "bear": 9925,
-    "bull": 15468,
-    "upside": 114.4,
+    "per_share": 12395,
+    "bear": 9928,
+    "bull": 15472,
+    "upside": 114.5,
     "pct": 97,
     "tier": "싼 ⅓",
     "exp_ex": 11.8,
@@ -9069,10 +9062,10 @@
    "name": "램테크놀러지",
    "group": "소재·부품",
    "ttm": {
-    "rev": 45207,
-    "op": -355,
-    "ni": -7907,
-    "period": "2025Q3~2026Q2"
+    "rev": 47788,
+    "op": -353,
+    "ni": -8140,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -9082,32 +9075,32 @@
      -19.6,
      9.0
     ],
-    "trend_rev": 53273,
-    "ttm_rev": 45207,
-    "norm_ni": 168,
-    "trend_g": 6.4
+    "trend_rev": 54665,
+    "ttm_rev": 47788,
+    "norm_ni": 173,
+    "trend_g": 6.5
    },
    "price": 2240,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 32060,
-   "mcap_eff": 32029,
-   "shares": 14298661,
+   "mcap_eff": 32060,
+   "shares": 14312500,
    "shares_check": {
     "dart_common": 14298752,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 14312354,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 41617,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -58371,
+   "equity": 39001,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -54844,
    "dividend_yield": null,
    "per": null,
-   "roe": -19.0,
-   "pbr": 0.77,
+   "roe": -20.9,
+   "pbr": 0.82,
    "skip": "최근 3년 적자라 정상 이익을 추정할 수 없어요.",
    "cycle": {
     "position": "바닥권",
@@ -9115,10 +9108,10 @@
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": -4092,
-    "norm": 168,
-    "ttm_ni": -7907,
+    "period": "2025Q4~2026Q3",
+    "core": -4208,
+    "norm": 173,
+    "ttm_ni": -8140,
     "oneoff": false
    }
   },
@@ -9247,8 +9240,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 161798,
-   "mcap_eff": 161769,
-   "shares": 20221125,
+   "mcap_eff": 161798,
+   "shares": 20224750,
    "shares_check": {
     "dart_common": 20221090,
     "dart_period": "2026-11012",
@@ -9276,7 +9269,7 @@
      "bear": {
       "g": 0.0,
       "value": 26949,
-      "per_share": 1333,
+      "per_share": 1332,
       "upside": -83.3
      },
      "base": {
@@ -9288,7 +9281,7 @@
      "bull": {
       "g": 25.0,
       "value": 78833,
-      "per_share": 3899,
+      "per_share": 3898,
       "upside": -51.3
      }
     },
@@ -9340,8 +9333,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 287147,
-   "mcap_eff": 273806,
-   "shares": 23422241,
+   "mcap_eff": 278120,
+   "shares": 23791275,
    "shares_check": {
     "dart_common": 23422275,
     "dart_period": "2026-11012",
@@ -9354,37 +9347,37 @@
    "equity_source": "DART 2026Q2",
    "net_cash": -1104761,
    "dividend_yield": null,
-   "per": 12.7,
+   "per": 12.9,
    "roe": 5.2,
-   "pbr": 0.66,
+   "pbr": 0.67,
    "dcf": {
     "E1": 20000,
     "r": 10.5,
     "c": 0.6,
     "note": "10년 평균 기준 212억원과 최근 216억원이 같아요. 금값이 매출을 크게 흔들지만 이익은 작아요. 차입금은 금 재고 운전자금이라 따로 빼지 않았어요.",
-    "fwd_per": 13.7,
-    "norm_per": 13.7,
+    "fwd_per": 13.9,
+    "norm_per": 13.9,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 129188,
-      "per_share": 5516,
-      "upside": -52.8
+      "per_share": 5430,
+      "upside": -53.5
      },
      "base": {
       "g": 5.0,
       "value": 161299,
-      "per_share": 6887,
-      "upside": -41.1
+      "per_share": 6780,
+      "upside": -42.0
      },
      "bull": {
       "g": 10.0,
       "value": 201340,
-      "per_share": 8596,
-      "upside": -26.5
+      "per_share": 8463,
+      "upside": -27.6
      }
     },
-    "implied_g": 17.0,
+    "implied_g": 17.3,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
@@ -9402,13 +9395,13 @@
     "ttm_ni": 21599,
     "oneoff": false,
     "E": 24579,
-    "per_share": 9874,
-    "bear": 7908,
-    "bull": 12325,
-    "upside": -15.5,
+    "per_share": 9721,
+    "bear": 7786,
+    "bull": 12134,
+    "upside": -16.8,
     "pct": 81,
     "tier": "싼 ⅓",
-    "exp_ex": 5.2,
+    "exp_ex": 5.1,
     "conflict": true
    }
   },
@@ -9416,10 +9409,10 @@
    "name": "에프엔에스테크",
    "group": "소재·부품",
    "ttm": {
-    "rev": 57713,
-    "op": 11892,
-    "ni": 9307,
-    "period": "2025Q3~2026Q2"
+    "rev": 61712,
+    "op": 14931,
+    "ni": 12828,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2017~2025",
@@ -9429,32 +9422,32 @@
      -14.7,
      15.8
     ],
-    "trend_rev": 66843,
-    "ttm_rev": 57713,
-    "norm_ni": 4376,
-    "trend_g": 2.5
+    "trend_rev": 68475,
+    "ttm_rev": 61712,
+    "norm_ni": 4483,
+    "trend_g": 2.8
    },
    "price": 12150,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 100955,
-   "mcap_eff": 95892,
-   "shares": 7892346,
+   "mcap_eff": 95925,
+   "shares": 7895062,
    "shares_check": {
     "dart_common": 7892377,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 8309038,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 89487,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 25971,
+   "equity": 92134,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 25080,
    "dividend_yield": null,
-   "per": 10.3,
-   "roe": 10.4,
-   "pbr": 1.07,
+   "per": 7.5,
+   "roe": 13.9,
+   "pbr": 1.04,
    "dcf": {
     "E1": 7000,
     "r": 11.0,
@@ -9465,48 +9458,48 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 75458,
-      "per_share": 9561,
-      "upside": -21.3
+      "value": 74703,
+      "per_share": 9462,
+      "upside": -22.1
      },
      "base": {
       "g": 6.0,
-      "value": 90311,
-      "per_share": 11443,
-      "upside": -5.8
+      "value": 89597,
+      "per_share": 11349,
+      "upside": -6.6
      },
      "bull": {
       "g": 12.0,
-      "value": 109608,
-      "per_share": 13888,
-      "upside": 14.3
+      "value": 108947,
+      "per_share": 13799,
+      "upside": 13.6
      }
     },
-    "implied_g": 7.9,
+    "implied_g": 8.1,
     "cycle": {
      "position": "중립",
      "note": "소재와 소모성 부품은 공장 가동률을 따라가요. 메모리 가동률이 높아 수요가 좋지만, 가격이 장비만큼 크게 오르내리지 않아 사이클 진폭이 작아요.",
      "path": [],
-     "excess": 2307,
+     "excess": 5828,
      "excess_value": 0
     },
-    "net_cash_added": 25971
+    "net_cash_added": 25080
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 9291,
-    "norm": 4376,
-    "ttm_ni": 9307,
+    "period": "2025Q4~2026Q3",
+    "core": 12237,
+    "norm": 4483,
+    "ttm_ni": 12828,
     "oneoff": false,
-    "E": 6834,
-    "per_share": 8147,
-    "bear": 6525,
-    "bull": 10169,
-    "upside": -32.9,
-    "pct": 70,
+    "E": 8360,
+    "per_share": 9963,
+    "bear": 7980,
+    "bull": 12436,
+    "upside": -18.0,
+    "pct": 80,
     "tier": "싼 ⅓",
-    "exp_ex": 3.7,
+    "exp_ex": 5.0,
     "conflict": false
    }
   },
@@ -9536,8 +9529,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 282553,
-   "mcap_eff": 277719,
-   "shares": 21545306,
+   "mcap_eff": 277686,
+   "shares": 21542746,
    "shares_check": {
     "dart_common": 21545310,
     "dart_period": "2026-11012",
@@ -9565,19 +9558,19 @@
      "bear": {
       "g": 0.0,
       "value": 160149,
-      "per_share": 7433,
+      "per_share": 7434,
       "upside": -42.3
      },
      "base": {
       "g": 6.0,
       "value": 209443,
-      "per_share": 9721,
+      "per_share": 9722,
       "upside": -24.6
      },
      "bull": {
       "g": 12.0,
       "value": 273584,
-      "per_share": 12698,
+      "per_share": 12700,
       "upside": -1.5
      }
     },
@@ -9602,11 +9595,11 @@
     "ttm_ni": 18305,
     "oneoff": false,
     "E": 19131,
-    "per_share": 8355,
+    "per_share": 8356,
     "bear": 6692,
-    "bull": 10429,
+    "bull": 10430,
     "upside": -35.2,
-    "pct": 69,
+    "pct": 68,
     "tier": "싼 ⅓",
     "exp_ex": 3.4,
     "conflict": false
@@ -9638,8 +9631,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 114237,
-   "mcap_eff": 113416,
-   "shares": 12700560,
+   "mcap_eff": 113367,
+   "shares": 12695073,
    "shares_check": {
     "dart_common": 12700504,
     "dart_period": "2026-11012",
@@ -9667,20 +9660,20 @@
      "bear": {
       "g": 0.0,
       "value": 34637,
-      "per_share": 2727,
-      "upside": -69.5
+      "per_share": 2728,
+      "upside": -69.4
      },
      "base": {
       "g": 10.0,
       "value": 54176,
-      "per_share": 4266,
+      "per_share": 4267,
       "upside": -52.2
      },
      "bull": {
       "g": 18.0,
       "value": 77035,
-      "per_share": 6065,
-      "upside": -32.1
+      "per_share": 6068,
+      "upside": -32.0
      }
     },
     "implied_g": 27.0,
@@ -9704,9 +9697,9 @@
     "ttm_ni": 2970,
     "oneoff": false,
     "E": 3883,
-    "per_share": 2877,
-    "bear": 2304,
-    "bull": 3591,
+    "per_share": 2878,
+    "bear": 2305,
+    "bull": 3592,
     "upside": -67.8,
     "pct": 42,
     "tier": "가운데 ⅓",
@@ -9740,8 +9733,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 790421,
-   "mcap_eff": 788193,
-   "shares": 20445992,
+   "mcap_eff": 788185,
+   "shares": 20445785,
    "shares_check": {
     "dart_common": 20445981,
     "dart_period": "2026-11012",
@@ -9780,7 +9773,7 @@
      "bull": {
       "g": 9.0,
       "value": 822243,
-      "per_share": 40215,
+      "per_share": 40216,
       "upside": 4.3
      }
     },
@@ -9803,10 +9796,10 @@
     "oneoff": true,
     "E": 39312,
     "per_share": 18091,
-    "bear": 14489,
+    "bear": 14490,
     "bull": 22582,
     "upside": -53.1,
-    "pct": 57,
+    "pct": 56,
     "tier": "가운데 ⅓",
     "exp_ex": 1.3,
     "conflict": false
@@ -9838,8 +9831,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 318120,
-   "mcap_eff": 311622,
-   "shares": 20248343,
+   "mcap_eff": 311576,
+   "shares": 20245354,
    "shares_check": {
     "dart_common": 20248339,
     "dart_period": "2026-11012",
@@ -9866,19 +9859,19 @@
      "bear": {
       "g": 0.0,
       "value": 384710,
-      "per_share": 19000,
+      "per_share": 19002,
       "upside": 23.5
      },
      "base": {
       "g": 5.0,
       "value": 467249,
-      "per_share": 23076,
-      "upside": 49.9
+      "per_share": 23079,
+      "upside": 50.0
      },
      "bull": {
       "g": 9.0,
       "value": 547862,
-      "per_share": 27057,
+      "per_share": 27061,
       "upside": 75.8
      }
     },
@@ -9900,9 +9893,9 @@
     "ttm_ni": 39458,
     "oneoff": false,
     "E": 42882,
-    "per_share": 19927,
-    "bear": 15960,
-    "bull": 24873,
+    "per_share": 19930,
+    "bear": 15962,
+    "bull": 24877,
     "upside": 29.5,
     "pct": 91,
     "tier": "싼 ⅓",
@@ -9936,8 +9929,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1908322,
-   "mcap_eff": 1907988,
-   "shares": 66480418,
+   "mcap_eff": 1908322,
+   "shares": 66492056,
    "shares_check": {
     "dart_common": 66480426,
     "dart_period": "2026-11012",
@@ -9965,19 +9958,19 @@
      "bear": {
       "g": 0.0,
       "value": 229084,
-      "per_share": 3446,
+      "per_share": 3445,
       "upside": -88.0
      },
      "base": {
       "g": 10.0,
       "value": 354814,
-      "per_share": 5337,
+      "per_share": 5336,
       "upside": -81.4
      },
      "bull": {
       "g": 18.0,
       "value": 502228,
-      "per_share": 7555,
+      "per_share": 7553,
       "upside": -73.7
      }
     },
@@ -9999,11 +9992,11 @@
     "ttm_ni": 171154,
     "oneoff": false,
     "E": 96951,
-    "per_share": 13722,
-    "bear": 10990,
-    "bull": 17128,
+    "per_share": 13719,
+    "bear": 10988,
+    "bull": 17125,
     "upside": -52.2,
-    "pct": 58,
+    "pct": 57,
     "tier": "가운데 ⅓",
     "exp_ex": 1.4,
     "conflict": false
@@ -10035,8 +10028,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1407002,
-   "mcap_eff": 1401082,
-   "shares": 19245632,
+   "mcap_eff": 1401061,
+   "shares": 19245343,
    "shares_check": {
     "dart_common": 19245628,
     "dart_period": "2026-11012",
@@ -10064,7 +10057,7 @@
      "bear": {
       "g": 3.0,
       "value": 325277,
-      "per_share": 16901,
+      "per_share": 16902,
       "upside": -76.8
      },
      "base": {
@@ -10076,7 +10069,7 @@
      "bull": {
       "g": 22.0,
       "value": 758742,
-      "per_share": 39424,
+      "per_share": 39425,
       "upside": -45.8
      }
     },
@@ -10101,7 +10094,7 @@
     "ttm_ni": 34230,
     "oneoff": false,
     "E": 56702,
-    "per_share": 27721,
+    "per_share": 27722,
     "bear": 22203,
     "bull": 34603,
     "upside": -61.9,
@@ -10115,10 +10108,10 @@
    "name": "SFA반도체",
    "group": "후공정(OSAT)",
    "ttm": {
-    "rev": 449633,
-    "op": -19220,
-    "ni": -10368,
-    "period": "2025Q3~2026Q2"
+    "rev": 501312,
+    "op": -19496,
+    "ni": -14917,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -10128,17 +10121,17 @@
      -5.2,
      8.2
     ],
-    "trend_rev": 462237,
-    "ttm_rev": 449633,
-    "norm_ni": 12304,
-    "trend_g": -1.3
+    "trend_rev": 476517,
+    "ttm_rev": 501312,
+    "norm_ni": 12684,
+    "trend_g": -0.8
    },
    "price": 8560,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 1407810,
-   "mcap_eff": 1403540,
-   "shares": 163964953,
+   "mcap_eff": 1403570,
+   "shares": 163968458,
    "shares_check": {
     "dart_common": 163964999,
     "dart_period": "2026-11012",
@@ -10147,13 +10140,14 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 479879,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 42166,
+   "equity": 451679,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -14712,
    "dividend_yield": null,
    "per": null,
-   "roe": -2.2,
-   "pbr": 2.92,
+   "roe": -3.3,
+   "pbr": 3.11,
+   "net_debt_levered": -14712,
    "dcf": {
     "E1": 12000,
     "r": 11.0,
@@ -10164,24 +10158,24 @@
     "scenarios": {
      "bear": {
       "g": 3.0,
-      "value": 116453,
-      "per_share": 710,
-      "upside": -91.7
+      "value": 77810,
+      "per_share": 475,
+      "upside": -94.5
      },
      "base": {
       "g": 12.0,
-      "value": 160185,
-      "per_share": 977,
-      "upside": -88.6
+      "value": 124848,
+      "per_share": 761,
+      "upside": -91.1
      },
      "bull": {
       "g": 25.0,
-      "value": 260877,
-      "per_share": 1591,
-      "upside": -81.4
+      "value": 233151,
+      "per_share": 1422,
+      "upside": -83.4
      }
     },
-    "implied_g": 70.5,
+    "implied_g": 69.4,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -10189,17 +10183,17 @@
       0.8,
       0.4
      ],
-     "excess": -22368,
-     "excess_value": -16368
+     "excess": -26917,
+     "excess_value": -19697
     },
-    "net_cash_added": 42166
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": -12680,
-    "norm": 12304,
-    "ttm_ni": -10368,
+    "period": "2025Q4~2026Q3",
+    "core": -15062,
+    "norm": 12684,
+    "ttm_ni": -14917,
     "oneoff": false
    }
   },
@@ -10229,8 +10223,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 199373,
-   "mcap_eff": 165239,
-   "shares": 58080492,
+   "mcap_eff": 199366,
+   "shares": 70075923,
    "shares_check": {
     "dart_common": 58080410,
     "dart_period": "2026-11012",
@@ -10245,36 +10239,36 @@
    "dividend_yield": null,
    "per": null,
    "roe": -41.4,
-   "pbr": 0.58,
+   "pbr": 0.7,
    "net_debt_levered": -223970,
    "dcf": {
     "E1": 15000,
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 기준 249억원이에요. 최근 적자(-1,179억원)는 합병 관련 손상 등 일회성이 커서 초과 손실로 빼지 않았고, 정상 이익은 평균보다 낮춰 150억원으로 봤어요.",
-    "fwd_per": 11.0,
-    "norm_per": 11.0,
+    "fwd_per": 13.3,
+    "norm_per": 13.3,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 91634,
-      "per_share": 1578,
-      "upside": -44.5
+      "per_share": 1308,
+      "upside": -54.0
      },
      "base": {
       "g": 8.0,
       "value": 130041,
-      "per_share": 2239,
-      "upside": -21.3
+      "per_share": 1856,
+      "upside": -34.8
      },
      "bull": {
       "g": 15.0,
       "value": 176450,
-      "per_share": 3038,
-      "upside": 6.8
+      "per_share": 2518,
+      "upside": -11.5
      }
     },
-    "implied_g": 13.5,
+    "implied_g": 17.8,
     "cycle": {
      "position": "바닥권",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -10324,9 +10318,9 @@
    "price": 20550,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 473867,
-   "mcap_eff": 473867,
-   "shares": 23059221,
+   "mcap": 473835,
+   "mcap_eff": 473835,
+   "shares": 23057664,
    "shares_check": {
     "dart_common": 23059202,
     "dart_period": "2026-11012",
@@ -10384,9 +10378,9 @@
    "price": 20050,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 244290,
-   "mcap_eff": 244290,
-   "shares": 12184040,
+   "mcap": 244250,
+   "mcap_eff": 244250,
+   "shares": 12182045,
    "shares_check": {
     "dart_common": 12184045,
     "dart_period": "2026-11012",
@@ -10414,19 +10408,19 @@
      "bear": {
       "g": 0.0,
       "value": 48411,
-      "per_share": 3973,
+      "per_share": 3974,
       "upside": -80.2
      },
      "base": {
       "g": 10.0,
       "value": 71798,
-      "per_share": 5893,
+      "per_share": 5894,
       "upside": -70.6
      },
      "bull": {
       "g": 20.0,
       "value": 107438,
-      "per_share": 8818,
+      "per_share": 8819,
       "upside": -56.0
      }
     },
@@ -10455,7 +10449,7 @@
     "bear": 832,
     "bull": 1297,
     "upside": -94.8,
-    "pct": 4,
+    "pct": 3,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
     "conflict": false
@@ -10465,10 +10459,10 @@
    "name": "에이팩트",
    "group": "후공정(OSAT)",
    "ttm": {
-    "rev": 136626,
-    "op": 5890,
-    "ni": 10364,
-    "period": "2025Q3~2026Q2"
+    "rev": 167088,
+    "op": 8962,
+    "ni": 12276,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -10478,65 +10472,61 @@
      -58.5,
      31.5
     ],
-    "trend_rev": 134439,
-    "ttm_rev": 136626,
-    "norm_ni": -42,
-    "trend_g": 21.3
+    "trend_rev": 147795,
+    "ttm_rev": 167088,
+    "norm_ni": -46,
+    "trend_g": 22.1
    },
    "price": 7640,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 342047,
-   "mcap_eff": 323638,
-   "shares": 42360995,
+   "mcap_eff": 342039,
+   "shares": 44769503,
    "shares_check": {
-    "dart_common": 42361029,
-    "dart_period": "2026-11012",
+    "dart_common": 44586587,
+    "dart_period": "2026-11014",
     "listed": 44770515,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 81636,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -67145,
+   "equity": 89954,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -92301,
    "dividend_yield": null,
-   "per": 31.2,
-   "roe": 12.7,
-   "pbr": 3.96,
-   "net_debt_levered": -67145,
-   "ttm_news": {
-    "period": "2025Q4~2026Q3",
-    "ni": 12680
-   },
+   "per": 27.9,
+   "roe": 13.6,
+   "pbr": 3.8,
+   "net_debt_levered": -92301,
    "dcf": {
     "E1": 6000,
     "r": 12.0,
     "c": 0.6,
     "note": "10년 평균 이익률이 0%예요. 최근 흑자 수준보다 낮은 60억원을 정상으로 봤어요.",
-    "fwd_per": 53.9,
-    "norm_per": 53.9,
+    "fwd_per": 57.0,
+    "norm_per": 57.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 37216,
-      "per_share": 879,
-      "upside": -88.5
+      "value": 36965,
+      "per_share": 826,
+      "upside": -89.2
      },
      "base": {
       "g": 10.0,
-      "value": 54756,
-      "per_share": 1293,
-      "upside": -83.1
+      "value": 54505,
+      "per_share": 1217,
+      "upside": -84.1
      },
      "bull": {
       "g": 20.0,
-      "value": 81486,
-      "per_share": 1924,
-      "upside": -74.8
+      "value": 81235,
+      "per_share": 1815,
+      "upside": -76.2
      }
     },
-    "implied_g": 55.6,
+    "implied_g": 57.1,
     "cycle": {
      "position": "회복기",
      "note": "메모리 생산이 늘어 패키징·테스트 물량은 늘고 있지만, 설비투자가 커 이익률이 낮고 고객 주문 변화에 실적이 크게 흔들려요.",
@@ -10544,26 +10534,26 @@
       0.8,
       0.4
      ],
-     "excess": 6680,
-     "excess_value": 4141
+     "excess": 6276,
+     "excess_value": 3890
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 4594,
-    "norm": -42,
-    "ttm_ni": 10364,
-    "oneoff": true,
-    "E": 2276,
-    "per_share": 506,
-    "bear": 405,
-    "bull": 631,
-    "upside": -93.4,
-    "pct": 6,
+    "period": "2025Q4~2026Q3",
+    "core": 9633,
+    "norm": -46,
+    "ttm_ni": 12276,
+    "oneoff": false,
+    "E": 4794,
+    "per_share": 1007,
+    "bear": 807,
+    "bull": 1258,
+    "upside": -86.8,
+    "pct": 12,
     "tier": "비싼 ⅓",
-    "exp_ex": -10.8,
+    "exp_ex": -6.7,
     "conflict": false
    }
   },
@@ -10599,8 +10589,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 61141,
-   "mcap_eff": 61123,
-   "shares": 27287054,
+   "mcap_eff": 61134,
+   "shares": 27291964,
    "shares_check": {
     "dart_common": 27286943,
     "dart_period": "2026-11012",
@@ -10651,14 +10641,14 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 4603343,
-   "mcap_eff": 4603284,
-   "shares": 49927158,
+   "mcap_eff": 4603343,
+   "shares": 49927798,
    "shares_check": {
     "dart_common": 49416925,
     "dart_period": "2026-11012",
     "listed": 49417553,
     "pref": "35320K",
-    "pref_shares": 2095519,
+    "pref_shares": 2095548,
     "pref_price": 22450
    },
    "equity": 976850,
@@ -10689,7 +10679,7 @@
      "base": {
       "g": 10.0,
       "value": 1530805,
-      "per_share": 30661,
+      "per_share": 30660,
       "upside": -66.7
      },
      "bull": {
@@ -10725,9 +10715,9 @@
     "bear": 14585,
     "bull": 22730,
     "upside": -80.2,
-    "pct": 26,
+    "pct": 27,
     "tier": "비싼 ⅓",
-    "exp_ex": -4.2,
+    "exp_ex": -4.3,
     "conflict": false
    }
   },
@@ -10757,8 +10747,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 4744591,
-   "mcap_eff": 4547472,
-   "shares": 37396974,
+   "mcap_eff": 4736449,
+   "shares": 38951061,
    "shares_check": {
     "dart_common": 37396973,
     "dart_period": "2026-11012",
@@ -10773,7 +10763,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.8,
-   "pbr": 7.01,
+   "pbr": 7.3,
    "net_debt_levered": -460700,
    "ttm_news": {
     "period": "일회성 손익을 뺀 최근 4개 분기 이익(3분기 잠정 포함)",
@@ -10784,29 +10774,29 @@
     "r": 11.0,
     "c": 0.6,
     "note": "10년 평균 이익률이 거의 0%라 평균은 맞지 않아요. 흑자였던 해 수준(매출 1.7조원 × 4%)에 AI·소캠2 기판 비중 확대를 더해 900억원을 정상으로 봤어요. 2026년 3분기 영업이익 1,018억원으로 메모리 기판 호황이 본격화돼 사이클 위치를 '상승기'로 바꿨고, 2025년 4분기 일회성 손실을 뺀 최근 이익(약 1,300억원)과 정상 이익의 차이만 1~3년 더 이어진다고 봤어요.",
-    "fwd_per": 50.5,
-    "norm_per": 50.5,
+    "fwd_per": 52.6,
+    "norm_per": 52.6,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 590323,
-      "per_share": 15785,
-      "upside": -87.0
+      "per_share": 15156,
+      "upside": -87.5
      },
      "base": {
       "g": 10.0,
       "value": 892076,
-      "per_share": 23854,
-      "upside": -80.4
+      "per_share": 22902,
+      "upside": -81.2
      },
      "bull": {
       "g": 18.0,
       "value": 1245869,
-      "per_share": 33315,
-      "upside": -72.6
+      "per_share": 31985,
+      "upside": -73.7
      }
     },
-    "implied_g": 50.2,
+    "implied_g": 51.3,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -10828,13 +10818,13 @@
     "ttm_ni": -50595,
     "oneoff": true,
     "E": 40947,
-    "per_share": 10302,
-    "bear": 8251,
-    "bull": 12860,
-    "upside": -91.5,
-    "pct": 7,
+    "per_share": 9891,
+    "bear": 7922,
+    "bull": 12347,
+    "upside": -91.9,
+    "pct": 5,
     "tier": "비싼 ⅓",
-    "exp_ex": -9.4,
+    "exp_ex": -9.6,
     "conflict": false
    }
   },
@@ -10864,8 +10854,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 6203129,
-   "mcap_eff": 6203079,
-   "shares": 73409219,
+   "mcap_eff": 6203129,
+   "shares": 73409811,
    "shares_check": {
     "dart_common": 73409219,
     "dart_period": "2026-11012",
@@ -10892,7 +10882,7 @@
      "bear": {
       "g": 5.0,
       "value": 1611003,
-      "per_share": 21946,
+      "per_share": 21945,
       "upside": -74.0
      },
      "base": {
@@ -10904,7 +10894,7 @@
      "bull": {
       "g": 20.0,
       "value": 2974157,
-      "per_share": 40515,
+      "per_share": 40514,
       "upside": -52.1
      }
     },
@@ -10932,7 +10922,7 @@
     "E": 115373,
     "per_share": 14788,
     "bear": 11844,
-    "bull": 18459,
+    "bull": 18458,
     "upside": -82.5,
     "pct": 20,
     "tier": "비싼 ⅓",
@@ -10965,16 +10955,17 @@
    "price": 873000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
-   "mcap": 66142236,
-   "mcap_eff": 66142236,
-   "shares": 75764302,
+   "mcap": 66142230,
+   "mcap_eff": 66142230,
+   "shares": 75764296,
    "shares_check": {
-    "dart_common": null,
-    "dart_period": null,
+    "dart_common": 75547250,
+    "dart_period": "2026-11012",
     "listed": 74693690,
     "pref": "009155",
     "pref_shares": 2907120,
-    "pref_price": 321500
+    "pref_price": 321500,
+    "note": "DART 유통주식수 75,547,250주 → 현재 상장 74,693,690주(보고서 이후 주식 수 변동)"
    },
    "equity": 10230579,
    "equity_source": "DART 2026Q2",
@@ -11036,7 +11027,7 @@
     "bear": 87706,
     "bull": 136690,
     "upside": -87.5,
-    "pct": 11,
+    "pct": 10,
     "tier": "비싼 ⅓",
     "exp_ex": -7.0,
     "conflict": false
@@ -11071,8 +11062,8 @@
    "mcap_eff": 760750,
    "shares": 17000000,
    "shares_check": {
-    "dart_common": null,
-    "dart_period": null,
+    "dart_common": 17000000,
+    "dart_period": "2026-11012",
     "listed": 17001399,
     "pref": null,
     "pref_shares": null,
@@ -11138,7 +11129,7 @@
     "bear": 26951,
     "bull": 42002,
     "upside": -24.8,
-    "pct": 75,
+    "pct": 74,
     "tier": "싼 ⅓",
     "exp_ex": 4.4,
     "conflict": false
@@ -11170,8 +11161,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 2148595,
-   "mcap_eff": 2148590,
-   "shares": 24611569,
+   "mcap_eff": 2148595,
+   "shares": 24611627,
    "shares_check": {
     "dart_common": 23982620,
     "dart_period": "2026-11012",
@@ -11251,10 +11242,10 @@
    "name": "티엘비",
    "group": "기판·PCB",
    "ttm": {
-    "rev": 305533,
-    "op": 40723,
-    "ni": 32901,
-    "period": "2025Q3~2026Q2"
+    "rev": 330610,
+    "op": 48666,
+    "ni": 38152,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2020~2025",
@@ -11264,66 +11255,61 @@
      1.5,
      13.8
     ],
-    "trend_rev": 253428,
-    "ttm_rev": 305533,
-    "norm_ni": 14424,
-    "trend_g": 7.7
+    "trend_rev": 266339,
+    "ttm_rev": 330610,
+    "norm_ni": 15159,
+    "trend_g": 8.6
    },
    "price": 41400,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 981210,
-   "mcap_eff": 981210,
-   "shares": 23700725,
+   "mcap_eff": 973758,
+   "shares": 23520725,
    "shares_check": {
-    "dart_common": 9722630,
-    "dart_period": "2026-11012",
+    "dart_common": 23521260,
+    "dart_period": "2026-11014",
     "listed": 23700730,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null,
-    "note": "DART 유통주식수 9,722,630주 → 현재 상장 23,700,730주(보고서 이후 주식 수 변동)"
+    "pref_price": null
    },
-   "equity": 144820,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -81123,
+   "equity": 276932,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -73373,
    "dividend_yield": null,
-   "per": 29.8,
-   "roe": 22.7,
-   "pbr": 6.78,
-   "net_debt_levered": -81123,
-   "ttm_news": {
-    "period": "2025Q4~2026Q3",
-    "ni": 38067
-   },
+   "per": 25.5,
+   "roe": 13.8,
+   "pbr": 3.52,
+   "net_debt_levered": -73373,
    "dcf": {
     "E1": 25000,
     "r": 11.0,
     "c": 0.7,
     "note": "6년 평균 기준 144억원, 최근 329억원이에요. DDR5 모듈 기판 수요를 반영해 250억원으로 봤어요.",
-    "fwd_per": 39.2,
-    "norm_per": 39.2,
+    "fwd_per": 39.0,
+    "norm_per": 39.0,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 193621,
-      "per_share": 8169,
-      "upside": -80.3
+      "value": 193721,
+      "per_share": 8236,
+      "upside": -80.1
      },
      "base": {
       "g": 8.0,
-      "value": 268301,
-      "per_share": 11320,
-      "upside": -72.7
+      "value": 268401,
+      "per_share": 11411,
+      "upside": -72.4
      },
      "bull": {
       "g": 15.0,
-      "value": 358542,
-      "per_share": 15128,
-      "upside": -63.5
+      "value": 358642,
+      "per_share": 15248,
+      "upside": -63.2
      }
     },
-    "implied_g": 39.7,
+    "implied_g": 39.5,
     "cycle": {
      "position": "상승기",
      "note": "AI 서버용 고다층 기판(MLB)과 패키지 기판은 상승기이고, 스마트폰·PC용 기판은 회복이 더뎌요.",
@@ -11332,26 +11318,26 @@
       0.7,
       0.3
      ],
-     "excess": 13067,
-     "excess_value": 15444
+     "excess": 13152,
+     "excess_value": 15544
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 32332,
-    "norm": 14424,
-    "ttm_ni": 32901,
+    "period": "2025Q4~2026Q3",
+    "core": 38056,
+    "norm": 15159,
+    "ttm_ni": 38152,
     "oneoff": false,
-    "E": 23378,
-    "per_share": 9281,
-    "bear": 7433,
-    "bull": 11585,
-    "upside": -77.6,
-    "pct": 32,
-    "tier": "비싼 ⅓",
-    "exp_ex": -3.5,
+    "E": 26607,
+    "per_share": 10644,
+    "bear": 8525,
+    "bull": 13286,
+    "upside": -74.3,
+    "pct": 36,
+    "tier": "가운데 ⅓",
+    "exp_ex": -2.6,
     "conflict": false
    }
   },
@@ -11381,8 +11367,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 251612,
-   "mcap_eff": 251594,
-   "shares": 20306215,
+   "mcap_eff": 251612,
+   "shares": 20307667,
    "shares_check": {
     "dart_common": 20306182,
     "dart_period": "2026-11012",
@@ -11426,7 +11412,7 @@
       "upside": -74.0
      }
     },
-    "implied_g": 46.0,
+    "implied_g": 46.1,
     "cycle": {
      "position": "회복기",
      "note": "클린룸 공사는 반도체 공장 건설(설비투자)을 1년쯤 앞서 따라가고, 메모리 유통은 메모리 가격을 그대로 따라가요.",
@@ -11483,8 +11469,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 450750,
-   "mcap_eff": 439975,
-   "shares": 10757335,
+   "mcap_eff": 439985,
+   "shares": 10757579,
    "shares_check": {
     "dart_common": 10757343,
     "dart_period": "2026-11012",
@@ -11515,19 +11501,19 @@
      "bear": {
       "g": 0.0,
       "value": 501106,
-      "per_share": 46583,
+      "per_share": 46582,
       "upside": 13.9
      },
      "base": {
       "g": 5.0,
       "value": 611335,
-      "per_share": 56830,
+      "per_share": 56828,
       "upside": 38.9
      },
      "bull": {
       "g": 9.0,
       "value": 718858,
-      "per_share": 66825,
+      "per_share": 66823,
       "upside": 63.4
      }
     },
@@ -11549,9 +11535,9 @@
     "ttm_ni": 54386,
     "oneoff": false,
     "E": 60106,
-    "per_share": 52573,
-    "bear": 42107,
-    "bull": 65623,
+    "per_share": 52572,
+    "bear": 42106,
+    "bull": 65622,
     "upside": 28.5,
     "pct": 90,
     "tier": "싼 ⅓",
@@ -11585,8 +11571,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 442805,
-   "mcap_eff": 432054,
-   "shares": 17077233,
+   "mcap_eff": 432109,
+   "shares": 17079407,
    "shares_check": {
     "dart_common": 17077232,
     "dart_period": "2026-11012",
@@ -11613,19 +11599,19 @@
      "bear": {
       "g": 0.0,
       "value": 621388,
-      "per_share": 36387,
+      "per_share": 36382,
       "upside": 43.8
      },
      "base": {
       "g": 6.0,
       "value": 776938,
-      "per_share": 45496,
+      "per_share": 45490,
       "upside": 79.8
      },
      "bull": {
       "g": 11.0,
       "value": 941878,
-      "per_share": 55154,
+      "per_share": 55147,
       "upside": 118.0
      }
     },
@@ -11651,11 +11637,11 @@
     "ttm_ni": 63896,
     "oneoff": false,
     "E": 69838,
-    "per_share": 38479,
-    "bear": 30819,
-    "bull": 48031,
+    "per_share": 38474,
+    "bear": 30815,
+    "bull": 48025,
     "upside": 52.1,
-    "pct": 95,
+    "pct": 94,
     "tier": "싼 ⅓",
     "exp_ex": 9.3,
     "conflict": false
@@ -11687,8 +11673,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 89750,
-   "mcap_eff": 88223,
-   "shares": 14953051,
+   "mcap_eff": 88233,
+   "shares": 14954746,
    "shares_check": {
     "dart_common": 14953000,
     "dart_period": "2026-11012",
@@ -11715,20 +11701,20 @@
      "bear": {
       "g": 0.0,
       "value": 194354,
-      "per_share": 12998,
+      "per_share": 12996,
       "upside": 120.3
      },
      "base": {
       "g": 6.0,
       "value": 239543,
-      "per_share": 16020,
+      "per_share": 16018,
       "upside": 171.5
      },
      "bull": {
       "g": 11.0,
       "value": 287390,
-      "per_share": 19220,
-      "upside": 225.8
+      "per_share": 19217,
+      "upside": 225.7
      }
     },
     "implied_g": -30.0,
@@ -11749,9 +11735,9 @@
     "ttm_ni": 19759,
     "oneoff": false,
     "E": 25423,
-    "per_share": 15998,
-    "bear": 12813,
-    "bull": 19969,
+    "per_share": 15996,
+    "bear": 12811,
+    "bull": 19966,
     "upside": 171.1,
     "pct": 99,
     "tier": "싼 ⅓",
@@ -11785,8 +11771,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 761000,
-   "mcap_eff": 742318,
-   "shares": 97545072,
+   "mcap_eff": 742356,
+   "shares": 97550066,
    "shares_check": {
     "dart_common": 97545067,
     "dart_period": "2026-11012",
@@ -11819,13 +11805,13 @@
      "base": {
       "g": 4.0,
       "value": 1073061,
-      "per_share": 11001,
-      "upside": 44.6
+      "per_share": 11000,
+      "upside": 44.5
      },
      "bull": {
       "g": 9.0,
       "value": 1304535,
-      "per_share": 13374,
+      "per_share": 13373,
       "upside": 75.7
      }
     },
@@ -11850,9 +11836,9 @@
     "ttm_ni": 431431,
     "oneoff": false,
     "E": 271817,
-    "per_share": 26219,
-    "bear": 21000,
-    "bull": 32728,
+    "per_share": 26218,
+    "bear": 20999,
+    "bull": 32726,
     "upside": 244.5,
     "pct": 100,
     "tier": "싼 ⅓",
@@ -11886,8 +11872,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 187583,
-   "mcap_eff": 187550,
-   "shares": 14438029,
+   "mcap_eff": 187583,
+   "shares": 14440570,
    "shares_check": {
     "dart_common": 14438000,
     "dart_period": "2026-11012",
@@ -11914,19 +11900,19 @@
      "bear": {
       "g": -3.0,
       "value": 119569,
-      "per_share": 8282,
-      "upside": -36.2
+      "per_share": 8280,
+      "upside": -36.3
      },
      "base": {
       "g": 5.0,
       "value": 164386,
-      "per_share": 11386,
+      "per_share": 11384,
       "upside": -12.4
      },
      "bull": {
       "g": 10.0,
       "value": 201576,
-      "per_share": 13961,
+      "per_share": 13959,
       "upside": 7.5
      }
     },
@@ -11951,11 +11937,11 @@
     "ttm_ni": 49266,
     "oneoff": false,
     "E": 33264,
-    "per_share": 21678,
-    "bear": 17363,
-    "bull": 27059,
+    "per_share": 21674,
+    "bear": 17359,
+    "bull": 27055,
     "upside": 66.9,
-    "pct": 96,
+    "pct": 95,
     "tier": "싼 ⅓",
     "exp_ex": 10.0,
     "conflict": false
@@ -11987,8 +11973,8 @@
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융",
    "mcap": 315350,
-   "mcap_eff": 223367,
-   "shares": 8428943,
+   "mcap_eff": 223318,
+   "shares": 8427094,
    "shares_check": {
     "dart_common": 8428933,
     "dart_period": "2026-11012",
@@ -12015,20 +12001,20 @@
      "bear": {
       "g": 0.0,
       "value": 241572,
-      "per_share": 28660,
+      "per_share": 28666,
       "upside": 8.2
      },
      "base": {
       "g": 6.0,
       "value": 303794,
-      "per_share": 36042,
+      "per_share": 36050,
       "upside": 36.0
      },
      "bull": {
       "g": 11.0,
       "value": 369773,
-      "per_share": 43869,
-      "upside": 65.5
+      "per_share": 43879,
+      "upside": 65.6
      }
     },
     "implied_g": -2.1,
@@ -12049,13 +12035,13 @@
     "ttm_ni": 29152,
     "oneoff": false,
     "E": 25724,
-    "per_share": 28716,
-    "bear": 22999,
-    "bull": 35844,
+    "per_share": 28722,
+    "bear": 23004,
+    "bull": 35852,
     "upside": 8.4,
     "pct": 87,
     "tier": "싼 ⅓",
-    "exp_ex": 7.0,
+    "exp_ex": 6.9,
     "conflict": false
    }
   }
