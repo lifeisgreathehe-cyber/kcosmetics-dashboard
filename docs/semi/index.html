@@ -731,7 +731,7 @@ function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;
   $('#co-name').textContent=c.name;
-  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':c.source==='pending'?'DART 수집 대기':'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
+  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':c.source==='pending'?'DART 수집 대기':c.source==='prospectus'?(c.note||'증권신고서 기준(신규 상장)'):'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;
