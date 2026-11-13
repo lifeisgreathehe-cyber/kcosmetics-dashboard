@@ -96,22 +96,73 @@ def path_growth(g1, gT, years=10):
     return out
 
 
-def equity_value(E1, g1, r, c, gT):
-    """주주잉여현금흐름(FCFE = 이익 × c) 10년 + 영구가치. 단위는 E1과 동일."""
+def terminal_c(c, r, gT, roe=None):
+    """영구 성장 구간(11년차~)의 현금 전환율 c_T.
+    이익의 (1−c)를 재투자해 gT만큼 자란다면 새 투자의 수익률은 gT/(1−c)예요. c=0.5, gT=2%면 '새 투자가 영원히 4%만 번다'는
+    가정이라, 정상 ROE가 10%를 넘는 회사에는 지나치게 박해요. 새 투자가 버는 수익률 = min(자기자본비용 r, 이 회사의 정상 ROE)로 보고
+    c_T = max(c, 1 − gT / 그 수익률)로 둬요. 정상 ROE가 낮은 회사(자산은 많은데 이익이 적은 회사)는 c가 거의 그대로라
+    '싸 보이는 저PBR'을 기계적으로 올려 주지 않아요. 설정 파일의 c_T가 있으면 그 값을 써요."""
+    ret = min(r, roe) if roe is not None and roe > 0 else r
+    return round(max(c, 1 - gT / ret), 3) if ret > gT else c
+
+
+def equity_value(E1, g1, r, c, gT, cT=None):
+    """주주잉여현금흐름(FCFE = 이익 × c) 10년 + 영구가치. 단위는 E1과 동일.
+    6~10년차에 성장률이 gT로 수렴하는 동안 현금 전환율도 c → c_T로 함께 옮겨가요(성장이 줄면 재투자도 준다)."""
+    if cT is None:
+        cT = c
     r, gT_, g1_ = r / 100, gT / 100, g1 / 100
     gs = path_growth(g1_, gT_)
     pv, E = 0.0, E1
     for t in range(1, 11):
         if t > 1:
             E *= 1 + gs[t - 1]
-        pv += E * c / (1 + r) ** t
-    tv = E * (1 + gT_) * c / (r - gT_)
+        ct = c if t <= 5 else c + (cT - c) * (t - 5) / 5
+        pv += E * ct / (1 + r) ** t
+    tv = E * (1 + gT_) * cT / (r - gT_)
     return pv + tv / (1 + r) ** 10
 
 
 # 사이클 위치별 기본 초과이익 경로: 최근 4분기 순이익과 정상 이익의 차이가 앞으로 몇 해 동안 얼마나 남는지(비율)
 CYCLE_PATH = {"호황 정점권": [0.7, 0.3], "상승기": [1.0, 0.7, 0.3], "회복기": [0.8, 0.4], "중립": [],
               "하강기": [0.8, 0.4], "바닥권": [0.7, 0.3]}
+
+
+TAX_OP = 0.78  # 영업이익 → 세후 이익(법인세 약 22%), scripts/backtest/model.py의 TAX와 같은 값
+
+
+def core_margins(A, ys):
+    """연도별 순이익률. 단, 영업은 흑자인데 순이익만 평소와 크게 어긋난 해(손상차손·대손충당금·처분손익 같은 일회성)는
+    '그해 세후 영업이익 × 이 회사의 평소 비율(순이익 ÷ 세후 영업이익, 중앙값)'로 바꿔요.
+    평소 비율에 이자·지분법·비지배지분 같은 구조적 차이가 들어 있어서, 원래 있는 이자 부담은 그대로 남아요.
+    어긋남 기준: 그해 비율이 평소의 0.35배 미만이거나 2.5배 초과, 그리고 차이가 매출의 0.5% 이상.
+    그런 해가 2개 이하이고 전체의 ¼ 미만일 때만 바꿔요. 더 자주 나오면 일회성이 아니라 사업의 일부로 봐요.
+    반환: (순이익률 목록, 바꾼 해 목록[{year, ni_margin, adj_margin}])"""
+    import statistics as st
+    raw = [A[y]["ni"] / A[y]["rev"] for y in ys]
+    pos = [y for y in ys if (A[y].get("op") or 0) > 0]
+    if len(pos) < 4:
+        return raw, []
+    k = st.median(A[y]["ni"] / (A[y]["op"] * TAX_OP) for y in pos)
+    if k <= 0:
+        return raw, []
+    flag = set()
+    for y in pos:
+        op = A[y]["op"] * TAX_OP
+        q = A[y]["ni"] / op
+        if (q < 0.35 * k or q > 2.5 * k) and abs(A[y]["ni"] - k * op) >= 0.005 * A[y]["rev"]:
+            flag.add(y)
+    if not flag or len(flag) > 2 or len(flag) * 4 >= len(ys):
+        return raw, []
+    out, adj = [], []
+    for y, m in zip(ys, raw):
+        if y in flag:
+            a = A[y]["op"] * TAX_OP * k / A[y]["rev"]
+            adj.append({"year": y, "ni_margin": round(m * 100, 2), "adj_margin": round(a * 100, 2)})
+            out.append(a)
+        else:
+            out.append(m)
+    return out, adj
 
 
 def cycle_base(co):
@@ -124,7 +175,7 @@ def cycle_base(co):
     if len(ys) < 3 or len(ks) < 4:
         return None
     ttm_rev = sum((Q[k].get("rev") or 0) for k in ks)
-    ms = [A[y]["ni"] / A[y]["rev"] for y in ys]
+    ms, adj = core_margins(A, ys)
     tm = sorted(ms)[1:-1] if len(ms) >= 6 else ms
     mm = sum(tm) / len(tm)
     pts = [(int(y) + .5, math.log(A[y]["rev"])) for y in ys]
@@ -137,19 +188,20 @@ def cycle_base(co):
     tr = math.exp(my + b * (te - mx))
     return {"years": f"{ys[0]}~{ys[-1]}", "n": len(ys), "margin": round(mm * 100, 1),
             "margin_range": [round(min(ms) * 100, 1), round(max(ms) * 100, 1)],
-            "trend_rev": round(tr), "ttm_rev": ttm_rev, "norm_ni": round(tr * mm), "trend_g": round((math.exp(b) - 1) * 100, 1)}
+            "trend_rev": round(tr), "ttm_rev": ttm_rev, "norm_ni": round(tr * mm), "trend_g": round((math.exp(b) - 1) * 100, 1),
+            "margins": {y: round(m * 100, 2) for y, m in zip(ys, ms)}, "oneoff": adj}
 
 
-def implied_growth(target, E1, r, c, gT):
+def implied_growth(target, E1, r, c, gT, cT=None):
     """시가총액을 정당화하는 1~5년차 성장률(역DCF). 이분법."""
     lo, hi = -30.0, 80.0
-    if equity_value(E1, lo, r, c, gT) > target:
+    if equity_value(E1, lo, r, c, gT, cT) > target:
         return lo
-    if equity_value(E1, hi, r, c, gT) < target:
+    if equity_value(E1, hi, r, c, gT, cT) < target:
         return None
     for _ in range(80):
         mid = (lo + hi) / 2
-        if equity_value(E1, mid, r, c, gT) < target:
+        if equity_value(E1, mid, r, c, gT, cT) < target:
             lo = mid
         else:
             hi = mid
@@ -402,16 +454,26 @@ def main(industry="cosmetics"):
             xv = round(sum(ex * w_ * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, w_ in enumerate(path)))
             cy = {"position": a.get("cyc_pos", "중립"), "note": a.get("cycle_note", ""), "path": path,
                   "excess": ex, "excess_value": xv}
+        roe_n = E1 / equity * 100 if equity and equity > 0 else None  # 정상 이익 기준 ROE(%)
+        if a.get("c_T"):
+            cT = a["c_T"]
+        elif co.get("group") in (cfg.get("c_T_keep_groups") or []):
+            cT = a["c"]  # 선박·항공기처럼 성장이 없어도 교체 투자가 감가상각보다 큰 업종은 c를 그대로 둬요
+        elif any(w in (a.get("note") or "") + co["name"] for w in ("지주", "홀딩스")):
+            cT = a["c"]  # 지주회사는 c를 낮춰 '배당으로만 현금이 올라온다'는 지주 할인을 넣었어요. 재투자 문제가 아니라 그대로 둬요
+        else:
+            cT = terminal_c(a["c"], a["r"], gT, roe_n)
         sc = {}
         for k in ("bear", "base", "bull"):
-            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT) + nc + xv
+            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT, cT) + nc + xv
             v = max(v, 0)
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap_eff - 1) * 100, 1)}
         rec["dcf"] = {"E1": E1, "r": a["r"], "c": a["c"], "note": a.get("note", ""),
                       "fwd_per": round(mcap_eff / E1f, 1) if E1f else None,
                       "norm_per": round(mcap_eff / E1, 1) if E1 > 0 else None, "scenarios": sc,
-                      "implied_g": implied_growth(mcap_eff - nc - xv, E_op, a["r"], a["c"], gT),
+                      "c_T": cT, "roe_norm": round(roe_n, 1) if roe_n is not None else None,
+                      "implied_g": implied_growth(mcap_eff - nc - xv, E_op, a["r"], a["c"], gT, cT),
                       **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec
