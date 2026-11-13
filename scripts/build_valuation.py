@@ -384,7 +384,7 @@ def main(industry="cosmetics"):
         hb = cycle_base(co) if semi_cyc else None
         if hb:
             rec["hist"] = hb
-        if semi_cyc and a and a.get("E1") is None:
+        if semi_cyc and a and a.get("E1") is None and not a.get("skip"):
             # 회사별 사이클 판단(cyc_pos·g·r·c)은 사람이 정하고, 정상 이익은 DART 이력으로 계산(음식료):
             # margin(정상 순이익률 %)이 있으면 추세 매출 × margin, 없으면 사이클 평균 이익 × E1_adj
             if hb and (a.get("margin") is not None or hb["norm_ni"] > 0):

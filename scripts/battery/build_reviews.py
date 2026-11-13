@@ -33,6 +33,39 @@ def trend(co):
             f"최근 4개 분기 순이익 합계는 {eok(ni)}원이에요." if ni > 0 else f"최근 4개 분기 순이익 합계는 {eok(-ni)}원 적자예요."]
 
 
+def qline(co):
+    """DART 최신 분기 숫자 한 문장(원고에 'DART 수집 후 보강' 자리표시가 남은 회사용)."""
+    Q = clean(co.get("quarterly"))
+    if not Q:
+        return ""
+    k = sorted(Q)[-1]
+    q, p = Q[k], Q.get(f"{int(k[:4])-1}{k[4:]}")
+    yy = f"(전년 같은 분기 {(q['rev']/p['rev']-1)*100:+.0f}%)" if p and p["rev"] > 0 else ""
+    op = f"영업이익 {eok(q['op'])}원(이익률 {q['op']/q['rev']*100:.1f}%)" if q["op"] >= 0 else f"영업손실 {eok(-q['op'])}원"
+    if p:
+        po = p["op"]
+        cmp = ("흑자로 돌아섰어요" if po < 0 <= q["op"] else "적자로 돌아섰어요" if q["op"] < 0 <= po
+               else ("적자 폭이 줄었어요" if q["op"] > po else "적자 폭이 커졌어요") if q["op"] < 0
+               else "늘었어요" if q["op"] > po * 1.05 else "줄었어요" if q["op"] < po * 0.95 else "비슷했어요")
+        prev = f"1년 전({eok(po)}원)보다 {cmp}" if not cmp.startswith(("흑자", "적자로")) else f"1년 전 {'영업손실' if po < 0 else '영업이익'} {eok(abs(po))}원에서 {cmp}"
+    else:
+        prev = ""
+    nxt = "" if k >= "2026Q3" else " 3분기 보고서(11월 14일 마감)가 들어오면 숫자를 다시 반영해요."
+    return f"DART 기준 {k[:4]}년 {k[5]}분기 매출 {eok(q['rev'])}원{yy}, {op}으로 {prev}." .replace("으로 .", ".") + nxt
+
+
+def fill(ev, co):
+    """평가 문장 중 'DART (실적) 수집 후 …' 자리표시를 최신 분기 숫자로 바꿔요."""
+    import re
+    if "수집 후" not in ev:
+        return ev
+    line = qline(co)
+    ev = re.sub(r",?\s*(3분기 (잠정)?실적(과 수주잔고)?은 )?(10월 29일 공시됐고 숫자는 )?DART (실적 )?수집 후 [^.]*\.", ".", ev)
+    ev = re.sub(r"\s*3분기 (잠정)?실적(과 수주잔고)?은 [^.]*공시됐고\.", "", ev)
+    ev = re.sub(r"판단하고\.", "판단해요.", ev)
+    return (ev.rstrip(". ").rstrip() + ". " + line).strip() if line else ev
+
+
 def dkey(d):
     """'2026-11-05' 그대로, '2026년 10월'·'2026년 상반기' 같은 대략 날짜는 정렬용으로 근사"""
     import re
@@ -76,7 +109,7 @@ def main():
         rep = next((x for x in reps if "반기" in x["report_nm"]), None) or (reps[0] if reps else {})
         news = sorted(r.get("news", []), key=lambda n: dkey(n[0]), reverse=True)
         out["companies"][code] = {
-            "tone": r["tone"], "title": r["title"], "trend": trend(co), "eval": r["eval"], "watch": r["watch"],
+            "tone": r["tone"], "title": r["title"], "trend": trend(co), "eval": fill(r["eval"], co), "watch": r["watch"],
             "news": [{"date": d, "title": t, "url": u, "src": s, "read": rd, "impact": im} for d, t, u, s, rd, im in news],
             "next": r["next"],
             "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""), "mix_title": "", "mix": [],
