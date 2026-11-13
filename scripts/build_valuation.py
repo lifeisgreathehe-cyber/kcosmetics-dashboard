@@ -419,6 +419,15 @@ def main(industry="cosmetics"):
         quant_check(cos, out, cfg, dd)
     except Exception as e:  # noqa: BLE001  검증 모델 오류가 본 계산을 막지 않게
         print("quant_check 실패:", e)
+    try:
+        # 하워드 막스식 점검(위험=영구 손실, 사이클·진자, 안전마진, 가격이 가정하는 것, 비대칭). 기존 dcf는 그대로.
+        import sys as _s
+        _s.path.insert(0, os.path.join(ROOT, "scripts"))
+        import marks
+        marks.apply(cos, out, cfg, equity_value, cycle_base, gT, NC_YIELD, ROOT, dd)
+    except Exception as e:  # noqa: BLE001
+        import traceback; traceback.print_exc()
+        print("marks 실패:", e)
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
                         if c["code"] in out["companies"]}
     with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:
