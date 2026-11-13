@@ -209,7 +209,8 @@ def to_m(v):
 
 def fx_convert(rec, ccy):
     """외화 공시 회사의 실적·재무상태표를 원화(백만원)로 바꾼다. config/fx.json 연평균 환율."""
-    if not ccy or ccy == "KRW" or (rec.get("fin_ccy") or {}).get("converted"):
+    fc = rec.get("fin_ccy")
+    if not ccy or ccy == "KRW" or (isinstance(fc, dict) and fc.get("converted")):
         return rec
     rates = json.loads((ROOT / "config" / "fx.json").read_text("utf-8")).get(ccy, {})
     last = rates[max(rates)] if rates else None
@@ -255,17 +256,22 @@ def update_dart(key):
         if "--new-only" in sys.argv and o and o.get("quarterly"):  # 이미 받은 회사는 건너뛰기
             result.append({**o, **c})
             continue
-        log("DART:", c["name"])
+        # --latest: 이미 10년치를 받은 회사는 올해 분기(+작년 사업보고서가 없으면 그것)만 받아 기존 값에 덧붙인다.
+        #           회사당 호출 수가 1/6 정도라 DART 하루 한도(2만 건) 안에서 전 업종을 한 번에 돌릴 수 있다.
+        quick = "--latest" in sys.argv and o and o.get("source") == "dart" and o.get("quarterly")
+        ya = ([] if str(last_year) in (o.get("annual") or {}) else [last_year]) if quick else years_a
+        yq = [TODAY.year] if quick else years_q
+        log("DART:", c["name"], "(올해 분기만)" if quick else "")
         fy = {}
-        for y in sorted(set(years_a) | set(years_q)):
+        for y in sorted(set(ya) | set(yq)):
             if y > TODAY.year - 1:
                 continue
             r = dart_report(key, corp, y, REPRT["FY"])
             if r:
                 fy[y] = r
-                if y in years_a:
+                if y in ya:
                     rec["annual"][str(y)] = {f: to_m(r[f][0]) if f in r else None for f in ("rev", "gp", "op", "ni")}
-        for y in years_q:
+        for y in yq:
             q1 = dart_report(key, corp, y, REPRT["Q1"])
             h1 = dart_report(key, corp, y, REPRT["H1"])
             q3 = dart_report(key, corp, y, REPRT["Q3"])
@@ -287,6 +293,14 @@ def update_dart(key):
         if sh:
             rec["shares"] = sh
         fx_convert(rec, c.get("fin_ccy"))
+        if quick:  # 새로 받은 기간만 덮어쓰고 나머지는 기존 값 유지
+            rec["annual"] = {**(o.get("annual") or {}), **rec["annual"]}
+            rec["quarterly"] = dict(sorted({**(o.get("quarterly") or {}), **rec["quarterly"]}.items()))
+            for k in ("bs", "shares", "fin_ccy"):
+                if k not in rec and k in o:
+                    rec[k] = o[k]
+                elif k == "fin_ccy" and isinstance(o.get(k), dict) and not isinstance(rec.get(k), dict):
+                    rec[k] = o[k]
         if not rec["annual"] and not rec["quarterly"]:
             result.append(old.get(c["code"], rec))
         else:
@@ -732,7 +746,16 @@ def update_dart_docs(key):
         if "--new-only" in sys.argv and (DOCS / f"{c['code']}.json").exists():
             continue
         reps = []
-        for r in dart_latest_reports(key, corp):
+        latest = dart_latest_reports(key, corp)
+        prev = DOCS / f"{c['code']}.json"
+        if latest and prev.exists():  # 같은 보고서를 이미 받았으면 본문 다운로드를 건너뛴다
+            try:
+                have = {r["rcept_no"] for r in json.loads(prev.read_text("utf-8")).get("reports", [])}
+            except Exception:  # noqa: BLE001
+                have = set()
+            if {r["rcept_no"] for r in latest} <= have:
+                continue
+        for r in latest:
             body = http_get(f"{DART}/document.xml", {"crtfc_key": key, "rcept_no": r["rcept_no"]}, raw=True)
             if not body or body[:2] != b"PK":
                 continue
