@@ -247,6 +247,7 @@ td.l,th.l{text-align:left}
 <script src="../shared/finchart.js"></script>
 <script src="../shared/marks.js"></script>
 <script src="../shared/context.js"></script>
+<script src="../shared/normcheck.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -583,7 +584,7 @@ function renderValueReport(c){
    ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
    </tbody></table></div>
    ${cycleBlock(v)}
-   ${quantBlock(v)}${window.marksBlock?marksBlock(v,D.valuation):''}
+   ${window.normBlock?normBlock(v,D.valuation):''}${quantBlock(v)}${window.marksBlock?marksBlock(v,D.valuation):''}
    <h4>해석</h4><p>${gap} ${d.note}.</p>
    <h4>가정</h4><p>정상화 이익 ${fmt(eok(d.E1))}억원(${v.cycle?v.cycle.E1_basis+', ':''}${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/apparel/valuation.json에서 바꿀 수 있어요.</p>`;
@@ -675,6 +676,7 @@ function renderValuation(){
    <li><b>내재가치(주주잉여현금흐름 할인)</b>: 향후 12개월 정상화 지배순이익에서 출발해 1~5년차는 시나리오 성장률, 6~10년차는 ${V.terminal_growth}%로 서서히 수렴하고, 이후 영구성장 ${V.terminal_growth}%를 가정해요. 이익 중 재투자 후 주주에게 돌아갈 수 있는 비율(전환율)을 회사별로 적용하고 자기자본비용으로 할인해요.</li>
    <li><b>역DCF 내재 성장률</b>: 같은 틀에서 현재 시가총액을 정확히 정당화하는 1~5년차 연평균 이익 성장률이에요. 이 숫자가 기준 가정보다 크면 시장이 더 높은 성장을 기대하고 있다는 뜻이에요.</li>
    <li><b>판단 기준</b>: 기준 적정가가 현재가보다 20% 이상 높으면 '저평가 구간', 20% 이상 낮으면 '기대 선반영', 그 사이는 '적정 범위'예요.</li>
+   <li><b>일회성 손익과 영구 전환율</b>: 영업은 흑자인데 순이익만 평소와 크게 어긋난 해(손상차손·대손 같은 일회성, 10년에 2번 이하)는 정상 이익과 하방 가치 계산에서 그해 영업이익 기준 이익으로 바꿔요. 현금 전환율은 처음 5년은 회사별 값을 쓰고, 성장이 낮아지는 6~10년차에 '새 투자가 자기자본비용과 정상 ROE 중 낮은 쪽만큼 번다'는 수준으로 옮겨가요(지주회사·해운·항공은 그대로).</li>
    <li><b>순현금</b>: 순현금은 주주가치에 더하고 순차입은 빼요. 대신 그 이자 효과(세후 약 2%)는 이익에서 제외해 이중 계산을 피했어요. 비지배지분이 큰 지주·연결사(영원무역홀딩스, 한세예스24홀딩스, F&F홀딩스, 미스토홀딩스, 태광산업)는 연결 현금·차입이 지배주주 몫과 달라 조정하지 않았어요.</li>
    <li><b>사이클 조정</b>: 한 해 이익만으로 평가하지 않아요. 연간 순이익률의 여러 해 평균(5년 이상이면 최고·최저 해 제외)에 최근 4개 분기 매출을 곱해 사이클 평균 이익을 구하고, 회사별 비중(구조적 변화가 있거나 이력이 짧은 회사는 낮게)만큼 향후 12개월 전망 이익과 섞어 정상화 이익으로 써요. 구조가 바뀐 회사는 변화 이후 기간만, 일회성 이익·손실이 큰 해는 빼고 평균해요.</li>
    <li><b>최신 정보 반영</b>: 정상화 이익과 성장 시나리오는 ${V.asof||V.updated} 기준 3분기 잠정실적, 증권사 추정치와 목표가 변화 기사를 읽고 정했어요. 회사별 근거 기사는 상세 리포트의 '최신 기사'에서 볼 수 있어요.</li></ul>

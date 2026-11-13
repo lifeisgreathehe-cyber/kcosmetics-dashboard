@@ -98,6 +98,10 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
             # 사업 구조가 바뀌어 평균 기간을 사람이 좁혀 둔 회사(화장품 등)는 그 기간의 이익률만 쓴다
             hb = dict(hb, years=mc["years"], margin=mc["avg_margin"], margin_range=[mc["min"], mc["max"]])
             ms = sorted(mc["margins"].values())
+        elif hb and hb.get("margins"):
+            # 일회성(손상차손·대손 등, 영업은 흑자인 해)을 걸러낸 순이익률. 불황은 '영업 이익이 줄어드는 것'이지
+            # 과거 투자를 한 번에 상각한 회계 손실이 3년 내내 이어지는 게 아니에요(build_valuation.core_margins).
+            ms = sorted(hb["margins"].values())
         elif hb:
             ms = sorted(A[y]["ni"] / A[y]["rev"] * 100 for y in A if (A[y].get("rev") or 0) > 0 and A[y].get("ni") is not None)
         if hb:
@@ -150,7 +154,7 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
         mos = max(15, min(55, mos))
         buy = round(wv_ps * (1 - mos / 100))
         # --- 4) 2단계 사고: 가격이 가정하는 순이익률 ---
-        unit = ev(1.0, S["base"]["g"], r, c, gT)
+        unit = ev(1.0, S["base"]["g"], r, c, gT, d.get("c_T"))
         E_imp = (mcap - nc - xv) / unit + nc * nc_yield if unit > 0 else None
         rev_ref = (hb or {}).get("trend_rev") or (rec.get("ttm") or {}).get("rev")
         imp_m = round(E_imp / rev_ref * 100, 1) if E_imp is not None and rev_ref else None
