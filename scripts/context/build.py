@@ -187,7 +187,7 @@ def build(ind, offline=False, all_news=None):
     for n in need:
         if offline:
             break
-        items = fetch.gnews(f'"{n}"', days=30, n=15)
+        items = fetch.gnews(f'"{n}" {icfg["hint"]}', days=30, n=15)  # 업종어를 붙여 엉뚱한 기사(예: 코스트코 핫도그)를 줄인다
         gl_news[n] = [x for x in items if n.lower() in x["title"].lower()][:4]
         time.sleep(0.6)
 
@@ -248,6 +248,19 @@ def build(ind, offline=False, all_news=None):
                     continue  # 연관 기업의 홍보성 기사는 뺀다
                 sig.append({"date": x["date"], "title": x["title"], "url": x["url"], "office": x.get("office", ""), "rel": r["rel"],
                             "who": r["name"], "cat": cat, "sec": sec, "tone": tone, "read": read})
+
+        # 같은 기사가 여러 연관 기업에 걸리면 한 번만, 연관 기업 기사는 최대 12건
+        seen_u, rel_n, keep = set(), 0, []
+        for s_ in sig:
+            if s_["url"] in seen_u:
+                continue
+            seen_u.add(s_["url"])
+            if s_["rel"] in ("competitor", "customer", "supplier"):
+                rel_n += 1
+                if rel_n > 12:
+                    continue
+            keep.append(s_)
+        sig = keep
 
         # 업종 뉴스 (그룹 뉴스 중 최근 5건)
         for x in (industry.get(c.get("group") or "기타") or {}).get("news", [])[:5]:
