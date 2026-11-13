@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "method": "내재가치 가정. E1=정상화 지배순이익(억원, 사이클 평균적인 해 기준), g=1~5년차 연평균 성장률 시나리오(%), 6~10년차는 2%로 선형 수렴, r=자기자본비용(%), c=이익 대비 주주잉여현금흐름 전환율(증설 부담이 큰 회사일수록 낮음). 2차전지는 전기차 보급 속도·리튬 가격·미국 보조금에 따라 이익이 크게 출렁이므로 최근 1년 실적이 아니라 회사별 사이클 위치를 판단한 정상화 이익을 쓰는 것이 원칙. 순현금(순차입)은 주주가치에 더하고(빼고) 그 이자 효과(세후 2%)는 이익에서 제외.",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -319,7 +319,7 @@
     "bear": 65663,
     "bull": 126353,
     "upside": -10.3,
-    "pct": 93,
+    "pct": 95,
     "tier": "싼 ⅓",
     "exp_ex": 11.6,
     "conflict": true
@@ -329,10 +329,10 @@
    "name": "비츠로셀",
    "group": "셀",
    "ttm": {
-    "rev": 277065,
-    "op": 77103,
-    "ni": 71297,
-    "period": "2025Q3~2026Q2"
+    "rev": 292048,
+    "op": 81437,
+    "ni": 61116,
+    "period": "2025Q4~2026Q3"
    },
    "price": 22450,
    "price_date": "2026-11-13 00:38",
@@ -348,12 +348,12 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 358842,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 150410,
+   "equity": 358897,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 147947,
    "dividend_yield": null,
-   "per": 14.2,
-   "roe": 19.9,
+   "per": 16.5,
+   "roe": 17.0,
    "pbr": 2.81,
    "cycle": {
     "phase": "성장 지속",
@@ -377,10 +377,10 @@
      "avg_margin": 18.8,
      "min": 12.5,
      "max": 24.3,
-     "ni": 52158
+     "ni": 54979
     },
-    "ttm_margin": 25.7,
-    "ttm_ni": 71297,
+    "ttm_margin": 20.9,
+    "ttm_ni": 61116,
     "E1_fwd": 70000,
     "E1_basis": "전망 이익 100%"
    },
@@ -416,19 +416,19 @@
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 65719,
-    "norm": 43959,
-    "ttm_ni": 71297,
+    "period": "2025Q4~2026Q3",
+    "core": 62318,
+    "norm": 45953,
+    "ttm_ni": 61116,
     "oneoff": false,
-    "E": 54839,
-    "per_share": 7398,
-    "bear": 4999,
-    "bull": 9620,
-    "upside": -67.0,
-    "pct": 66,
+    "E": 54136,
+    "per_share": 7303,
+    "bear": 4935,
+    "bull": 9496,
+    "upside": -67.5,
+    "pct": 63,
     "tier": "가운데 ⅓",
-    "exp_ex": 4.6,
+    "exp_ex": 4.5,
     "conflict": false
    }
   },
@@ -791,7 +791,7 @@
     "bear": 5058,
     "bull": 9732,
     "upside": -91.6,
-    "pct": 37,
+    "pct": 34,
     "tier": "가운데 ⅓",
     "exp_ex": -4.3,
     "conflict": false
@@ -1936,32 +1936,32 @@
    "name": "나노신소재",
    "group": "음극재·도전재",
    "ttm": {
-    "rev": 129315,
-    "op": 10637,
-    "ni": 15378,
-    "period": "2025Q3~2026Q2"
+    "rev": 140463,
+    "op": 16350,
+    "ni": 15699,
+    "period": "2025Q4~2026Q3"
    },
    "price": 75000,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 919704,
-   "mcap_eff": 903149,
-   "shares": 12041987,
+   "mcap_eff": 903449,
+   "shares": 12045987,
    "shares_check": {
-    "dart_common": 12041985,
-    "dart_period": "2026-11012",
+    "dart_common": 12045985,
+    "dart_period": "2026-11014",
     "listed": 12262726,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 265479,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 95618,
+   "equity": 254095,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 64622,
    "dividend_yield": null,
-   "per": 58.7,
-   "roe": 5.8,
-   "pbr": 3.4,
+   "per": 57.5,
+   "roe": 6.2,
+   "pbr": 3.56,
    "cycle": {
     "phase": "성장기",
     "note": "",
@@ -1984,10 +1984,10 @@
      "avg_margin": 9.3,
      "min": -2.1,
      "max": 24.0,
-     "ni": 12026
+     "ni": 13063
     },
-    "ttm_margin": 11.9,
-    "ttm_ni": 15378,
+    "ttm_margin": 11.2,
+    "ttm_ni": 15699,
     "E1_fwd": 22000,
     "E1_basis": "전망 이익 100%"
    },
@@ -2002,19 +2002,19 @@
      "bear": {
       "g": 5,
       "value": 177429,
-      "per_share": 14734,
+      "per_share": 14729,
       "upside": -80.4
      },
      "base": {
       "g": 15,
       "value": 276056,
-      "per_share": 22924,
+      "per_share": 22917,
       "upside": -69.4
      },
      "bull": {
       "g": 28,
       "value": 483438,
-      "per_share": 40146,
+      "per_share": 40133,
       "upside": -46.5
      }
     },
@@ -2023,19 +2023,19 @@
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 11837,
-    "norm": 13139,
-    "ttm_ni": 15378,
+    "period": "2025Q4~2026Q3",
+    "core": 14226,
+    "norm": 13765,
+    "ttm_ni": 15699,
     "oneoff": false,
-    "E": 12488,
-    "per_share": 6288,
-    "bear": 4249,
-    "bull": 8177,
-    "upside": -91.6,
-    "pct": 34,
+    "E": 13996,
+    "per_share": 7045,
+    "bear": 4761,
+    "bull": 9161,
+    "upside": -90.6,
+    "pct": 37,
     "tier": "가운데 ⅓",
-    "exp_ex": -4.3,
+    "exp_ex": -3.6,
     "conflict": false
    }
   },
@@ -2333,10 +2333,10 @@
     "bear": 75375,
     "bull": 145043,
     "upside": -60.7,
-    "pct": 68,
-    "tier": "싼 ⅓",
+    "pct": 66,
+    "tier": "가운데 ⅓",
     "exp_ex": 5.8,
-    "conflict": true
+    "conflict": false
    }
   },
   "278280": {
@@ -2753,10 +2753,10 @@
    "name": "한농화성",
    "group": "전해액·첨가제",
    "ttm": {
-    "rev": 230824,
-    "op": 12451,
-    "ni": 9594,
-    "period": "2025Q3~2026Q2"
+    "rev": 233720,
+    "op": 12623,
+    "ni": 8868,
+    "period": "2025Q4~2026Q3"
    },
    "price": 12050,
    "price_date": "2026-11-13 00:38",
@@ -2766,18 +2766,18 @@
    "shares": 15637012,
    "shares_check": {
     "dart_common": 15637042,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 15635359,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 182360,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -9132,
+   "equity": 182267,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -12643,
    "dividend_yield": null,
-   "per": 19.6,
-   "roe": 5.3,
+   "per": 21.2,
+   "roe": 4.9,
    "pbr": 1.03,
    "cycle": {
     "phase": "안정",
@@ -2801,10 +2801,10 @@
      "avg_margin": 4.4,
      "min": 1.8,
      "max": 7.3,
-     "ni": 10080
+     "ni": 10206
     },
-    "ttm_margin": 4.2,
-    "ttm_ni": 9594,
+    "ttm_margin": 3.8,
+    "ttm_ni": 8868,
     "E1_fwd": 9000,
     "E1_basis": "전망 이익 100%"
    },
@@ -2840,19 +2840,19 @@
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 9653,
-    "norm": 9582,
-    "ttm_ni": 9594,
+    "period": "2025Q4~2026Q3",
+    "core": 9357,
+    "norm": 9628,
+    "ttm_ni": 8868,
     "oneoff": false,
-    "E": 9617,
-    "per_share": 3729,
-    "bear": 2520,
-    "bull": 4849,
-    "upside": -69.1,
-    "pct": 61,
+    "E": 9493,
+    "per_share": 3681,
+    "bear": 2487,
+    "bull": 4787,
+    "upside": -69.5,
+    "pct": 59,
     "tier": "가운데 ⅓",
-    "exp_ex": 4.1,
+    "exp_ex": 4.0,
     "conflict": false
    }
   },
@@ -3361,7 +3361,7 @@
     "bear": 2315,
     "bull": 4455,
     "upside": -74.0,
-    "pct": 59,
+    "pct": 56,
     "tier": "가운데 ⅓",
     "exp_ex": 2.9,
     "conflict": false
@@ -3968,7 +3968,7 @@
     "bear": 1194,
     "bull": 2298,
     "upside": -84.5,
-    "pct": 41,
+    "pct": 44,
     "tier": "가운데 ⅓",
     "exp_ex": -0.4,
     "conflict": false
@@ -3978,10 +3978,10 @@
    "name": "동원시스템즈",
    "group": "부품·케이스",
    "ttm": {
-    "rev": 1409743,
-    "op": 72121,
-    "ni": 63267,
-    "period": "2025Q3~2026Q2"
+    "rev": 1456484,
+    "op": 75933,
+    "ni": 53196,
+    "period": "2025Q4~2026Q3"
    },
    "price": 20800,
    "price_date": "2026-11-13 00:38",
@@ -3997,13 +3997,13 @@
     "pref_shares": 264095,
     "pref_price": 13500
    },
-   "equity": 908440,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -278723,
+   "equity": 887332,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -284754,
    "dividend_yield": null,
-   "per": 9.6,
-   "roe": 7.0,
-   "pbr": 0.67,
+   "per": 11.4,
+   "roe": 6.0,
+   "pbr": 0.68,
    "cycle": {
     "phase": "안정",
     "note": "",
@@ -4026,10 +4026,10 @@
      "avg_margin": 4.7,
      "min": 3.2,
      "max": 5.4,
-     "ni": 66065
+     "ni": 68255
     },
-    "ttm_margin": 4.5,
-    "ttm_ni": 63267,
+    "ttm_margin": 3.7,
+    "ttm_ni": 53196,
     "E1_fwd": 60000,
     "E1_basis": "전망 이익 100%"
    },
@@ -4064,20 +4064,20 @@
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 59761,
-    "norm": 63825,
-    "ttm_ni": 63267,
+    "pos": "회복기",
+    "period": "2025Q4~2026Q3",
+    "core": 56212,
+    "norm": 64705,
+    "ttm_ni": 53196,
     "oneoff": false,
-    "E": 61793,
-    "per_share": 12848,
-    "bear": 8682,
-    "bull": 16707,
-    "upside": -38.2,
+    "E": 60458,
+    "per_share": 12571,
+    "bear": 8495,
+    "bull": 16346,
+    "upside": -39.6,
     "pct": 83,
     "tier": "싼 ⅓",
-    "exp_ex": 8.9,
+    "exp_ex": 8.8,
     "conflict": false
    }
   },
@@ -4280,7 +4280,7 @@
     "bear": 2389,
     "bull": 4598,
     "upside": -34.2,
-    "pct": 85,
+    "pct": 88,
     "tier": "싼 ⅓",
     "exp_ex": 9.4,
     "conflict": true
@@ -4387,7 +4387,7 @@
     "bear": 4920,
     "bull": 9468,
     "upside": -68.5,
-    "pct": 63,
+    "pct": 61,
     "tier": "가운데 ⅓",
     "exp_ex": 4.2,
     "conflict": false
@@ -5156,10 +5156,10 @@
    "name": "피엔티",
    "group": "장비",
    "ttm": {
-    "rev": 698657,
-    "op": 71165,
-    "ni": 83296,
-    "period": "2025Q3~2026Q2"
+    "rev": 712241,
+    "op": 58767,
+    "ni": 39302,
+    "period": "2025Q4~2026Q3"
    },
    "price": 25800,
    "price_date": "2026-11-13 00:38",
@@ -5175,13 +5175,13 @@
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 735867,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -250059,
+   "equity": 684473,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -268132,
    "dividend_yield": null,
-   "per": 7.2,
-   "roe": 11.3,
-   "pbr": 0.82,
+   "per": 15.3,
+   "roe": 5.7,
+   "pbr": 0.88,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -5204,10 +5204,10 @@
      "avg_margin": 12.7,
      "min": 9.1,
      "max": 14.4,
-     "ni": 88449
+     "ni": 90169
     },
-    "ttm_margin": 11.9,
-    "ttm_ni": 83296,
+    "ttm_margin": 5.5,
+    "ttm_ni": 39302,
     "E1_fwd": 80000,
     "E1_basis": "전망 이익 100%"
    },
@@ -5242,20 +5242,20 @@
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 69402,
-    "norm": 76981,
-    "ttm_ni": 83296,
+    "pos": "바닥권",
+    "period": "2025Q4~2026Q3",
+    "core": 42570,
+    "norm": 79881,
+    "ttm_ni": 39302,
     "oneoff": false,
-    "E": 73192,
-    "per_share": 19000,
-    "bear": 12839,
-    "bull": 24706,
-    "upside": -26.4,
-    "pct": 88,
+    "E": 61226,
+    "per_share": 15894,
+    "bear": 10740,
+    "bull": 20667,
+    "upside": -38.4,
+    "pct": 85,
     "tier": "싼 ⅓",
-    "exp_ex": 10.2,
+    "exp_ex": 8.9,
     "conflict": false
    }
   },
@@ -5263,10 +5263,10 @@
    "name": "SFA넥셀(옛 씨아이에스)",
    "group": "장비",
    "ttm": {
-    "rev": 292175,
-    "op": 30857,
-    "ni": 41855,
-    "period": "2025Q3~2026Q2"
+    "rev": 262879,
+    "op": 27319,
+    "ni": 28953,
+    "period": "2025Q4~2026Q3"
    },
    "price": 7040,
    "price_date": "2026-11-13 00:38",
@@ -5276,18 +5276,18 @@
    "shares": 77771591,
    "shares_check": {
     "dart_common": 77771623,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 77772512,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 533373,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 242798,
+   "equity": 532634,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 181396,
    "dividend_yield": null,
-   "per": 13.1,
-   "roe": 7.8,
+   "per": 18.9,
+   "roe": 5.4,
    "pbr": 1.03,
    "cycle": {
     "phase": "수주 공백",
@@ -5311,10 +5311,10 @@
      "avg_margin": 5.0,
      "min": -18.5,
      "max": 11.1,
-     "ni": 14590
+     "ni": 13127
     },
-    "ttm_margin": 14.3,
-    "ttm_ni": 41855,
+    "ttm_margin": 11.0,
+    "ttm_ni": 28953,
     "E1_fwd": 30000,
     "E1_basis": "전망 이익 100%"
    },
@@ -5349,20 +5349,20 @@
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "하강기",
-    "period": "2025Q3~2026Q2",
-    "core": 32962,
-    "norm": -4922,
-    "ttm_ni": 41855,
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": 25131,
+    "norm": -4968,
+    "ttm_ni": 28953,
     "oneoff": false,
-    "E": 14020,
-    "per_share": 1093,
-    "bear": 739,
-    "bull": 1421,
-    "upside": -84.5,
-    "pct": 44,
+    "E": 10081,
+    "per_share": 786,
+    "bear": 531,
+    "bull": 1022,
+    "upside": -88.8,
+    "pct": 39,
     "tier": "가운데 ⅓",
-    "exp_ex": -0.4,
+    "exp_ex": -2.6,
     "conflict": false
    }
   },
@@ -5962,7 +5962,7 @@
     "bear": 4729,
     "bull": 9100,
     "upside": -16.8,
-    "pct": 90,
+    "pct": 93,
     "tier": "싼 ⅓",
     "exp_ex": 11.0,
     "conflict": false
@@ -6168,32 +6168,33 @@
    "name": "티에스아이",
    "group": "장비",
    "ttm": {
-    "rev": 311995,
-    "op": 14858,
-    "ni": 17972,
-    "period": "2025Q3~2026Q2"
+    "rev": 334017,
+    "op": 17434,
+    "ni": 6264,
+    "period": "2025Q4~2026Q3"
    },
    "price": 3010,
    "price_date": "2026-11-13 00:38",
    "price_source": "네이버 금융 · Yahoo Finance",
    "mcap": 59780,
-   "mcap_eff": 59196,
-   "shares": 19666445,
+   "mcap_eff": 59780,
+   "shares": 19860465,
    "shares_check": {
-    "dart_common": 19666534,
-    "dart_period": "2026-11012",
+    "dart_common": 19666534000,
+    "dart_period": "2026-11014",
     "listed": 19860627,
     "pref": null,
     "pref_shares": null,
-    "pref_price": null
+    "pref_price": null,
+    "note": "DART 유통주식수 19,666,534,000주 → 현재 상장 19,860,627주(보고서 이후 주식 수 변동)"
    },
-   "equity": 137860,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -35071,
+   "equity": 128339,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -57716,
    "dividend_yield": null,
-   "per": 3.3,
-   "roe": 13.0,
-   "pbr": 0.43,
+   "per": 9.5,
+   "roe": 4.9,
+   "pbr": 0.47,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -6216,10 +6217,10 @@
      "avg_margin": 0.9,
      "min": -3.6,
      "max": 10.8,
-     "ni": 2682
+     "ni": 2871
     },
-    "ttm_margin": 5.8,
-    "ttm_ni": 17972,
+    "ttm_margin": 1.9,
+    "ttm_ni": 6264,
     "E1_fwd": 10000,
     "E1_basis": "전망 이익 100%"
    },
@@ -6228,46 +6229,46 @@
     "r": 11.0,
     "c": 0.6,
     "note": "믹싱(슬러리) 장비 회사예요. 2024년(294억원)은 일회성이 섞여 빼고 100억원을 봤어요",
-    "fwd_per": 5.9,
-    "norm_per": 5.9,
+    "fwd_per": 6.0,
+    "norm_per": 6.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 61089,
-      "per_share": 3106,
-      "upside": 3.2
+      "per_share": 3076,
+      "upside": 2.2
      },
      "base": {
       "g": 5,
       "value": 76022,
-      "per_share": 3866,
-      "upside": 28.4
+      "per_share": 3828,
+      "upside": 27.2
      },
      "bull": {
       "g": 10,
       "value": 94617,
-      "per_share": 4811,
-      "upside": 59.8
+      "per_share": 4764,
+      "upside": 58.3
      }
     },
-    "implied_g": -0.7,
+    "implied_g": -0.5,
     "net_cash_added": 0
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 14781,
-    "norm": 3364,
-    "ttm_ni": 17972,
+    "period": "2025Q4~2026Q3",
+    "core": 9931,
+    "norm": 3618,
+    "ttm_ni": 6264,
     "oneoff": false,
-    "E": 9072,
-    "per_share": 2797,
-    "bear": 1890,
-    "bull": 3637,
-    "upside": -7.1,
-    "pct": 95,
+    "E": 6775,
+    "per_share": 2068,
+    "bear": 1398,
+    "bull": 2690,
+    "upside": -31.3,
+    "pct": 90,
     "tier": "싼 ⅓",
-    "exp_ex": 11.8,
+    "exp_ex": 9.7,
     "conflict": false
    }
   },
@@ -6584,7 +6585,7 @@
     "bear": 161,
     "bull": 310,
     "upside": -86.4,
-    "pct": 39,
+    "pct": 41,
     "tier": "가운데 ⅓",
     "exp_ex": -1.3,
     "conflict": false
@@ -6594,10 +6595,10 @@
    "name": "엔시스",
    "group": "장비",
    "ttm": {
-    "rev": 57654,
-    "op": -1418,
-    "ni": -1950,
-    "period": "2025Q3~2026Q2"
+    "rev": 64950,
+    "op": 818,
+    "ni": -3517,
+    "period": "2025Q4~2026Q3"
    },
    "price": 3960,
    "price_date": "2026-11-13 00:38",
@@ -6607,19 +6608,19 @@
    "shares": 10773737,
    "shares_check": {
     "dart_common": 10773775,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 10994764,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 55359,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -4031,
+   "equity": 54147,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -16922,
    "dividend_yield": null,
    "per": null,
-   "roe": -3.5,
-   "pbr": 0.77,
+   "roe": -6.5,
+   "pbr": 0.79,
    "cycle": {
     "phase": "수주 공백",
     "note": "",
@@ -6642,10 +6643,10 @@
      "avg_margin": 8.5,
      "min": -13.8,
      "max": 16.2,
-     "ni": 4894
+     "ni": 5514
     },
-    "ttm_margin": -3.4,
-    "ttm_ni": -1950,
+    "ttm_margin": -5.4,
+    "ttm_ni": -3517,
     "E1_fwd": 5000,
     "E1_basis": "전망 이익 100%"
    },
@@ -6681,19 +6682,19 @@
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": -1528,
-    "norm": 4983,
-    "ttm_ni": -1950,
-    "oneoff": false,
-    "E": 1728,
-    "per_share": 972,
-    "bear": 657,
-    "bull": 1264,
-    "upside": -75.4,
-    "pct": 56,
-    "tier": "가운데 ⅓",
-    "exp_ex": 2.6,
+    "period": "2025Q4~2026Q3",
+    "core": 638,
+    "norm": 5304,
+    "ttm_ni": -3517,
+    "oneoff": true,
+    "E": 2971,
+    "per_share": 1672,
+    "bear": 1130,
+    "bull": 2174,
+    "upside": -57.8,
+    "pct": 68,
+    "tier": "싼 ⅓",
+    "exp_ex": 6.2,
     "conflict": false
    }
   },

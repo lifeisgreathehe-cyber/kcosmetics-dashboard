@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12",
+ "updated": "2026-11-13",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라 호황과 불황을 평균한 이익이에요. 지난 10년 순이익률과 추세 매출로 계산한 '사이클 평균 이익'에서 출발해, 슈퍼사이클·일회성 이익·사업 구조 변화를 회사별로 조정하고 그 이유를 적었어요. ② 사이클 초과(부족) 이익: 최근 이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치(호황 정점권·상승기·중립·회복기·바닥권)에 따라 1~3년만 이어진다고 보고 그 현재가치만 더하거나 뺐어요. 정유는 호황 정점권, 범용 석유화학은 구조적 공급과잉 속 바닥권이에요. ③ 성장률(g)은 사이클이 아닌 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고 6~10년차 성장률은 2%로 수렴시켜요. 순현금이 있으면 더하고, 순차입 회사는 이자 비용이 이미 순이익에 들어 있어 차입금을 다시 빼지 않는 대신 레버리지 위험을 할인율에 반영했어요.",
  "terminal_growth": 2.0,
  "asof": "2026-11-08",
@@ -817,10 +817,10 @@
    "name": "흥구석유",
    "group": "윤활유·석유유통",
    "ttm": {
-    "rev": 106535,
-    "op": -145,
-    "ni": 415,
-    "period": "2025Q3~2026Q2"
+    "rev": 108974,
+    "op": 367,
+    "ni": 490,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -830,10 +830,10 @@
      0.1,
      5.5
     ],
-    "trend_rev": 110988,
-    "ttm_rev": 106535,
+    "trend_rev": 110960,
+    "ttm_rev": 108974,
     "norm_ni": 1766,
-    "trend_g": -3.7
+    "trend_g": -3.6
    },
    "price": 9920,
    "price_date": "2026-11-13 00:38",
@@ -843,18 +843,18 @@
    "shares": 15000000,
    "shares_check": {
     "dart_common": 15000000,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 15004878,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 82608,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -3125,
+   "equity": 82860,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -4548,
    "dividend_yield": null,
-   "per": 358.6,
-   "roe": 0.5,
+   "per": 303.7,
+   "roe": 0.6,
    "pbr": 1.8,
    "dcf": {
     "E1": 1500,
@@ -888,23 +888,23 @@
      "position": "중립",
      "note": "LPG·석유 유통은 수입 가격을 판매가에 전가하는 구조라 이익 변동이 작아요. 윤활유는 2026년 중동 윤활기유 공급 차질로 이례적 호황이라 초과분은 일시적으로 봤어요.",
      "path": [],
-     "excess": -1085,
+     "excess": -1010,
      "excess_value": 0
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": 151,
+    "period": "2025Q4~2026Q3",
+    "core": 388,
     "norm": 1766,
-    "ttm_ni": 415,
+    "ttm_ni": 490,
     "oneoff": false,
-    "E": 959,
-    "per_share": 451,
-    "bear": 361,
-    "bull": 539,
-    "upside": -95.5,
+    "E": 1077,
+    "per_share": 507,
+    "bear": 406,
+    "bull": 605,
+    "upside": -94.9,
     "pct": 4,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
@@ -1438,10 +1438,10 @@
    "name": "한화솔루션",
    "group": "석유화학(NCC·대형)",
    "ttm": {
-    "rev": 15585921,
-    "op": -97996,
-    "ni": -169743,
-    "period": "2025Q3~2026Q2"
+    "rev": 16170214,
+    "op": -77,
+    "ni": -100362,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -1451,10 +1451,10 @@
      -11.3,
      8.8
     ],
-    "trend_rev": 14413794,
-    "ttm_rev": 15585921,
-    "norm_ni": 234941,
-    "trend_g": 5.7
+    "trend_rev": 14730502,
+    "ttm_rev": 16170214,
+    "norm_ni": 240104,
+    "trend_g": 5.9
    },
    "price": 23650,
    "price_date": "2026-11-13 00:38",
@@ -1470,13 +1470,13 @@
     "pref_shares": 2544616,
     "pref_price": 15280
    },
-   "equity": 9708962,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -12260299,
+   "equity": 10070009,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -10601583,
    "dividend_yield": null,
    "per": null,
-   "roe": -1.7,
-   "pbr": 0.42,
+   "roe": -1.0,
+   "pbr": 0.4,
    "ttm_news": {
     "period": "2026년 2~3분기 기준",
     "ni": 300000
@@ -1523,19 +1523,19 @@
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": -123090,
-    "norm": 234941,
-    "ttm_ni": -169743,
+    "period": "2025Q4~2026Q3",
+    "core": -50211,
+    "norm": 240104,
+    "ttm_ni": -100362,
     "oneoff": false,
-    "E": 55926,
-    "per_share": 2307,
-    "bear": 1849,
-    "bull": 2756,
-    "upside": -90.2,
+    "E": 94946,
+    "per_share": 3917,
+    "bear": 3139,
+    "bull": 4679,
+    "upside": -83.4,
     "pct": 6,
     "tier": "비싼 ⅓",
-    "exp_ex": -12.2,
+    "exp_ex": -10.1,
     "conflict": false
    }
   },
@@ -2122,10 +2122,10 @@
    "name": "SK케미칼",
    "group": "석유화학(NCC·대형)",
    "ttm": {
-    "rev": 2632684,
-    "op": -10066,
-    "ni": 7352,
-    "period": "2025Q3~2026Q2"
+    "rev": 2763607,
+    "op": 7942,
+    "ni": 10996,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2017~2025",
@@ -2135,10 +2135,10 @@
      -9.7,
      20.9
     ],
-    "trend_rev": 3303075,
-    "ttm_rev": 2632684,
-    "norm_ni": 114957,
-    "trend_g": 25.6
+    "trend_rev": 3476663,
+    "ttm_rev": 2763607,
+    "norm_ni": 120998,
+    "trend_g": 25.5
    },
    "price": 39850,
    "price_date": "2026-11-13 00:38",
@@ -2154,12 +2154,12 @@
     "pref_shares": 2111063,
     "pref_price": 22700
    },
-   "equity": 2465326,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -145000,
+   "equity": 2447950,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -146438,
    "dividend_yield": null,
-   "per": 100.1,
-   "roe": 0.3,
+   "per": 66.9,
+   "roe": 0.4,
    "pbr": 0.3,
    "dcf": {
     "E1": 60000,
@@ -2193,26 +2193,26 @@
      "position": "중립",
      "note": "중국의 대규모 증설로 에틸렌·프로필렌 계열 범용 제품의 공급과잉이 이어지고 있어요. 동북아 설비 폐쇄 계획은 약 800만t인데 2031년까지 새로 들어설 설비는 약 2,900만t이라, 업황 회복은 2028년 이후로 봐요. 국내는 대산·여수 NCC 통합 등 설비 감축이 진행 중이에요. 바닥권이지만 구조적 공급과잉이라 회복이 느리고, 과거 10년 평균 이익에는 2017~18년·2021년 슈퍼사이클이 들어 있어 정상 이익을 그보다 낮게 잡았어요.",
      "path": [],
-     "excess": -52648,
+     "excess": -49004,
      "excess_value": 0
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "바닥권",
-    "period": "2025Q3~2026Q2",
-    "core": -250,
-    "norm": 114957,
-    "ttm_ni": 7352,
+    "pos": "회복기",
+    "period": "2025Q4~2026Q3",
+    "core": 8595,
+    "norm": 120998,
+    "ttm_ni": 10996,
     "oneoff": false,
-    "E": 57354,
-    "per_share": 21918,
-    "bear": 17564,
-    "bull": 26179,
-    "upside": -45.0,
+    "E": 64797,
+    "per_share": 24762,
+    "bear": 19843,
+    "bull": 29576,
+    "upside": -37.9,
     "pct": 26,
     "tier": "비싼 ⅓",
-    "exp_ex": -2.8,
+    "exp_ex": -2.0,
     "conflict": false
    }
   },
@@ -4367,10 +4367,10 @@
    "name": "한농화성",
    "group": "정밀·스페셜티",
    "ttm": {
-    "rev": 230824,
-    "op": 12451,
-    "ni": 9594,
-    "period": "2025Q3~2026Q2"
+    "rev": 233720,
+    "op": 12623,
+    "ni": 8868,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -4380,9 +4380,9 @@
      1.8,
      7.3
     ],
-    "trend_rev": 232747,
-    "ttm_rev": 230824,
-    "norm_ni": 9582,
+    "trend_rev": 233884,
+    "ttm_rev": 233720,
+    "norm_ni": 9628,
     "trend_g": 0.7
    },
    "price": 12050,
@@ -4393,18 +4393,18 @@
    "shares": 15637012,
    "shares_check": {
     "dart_common": 15637042,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 15635359,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 182360,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -9132,
+   "equity": 182267,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -12643,
    "dividend_yield": null,
-   "per": 19.6,
-   "roe": 5.3,
+   "per": 21.2,
+   "roe": 4.9,
    "pbr": 1.03,
    "dcf": {
     "E1": 9000,
@@ -4438,23 +4438,23 @@
      "position": "중립",
      "note": "범용 석유화학보다 변동은 작지만 중국산 저가 물량(에폭시·가소제·스판덱스 등)의 영향을 받는 제품과, 반도체·이차전지·친환경 수요로 구조적으로 크는 제품이 섞여 있어 회사별로 판단했어요.",
      "path": [],
-     "excess": 594,
+     "excess": -132,
      "excess_value": 0
     },
     "net_cash_added": 0
    },
    "quant": {
     "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 9653,
-    "norm": 9582,
-    "ttm_ni": 9594,
+    "period": "2025Q4~2026Q3",
+    "core": 9357,
+    "norm": 9628,
+    "ttm_ni": 8868,
     "oneoff": false,
-    "E": 9617,
-    "per_share": 4341,
-    "bear": 3479,
-    "bull": 5185,
-    "upside": -64.0,
+    "E": 9493,
+    "per_share": 4285,
+    "bear": 3434,
+    "bull": 5118,
+    "upside": -64.4,
     "pct": 13,
     "tier": "비싼 ⅓",
     "exp_ex": -5.5,
