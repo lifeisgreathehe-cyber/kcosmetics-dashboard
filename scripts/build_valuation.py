@@ -131,7 +131,7 @@ CYCLE_PATH = {"호황 정점권": [0.7, 0.3], "상승기": [1.0, 0.7, 0.3], "회
 TAX_OP = 0.78  # 영업이익 → 세후 이익(법인세 약 22%), scripts/backtest/model.py의 TAX와 같은 값
 
 
-def core_margins(A, ys):
+def core_margins(A, ys, k_ys=None):
     """연도별 순이익률. 단, 영업은 흑자인데 순이익만 평소와 크게 어긋난 해(손상차손·대손충당금·처분손익 같은 일회성)는
     '그해 세후 영업이익 × 이 회사의 평소 비율(순이익 ÷ 세후 영업이익, 중앙값)'로 바꿔요.
     평소 비율에 이자·지분법·비지배지분 같은 구조적 차이가 들어 있어서, 원래 있는 이자 부담은 그대로 남아요.
@@ -141,10 +141,8 @@ def core_margins(A, ys):
     import statistics as st
     raw = [A[y]["ni"] / A[y]["rev"] for y in ys]
     pos = [y for y in ys if (A[y].get("op") or 0) > 0]
-    if len(pos) < 4:
-        return raw, []
-    k = st.median(A[y]["ni"] / (A[y]["op"] * TAX_OP) for y in pos)
-    if k <= 0:
+    k = op_ni_ratio(A, k_ys or ys)
+    if len(pos) < 3 or k is None:
         return raw, []
     flag = set()
     for y in pos:
@@ -163,6 +161,37 @@ def core_margins(A, ys):
         else:
             out.append(m)
     return out, adj
+
+
+def op_ni_ratio(A, ys=None):
+    """이 회사의 평소 '순이익 ÷ 세후 영업이익' 비율(영업 흑자인 해의 중앙값). 이자·지분법·비지배지분 같은 구조적 차이를 담아요."""
+    import statistics as st
+    ys = [y for y in (ys or A) if (A.get(y) or {}).get("ni") is not None and (A[y].get("op") or 0) > 0 and (A[y].get("rev") or 0) > 0]
+    if len(ys) < 4:
+        return None
+    k = st.median(A[y]["ni"] / (A[y]["op"] * TAX_OP) for y in ys)
+    return k if k > 0 else None
+
+
+def core_ttm(co, ttm):
+    """최근 4개 분기 순이익에 일회성 손익이 섞였는지 보고, 섞였으면 '세후 영업이익 × 평소 비율'로 바꾼 값을 돌려줘요.
+    기준은 연도별 보정(core_margins)과 같아요. 반환 None(보정 없음) 또는 {"ni", "raw", "k"}."""
+    if not ttm or (ttm.get("op") or 0) <= 0 or not ttm.get("rev"):
+        return None
+    A = co.get("annual") or {}
+    k = op_ni_ratio(A)
+    if k is None:
+        return None
+    # 최근 3년 비율도 본다: 지분법 이익이 커지는 등 구조가 바뀌어 최근 몇 해 내내 비율이 달라졌다면 일회성이 아니에요
+    ys = [y for y in sorted(A) if A[y].get("ni") is not None and (A[y].get("op") or 0) > 0][-3:]
+    rs = sorted(A[y]["ni"] / (A[y]["op"] * TAX_OP) for y in ys)
+    k_rec = rs[len(rs) // 2] if rs else k
+    op = ttm["op"] * TAX_OP
+    q = ttm["ni"] / op
+    off = lambda kk: kk > 0 and (q < 0.35 * kk or q > 2.5 * kk)
+    if off(k) and (len(rs) < 3 or off(k_rec)) and abs(ttm["ni"] - k * op) >= 0.005 * ttm["rev"]:
+        return {"ni": round(k * op), "raw": ttm["ni"], "k": round(k, 2)}
+    return None
 
 
 def cycle_base(co):
@@ -219,14 +248,15 @@ def midcycle(annual, ttm_rev, cyc):
           and lo <= int(y) <= hi and int(y) not in ex][-8:]
     if not ys:
         return None
-    m = {y: annual[y]["ni"] / annual[y]["rev"] * 100 for y in ys}
+    ms, adj = core_margins(annual, ys, k_ys=list(annual))  # 사람이 고른 기간 안에서도 일회성 해는 영업이익 기준으로 바꿔요
+    m = {y: x * 100 for y, x in zip(ys, ms)}
     vals = sorted(m.values())
     used = vals[1:-1] if len(vals) >= 5 else vals
     avg = sum(used) / len(used)
     return {"years": f"{ys[0]}~{ys[-1]}", "n": len(ys), "trimmed": len(vals) >= 5,
             "excluded": sorted(ex), "margins": {y: round(v, 1) for y, v in m.items()},
             "avg_margin": round(avg, 1), "min": round(vals[0], 1), "max": round(vals[-1], 1),
-            "ni": round(avg / 100 * ttm_rev)}
+            "ni": round(avg / 100 * ttm_rev), "oneoff": adj}
 
 
 def quant_check(cos, out, cfg, dd):
@@ -330,14 +360,22 @@ def main(industry="cosmetics"):
         elif not a and dft and dft.get("E1_years"):
             # 경기순환 업종: 최근 N개 연도 지배순이익 평균(사이클 평균)을 정상 이익으로 쓰는 자동 가정
             A = co.get("annual", {}) or {}
-            ys = [A[y].get("ni") for y in sorted(A)[-dft["E1_years"]:] if A[y].get("ni") is not None]
+            yk = [y for y in sorted(A)[-dft["E1_years"]:] if A[y].get("ni") is not None and (A[y].get("rev") or 0) > 0]
+            ms, adj = core_margins(A, yk, k_ys=list(A))
+            ys = [m * A[y]["rev"] for y, m in zip(yk, ms)]  # 일회성 해는 영업이익 기준 이익으로
+            if adj:
+                rec["oneoff_years"] = adj
             if len(ys) >= 3 and sum(ys) > 0:
                 a = dict(dft, E1=round(sum(ys) / len(ys) / 100))
                 a["note"] = dft.get("note", "").replace("{n}", str(len(ys)))
                 rec["auto"] = True
-        elif not a and dft and rec.get("ttm") and rec["ttm"]["ni"] > 0:
-            # 개별 가정이 없는 회사: 최근 4개 분기 순이익을 그대로 쓰는 자동 가정
-            a = dict(dft, E1=round(rec["ttm"]["ni"] / 100))
+        elif not a and dft and rec.get("ttm") and (core_ttm(co, rec["ttm"]) or rec["ttm"])["ni"] > 0:
+            # 개별 가정이 없는 회사: 최근 4개 분기 순이익을 쓰는 자동 가정(일회성 손익이 섞였으면 영업이익 기준으로 바꿔요)
+            ct = core_ttm(co, rec["ttm"])
+            a = dict(dft, E1=round((ct or rec["ttm"])["ni"] / 100))
+            if ct:
+                rec["ttm_core"] = ct
+                a["note"] = (dft.get("note", "") + f" 최근 4개 분기 순이익 {ct['raw'] / 100:,.0f}억원에 일회성 손익이 섞여 영업이익 기준 {ct['ni'] / 100:,.0f}억원으로 바꿨어요").strip()
             rec["auto"] = True
         snap = (a or {}).get("snapshot") or {}
         px = prices.get(code)
@@ -440,6 +478,10 @@ def main(industry="cosmetics"):
         if semi_cyc and t:
             path = a.get("excess", CYCLE_PATH.get(a.get("cyc_pos"), []))
             ni_now = t["ni"]
+            ct = core_ttm(co, t)
+            if ct:  # 최근 4분기에 일회성 손익이 섞였으면 초과(부족) 이익도 영업이익 기준으로
+                ni_now = ct["ni"]
+                rec["ttm_news"] = {"period": f"{t['period']} 일회성 손익 제외(영업이익 기준)", "ni": ni_now}
             lt = (latest or {}).get(code)
             ks_all = sorted(Q)
             if lt and lt.get("period") not in Q and lt.get("ni") is not None and len(ks_all) >= 3:
