@@ -60,7 +60,7 @@ def fill(ev, co):
     if "수집 후" not in ev:
         return ev
     line = qline(co)
-    ev = re.sub(r",?\s*(3분기 (잠정)?실적(과 수주잔고)?은 )?(10월 29일 공시됐고 숫자는 )?DART (실적 )?수집 후 [^.]*\.", ".", ev)
+    ev = re.sub(r",?\s*(3분기 (잠정)?실적(과 수주잔고)?[은는] )?(10월 29일 공시됐고 숫자는 )?DART (실적 )?수집 후 [^.]*\.", ".", ev)
     ev = re.sub(r"\s*3분기 (잠정)?실적(과 수주잔고)?은 [^.]*공시됐고\.", "", ev)
     ev = re.sub(r"판단하고\.", "판단해요.", ev)
     return (ev.rstrip(". ").rstrip() + ". " + line).strip() if line else ev
