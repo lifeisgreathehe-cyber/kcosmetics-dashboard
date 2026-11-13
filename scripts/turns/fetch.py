@@ -66,8 +66,16 @@ def yahoo_month(sym):
     return out
 
 
+def _try(fn):
+    try:
+        return fn()
+    except Exception as e:  # noqa: BLE001
+        log("  1차 소스 실패, 대체 소스 시도:", e)
+        return {}
+
+
 def fred_month(sid, start="2014-01-01"):
-    txt = get("https://fred.stlouisfed.org/graph/fredgraph.csv", {"id": sid, "cosd": start})
+    txt = get("https://fred.stlouisfed.org/graph/fredgraph.csv", {"id": sid, "cosd": start}, timeout=15)
     acc = {}
     for row in csv.reader(io.StringIO(txt)):
         if len(row) < 2 or not re.match(r"\d{4}-\d{2}", row[0]):
@@ -90,10 +98,11 @@ def update_macro():
     spec = {
         "KOSPI": ("코스피 월말", lambda: naver_index("KOSPI") or yahoo_month("^KS11")),
         "KOSDAQ": ("코스닥 월말", lambda: naver_index("KOSDAQ") or yahoo_month("^KQ11")),
-        "USDKRW": ("원/달러 월평균(FRED DEXKOUS)", lambda: fred_month("DEXKOUS")),
-        "US10Y": ("미국 10년 국채 금리 월평균(FRED DGS10), %", lambda: fred_month("DGS10")),
+        # FRED가 GitHub Actions에서 자주 응답하지 않아(2026-11-13 첫 실행 시간 초과) 야후 월봉으로 대체
+        "USDKRW": ("원/달러 월말(FRED DEXKOUS 월평균, 실패 시 야후 KRW=X)", lambda: _try(lambda: fred_month("DEXKOUS")) or yahoo_month("KRW=X")),
+        "US10Y": ("미국 10년 국채 금리(FRED DGS10, 실패 시 야후 ^TNX), %", lambda: _try(lambda: fred_month("DGS10")) or yahoo_month("^TNX")),
         "KR10Y": ("한국 10년 국채 금리 월(FRED IRLTLT01KRM156N), %", lambda: fred_month("IRLTLT01KRM156N")),
-        "BRENT": ("브렌트유 월평균(FRED DCOILBRENTEU), $/배럴", lambda: fred_month("DCOILBRENTEU")),
+        "BRENT": ("브렌트유(FRED DCOILBRENTEU 월평균, 실패 시 야후 BZ=F), $/배럴", lambda: _try(lambda: fred_month("DCOILBRENTEU")) or yahoo_month("BZ=F")),
     }
     series, ok = {}, 0
     for k, (name, fn) in spec.items():
