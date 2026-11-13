@@ -221,6 +221,47 @@ def cycle_base(co):
             "margins": {y: round(m * 100, 2) for y, m in zip(ys, ms)}, "oneoff": adj}
 
 
+TROUGH_YEARS = 2  # 약세 시나리오에서 호황이 끝난 뒤 거치는 불황 연수(실적 랭킹 대시보드의 약세 경로와 같은 틀)
+
+
+def scenario_flows(a, path, ex, E1, hb):
+    """시나리오마다 '지금 이익이 정상 이익보다 높거나 낮은 상태'가 몇 해 이어지는지를 다르게 본다.
+    경기순환주의 불확실성은 성장률보다 '호황(불황)이 언제 끝나느냐'에 더 크게 달려 있어서예요.
+    - 설정에 ni_path(시나리오별 연도별 순이익, 억원)가 있으면 그대로 써요(사람이 업황 조사로 정한 경로).
+    - 호황(초과이익 > 0): 기준 = 설정 경로, 강세 = 호황 1년 더, 약세 = 1년만 유지 → 불황 이익 2년 → 반쯤 회복 → 정상.
+      불황 이익 = 과거 두 번째로 나쁜 해의 순이익률(일회성 보정) × 추세 매출, 적자는 0으로.
+    - 불황(초과이익 < 0): 기준 = 설정 경로, 약세 = 부진 1년 더, 강세 = 1년 빨리 회복.
+    반환 (시나리오별 초과이익 흐름[백만원], 약세에 불황 연도를 넣었는지, 불황 이익)"""
+    npth = a.get("ni_path")
+    if npth:
+        fl = {k: [x * 100 - E1 for x in npth.get(k) or npth["base"]] for k in ("bear", "base", "bull")}
+        return fl, True, None
+    base = [ex * w for w in path]
+    if not path or ex == 0:
+        return {"bear": base, "base": base, "bull": base}, False, None
+    if ex > 0:
+        E_tr = None
+        if hb and hb.get("margins"):
+            ms = sorted(hb["margins"].values())
+            tr_m = ms[1] if len(ms) >= 6 else ms[0]
+            E_tr = max(0, min(E1, hb["trend_rev"] * tr_m / 100))
+        if E_tr is None:
+            E_tr = E1 * 0.6
+        gap = E_tr - E1
+        bear = [ex * path[0]] + [gap] * TROUGH_YEARS + [gap * 0.5]
+        return {"bear": bear, "base": base, "bull": [ex * path[0]] + base}, True, E_tr
+    return {"bear": base + [base[-1]], "base": base, "bull": base[1:]}, False, None
+
+
+def implied_e1(target, g, r, c, gT, cT, nc):
+    """지금 시가총액(순현금·초과이익 가치 제외)을 정당화하려면 정상 이익이 얼마여야 하나(기준 성장률 기준).
+    equity_value는 이익에 비례하므로 1원당 가치로 나누면 돼요. 순현금 이자분(NC_YIELD)은 다시 더해 E1과 같은 기준으로 맞춰요."""
+    per1 = equity_value(1.0, g, r, c, gT, cT)
+    if per1 <= 0:
+        return None
+    return round(target / per1 + nc * NC_YIELD)
+
+
 def implied_growth(target, E1, r, c, gT, cT=None):
     """시가총액을 정당화하는 1~5년차 성장률(역DCF). 이분법."""
     lo, hi = -30.0, 80.0
@@ -427,12 +468,17 @@ def main(industry="cosmetics"):
                 net_cash = min(net_cash, snap["net_cash"])
         else:
             net_cash = snap.get("net_cash")
+        nc_note = None
+        if a and a.get("net_cash_now") is not None:
+            # 분기 보고서 반영 전 최신 순현금(잠정실적 발표·IR, 억원)을 사람이 정한 경우
+            net_cash = a["net_cash_now"] * 100
+            nc_note = a.get("net_cash_note", "최신 발표 기준 순현금")
         # 주당 가치: 평가 기준 시가총액을 보통주 가격으로 나눈 '보통주 환산 유통주식수'로 나눈다
         # (우선주는 시장가 비율만큼 가치를 나눠 가짐) → 적정주가/현재가 − 1 = 괴리율이 정확히 맞는다
         shares = round(mcap_eff * 1e6 / price)
         rec.update(price=price, price_date=pdate, price_source=psrc, mcap=mcap, mcap_eff=mcap_eff, shares=shares,
                    shares_check=sh_chk,
-                   equity=equity, equity_source=eq_src, net_cash=net_cash,
+                   equity=equity, equity_source=eq_src, net_cash=net_cash, **({"net_cash_note": nc_note} if nc_note else {}),
                    dividend_yield=snap.get("dividend_yield"))
         t = rec.get("ttm")
         if t:
@@ -493,9 +539,16 @@ def main(industry="cosmetics"):
                 ni_now = a["ni_now"] * 100
                 rec["ttm_news"] = {"period": a.get("ni_now_note", "일회성 손익을 뺀 최근 이익"), "ni": ni_now}
             ex = ni_now - E1
-            xv = round(sum(ex * w_ * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, w_ in enumerate(path)))
+            flows, bear_trough, E_tr = scenario_flows(a, path, ex, E1, hb)
+            disc = lambda fl: round(sum(f * a["c"] / (1 + a["r"] / 100) ** (i + 1) for i, f in enumerate(fl)))
+            xv_by = {k: disc(fl) for k, fl in flows.items()}
+            xv = xv_by["base"]
             cy = {"position": a.get("cyc_pos", "중립"), "note": a.get("cycle_note", ""), "path": path,
-                  "excess": ex, "excess_value": xv}
+                  "excess": ex, "excess_value": xv, "excess_by": xv_by, "bear_trough": bear_trough,
+                  # 시나리오별 연도별 순이익 경로(백만원): 이 뒤로는 정상 이익 E1에서 시나리오 성장률로 자라요
+                  "ni_paths": {k: [round(E1 + f) for f in fl] for k, fl in flows.items()},
+                  **({"trough_ni": round(E_tr)} if E_tr is not None else {}),
+                  **({"path_note": a["ni_path_note"]} if a.get("ni_path_note") else {})}
         roe_n = E1 / equity * 100 if equity and equity > 0 else None  # 정상 이익 기준 ROE(%)
         if a.get("c_T"):
             cT = a["c_T"]
@@ -506,8 +559,9 @@ def main(industry="cosmetics"):
         else:
             cT = terminal_c(a["c"], a["r"], gT, roe_n)
         sc = {}
+        xv_by = (cy or {}).get("excess_by") or {}
         for k in ("bear", "base", "bull"):
-            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT, cT) + nc + xv
+            v = equity_value(E_op, a["g"][k], a["r"], a["c"], gT, cT) + nc + xv_by.get(k, xv)
             v = max(v, 0)
             sc[k] = {"g": a["g"][k], "value": round(v), "per_share": round(v * 1e6 / shares),
                      "upside": round((v / mcap_eff - 1) * 100, 1)}
@@ -516,6 +570,7 @@ def main(industry="cosmetics"):
                       "norm_per": round(mcap_eff / E1, 1) if E1 > 0 else None, "scenarios": sc,
                       "c_T": cT, "roe_norm": round(roe_n, 1) if roe_n is not None else None,
                       "implied_g": implied_growth(mcap_eff - nc - xv, E_op, a["r"], a["c"], gT, cT),
+                      "implied_E1": implied_e1(mcap_eff - nc - xv, a["g"]["base"], a["r"], a["c"], gT, cT, nc),
                       **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec

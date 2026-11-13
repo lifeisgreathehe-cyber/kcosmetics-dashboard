@@ -86,7 +86,11 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
         S, r, c = d["scenarios"], d["r"], d["c"]
         price, shares, mcap = rec["price"], rec["shares"], rec.get("mcap_eff") or rec["mcap"]
         nc = d.get("net_cash_added") or 0
-        xv = (d.get("cycle") or {}).get("excess_value") or 0
+        cyd = d.get("cycle") or {}
+        xv = cyd.get("excess_value") or 0
+        # 약세 시나리오에 이미 들어 있는 초과(부족) 이익. 불황 연도를 넣은 약세는 아래 스트레스에서 불황을 다시 3년 넣으므로 통째로 빼요
+        xv_b = (cyd.get("excess_by") or {}).get("bear", xv)
+        xv_rm = xv_b if cyd.get("bear_trough") else max(xv_b, 0)
         pos, psrc, praw = _pos_of(rec)
         # --- 1) 하방(영구적 손실) ---
         hb = rec.get("hist") or cycle_base(co)
@@ -118,7 +122,7 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
         # 흑자 부족분은 현금전환율(c)만큼, 적자는 전액 현금 유출로 본다. 호황 초과이익 가치(xv>0)는 불황에선 없다.
         gap_y = (E1 - max(E_tr, 0)) * c + max(-E_tr, 0)
         short = sum(gap_y / (1 + r / 100) ** t for t in range(1, STRESS_YEARS + 1))
-        stress = max(S["bear"]["value"] - max(short, 0) - max(xv, 0), 0)
+        stress = max(S["bear"]["value"] - max(short, 0) - xv_rm, 0)
         down = min(S["bear"]["value"], stress)
         down_ps = round(down * 1e6 / shares)
         loss = max(0.0, 1 - down_ps / price)
