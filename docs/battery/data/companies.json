@@ -1,5 +1,5 @@
 {
-"updated": "2026-11-12",
+"updated": "2026-11-13",
 "companies": [
 {
 "code": "373220",
@@ -188,7 +188,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 234000000
+"common": 234000000,
+"common_issued": 234000000
 }
 },
 {
@@ -500,7 +501,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 77254139,
-"pref": 1439496
+"common_issued": 80585530,
+"pref": 1439496,
+"pref_issued": 1617896
 }
 },
 {
@@ -812,7 +815,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 169050707,
-"pref": 1118525
+"common_issued": 169052788,
+"pref": 1118525,
+"pref_issued": 1248426
 }
 },
 {
@@ -1116,7 +1121,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 44948159
+"common": 44948159,
+"common_issued": 45339477
 }
 },
 {
@@ -1426,7 +1432,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 13350457
+"common": 13350457,
+"common_issued": 13860000
 }
 },
 {
@@ -1730,7 +1737,8 @@
 },
 "shares": {
 "period": "2025-11012",
-"common": 63842570
+"common": 63842570,
+"common_issued": 63967196
 }
 },
 {
@@ -2040,7 +2048,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 88946185
+"common": 88946185,
+"common_issued": 88946220
 }
 },
 {
@@ -2290,7 +2299,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 97824591
+"common": 97824591,
+"common_issued": 97830434
 }
 },
 {
@@ -2600,7 +2610,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 135465978
+"common": 135465978,
+"common_issued": 135776152
 }
 },
 {
@@ -2910,7 +2921,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 39444649
+"common": 39444649,
+"common_issued": 40683260
 }
 },
 {
@@ -3041,7 +3053,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 70813870,
-"pref": 5120167
+"common_issued": 70813870,
+"pref": 5120167,
+"pref_issued": 5120167
 }
 },
 {
@@ -3353,7 +3367,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 70592341,
-"pref": 7682759
+"common_issued": 70592343,
+"pref": 7682759,
+"pref_issued": 7688800
 }
 },
 {
@@ -3663,7 +3679,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 33202811
+"common": 33202811,
+"common_issued": 33214571
 }
 },
 {
@@ -4175,7 +4192,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 17547646
+"common": 17547646,
+"common_issued": 17786114
 }
 },
 {
@@ -4485,7 +4503,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 75620779
+"common": 75620779,
+"common_issued": 79241527
 }
 },
 {
@@ -4627,7 +4646,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12921115
+"common": 12921115,
+"common_issued": 12921115
 }
 },
 {
@@ -4769,7 +4789,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 5650054
+"common": 5650054,
+"common_issued": 5650054
 }
 },
 {
@@ -5079,7 +5100,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15601046
+"common": 15601046,
+"common_issued": 15704138
 }
 },
 {
@@ -5395,7 +5417,8 @@
 },
 "shares": {
 "period": "2026-11014",
-"common": 12045985
+"common": 12045985,
+"common_issued": 12262191
 }
 },
 {
@@ -5513,19 +5536,26 @@
 "gp": -394,
 "op": -1552,
 "ni": -2476
+},
+"2026Q3": {
+"rev": 11467,
+"gp": 290,
+"op": -1970,
+"ni": -2827
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 167404,
-"cash": 7162,
-"st_fin": 23905,
-"debt": 27156
+"period": "2026Q3",
+"equity": 164589,
+"cash": 16391,
+"st_fin": 26199,
+"debt": 34312
 },
 "shares": {
 "period": "2026-11012",
-"common": 29820573
+"common": 29820573,
+"common_issued": 32017673
 }
 },
 {
@@ -5685,7 +5715,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 21910993
+"common": 21910993,
+"common_issued": 21910993
 }
 },
 {
@@ -5887,7 +5918,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 7658656
+"common": 7658656,
+"common_issued": 7778566
 }
 },
 {
@@ -6137,7 +6169,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12184939
+"common": 12184939,
+"common_issued": 12253025
 }
 },
 {
@@ -6447,7 +6480,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 107255330
+"common": 107255330,
+"common_issued": 107255330
 }
 },
 {
@@ -6757,7 +6791,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 45741078
+"common": 45741078,
+"common_issued": 50557285
 }
 },
 {
@@ -7055,19 +7090,26 @@
 "gp": 5390,
 "op": 3584,
 "ni": 3770
+},
+"2026Q3": {
+"rev": 25303,
+"gp": 6078,
+"op": 3987,
+"ni": 2555
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 101039,
-"cash": 13866,
-"st_fin": 71,
+"period": "2026Q3",
+"equity": 103594,
+"cash": 20364,
+"st_fin": 64,
 "debt": 3646
 },
 "shares": {
-"period": "2026-11012",
-"common": 32072040
+"period": "2026-11014",
+"common": 32072040,
+"common_issued": 32072055
 }
 },
 {
@@ -7383,7 +7425,8 @@
 },
 "shares": {
 "period": "2026-11014",
-"common": 15637042
+"common": 15637042,
+"common_issued": 15637042
 }
 },
 {
@@ -7501,7 +7544,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 30218872
+"common": 30218872,
+"common_issued": 30218872
 }
 },
 {
@@ -7721,7 +7765,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 65730510
+"common": 65730510,
+"common_issued": 65730548
 }
 },
 {
@@ -7899,7 +7944,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 81787100
+"common": 81787100,
+"common_issued": 81787100
 }
 },
 {
@@ -8041,7 +8087,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 33843144
+"common": 33843144,
+"common_issued": 33843144
 }
 },
 {
@@ -8351,7 +8398,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15638896
+"common": 15638896,
+"common_issued": 15989037
 }
 },
 {
@@ -8661,7 +8709,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 52365463
+"common": 52365463,
+"common_issued": 52365463
 }
 },
 {
@@ -8882,7 +8931,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 70212298,
-"pref": 20684986
+"common_issued": 70217344,
+"pref": 20684986,
+"pref_issued": 20687062
 }
 },
 {
@@ -9192,7 +9243,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 48554778
+"common": 48554778,
+"common_issued": 49598298
 }
 },
 {
@@ -9502,7 +9554,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15123455
+"common": 15123455,
+"common_issued": 15123455
 }
 },
 {
@@ -9812,7 +9865,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 126631721
+"common": 126631721,
+"common_issued": 126631721
 }
 },
 {
@@ -10122,7 +10176,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 24800000
+"common": 24800000,
+"common_issued": 24800000
 }
 },
 {
@@ -10438,7 +10493,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 28991282
+"common": 28991282,
+"common_issued": 28991282
 }
 },
 {
@@ -10748,7 +10804,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 26213697
+"common": 26213697,
+"common_issued": 26213697
 }
 },
 {
@@ -11041,7 +11098,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 38558235,
-"pref": 6693440
+"common_issued": 38558235,
+"pref": 6693440,
+"pref_issued": 6693440
 }
 },
 {
@@ -11421,7 +11480,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15045670
+"common": 15045670,
+"common_issued": 15045670
 }
 },
 {
@@ -11731,7 +11791,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 27483948
+"common": 27483948,
+"common_issued": 27483948
 }
 },
 {
@@ -11969,7 +12030,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 20256888
+"common": 20256888,
+"common_issued": 20256888
 }
 },
 {
@@ -12280,7 +12342,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 24886881,
-"pref": 3818251
+"common_issued": 25291210,
+"pref": 3818251,
+"pref_issued": 3818251
 }
 },
 {
@@ -12578,19 +12642,26 @@
 "gp": 15148,
 "op": 4626,
 "ni": 3643
+},
+"2026Q3": {
+"rev": 214002,
+"gp": 13259,
+"op": 3072,
+"ni": 62
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 217350,
-"cash": 26783,
-"st_fin": 1204,
-"debt": 63657
+"period": "2026Q3",
+"equity": 208358,
+"cash": 47189,
+"st_fin": null,
+"debt": 51687
 },
 "shares": {
-"period": "2026-11012",
-"common": 36610755
+"period": "2026-11014",
+"common": 36610755,
+"common_issued": 36610755
 }
 },
 {
@@ -12810,7 +12881,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 20688721
+"common": 20688721,
+"common_issued": 22682934
 }
 },
 {
@@ -12910,7 +12982,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 67652659
+"common": 67652659,
+"common_issued": 67652659
 }
 },
 {
@@ -13100,7 +13173,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 7994910
+"common": 7994910,
+"common_issued": 7994910
 }
 },
 {
@@ -13417,7 +13491,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 23358372,
-"pref": 1979921
+"common_issued": 23690728,
+"pref": 1979921,
+"pref_issued": 1979921
 }
 },
 {
@@ -13733,7 +13809,8 @@
 },
 "shares": {
 "period": "2026-11014",
-"common": 77771623
+"common": 77771623,
+"common_issued": 77780144
 }
 },
 {
@@ -13893,7 +13970,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15189281
+"common": 15189281,
+"common_issued": 15271581
 }
 },
 {
@@ -14185,7 +14263,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15783457
+"common": 15783457,
+"common_issued": 15942886
 }
 },
 {
@@ -14495,7 +14574,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 11329838
+"common": 11329838,
+"common_issued": 11351645
 }
 },
 {
@@ -14685,7 +14765,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 68775785
+"common": 68775785,
+"common_issued": 68875785
 }
 },
 {
@@ -14833,7 +14914,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 30537980
+"common": 30537980,
+"common_issued": 30537980
 }
 },
 {
@@ -15041,7 +15123,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 15005879
+"common": 15005879,
+"common_issued": 15077660
 }
 },
 {
@@ -15333,7 +15416,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 12012095
+"common": 12012095,
+"common_issued": 12222396
 }
 },
 {
@@ -15548,7 +15632,9 @@
 "shares": {
 "period": "2026-11012",
 "common": 57153456,
-"pref": 253035
+"common_issued": 57415295,
+"pref": 253035,
+"pref_issued": 253035
 }
 },
 {
@@ -15858,7 +15944,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 21268491
+"common": 21268491,
+"common_issued": 21528094
 }
 },
 {
@@ -16067,7 +16154,9 @@
 "shares": {
 "period": "2026-11014",
 "common": 19666534000,
-"pref": 4673989000
+"common_issued": 19843212000,
+"pref": 4673989000,
+"pref_issued": 4673989000
 }
 },
 {
@@ -16287,19 +16376,26 @@
 "gp": 4545,
 "op": -7405,
 "ni": -1475
+},
+"2026Q3": {
+"rev": 59837,
+"gp": 3280,
+"op": -1659,
+"ni": -11915
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 174118,
-"cash": 25275,
-"st_fin": 7390,
-"debt": 61321
+"period": "2026Q3",
+"equity": 162686,
+"cash": 21235,
+"st_fin": 9228,
+"debt": 72744
 },
 "shares": {
-"period": "2026-11012",
-"common": 11532662
+"period": "2026-11014",
+"common": 11441023,
+"common_issued": 11694082
 }
 },
 {
@@ -16429,7 +16525,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 7979048
+"common": 7979048,
+"common_issued": 7979048
 }
 },
 {
@@ -16739,7 +16836,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 44641958
+"common": 44641958,
+"common_issued": 47454559
 }
 },
 {
@@ -16935,7 +17033,8 @@
 },
 "shares": {
 "period": "2026-11014",
-"common": 10773775
+"common": 10773775,
+"common_issued": 10997910
 }
 },
 {
@@ -17185,7 +17284,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 7471472
+"common": 7471472,
+"common_issued": 7857660
 }
 },
 {
@@ -17483,19 +17583,26 @@
 "gp": 10810,
 "op": 7514,
 "ni": 6501
+},
+"2026Q3": {
+"rev": 51428,
+"gp": 11843,
+"op": 8945,
+"ni": 7702
 }
 },
 "source": "dart",
 "bs": {
-"period": "2026Q2",
-"equity": 147471,
-"cash": 52856,
-"st_fin": 5943,
+"period": "2026Q3",
+"equity": 154311,
+"cash": 61249,
+"st_fin": 5355,
 "debt": 0
 },
 "shares": {
-"period": "2026-11012",
-"common": 15296603
+"period": "2026-11014",
+"common": 15296603,
+"common_issued": 15296603
 }
 },
 {
@@ -17625,7 +17732,8 @@
 },
 "shares": {
 "period": "2026-11012",
-"common": 8036252
+"common": 8036252,
+"common_issued": 8192043
 }
 }
 ]
