@@ -1,0 +1,46 @@
+name: 주가 변곡점·실적 급변 해설 갱신
+
+on:
+  schedule:
+    - cron: "30 8 * * *"   # 매일 17:30 KST (월봉·뉴스 갱신 뒤)
+  workflow_dispatch:
+    inputs:
+      backfill:
+        description: "과거 뉴스 거슬러 받기(회사당 페이지 수, 1페이지=20건). 0이면 안 함"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-turns
+  cancel-in-progress: false
+
+jobs:
+  turns:
+    runs-on: ubuntu-latest
+    timeout-minutes: 150
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 거시 지표·뉴스 누적
+        run: |
+          BF="${{ github.event.inputs.backfill || '0' }}"
+          # 매주 일요일에는 최근 뉴스 5페이지를 거슬러 받아 빠진 기사를 채움
+          if [ "$BF" = "0" ] && [ "$(TZ=Asia/Seoul date +%u)" = "7" ]; then BF=5; fi
+          timeout 8400 python scripts/turns/fetch.py --backfill "$BF" || true
+      - name: 해설 만들기 (7개 산업 전체)
+        run: python scripts/turns/build.py
+      - name: main 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/shared/macro.json docs/data/turns docs/data/turns.json docs/data/news_hist.json 2>/dev/null || true
+          git add docs/*/data/turns docs/*/data/turns.json docs/*/data/news_hist.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 변곡점 해설 $(TZ=Asia/Seoul date '+%Y-%m-%d')"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi

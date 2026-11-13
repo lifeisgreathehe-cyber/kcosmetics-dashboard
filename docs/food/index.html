@@ -693,7 +693,7 @@ function renderSnap(c){  // 공용 모듈 docs/shared/finchart.js
   if(!window.FinChart||!window.Chart)return;
   if(fcH)fcH.destroy();
   const sh=D.stock_hist&&D.stock_hist.series&&D.stock_hist.series[c.code];
-  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source});
+  fcH=FinChart.render($('#fc'),{price:sh,quarterly:c.quarterly,niLabel:NI,source:D.stock_hist&&D.stock_hist.source,code:c.code,turnsUrl:'data/turns/'});
   $('#fc-sub').textContent='주가와 실적이 같은 출발점에서 얼마나 움직였는지 비교해요'+(sh?'':' · 주가 이력은 자동 수집 후 표시돼요')+(Object.keys(c.quarterly||{}).length?'':' · 분기 실적은 DART 수집 후 표시돼요');
 }
 function bindSnap(){}
@@ -714,6 +714,7 @@ function selectCo(code){
   draw('c-a1',{type:'bar',data:{labels:ay,datasets:[bar('매출액',ay.map(k=>eok(A(k).rev)),s[0]),bar('매출총이익',ay.map(k=>eok(A(k).gp)),s[2])]},options:ao});
   draw('c-a2',{type:'bar',data:{labels:ay,datasets:[bar('영업이익',ay.map(k=>eok(A(k).op)),s[1]),bar(NI,ay.map(k=>eok(A(k).ni)),s[6])]},options:ao});
   $('#t-annual').innerHTML=ay.length?finTable(ay,A,k=>String(+k-1)):'<p class="sub">데이터 없음</p>';
+  if(window.FinChart&&FinChart.annual)FinChart.annual($('#t-annual'),c.code,'data/turns/');
   const qs=Object.keys(c.quarterly||{}).sort().slice(-12);
   const Q=k=>c.quarterly[k];
   draw('c-q1',{type:'bar',data:{labels:qs,datasets:[bar('매출액',qs.map(k=>eok(Q(k).rev)),s[0]),bar('매출총이익',qs.map(k=>eok(Q(k).gp)),s[2])]},options:ao});

@@ -4,8 +4,12 @@
        price: {months:["2016-12",...], close:[...]},   // stock_hist.json series[code] (없으면 실적만)
        quarterly: {"2025Q3": {rev, gp, op, ni}, ...},   // companies.json quarterly (백만원, 분기 단독)
        niLabel: "지배주주순이익",                        // 선택
-       source: "네이버 금융 월봉(수정주가, 월말 종가)"     // 선택: 출처 표기
+       source: "네이버 금융 월봉(수정주가, 월말 종가)",    // 선택: 출처 표기
+       code: "090430", turnsUrl: "data/turns/"           // 선택: 변곡점 해설(scripts/turns/build.py 가 만든 <code>.json)
      });  h.destroy() 로 정리.
+     FinChart.annual(tableWrapEl, code, "data/turns/")   // 선택: 연간 실적표 아래에 '매출·이익이 크게 바뀐 해의 이유'
+   변곡점 해설: 띠(엇갈린 분기)와 큰 고점·저점(번호 원)에 마우스를 올리면 요약, 클릭하면 차트 아래 목록에서 근거(이익×PER, 밸류에이션 위치,
+   시장·업종 대비, 실적 발표 반응, 사후 1년, 거시, 사건 연표, 뉴스)를 펼쳐 보여 줘요.
    구성: ① 방향 신호 카드: 최근 1년 이익(4분기 합)과 주가가 같은 방향인지, 엇갈리는지 + 이 종목의 과거 같은 신호 뒤 1년 주가
          ② 변화율 타일(주가·매출·영업이익·순이익)
          ③ 나란히 보기(기본): 주가·매출·영업이익·순이익을 세로로 긴 패널에 같은 시간축으로 쌓음. y축은 각 계열 범위에 맞춤.
@@ -20,6 +24,10 @@
   const HIDDEN = new Set();
   const YW = 52;                // 모든 패널 y축 폭 동일 → 세로 정렬
   const TH_E = 0.05, TH_P = 0.10; // 방향 판정 문턱: 이익 ±5%, 주가 ±10%
+  const TC = {};                // 변곡점 해설 파일 캐시
+  const loadTurns = url => TC[url] || (TC[url] = fetch(url).then(r => r.ok ? r.json() : null).catch(() => null));
+  const esc = t => String(t == null ? '' : t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const TF = { f: 'all' };      // 해설 목록 필터(회사를 바꿔도 유지)
 
   const fmt = v => v == null || !isFinite(v) ? '–' : Math.round(v).toLocaleString('ko-KR');
   const eok = v => {
@@ -30,6 +38,7 @@
   };
   const tickEok = v => { const a = Math.abs(v); return a >= 10000 ? (v / 10000).toLocaleString('ko-KR', { maximumFractionDigits: 2 }) + '조' : fmt(v); };
   const pct = r => { if (r == null || !isFinite(r)) return '–'; const x = r * 100; return (x >= 0 ? '+' : '') + (Math.abs(x) >= 100 ? Math.round(x).toLocaleString('ko-KR') : x.toFixed(1)) + '%'; };
+  const wrap = (t, w) => { const out = []; let line = ''; String(t).split(' ').forEach(x => { if ((line + ' ' + x).trim().length > w && line) { out.push(line); line = x; } else line = (line + ' ' + x).trim(); }); if (line) out.push(line); return out.slice(0, 6); };
   const qn = k => +k.slice(0, 4) * 4 + (+k.slice(5) - 1);
   const qk = n => `${Math.floor(n / 4)}Q${n % 4 + 1}`;
   const m2q = m => `${m.slice(0, 4)}Q${Math.ceil(+m.slice(5, 7) / 3)}`;
@@ -77,14 +86,50 @@
 .fc-tbl th{font-weight:500;color:var(--ink-2);font-size:11.5px;position:sticky;top:0;background:var(--panel)}
 .fc-tbl td{font-family:var(--font-mono,ui-monospace,monospace);font-size:12px}
 .fc-tbl td:first-child,.fc-tbl th:first-child{text-align:left}
-@media (max-width:600px){.fc-kpi .v{font-size:17px}.fc-ctl{justify-content:flex-start}}`;
+.fc-turns{margin:16px 0 0;border-top:1px solid var(--line);padding-top:12px}
+.fc-turns .th{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:0 0 6px}
+.fc-turns h4,.fc-yn h4{margin:0;font-size:15px;color:var(--ink)}
+.fc-turns .lead,.fc-yn .lead{font-size:12.5px;color:var(--ink-2);margin:0 0 8px;line-height:1.6}
+.fc-tc{border:1px solid var(--line);border-left:4px solid var(--ink-3);border-radius:8px;margin:0 0 8px;background:var(--panel)}
+.fc-tc.t-up,.fc-tc.t-opp{border-left-color:var(--up)}.fc-tc.t-down,.fc-tc.t-warn{border-left-color:var(--down)}
+.fc-tc.sel{box-shadow:0 0 0 2px var(--ink-3)}
+.fc-tc summary{cursor:pointer;list-style:none;padding:9px 12px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:start}
+.fc-tc summary::-webkit-details-marker{display:none}
+.fc-tc .no{grid-row:span 3;display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:11px;font-size:12px;font-weight:700;color:#fff;background:var(--ink-3)}
+.fc-tc.t-up .no,.fc-tc.t-opp .no{background:var(--up)}.fc-tc.t-down .no,.fc-tc.t-warn .no{background:var(--down)}
+.fc-tc .tt{font-weight:600;font-size:13.5px;color:var(--ink)}
+.fc-tc .hd{font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono,ui-monospace,monospace)}
+.fc-tc .why{font-size:13px;color:var(--ink);line-height:1.55}.fc-tc .why b{color:var(--ink-2);font-weight:600}
+.fc-tc .bd,.fc-yn .bd{padding:0 12px 10px 44px}
+.fc-tc ul,.fc-yn ul{margin:4px 0 6px;padding:0;list-style:none}
+.fc-tc li,.fc-yn li{font-size:12.8px;color:var(--ink-2);line-height:1.6;margin:0 0 5px}
+.fc-tag{display:inline-block;font-size:11px;font-weight:600;color:var(--ink-2);border:1px solid var(--line);border-radius:99px;padding:0 7px;margin-right:6px;white-space:nowrap}
+.fc-tag.unc{color:var(--down);border-color:currentColor}
+.fc-tc .look,.fc-yn .look{font-size:12.5px;color:var(--ink);margin:4px 0 0;line-height:1.6}
+.fc-tc a,.fc-yn a{color:var(--ink-2)}
+.fc-yn{margin:12px 0 0}
+.fc-yn details{border:1px solid var(--line);border-radius:8px;margin:0 0 6px;background:var(--panel)}
+.fc-yn summary{cursor:pointer;padding:8px 12px;font-size:13px;color:var(--ink);line-height:1.55}
+.fc-yn summary .y{font-weight:700;margin-right:8px}.fc-yn summary .hd{font-family:var(--font-mono,ui-monospace,monospace);font-size:12.5px;color:var(--ink-2)}
+.fc-yn summary .why{display:block;color:var(--ink-2);font-size:12.5px}
+.fc-yn .bd{padding-left:12px}
+.fc-ydot{all:unset;cursor:pointer;display:inline-block;margin-left:4px;width:15px;height:15px;line-height:15px;text-align:center;border-radius:8px;font-size:10px;font-weight:700;color:#fff;background:var(--ink-3);vertical-align:1px}
+.fc-ydot:focus-visible{outline:2px solid var(--ink-3);outline-offset:2px}
+@media (max-width:600px){.fc-kpi .v{font-size:17px}.fc-ctl{justify-content:flex-start}.fc-tc .bd{padding-left:12px}}`;
     document.head.appendChild(s);
   }
 
   function render(el, o) {
     injectStyle();
     const charts = [];
+    el._fcO = o;
     build(el, o, charts);
+    if (o.code && o.turnsUrl && !o._turns) {
+      loadTurns(o.turnsUrl + o.code + '.json').then(t => {
+        if (!t || el._fcO !== o) return;
+        o._turns = t; charts.forEach(c => c.destroy()); charts.length = 0; build(el, o, charts);
+      });
+    }
     return { destroy() { charts.forEach(c => c.destroy()); charts.length = 0; } };
   }
 
@@ -143,6 +188,19 @@
     };
     let li = -1; sig.forEach((s, i) => { if (s) li = i; });
 
+    // ---- 변곡점 해설(있으면): 보이는 기간 안의 것만, 날짜순 번호
+    const XMm = m => X(qn(m2q(m))) + ((+m.slice(5, 7) - 1) % 3 - 2) / 3;
+    const TE = ((o._turns && o._turns.events) || []).filter(e => e.kind === 'band' ? qn(e.q1) >= n0 && qn(e.q0) <= end : qn(m2q(e.m1)) >= n0)
+      .map((e, i) => Object.assign({}, e, { no: i + 1 }));
+    const span = e => e.kind === 'band' ? [X(qn(e.q0)) - 0.5, X(qn(e.q1)) + 0.5] : [Math.max(-0.5, XMm(e.m0)), XMm(e.m1)];
+    const pxAt = {}; PM.forEach(p => { pxAt[p.m] = p.v; });
+    const evAt = xv => {  // x 위치에 걸친 해설: 띠 우선, 없으면 가장 짧은 큰 흐름 구간
+      const b = TE.filter(e => e.kind === 'band' && xv >= span(e)[0] && xv <= span(e)[1]);
+      if (b.length) return b;
+      return TE.filter(e => e.kind === 'leg' && xv >= span(e)[0] && xv <= span(e)[1]).sort((a, c) => (span(a)[1] - span(a)[0]) - (span(c)[1] - span(c)[0])).slice(0, 1);
+    };
+    const pivotNear = xv => TE.find(e => e.kind === 'leg' && e.pivot && Math.abs(XMm(e.m0) - xv) <= 0.5);
+
     let sigHtml = '';
     if (li >= 0) {
       const s = sig[li], n = axis[li], en = ek === 'op' ? '영업이익' : ek === 'ni' ? NI : '매출';
@@ -192,6 +250,7 @@
       <div class="fc-ctl">${seg('보기', [['stack', '나란히 보기'], ['index', '겹쳐 보기']], ST.view)}${ST.view === 'stack' ? seg('실적 기준', [['ttm', '4분기 합'], ['q', '분기']], ST.mode) : ''}${seg('기간', opts, ST.range)}</div>
       ${key}
       <div class="fc-body"></div>
+      ${TE.length ? '<div class="fc-turns"></div>' : ''}
       <p class="fc-note">주가: ${o.source || '월말 종가(수정주가)'} · 실적: 분기 ${qkeys[0] || '–'}~${qkeys[qkeys.length - 1] || '–'}. 4분기 합은 계절성을 없앤 1년치 실적이에요. 주가는 1주 가격이라 유상증자·자사주 소각처럼 주식 수가 바뀌면 이익 변화와 차이가 날 수 있어요. 방향 신호는 판단 보조용이며 매수·매도 추천이 아니에요.</p>
       <details class="fc-tbl"><summary>표로 보기</summary><div class="w"><table><thead><tr><th>분기</th><th>분기 말 주가(원)</th><th>매출액</th><th>영업이익</th><th>${NI}</th><th>매출 4분기 합</th><th>영업이익 4분기 합</th><th>${NI} 4분기 합</th><th>방향</th></tr></thead><tbody>
       ${axis.slice().reverse().map((n, j) => { const s = sig[axis.length - 1 - j]; return `<tr><td>${qk(n)}</td><td>${pq[n] ? fmt(pq[n].v) : '–'}</td>${['rev', 'op', 'ni'].map(f => `<td>${fmt(val(n, f))}</td>`).join('')}${['rev', 'op', 'ni'].map(f => `<td>${fmt(ttm(n, f))}</td>`).join('')}<td>${s ? { opp: '실적↑ 주가↓', warn: '실적↓ 주가↑', up: '함께 ↑', down: '함께 ↓', flat: '–' }[s.t] : '–'}</td></tr>`; }).join('')}
@@ -226,9 +285,71 @@
           const a = Math.max(A.left, x.getPixelForValue(i - 0.5)), b = Math.min(A.right, x.getPixelForValue(i + 0.5));
           c.fillStyle = tint(s.t === 'opp' ? '--up' : '--down', 0.13); c.fillRect(a, A.top, b - a, A.bottom - A.top);
         });
+        const se = TE.find(e => e.id === o._sel);
+        if (se) {
+          const [u, w] = span(se), a = Math.max(A.left, x.getPixelForValue(u)), b = Math.min(A.right, x.getPixelForValue(w));
+          if (b > a) { c.fillStyle = tint('--ink-3', 0.12); c.fillRect(a, A.top, b - a, A.bottom - A.top);
+            c.strokeStyle = css('--ink-3') || '#888'; c.setLineDash([4, 3]); c.lineWidth = 1; c.strokeRect(a + 0.5, A.top + 0.5, b - a - 1, A.bottom - A.top - 1); }
+        }
         c.restore();
       }
     };
+    const badge = (c, x, y, n, col) => {
+      c.save(); c.beginPath(); c.arc(x, y, 8, 0, Math.PI * 2); c.fillStyle = col; c.fill();
+      c.lineWidth = 1.5; c.strokeStyle = css('--panel') || '#fff'; c.stroke();
+      c.fillStyle = '#fff'; c.font = `700 10px ${getComputedStyle(document.body).fontFamily}`; c.textAlign = 'center'; c.textBaseline = 'middle';
+      c.fillText(String(n), x, y + 0.5); c.restore();
+    };
+    const marks = {  // 주가 패널: 띠 번호(위쪽), 고점·저점 번호(가격 위치)
+      id: 'fcTurns',
+      afterDatasetsDraw(ch) {
+        if (!TE.length || !ch.canvas.dataset.px) return;
+        const A = ch.chartArea, x = ch.scales.x, y = ch.scales.y, c = ch.ctx;
+        TE.forEach(e => {
+          const col = css(e.t === 'up' || e.t === 'opp' ? '--up' : '--down') || '#888';
+          if (e.kind === 'band') {
+            const [u, w] = span(e), px = x.getPixelForValue((u + w) / 2);
+            if (px >= A.left && px <= A.right) badge(c, px, A.top + 9, e.no, col);
+          } else if (e.pivot && pxAt[e.m0] != null) {
+            const px = x.getPixelForValue(XMm(e.m0)), py = y.getPixelForValue(pxAt[e.m0]);
+            if (px < A.left - 2 || px > A.right + 2) return;
+            const peak = e.t === 'down';
+            let by = py + (peak ? -13 : 13); if (by < A.top + 26) by = py + 13;  // 위쪽 띠 번호와 겹치지 않게
+            badge(c, px, Math.min(A.bottom - 9, by), e.no, col);
+          }
+        });
+      }
+    };
+    const pick = (ch, ev) => {
+      const xv = ch.scales.x.getValueForPixel(ev.x);
+      const e = (ch.canvas.dataset.px && pivotNear(xv)) || evAt(xv)[0];
+      if (!e) return;
+      o._sel = e.id; charts.forEach(c => c.draw()); openCard(e.id, true);
+    };
+    function openCard(id, scroll) {
+      const box = el.querySelector('.fc-turns'); if (!box) return;
+      box.querySelectorAll('.fc-tc').forEach(d => d.classList.toggle('sel', +d.dataset.id === id));
+      const d = box.querySelector(`.fc-tc[data-id="${id}"]`);
+      if (!d) { if (TF.f !== 'all') { TF.f = 'all'; drawList(); openCard(id, scroll); } return; }
+      d.open = true; if (scroll) d.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    function drawList() {
+      const box = el.querySelector('.fc-turns'); if (!box) return;
+      const F = { all: ['전체', () => true], leg: ['큰 흐름(고점·저점)', e => e.kind === 'leg'], band: ['실적·주가 엇갈림', e => e.kind === 'band'] };
+      const list = TE.filter(F[TF.f][1]).slice().reverse();
+      const card = e => `<details class="fc-tc t-${e.t}${e.id === o._sel ? ' sel' : ''}" data-id="${e.id}"${e.id === o._sel ? ' open' : ''}><summary><span class="no">${e.no}</span><span class="tt">${esc(e.title)}</span><span class="hd">${esc(e.head)}</span><span class="why"><b>왜?</b> ${esc(e.why)}</span></summary>
+        <div class="bd"><ul>${e.f.map(f => `<li><span class="fc-tag${f.tag === '불확실' ? ' unc' : ''}">${esc(f.tag)}</span>${esc(f.text)}${f.u ? ` <a href="${esc(f.u)}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>
+        <p class="look"><b>앞으로 볼 점</b> ${esc(e.look)}</p></div></details>`;
+      box.innerHTML = `<div class="th"><h4>변곡점마다 왜 오르고 내렸나 · ${TE.length}개</h4><div class="fc-segs" role="group" aria-label="해설 종류">${Object.entries(F).map(([k, [l]]) => `<button class="seg" data-f="${k}" aria-pressed="${k === TF.f}">${l}</button>`).join('')}</div></div>
+        <p class="lead">차트의 번호 원과 색 띠를 누르면 해당 해설이 열려요. 숫자(이익·PER·업종 대비·실적 발표 반응·사후 1년)는 데이터에서 자동 계산했고, 사건 연표와 뉴스는 같은 시기의 것을 맞춰 붙였어요. 원인 연결은 추정이며, 설명이 부족한 곳은 '불확실'로 표시했어요.</p>
+        ${list.map(card).join('') || '<p class="lead">이 종류의 변곡점이 없어요.</p>'}
+        <p class="fc-note">해설 갱신 ${esc((o._turns && o._turns.updated) || '')} · 시장 비교는 ${o._turns && o._turns.macro === false ? '7개 산업 대시보드 전체 중앙값' : '코스피(코스닥 상장사는 코스닥)'} 기준</p>`;
+      box.querySelectorAll('.fc-segs button').forEach(b => b.onclick = () => { TF.f = b.dataset.f; drawList(); });
+      box.querySelectorAll('.fc-tc').forEach(d => {
+        d.addEventListener('toggle', () => { if (d.open) { o._sel = +d.dataset.id; box.querySelectorAll('.fc-tc').forEach(x => x.classList.toggle('sel', x === d)); charts.forEach(c => c.draw()); } });
+      });
+    }
+    drawList();
     const cross = {
       id: 'fcCross',
       afterDatasetsDraw(ch) {
@@ -271,7 +392,7 @@
         right = `${labels[l.x]} ${eok(l.y)}${y != null ? ` <span class="${y >= 0 ? 'up' : 'down'}">전년 대비 ${pct(y)}</span>` : ''}`;
       }
       return `<div class="fc-pt"><span class="t">${names[p.k]} <span>· ${p.k === 'px' ? '월말 종가, 원' : unitTxt + ', 억원'}</span></span><span class="v">${right}</span></div>
-        <div class="fc-c" style="height:${(p.k === 'px' ? H.px : H.f) + (i === panels.length - 1 ? 18 : 0)}px"><canvas data-i="${i}" aria-label="${names[p.k]} 추이"></canvas></div>`;
+        <div class="fc-c" style="height:${(p.k === 'px' ? H.px : H.f) + (i === panels.length - 1 ? 18 : 0)}px"><canvas data-i="${i}"${p.k === 'px' ? ' data-px="1"' : ''} aria-label="${names[p.k]} 추이"></canvas></div>`;
     }).join('');
     if (!panels.length) body.innerHTML = '<p class="fc-note">그릴 데이터가 없어요.</p>';
     const zero = { id: 'fcZero', beforeDatasetsDraw(ch) { const y = ch.scales.y; if (y.type !== 'linear' || y.min > 0 || y.max < 0) return; const c = ch.ctx, p = y.getPixelForValue(0); c.save(); c.strokeStyle = ink3; c.lineWidth = 1; c.beginPath(); c.moveTo(ch.chartArea.left, p); c.lineTo(ch.chartArea.right, p); c.stroke(); c.restore(); } };
@@ -298,7 +419,13 @@
                 const i2 = Math.round(it.parsed.x), n = axis[i2], y = chg(ser(n - 4, p.k), it.parsed.y), q = Q[qk(n)] || {}, out = [` ${eok(it.parsed.y)}${y != null ? ` · 전년 대비 ${pct(y)}` : ''}`];
                 if (q.rev && p.k !== 'rev' && ST.mode === 'q') out.push(` 분기 ${p.k === 'op' ? '영업' : '순'}이익률 ${(q[p.k] / q.rev * 100).toFixed(1)}%`);
                 const s = sig[i2]; if (s && (s.t === 'opp' || s.t === 'warn')) out.push(s.t === 'opp' ? ' ▲ 실적↑ 주가↓ 분기' : ' ▼ 실적↓ 주가↑ 분기');
-                return out; } } } },
+                return out; },
+              afterBody: it => {
+                if (!TE.length || !it.length) return [];
+                const xv = it[0].parsed.x, pv = isP && pivotNear(xv), es = pv ? [pv] : evAt(xv);
+                return es.length ? [''].concat(es.flatMap(e => wrap(`(${e.no}) ${e.title}: ${e.why}`, 46)), ['클릭하면 아래에 근거가 열려요']) : [];
+              } } } },
+          onClick: (ev, act, ch) => pick(ch, ev),
           scales: {
             x: xScale(last),
             y: Object.assign({ position: 'left', afterFit: sc => { sc.width = YW; }, grid: { color: grid }, border: { display: false },
@@ -306,7 +433,7 @@
               ys.type === 'logarithmic' ? { afterBuildTicks: logTicks, ticks: { color: ink3, font: { size: 10.5 }, autoSkip: false, callback: v => fmt(v) } } : {})
           }
         },
-        plugins: [shade, zero, cross]
+        plugins: [shade, zero, cross, marks]
       }));
     });
     return;
@@ -359,7 +486,7 @@
         options: {
           responsive: true, maintainAspectRatio: false, animation: false, parsing: false,
           layout: { padding: { top: 8, right: PADR, bottom: 0, left: 0 } },
-          interaction: { mode: 'index', intersect: false }, onHover: hover,
+          interaction: { mode: 'index', intersect: false }, onHover: hover, onClick: (ev, act, c) => pick(c, ev),
           plugins: { legend: { display: false }, tooltip: { itemSort: (a, b) => b.parsed.y - a.parsed.y, callbacks: {
             title: it => labels[Math.round(it[0].parsed.x)],
             label: it => { const s = it.dataset._s, r = s.raw[Math.round(it.parsed.x)]; return ` ${names[s.k]} ${fmt(it.parsed.y)} · ${s.k === 'px' ? fmt(r) + '원' : '4분기 합 ' + eok(r)}`; } } } },
@@ -396,5 +523,29 @@
     let h = m[1]; if (h.length === 3) h = h.split('').map(x => x + x).join('');
     return `rgba(${parseInt(h.slice(0, 2), 16)},${parseInt(h.slice(2, 4), 16)},${parseInt(h.slice(4, 6), 16)},${a})`;
   }
-  window.FinChart = { render };
+  // ---- 연간 실적표: 매출·이익이 크게 바뀐 해마다 이유
+  function annual(wrap, code, url) {
+    if (!wrap || !code || !url) return;
+    injectStyle();
+    wrap._fcCode = code;
+    const old = wrap.parentNode && wrap.parentNode.querySelector('.fc-yn'); if (old) old.remove();
+    loadTurns(url + code + '.json').then(t => {
+      if (!t || wrap._fcCode !== code) return;
+      const Y = t.years || {}, ys = Object.keys(Y).sort().reverse();
+      if (!ys.length) return;
+      const prev = wrap.parentNode.querySelector('.fc-yn'); if (prev) prev.remove();
+      const box = document.createElement('div'); box.className = 'fc-yn';
+      box.innerHTML = `<h4>매출·이익이 크게 바뀐 해, 왜 그랬나</h4><p class="lead">매출 ±15% 이상, 영업이익 ±40% 이상이거나 흑자·적자가 바뀐 해예요. 업종 같은 해 증가율, 분기 흐름(계단식 증가는 인수·대형 계약 신호), 이익률(가격·원가 vs 물량), 영업외 요인, 환율·유가, 사건 연표와 뉴스를 맞춰 자동으로 정리했어요. 표의 ? 를 눌러도 열려요.</p>` +
+        ys.map(y => { const v = Y[y]; return `<details data-y="${y}"><summary><span class="y">${y}년</span><span class="hd">${esc(v.head)}</span><span class="why"><b>왜?</b> ${esc(v.why)}</span></summary><div class="bd"><ul>${v.f.map(f => `<li><span class="fc-tag${f.tag === '불확실' ? ' unc' : ''}">${esc(f.tag)}</span>${esc(f.text)}${f.u ? ` <a href="${esc(f.u)}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul></div></details>`; }).join('');
+      wrap.insertAdjacentElement('afterend', box);
+      wrap.querySelectorAll('thead th').forEach(th => {
+        const y = th.textContent.trim();
+        if (!Y[y] || th.querySelector('.fc-ydot')) return;
+        const b = document.createElement('button'); b.className = 'fc-ydot'; b.textContent = '?'; b.title = `${y}년에 왜 크게 바뀌었나`; b.setAttribute('aria-label', b.title);
+        b.onclick = () => { const d = box.querySelector(`details[data-y="${y}"]`); if (d) { d.open = true; d.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); } };
+        th.appendChild(b);
+      });
+    });
+  }
+  window.FinChart = { render, annual };
 })();
