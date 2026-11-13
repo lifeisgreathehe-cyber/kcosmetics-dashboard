@@ -1,5 +1,5 @@
 """화학·정유 회사별 리뷰(reviews_src.py, 있으면) + 분기 실적 추세(companies.json) → docs/chem/data/reviews.json"""
-import json, os, sys
+import json, os, re, sys
 sys.path.insert(0, os.path.dirname(__file__))
 try:
     from reviews_src import R, NEXT  # 회사별 해석 원고 (DART 수집 후 작성)
@@ -57,13 +57,29 @@ def main():
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/chem/data/companies.json")))["companies"]}
     import datetime
     out = {"updated": datetime.date.today().isoformat(),
-           "period": "DART 확정 실적 기준",
+           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-13까지 나온 3분기 잠정실적과 뉴스",
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
+    deep = (json.load(open(os.path.join(ROOT, "docs/chem/data/deep.json"))).get("companies") or {})
     for code, co in cos.items():
         if len(clean(co.get("quarterly") or {})) < 4:
             continue
         r = R.get(code) or (dict(NEW[code]["review"], next=NEXT) if code in NEW else auto(co))
+        r = dict(r, next=r.get("next") or NEXT)
+        dp_ = deep.get(code) or {}
+        ev = r["eval"]
+        last_q = sorted(clean(co["quarterly"]))[-1]
+        if r.get("basis") and last_q > r["basis"]:
+            # 새 분기 확정 실적이 들어왔는데 해석은 이전 분기 기준: 숫자는 위 추세에 이미 반영, 해석 갱신 예정임을 알림
+            ev = f"※ {last_q} 확정 실적이 새로 들어왔어요. 위 실적 동향 숫자는 {last_q} 기준이고, 아래 해석은 {r['basis']} 실적과 잠정실적 기사를 기준으로 쓴 것이라 곧 다시 써요. " + ev
+        if (r.get("auto") or not r.get("points")) and dp_.get("explain"):
+            # 사업 핵심: 심층분석 제품 해설(사람이 쓴 원고)의 항목별 첫 문장
+            r["points"] = [f"{sec['h']} — {re.split(r'(?<=요\.)\s', sec['p'])[0]}"
+                           for sec in dp_["explain"].get("sections", [])[:4]]
+            r["mix_title"] = dp_["explain"].get("title", "")
+        news = r.get("news") or []
+        if not news and dp_.get("news"):
+            news = [(n["date"], n["title"], n["url"], n.get("read", ""), n.get("impact", "")) for n in dp_["news"][:4]]
         dp = os.path.join(ROOT, f"raw/chem/dart_docs/{code}.json")
         docs = json.load(open(dp)) if os.path.exists(dp) else {}
         reps = docs.get("reports") or []
@@ -71,8 +87,8 @@ def main():
         out["companies"][code] = {
             "tone": r["tone"], "title": r["title"],
             "trend": trend(co) + r.get("extra", []),
-            "eval": r["eval"], "watch": r["watch"],
-            "news": [{"date": d, "title": t, "url": u} for d, t, u in r.get("news", [])],
+            "eval": ev, "watch": r["watch"], "basis": r.get("basis"),
+            "news": [dict(zip(("date", "title", "url", "read", "impact"), n)) for n in news],
             "next": r["next"],
             "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""),
                     "mix_title": r.get("mix_title", ""),
