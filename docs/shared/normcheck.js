@@ -19,6 +19,15 @@
       out.push(row('사이클 평균 순이익률',`${h.margin.toFixed(1)}% × 추세 매출 ${fmt(eok(h.trend_rev))}억`,
         `${h.years}년 연간 순이익률${h.n>=6?'(가장 좋은 해와 나쁜 해 제외)':''} 평균이에요.${one}<div class="moat" style="margin:6px 0 0">${chips}</div>`));
     }
+    const mo=((v.cycle||{}).midcycle||{}).oneoff||[];
+    if(mo.length) out.push(row('평균 기간의 일회성 보정',mo.map(a=>`${a.year}년 ${a.ni_margin.toFixed(1)}% → ${a.adj_margin.toFixed(1)}%`).join(', '),
+      '사이클 평균 이익을 낼 때 쓴 기간 안에서도, 영업은 흑자인데 순이익만 평소와 크게 어긋난 해는 그해 영업이익에 이 회사의 평소 비율을 곱한 이익률로 바꿔 평균했어요.'));
+    const tc=v.ttm_core;
+    if(tc) out.push(row('최근 4개 분기 일회성 보정',`${fmt(eok(tc.raw))}억 → ${fmt(eok(tc.ni))}억`,
+      `최근 4개 분기 순이익이 영업이익과 평소 관계(순이익 ≈ 세후 영업이익 × ${tc.k})에서 크게 벗어나 일회성 손익이 섞였다고 보고, 영업이익 기준 이익을 정상 이익으로 썼어요.`));
+    const tn=v.ttm_news;
+    if(tn&&/일회성 손익 제외/.test(tn.period||'')&&v.ttm) out.push(row('최근 이익의 일회성 보정',`${fmt(eok(v.ttm.ni))}억 → ${fmt(eok(tn.ni))}억`,
+      '지금 이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치에 따라 1~3년만 이어진다고 보고 더하거나 빼요. 그 계산에 쓰는 최근 4개 분기 이익에서 일회성 손익을 빼고 영업이익 기준으로 바꿨어요.'));
     if(d.c_T!=null){
       const inc=d.c<1?gT/(1-d.c):null;
       const same=Math.abs(d.c_T-d.c)<0.005;
