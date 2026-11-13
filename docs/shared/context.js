@@ -84,7 +84,7 @@
     const who=s.rel==='self'||s.rel==='blog'?REL[s.rel]:`${REL[s.rel]}${s.who?' '+esc(s.who):''}`;
     return `<li><span class="sub">${esc((s.date||'').slice(5))}${s.office?' · '+esc(s.office):''}</span> <span class="ctx-tag">${who}</span><span class="tone ${tc}" style="font-size:11px">${tl}</span><br>
       ${s.url?`<a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:var(--accent)">${esc(s.title)}</a>`:esc(s.title)}
-      ${s.summary?`<span class="rd">${esc(s.summary)}</span>`:''}<span class="rd"><b>이렇게 보세요</b> ${esc(s.read)}</span></li>`;
+      ${s.summary?`<span class="rd">${esc(s.summary)}</span>`:''}<span class="rd"><b>이렇게 보세요</b> ${esc(s.read!=null?s.read:((DATA.reads||[])[s.r]||''))}</span></li>`;
   }
 
   // ---------- 심층분석 다음 '여러 자료로 본 이 회사'

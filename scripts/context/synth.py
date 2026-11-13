@@ -181,7 +181,7 @@ def cross_check(sig, deep_x, trend):
     cust, n_cust = score("customer")
     notes = []
     verdict = None
-    if n_own >= 2 and n_ind >= 2:
+    if n_own >= 3 and n_ind >= 3 and own != 0:
         if own < 0 and ind < 0:
             verdict = ("사이클 영향 쪽", "회사 뉴스와 업종 뉴스가 함께 부정적이에요. 회사만의 문제라기보다 업황(사이클) 영향일 가능성이 커요.")
         elif own < 0 <= ind or (own < 0 and comp_up >= 2):

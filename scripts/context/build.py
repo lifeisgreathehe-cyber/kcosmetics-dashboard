@@ -137,6 +137,11 @@ def build(ind, offline=False, all_news=None):
     news = (jload(dd / "news.json", {}) or {}).get("companies", {})
     old = (jload(dd / "context.json", {}) or {})
     oldc = old.get("companies", {})
+    _rd = old.get("reads") or []
+    for _x in list(oldc.values()) + [{"signals": g.get("news", [])} for g in (old.get("industry") or {}).values()]:
+        for _s in _x.get("signals") or []:
+            if "r" in _s and "read" not in _s and _s["r"] < len(_rd):
+                _s["read"] = _rd[_s.pop("r")]
     icfg = CFG[ind]
     idx = all_index()
     cutoff60 = (TODAY - dt.timedelta(days=60)).isoformat()
@@ -277,6 +282,9 @@ def build(ind, offline=False, all_news=None):
                 items, total = fetch.blogs(q)
                 bl += items
                 time.sleep(0.4)
+        # 블로그는 회사·브랜드 이름이 실제로 들어간 글만 (이름이 짧은 '대현'은 '대현동 아이스크림' 같은 글을 거른다)
+        bkw = [k for k in kw if not (len(name) <= 2 and k == name)] or kw
+        bl = [x for x in bl if any(k in x["title"] + " " + (x.get("summary") or "") for k in bkw)]
         if bl:
             blog_ok += 1
             seen = set()
@@ -291,7 +299,7 @@ def build(ind, offline=False, all_news=None):
                 if len([s for s in sig if s["rel"] == "blog"]) >= 5:
                     break
         else:
-            sig += [s for s in prev_sig if s["rel"] == "blog"]
+            sig += [s for s in prev_sig if s["rel"] == "blog" and any(k in s["title"] + " " + (s.get("summary") or "") for k in bkw)]
 
         sig.sort(key=lambda x: x["date"], reverse=True)
         by = {}
@@ -345,6 +353,21 @@ def build(ind, offline=False, all_news=None):
         "industry": industry,
         "companies": out,
     }
+    # '이렇게 보세요' 문장은 종류가 몇십 개뿐이라 목록(reads)으로 빼고 번호만 저장해 파일 크기를 줄인다
+    reads = []
+    for x in out.values():
+        for s_ in x["signals"]:
+            if "read" in s_:
+                if s_["read"] not in reads:
+                    reads.append(s_["read"])
+                s_["r"] = reads.index(s_.pop("read"))
+    for g in industry.values():
+        for s_ in g["news"]:
+            if "read" in s_:
+                if s_["read"] not in reads:
+                    reads.append(s_["read"])
+                s_["r"] = reads.index(s_.pop("read"))
+    res["reads"] = reads
     (dd / "context.json").write_text(json.dumps(res, ensure_ascii=False, separators=(",", ":")), "utf-8")
     print(f"[{ind}] {len(out)}개사 · 블로그 {blog_ok} · 통계 {fetch.STATS}")
     return res
