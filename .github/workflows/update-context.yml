@@ -1,0 +1,54 @@
+name: 회사별 입체 분석 갱신
+
+# 회사 뉴스·업종 뉴스·경쟁사/고객사/공급사 뉴스·블로그·관심도 추세를 모아
+# docs/<업종>/data/context.json 을 다시 만든다. 사업보고서 근거는 raw/**/dart_docs 에서 뽑는다.
+on:
+  schedule:
+    - cron: "40 22,10 * * *"  # 매일 07:40·19:40 KST (07시·19시 뉴스 수집 직후)
+  push:
+    branches: [main, claude/project-thread-ecnzcz]
+    paths:
+      - "raw/dart_docs/**"
+      - "raw/*/dart_docs/**"
+      - "scripts/context/**"
+      - "config/context/**"
+      - ".github/workflows/update-context.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-context-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: false
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        industry: [cosmetics, semi, chem, battery, apparel, food, logistics]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 수집·분류 (${{ matrix.industry }})
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: timeout 1500 python scripts/context/build.py --industry ${{ matrix.industry }}
+      - name: 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/data/context.json docs/*/data/context.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "data: 입체 분석 ${{ matrix.industry }} $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            git rebase --abort 2>/dev/null || true; sleep $((i*7))
+          done
