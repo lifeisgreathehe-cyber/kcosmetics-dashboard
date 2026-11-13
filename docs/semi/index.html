@@ -241,6 +241,7 @@ td.l,th.l{text-align:left}
       <div class="card"><h2>최근 12개 분기 매출액 · 매출총이익</h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-q1"></canvas></div></div>
       <div class="card"><h2>최근 12개 분기 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub">단위: 억원</p><div class="chart"><canvas id="c-q2"></canvas></div></div>
       <div class="card full"><h2>분기 실적표 (YoY)</h2><p class="sub">단위: 억원, 괄호는 전년 같은 분기 대비 증감률</p><div class="tbl" id="t-quarter"></div></div>
+      <div class="card full"><h2>최근 20개 분기 TTM 추이 (최근 4개 분기 합) · 매출액 · 영업이익 · <span class="ni-l">지배주주순이익</span></h2><p class="sub" id="ttm-sub">단위: 억원</p><div class="chart" style="height:340px"><canvas id="c-ttm"></canvas></div></div>
     </div>
   </section>
 
@@ -275,6 +276,7 @@ td.l,th.l{text-align:left}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="../shared/finchart.js"></script>
+<script src="../shared/ttmchart.js"></script>
 <script src="../shared/marks.js"></script>
 <script src="../shared/context.js"></script>
 <script src="../shared/normcheck.js"></script>
@@ -748,6 +750,7 @@ function selectCo(code){
   draw('c-q1',{type:'bar',data:{labels:qs,datasets:[bar('매출액',qs.map(k=>eok(Q(k).rev)),s[0]),bar('매출총이익',qs.map(k=>eok(Q(k).gp)),s[2])]},options:ao});
   draw('c-q2',{type:'bar',data:{labels:qs,datasets:[bar('영업이익',qs.map(k=>eok(Q(k).op)),s[1]),bar(NI,qs.map(k=>eok(Q(k).ni)),s[6])]},options:ao});
   $('#t-quarter').innerHTML=qs.length?finTable(qs,Q,prevQ):'<p class="sub">데이터 없음</p>';
+  if(window.TTMChart)TTMChart.render(document.getElementById('c-ttm'),c.quarterly,{niLabel:NI,subEl:$('#ttm-sub'),n:20});
 }
 function renderCompanies(){
   CO=D.companies; if(!CO) return;
