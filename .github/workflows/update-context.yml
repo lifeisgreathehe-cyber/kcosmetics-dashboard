@@ -50,5 +50,5 @@ jobs:
           git commit -q -m "data: 입체 분석 ${{ matrix.industry }} $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
           for i in 1 2 3 4 5; do
             git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
-            git rebase --abort 2>/dev/null; sleep $((i*7))
+            git rebase --abort 2>/dev/null || true; sleep $((i*7))
           done
