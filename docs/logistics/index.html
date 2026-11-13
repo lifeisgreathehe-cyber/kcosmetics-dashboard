@@ -231,6 +231,7 @@ td.l,th.l{text-align:left}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="../shared/finchart.js"></script>
+<script src="../shared/marks.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -551,7 +552,7 @@ function renderValueReport(c){
    ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
    </tbody></table></div>
    ${cycleBlock(v)}
-   ${quantBlock(v)}
+   ${quantBlock(v)}${window.marksBlock?marksBlock(v,D.valuation):''}
    <h4>해석</h4><p>${gap} ${d.note}.</p>
    <h4>가정</h4><p>정상화 이익 ${fmt(eok(d.E1))}억원(${v.cycle?v.cycle.E1_basis+', ':''}${D.valuation.asof||D.reviews?.updated||''} 기준 최신 실적·기사 반영)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/logistics/valuation.json에서 바꿀 수 있어요.</p>`;

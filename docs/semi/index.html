@@ -275,6 +275,7 @@ td.l,th.l{text-align:left}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="../shared/finchart.js"></script>
+<script src="../shared/marks.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -697,7 +698,7 @@ function renderValueReport(c){
    ${cy?`<h4>업황 사이클 판단</h4><p>${cy.note}</p>`:''}
    <h4>정상 이익은 이렇게 정했어요</h4><p>${h?`과거 실적 기준(${h.years}, ${h.n}년): 순이익률은 ${h.margin_range[0]}%~${h.margin_range[1]}% 사이를 오갔고, 가장 좋은 해와 나쁜 해를 뺀 평균은 ${h.margin}%예요. 매출 추세선(연 ${h.trend_g}% 성장)으로 본 지금의 정상 매출 ${fmt(eok(h.trend_rev))}억원(최근 4분기 실제 ${fmt(eok(h.ttm_rev))}억원)에 평균 이익률을 곱하면 ${fmt(eok(h.norm_ni))}억원이에요. `:''}${d.note.replace(/\.$/,'')}.</p>
    ${cy&&cy.path&&cy.path.length?`<p>${v.ttm_news?`최근 4분기(${v.ttm_news.period}, 잠정실적 포함)`:'최근 4분기'} 순이익 ${fmt(eok((v.ttm_news||v.ttm).ni))}억원은 정상 이익보다 ${fmt(eok(Math.abs(cy.excess)))}억원 ${cy.excess>=0?'많아요':'적어요'}. 사이클 위치(${cy.position})를 보고 이 차이가 앞으로 ${cy.path.length}년간 ${cy.path.map(x=>Math.round(x*100)+'%').join(' → ')}만큼 이어진다고 보고, 그 현재가치 ${fmt(eok(cy.excess_value))}억원을 ${cy.excess_value>=0?'더했어요':'뺐어요'}.</p>`:cy?`<p>최근 4분기 이익과 정상 이익의 차이는 일회성이거나 작아서 따로 더하거나 빼지 않았어요.</p>`:''}
-   ${quantBlock(v)}
+   ${quantBlock(v)}${window.marksBlock?marksBlock(v,D.valuation):''}
    <h4>해석</h4><p>${gap}</p>
    <h4>가정</h4><p>사이클 평균 정상 지배순이익 ${fmt(eok(d.E1))}억원(${D.valuation.asof||D.reviews?.updated||''} 기준)${d.net_cash_added?`, 순현금 ${fmt(eok(d.net_cash_added))}억원 별도 가산(차입이면 차감)`:''}, 자기자본비용 ${d.r}%, 이익의 ${Math.round(d.c*100)}%를 주주잉여현금흐름으로 가정, 6~10년차 성장률은 ${D.valuation.terminal_growth}%로 수렴, 이후 영구성장 ${D.valuation.terminal_growth}%.</p>
    <p class="src">공시 실적과 공개 시세로 계산한 참고용 추정이며 투자 권유가 아니에요. 가정은 config/valuation.json에서 바꿀 수 있어요.</p>`;
