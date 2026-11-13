@@ -28,6 +28,23 @@
     const tn=v.ttm_news;
     if(tn&&/일회성 손익 제외/.test(tn.period||'')&&v.ttm) out.push(row('최근 이익의 일회성 보정',`${fmt(eok(v.ttm.ni))}억 → ${fmt(eok(tn.ni))}억`,
       '지금 이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치에 따라 1~3년만 이어진다고 보고 더하거나 빼요. 그 계산에 쓰는 최근 4개 분기 이익에서 일회성 손익을 빼고 영업이익 기준으로 바꿨어요.'));
+    const cy=d.cycle;
+    if(cy&&cy.ni_paths){
+      const nm={bear:'약세',base:'기준',bull:'강세'}, jo=x=>fmt(eok(x)/10000,1)+'조';
+      const big=Math.abs(d.E1)>=1e6, u=x=>big?jo(x):fmt(eok(x))+'억';
+      const lines=['bear','base','bull'].filter(k=>cy.ni_paths[k]).map(k=>{
+        const p=cy.ni_paths[k], xb=(cy.excess_by||{})[k];
+        return `<div style="margin-top:3px"><b>${nm[k]}</b> ${p.length?p.map((x,i)=>`${i+1}년차 ${u(x)}`).join(' → ')+' → ':''}정상 ${u(d.E1)}${xb!=null?` <span style="color:var(--ink-2)">(정상 이익 대비 더한 가치 ${xb>=0?'+':''}${u(xb)})</span>`:''}</div>`;}).join('');
+      out.push(row('시나리오별 이익 경로',`호황·불황이 몇 해 이어지나`,
+        `경기순환주는 '지금 이익이 계속된다'고 보지 않고, 지금 이익이 몇 해 이어진 뒤 정상 이익으로 돌아온다고 봐요. 시나리오마다 그 기간을 다르게 둬요${cy.bear_trough&&!cy.path_note?` — 약세는 호황이 1년 만에 끝나고 불황 이익(${u(cy.trough_ni??0)}, 과거 두 번째로 나쁜 해의 이익률 기준)을 2년 거쳐요`:''}. 정상 이익을 넘는 부분은 현금 전환율 ${Math.round(d.c*100)}%만큼 현재가치로 더했어요.${cy.path_note?' '+cy.path_note:''}${lines}`));
+    }
+    if(d.implied_E1!=null&&d.E1>0){
+      const r_=d.implied_E1/d.E1;
+      out.push(row('주가에 반영된 정상 이익',`${fmt(eok(d.implied_E1))}억 (가정의 ${(r_*100).toFixed(0)}%)`,
+        `기준 시나리오의 성장률·할인율을 그대로 둘 때, 지금 주가가 맞으려면 ${cy?'호황(불황)이 끝난 뒤 ':''}매년 이만큼 벌어야 해요. 이 리포트의 정상 이익은 ${fmt(eok(d.E1))}억이에요. `+
+        (r_>1.25?'시장은 이 리포트보다 훨씬 높은 정상 이익을 기대하고 있어요. 그 근거(구조적 성장·점유율 상승)가 있는지가 관건이에요.':r_<0.8?'시장은 이 리포트보다 낮은 정상 이익만 가격에 넣고 있어요. 정상 이익 가정이 맞다면 싸게 거래되는 쪽이에요.':'시장 기대와 이 리포트의 정상 이익이 비슷해요.')));
+    }
+    if(v.net_cash_note) out.push(row('최신 순현금',`${fmt(eok(v.net_cash))}억`,v.net_cash_note));
     if(d.c_T!=null){
       const inc=d.c<1?gT/(1-d.c):null;
       const same=Math.abs(d.c_T-d.c)<0.005;

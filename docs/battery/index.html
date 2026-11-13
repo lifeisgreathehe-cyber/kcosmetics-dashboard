@@ -255,6 +255,7 @@ td.l,th.l{text-align:left}
 <script src="../shared/marks.js"></script>
 <script src="../shared/context.js"></script>
 <script src="../shared/normcheck.js"></script>
+<script src="../shared/checks.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -619,6 +620,7 @@ function renderValueReport(c){
    <div class="tbl"><table><thead><tr><th class="l">시나리오</th><th>1~5년 이익 성장률</th><th>주주가치(억원)</th><th>주당 적정가(원)</th><th>현재가 대비</th></tr></thead><tbody>
    ${[['bear','비관'],['base','기준'],['bull','낙관']].map(([k,l])=>`<tr><td class="l">${l}</td><td class="num">${S0[k].g}%</td><td class="num">${fmt(eok(S0[k].value))}</td><td class="num">${fmt(S0[k].per_share)}</td><td class="num ${cls(S0[k].upside)}">${pct(S0[k].upside)}</td></tr>`).join('')}
    </tbody></table></div>
+   ${window.extraBlock?extraBlock(v,D.valuation):''}
    ${cycleBlock(v)}
    ${window.normBlock?normBlock(v,D.valuation):''}${quantBlock(v)}${window.marksBlock?marksBlock(v,D.valuation):''}
    <h4>해석</h4><p>${gap} ${d.note}.</p>
