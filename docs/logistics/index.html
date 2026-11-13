@@ -232,6 +232,7 @@ td.l,th.l{text-align:left}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <script src="../shared/finchart.js"></script>
 <script src="../shared/marks.js"></script>
+<script src="../shared/context.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -436,12 +437,12 @@ function renderReview(c){
 }
 function renderBiz(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code], b=r&&r.biz;
-  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}`;return}
+  if(!b){$('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART 사업보고서 수집 후 추가돼요.</p>${renderDeep(c)}${window.ctxBlock?ctxBlock(c,D):''}`;return}
   const s=S(), mix=b.mix||[];
   $('#co-biz').innerHTML=`<h2>사업보고서 요약</h2><p class="sub">DART ${b.report}${b.url?` · <a href="${b.url}" target="_blank" rel="noopener" style="color:var(--accent)">원문 보기</a>`:''}</p>
    ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
-   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}`;
+   <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}${window.ctxBlock?ctxBlock(c,D):''}`;
 }
 function renderIR(c){
   const el=$('#co-ir'); if(!el) return;
@@ -482,10 +483,10 @@ function renderDeep(c){
    <div class="ol"><div><h4>사이클(업황) 요인</h4><ul>${g.cycle.map(t=>`<li>${t}</li>`).join('')}</ul></div><div><h4>경쟁력(구조) 요인</h4><ul>${g.structural.map(t=>`<li>${t}</li>`).join('')}</ul></div></div>
    ${g.check&&g.check.length?`<p class="sub">판단을 바꿀 신호: ${g.check.join(' · ')}</p>`:''}`})():''}
    <div class="dgrid">
-    <div><h4>제품·서비스</h4><p>${x.products}</p></div>
-    <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p></div>
-    <div><h4>고객</h4><p>${x.customers}</p></div>
-    <div><h4>원재료·조달</h4><p>${x.sourcing}</p></div>
+    <div><h4>제품·서비스</h4><p>${x.products}</p>${window.ctxCell?ctxCell(c.code,'products'):''}</div>
+    <div><h4>경쟁사와 점유율</h4><p>${x.competition}</p>${window.ctxCell?ctxCell(c.code,'competition'):''}</div>
+    <div><h4>고객</h4><p>${x.customers}</p>${window.ctxCell?ctxCell(c.code,'customers'):''}</div>
+    <div><h4>원재료·조달</h4><p>${x.sourcing}</p>${window.ctxCell?ctxCell(c.code,'sourcing'):''}</div>
    </div>
    <h4>경제적 해자</h4>
    <div class="moat"><span class="tone ${tone}">해자 ${x.moat.grade}</span><span class="dots" aria-label="5점 중 ${x.moat.score}점">${'●'.repeat(x.moat.score)}${'○'.repeat(5-x.moat.score)}</span>${x.moat.sources.map(t=>`<span class="chip">${t}</span>`).join('')}</div>
