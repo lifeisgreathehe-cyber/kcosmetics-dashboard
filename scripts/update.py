@@ -1049,6 +1049,13 @@ def main():
             build_reviews.main()
         except Exception as e:
             log("리뷰 정리 실패:", e)
+    if only in (None, "dart", "dart_docs"):
+        try:  # 새 분기 실적이 들어온 회사는 리뷰 본문(실적 동향·평가·체크 포인트·다음 발표)을 다시 쓴다
+            sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "reviews"))
+            import refresh as review_refresh
+            review_refresh.refresh(INDUSTRY)
+        except Exception as e:
+            log("리뷰 재작성 실패:", e)
     if only:  # 부분 실행은 meta를 덮어쓰지 않고 소스 목록만 합친다
         meta = load("meta.json") or {}
         meta["sources_updated"] = sorted(set(meta.get("sources_updated", [])) | set(ran))
