@@ -73,3 +73,16 @@ S_TIRE2Q = ("2026-08-04", "고부가 타이어가 갈랐다…타이어 3사, �
   "미국 수입 타이어에는 기본 관세 4% + 232조 관세 15% + 회사별 반덤핑 관세(한국 13.03%, 금호 10.53%, 넥센 8.02%)가 붙어요. 고인치 타이어 이익률은 15~20%, 일반 타이어는 약 5%로 추정돼요. 하반기 변수로 중동 정세에 따른 천연고무 가격과 해상운임 상승을 꼽았어요.", "0")
 S_ELECTION_STOCK = ("2026-11-05", "미 민주당 상·하원 장악에 현대차 3.53% 상승", "https://www.insight.co.kr/news/580848", "인사이트",
   "현대차 10월 미국 판매는 7만3,452대(+5%)로 10월 최대였고 하이브리드 비중이 29%예요. 미국 전기차 세액공제(최대 7,500달러)는 9월 30일 끝나 전기차보다 하이브리드가 미국 판매를 이끌고 있어요. 하이브리드 부품(변속기·모터·배터리 시스템·열관리)을 만드는 부품사에 유리한 흐름이에요.", "+")
+
+
+# ------------------------------------------------------------------ 중소형 부품사용 짧은 서식
+def sm(code, title, secs, diag, pcs, fz, moat, outlook, rv, val):
+    """pcs = (products, competition, customers, sourcing), fz = FZ(...) 결과"""
+    co(code, title, secs, diag, pcs[0], pcs[1], pcs[2], pcs[3], fz, moat, outlook, rv, val)
+
+
+def RV(tone, title, eval_, watch, news, points=None):
+    return dict(tone=tone, title=title, eval=eval_, watch=watch, news=news, points=points or [])
+
+
+Q3_NOTE = "분기보고서(11월 14일 공시) 숫자는 PC에서 DART 수집을 돌리면 위 실적 표와 4분기 추이에 자동으로 채워져요."
