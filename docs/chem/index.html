@@ -549,7 +549,7 @@ function renderReview(c){
    <h4>평가</h4><p>${r.eval}</p>
    ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
-   ${r.news&&r.news.length?`<h4>최신 기사 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''}
+   ${r.news&&r.news.length?`<h4>최근 뉴스와 읽는 법 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> ${n.impact&&TONE[n.impact]?`<span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'호재',neg:'악재',neu:'중립'}[n.impact]}</span>`:''}<a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>${n.read?`<br><span style="color:var(--ink-2)">어떻게 볼까: ${n.read}</span>`:''}</li>`).join('')}</ul>`:''}
    <p class="src">${D.reviews.disclaimer||''}</p>`;
 }
 function renderBiz(c){
