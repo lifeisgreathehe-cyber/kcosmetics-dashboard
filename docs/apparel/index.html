@@ -156,7 +156,7 @@ td.l,th.l{text-align:left}
         <div class="src" id="sig3-src"></div>
       </div>
       <div class="card">
-        <h2>④ 미국 의류점 재고/판매 비율 · 실효 관세율</h2><p class="sub">왼쪽: 재고가 몇 달 치 판매분인지(개월, 높을수록 OEM 발주 축소) · 오른쪽: 미국 전체 관세 수입 ÷ 상품 수입(%, 분기)</p>
+        <h2>④ 미국 의류점 재고/판매 비율 · 실효 관세율</h2><p class="sub">왼쪽: 재고가 몇 달 치 판매분인지(개월, 높을수록 OEM 발주 축소) · 오른쪽: 미국 실효 관세율(징수 관세 ÷ 수입액, %) 전체와 의류</p>
         <div class="chart"><canvas id="c-sig4"></canvas></div>
         <div class="src" id="sig4-src"></div>
       </div>
@@ -503,12 +503,14 @@ function renderSignals(){
   const isr=G.us_cloth_isr, tr=G.us_tariff;
   if(isr&&isr.months){
     const f=from(isr.months), L=isr.months.slice(f);
-    const qv={}; if(tr&&tr.quarters) tr.quarters.forEach((q,i)=>qv[q]=tr.values[i]);
-    const tq=L.map(m=>qv[`${m.slice(0,4)}Q${Math.floor((+m.slice(5)-1)/3)+1}`]??null);
+    const qv={}, av={}; if(tr&&tr.quarters) tr.quarters.forEach((q,i)=>qv[q]=tr.values[i]);
+    if(tr&&tr.months) tr.months.forEach((m,i)=>{qv[m]=tr.values[i];if(tr.apparel)av[m]=tr.apparel[i]});
+    const tq=L.map(m=>tr&&tr.months?(qv[m]??null):(qv[`${m.slice(0,4)}Q${Math.floor((+m.slice(5)-1)/3)+1}`]??null));
     const ds=[line('미국 의류점 재고/판매(개월)',isr.values.slice(f),s[0],{yAxisID:'y'})];
-    if(tr) ds.push(line('미국 실효 관세율(%)',tq,s[1],{yAxisID:'y1',stepped:true,tension:0,borderDash:[4,3],spanGaps:false}));
+    if(tr) ds.push(line('미국 실효 관세율 전체(%)',tq,s[1],{yAxisID:'y1',stepped:!tr.months,tension:0,borderDash:[4,3],spanGaps:false,borderWidth:1.6}));
+    if(tr&&tr.apparel) ds.push(line('미국 실효 관세율 의류 HS61·62(%)',L.map(m=>av[m]??null),s[3],{yAxisID:'y1',tension:0,spanGaps:false,borderWidth:1.6}));
     draw('c-sig4',{type:'line',data:{labels:L,datasets:ds},
-      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?`실효 관세율 ${fmt(c.raw,2)}%`:`재고/판매 ${fmt(c.raw,2)}개월`}}},scales:{x:xs,y:yax(v=>fmt(v,1)),y1:yax(v=>v+'%','right')}})});
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?`${c.dataset.label.replace('(%)','')} ${fmt(c.raw,2)}%`:`재고/판매 ${fmt(c.raw,2)}개월`}}},scales:{x:xs,y:yax(v=>fmt(v,1)),y1:yax(v=>v+'%','right')}})});
     $('#sig4-src').innerHTML=`출처: ${isr.source} · <a href="${isr.url}" target="_blank" rel="noopener">재고/판매</a>${tr?` · ${tr.source} · <a href="${tr.url}" target="_blank" rel="noopener">관세 수입</a>`:''} · 수집 ${SD.updated}`;
     notes.push(`미국 지표 ${isr.months[0].slice(0,4)}년~`);
   } else empty('c-sig4','FRED 수집 후 표시돼요(매일 자동 수집).');
