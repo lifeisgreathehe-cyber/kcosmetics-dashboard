@@ -527,6 +527,7 @@ def update_customs(key):
            "imports": [round(imp_total.get(m, 0) / 1e6, 2) for m in months], "updated": TODAY.isoformat()}
     if extra:
         out["extra"] = extra
+    out["imports_series"] = {lab: [r2(by_hs_imp.get(lab, {}), m) for m in months] for lab in by_hs if lab in totals}  # 품목별 수입(합계 품목)
     if unit_price:
         out["unit_price"] = unit_price
     save("customs_exports.json", out)

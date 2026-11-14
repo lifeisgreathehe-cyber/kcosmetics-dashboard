@@ -77,17 +77,21 @@
  },
  {
   "file": "retail_car.json",
-  "title": "승용차 소매판매액지수 (내수 판매)",
+  "title": "승용차 소매판매액지수 (내수 판매, 불변지수)",
   "source": "국가데이터처 서비스업동향조사 (2020=100)",
   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41012",
   "orgId": "101",
   "tblId": "DT_1K41012",
-  "itmId": "ALL",
+  "itmId": "T2",
   "objL1": "G11+G111+G112",
   "prdSe": "M",
   "start": "201501",
   "series_key": "C1_NM",
-  "where": {}
+  "rename": {
+   "승용차": "승용차 전체",
+   "국내 승용차": "국산 승용차",
+   "수입 승용차": "수입 승용차"
+  }
  },
  {
   "file": "import_price.json",
