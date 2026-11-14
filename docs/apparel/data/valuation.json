@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-13",
+ "updated": "2026-11-14",
  "method": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라 회사별 사이클 위치를 판단해 정한 '사이클 중간' 지배순이익이에요. DART 연간 실적이 들어오면 과거 순이익률 평균(최고·최저 해 제외) × 최근 매출로 구한 사이클 평균 이익을 회사별 비중(w)만큼 섞어요. ② 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치에 따라 1~3년만 이어진다고 보고 현재가치만 더하거나 빼요. ③ 성장률(g)은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고 순현금은 더해요(지주사·비지배지분이 큰 회사는 제외). 순차입금은 빼지 않아요: 순이익에 이미 이자비용이 빠져 있어 또 빼면 부채를 두 번 반영하게 돼요.",
  "terminal_growth": 2.0,
- "asof": "2026-11-08",
+ "asof": "2026-11-13",
  "companies": {
   "111770": {
    "name": "영원무역",
@@ -40,15 +40,15 @@
     "oneoff": []
    },
    "price": 69800,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 3092958,
-   "mcap_eff": 2970714,
-   "shares": 42560372,
+   "mcap": 3092900,
+   "mcap_eff": 2970655,
+   "shares": 42559527,
    "shares_check": {
     "dart_common": 42560112,
     "dart_period": "2026-11012",
-    "listed": 44311724,
+    "listed": 44310888,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -103,26 +103,26 @@
      "bear": {
       "g": 1.0,
       "value": 4337891,
-      "per_share": 101923,
+      "per_share": 101925,
       "upside": 46.0
      },
      "base": {
       "g": 5.0,
       "value": 5324609,
-      "per_share": 125107,
+      "per_share": 125110,
       "upside": 79.2
      },
      "bull": {
       "g": 8.0,
       "value": 6047902,
-      "per_share": 142102,
+      "per_share": 142105,
       "upside": 103.6
      }
     },
     "c_T": 0.775,
     "roe_norm": 8.9,
     "implied_g": -12.0,
-    "implied_E1": 190962,
+    "implied_E1": 190956,
     "cycle": {
      "position": "회복기",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
@@ -167,13 +167,13 @@
     "ttm_ni": 590821,
     "oneoff": false,
     "E": 459341,
-    "per_share": 56895,
-    "bear": 48063,
-    "bull": 64627,
+    "per_share": 56896,
+    "bear": 48064,
+    "bull": 64628,
     "upside": -18.5,
     "pct": 41,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.2,
+    "exp_ex": -0.7,
     "conflict": false
    },
    "marks": {
@@ -186,17 +186,17 @@
      "bull": 0.3
     },
     "weighted": 5344253,
-    "weighted_ps": 125569,
+    "weighted_ps": 125571,
     "weighted_upside": 79.9,
     "stress": {
      "E": 260139,
      "margin": 6.0,
      "g": 1.0,
      "value": 4228397,
-     "per_share": 99351,
+     "per_share": 99353,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 6.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 99351,
+    "down_ps": 99353,
     "max_loss": 0.0,
     "up_bull": 103.6,
     "asym_ratio": null,
@@ -212,7 +212,7 @@
      }
     },
     "mos": 20,
-    "buy_ps": 100455,
+    "buy_ps": 100457,
     "buy_gap": 43.9,
     "implied_margin": 4.4,
     "base_margin": 9.3,
@@ -234,8 +234,8 @@
     "op_ttm": 582371,
     "por_q": 4.2,
     "op_q": 175571,
-    "cns_per": 5.78,
-    "div_yield": 2.9,
+    "cns_per": 5.55,
+    "div_yield": 3.01,
     "dps": 2100.0,
     "debt_eq": 9,
     "ret_1y": -20.2,
@@ -372,15 +372,15 @@
     "oneoff": []
    },
    "price": 174600,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 2137351,
-   "mcap_eff": 1901830,
-   "shares": 10892497,
+   "mcap": 2137300,
+   "mcap_eff": 1901779,
+   "shares": 10892205,
    "shares_check": {
     "dart_common": 11604898,
     "dart_period": "2026-11012",
-    "listed": 12241417,
+    "listed": 12241123,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -435,26 +435,26 @@
      "bear": {
       "g": 0.0,
       "value": 1560952,
-      "per_share": 143305,
+      "per_share": 143309,
       "upside": -17.9
      },
      "base": {
       "g": 3.5,
       "value": 1968526,
-      "per_share": 180723,
+      "per_share": 180728,
       "upside": 3.5
      },
      "bull": {
       "g": 6.0,
       "value": 2252538,
-      "per_share": 206797,
+      "per_share": 206803,
       "upside": 18.4
      }
     },
     "c_T": 0.55,
     "roe_norm": 7.8,
     "implied_g": 2.7,
-    "implied_E1": 244497,
+    "implied_E1": 244490,
     "cycle": {
      "position": "회복기",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
@@ -499,13 +499,13 @@
     "ttm_ni": 431118,
     "oneoff": false,
     "E": 409221,
-    "per_share": 198050,
-    "bear": 167306,
-    "bull": 224964,
+    "per_share": 198056,
+    "bear": 167310,
+    "bull": 224970,
     "upside": 13.4,
     "pct": 72,
     "tier": "싼 ⅓",
-    "exp_ex": 1.0,
+    "exp_ex": 1.4,
     "conflict": false
    },
    "marks": {
@@ -518,17 +518,17 @@
      "bull": 0.3
     },
     "weighted": 1972215,
-    "weighted_ps": 181062,
+    "weighted_ps": 181067,
     "weighted_upside": 3.7,
     "stress": {
      "E": 192320,
      "margin": 3.7,
      "g": 0.0,
      "value": 1509219,
-     "per_share": 138556,
+     "per_share": 138560,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 3.7% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 138556,
+    "down_ps": 138560,
     "max_loss": 20.6,
     "up_bull": 18.4,
     "asym_ratio": 0.9,
@@ -544,7 +544,7 @@
      }
     },
     "mos": 20,
-    "buy_ps": 144850,
+    "buy_ps": 144854,
     "buy_gap": -17.0,
     "implied_margin": 4.7,
     "base_margin": 4.9,
@@ -567,7 +567,7 @@
     "por_q": 2.4,
     "op_q": 195673,
     "cns_per": null,
-    "div_yield": 3.58,
+    "div_yield": 3.77,
     "dps": 6576.0,
     "debt_eq": 13,
     "ret_1y": 5.2,
@@ -672,10 +672,10 @@
    "name": "한세실업",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 2028288,
-    "op": 97351,
-    "ni": 35288,
-    "period": "2025Q3~2026Q2"
+    "rev": 2073631,
+    "op": 60616,
+    "ni": 29920,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -685,10 +685,10 @@
      1.3,
      6.6
     ],
-    "trend_rev": 1964764,
-    "ttm_rev": 2028288,
-    "norm_ni": 57535,
-    "trend_g": 1.9,
+    "trend_rev": 1985123,
+    "ttm_rev": 2073631,
+    "norm_ni": 58131,
+    "trend_g": 2.0,
     "margins": {
      "2016": 3.03,
      "2017": 2.53,
@@ -714,27 +714,27 @@
      }
     ]
    },
-   "price": 8190,
-   "price_date": "2026-11-13 18:39",
+   "price": 8150,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 327600,
-   "mcap_eff": 322545,
-   "shares": 39382784,
+   "mcap": 326000,
+   "mcap_eff": 320970,
+   "shares": 39382822,
    "shares_check": {
     "dart_common": 39382839,
-    "dart_period": "2026-11012",
+    "dart_period": "2026-11014",
     "listed": 40000000,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 736719,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -428016,
+   "equity": 707725,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -345398,
    "dividend_yield": null,
-   "per": 9.1,
-   "roe": 4.8,
-   "pbr": 0.44,
+   "per": 10.7,
+   "roe": 4.2,
+   "pbr": 0.45,
    "cycle": {
     "phase": "바닥권",
     "note": "과거 평균 영업이익률(6% 안팎)보다 낮은 5.5%를 정상으로 보고 이자비용을 뺀 이익이에요. 2026년 이익(사이클 바닥)보다 높지만 2023년 고점보다는 낮아요",
@@ -759,46 +759,46 @@
      "avg_margin": 2.7,
      "min": -3.0,
      "max": 6.6,
-     "ni": 54563,
+     "ni": 55782,
      "oneoff": []
     },
-    "ttm_margin": 1.7,
-    "ttm_ni": 35288,
+    "ttm_margin": 1.4,
+    "ttm_ni": 29920,
     "E1_fwd": 80000,
     "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
    },
-   "net_debt_levered": -428016,
+   "net_debt_levered": -345398,
    "dcf": {
-    "E1": 67282,
+    "E1": 67891,
     "r": 11.0,
     "c": 0.55,
     "note": "과거 평균 영업이익률(6% 안팎)보다 낮은 5.5%를 정상으로 보고 이자비용을 뺀 이익이에요. 2026년 이익(사이클 바닥)보다 높지만 2023년 고점보다는 낮아요",
     "fwd_per": 4.0,
-    "norm_per": 4.8,
+    "norm_per": 4.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 382861,
-      "per_share": 9722,
-      "upside": 18.7
+      "value": 386339,
+      "per_share": 9810,
+      "upside": 20.4
      },
      "base": {
       "g": 3.0,
-      "value": 516155,
-      "per_share": 13106,
-      "upside": 60.0
+      "value": 522994,
+      "per_share": 13280,
+      "upside": 62.9
      },
      "bull": {
       "g": 6.0,
-      "value": 606136,
-      "per_share": 15391,
-      "upside": 87.9
+      "value": 616593,
+      "per_share": 15656,
+      "upside": 92.1
      }
     },
-    "c_T": 0.781,
-    "roe_norm": 9.1,
-    "implied_g": -6.7,
-    "implied_E1": 42775,
+    "c_T": 0.792,
+    "roe_norm": 9.6,
+    "implied_g": -7.0,
+    "implied_E1": 42550,
     "cycle": {
      "position": "바닥권",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
@@ -806,46 +806,46 @@
       0.7,
       0.3
      ],
-     "excess": -31994,
-     "excess_value": -15382,
+     "excess": -37971,
+     "excess_value": -18255,
      "excess_by": {
-      "bear": -19242,
-      "base": -15382,
-      "bull": -4756
+      "bear": -22836,
+      "base": -18255,
+      "bull": -5644
      },
      "bear_trough": false,
      "ni_paths": {
       "bear": [
-       44886,
-       57684,
-       57684
+       41311,
+       56500,
+       56500
       ],
       "base": [
-       44886,
-       57684
+       41311,
+       56500
       ],
       "bull": [
-       57684
+       56500
       ]
      }
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 55611,
-    "norm": 53297,
-    "ttm_ni": 35288,
+    "pos": "바닥권",
+    "period": "2025Q4~2026Q3",
+    "core": 38600,
+    "norm": 53850,
+    "ttm_ni": 29920,
     "oneoff": false,
-    "E": 54454,
-    "per_share": 7289,
-    "bear": 6157,
-    "bull": 8280,
-    "upside": -11.0,
-    "pct": 47,
+    "E": 46225,
+    "per_share": 6187,
+    "bear": 5227,
+    "bull": 7028,
+    "upside": -24.1,
+    "pct": 38,
     "tier": "가운데 ⅓",
-    "exp_ex": -0.6,
+    "exp_ex": -1.2,
     "conflict": false
    },
    "marks": {
@@ -857,36 +857,36 @@
      "base": 0.45,
      "bull": 0.4
     },
-    "weighted": 532153,
-    "weighted_ps": 13512,
-    "weighted_upside": 65.0,
+    "weighted": 539935,
+    "weighted_ps": 13710,
+    "weighted_upside": 68.2,
     "stress": {
      "E": 0,
      "margin": -0.0,
      "g": -3.0,
-     "value": 292431,
-     "per_share": 7425,
+     "value": 295091,
+     "per_share": 7493,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -0.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 7425,
-    "max_loss": 9.3,
-    "up_bull": 87.9,
-    "asym_ratio": 9.4,
+    "down_ps": 7493,
+    "max_loss": 8.1,
+    "up_bull": 92.1,
+    "asym_ratio": 11.4,
     "asym": "유리",
     "risk": {
-     "score": 54,
+     "score": 51,
      "grade": "높음",
      "parts": {
       "적자 이력": 12,
       "이익 변동폭": 25,
-      "차입 부담": 15,
+      "차입 부담": 12,
       "하방 거리": 2
      }
     },
     "mos": 35,
-    "buy_ps": 8783,
-    "buy_gap": 7.2,
-    "implied_margin": 2.2,
+    "buy_ps": 8912,
+    "buy_gap": 9.3,
+    "implied_margin": 2.1,
     "base_margin": 3.4,
     "hist_margin": [
      -3.0,
@@ -895,26 +895,26 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 2.2%가 이어져야 해요(과거 -3.0%~6.6%, 평균 2.7%, 이 리포트의 정상 이익 가정 3.4%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어지면 최대 약 9% 손실, 낙관 시나리오면 +88%로 손익 구조는 '유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 2.1%가 이어져야 해요(과거 -3.0%~6.6%, 평균 2.7%, 이 리포트의 정상 이익 가정 3.4%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어지면 최대 약 8% 손실, 낙관 시나리오면 +92%로 손익 구조는 '유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 6.1,
-    "ni_q": 13141,
-    "por_ttm": 3.3,
-    "op_ttm": 97351,
-    "por_q": 2.2,
-    "op_q": 36094,
-    "cns_per": 5.63,
-    "div_yield": 7.34,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 5.6,
+    "ni_q": 14205,
+    "por_ttm": 5.3,
+    "op_ttm": 60616,
+    "por_q": 324.9,
+    "op_q": 247,
+    "cns_per": 5.61,
+    "div_yield": 7.36,
     "dps": 600.0,
-    "debt_eq": 94,
-    "ret_1y": -36.5,
+    "debt_eq": 89,
+    "ret_1y": -36.8,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 10.3,
     "rev_cagr5": 2.7,
-    "peg": 0.88,
+    "peg": 1.04,
     "peg_g": 10.3
    },
    "checks": {
@@ -922,13 +922,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "9.1%",
+      "val": "9.6%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "4.8%",
+      "val": "4.2%",
       "note": ""
      },
      {
@@ -952,33 +952,33 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "10.2년",
+      "val": "9.3년",
       "note": "금융사는 해당 없음"
      }
     ],
     "lynch": [
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
-      "ok": true,
-      "val": "0.88",
+      "ok": false,
+      "val": "1.04",
       "note": "성장률 = 최근 5년 순이익 연평균 10.3%(상한 50%)"
      },
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "1.9",
+      "val": "1.7",
       "note": "2 이상이면 매우 좋음"
      },
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-4,280억",
+      "val": "-3,454억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "94%",
+      "val": "89%",
       "note": ""
      }
     ],
@@ -1043,12 +1043,12 @@
     },
     "oneoff": []
    },
-   "price": 4230,
-   "price_date": "2026-11-13 18:39",
+   "price": 4250,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 169200,
-   "mcap_eff": 166155,
-   "shares": 39280142,
+   "mcap": 170000,
+   "mcap_eff": 166941,
+   "shares": 39280235,
    "shares_check": {
     "dart_common": 39280127,
     "dart_period": "2026-11012",
@@ -1063,7 +1063,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -0.5,
-   "pbr": 0.36,
+   "pbr": 0.37,
    "cycle": {
     "phase": "바닥권",
     "note": "한세실업 정상 이익의 지배 몫과 예스24 지분 몫을 더하고 지주사 비용을 뺐어요",
@@ -1105,32 +1105,32 @@
     "r": 11.5,
     "c": 0.5,
     "note": "한세실업 정상 이익의 지배 몫과 예스24 지분 몫을 더하고 지주사 비용을 뺐어요",
-    "fwd_per": 5.0,
+    "fwd_per": 5.1,
     "norm_per": 5.7,
     "scenarios": {
      "bear": {
       "g": -3.0,
       "value": 118801,
       "per_share": 3024,
-      "upside": -28.5
+      "upside": -28.8
      },
      "base": {
       "g": 2.0,
       "value": 149272,
       "per_share": 3800,
-      "upside": -10.2
+      "upside": -10.6
      },
      "bull": {
       "g": 5.0,
       "value": 173004,
       "per_share": 4404,
-      "upside": 4.1
+      "upside": 3.6
      }
     },
     "c_T": 0.5,
     "roe_norm": 6.4,
-    "implied_g": 4.4,
-    "implied_E1": 32282,
+    "implied_g": 4.5,
+    "implied_E1": 32431,
     "cycle": {
      "position": "바닥권",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
@@ -1174,10 +1174,10 @@
     "per_share": 7304,
     "bear": 6170,
     "bull": 8297,
-    "upside": 72.7,
-    "pct": 91,
+    "upside": 71.9,
+    "pct": 94,
     "tier": "싼 ⅓",
-    "exp_ex": 3.8,
+    "exp_ex": 4.2,
     "conflict": false
    },
    "marks": {
@@ -1191,7 +1191,7 @@
     },
     "weighted": 154194,
     "weighted_ps": 3925,
-    "weighted_upside": -7.2,
+    "weighted_upside": -7.6,
     "stress": {
      "E": -20202,
      "margin": -0.6,
@@ -1201,9 +1201,9 @@
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -0.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 882,
-    "max_loss": 79.1,
-    "up_bull": 4.1,
-    "asym_ratio": 0.1,
+    "max_loss": 79.2,
+    "up_bull": 3.6,
+    "asym_ratio": 0.0,
     "asym": "불리",
     "risk": {
      "score": 69,
@@ -1217,7 +1217,7 @@
     },
     "mos": 35,
     "buy_ps": 2551,
-    "buy_gap": -39.7,
+    "buy_gap": -40.0,
     "implied_margin": 1.0,
     "base_margin": 0.9,
     "hist_margin": [
@@ -1232,17 +1232,17 @@
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
-    "per_q": 7.5,
+    "per_q": 7.6,
     "ni_q": 5502,
     "por_ttm": 1.6,
     "op_ttm": 105771,
     "por_q": 1.0,
     "op_q": 40393,
     "cns_per": null,
-    "div_yield": 11.96,
+    "div_yield": 11.77,
     "dps": 500.0,
     "debt_eq": 331,
-    "ret_1y": 0.0,
+    "ret_1y": 0.5,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 4.0,
@@ -1338,10 +1338,10 @@
    "name": "화승엔터프라이즈",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 1502397,
-    "op": 15400,
-    "ni": -30663,
-    "period": "2025Q3~2026Q2"
+    "rev": 1487605,
+    "op": 18914,
+    "ni": -43723,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -1351,10 +1351,10 @@
      -2.2,
      5.4
     ],
-    "trend_rev": 1723386,
-    "ttm_rev": 1502397,
-    "norm_ni": 32684,
-    "trend_g": 9.1,
+    "trend_rev": 1741988,
+    "ttm_rev": 1487605,
+    "norm_ni": 33037,
+    "trend_g": 9.0,
     "margins": {
      "2016": 5.42,
      "2017": 5.4,
@@ -1369,27 +1369,27 @@
     },
     "oneoff": []
    },
-   "price": 2580,
-   "price_date": "2026-11-13 18:39",
+   "price": 2540,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 156336,
-   "mcap_eff": 156336,
-   "shares": 60595349,
+   "mcap": 153900,
+   "mcap_eff": 153900,
+   "shares": 60590551,
    "shares_check": {
     "dart_common": 60589276,
     "dart_period": "2026-11012",
-    "listed": 60595238,
+    "listed": 60590551,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 447873,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -496325,
+   "equity": 390399,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -486962,
    "dividend_yield": null,
    "per": null,
-   "roe": -6.8,
-   "pbr": 0.35,
+   "roe": -11.2,
+   "pbr": 0.39,
    "cycle": {
     "phase": "회복기",
     "note": "정상 영업이익률 5%와 이자비용을 반영한 이익이에요. 2025년 바닥 이익이 아니라 회복 후 평균을 썼어요",
@@ -1414,46 +1414,46 @@
      "avg_margin": 0.8,
      "min": -2.2,
      "max": 5.2,
-     "ni": 11467,
+     "ni": 11354,
      "oneoff": []
     },
-    "ttm_margin": -2.0,
-    "ttm_ni": -30663,
+    "ttm_margin": -2.9,
+    "ttm_ni": -43723,
     "E1_fwd": 28000,
     "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
    },
-   "net_debt_levered": -496325,
+   "net_debt_levered": -486962,
    "dcf": {
-    "E1": 19734,
+    "E1": 19677,
     "r": 12.0,
     "c": 0.45,
     "note": "정상 영업이익률 5%와 이자비용을 반영한 이익이에요. 2025년 바닥 이익이 아니라 회복 후 평균을 썼어요",
-    "fwd_per": 5.6,
-    "norm_per": 7.9,
+    "fwd_per": 5.5,
+    "norm_per": 7.8,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 46003,
-      "per_share": 759,
-      "upside": -70.6
+      "value": 42180,
+      "per_share": 696,
+      "upside": -72.6
      },
      "base": {
       "g": 4.0,
-      "value": 84397,
-      "per_share": 1393,
-      "upside": -46.0
+      "value": 84639,
+      "per_share": 1397,
+      "upside": -45.0
      },
      "bull": {
       "g": 9.0,
-      "value": 126300,
-      "per_share": 2084,
-      "upside": -19.2
+      "value": 132559,
+      "per_share": 2188,
+      "upside": -13.9
      }
     },
-    "c_T": 0.546,
-    "roe_norm": 4.4,
-    "implied_g": 15.6,
-    "implied_E1": 32900,
+    "c_T": 0.603,
+    "roe_norm": 5.0,
+    "implied_g": 14.6,
+    "implied_E1": 31620,
     "cycle": {
      "position": "회복기",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
@@ -1461,46 +1461,46 @@
       0.8,
       0.4
      ],
-     "excess": -50397,
-     "excess_value": -23431,
+     "excess": -63400,
+     "excess_value": -29476,
      "excess_by": {
-      "bear": -29888,
-      "base": -23431,
-      "bull": -8100
+      "bear": -37599,
+      "base": -29476,
+      "bull": -10189
      },
      "bear_trough": false,
      "ni_paths": {
       "bear": [
-       -20584,
-       -425,
-       -425
+       -31043,
+       -5683,
+       -5683
       ],
       "base": [
-       -20584,
-       -425
+       -31043,
+       -5683
       ],
       "bull": [
-       -425
+       -5683
       ]
      }
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "바닥권",
-    "period": "2025Q3~2026Q2",
-    "core": 12012,
-    "norm": 32684,
-    "ttm_ni": -30663,
+    "pos": "회복기",
+    "period": "2025Q4~2026Q3",
+    "core": 14753,
+    "norm": 33037,
+    "ttm_ni": -43723,
     "oneoff": true,
-    "E": 22348,
-    "per_share": 1944,
-    "bear": 1642,
-    "bull": 2208,
-    "upside": -24.6,
-    "pct": 38,
+    "E": 23895,
+    "per_share": 2079,
+    "bear": 1756,
+    "bull": 2361,
+    "upside": -18.2,
+    "pct": 44,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.7,
+    "exp_ex": -0.7,
     "conflict": false
    },
    "marks": {
@@ -1512,11 +1512,11 @@
      "base": 0.5,
      "bull": 0.3
     },
-    "weighted": 89289,
-    "weighted_ps": 1474,
-    "weighted_upside": -42.9,
+    "weighted": 90523,
+    "weighted_ps": 1494,
+    "weighted_upside": -41.2,
     "stress": {
-     "E": -31021,
+     "E": -31356,
      "margin": -1.8,
      "g": -4.0,
      "value": 0,
@@ -1525,7 +1525,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -19.2,
+    "up_bull": -13.9,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -1539,9 +1539,9 @@
      }
     },
     "mos": 40,
-    "buy_ps": 884,
-    "buy_gap": -65.7,
-    "implied_margin": 1.9,
+    "buy_ps": 896,
+    "buy_gap": -64.7,
+    "implied_margin": 1.8,
     "base_margin": 1.1,
     "hist_margin": [
      -2.2,
@@ -1550,22 +1550,22 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 1.9%가 이어져야 해요(과거 -2.2%~5.2%, 평균 0.8%, 이 리포트의 정상 이익 가정 1.1%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -19%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 1.8%가 이어져야 해요(과거 -2.2%~5.2%, 평균 0.8%, 이 리포트의 정상 이익 가정 1.1%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -14%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
-    "ni_q": -1808,
-    "por_ttm": 10.2,
-    "op_ttm": 15400,
-    "por_q": 5.4,
-    "op_q": 7290,
+    "ni_q": -17975,
+    "por_ttm": 8.1,
+    "op_ttm": 18914,
+    "por_q": 10.5,
+    "op_q": 3657,
     "cns_per": null,
-    "div_yield": 1.98,
+    "div_yield": 1.97,
     "dps": 50.0,
-    "debt_eq": 142,
-    "ret_1y": -48.5,
+    "debt_eq": 144,
+    "ret_1y": -49.3,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 7.0,
@@ -1577,13 +1577,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "4.4%",
+      "val": "5.0%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "-6.8%",
+      "val": "-11.2%",
       "note": ""
      },
      {
@@ -1607,7 +1607,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "32.3년",
+      "val": "28.6년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -1621,13 +1621,13 @@
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-4,963억",
+      "val": "-4,870억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": false,
-      "val": "142%",
+      "val": "144%",
       "note": ""
      }
     ],
@@ -1661,10 +1661,10 @@
    "name": "태평양물산",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 1036923,
-    "op": 64079,
-    "ni": 36250,
-    "period": "2025Q3~2026Q2"
+    "rev": 1035257,
+    "op": 45229,
+    "ni": 33029,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -1674,9 +1674,9 @@
      -6.2,
      3.7
     ],
-    "trend_rev": 1031141,
-    "ttm_rev": 1036923,
-    "norm_ni": 8756,
+    "trend_rev": 1033767,
+    "ttm_rev": 1035257,
+    "norm_ni": 8778,
     "trend_g": 1.7,
     "margins": {
      "2016": -6.21,
@@ -1698,31 +1698,31 @@
      }
     ]
    },
-   "price": 1580,
-   "price_date": "2026-11-13 18:39",
+   "price": 1550,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 74104,
-   "mcap_eff": 71353,
-   "shares": 45160127,
+   "mcap": 72700,
+   "mcap_eff": 68994,
+   "shares": 44512258,
    "shares_check": {
-    "dart_common": 45156282,
-    "dart_period": "2026-11012",
-    "listed": 46901500,
+    "dart_common": 44506282,
+    "dart_period": "2026-11014",
+    "listed": 46903226,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 303086,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -305320,
+   "equity": 306141,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -284494,
    "dividend_yield": null,
-   "per": 2.0,
-   "roe": 12.0,
-   "pbr": 0.24,
+   "per": 2.1,
+   "roe": 10.8,
+   "pbr": 0.23,
    "cycle": {
     "phase": "중립",
-    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
-    "w_mid": 0.6,
+    "note": "2022~25년 영업이익률 5% 안팎이 이어져 과거 평균(1.5%)보다 높게, 다운 가격 강세가 섞인 최근 4개 분기(360억원)보다는 낮게 잡았어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
     "midcycle": {
@@ -1743,7 +1743,7 @@
      "avg_margin": 1.2,
      "min": -1.5,
      "max": 3.7,
-     "ni": 12607,
+     "ni": 12587,
      "oneoff": [
       {
        "year": "2021",
@@ -1752,48 +1752,48 @@
       }
      ]
     },
-    "ttm_margin": 3.5,
-    "ttm_ni": 36250,
-    "E1_fwd": 8000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "ttm_margin": 3.2,
+    "ttm_ni": 33029,
+    "E1_fwd": 20000,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
-   "net_debt_levered": -305320,
+   "net_debt_levered": -284494,
    "dcf": {
-    "E1": 10764,
+    "E1": 17035,
     "r": 12.5,
     "c": 0.5,
-    "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
-    "fwd_per": 8.9,
-    "norm_per": 6.6,
+    "note": "2022~25년 영업이익률 5% 안팎이 이어져 과거 평균(1.5%)보다 높게, 다운 가격 강세가 섞인 최근 4개 분기(360억원)보다는 낮게 잡았어요",
+    "fwd_per": 3.4,
+    "norm_per": 4.1,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 39958,
-      "per_share": 885,
-      "upside": -44.0
+      "value": 71365,
+      "per_share": 1603,
+      "upside": 3.4
      },
      "base": {
       "g": 2.0,
-      "value": 51257,
-      "per_share": 1135,
-      "upside": -28.2
+      "value": 92751,
+      "per_share": 2084,
+      "upside": 34.4
      },
      "bull": {
       "g": 5.0,
-      "value": 58127,
-      "per_share": 1287,
-      "upside": -18.5
+      "value": 105813,
+      "per_share": 2377,
+      "upside": 53.4
      }
     },
-    "c_T": 0.5,
-    "roe_norm": 3.6,
-    "implied_g": 9.9,
-    "implied_E1": 14984,
+    "c_T": 0.641,
+    "roe_norm": 5.6,
+    "implied_g": -4.8,
+    "implied_E1": 12672,
     "cycle": {
      "position": "중립",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
      "path": [],
-     "excess": 25486,
+     "excess": 15994,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -1810,20 +1810,20 @@
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 43116,
-    "norm": 6696,
-    "ttm_ni": 36250,
+    "pos": "하강기",
+    "period": "2025Q4~2026Q3",
+    "core": 34154,
+    "norm": 6713,
+    "ttm_ni": 33029,
     "oneoff": false,
-    "E": 24906,
-    "per_share": 2907,
-    "bear": 2456,
-    "bull": 3302,
-    "upside": 84.0,
-    "pct": 94,
+    "E": 20433,
+    "per_share": 2420,
+    "bear": 2044,
+    "bull": 2749,
+    "upside": 56.1,
+    "pct": 81,
     "tier": "싼 ⅓",
-    "exp_ex": 4.2,
+    "exp_ex": 3.6,
     "conflict": false
    },
    "marks": {
@@ -1835,60 +1835,60 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 50150,
-    "weighted_ps": 1110,
-    "weighted_upside": -29.7,
+    "weighted": 90670,
+    "weighted_ps": 2037,
+    "weighted_upside": 31.4,
     "stress": {
-     "E": 1031,
+     "E": 1034,
      "margin": 0.1,
      "g": -4.0,
-     "value": 28369,
-     "per_share": 628,
+     "value": 52313,
+     "per_share": 1175,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 0.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 628,
-    "max_loss": 60.3,
-    "up_bull": -18.5,
-    "asym_ratio": null,
-    "asym": "불리",
+    "down_ps": 1175,
+    "max_loss": 24.2,
+    "up_bull": 53.4,
+    "asym_ratio": 2.2,
+    "asym": "유리",
     "risk": {
-     "score": 79,
+     "score": 68,
      "grade": "높음",
      "parts": {
       "적자 이력": 18,
       "이익 변동폭": 21,
-      "차입 부담": 25,
-      "하방 거리": 15
+      "차입 부담": 23,
+      "하방 거리": 6
      }
     },
     "mos": 40,
-    "buy_ps": 666,
-    "buy_gap": -57.8,
-    "implied_margin": 1.5,
-    "base_margin": 1.0,
+    "buy_ps": 1222,
+    "buy_gap": -21.2,
+    "implied_margin": 1.2,
+    "base_margin": 1.6,
     "hist_margin": [
      -1.5,
      1.2,
      3.7
     ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 1.5%가 이어져야 해요(과거 -1.5%~3.7%, 평균 1.2%, 이 리포트의 정상 이익 가정 1.0%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 60% 손실, 낙관 시나리오면 -19%로 손익 구조는 '불리'예요."
+    "verdict": "가치 이하·안전마진 부족",
+    "tone": "neu",
+    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 1.2%가 이어져야 해요(과거 -1.5%~3.7%, 평균 1.2%, 이 리포트의 정상 이익 가정 1.6%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 24% 손실, 낙관 시나리오면 +53%로 손익 구조는 '유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 4.3,
-    "ni_q": 4174,
-    "por_ttm": 1.1,
-    "op_ttm": 64079,
-    "por_q": 1.3,
-    "op_q": 14010,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 1.1,
+    "ni_q": 15892,
+    "por_ttm": 1.5,
+    "op_ttm": 45229,
+    "por_q": 2.6,
+    "op_q": 6692,
     "cns_per": null,
-    "div_yield": 4.89,
+    "div_yield": 4.84,
     "dps": 75.0,
-    "debt_eq": 123,
-    "ret_1y": -12.4,
+    "debt_eq": 111,
+    "ret_1y": -14.0,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 5.6,
@@ -1900,13 +1900,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "3.6%",
+      "val": "5.6%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "12.0%",
+      "val": "10.8%",
       "note": ""
      },
      {
@@ -1930,7 +1930,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "34.7년",
+      "val": "20.0년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -1950,13 +1950,13 @@
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-3,053억",
+      "val": "-2,845억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": false,
-      "val": "123%",
+      "val": "111%",
       "note": ""
      }
     ],
@@ -2033,15 +2033,15 @@
     ]
    },
    "price": 6370,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 57748,
+   "mcap": 57800,
    "mcap_eff": 54582,
    "shares": 8568603,
    "shares_check": {
     "dart_common": 8568528,
     "dart_period": "2026-11014",
-    "listed": 9065574,
+    "listed": 9073783,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -2054,9 +2054,9 @@
    "roe": 7.2,
    "pbr": 0.3,
    "cycle": {
-    "phase": "바닥권",
-    "note": "과거 평균 순이익률(약 2%)을 정상으로 봤어요",
-    "w_mid": 0.6,
+    "phase": "회복기",
+    "note": "2022~25년 평균 순이익(약 200억원)에 환손익·이자 부담을 감안해 낮춘 이익이에요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
     "midcycle": {
@@ -2082,74 +2082,70 @@
     },
     "ttm_margin": 2.5,
     "ttm_ni": 12953,
-    "E1_fwd": 7000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "E1_fwd": 14000,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
    "net_debt_levered": -208570,
    "dcf": {
-    "E1": 11653,
+    "E1": 14302,
     "r": 12.5,
     "c": 0.5,
-    "note": "과거 평균 순이익률(약 2%)을 정상으로 봤어요",
-    "fwd_per": 7.8,
-    "norm_per": 4.7,
+    "note": "2022~25년 평균 순이익(약 200억원)에 환손익·이자 부담을 감안해 낮춘 이익이에요",
+    "fwd_per": 3.9,
+    "norm_per": 3.8,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 46996,
-      "per_share": 5485,
-      "upside": -13.9
+      "value": 64212,
+      "per_share": 7494,
+      "upside": 17.6
      },
      "base": {
       "g": 2.0,
-      "value": 66772,
-      "per_share": 7793,
-      "upside": 22.3
+      "value": 84589,
+      "per_share": 9872,
+      "upside": 55.0
      },
      "bull": {
       "g": 5.0,
-      "value": 76570,
-      "per_share": 8936,
-      "upside": 40.3
+      "value": 97403,
+      "per_share": 11367,
+      "upside": 78.5
      }
     },
-    "c_T": 0.69,
-    "roe_norm": 6.5,
-    "implied_g": -2.6,
-    "implied_E1": 9508,
+    "c_T": 0.748,
+    "roe_norm": 7.9,
+    "implied_g": -7.7,
+    "implied_E1": 9270,
     "cycle": {
-     "position": "바닥권",
+     "position": "회복기",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
      "path": [
-      0.7,
-      0.3
+      0.8,
+      0.4
      ],
-     "excess": 1300,
-     "excess_value": 559,
+     "excess": -1349,
+     "excess_value": -693,
      "excess_by": {
-      "bear": -3755,
-      "base": 559,
-      "bull": 901
+      "bear": -882,
+      "base": -693,
+      "bull": -240
      },
-     "bear_trough": true,
+     "bear_trough": false,
      "ni_paths": {
       "bear": [
-       12563,
-       7043,
-       7043,
-       9348
+       13223,
+       13762,
+       13762
       ],
       "base": [
-       12563,
-       12043
+       13223,
+       13762
       ],
       "bull": [
-       12563,
-       12563,
-       12043
+       13762
       ]
-     },
-     "trough_ni": 7043
+     }
     },
     "net_cash_added": 0
    },
@@ -2167,49 +2163,49 @@
     "upside": 59.9,
     "pct": 88,
     "tier": "싼 ⅓",
-    "exp_ex": 3.2,
+    "exp_ex": 3.7,
     "conflict": false
    },
    "marks": {
-    "pos": "바닥권",
+    "pos": "회복기",
     "pos_src": "회사별 판단",
-    "pos_raw": "바닥권",
+    "pos_raw": "회복기",
     "weights": {
-     "bear": 0.15,
-     "base": 0.45,
-     "bull": 0.4
+     "bear": 0.2,
+     "base": 0.5,
+     "bull": 0.3
     },
-    "weighted": 67725,
-    "weighted_ps": 7904,
-    "weighted_upside": 24.1,
+    "weighted": 84358,
+    "weighted_ps": 9845,
+    "weighted_upside": 54.6,
     "stress": {
      "E": 4627,
      "margin": 0.9,
      "g": -4.0,
-     "value": 42385,
-     "per_share": 4947,
+     "value": 52692,
+     "per_share": 6149,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 0.9% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 4947,
-    "max_loss": 22.3,
-    "up_bull": 40.3,
-    "asym_ratio": 1.8,
-    "asym": "균형",
+    "down_ps": 6149,
+    "max_loss": 3.5,
+    "up_bull": 78.4,
+    "asym_ratio": 22.6,
+    "asym": "유리",
     "risk": {
-     "score": 62,
+     "score": 57,
      "grade": "높음",
      "parts": {
       "적자 이력": 6,
       "이익 변동폭": 25,
       "차입 부담": 25,
-      "하방 거리": 6
+      "하방 거리": 1
      }
     },
-    "mos": 35,
-    "buy_ps": 5138,
-    "buy_gap": -19.3,
+    "mos": 40,
+    "buy_ps": 5907,
+    "buy_gap": -7.3,
     "implied_margin": 1.8,
-    "base_margin": 2.3,
+    "base_margin": 2.8,
     "hist_margin": [
      -5.9,
      2.9,
@@ -2217,7 +2213,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 1.8%가 이어져야 해요(과거 -5.9%~5.6%, 평균 2.9%, 이 리포트의 정상 이익 가정 2.3%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어지면 최대 약 22% 손실, 낙관 시나리오면 +40%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 1.8%가 이어져야 해요(과거 -5.9%~5.6%, 평균 2.9%, 이 리포트의 정상 이익 가정 2.8%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 3% 손실, 낙관 시나리오면 +78%로 손익 구조는 '유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -2229,7 +2225,7 @@
     "por_q": 0.7,
     "op_q": 20467,
     "cns_per": null,
-    "div_yield": 6.56,
+    "div_yield": 6.28,
     "dps": 400.0,
     "debt_eq": 135,
     "ret_1y": -20.5,
@@ -2244,7 +2240,7 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "6.5%",
+      "val": "7.9%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -2274,7 +2270,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "20.9년",
+      "val": "17.0년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -2334,10 +2330,10 @@
    "name": "신원",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 1143277,
-    "op": 25398,
-    "ni": 4418,
-    "period": "2025Q3~2026Q2"
+    "rev": 1189103,
+    "op": 27713,
+    "ni": 5788,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -2347,10 +2343,10 @@
      -1.5,
      1.8
     ],
-    "trend_rev": 1094649,
-    "ttm_rev": 1143277,
-    "norm_ni": -289,
-    "trend_g": 6.8,
+    "trend_rev": 1121012,
+    "ttm_rev": 1189103,
+    "norm_ni": -296,
+    "trend_g": 6.9,
     "margins": {
      "2016": -0.91,
      "2017": -1.49,
@@ -2365,27 +2361,27 @@
     },
     "oneoff": []
    },
-   "price": 1006,
-   "price_date": "2026-11-13 18:39",
+   "price": 1011,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 115482,
-   "mcap_eff": 88320,
-   "shares": 87793241,
+   "mcap": 116000,
+   "mcap_eff": 88703,
+   "shares": 87737883,
    "shares_check": {
     "dart_common": 87770393,
     "dart_period": "2026-11012",
-    "listed": 114792899,
+    "listed": 114737883,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 228816,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -208809,
+   "equity": 216877,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -191262,
    "dividend_yield": null,
-   "per": 20.0,
-   "roe": 1.9,
-   "pbr": 0.39,
+   "per": 15.3,
+   "roe": 2.7,
+   "pbr": 0.41,
    "cycle": {
     "phase": "중립",
     "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
@@ -2410,51 +2406,51 @@
      "avg_margin": 0.3,
      "min": -1.1,
      "max": 1.8,
-     "ni": 3417,
+     "ni": 3554,
      "oneoff": []
     },
-    "ttm_margin": 0.4,
-    "ttm_ni": 4418,
+    "ttm_margin": 0.5,
+    "ttm_ni": 5788,
     "E1_fwd": 5000,
     "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
    },
-   "net_debt_levered": -208809,
+   "net_debt_levered": -191262,
    "dcf": {
-    "E1": 4050,
+    "E1": 4132,
     "r": 12.5,
     "c": 0.5,
     "note": "과거 평균 순이익률(약 1.5%)을 정상으로 봤어요",
     "fwd_per": 17.7,
-    "norm_per": 21.8,
+    "norm_per": 21.5,
     "scenarios": {
      "bear": {
       "g": -5.0,
-      "value": 14430,
-      "per_share": 164,
-      "upside": -83.7
+      "value": 14722,
+      "per_share": 168,
+      "upside": -83.4
      },
      "base": {
       "g": 0.0,
-      "value": 17741,
-      "per_share": 202,
-      "upside": -79.9
+      "value": 18100,
+      "per_share": 206,
+      "upside": -79.6
      },
      "bull": {
       "g": 3.0,
-      "value": 20110,
-      "per_share": 229,
-      "upside": -77.2
+      "value": 20517,
+      "per_share": 234,
+      "upside": -76.9
      }
     },
     "c_T": 0.5,
-    "roe_norm": 1.8,
-    "implied_g": 38.8,
-    "implied_E1": 20162,
+    "roe_norm": 1.9,
+    "implied_g": 38.4,
+    "implied_E1": 20249,
     "cycle": {
      "position": "중립",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
      "path": [],
-     "excess": 368,
+     "excess": 1656,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -2472,19 +2468,19 @@
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 19810,
-    "norm": -289,
-    "ttm_ni": 4418,
+    "period": "2025Q4~2026Q3",
+    "core": 21616,
+    "norm": -296,
+    "ttm_ni": 5788,
     "oneoff": true,
-    "E": 9761,
-    "per_share": 586,
-    "bear": 495,
-    "bull": 666,
-    "upside": -41.7,
-    "pct": 28,
-    "tier": "비싼 ⅓",
-    "exp_ex": -3.3,
+    "E": 10660,
+    "per_share": 640,
+    "bear": 541,
+    "bull": 728,
+    "upside": -36.6,
+    "pct": 34,
+    "tier": "가운데 ⅓",
+    "exp_ex": -2.3,
     "conflict": false
    },
    "marks": {
@@ -2496,11 +2492,11 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 17506,
-    "weighted_ps": 199,
-    "weighted_upside": -80.2,
+    "weighted": 17860,
+    "weighted_ps": 204,
+    "weighted_upside": -79.8,
     "stress": {
-     "E": -9852,
+     "E": -10089,
      "margin": -0.9,
      "g": -5.0,
      "value": 0,
@@ -2509,7 +2505,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -77.2,
+    "up_bull": -76.9,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -2518,13 +2514,13 @@
      "parts": {
       "적자 이력": 30,
       "이익 변동폭": 12,
-      "차입 부담": 23,
+      "차입 부담": 22,
       "하방 거리": 20
      }
     },
     "mos": 40,
-    "buy_ps": 119,
-    "buy_gap": -88.2,
+    "buy_ps": 122,
+    "buy_gap": -87.9,
     "implied_margin": 1.8,
     "base_margin": 0.4,
     "hist_margin": [
@@ -2537,19 +2533,19 @@
     "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 1.8%가 이어져야 해요(과거 -1.1%~1.8%, 평균 0.3%, 이 리포트의 정상 이익 가정 0.4%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -77%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": null,
-    "ni_q": -896,
-    "por_ttm": 3.5,
-    "op_ttm": 25398,
-    "por_q": 2.9,
-    "op_q": 7558,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 42.1,
+    "ni_q": 527,
+    "por_ttm": 3.2,
+    "op_ttm": 27713,
+    "por_q": 5.8,
+    "op_q": 3822,
     "cns_per": null,
-    "div_yield": 4.93,
+    "div_yield": 4.95,
     "dps": 50.0,
-    "debt_eq": 97,
-    "ret_1y": -34.8,
+    "debt_eq": 98,
+    "ret_1y": -34.5,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 9.5,
@@ -2561,13 +2557,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "1.8%",
+      "val": "1.9%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "1.9%",
+      "val": "2.7%",
       "note": ""
      },
      {
@@ -2591,7 +2587,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "54.8년",
+      "val": "51.3년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -2611,13 +2607,13 @@
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-2,088억",
+      "val": "-1,913억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "97%",
+      "val": "98%",
       "note": ""
      }
     ],
@@ -2651,10 +2647,10 @@
    "name": "SG세계물산",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 124846,
-    "op": -2608,
-    "ni": 3935,
-    "period": "2025Q3~2026Q2"
+    "rev": 126426,
+    "op": -3206,
+    "ni": 2588,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -2664,10 +2660,10 @@
      -6.2,
      34.6
     ],
-    "trend_rev": 114639,
-    "ttm_rev": 124846,
-    "norm_ni": 943,
-    "trend_g": -10.4,
+    "trend_rev": 113011,
+    "ttm_rev": 126426,
+    "norm_ni": 929,
+    "trend_g": -10.2,
     "margins": {
      "2016": -1.23,
      "2017": -2.28,
@@ -2682,27 +2678,27 @@
     },
     "oneoff": []
    },
-   "price": 1885,
-   "price_date": "2026-11-13 18:39",
+   "price": 1887,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 38173,
-   "mcap_eff": 37320,
-   "shares": 19798408,
+   "mcap": 38200,
+   "mcap_eff": 37345,
+   "shares": 19790673,
    "shares_check": {
     "dart_common": 19789502,
     "dart_period": "2026-11012",
-    "listed": 20251177,
+    "listed": 20243773,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 259043,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 7889,
+   "equity": 255709,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 5266,
    "dividend_yield": null,
-   "per": 9.5,
-   "roe": 1.5,
-   "pbr": 0.14,
+   "per": 14.4,
+   "roe": 1.0,
+   "pbr": 0.15,
    "cycle": {
     "phase": "중립",
     "note": "과거 평균 순이익률(약 1%)을 정상으로 봤어요",
@@ -2727,50 +2723,50 @@
      "avg_margin": 1.7,
      "min": -6.2,
      "max": 34.6,
-     "ni": 2099,
+     "ni": 2126,
      "oneoff": []
     },
-    "ttm_margin": 3.2,
-    "ttm_ni": 3935,
+    "ttm_margin": 2.0,
+    "ttm_ni": 2588,
     "E1_fwd": 2000,
     "E1_basis": "사이클 평균 이익 70% + 전망 이익 30%"
    },
    "dcf": {
-    "E1": 2069,
+    "E1": 2088,
     "r": 13.0,
     "c": 0.5,
     "note": "과거 평균 순이익률(약 1%)을 정상으로 봤어요",
     "fwd_per": 18.7,
-    "norm_per": 18.0,
+    "norm_per": 17.9,
     "scenarios": {
      "bear": {
       "g": -6.0,
-      "value": 14162,
-      "per_share": 715,
-      "upside": -62.1
+      "value": 11773,
+      "per_share": 595,
+      "upside": -68.5
      },
      "base": {
       "g": 0.0,
-      "value": 15891,
-      "per_share": 803,
-      "upside": -57.4
+      "value": 13567,
+      "per_share": 686,
+      "upside": -63.7
      },
      "bull": {
       "g": 3.0,
-      "value": 16942,
-      "per_share": 856,
-      "upside": -54.6
+      "value": 14658,
+      "per_share": 741,
+      "upside": -60.8
      }
     },
     "c_T": 0.5,
     "roe_norm": 0.8,
-    "implied_g": 31.6,
-    "implied_E1": 7188,
+    "implied_g": 32.9,
+    "implied_E1": 7768,
     "cycle": {
      "position": "중립",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
      "path": [],
-     "excess": 1866,
+     "excess": 500,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -2784,23 +2780,23 @@
       "bull": []
      }
     },
-    "net_cash_added": 7889
+    "net_cash_added": 5266
    },
    "quant": {
-    "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 950,
-    "norm": 943,
-    "ttm_ni": 3935,
+    "pos": "바닥권",
+    "period": "2025Q4~2026Q3",
+    "core": 44,
+    "norm": 929,
+    "ttm_ni": 2588,
     "oneoff": false,
-    "E": 947,
-    "per_share": 252,
-    "bear": 213,
-    "bull": 286,
-    "upside": -86.6,
-    "pct": 6,
+    "E": 486,
+    "per_share": 130,
+    "bear": 109,
+    "bull": 147,
+    "upside": -93.1,
+    "pct": 3,
     "tier": "비싼 ⅓",
-    "exp_ex": -12.1,
+    "exp_ex": -12.2,
     "conflict": false
    },
    "marks": {
@@ -2812,36 +2808,36 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 15722,
-    "weighted_ps": 794,
-    "weighted_upside": -57.9,
+    "weighted": 13391,
+    "weighted_ps": 677,
+    "weighted_upside": -64.1,
     "stress": {
-     "E": -802,
+     "E": -791,
      "margin": -0.7,
      "g": -6.0,
-     "value": 9825,
-     "per_share": 496,
+     "value": 7440,
+     "per_share": 376,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -0.7% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 496,
-    "max_loss": 73.7,
-    "up_bull": -54.6,
+    "down_ps": 376,
+    "max_loss": 80.1,
+    "up_bull": -60.7,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
-     "score": 67,
+     "score": 69,
      "grade": "높음",
      "parts": {
       "적자 이력": 24,
       "이익 변동폭": 25,
       "차입 부담": 0,
-      "하방 거리": 18
+      "하방 거리": 20
      }
     },
     "mos": 40,
-    "buy_ps": 476,
-    "buy_gap": -74.7,
-    "implied_margin": 6.3,
+    "buy_ps": 406,
+    "buy_gap": -78.5,
+    "implied_margin": 6.9,
     "base_margin": 1.8,
     "hist_margin": [
      -6.2,
@@ -2850,22 +2846,22 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 6.3%가 이어져야 해요(과거 -6.2%~34.6%, 평균 1.7%, 이 리포트의 정상 이익 가정 1.8%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 74% 손실, 낙관 시나리오면 -55%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 6.9%가 이어져야 해요(과거 -6.2%~34.6%, 평균 1.7%, 이 리포트의 정상 이익 가정 1.8%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 80% 손실, 낙관 시나리오면 -61%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 6.9,
-    "ni_q": 1346,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": null,
+    "ni_q": -1024,
     "por_ttm": null,
-    "op_ttm": -2608,
+    "op_ttm": -3206,
     "por_q": null,
-    "op_q": -464,
+    "op_q": -1215,
     "cns_per": null,
     "div_yield": null,
     "dps": null,
-    "debt_eq": 1,
-    "ret_1y": -43.4,
+    "debt_eq": 4,
+    "ret_1y": -43.3,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": -4.6,
@@ -2883,7 +2879,7 @@
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "1.5%",
+      "val": "1.0%",
       "note": ""
      },
      {
@@ -2906,8 +2902,8 @@
      },
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
-      "ok": true,
-      "val": "1.3년",
+      "ok": false,
+      "val": "5.3년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -2927,13 +2923,13 @@
      {
       "name": "순현금 보유",
       "ok": true,
-      "val": "79억",
+      "val": "53억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "1%",
+      "val": "4%",
       "note": ""
      }
     ],
@@ -2959,7 +2955,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 2/5개 통과. 이익이 크게 오르내려(적자 2016·2017·2020·2023년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/5개 통과. 이익이 크게 오르내려(적자 2016·2017·2020·2023년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -2967,10 +2963,10 @@
    "name": "제이에스코퍼레이션",
    "group": "OEM·ODM 수출",
    "ttm": {
-    "rev": 1438761,
-    "op": 171324,
-    "ni": 81547,
-    "period": "2025Q3~2026Q2"
+    "rev": 1562111,
+    "op": 184164,
+    "ni": 91091,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -2980,10 +2976,10 @@
      0.6,
      8.7
     ],
-    "trend_rev": 1632477,
-    "ttm_rev": 1438761,
-    "norm_ni": 74930,
-    "trend_g": 26.7,
+    "trend_rev": 1741635,
+    "ttm_rev": 1562111,
+    "norm_ni": 79940,
+    "trend_g": 26.8,
     "margins": {
      "2016": 5.59,
      "2017": 2.45,
@@ -2998,31 +2994,31 @@
     },
     "oneoff": []
    },
-   "price": 10840,
-   "price_date": "2026-11-13 18:39",
+   "price": 10830,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 314580,
-   "mcap_eff": 314580,
-   "shares": 29020295,
+   "mcap": 314300,
+   "mcap_eff": 314300,
+   "shares": 29021237,
    "shares_check": {
     "dart_common": 29016758,
-    "dart_period": "2026-11012",
-    "listed": 29020333,
+    "dart_period": "2026-11014",
+    "listed": 29021237,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 562951,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -765950,
+   "equity": 595439,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -696991,
    "dividend_yield": null,
-   "per": 3.9,
-   "roe": 14.5,
-   "pbr": 0.56,
+   "per": 3.5,
+   "roe": 15.3,
+   "pbr": 0.53,
    "cycle": {
     "phase": "중립",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.6,
+    "note": "인수로 커진 매출(1조원대)과 2022~25년 평균 순이익률(약 6%)을 반영했어요. 2024년 고점(974억원)은 빼고 봤어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
     "midcycle": {
@@ -3043,51 +3039,51 @@
      "avg_margin": 4.8,
      "min": 0.6,
      "max": 8.7,
-     "ni": 68777,
+     "ni": 74673,
      "oneoff": []
     },
-    "ttm_margin": 5.7,
-    "ttm_ni": 81547,
-    "E1_fwd": 17000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "ttm_margin": 5.8,
+    "ttm_ni": 91091,
+    "E1_fwd": 65000,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
-   "net_debt_levered": -765950,
+   "net_debt_levered": -696991,
    "dcf": {
-    "E1": 48066,
+    "E1": 68869,
     "r": 12.0,
     "c": 0.55,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 18.5,
-    "norm_per": 6.5,
+    "note": "인수로 커진 매출(1조원대)과 2022~25년 평균 순이익률(약 6%)을 반영했어요. 2024년 고점(974억원)은 빼고 봤어요",
+    "fwd_per": 4.8,
+    "norm_per": 4.6,
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 254465,
-      "per_share": 8769,
-      "upside": -19.1
+      "value": 380951,
+      "per_share": 13127,
+      "upside": 21.2
      },
      "base": {
       "g": 3.0,
-      "value": 333503,
-      "per_share": 11492,
-      "upside": 6.0
+      "value": 501179,
+      "per_share": 17269,
+      "upside": 59.5
      },
      "bull": {
       "g": 6.0,
-      "value": 381842,
-      "per_share": 13158,
-      "upside": 21.4
+      "value": 574793,
+      "per_share": 19806,
+      "upside": 82.9
      }
     },
-    "c_T": 0.766,
-    "roe_norm": 8.5,
-    "implied_g": 1.7,
-    "implied_E1": 45339,
+    "c_T": 0.827,
+    "roe_norm": 11.6,
+    "implied_g": -7.2,
+    "implied_E1": 43189,
     "cycle": {
      "position": "중립",
      "note": "미국 의류 소매 재고는 2024~25년 정상화됐지만, 2026년 하반기 원화 강세(달러 환산 이익 감소)·나프타 급등(원사 원가)·미국 관세 비용 분담이 이익률을 눌러요. 고기능 OEM(영원무역)은 견조, 저가 대량 OEM(한세실업)은 바닥권이에요.",
      "path": [],
-     "excess": 33481,
+     "excess": 22222,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -3105,19 +3101,19 @@
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 107590,
-    "norm": 74930,
-    "ttm_ni": 81547,
+    "period": "2025Q4~2026Q3",
+    "core": 117369,
+    "norm": 79940,
+    "ttm_ni": 91091,
     "oneoff": false,
-    "E": 91260,
-    "per_share": 16578,
-    "bear": 14004,
-    "bull": 18830,
-    "upside": 52.9,
-    "pct": 81,
+    "E": 98655,
+    "per_share": 17920,
+    "bear": 15138,
+    "bull": 20356,
+    "upside": 65.5,
+    "pct": 91,
     "tier": "싼 ⅓",
-    "exp_ex": 2.9,
+    "exp_ex": 4.0,
     "conflict": false
    },
    "marks": {
@@ -3129,64 +3125,64 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 325828,
-    "weighted_ps": 11228,
-    "weighted_upside": 3.6,
+    "weighted": 489526,
+    "weighted_ps": 16868,
+    "weighted_upside": 55.8,
     "stress": {
-     "E": 45709,
+     "E": 48766,
      "margin": 2.8,
      "g": -3.0,
-     "value": 251352,
-     "per_share": 8661,
+     "value": 354395,
+     "per_share": 12212,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 2.8% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 8661,
-    "max_loss": 20.1,
-    "up_bull": 21.4,
-    "asym_ratio": 1.1,
-    "asym": "균형",
+    "down_ps": 12212,
+    "max_loss": 0.0,
+    "up_bull": 82.9,
+    "asym_ratio": null,
+    "asym": "매우 유리",
     "risk": {
-     "score": 44,
+     "score": 38,
      "grade": "보통",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 14,
       "차입 부담": 25,
-      "하방 거리": 5
+      "하방 거리": 0
      }
     },
     "mos": 30,
-    "buy_ps": 7860,
-    "buy_gap": -27.5,
-    "implied_margin": 2.8,
-    "base_margin": 2.9,
+    "buy_ps": 11808,
+    "buy_gap": 9.0,
+    "implied_margin": 2.5,
+    "base_margin": 4.0,
     "hist_margin": [
      0.6,
      4.8,
      8.7
     ],
-    "verdict": "가치 이하·안전마진 부족",
-    "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 2.8%가 이어져야 해요(과거 0.6%~8.7%, 평균 4.8%, 이 리포트의 정상 이익 가정 2.9%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 20% 손실, 낙관 시나리오면 +21%로 손익 구조는 '균형'이에요."
+    "verdict": "안전마진 확보",
+    "tone": "pos",
+    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 2.5%가 이어져야 해요(과거 0.6%~8.7%, 평균 4.8%, 이 리포트의 정상 이익 가정 4.0%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +83%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 3.1,
-    "ni_q": 25230,
-    "por_ttm": 1.8,
-    "op_ttm": 171324,
-    "por_q": 1.4,
-    "op_q": 56476,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 2.4,
+    "ni_q": 32765,
+    "por_ttm": 1.7,
+    "op_ttm": 184164,
+    "por_q": 1.5,
+    "op_q": 53946,
     "cns_per": null,
-    "div_yield": 5.55,
+    "div_yield": 5.54,
     "dps": 600.0,
-    "debt_eq": 151,
-    "ret_1y": -8.1,
+    "debt_eq": 136,
+    "ret_1y": -8.2,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 100.5,
     "rev_cagr5": 26.2,
-    "peg": 0.08,
+    "peg": 0.07,
     "peg_g": 50
    },
    "checks": {
@@ -3194,13 +3190,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "8.5%",
+      "val": "11.6%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
-      "ok": false,
-      "val": "14.5%",
+      "ok": true,
+      "val": "15.3%",
       "note": ""
      },
      {
@@ -3224,7 +3220,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "17.7년",
+      "val": "11.7년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -3232,25 +3228,25 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": true,
-      "val": "0.08",
+      "val": "0.07",
       "note": "성장률 = 최근 5년 순이익 연평균 50.0%(상한 50%)"
      },
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "14.2",
+      "val": "15.9",
       "note": "2 이상이면 매우 좋음"
      },
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-7,660억",
+      "val": "-6,970억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": false,
-      "val": "151%",
+      "val": "136%",
       "note": ""
      }
     ],
@@ -3276,18 +3272,18 @@
     ],
     "lynch_cat": "고성장주",
     "lynch_cat_note": "매출이 연 20% 이상 늘어 온 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 1/6개 통과. 이익이 크게 오르내려(변동계수 0.46) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
-    "lynch_take": "린치 관점: 고성장주예요. PEG가 1 이하이고 성장이 이어질 여지(새 시장·점유율)가 있는지가 핵심이에요. 지금 PEG 0.08."
+    "buffett_take": "버핏 관점: 숫자 기준 2/6개 통과. 이익이 크게 오르내려(변동계수 0.46) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 고성장주예요. PEG가 1 이하이고 성장이 이어질 여지(새 시장·점유율)가 있는지가 핵심이에요. 지금 PEG 0.07."
    }
   },
   "020000": {
    "name": "한섬",
    "group": "패션 대형사",
    "ttm": {
-    "rev": 1546914,
-    "op": 70795,
-    "ni": 56083,
-    "period": "2025Q3~2026Q2"
+    "rev": 1562044,
+    "op": 75894,
+    "ni": 61984,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -3297,10 +3293,10 @@
      3.0,
      8.3
     ],
-    "trend_rev": 1667198,
-    "ttm_rev": 1546914,
-    "norm_ni": 101042,
-    "trend_g": 5.5,
+    "trend_rev": 1686342,
+    "ttm_rev": 1562044,
+    "norm_ni": 102202,
+    "trend_g": 5.4,
     "margins": {
      "2016": 7.93,
      "2017": 4.38,
@@ -3315,26 +3311,26 @@
     },
     "oneoff": []
    },
-   "price": 17400,
-   "price_date": "2026-11-13 18:39",
+   "price": 17520,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 373715,
-   "mcap_eff": 373715,
-   "shares": 21477874,
+   "mcap": 376300,
+   "mcap_eff": 373322,
+   "shares": 21308333,
    "shares_check": {
-    "dart_common": 21476994,
-    "dart_period": "2026-11012",
-    "listed": 21477861,
+    "dart_common": 21306994,
+    "dart_period": "2026-11014",
+    "listed": 21478311,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 1451271,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 89829,
+   "equity": 1454107,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 16378,
    "dividend_yield": null,
-   "per": 6.7,
-   "roe": 3.9,
+   "per": 6.0,
+   "roe": 4.3,
    "pbr": 0.26,
    "cycle": {
     "phase": "회복기",
@@ -3360,45 +3356,45 @@
      "avg_margin": 6.0,
      "min": 3.0,
      "max": 8.3,
-     "ni": 93252,
+     "ni": 94164,
      "oneoff": []
     },
-    "ttm_margin": 3.6,
-    "ttm_ni": 56083,
+    "ttm_margin": 4.0,
+    "ttm_ni": 61984,
     "E1_fwd": 70000,
     "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
    },
    "dcf": {
-    "E1": 81626,
+    "E1": 82082,
     "r": 10.0,
     "c": 0.65,
     "note": "2018~2025년 평균 순이익률(약 5%)을 정상 수준으로 보고, 2026년 회복 이익(바닥권)보다는 높게 잡았어요. 고가 브랜드의 사이클 중간 이익이에요",
     "fwd_per": 5.3,
-    "norm_per": 4.6,
+    "norm_per": 4.5,
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 659980,
-      "per_share": 30728,
-      "upside": 76.6
+      "value": 605630,
+      "per_share": 28422,
+      "upside": 62.2
      },
      "base": {
       "g": 4.0,
-      "value": 782081,
-      "per_share": 36413,
-      "upside": 109.3
+      "value": 729490,
+      "per_share": 34235,
+      "upside": 95.4
      },
      "bull": {
       "g": 7.0,
-      "value": 896279,
-      "per_share": 41730,
-      "upside": 139.8
+      "value": 843707,
+      "per_share": 39595,
+      "upside": 126.0
      }
     },
     "c_T": 0.65,
     "roe_norm": 5.6,
-    "implied_g": -15.3,
-    "implied_E1": 35699,
+    "implied_g": -11.1,
+    "implied_E1": 42025,
     "cycle": {
      "position": "회복기",
      "note": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
@@ -3406,46 +3402,46 @@
       0.8,
       0.4
      ],
-     "excess": -25543,
-     "excess_value": -17563,
+     "excess": -20098,
+     "excess_value": -13819,
      "excess_by": {
-      "bear": -22553,
-      "base": -17563,
-      "bull": -6037
+      "bear": -17745,
+      "base": -13819,
+      "bull": -4750
      },
      "bear_trough": false,
      "ni_paths": {
       "bear": [
-       61192,
-       71409,
-       71409
+       66004,
+       74043,
+       74043
       ],
       "base": [
-       61192,
-       71409
+       66004,
+       74043
       ],
       "bull": [
-       71409
+       74043
       ]
      }
     },
-    "net_cash_added": 89829
+    "net_cash_added": 16378
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": 55652,
-    "norm": 101042,
-    "ttm_ni": 56083,
+    "period": "2025Q4~2026Q3",
+    "core": 60591,
+    "norm": 102202,
+    "ttm_ni": 61984,
     "oneoff": false,
-    "E": 78347,
-    "per_share": 19230,
-    "bear": 16245,
-    "bull": 21843,
-    "upside": 10.5,
-    "pct": 69,
+    "E": 81396,
+    "per_share": 20137,
+    "bear": 17011,
+    "bull": 22874,
+    "upside": 14.9,
+    "pct": 75,
     "tier": "싼 ⅓",
-    "exp_ex": 0.8,
+    "exp_ex": 1.5,
     "conflict": false
    },
    "marks": {
@@ -3457,20 +3453,20 @@
      "base": 0.5,
      "bull": 0.3
     },
-    "weighted": 791920,
-    "weighted_ps": 36871,
-    "weighted_upside": 111.9,
+    "weighted": 738983,
+    "weighted_ps": 34680,
+    "weighted_upside": 97.9,
     "stress": {
-     "E": 51683,
+     "E": 52277,
      "margin": 3.1,
      "g": 0.0,
-     "value": 611579,
-     "per_share": 28475,
+     "value": 557451,
+     "per_share": 26161,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 3.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 28475,
+    "down_ps": 26161,
     "max_loss": 0.0,
-    "up_bull": 139.8,
+    "up_bull": 126.0,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -3484,9 +3480,9 @@
      }
     },
     "mos": 20,
-    "buy_ps": 29497,
-    "buy_gap": 69.5,
-    "implied_margin": 2.1,
+    "buy_ps": 27744,
+    "buy_gap": 58.4,
+    "implied_margin": 2.5,
     "base_margin": 4.9,
     "hist_margin": [
      3.0,
@@ -3495,22 +3491,22 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 2.1%가 이어져야 해요(과거 3.0%~8.3%, 평균 6.0%, 이 리포트의 정상 이익 가정 4.9%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +140%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 2.5%가 이어져야 해요(과거 3.0%~8.3%, 평균 6.0%, 이 리포트의 정상 이익 가정 4.9%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +126%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 28.3,
-    "ni_q": 3301,
-    "por_ttm": 5.3,
-    "op_ttm": 70795,
-    "por_q": 20.3,
-    "op_q": 4606,
-    "cns_per": 5.4,
-    "div_yield": 4.31,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 12.1,
+    "ni_q": 7726,
+    "por_ttm": 4.9,
+    "op_ttm": 75894,
+    "por_q": 12.3,
+    "op_q": 7574,
+    "cns_per": 5.44,
+    "div_yield": 4.28,
     "dps": 750.0,
-    "debt_eq": 0,
-    "ret_1y": 11.8,
+    "debt_eq": 2,
+    "ret_1y": 12.5,
     "ret_1y_from": "2025-11",
     "ni_cagr5": -11.5,
     "rev_cagr5": 4.5,
@@ -3528,7 +3524,7 @@
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "3.9%",
+      "val": "4.3%",
       "note": ""
      },
      {
@@ -3552,7 +3548,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": true,
-      "val": "차입 없음",
+      "val": "0.4년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -3566,19 +3562,19 @@
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": false,
-      "val": "-1.1",
+      "val": "-1.2",
       "note": "2 이상이면 매우 좋음"
      },
      {
       "name": "순현금 보유",
       "ok": true,
-      "val": "898억",
+      "val": "164억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "0%",
+      "val": "2%",
       "note": ""
      }
     ],
@@ -3643,16 +3639,16 @@
     },
     "oneoff": []
    },
-   "price": 9650,
-   "price_date": "2026-11-13 18:39",
+   "price": 9690,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 337651,
-   "mcap_eff": 333930,
-   "shares": 34604145,
+   "mcap": 339000,
+   "mcap_eff": 335264,
+   "shares": 34598968,
    "shares_check": {
     "dart_common": 34600489,
     "dart_period": "2026-11012",
-    "listed": 34989691,
+    "listed": 34984520,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -3706,32 +3702,32 @@
     "r": 10.5,
     "c": 0.6,
     "note": "자주 매각 후 사업 구조로 영업이익률 4% 안팎을 정상으로 봤어요. 2019~2022년 고점(수입 브랜드 호황)보다 낮게 잡았어요",
-    "fwd_per": 7.4,
+    "fwd_per": 7.5,
     "norm_per": 7.5,
     "scenarios": {
      "bear": {
       "g": -2.0,
       "value": 239939,
-      "per_share": 6934,
-      "upside": -28.1
+      "per_share": 6935,
+      "upside": -28.4
      },
      "base": {
       "g": 4.0,
       "value": 329554,
-      "per_share": 9524,
-      "upside": -1.3
+      "per_share": 9525,
+      "upside": -1.7
      },
      "bull": {
       "g": 8.0,
       "value": 414029,
-      "per_share": 11965,
-      "upside": 24.0
+      "per_share": 11966,
+      "upside": 23.5
      }
     },
     "c_T": 0.623,
     "roe_norm": 5.3,
-    "implied_g": 4.3,
-    "implied_E1": 45307,
+    "implied_g": 4.4,
+    "implied_E1": 45476,
     "cycle": {
      "position": "회복기",
      "note": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
@@ -3772,13 +3768,13 @@
     "ttm_ni": 20548,
     "oneoff": true,
     "E": 26133,
-    "per_share": 3981,
-    "bear": 3363,
-    "bull": 4522,
-    "upside": -58.7,
+    "per_share": 3982,
+    "bear": 3364,
+    "bull": 4523,
+    "upside": -58.9,
     "pct": 19,
     "tier": "비싼 ⅓",
-    "exp_ex": -5.5,
+    "exp_ex": -5.0,
     "conflict": false
    },
    "marks": {
@@ -3791,23 +3787,23 @@
      "bull": 0.3
     },
     "weighted": 336974,
-    "weighted_ps": 9738,
-    "weighted_upside": 0.9,
+    "weighted_ps": 9739,
+    "weighted_upside": 0.5,
     "stress": {
      "E": 32329,
      "margin": 2.5,
      "g": -2.0,
      "value": 221564,
-     "per_share": 6403,
+     "per_share": 6404,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 2.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 6403,
-    "max_loss": 33.6,
-    "up_bull": 24.0,
+    "down_ps": 6404,
+    "max_loss": 33.9,
+    "up_bull": 23.5,
     "asym_ratio": 0.7,
     "asym": "불리",
     "risk": {
-     "score": 27,
+     "score": 28,
      "grade": "보통",
      "parts": {
       "적자 이력": 0,
@@ -3818,7 +3814,7 @@
     },
     "mos": 30,
     "buy_ps": 6817,
-    "buy_gap": -29.4,
+    "buy_gap": -29.6,
     "implied_margin": 3.5,
     "base_margin": 3.5,
     "hist_margin": [
@@ -3828,22 +3824,22 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 3.5%가 이어져야 해요(과거 0.4%~7.6%, 평균 4.1%, 이 리포트의 정상 이익 가정 3.5%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 34% 손실, 낙관 시나리오면 +24%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4.0%씩 늘면서 순이익률 3.5%가 이어져야 해요(과거 0.4%~7.6%, 평균 4.1%, 이 리포트의 정상 이익 가정 3.5%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 34% 손실, 낙관 시나리오면 +23%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
     "per_q": 12.3,
     "ni_q": 6809,
-    "por_ttm": 42.1,
+    "por_ttm": 42.3,
     "op_ttm": 7932,
     "por_q": 12.0,
     "op_q": 6965,
-    "cns_per": 6.59,
-    "div_yield": 4.12,
+    "cns_per": 6.77,
+    "div_yield": 4.13,
     "dps": 400.0,
     "debt_eq": 26,
-    "ret_1y": -6.9,
+    "ret_1y": -6.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": -39.5,
     "rev_cagr5": -3.5,
@@ -3982,16 +3978,16 @@
      }
     ]
    },
-   "price": 20200,
-   "price_date": "2026-11-13 18:39",
+   "price": 20100,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 590633,
-   "mcap_eff": 534038,
-   "shares": 26437525,
+   "mcap": 587700,
+   "mcap_eff": 531385,
+   "shares": 26437065,
    "shares_check": {
     "dart_common": 26438276,
     "dart_period": "2026-11012",
-    "listed": 29239234,
+    "listed": 29238806,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4047,31 +4043,31 @@
     "c": 0.6,
     "note": "패션 정상 영업이익률 5%와 코람코 평균 이익을 더했어요",
     "fwd_per": 4.6,
-    "norm_per": 5.2,
+    "norm_per": 5.1,
     "scenarios": {
      "bear": {
       "g": -1.0,
       "value": 991036,
-      "per_share": 37486,
-      "upside": 85.6
+      "per_share": 37487,
+      "upside": 86.5
      },
      "base": {
       "g": 3.0,
       "value": 1171359,
       "per_share": 44307,
-      "upside": 119.3
+      "upside": 120.4
      },
      "bull": {
       "g": 6.0,
       "value": 1295141,
-      "per_share": 48989,
-      "upside": 142.5
+      "per_share": 48990,
+      "upside": 143.7
      }
     },
     "c_T": 0.675,
     "roe_norm": 6.2,
     "implied_g": -30.0,
-    "implied_E1": 27789,
+    "implied_E1": 27474,
     "cycle": {
      "position": "회복기",
      "note": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
@@ -4117,12 +4113,12 @@
     "oneoff": false,
     "E": 109237,
     "per_share": 21782,
-    "bear": 18400,
+    "bear": 18401,
     "bull": 24742,
-    "upside": 7.8,
-    "pct": 59,
+    "upside": 8.4,
+    "pct": 62,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.6,
+    "exp_ex": 1.1,
     "conflict": false
    },
    "marks": {
@@ -4135,8 +4131,8 @@
      "bull": 0.3
     },
     "weighted": 1172429,
-    "weighted_ps": 44347,
-    "weighted_upside": 119.5,
+    "weighted_ps": 44348,
+    "weighted_upside": 120.6,
     "stress": {
      "E": 73390,
      "margin": 3.7,
@@ -4147,7 +4143,7 @@
     },
     "down_ps": 37210,
     "max_loss": 0.0,
-    "up_bull": 142.5,
+    "up_bull": 143.7,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -4162,7 +4158,7 @@
     },
     "mos": 20,
     "buy_ps": 35478,
-    "buy_gap": 75.6,
+    "buy_gap": 76.5,
     "implied_margin": 1.4,
     "base_margin": 5.2,
     "hist_margin": [
@@ -4172,7 +4168,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 1.4%가 이어져야 해요(과거 3.3%~7.7%, 평균 4.8%, 이 리포트의 정상 이익 가정 5.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +143%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 1.4%가 이어져야 해요(과거 3.3%~7.7%, 평균 4.8%, 이 리포트의 정상 이익 가정 5.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +144%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -4184,10 +4180,10 @@
     "por_q": 3.0,
     "op_q": 44078,
     "cns_per": null,
-    "div_yield": 3.35,
+    "div_yield": 3.48,
     "dps": 700.0,
     "debt_eq": 0,
-    "ret_1y": 14.1,
+    "ret_1y": 13.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 41.7,
     "rev_cagr5": 3.2,
@@ -4315,16 +4311,16 @@
     },
     "oneoff": []
    },
-   "price": 59000,
-   "price_date": "2026-11-13 18:39",
+   "price": 58900,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 2260103,
-   "mcap_eff": 2211399,
-   "shares": 37481339,
+   "mcap": 2256300,
+   "mcap_eff": 2207678,
+   "shares": 37481800,
    "shares_check": {
     "dart_common": 37481574,
     "dart_period": "2026-11012",
-    "listed": 38306836,
+    "listed": 38307301,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4376,26 +4372,26 @@
      "bear": {
       "g": -3.0,
       "value": 3130389,
-      "per_share": 83519,
-      "upside": 41.6
+      "per_share": 83518,
+      "upside": 41.8
      },
      "base": {
       "g": 3.0,
       "value": 3963614,
-      "per_share": 105749,
-      "upside": 79.2
+      "per_share": 105748,
+      "upside": 79.5
      },
      "bull": {
       "g": 7.0,
       "value": 4658383,
-      "per_share": 124285,
-      "upside": 110.7
+      "per_share": 124284,
+      "upside": 111.0
      }
     },
     "c_T": 0.81,
     "roe_norm": 18.2,
-    "implied_g": -12.4,
-    "implied_E1": 192375,
+    "implied_g": -12.5,
+    "implied_E1": 191990,
     "cycle": {
      "position": "중립",
      "note": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
@@ -4424,13 +4420,13 @@
     "ttm_ni": 523247,
     "oneoff": false,
     "E": 459375,
-    "per_share": 64610,
-    "bear": 54580,
-    "bull": 73389,
-    "upside": 9.5,
-    "pct": 66,
-    "tier": "가운데 ⅓",
-    "exp_ex": 0.7,
+    "per_share": 64609,
+    "bear": 54579,
+    "bull": 73388,
+    "upside": 9.7,
+    "pct": 69,
+    "tier": "싼 ⅓",
+    "exp_ex": 1.2,
     "conflict": false
    },
    "marks": {
@@ -4443,19 +4439,19 @@
      "bull": 0.25
     },
     "weighted": 3929000,
-    "weighted_ps": 104825,
-    "weighted_upside": 77.7,
+    "weighted_ps": 104824,
+    "weighted_upside": 78.0,
     "stress": {
      "E": 373874,
      "margin": 19.0,
      "g": -3.0,
      "value": 3130389,
-     "per_share": 83519,
+     "per_share": 83518,
      "how": "2021~2025 중 가장 나쁜 해의 순이익률 19.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 83519,
+    "down_ps": 83518,
     "max_loss": 0.0,
-    "up_bull": 110.7,
+    "up_bull": 111.0,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -4469,8 +4465,8 @@
      }
     },
     "mos": 20,
-    "buy_ps": 83860,
-    "buy_gap": 42.1,
+    "buy_ps": 83859,
+    "buy_gap": 42.4,
     "implied_margin": 8.9,
     "base_margin": 17.3,
     "hist_margin": [
@@ -4491,11 +4487,11 @@
     "op_ttm": 500909,
     "por_q": 6.4,
     "op_q": 86499,
-    "cns_per": 5.12,
-    "div_yield": 4.29,
+    "cns_per": 5.11,
+    "div_yield": 4.58,
     "dps": 2700.0,
     "debt_eq": 2,
-    "ret_1y": -18.7,
+    "ret_1y": -18.9,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": null,
@@ -4627,16 +4623,16 @@
      }
     ]
    },
-   "price": 13170,
-   "price_date": "2026-11-13 18:39",
+   "price": 13220,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 515182,
-   "mcap_eff": 514597,
-   "shares": 39073424,
+   "mcap": 517100,
+   "mcap_eff": 516512,
+   "shares": 39070499,
    "shares_check": {
     "dart_common": 39069893,
     "dart_period": "2026-11012",
-    "listed": 39117871,
+    "listed": 39114977,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4691,26 +4687,26 @@
      "bear": {
       "g": -3.0,
       "value": 758827,
-      "per_share": 19421,
-      "upside": 47.5
+      "per_share": 19422,
+      "upside": 46.9
      },
      "base": {
       "g": 2.5,
       "value": 964444,
-      "per_share": 24683,
-      "upside": 87.4
+      "per_share": 24685,
+      "upside": 86.7
      },
      "bull": {
       "g": 6.0,
       "value": 1124165,
-      "per_share": 28771,
-      "upside": 118.5
+      "per_share": 28773,
+      "upside": 117.6
      }
     },
     "c_T": 0.6,
     "roe_norm": 5.9,
-    "implied_g": -12.1,
-    "implied_E1": 75520,
+    "implied_g": -12.0,
+    "implied_E1": 75801,
     "cycle": {
      "position": "중립",
      "note": "2023~25년 3년 내리 줄던 내수 고가 패션 이익이 2026년 2분기부터 반등했어요(소비심리 107, 관광객 증가, 백화점 여성캐주얼 +15.6%). 사이클상 회복 초기예요.",
@@ -4739,13 +4735,13 @@
     "ttm_ni": 164649,
     "oneoff": false,
     "E": 247083,
-    "per_share": 33335,
-    "bear": 28161,
-    "bull": 37865,
-    "upside": 153.1,
+    "per_share": 33338,
+    "bear": 28163,
+    "bull": 37868,
+    "upside": 152.2,
     "pct": 97,
     "tier": "싼 ⅓",
-    "exp_ex": 6.4,
+    "exp_ex": 6.8,
     "conflict": false
    },
    "marks": {
@@ -4758,19 +4754,19 @@
      "bull": 0.25
     },
     "weighted": 952970,
-    "weighted_ps": 24389,
-    "weighted_upside": 85.2,
+    "weighted_ps": 24391,
+    "weighted_upside": 84.5,
     "stress": {
      "E": 141537,
      "margin": 6.2,
      "g": -3.0,
      "value": 758827,
-     "per_share": 19421,
+     "per_share": 19422,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 6.2% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 19421,
+    "down_ps": 19422,
     "max_loss": 0.0,
-    "up_bull": 118.5,
+    "up_bull": 117.6,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -4784,9 +4780,9 @@
      }
     },
     "mos": 30,
-    "buy_ps": 17072,
-    "buy_gap": 29.6,
-    "implied_margin": 3.2,
+    "buy_ps": 17074,
+    "buy_gap": 29.2,
+    "implied_margin": 3.3,
     "base_margin": 6.1,
     "hist_margin": [
      5.6,
@@ -4795,7 +4791,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 2.5%씩 늘면서 순이익률 3.2%가 이어져야 해요(과거 5.6%~263.0%, 평균 9.8%, 이 리포트의 정상 이익 가정 6.1%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +118%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 2.5%씩 늘면서 순이익률 3.3%가 이어져야 해요(과거 5.6%~263.0%, 평균 9.8%, 이 리포트의 정상 이익 가정 6.1%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +118%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -4807,10 +4803,10 @@
     "por_q": 1.7,
     "op_q": 77213,
     "cns_per": null,
-    "div_yield": 3.8,
+    "div_yield": 3.78,
     "dps": 500.0,
     "debt_eq": 1,
-    "ret_1y": -36.1,
+    "ret_1y": -35.8,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 7.9,
     "rev_cagr5": 18.2,
@@ -4912,10 +4908,10 @@
    "name": "미스토홀딩스",
    "group": "스포츠·아웃도어·골프",
    "ttm": {
-    "rev": 4723625,
-    "op": 619107,
-    "ni": 274564,
-    "period": "2025Q3~2026Q2"
+    "rev": 4760839,
+    "op": 615205,
+    "ni": 255173,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -4925,10 +4921,10 @@
      0.5,
      8.1
     ],
-    "trend_rev": 5419617,
-    "ttm_rev": 4723625,
-    "norm_ni": 244053,
-    "trend_g": 11.8,
+    "trend_rev": 5530601,
+    "ttm_rev": 4760839,
+    "norm_ni": 249050,
+    "trend_g": 11.6,
     "margins": {
      "2016": 0.54,
      "2017": 2.47,
@@ -4955,26 +4951,26 @@
     ]
    },
    "price": 37650,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 1998882,
-   "mcap_eff": 1979231,
-   "shares": 52569216,
+   "mcap": 1998900,
+   "mcap_eff": 1979249,
+   "shares": 52569695,
    "shares_check": {
     "dart_common": 52569910,
     "dart_period": "2026-11012",
-    "listed": 53091149,
+    "listed": 53091633,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 2154034,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -1344944,
+   "equity": 1982954,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -1061863,
    "dividend_yield": null,
-   "per": 7.2,
-   "roe": 12.7,
-   "pbr": 0.92,
+   "per": 7.8,
+   "roe": 12.9,
+   "pbr": 1.0,
    "cycle": {
     "phase": "중립",
     "note": "아쿠쉬네트 정상 이익의 지분 몫(약 절반)과 휠라 부문 소폭 흑자를 더했어요. 비지배지분이 커 연결 순현금은 반영하지 않았어요",
@@ -4999,7 +4995,7 @@
      "avg_margin": 5.3,
      "min": 2.0,
      "max": 8.1,
-     "ni": 248671,
+     "ni": 250630,
      "oneoff": [
       {
        "year": "2023",
@@ -5008,47 +5004,47 @@
       }
      ]
     },
-    "ttm_margin": 5.8,
-    "ttm_ni": 274564,
+    "ttm_margin": 5.4,
+    "ttm_ni": 255173,
     "E1_fwd": 270000,
     "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
    "dcf": {
-    "E1": 261468,
+    "E1": 262252,
     "r": 10.0,
     "c": 0.7,
     "note": "아쿠쉬네트 정상 이익의 지분 몫(약 절반)과 휠라 부문 소폭 흑자를 더했어요. 비지배지분이 커 연결 순현금은 반영하지 않았어요",
     "fwd_per": 7.3,
-    "norm_per": 7.6,
+    "norm_per": 7.5,
     "scenarios": {
      "bear": {
       "g": -1.0,
-      "value": 1998581,
-      "per_share": 38018,
-      "upside": 1.0
+      "value": 2004574,
+      "per_share": 38132,
+      "upside": 1.3
      },
      "base": {
       "g": 3.5,
-      "value": 2447918,
-      "per_share": 46566,
-      "upside": 23.7
+      "value": 2455258,
+      "per_share": 46705,
+      "upside": 24.0
      },
      "bull": {
       "g": 6.0,
-      "value": 2739772,
-      "per_share": 52117,
-      "upside": 38.4
+      "value": 2747987,
+      "per_share": 52273,
+      "upside": 38.8
      }
     },
     "c_T": 0.7,
-    "roe_norm": 12.1,
-    "implied_g": -1.2,
-    "implied_E1": 211406,
+    "roe_norm": 13.2,
+    "implied_g": -1.3,
+    "implied_E1": 211408,
     "cycle": {
      "position": "중립",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
      "path": [],
-     "excess": 13096,
+     "excess": -7079,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -5066,19 +5062,19 @@
    },
    "quant": {
     "pos": "상승기",
-    "period": "2025Q3~2026Q2",
-    "core": 378734,
-    "norm": 276630,
-    "ttm_ni": 274564,
+    "period": "2025Q4~2026Q3",
+    "core": 367516,
+    "norm": 282294,
+    "ttm_ni": 255173,
     "oneoff": false,
-    "E": 327682,
-    "per_share": 32860,
-    "bear": 27759,
-    "bull": 37325,
-    "upside": -12.7,
-    "pct": 44,
+    "E": 324905,
+    "per_share": 32581,
+    "bear": 27523,
+    "bull": 37009,
+    "upside": -13.5,
+    "pct": 47,
     "tier": "가운데 ⅓",
-    "exp_ex": -0.7,
+    "exp_ex": -0.3,
     "conflict": false
    },
    "marks": {
@@ -5090,37 +5086,37 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 2408547,
-    "weighted_ps": 45817,
-    "weighted_upside": 21.7,
+    "weighted": 2415769,
+    "weighted_ps": 45954,
+    "weighted_upside": 22.1,
     "stress": {
-     "E": 178847,
+     "E": 182510,
      "margin": 3.3,
      "g": -1.0,
-     "value": 1854755,
-     "per_share": 35282,
+     "value": 1865759,
+     "per_share": 35491,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 3.3% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 35282,
-    "max_loss": 6.3,
-    "up_bull": 38.4,
-    "asym_ratio": 6.1,
+    "down_ps": 35491,
+    "max_loss": 5.7,
+    "up_bull": 38.8,
+    "asym_ratio": 6.8,
     "asym": "유리",
     "risk": {
-     "score": 26,
-     "grade": "보통",
+     "score": 24,
+     "grade": "낮음",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 9,
-      "차입 부담": 16,
-      "하방 거리": 2
+      "차입 부담": 13,
+      "하방 거리": 1
      }
     },
-    "mos": 30,
-    "buy_ps": 32072,
-    "buy_gap": -14.8,
-    "implied_margin": 3.9,
-    "base_margin": 4.8,
+    "mos": 20,
+    "buy_ps": 36763,
+    "buy_gap": -2.4,
+    "implied_margin": 3.8,
+    "base_margin": 4.7,
     "hist_margin": [
      2.0,
      5.3,
@@ -5128,26 +5124,26 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 3.5%씩 늘면서 순이익률 3.9%가 이어져야 해요(과거 2.0%~8.1%, 평균 5.3%, 이 리포트의 정상 이익 가정 4.8%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 6% 손실, 낙관 시나리오면 +38%로 손익 구조는 '유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3.5%씩 늘면서 순이익률 3.8%가 이어져야 해요(과거 2.0%~8.1%, 평균 5.3%, 이 리포트의 정상 이익 가정 4.7%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 6% 손실, 낙관 시나리오면 +39%로 손익 구조는 '유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 3.8,
-    "ni_q": 128660,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 11.3,
+    "ni_q": 43847,
     "por_ttm": 3.2,
-    "op_ttm": 619107,
-    "por_q": 1.7,
-    "op_q": 295229,
-    "cns_per": 6.72,
-    "div_yield": 5.23,
+    "op_ttm": 615205,
+    "por_q": 3.9,
+    "op_q": 127967,
+    "cns_per": 6.68,
+    "div_yield": 5.26,
     "dps": 1980.0,
-    "debt_eq": 88,
+    "debt_eq": 81,
     "ret_1y": -11.9,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 10.0,
     "rev_cagr5": 7.4,
-    "peg": 0.72,
+    "peg": 0.78,
     "peg_g": 10.0
    },
    "checks": {
@@ -5155,13 +5151,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "12.1%",
+      "val": "13.2%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "12.7%",
+      "val": "12.9%",
       "note": ""
      },
      {
@@ -5185,7 +5181,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "7.3년",
+      "val": "6.2년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -5193,25 +5189,25 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": true,
-      "val": "0.72",
+      "val": "0.78",
       "note": "성장률 = 최근 5년 순이익 연평균 10.0%(상한 50%)"
      },
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "2.1",
+      "val": "2.0",
       "note": "2 이상이면 매우 좋음"
      },
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-13,449억",
+      "val": "-10,619억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "88%",
+      "val": "81%",
       "note": ""
      }
     ],
@@ -5272,12 +5268,12 @@
     },
     "oneoff": []
    },
-   "price": 6030,
-   "price_date": "2026-11-13 18:39",
+   "price": 5910,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 87338,
-   "mcap_eff": 87338,
-   "shares": 14483914,
+   "mcap": 85600,
+   "mcap_eff": 85600,
+   "shares": 14483926,
    "shares_check": {
     "dart_common": 14486386,
     "dart_period": "2026-11012",
@@ -5295,66 +5291,62 @@
    "pbr": 0.26,
    "cycle": {
     "phase": "하강기",
-    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2021~22년 고점은 반영하지 않았어요",
-    "w_mid": 0.6,
+    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2020~23년 고점 이익률은 사이클 평균에서 뺐어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
     "midcycle": {
-     "years": "2020~2025",
-     "n": 6,
-     "trimmed": true,
+     "years": "2024~2025",
+     "n": 2,
+     "trimmed": false,
      "excluded": [],
      "margins": {
-      "2020": 13.9,
-      "2021": 15.7,
-      "2022": 13.8,
-      "2023": 9.0,
       "2024": 3.2,
       "2025": 1.4
      },
-     "avg_margin": 10.0,
+     "avg_margin": 2.3,
      "min": 1.4,
-     "max": 15.7,
-     "ni": 45869,
+     "max": 3.2,
+     "ni": 10585,
      "oneoff": []
     },
     "ttm_margin": -0.0,
     "ttm_ni": -103,
     "E1_fwd": 15000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
    "net_debt_levered": -122316,
    "dcf": {
-    "E1": 33521,
+    "E1": 13234,
     "r": 12.5,
     "c": 0.6,
-    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2021~22년 고점은 반영하지 않았어요",
-    "fwd_per": 5.8,
-    "norm_per": 2.6,
+    "note": "유행 퇴조 후 매출 수준에서 순이익률 3%를 정상으로 봤어요. 2020~23년 고점 이익률은 사이클 평균에서 뺐어요",
+    "fwd_per": 5.7,
+    "norm_per": 6.5,
     "scenarios": {
      "bear": {
       "g": -6.0,
-      "value": 111198,
-      "per_share": 7677,
-      "upside": 27.3
+      "value": 43851,
+      "per_share": 3028,
+      "upside": -48.8
      },
      "base": {
       "g": 0.0,
-      "value": 155487,
-      "per_share": 10735,
-      "upside": 78.0
+      "value": 61347,
+      "per_share": 4236,
+      "upside": -28.3
      },
      "bull": {
       "g": 4.0,
-      "value": 201117,
-      "per_share": 13886,
-      "upside": 130.3
+      "value": 79388,
+      "per_share": 5481,
+      "upside": -7.3
      }
     },
     "c_T": 0.6,
-    "roe_norm": 10.1,
-    "implied_g": -12.0,
-    "implied_E1": 20557,
+    "roe_norm": 4.0,
+    "implied_g": 7.1,
+    "implied_E1": 17848,
     "cycle": {
      "position": "하강기",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
@@ -5362,26 +5354,26 @@
       0.8,
       0.4
      ],
-     "excess": -33624,
-     "excess_value": -20722,
+     "excess": -13337,
+     "excess_value": -8220,
      "excess_by": {
-      "bear": -26390,
-      "base": -20722,
-      "bull": -7173
+      "bear": -10468,
+      "base": -8220,
+      "bull": -2845
      },
      "bear_trough": false,
      "ni_paths": {
       "bear": [
-       6622,
-       20071,
-       20071
+       2564,
+       7899,
+       7899
       ],
       "base": [
-       6622,
-       20071
+       2564,
+       7899
       ],
       "bull": [
-       20071
+       7899
       ]
      }
     },
@@ -5398,10 +5390,10 @@
     "per_share": 9400,
     "bear": 7941,
     "bull": 10678,
-    "upside": 55.9,
+    "upside": 59.1,
     "pct": 84,
     "tier": "싼 ⅓",
-    "exp_ex": 3.1,
+    "exp_ex": 3.7,
     "conflict": false
    },
    "marks": {
@@ -5413,45 +5405,45 @@
      "base": 0.5,
      "bull": 0.2
     },
-    "weighted": 151326,
-    "weighted_ps": 10448,
-    "weighted_upside": 73.3,
+    "weighted": 59706,
+    "weighted_ps": 4122,
+    "weighted_upside": -30.3,
     "stress": {
-     "E": 17209,
-     "margin": 3.2,
+     "E": 7529,
+     "margin": 1.4,
      "g": -6.0,
-     "value": 87891,
-     "per_share": 6068,
-     "how": "2020~2025 중 두 번째로 나쁜 해의 순이익률 3.2% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
+     "value": 35699,
+     "per_share": 2465,
+     "how": "2024~2025 중 가장 나쁜 해의 순이익률 1.4% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 6068,
-    "max_loss": 0.0,
-    "up_bull": 130.3,
+    "down_ps": 2465,
+    "max_loss": 58.3,
+    "up_bull": -7.3,
     "asym_ratio": null,
-    "asym": "매우 유리",
+    "asym": "불리",
     "risk": {
-     "score": 21,
-     "grade": "낮음",
+     "score": 30,
+     "grade": "보통",
      "parts": {
       "적자 이력": 0,
-      "이익 변동폭": 11,
+      "이익 변동폭": 6,
       "차입 부담": 9,
-      "하방 거리": 0
+      "하방 거리": 15
      }
     },
-    "mos": 25,
-    "buy_ps": 7836,
-    "buy_gap": 30.0,
-    "implied_margin": 3.8,
-    "base_margin": 6.2,
+    "mos": 35,
+    "buy_ps": 2679,
+    "buy_gap": -54.7,
+    "implied_margin": 3.3,
+    "base_margin": 2.5,
     "hist_margin": [
      1.4,
-     10.0,
-     15.7
+     2.3,
+     3.2
     ],
-    "verdict": "안전마진 확보",
-    "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 3.8%가 이어져야 해요(과거 1.4%~15.7%, 평균 10.0%, 이 리포트의 정상 이익 가정 6.2%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +130%라 손익 구조는 '매우 유리'예요."
+    "verdict": "낙관 시나리오도 넘는 가격",
+    "tone": "neg",
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 3.3%가 이어져야 해요(과거 1.4%~3.2%, 평균 2.3%, 이 리포트의 정상 이익 가정 2.5%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 불황이 길어지면 최대 약 58% 손실, 낙관 시나리오면 -7%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -5466,7 +5458,7 @@
     "div_yield": 8.46,
     "dps": 500.0,
     "debt_eq": 49,
-    "ret_1y": -34.0,
+    "ret_1y": -35.3,
     "ret_1y_from": "2025-11",
     "ni_cagr5": -29.9,
     "rev_cagr5": 10.4,
@@ -5478,7 +5470,7 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "10.1%",
+      "val": "4.0%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -5508,7 +5500,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "4.8년",
+      "val": "12.3년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -5604,16 +5596,16 @@
      }
     ]
    },
-   "price": 3530,
-   "price_date": "2026-11-13 18:39",
+   "price": 3550,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 317263,
-   "mcap_eff": 315036,
-   "shares": 89245326,
+   "mcap": 316800,
+   "mcap_eff": 314560,
+   "shares": 88608451,
    "shares_check": {
     "dart_common": 89232040,
     "dart_period": "2026-11014",
-    "listed": 89876204,
+    "listed": 89239437,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -5624,81 +5616,71 @@
    "dividend_yield": null,
    "per": 8.2,
    "roe": 29.1,
-   "pbr": 2.39,
+   "pbr": 2.38,
    "cycle": {
     "phase": "중립",
-    "note": "최근 3개년 평균 이익을 정상으로 봤어요",
-    "w_mid": 0.5,
+    "note": "스노우피크 어패럴이 자리 잡은 2022년 이후의 이익률(약 13%)만 사이클 평균에 썼어요. 라이선스 위험을 감안해 최근 4개 분기 순이익(383억원)보다 낮췄어요",
+    "w_mid": 0.3,
     "follow": null,
     "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
     "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
+     "years": "2022~2025",
+     "n": 4,
+     "trimmed": false,
      "excluded": [],
      "margins": {
-      "2018": -76.0,
-      "2019": -80.2,
-      "2020": -26.8,
-      "2021": 1.8,
       "2022": 12.8,
       "2023": 13.6,
       "2024": 13.3,
       "2025": 14.2
      },
-     "avg_margin": -10.2,
-     "min": -80.2,
+     "avg_margin": 13.5,
+     "min": 12.8,
      "max": 14.2,
-     "ni": -28171,
-     "oneoff": [
-      {
-       "year": "2021",
-       "ni_margin": 0.57,
-       "adj_margin": 1.83
-      }
-     ]
+     "ni": 37120,
+     "oneoff": []
     },
     "ttm_margin": 13.9,
     "ttm_ni": 38341,
-    "E1_fwd": 22000,
-    "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
+    "E1_fwd": 30000,
+    "E1_basis": "사이클 평균 이익 30% + 전망 이익 70%"
    },
    "dcf": {
-    "E1": -3086,
+    "E1": 32136,
     "r": 12.0,
     "c": 0.6,
-    "note": "최근 3개년 평균 이익을 정상으로 봤어요",
-    "fwd_per": 14.3,
-    "norm_per": null,
+    "note": "스노우피크 어패럴이 자리 잡은 2022년 이후의 이익률(약 13%)만 사이클 평균에 썼어요. 라이선스 위험을 감안해 최근 4개 분기 순이익(383억원)보다 낮췄어요",
+    "fwd_per": 10.5,
+    "norm_per": 9.8,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 179528,
+      "per_share": 2026,
+      "upside": -42.9
      },
      "base": {
       "g": 3.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 245055,
+      "per_share": 2766,
+      "upside": -22.1
      },
      "bull": {
       "g": 8.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
+      "value": 306303,
+      "per_share": 3457,
+      "upside": -2.6
      }
     },
     "c_T": 0.833,
-    "roe_norm": -2.3,
-    "implied_g": null,
-    "implied_E1": 41399,
+    "roe_norm": 24.4,
+    "implied_g": 8.6,
+    "implied_E1": 41336,
     "cycle": {
      "position": "중립",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
      "path": [],
-     "excess": 41427,
+     "excess": 6205,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -5722,11 +5704,11 @@
     "ttm_ni": 38341,
     "oneoff": false,
     "E": 4237,
-    "per_share": 250,
-    "bear": 211,
-    "bull": 284,
+    "per_share": 252,
+    "bear": 213,
+    "bull": 286,
     "upside": -92.9,
-    "pct": 3,
+    "pct": 6,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
     "conflict": false
@@ -5740,52 +5722,52 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 0,
-    "weighted_ps": 0,
-    "weighted_upside": -100.0,
+    "weighted": 243985,
+    "weighted_ps": 2754,
+    "weighted_upside": -22.4,
     "stress": {
-     "E": -261704,
-     "margin": -76.0,
+     "E": 32136,
+     "margin": 12.8,
      "g": -4.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -76.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
+     "value": 179528,
+     "per_share": 2026,
+     "how": "2022~2025 중 가장 나쁜 해의 순이익률 12.8% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -100.0,
+    "down_ps": 2026,
+    "max_loss": 42.9,
+    "up_bull": -2.6,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
-     "score": 69,
-     "grade": "높음",
+     "score": 36,
+     "grade": "보통",
      "parts": {
       "적자 이력": 24,
-      "이익 변동폭": 25,
+      "이익 변동폭": 1,
       "차입 부담": 0,
-      "하방 거리": 20
+      "하방 거리": 11
      }
     },
-    "mos": 40,
-    "buy_ps": 0,
-    "buy_gap": -100.0,
+    "mos": 30,
+    "buy_ps": 1928,
+    "buy_gap": -45.7,
     "implied_margin": 12.0,
-    "base_margin": -0.9,
+    "base_margin": 9.3,
     "hist_margin": [
-     -80.2,
-     -10.2,
+     12.8,
+     13.5,
      14.2
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 12.0%가 이어져야 해요(과거 -80.2%~14.2%, 평균 -10.2%, 이 리포트의 정상 이익 가정 -0.9%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -100%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 12.0%가 이어져야 해요(과거 12.8%~14.2%, 평균 13.5%, 이 리포트의 정상 이익 가정 9.3%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어지면 최대 약 43% 손실, 낙관 시나리오면 -3%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 17.8,
+    "per_q": 17.7,
     "ni_q": 4432,
-    "por_ttm": 6.5,
+    "por_ttm": 6.4,
     "op_ttm": 48790,
     "por_q": 10.7,
     "op_q": 7377,
@@ -5793,7 +5775,7 @@
     "div_yield": null,
     "dps": null,
     "debt_eq": 6,
-    "ret_1y": -43.3,
+    "ret_1y": -43.0,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 72.4,
@@ -5804,8 +5786,8 @@
     "buffett": [
      {
       "name": "정상 이익 기준 ROE 15% 이상",
-      "ok": false,
-      "val": "-2.3%",
+      "ok": true,
+      "val": "24.4%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -5834,8 +5816,8 @@
      },
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
-      "ok": null,
-      "val": "–",
+      "ok": true,
+      "val": "0.3년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -5887,7 +5869,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 2/4개 통과. 이익이 크게 오르내려(적자 2017·2018·2019·2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 4/5개 통과. 이익이 높고 안정적이며 빚 부담이 적어 '예측 가능한 좋은 사업'에 가까워요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -5922,16 +5904,16 @@
     },
     "oneoff": []
    },
-   "price": 1858,
-   "price_date": "2026-11-13 18:39",
+   "price": 1864,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 53942,
-   "mcap_eff": 53244,
-   "shares": 28656620,
+   "mcap": 54100,
+   "mcap_eff": 53400,
+   "shares": 28648069,
    "shares_check": {
     "dart_common": 29301019,
     "dart_period": "2026-11012",
-    "listed": 29032258,
+    "listed": 29023605,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -5984,26 +5966,26 @@
      "bear": {
       "g": -4.0,
       "value": 68746,
-      "per_share": 2399,
-      "upside": 29.1
+      "per_share": 2400,
+      "upside": 28.7
      },
      "base": {
       "g": 3.0,
       "value": 89689,
-      "per_share": 3130,
-      "upside": 68.4
+      "per_share": 3131,
+      "upside": 68.0
      },
      "bull": {
       "g": 8.0,
       "value": 109216,
-      "per_share": 3811,
-      "upside": 105.1
+      "per_share": 3812,
+      "upside": 104.5
      }
     },
     "c_T": 0.795,
     "roe_norm": 9.8,
-    "implied_g": -11.2,
-    "implied_E1": 6329,
+    "implied_g": -11.1,
+    "implied_E1": 6352,
     "cycle": {
      "position": "중립",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
@@ -6033,12 +6015,12 @@
     "oneoff": false,
     "E": 12832,
     "per_share": 2361,
-    "bear": 1994,
-    "bull": 2681,
-    "upside": 27.0,
-    "pct": 75,
+    "bear": 1995,
+    "bull": 2682,
+    "upside": 26.7,
+    "pct": 78,
     "tier": "싼 ⅓",
-    "exp_ex": 1.7,
+    "exp_ex": 2.2,
     "conflict": false
    },
    "marks": {
@@ -6051,19 +6033,19 @@
      "bull": 0.25
     },
     "weighted": 89335,
-    "weighted_ps": 3117,
-    "weighted_upside": 67.8,
+    "weighted_ps": 3118,
+    "weighted_upside": 67.3,
     "stress": {
      "E": 11566,
      "margin": 4.5,
      "g": -4.0,
      "value": 68746,
-     "per_share": 2399,
+     "per_share": 2400,
      "how": "2020~2025 중 두 번째로 나쁜 해의 순이익률 4.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 2399,
+    "down_ps": 2400,
     "max_loss": 0.0,
-    "up_bull": 105.1,
+    "up_bull": 104.5,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -6078,7 +6060,7 @@
     },
     "mos": 20,
     "buy_ps": 2494,
-    "buy_gap": 34.2,
+    "buy_gap": 33.8,
     "implied_margin": 2.1,
     "base_margin": 3.8,
     "hist_margin": [
@@ -6095,15 +6077,15 @@
     "ttm_period": "2025Q3~2026Q2",
     "per_q": 3.1,
     "ni_q": 4252,
-    "por_ttm": 3.4,
+    "por_ttm": 3.5,
     "op_ttm": 15453,
     "por_q": 2.5,
     "op_q": 5348,
     "cns_per": null,
-    "div_yield": 11.12,
+    "div_yield": 10.73,
     "dps": 200.0,
     "debt_eq": 3,
-    "ret_1y": -60.7,
+    "ret_1y": -60.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 11.0,
     "rev_cagr5": 14.4,
@@ -6159,7 +6141,7 @@
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "4.4",
+      "val": "4.3",
       "note": "2 이상이면 매우 좋음"
      },
      {
@@ -6241,15 +6223,15 @@
     ]
    },
    "price": 2755,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 64534,
-   "mcap_eff": 59100,
-   "shares": 21451906,
+   "mcap": 64600,
+   "mcap_eff": 59166,
+   "shares": 21475862,
    "shares_check": {
     "dart_common": 21458426,
     "dart_period": "2026-11012",
-    "listed": 23424408,
+    "listed": 23448276,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -6311,26 +6293,26 @@
      "bear": {
       "g": -6.0,
       "value": 39408,
-      "per_share": 1837,
-      "upside": -33.3
+      "per_share": 1835,
+      "upside": -33.4
      },
      "base": {
       "g": 0.0,
       "value": 56034,
-      "per_share": 2612,
-      "upside": -5.2
+      "per_share": 2609,
+      "upside": -5.3
      },
      "bull": {
       "g": 4.0,
       "value": 74390,
-      "per_share": 3468,
-      "upside": 25.9
+      "per_share": 3464,
+      "upside": 25.7
      }
     },
     "c_T": 0.6,
     "roe_norm": 3.1,
     "implied_g": 1.1,
-    "implied_E1": 13022,
+    "implied_E1": 13035,
     "cycle": {
      "position": "바닥권",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
@@ -6371,13 +6353,13 @@
     "ttm_ni": -5705,
     "oneoff": false,
     "E": 11738,
-    "per_share": 2885,
-    "bear": 2437,
-    "bull": 3277,
-    "upside": 4.7,
-    "pct": 56,
+    "per_share": 2881,
+    "bear": 2434,
+    "bull": 3273,
+    "upside": 4.6,
+    "pct": 59,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.4,
+    "exp_ex": 0.9,
     "conflict": false
    },
    "marks": {
@@ -6390,19 +6372,19 @@
      "bull": 0.4
     },
     "weighted": 60882,
-    "weighted_ps": 2838,
-    "weighted_upside": 3.0,
+    "weighted_ps": 2835,
+    "weighted_upside": 2.9,
     "stress": {
      "E": 12294,
      "margin": 4.1,
      "g": -6.0,
      "value": 39200,
-     "per_share": 1827,
+     "per_share": 1825,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 4.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 1827,
-    "max_loss": 33.7,
-    "up_bull": 25.9,
+    "down_ps": 1825,
+    "max_loss": 33.8,
+    "up_bull": 25.7,
     "asym_ratio": 0.8,
     "asym": "불리",
     "risk": {
@@ -6416,7 +6398,7 @@
      }
     },
     "mos": 25,
-    "buy_ps": 2128,
+    "buy_ps": 2126,
     "buy_gap": -22.8,
     "implied_margin": 4.3,
     "base_margin": 4.1,
@@ -6439,7 +6421,7 @@
     "por_q": 1.4,
     "op_q": 10880,
     "cns_per": null,
-    "div_yield": 7.29,
+    "div_yield": 7.26,
     "dps": 200.0,
     "debt_eq": 79,
     "ret_1y": -34.7,
@@ -6569,15 +6551,15 @@
     "oneoff": []
    },
    "price": 3000,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 23030,
-   "mcap_eff": 22817,
-   "shares": 7605667,
+   "mcap": 23100,
+   "mcap_eff": 22887,
+   "shares": 7629000,
    "shares_check": {
     "dart_common": 7618180,
     "dart_period": "2026-11012",
-    "listed": 7676768,
+    "listed": 7700000,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -6591,72 +6573,67 @@
    "pbr": 0.44,
    "cycle": {
     "phase": "중립",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.6,
+    "note": "코로나 적자기(2020~22년)를 빼고 2023~25년 평균 이익을 정상으로 봤어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
     "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
+     "years": "2023~2025",
+     "n": 3,
+     "trimmed": false,
      "excluded": [],
      "margins": {
-      "2018": 8.8,
-      "2019": 11.5,
-      "2020": -23.2,
-      "2021": -32.5,
-      "2022": -15.5,
       "2023": 11.7,
       "2024": 7.8,
       "2025": 7.3
      },
-     "avg_margin": -0.6,
-     "min": -32.5,
+     "avg_margin": 8.9,
+     "min": 7.3,
      "max": 11.7,
-     "ni": -332,
+     "ni": 5134,
      "oneoff": []
     },
     "ttm_margin": 16.2,
     "ttm_ni": 9311,
-    "E1_fwd": 2000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "E1_fwd": 4500,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
    "dcf": {
-    "E1": 601,
+    "E1": 4754,
     "r": 13.0,
     "c": 0.6,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 11.4,
-    "norm_per": 38.0,
+    "note": "코로나 적자기(2020~22년)를 빼고 2023~25년 평균 이익을 정상으로 봤어요",
+    "fwd_per": 5.1,
+    "norm_per": 4.8,
     "scenarios": {
      "bear": {
       "g": -5.0,
-      "value": 10118,
-      "per_share": 1330,
-      "upside": -55.7
+      "value": 29579,
+      "per_share": 3877,
+      "upside": 29.2
      },
      "base": {
       "g": 2.0,
-      "value": 10707,
-      "per_share": 1408,
-      "upside": -53.1
+      "value": 37063,
+      "per_share": 4858,
+      "upside": 61.9
      },
      "bull": {
       "g": 6.0,
-      "value": 11133,
-      "per_share": 1464,
-      "upside": -51.2
+      "value": 42518,
+      "per_share": 5573,
+      "upside": 85.8
      }
     },
-    "c_T": 0.6,
-    "roe_norm": 1.1,
-    "implied_g": 46.7,
-    "implied_E1": 2821,
+    "c_T": 0.78,
+    "roe_norm": 9.1,
+    "implied_g": -14.1,
+    "implied_E1": 2490,
     "cycle": {
      "position": "중립",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
      "path": [],
-     "excess": 8710,
+     "excess": 4557,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -6680,14 +6657,14 @@
     "ttm_ni": 9311,
     "oneoff": true,
     "E": 2631,
-    "per_share": 1824,
-    "bear": 1541,
-    "bull": 2072,
-    "upside": -39.2,
-    "pct": 31,
+    "per_share": 1818,
+    "bear": 1536,
+    "bull": 2065,
+    "upside": -39.4,
+    "pct": 28,
     "tier": "비싼 ⅓",
-    "exp_ex": -3.1,
-    "conflict": false
+    "exp_ex": -2.6,
+    "conflict": true
    },
    "marks": {
     "pos": "중립",
@@ -6698,45 +6675,45 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 10666,
-    "weighted_ps": 1402,
-    "weighted_upside": -53.3,
+    "weighted": 36556,
+    "weighted_ps": 4792,
+    "weighted_upside": 59.7,
     "stress": {
-     "E": -12853,
-     "margin": -23.2,
+     "E": 4044,
+     "margin": 7.3,
      "g": -5.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -23.2% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
+     "value": 28574,
+     "per_share": 3745,
+     "how": "2023~2025 중 가장 나쁜 해의 순이익률 7.3% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -51.2,
+    "down_ps": 3745,
+    "max_loss": 0.0,
+    "up_bull": 85.8,
     "asym_ratio": null,
-    "asym": "불리",
+    "asym": "매우 유리",
     "risk": {
-     "score": 65,
-     "grade": "높음",
+     "score": 24,
+     "grade": "낮음",
      "parts": {
       "적자 이력": 20,
-      "이익 변동폭": 25,
+      "이익 변동폭": 4,
       "차입 부담": 0,
-      "하방 거리": 20
+      "하방 거리": 0
      }
     },
-    "mos": 40,
-    "buy_ps": 841,
-    "buy_gap": -72.0,
-    "implied_margin": 5.1,
-    "base_margin": 1.1,
+    "mos": 20,
+    "buy_ps": 3834,
+    "buy_gap": 27.8,
+    "implied_margin": 4.5,
+    "base_margin": 8.6,
     "hist_margin": [
-     -32.5,
-     -0.6,
+     7.3,
+     8.9,
      11.7
     ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 5.1%가 이어져야 해요(과거 -32.5%~11.7%, 평균 -0.6%, 이 리포트의 정상 이익 가정 1.1%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -51%로 손익 구조는 '불리'예요."
+    "verdict": "안전마진 확보",
+    "tone": "pos",
+    "note": "지금 주가가 맞으려면 이익이 연 2.0%씩 늘면서 순이익률 4.5%가 이어져야 해요(과거 7.3%~11.7%, 평균 8.9%, 이 리포트의 정상 이익 가정 8.6%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +86%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -6748,7 +6725,7 @@
     "por_q": 3.8,
     "op_q": 1495,
     "cns_per": null,
-    "div_yield": 2.53,
+    "div_yield": 2.5,
     "dps": 75.0,
     "debt_eq": 0,
     "ret_1y": -20.3,
@@ -6763,7 +6740,7 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "1.1%",
+      "val": "9.1%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -6853,10 +6830,10 @@
    "name": "에스제이그룹",
    "group": "스포츠·아웃도어·골프",
    "ttm": {
-    "rev": 149985,
-    "op": -12746,
-    "ni": -8957,
-    "period": "2025Q3~2026Q2"
+    "rev": 144825,
+    "op": -13822,
+    "ni": -10863,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2019~2025",
@@ -6866,10 +6843,10 @@
      -5.5,
      15.5
     ],
-    "trend_rev": 187244,
-    "ttm_rev": 149985,
-    "norm_ni": 17331,
-    "trend_g": 6.6,
+    "trend_rev": 185655,
+    "ttm_rev": 144825,
+    "norm_ni": 17184,
+    "trend_g": 6.0,
     "margins": {
      "2019": 12.07,
      "2020": 14.61,
@@ -6882,30 +6859,30 @@
     "oneoff": []
    },
    "price": 1863,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 17295,
-   "mcap_eff": 16216,
-   "shares": 8704240,
+   "mcap": 17300,
+   "mcap_eff": 17300,
+   "shares": 9286098,
    "shares_check": {
     "dart_common": 9287044,
-    "dart_period": "2026-11012",
-    "listed": 9283196,
+    "dart_period": "2026-11014",
+    "listed": 9286098,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 115542,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 610,
+   "equity": 112351,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -7900,
    "dividend_yield": null,
    "per": null,
-   "roe": -7.8,
-   "pbr": 0.14,
+   "roe": -9.7,
+   "pbr": 0.15,
    "cycle": {
     "phase": "하강기",
-    "note": "유행 이후 매출 수준에서 순이익률 4%를 정상으로 봤어요",
-    "w_mid": 0.6,
+    "note": "유행 고점(2021~22년) 이익은 다시 오기 어렵다고 보고 사이클 평균을 섞지 않았어요. 최근 매출 수준에서 순이익률 2.5%를 정상으로 봤어요",
+    "w_mid": 0,
     "follow": null,
     "industry": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
     "midcycle": {
@@ -6925,45 +6902,46 @@
      "avg_margin": 9.3,
      "min": -5.5,
      "max": 15.5,
-     "ni": 13882,
+     "ni": 13405,
      "oneoff": []
     },
-    "ttm_margin": -6.0,
-    "ttm_ni": -8957,
+    "ttm_margin": -7.5,
+    "ttm_ni": -10863,
     "E1_fwd": 4000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "E1_basis": "전망 이익 100%"
    },
+   "net_debt_levered": -7900,
    "dcf": {
-    "E1": 9929,
+    "E1": 4000,
     "r": 13.0,
     "c": 0.6,
-    "note": "유행 이후 매출 수준에서 순이익률 4%를 정상으로 봤어요",
-    "fwd_per": 4.1,
-    "norm_per": 1.6,
+    "note": "유행 고점(2021~22년) 이익은 다시 오기 어렵다고 보고 사이클 평균을 섞지 않았어요. 최근 매출 수준에서 순이익률 2.5%를 정상으로 봤어요",
+    "fwd_per": 4.3,
+    "norm_per": 4.3,
     "scenarios": {
      "bear": {
       "g": -6.0,
-      "value": 29541,
-      "per_share": 3394,
-      "upside": 82.2
+      "value": 4175,
+      "per_share": 450,
+      "upside": -75.9
      },
      "base": {
       "g": 0.0,
-      "value": 45465,
-      "per_share": 5223,
-      "upside": 180.4
+      "value": 10989,
+      "per_share": 1183,
+      "upside": -36.5
      },
      "bull": {
       "g": 4.0,
-      "value": 63685,
-      "per_share": 7317,
-      "upside": 292.7
+      "value": 20540,
+      "per_share": 2212,
+      "upside": 18.7
      }
     },
-    "c_T": 0.767,
-    "roe_norm": 8.6,
-    "implied_g": -17.5,
-    "implied_E1": 4789,
+    "c_T": 0.6,
+    "roe_norm": 3.6,
+    "implied_g": 6.6,
+    "implied_E1": 5256,
     "cycle": {
      "position": "하강기",
      "note": "골프는 코로나 붐 이후 하강·바닥권, 라이선스 캐주얼·아웃도어는 유행 퇴조로 브랜드별 명암이 커요. 글로벌 골프(아쿠쉬네트)는 성숙하지만 안정적이에요.",
@@ -6971,46 +6949,46 @@
       0.8,
       0.4
      ],
-     "excess": -18886,
-     "excess_value": -11572,
+     "excess": -14863,
+     "excess_value": -9107,
      "excess_by": {
-      "bear": -14713,
-      "base": -11572,
-      "bull": -4011
+      "bear": -11579,
+      "base": -9107,
+      "bull": -3157
      },
      "bear_trough": false,
      "ni_paths": {
       "bear": [
-       -5180,
-       2375,
-       2375
+       -7890,
+       -1945,
+       -1945
       ],
       "base": [
-       -5180,
-       2375
+       -7890,
+       -1945
       ],
       "bull": [
-       2375
+       -1945
       ]
      }
     },
-    "net_cash_added": 610
+    "net_cash_added": 0
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": -9449,
-    "norm": 17331,
-    "ttm_ni": -8957,
+    "period": "2025Q4~2026Q3",
+    "core": -10822,
+    "norm": 17184,
+    "ttm_ni": -10863,
     "oneoff": false,
-    "E": 3941,
-    "per_share": 2387,
-    "bear": 2016,
-    "bull": 2711,
-    "upside": 28.1,
-    "pct": 78,
-    "tier": "싼 ⅓",
-    "exp_ex": 1.8,
+    "E": 3181,
+    "per_share": 1806,
+    "bear": 1525,
+    "bull": 2051,
+    "upside": -3.1,
+    "pct": 53,
+    "tier": "가운데 ⅓",
+    "exp_ex": 0.4,
     "conflict": false
    },
    "marks": {
@@ -7022,59 +7000,59 @@
      "base": 0.5,
      "bull": 0.2
     },
-    "weighted": 44332,
-    "weighted_ps": 5093,
-    "weighted_upside": 173.4,
+    "weighted": 10855,
+    "weighted_ps": 1169,
+    "weighted_upside": -37.3,
     "stress": {
-     "E": -2809,
+     "E": -2785,
      "margin": -1.5,
      "g": -6.0,
-     "value": 8843,
-     "per_share": 1016,
+     "value": 0,
+     "per_share": 0,
      "how": "2019~2025 중 두 번째로 나쁜 해의 순이익률 -1.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 1016,
-    "max_loss": 45.5,
-    "up_bull": 292.8,
-    "asym_ratio": 6.4,
-    "asym": "유리",
+    "down_ps": 0,
+    "max_loss": 100.0,
+    "up_bull": 18.7,
+    "asym_ratio": 0.2,
+    "asym": "불리",
     "risk": {
-     "score": 47,
-     "grade": "보통",
+     "score": 57,
+     "grade": "높음",
      "parts": {
       "적자 이력": 17,
       "이익 변동폭": 18,
-      "차입 부담": 0,
-      "하방 거리": 11
+      "차입 부담": 2,
+      "하방 거리": 20
      }
     },
-    "mos": 35,
-    "buy_ps": 3310,
-    "buy_gap": 77.7,
-    "implied_margin": 2.6,
-    "base_margin": 5.3,
+    "mos": 45,
+    "buy_ps": 643,
+    "buy_gap": -65.5,
+    "implied_margin": 2.8,
+    "base_margin": 2.2,
     "hist_margin": [
      -5.5,
      9.3,
      15.5
     ],
-    "verdict": "안전마진 확보",
-    "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 2.6%가 이어져야 해요(과거 -5.5%~15.5%, 평균 9.3%, 이 리포트의 정상 이익 가정 5.3%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어지면 최대 약 45% 손실, 낙관 시나리오면 +293%로 손익 구조는 '유리'예요."
+    "verdict": "기대 선반영",
+    "tone": "neg",
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 2.8%가 이어져야 해요(과거 -5.5%~15.5%, 평균 9.3%, 이 리포트의 정상 이익 가정 2.2%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 +19%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 76.5,
-    "ni_q": 53,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": null,
+    "ni_q": -3190,
     "por_ttm": null,
-    "op_ttm": -12746,
-    "por_q": 14.1,
-    "op_q": 288,
+    "op_ttm": -13822,
+    "por_q": null,
+    "op_q": -5014,
     "cns_per": null,
     "div_yield": null,
     "dps": null,
-    "debt_eq": 18,
+    "debt_eq": 19,
     "ret_1y": -45.1,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
@@ -7087,13 +7065,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "8.6%",
+      "val": "3.6%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "-7.8%",
+      "val": "-9.7%",
       "note": ""
      },
      {
@@ -7116,8 +7094,8 @@
      },
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
-      "ok": true,
-      "val": "2.1년",
+      "ok": false,
+      "val": "5.2년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -7130,14 +7108,14 @@
      },
      {
       "name": "순현금 보유",
-      "ok": true,
-      "val": "6억",
+      "ok": false,
+      "val": "-79억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "18%",
+      "val": "19%",
       "note": ""
      }
     ],
@@ -7163,7 +7141,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 2/6개 통과. 이익이 크게 오르내려(적자 2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/6개 통과. 이익이 크게 오르내려(적자 2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -7171,10 +7149,10 @@
    "name": "코웰패션",
    "group": "캐주얼·여성·속옷·잡화",
    "ttm": {
-    "rev": 984725,
-    "op": 20226,
-    "ni": 16627,
-    "period": "2025Q3~2026Q2"
+    "rev": 780484,
+    "op": 7910,
+    "ni": 3060,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -7184,10 +7162,10 @@
      2.1,
      14.8
     ],
-    "trend_rev": 1096178,
-    "ttm_rev": 984725,
-    "norm_ni": 99024,
-    "trend_g": 15.8,
+    "trend_rev": 1046881,
+    "ttm_rev": 780484,
+    "norm_ni": 94570,
+    "trend_g": 14.4,
     "margins": {
      "2016": 8.02,
      "2017": 14.29,
@@ -7202,31 +7180,31 @@
     },
     "oneoff": []
    },
-   "price": 1598,
-   "price_date": "2026-11-13 18:39",
+   "price": 1590,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 89752,
-   "mcap_eff": 83893,
-   "shares": 52498748,
+   "mcap": 89300,
+   "mcap_eff": 83470,
+   "shares": 52496855,
    "shares_check": {
     "dart_common": 52489824,
-    "dart_period": "2026-11012",
-    "listed": 56165268,
+    "dart_period": "2026-11014",
+    "listed": 56163522,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 399881,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -279116,
+   "equity": 394210,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -279256,
    "dividend_yield": null,
-   "per": 5.0,
-   "roe": 4.2,
+   "per": 27.3,
+   "roe": 0.8,
    "pbr": 0.21,
    "cycle": {
     "phase": "중립",
-    "note": "최근 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.5,
+    "note": "홈쇼핑 채널 축소로 2017~22년 고점 이익률은 돌아오기 어렵다고 보고 최근 2년 이익 수준만 썼어요",
+    "w_mid": 0,
     "follow": null,
     "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
     "midcycle": {
@@ -7247,51 +7225,51 @@
      "avg_margin": 8.3,
      "min": 2.1,
      "max": 14.8,
-     "ni": 81995,
+     "ni": 64989,
      "oneoff": []
     },
-    "ttm_margin": 1.7,
-    "ttm_ni": 16627,
-    "E1_fwd": 26000,
-    "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
+    "ttm_margin": 0.4,
+    "ttm_ni": 3060,
+    "E1_fwd": 13000,
+    "E1_basis": "전망 이익 100%"
    },
-   "net_debt_levered": -279116,
+   "net_debt_levered": -279256,
    "dcf": {
-    "E1": 53998,
+    "E1": 13000,
     "r": 11.5,
     "c": 0.6,
-    "note": "최근 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 3.2,
-    "norm_per": 1.6,
+    "note": "홈쇼핑 채널 축소로 2017~22년 고점 이익률은 돌아오기 어렵다고 보고 최근 2년 이익 수준만 썼어요",
+    "fwd_per": 6.4,
+    "norm_per": 6.4,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 312226,
-      "per_share": 5947,
-      "upside": 272.2
+      "value": 63495,
+      "per_share": 1209,
+      "upside": -23.9
      },
      "base": {
       "g": 1.0,
-      "value": 392142,
-      "per_share": 7470,
-      "upside": 367.4
+      "value": 78645,
+      "per_share": 1498,
+      "upside": -5.8
      },
      "bull": {
       "g": 4.0,
-      "value": 449685,
-      "per_share": 8566,
-      "upside": 436.0
+      "value": 89501,
+      "per_share": 1705,
+      "upside": 7.2
      }
     },
-    "c_T": 0.826,
-    "roe_norm": 13.5,
-    "implied_g": -30.0,
-    "implied_E1": 11552,
+    "c_T": 0.6,
+    "roe_norm": 3.3,
+    "implied_g": 2.4,
+    "implied_E1": 13797,
     "cycle": {
      "position": "중립",
      "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
      "path": [],
-     "excess": -37371,
+     "excess": -9940,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -7309,19 +7287,19 @@
    },
    "quant": {
     "pos": "바닥권",
-    "period": "2025Q3~2026Q2",
-    "core": 16202,
-    "norm": 99024,
-    "ttm_ni": 16627,
+    "period": "2025Q4~2026Q3",
+    "core": 4615,
+    "norm": 94570,
+    "ttm_ni": 3060,
     "oneoff": false,
-    "E": 57613,
-    "per_share": 5785,
-    "bear": 4887,
-    "bull": 6571,
-    "upside": 262.0,
+    "E": 49593,
+    "per_share": 4980,
+    "bear": 4207,
+    "bull": 5657,
+    "upside": 213.2,
     "pct": 100,
     "tier": "싼 ⅓",
-    "exp_ex": 8.9,
+    "exp_ex": 8.4,
     "conflict": false
    },
    "marks": {
@@ -7333,60 +7311,60 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 386549,
-    "weighted_ps": 7363,
-    "weighted_upside": 360.8,
+    "weighted": 77572,
+    "weighted_ps": 1478,
+    "weighted_upside": -7.0,
     "stress": {
-     "E": 29597,
+     "E": 13000,
      "margin": 2.7,
      "g": -4.0,
-     "value": 276757,
-     "per_share": 5272,
+     "value": 63495,
+     "per_share": 1210,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 2.7% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 5272,
-    "max_loss": 0.0,
-    "up_bull": 436.0,
-    "asym_ratio": null,
-    "asym": "매우 유리",
+    "down_ps": 1210,
+    "max_loss": 23.9,
+    "up_bull": 7.2,
+    "asym_ratio": 0.3,
+    "asym": "불리",
     "risk": {
-     "score": 30,
+     "score": 36,
      "grade": "보통",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 12,
-      "차입 부담": 17,
-      "하방 거리": 0
+      "차입 부담": 18,
+      "하방 거리": 6
      }
     },
     "mos": 30,
-    "buy_ps": 5154,
-    "buy_gap": 222.5,
-    "implied_margin": 1.1,
-    "base_margin": 4.9,
+    "buy_ps": 1035,
+    "buy_gap": -34.9,
+    "implied_margin": 1.3,
+    "base_margin": 1.2,
     "hist_margin": [
      2.1,
      8.3,
      14.8
     ],
-    "verdict": "안전마진 확보",
-    "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 1.1%가 이어져야 해요(과거 2.1%~14.8%, 평균 8.3%, 이 리포트의 정상 이익 가정 4.9%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +436%라 손익 구조는 '매우 유리'예요."
+    "verdict": "기대 선반영",
+    "tone": "neg",
+    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 1.3%가 이어져야 해요(과거 2.1%~14.8%, 평균 8.3%, 이 리포트의 정상 이익 가정 1.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어지면 최대 약 24% 손실, 낙관 시나리오면 +7%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
-    "ni_q": -1267,
-    "por_ttm": 4.1,
-    "op_ttm": 20226,
-    "por_q": 7.3,
-    "op_q": 2881,
+    "ni_q": -2720,
+    "por_ttm": 10.6,
+    "op_ttm": 7910,
+    "por_q": null,
+    "op_q": -351,
     "cns_per": null,
     "div_yield": null,
     "dps": null,
-    "debt_eq": 88,
-    "ret_1y": -22.2,
+    "debt_eq": 89,
+    "ret_1y": -22.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": -19.2,
     "rev_cagr5": 13.2,
@@ -7398,13 +7376,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "13.5%",
+      "val": "3.3%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "4.2%",
+      "val": "0.8%",
       "note": ""
      },
      {
@@ -7428,7 +7406,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "6.5년",
+      "val": "27.0년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -7442,19 +7420,19 @@
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": false,
-      "val": "-3.8",
+      "val": "-0.7",
       "note": "2 이상이면 매우 좋음"
      },
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-2,791억",
+      "val": "-2,793억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "88%",
+      "val": "89%",
       "note": ""
      }
     ],
@@ -7556,15 +7534,15 @@
     "oneoff": []
    },
    "price": 1309,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 16067,
-   "mcap_eff": 15668,
-   "shares": 11969442,
+   "mcap": 16100,
+   "mcap_eff": 15702,
+   "shares": 11995416,
    "shares_check": {
     "dart_common": 61085917,
     "dart_period": "2026-11014",
-    "listed": 12274096,
+    "listed": 12299465,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -7578,73 +7556,69 @@
    "pbr": 0.13,
    "cycle": {
     "phase": "중립",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.6,
+    "note": "적자기(2017~21년)를 빼고 2022~25년 평균 이익을 정상으로 봤어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
     "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
+     "years": "2022~2025",
+     "n": 4,
+     "trimmed": false,
      "excluded": [],
      "margins": {
-      "2018": -3.7,
-      "2019": -6.2,
-      "2020": -0.9,
-      "2021": -0.6,
       "2022": 5.9,
       "2023": 2.1,
       "2024": 4.8,
       "2025": -0.8
      },
-     "avg_margin": 0.2,
-     "min": -6.2,
+     "avg_margin": 3.0,
+     "min": -0.8,
      "max": 5.9,
-     "ni": 314,
+     "ni": 5441,
      "oneoff": []
     },
     "ttm_margin": 2.5,
     "ttm_ni": 4541,
-    "E1_fwd": 3000,
-    "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
+    "E1_fwd": 4000,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
    "net_debt_levered": -45506,
    "dcf": {
-    "E1": 1388,
+    "E1": 4576,
     "r": 12.5,
     "c": 0.5,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 5.2,
-    "norm_per": 11.3,
+    "note": "적자기(2017~21년)를 빼고 2022~25년 평균 이익을 정상으로 봤어요",
+    "fwd_per": 3.9,
+    "norm_per": 3.4,
     "scenarios": {
      "bear": {
       "g": -5.0,
-      "value": 4945,
-      "per_share": 413,
-      "upside": -68.4
+      "value": 16304,
+      "per_share": 1359,
+      "upside": 3.8
      },
      "base": {
       "g": 0.0,
-      "value": 6080,
-      "per_share": 508,
-      "upside": -61.2
+      "value": 20045,
+      "per_share": 1671,
+      "upside": 27.7
      },
      "bull": {
       "g": 3.0,
-      "value": 6892,
-      "per_share": 576,
-      "upside": -56.0
+      "value": 22722,
+      "per_share": 1894,
+      "upside": 44.7
      }
     },
     "c_T": 0.5,
-    "roe_norm": 1.2,
-    "implied_g": 22.6,
-    "implied_E1": 3577,
+    "roe_norm": 3.9,
+    "implied_g": -5.9,
+    "implied_E1": 3584,
     "cycle": {
      "position": "중립",
      "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
      "path": [],
-     "excess": 3153,
+     "excess": -35,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -7668,13 +7642,13 @@
     "ttm_ni": 31,
     "oneoff": true,
     "E": 1541,
-    "per_share": 679,
-    "bear": 573,
-    "bull": 771,
-    "upside": -48.1,
-    "pct": 22,
+    "per_share": 677,
+    "bear": 572,
+    "bull": 769,
+    "upside": -48.3,
+    "pct": 25,
     "tier": "비싼 ⅓",
-    "exp_ex": -4.0,
+    "exp_ex": -3.6,
     "conflict": false
    },
    "marks": {
@@ -7686,45 +7660,45 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 5999,
-    "weighted_ps": 501,
-    "weighted_upside": -61.7,
+    "weighted": 19779,
+    "weighted_ps": 1649,
+    "weighted_upside": 26.0,
     "stress": {
-     "E": -5145,
-     "margin": -3.7,
+     "E": -1113,
+     "margin": -0.8,
      "g": -5.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -3.7% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
+     "value": 8206,
+     "per_share": 684,
+     "how": "2022~2025 중 가장 나쁜 해의 순이익률 -0.8% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -56.0,
-    "asym_ratio": null,
+    "down_ps": 684,
+    "max_loss": 47.7,
+    "up_bull": 44.7,
+    "asym_ratio": 0.9,
     "asym": "불리",
     "risk": {
-     "score": 85,
+     "score": 69,
      "grade": "높음",
      "parts": {
       "적자 이력": 30,
-      "이익 변동폭": 25,
+      "이익 변동폭": 18,
       "차입 부담": 10,
-      "하방 거리": 20
+      "하방 거리": 12
      }
     },
     "mos": 40,
-    "buy_ps": 301,
-    "buy_gap": -77.0,
+    "buy_ps": 989,
+    "buy_gap": -24.4,
     "implied_margin": 2.6,
-    "base_margin": 1.0,
+    "base_margin": 3.3,
     "hist_margin": [
-     -6.2,
-     0.2,
+     -0.8,
+     3.0,
      5.9
     ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 2.6%가 이어져야 해요(과거 -6.2%~5.9%, 평균 0.2%, 이 리포트의 정상 이익 가정 1.0%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -56%로 손익 구조는 '불리'예요."
+    "verdict": "가치 이하·안전마진 부족",
+    "tone": "neu",
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 2.6%가 이어져야 해요(과거 -0.8%~5.9%, 평균 3.0%, 이 리포트의 정상 이익 가정 3.3%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 +45%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -7751,7 +7725,7 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "1.2%",
+      "val": "3.9%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -7781,7 +7755,7 @@
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
       "ok": false,
-      "val": "36.5년",
+      "val": "11.1년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -7873,15 +7847,15 @@
     "oneoff": []
    },
    "price": 607,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 4309,
-   "mcap_eff": 4306,
-   "shares": 7093904,
+   "mcap": 4310,
+   "mcap_eff": 4307,
+   "shares": 7095552,
    "shares_check": {
     "dart_common": 4291063,
     "dart_period": "2026-11012",
-    "listed": 7098930,
+    "listed": 7100494,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -7893,89 +7867,10 @@
    "per": null,
    "roe": -26.4,
    "pbr": 0.14,
+   "skip": "2017년 이후 흑자를 낸 해가 2023년(18억원)뿐이고 매출이 절반 이하로 줄어 정상 이익을 정할 수 없어요.",
    "cycle": {
-    "phase": "중립",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.7,
-    "follow": null,
-    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-    "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
-     "excluded": [],
-     "margins": {
-      "2018": -5.7,
-      "2019": -0.1,
-      "2020": -10.1,
-      "2021": -6.1,
-      "2022": -0.9,
-      "2023": 2.8,
-      "2024": -6.8,
-      "2025": -17.5
-     },
-     "avg_margin": -4.9,
-     "min": -17.5,
-     "max": 2.8,
-     "ni": -2540,
-     "oneoff": []
-    },
-    "ttm_margin": -15.9,
-    "ttm_ni": -8139,
-    "E1_fwd": 1000,
-    "E1_basis": "사이클 평균 이익 70% + 전망 이익 30%"
-   },
-   "net_debt_levered": -6307,
-   "dcf": {
-    "E1": -1478,
-    "r": 13.0,
-    "c": 0.5,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 4.3,
-    "norm_per": null,
-    "scenarios": {
-     "bear": {
-      "g": -6.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     },
-     "base": {
-      "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     },
-     "bull": {
-      "g": 3.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     }
-    },
-    "c_T": 0.846,
-    "roe_norm": -4.8,
-    "implied_g": null,
-    "implied_E1": 774,
-    "cycle": {
-     "position": "중립",
-     "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-     "path": [],
-     "excess": -6661,
-     "excess_value": 0,
-     "excess_by": {
-      "bear": 0,
-      "base": 0,
-      "bull": 0
-     },
-     "bear_trough": false,
-     "ni_paths": {
-      "bear": [],
-      "base": [],
-      "bull": []
-     }
-    },
-    "net_cash_added": 0
+    "position": "중립",
+    "note": "2017년 이후 흑자를 낸 해가 2023년(18억원)뿐이고 매출이 절반 이하로 줄어 정상 이익을 정할 수 없어요."
    },
    "quant": {
     "pos": "회복기",
@@ -7984,55 +7879,6 @@
     "norm": -3053,
     "ttm_ni": -8139,
     "oneoff": false
-   },
-   "marks": {
-    "pos": "중립",
-    "pos_src": "회사별 판단",
-    "pos_raw": "중립",
-    "weights": {
-     "bear": 0.25,
-     "base": 0.5,
-     "bull": 0.25
-    },
-    "weighted": 0,
-    "weighted_ps": 0,
-    "weighted_upside": -100.0,
-    "stress": {
-     "E": -4895,
-     "margin": -10.1,
-     "g": -6.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -10.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
-    },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -100.0,
-    "asym_ratio": null,
-    "asym": "불리",
-    "risk": {
-     "score": 80,
-     "grade": "높음",
-     "parts": {
-      "적자 이력": 30,
-      "이익 변동폭": 25,
-      "차입 부담": 5,
-      "하방 거리": 20
-     }
-    },
-    "mos": 40,
-    "buy_ps": 0,
-    "buy_gap": -100.0,
-    "implied_margin": 1.6,
-    "base_margin": -3.0,
-    "hist_margin": [
-     -17.5,
-     -4.9,
-     2.8
-    ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 1.6%가 이어져야 해요(과거 -17.5%~2.8%, 평균 -4.9%, 이 리포트의 정상 이익 가정 -3.0%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -100%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -8058,8 +7904,8 @@
     "buffett": [
      {
       "name": "정상 이익 기준 ROE 15% 이상",
-      "ok": false,
-      "val": "-4.8%",
+      "ok": null,
+      "val": "–",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -8135,7 +7981,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 1/4개 통과. 이익이 크게 오르내려(적자 2016·2017·2018·2019·2020·2021·2022·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2016·2017·2018·2019·2020·2021·2022·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -8174,16 +8020,16 @@
     },
     "oneoff": []
    },
-   "price": 2540,
-   "price_date": "2026-11-13 18:39",
+   "price": 2585,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 38123,
-   "mcap_eff": 38117,
-   "shares": 15006693,
+   "mcap": 38800,
+   "mcap_eff": 38793,
+   "shares": 15006963,
    "shares_check": {
     "dart_common": 15020060,
     "dart_period": "2026-11012",
-    "listed": 15009242,
+    "listed": 15009671,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -8192,108 +8038,13 @@
    "equity_source": "DART 2026Q2",
    "net_cash": -32419,
    "dividend_yield": null,
-   "per": 24.7,
+   "per": 25.2,
    "roe": 3.9,
-   "pbr": 0.96,
+   "pbr": 0.98,
+   "skip": "2019년 이후 7년 연속 순손실이고 매출이 2,000억원에서 1,000억원으로 줄어 정상 이익을 정할 수 없어요.",
    "cycle": {
-    "phase": "바닥권",
-    "note": "손익분기 수준을 정상으로 봤어요",
-    "w_mid": 0.7,
-    "follow": null,
-    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-    "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
-     "excluded": [],
-     "margins": {
-      "2018": 0.1,
-      "2019": -1.6,
-      "2020": -14.2,
-      "2021": -13.5,
-      "2022": -7.5,
-      "2023": -1.3,
-      "2024": -1.2,
-      "2025": -0.1
-     },
-     "avg_margin": -4.2,
-     "min": -14.2,
-     "max": 0.1,
-     "ni": -4416,
-     "oneoff": []
-    },
-    "ttm_margin": 1.5,
-    "ttm_ni": 1542,
-    "E1_fwd": 500,
-    "E1_basis": "사이클 평균 이익 70% + 전망 이익 30%"
-   },
-   "net_debt_levered": -32419,
-   "dcf": {
-    "E1": -2941,
-    "r": 13.0,
-    "c": 0.5,
-    "note": "손익분기 수준을 정상으로 봤어요",
-    "fwd_per": 76.2,
-    "norm_per": null,
-    "scenarios": {
-     "bear": {
-      "g": -6.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     },
-     "base": {
-      "g": 0.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     },
-     "bull": {
-      "g": 3.0,
-      "value": 0,
-      "per_share": 0,
-      "upside": -100.0
-     }
-    },
-    "c_T": 0.846,
-    "roe_norm": -7.4,
-    "implied_g": null,
-    "implied_E1": 6503,
-    "cycle": {
-     "position": "바닥권",
-     "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-     "path": [
-      0.7,
-      0.3
-     ],
-     "excess": 4483,
-     "excess_value": 1915,
-     "excess_by": {
-      "bear": 4010,
-      "base": 1915,
-      "bull": 3083
-     },
-     "bear_trough": true,
-     "ni_paths": {
-      "bear": [
-       197,
-       0,
-       0,
-       -1470
-      ],
-      "base": [
-       197,
-       -1596
-      ],
-      "bull": [
-       197,
-       197,
-       -1596
-      ]
-     },
-     "trough_ni": 0
-    },
-    "net_cash_added": 0
+    "position": "바닥권",
+    "note": "2019년 이후 7년 연속 순손실이고 매출이 2,000억원에서 1,000억원으로 줄어 정상 이익을 정할 수 없어요."
    },
    "quant": {
     "pos": "상승기",
@@ -8303,61 +8054,12 @@
     "ttm_ni": 1542,
     "oneoff": false
    },
-   "marks": {
-    "pos": "바닥권",
-    "pos_src": "회사별 판단",
-    "pos_raw": "바닥권",
-    "weights": {
-     "bear": 0.15,
-     "base": 0.45,
-     "bull": 0.4
-    },
-    "weighted": 0,
-    "weighted_ps": 0,
-    "weighted_upside": -100.0,
-    "stress": {
-     "E": -13971,
-     "margin": -13.5,
-     "g": -6.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -13.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
-    },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -100.0,
-    "asym_ratio": null,
-    "asym": "불리",
-    "risk": {
-     "score": 96,
-     "grade": "높음",
-     "parts": {
-      "적자 이력": 30,
-      "이익 변동폭": 25,
-      "차입 부담": 21,
-      "하방 거리": 20
-     }
-    },
-    "mos": 35,
-    "buy_ps": 0,
-    "buy_gap": -100.0,
-    "implied_margin": 6.3,
-    "base_margin": -2.8,
-    "hist_margin": [
-     -14.2,
-     -4.2,
-     0.1
-    ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 6.3%가 이어져야 해요(과거 -14.2%~0.1%, 평균 -4.2%, 이 리포트의 정상 이익 가정 -2.8%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -100%로 손익 구조는 '불리'예요."
-   },
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
-    "per_q": 6.3,
+    "per_q": 6.4,
     "ni_q": 1509,
-    "por_ttm": 11.8,
+    "por_ttm": 12.0,
     "op_ttm": 3240,
     "por_q": 4.2,
     "op_q": 2283,
@@ -8365,7 +8067,7 @@
     "div_yield": null,
     "dps": null,
     "debt_eq": 89,
-    "ret_1y": -47.0,
+    "ret_1y": -46.1,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": -7.3,
@@ -8376,8 +8078,8 @@
     "buffett": [
      {
       "name": "정상 이익 기준 ROE 15% 이상",
-      "ok": false,
-      "val": "-7.4%",
+      "ok": null,
+      "val": "–",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -8459,7 +8161,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 1/4개 통과. 이익이 크게 오르내려(적자 2016·2019·2020·2021·2022·2023·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2016·2019·2020·2021·2022·2023·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -8505,15 +8207,15 @@
     ]
    },
    "price": 1441,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 63792,
-   "mcap_eff": 63792,
-   "shares": 44269257,
+   "mcap": 63800,
+   "mcap_eff": 63800,
+   "shares": 44274809,
    "shares_check": {
     "dart_common": 44282310,
     "dart_period": "2026-11012",
-    "listed": 44269341,
+    "listed": 44274809,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -8527,7 +8229,7 @@
    "pbr": 0.23,
    "cycle": {
     "phase": "회복기",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
+    "note": "2024~25년 평균 순이익을 정상으로 봤어요. 매출 감소 추세를 감안해 2022~23년 고점(230~250억원)은 쓰지 않았어요",
     "w_mid": 0.6,
     "follow": null,
     "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
@@ -8554,40 +8256,40 @@
     },
     "ttm_margin": 5.4,
     "ttm_ni": 13102,
-    "E1_fwd": 7000,
+    "E1_fwd": 11000,
     "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
    },
    "dcf": {
-    "E1": 11613,
+    "E1": 13213,
     "r": 12.0,
     "c": 0.6,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 9.1,
-    "norm_per": 5.5,
+    "note": "2024~25년 평균 순이익을 정상으로 봤어요. 매출 감소 추세를 감안해 2022~23년 고점(230~250억원)은 쓰지 않았어요",
+    "fwd_per": 5.8,
+    "norm_per": 4.8,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 84799,
-      "per_share": 1916,
-      "upside": 32.9
+      "value": 91703,
+      "per_share": 2071,
+      "upside": 43.7
      },
      "base": {
       "g": 1.0,
-      "value": 97212,
-      "per_share": 2196,
-      "upside": 52.4
+      "value": 105422,
+      "per_share": 2381,
+      "upside": 65.2
      },
      "bull": {
       "g": 4.0,
-      "value": 106306,
-      "per_share": 2401,
-      "upside": 66.6
+      "value": 115271,
+      "per_share": 2604,
+      "upside": 80.7
      }
     },
     "c_T": 0.6,
-    "roe_norm": 4.2,
-    "implied_g": -17.6,
-    "implied_E1": 5802,
+    "roe_norm": 4.7,
+    "implied_g": -20.3,
+    "implied_E1": 5976,
     "cycle": {
      "position": "회복기",
      "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
@@ -8595,32 +8297,28 @@
       0.8,
       0.4
      ],
-     "excess": 1489,
-     "excess_value": 923,
+     "excess": -111,
+     "excess_value": -69,
      "excess_by": {
-      "bear": 463,
-      "base": 923,
-      "bull": 1462
+      "bear": -88,
+      "base": -69,
+      "bull": -24
      },
-     "bear_trough": true,
+     "bear_trough": false,
      "ni_paths": {
       "bear": [
-       12804,
-       11453,
-       11453,
-       11533
+       13124,
+       13169,
+       13169
       ],
       "base": [
-       12804,
-       12209
+       13124,
+       13169
       ],
       "bull": [
-       12804,
-       12804,
-       12209
+       13169
       ]
-     },
-     "trough_ni": 11453
+     }
     },
     "net_cash_added": 33339
    },
@@ -8634,11 +8332,11 @@
     "E": 13171,
     "per_share": 1568,
     "bear": 1325,
-    "bull": 1782,
+    "bull": 1781,
     "upside": 8.8,
-    "pct": 62,
+    "pct": 66,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.7,
+    "exp_ex": 1.2,
     "conflict": false
    },
    "marks": {
@@ -8650,20 +8348,20 @@
      "base": 0.5,
      "bull": 0.3
     },
-    "weighted": 97458,
-    "weighted_ps": 2201,
-    "weighted_upside": 52.7,
+    "weighted": 105633,
+    "weighted_ps": 2386,
+    "weighted_upside": 65.6,
     "stress": {
-     "E": 11613,
+     "E": 11974,
      "margin": 4.6,
      "g": -4.0,
-     "value": 84336,
-     "per_share": 1905,
+     "value": 89917,
+     "per_share": 2031,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 4.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 1905,
+    "down_ps": 2031,
     "max_loss": 0.0,
-    "up_bull": 66.6,
+    "up_bull": 80.7,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -8677,10 +8375,10 @@
      }
     },
     "mos": 20,
-    "buy_ps": 1761,
-    "buy_gap": 22.2,
-    "implied_margin": 2.2,
-    "base_margin": 4.5,
+    "buy_ps": 1909,
+    "buy_gap": 32.5,
+    "implied_margin": 2.3,
+    "base_margin": 5.1,
     "hist_margin": [
      3.6,
      6.0,
@@ -8688,7 +8386,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 2.2%가 이어져야 해요(과거 3.6%~8.0%, 평균 6.0%, 이 리포트의 정상 이익 가정 4.5%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +67%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 2.3%가 이어져야 해요(과거 3.6%~8.0%, 평균 6.0%, 이 리포트의 정상 이익 가정 5.1%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +81%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -8700,7 +8398,7 @@
     "por_q": 8.7,
     "op_q": 1833,
     "cns_per": null,
-    "div_yield": 5.73,
+    "div_yield": 5.55,
     "dps": 80.0,
     "debt_eq": 0,
     "ret_1y": -17.4,
@@ -8715,7 +8413,7 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "4.2%",
+      "val": "4.7%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -8843,15 +8541,15 @@
     ]
    },
    "price": 13890,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 125062,
-   "mcap_eff": 125062,
-   "shares": 9003744,
+   "mcap": 125000,
+   "mcap_eff": 125000,
+   "shares": 8999280,
    "shares_check": {
     "dart_common": 9000000,
     "dart_period": "2026-11012",
-    "listed": 9003774,
+    "listed": 8999280,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -8860,7 +8558,7 @@
    "equity_source": "DART 2026Q2",
    "net_cash": 91024,
    "dividend_yield": null,
-   "per": 76.8,
+   "per": 76.7,
    "roe": 0.4,
    "pbr": 0.32,
    "cycle": {
@@ -8907,31 +8605,31 @@
     "c": 0.6,
     "note": "과거 평균 순이익률을 정상으로 봤어요",
     "fwd_per": 22.7,
-    "norm_per": 25.7,
+    "norm_per": 25.6,
     "scenarios": {
      "bear": {
       "g": -4.0,
       "value": 105943,
-      "per_share": 11767,
-      "upside": -15.3
+      "per_share": 11772,
+      "upside": -15.2
      },
      "base": {
       "g": 0.0,
       "value": 108725,
-      "per_share": 12076,
-      "upside": -13.1
+      "per_share": 12082,
+      "upside": -13.0
      },
      "bull": {
       "g": 3.0,
       "value": 111165,
-      "per_share": 12347,
+      "per_share": 12353,
       "upside": -11.1
      }
     },
     "c_T": 0.6,
     "roe_norm": 1.3,
-    "implied_g": 15.2,
-    "implied_E1": 7694,
+    "implied_g": 15.1,
+    "implied_E1": 7683,
     "cycle": {
      "position": "중립",
      "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
@@ -8960,13 +8658,13 @@
     "ttm_ni": 1629,
     "oneoff": false,
     "E": 3868,
-    "per_share": 2265,
-    "bear": 1913,
-    "bull": 2573,
+    "per_share": 2266,
+    "bear": 1914,
+    "bull": 2574,
     "upside": -83.7,
     "pct": 12,
     "tier": "비싼 ⅓",
-    "exp_ex": -11.0,
+    "exp_ex": -10.6,
     "conflict": false
    },
    "marks": {
@@ -8979,17 +8677,17 @@
      "bull": 0.25
     },
     "weighted": 108640,
-    "weighted_ps": 12066,
+    "weighted_ps": 12072,
     "weighted_upside": -13.1,
     "stress": {
      "E": 3109,
      "margin": 1.6,
      "g": -4.0,
      "value": 103375,
-     "per_share": 11481,
+     "per_share": 11487,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 1.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 11481,
+    "down_ps": 11487,
     "max_loss": 17.3,
     "up_bull": -11.1,
     "asym_ratio": null,
@@ -9005,7 +8703,7 @@
      }
     },
     "mos": 30,
-    "buy_ps": 8446,
+    "buy_ps": 8450,
     "buy_gap": -39.2,
     "implied_margin": 4.0,
     "base_margin": 2.5,
@@ -9021,21 +8719,21 @@
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
-    "per_q": 151.8,
+    "per_q": 151.7,
     "ni_q": 206,
     "por_ttm": null,
     "op_ttm": -425,
     "por_q": null,
     "op_q": -45,
     "cns_per": null,
-    "div_yield": 1.32,
+    "div_yield": 1.26,
     "dps": 175.0,
     "debt_eq": 0,
     "ret_1y": -8.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 16.5,
     "rev_cagr5": 0.8,
-    "peg": 4.65,
+    "peg": 4.64,
     "peg_g": 16.5
    },
    "checks": {
@@ -9081,7 +8779,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": false,
-      "val": "4.65",
+      "val": "4.64",
       "note": "성장률 = 최근 5년 순이익 연평균 16.5%(상한 50%)"
      },
      {
@@ -9164,16 +8862,16 @@
     },
     "oneoff": []
    },
-   "price": 1757,
-   "price_date": "2026-11-13 18:39",
+   "price": 1758,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 28988,
-   "mcap_eff": 28181,
-   "shares": 16039271,
+   "mcap": 29000,
+   "mcap_eff": 28193,
+   "shares": 16036974,
    "shares_check": {
     "dart_common": 16044519,
     "dart_period": "2026-11012",
-    "listed": 16498316,
+    "listed": 16496018,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -9185,104 +8883,10 @@
    "per": 3.7,
    "roe": 14.3,
    "pbr": 0.53,
+   "skip": "본업 이익이 손익분기 근처이고 순이익은 2021년·2026년처럼 일회성 이익으로만 커져 정상 이익을 정할 수 없어요.",
    "cycle": {
-    "phase": "바닥권",
-    "note": "손익분기 수준을 정상으로 봤어요",
-    "w_mid": 0.7,
-    "follow": null,
-    "industry": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-    "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
-     "excluded": [],
-     "margins": {
-      "2018": 0.2,
-      "2019": -34.8,
-      "2020": -23.0,
-      "2021": 26.2,
-      "2022": 1.7,
-      "2023": 1.1,
-      "2024": -2.0,
-      "2025": 2.5
-     },
-     "avg_margin": -3.3,
-     "min": -34.8,
-     "max": 26.2,
-     "ni": -2475,
-     "oneoff": []
-    },
-    "ttm_margin": 10.0,
-    "ttm_ni": 7613,
-    "E1_fwd": 500,
-    "E1_basis": "사이클 평균 이익 70% + 전망 이익 30%"
-   },
-   "dcf": {
-    "E1": -1582,
-    "r": 13.0,
-    "c": 0.5,
-    "note": "손익분기 수준을 정상으로 봤어요",
-    "fwd_per": 56.4,
-    "norm_per": null,
-    "scenarios": {
-     "bear": {
-      "g": -6.0,
-      "value": 4058,
-      "per_share": 253,
-      "upside": -85.6
-     },
-     "base": {
-      "g": 0.0,
-      "value": 1442,
-      "per_share": 90,
-      "upside": -94.9
-     },
-     "bull": {
-      "g": 4.0,
-      "value": 1920,
-      "per_share": 120,
-      "upside": -93.2
-     }
-    },
-    "c_T": 0.846,
-    "roe_norm": -3.0,
-    "implied_g": null,
-    "implied_E1": 3221,
-    "cycle": {
-     "position": "바닥권",
-     "note": "백화점 여성복은 회복, 가두점 중저가·홈쇼핑·교복은 구조적 축소 국면이에요.",
-     "path": [
-      0.7,
-      0.3
-     ],
-     "excess": 9195,
-     "excess_value": 3928,
-     "excess_by": {
-      "bear": 4258,
-      "base": 3928,
-      "bull": 6324
-     },
-     "bear_trough": true,
-     "ni_paths": {
-      "bear": [
-       4854,
-       0,
-       0,
-       -791
-      ],
-      "base": [
-       4854,
-       1176
-      ],
-      "bull": [
-       4854,
-       4854,
-       1176
-      ]
-     },
-     "trough_ni": 0
-    },
-    "net_cash_added": 7112
+    "position": "바닥권",
+    "note": "본업 이익이 손익분기 근처이고 순이익은 2021년·2026년처럼 일회성 이익으로만 커져 정상 이익을 정할 수 없어요."
    },
    "quant": {
     "pos": "하강기",
@@ -9295,60 +8899,10 @@
     "per_share": 326,
     "bear": 275,
     "bull": 370,
-    "upside": -81.4,
+    "upside": -81.5,
     "pct": 16,
     "tier": "비싼 ⅓",
-    "exp_ex": -10.2,
-    "conflict": false
-   },
-   "marks": {
-    "pos": "바닥권",
-    "pos_src": "회사별 판단",
-    "pos_raw": "바닥권",
-    "weights": {
-     "bear": 0.15,
-     "base": 0.45,
-     "bull": 0.4
-    },
-    "weighted": 2026,
-    "weighted_ps": 126,
-    "weighted_upside": -92.8,
-    "stress": {
-     "E": -14240,
-     "margin": -23.0,
-     "g": -6.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -23.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
-    },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -93.2,
-    "asym_ratio": null,
-    "asym": "불리",
-    "risk": {
-     "score": 69,
-     "grade": "높음",
-     "parts": {
-      "적자 이력": 24,
-      "이익 변동폭": 25,
-      "차입 부담": 0,
-      "하방 거리": 20
-     }
-    },
-    "mos": 35,
-    "buy_ps": 82,
-    "buy_gap": -95.3,
-    "implied_margin": 5.2,
-    "base_margin": -2.6,
-    "hist_margin": [
-     -34.8,
-     -3.3,
-     26.2
-    ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 5.2%가 이어져야 해요(과거 -34.8%~26.2%, 평균 -3.3%, 이 리포트의 정상 이익 가정 -2.6%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -93%로 손익 구조는 '불리'예요."
+    "exp_ex": -9.8
    },
    "metrics": {
     "q": "2026Q2",
@@ -9360,10 +8914,10 @@
     "por_q": null,
     "op_q": -325,
     "cns_per": null,
-    "div_yield": 5.61,
+    "div_yield": 5.69,
     "dps": 100.0,
     "debt_eq": 0,
-    "ret_1y": -46.7,
+    "ret_1y": -46.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 3.8,
@@ -9374,8 +8928,8 @@
     "buffett": [
      {
       "name": "정상 이익 기준 ROE 15% 이상",
-      "ok": false,
-      "val": "-3.0%",
+      "ok": null,
+      "val": "–",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -9457,7 +9011,7 @@
     ],
     "lynch_cat": "회생주",
     "lynch_cat_note": "적자에서 흑자로 돌아선 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 1/4개 통과. 이익이 크게 오르내려(적자 2017·2019·2020·2024년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2017·2019·2020·2024년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 회생주예요. 흑자 전환이 일회성인지, 빚을 버틸 현금이 있는지가 핵심이에요."
    }
   },
@@ -9507,16 +9061,16 @@
      }
     ]
    },
-   "price": 883000,
-   "price_date": "2026-11-13 18:39",
+   "price": 893000,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 983181,
-   "mcap_eff": 743209,
-   "shares": 841686,
+   "mcap": 994300,
+   "mcap_eff": 751610,
+   "shares": 841669,
    "shares_check": {
     "dart_common": 841631,
     "dart_period": "2026-11012",
-    "listed": 1113455,
+    "listed": 1113438,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -9527,7 +9081,7 @@
    "dividend_yield": null,
    "per": 6.3,
    "roe": 2.8,
-   "pbr": 0.17,
+   "pbr": 0.18,
    "cycle": {
     "phase": "바닥권",
     "note": "본업은 손익분기, 이익의 대부분을 금융·투자 수익으로 봤어요",
@@ -9571,32 +9125,32 @@
     "r": 11.0,
     "c": 0.5,
     "note": "본업은 손익분기, 이익의 대부분을 금융·투자 수익으로 봤어요",
-    "fwd_per": 21.2,
+    "fwd_per": 21.5,
     "norm_per": 8.1,
     "scenarios": {
      "bear": {
       "g": -4.0,
       "value": 351338,
-      "per_share": 417421,
-      "upside": -52.7
+      "per_share": 417430,
+      "upside": -53.3
      },
      "base": {
       "g": 0.0,
       "value": 481317,
-      "per_share": 571849,
-      "upside": -35.2
+      "per_share": 571861,
+      "upside": -36.0
      },
      "bull": {
       "g": 3.0,
       "value": 554321,
-      "per_share": 658584,
-      "upside": -25.4
+      "per_share": 658597,
+      "upside": -26.2
      }
     },
     "c_T": 0.5,
     "roe_norm": 2.2,
-    "implied_g": 10.1,
-    "implied_E1": 143723,
+    "implied_g": 10.4,
+    "implied_E1": 145374,
     "cycle": {
      "position": "바닥권",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
@@ -9641,13 +9195,13 @@
     "ttm_ni": 118699,
     "oneoff": false,
     "E": 87787,
-    "per_share": 549824,
-    "bear": 464471,
-    "bull": 624540,
-    "upside": -37.7,
-    "pct": 34,
-    "tier": "가운데 ⅓",
-    "exp_ex": -2.9,
+    "per_share": 549835,
+    "bear": 464481,
+    "bull": 624553,
+    "upside": -38.4,
+    "pct": 31,
+    "tier": "비싼 ⅓",
+    "exp_ex": -2.5,
     "conflict": false
    },
    "marks": {
@@ -9660,19 +9214,19 @@
      "bull": 0.4
     },
     "weighted": 491022,
-    "weighted_ps": 583379,
-    "weighted_upside": -33.9,
+    "weighted_ps": 583391,
+    "weighted_upside": -34.7,
     "stress": {
      "E": 37338,
      "margin": 1.9,
      "g": -4.0,
      "value": 327675,
-     "per_share": 389307,
+     "per_share": 389315,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 1.9% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 389307,
-    "max_loss": 55.9,
-    "up_bull": -25.4,
+    "down_ps": 389315,
+    "max_loss": 56.4,
+    "up_bull": -26.2,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -9686,9 +9240,9 @@
      }
     },
     "mos": 25,
-    "buy_ps": 437534,
-    "buy_gap": -50.4,
-    "implied_margin": 7.3,
+    "buy_ps": 437543,
+    "buy_gap": -51.0,
+    "implied_margin": 7.4,
     "base_margin": 4.7,
     "hist_margin": [
      -0.8,
@@ -9697,7 +9251,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 7.3%가 이어져야 해요(과거 -0.8%~12.6%, 평균 6.7%, 이 리포트의 정상 이익 가정 4.7%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 56% 손실, 낙관 시나리오면 -25%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 7.4%가 이어져야 해요(과거 -0.8%~12.6%, 평균 6.7%, 이 리포트의 정상 이익 가정 4.7%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 불황이 길어지면 최대 약 56% 손실, 낙관 시나리오면 -26%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -9709,10 +9263,10 @@
     "por_q": null,
     "op_q": -1082,
     "cns_per": null,
-    "div_yield": 0.21,
+    "div_yield": 0.2,
     "dps": 1750.0,
     "debt_eq": 0,
-    "ret_1y": 9.4,
+    "ret_1y": 10.7,
     "ret_1y_from": "2025-11",
     "ni_cagr5": -12.0,
     "rev_cagr5": 1.0,
@@ -9814,10 +9368,10 @@
    "name": "DI동일",
    "group": "섬유·소재·가죽",
    "ttm": {
-    "rev": 633529,
-    "op": 588,
-    "ni": 6367,
-    "period": "2025Q3~2026Q2"
+    "rev": 664749,
+    "op": -363,
+    "ni": 429,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -9827,10 +9381,10 @@
      -1.6,
      5.9
     ],
-    "trend_rev": 643963,
-    "ttm_rev": 633529,
-    "norm_ni": 7152,
-    "trend_g": -3.7,
+    "trend_rev": 649057,
+    "ttm_rev": 664749,
+    "norm_ni": 7208,
+    "trend_g": -3.4,
     "margins": {
      "2016": -0.46,
      "2017": -0.74,
@@ -9845,27 +9399,27 @@
     },
     "oneoff": []
    },
-   "price": 23550,
-   "price_date": "2026-11-13 18:39",
+   "price": 23950,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 487842,
-   "mcap_eff": 487705,
-   "shares": 20709342,
+   "mcap": 496100,
+   "mcap_eff": 495960,
+   "shares": 20708142,
    "shares_check": {
     "dart_common": 20709768,
-    "dart_period": "2026-11012",
-    "listed": 20715177,
+    "dart_period": "2026-11014",
+    "listed": 20713987,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 526234,
-   "equity_source": "DART 2026Q2",
-   "net_cash": 53579,
+   "equity": 517624,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 84655,
    "dividend_yield": null,
-   "per": 76.6,
-   "roe": 1.2,
-   "pbr": 0.93,
+   "per": 1156.1,
+   "roe": 0.1,
+   "pbr": 0.96,
    "cycle": {
     "phase": "중립",
     "note": "최근 평균 이익을 정상으로 봤어요",
@@ -9890,54 +9444,50 @@
      "avg_margin": 1.7,
      "min": -1.6,
      "max": 5.9,
-     "ni": 10650,
+     "ni": 11174,
      "oneoff": []
     },
-    "ttm_margin": 1.0,
-    "ttm_ni": 6367,
+    "ttm_margin": 0.1,
+    "ttm_ni": 429,
     "E1_fwd": 15000,
     "E1_basis": "사이클 평균 이익 60% + 전망 이익 40%"
    },
-   "ttm_news": {
-    "period": "2025Q3~2026Q2 일회성 손익 제외(영업이익 기준)",
-    "ni": 150
-   },
    "dcf": {
-    "E1": 12390,
+    "E1": 12704,
     "r": 11.5,
     "c": 0.5,
     "note": "최근 평균 이익을 정상으로 봤어요",
-    "fwd_per": 32.5,
-    "norm_per": 39.4,
+    "fwd_per": 33.1,
+    "norm_per": 39.0,
     "scenarios": {
      "bear": {
       "g": -4.0,
-      "value": 99647,
-      "per_share": 4812,
-      "upside": -79.6
+      "value": 129471,
+      "per_share": 6252,
+      "upside": -73.9
      },
      "base": {
       "g": 1.0,
-      "value": 110639,
-      "per_share": 5342,
-      "upside": -77.3
+      "value": 140165,
+      "per_share": 6769,
+      "upside": -71.7
      },
      "bull": {
       "g": 5.0,
-      "value": 121381,
-      "per_share": 5861,
-      "upside": -75.1
+      "value": 150615,
+      "per_share": 7273,
+      "upside": -69.6
      }
     },
     "c_T": 0.5,
-    "roe_norm": 2.4,
-    "implied_g": 49.9,
-    "implied_E1": 87184,
+    "roe_norm": 2.5,
+    "implied_g": 49.2,
+    "implied_E1": 83279,
     "cycle": {
      "position": "중립",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
      "path": [],
-     "excess": -12240,
+     "excess": -12275,
      "excess_value": 0,
      "excess_by": {
       "bear": 0,
@@ -9951,20 +9501,20 @@
       "bull": []
      }
     },
-    "net_cash_added": 53579
+    "net_cash_added": 84655
    },
    "quant": {
     "pos": "회복기",
-    "period": "2025Q3~2026Q2",
-    "core": 459,
-    "norm": 7152,
-    "ttm_ni": 6367,
-    "oneoff": true,
-    "E": 3805,
-    "per_share": 969,
-    "bear": 818,
-    "bull": 1100,
-    "upside": -95.9,
+    "period": "2025Q4~2026Q3",
+    "core": 73,
+    "norm": 7208,
+    "ttm_ni": 429,
+    "oneoff": false,
+    "E": 3641,
+    "per_share": 927,
+    "bear": 783,
+    "bull": 1053,
+    "upside": -96.1,
     "pct": 0,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
@@ -9979,37 +9529,37 @@
      "base": 0.5,
      "bull": 0.25
     },
-    "weighted": 110576,
-    "weighted_ps": 5339,
-    "weighted_upside": -77.3,
+    "weighted": 140104,
+    "weighted_ps": 6766,
+    "weighted_upside": -71.7,
     "stress": {
      "E": 0,
      "margin": 0.0,
      "g": -4.0,
-     "value": 84639,
-     "per_share": 4087,
+     "value": 114083,
+     "per_share": 5509,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 0.0% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 4087,
-    "max_loss": 82.6,
-    "up_bull": -75.1,
+    "down_ps": 5509,
+    "max_loss": 77.0,
+    "up_bull": -69.6,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
-     "score": 63,
+     "score": 62,
      "grade": "높음",
      "parts": {
       "적자 이력": 18,
       "이익 변동폭": 25,
       "차입 부담": 0,
-      "하방 거리": 20
+      "하방 거리": 19
      }
     },
     "mos": 40,
-    "buy_ps": 3203,
-    "buy_gap": -86.4,
-    "implied_margin": 13.5,
-    "base_margin": 1.9,
+    "buy_ps": 4060,
+    "buy_gap": -83.0,
+    "implied_margin": 12.8,
+    "base_margin": 2.0,
     "hist_margin": [
      -1.6,
      1.7,
@@ -10017,22 +9567,22 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 13.5%가 이어져야 해요(과거 -1.6%~5.9%, 평균 1.7%, 이 리포트의 정상 이익 가정 1.9%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 불황이 길어지면 최대 약 83% 손실, 낙관 시나리오면 -75%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 12.8%가 이어져야 해요(과거 -1.6%~5.9%, 평균 1.7%, 이 리포트의 정상 이익 가정 2.0%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 불황이 길어지면 최대 약 77% 손실, 낙관 시나리오면 -70%로 손익 구조는 '불리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 19.8,
-    "ni_q": 6161,
-    "por_ttm": 829.4,
-    "op_ttm": 588,
-    "por_q": 36.4,
-    "op_q": 3346,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": null,
+    "ni_q": -5535,
+    "por_ttm": null,
+    "op_ttm": -363,
+    "por_q": null,
+    "op_q": -1229,
     "cns_per": null,
     "div_yield": 0.4,
     "dps": 95.0,
     "debt_eq": 0,
-    "ret_1y": 25.5,
+    "ret_1y": 27.6,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": -2.4,
@@ -10044,13 +9594,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "2.4%",
+      "val": "2.5%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "1.2%",
+      "val": "0.1%",
       "note": ""
      },
      {
@@ -10094,7 +9644,7 @@
      {
       "name": "순현금 보유",
       "ok": true,
-      "val": "536억",
+      "val": "847억",
       "note": ""
      },
      {
@@ -10176,16 +9726,16 @@
      }
     ]
    },
-   "price": 10290,
-   "price_date": "2026-11-13 18:39",
+   "price": 10380,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 236297,
-   "mcap_eff": 223635,
-   "shares": 21733236,
+   "mcap": 238300,
+   "mcap_eff": 225527,
+   "shares": 21727071,
    "shares_check": {
     "dart_common": 21729480,
     "dart_period": "2026-11012",
-    "listed": 22963710,
+    "listed": 22957611,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -10196,7 +9746,7 @@
    "dividend_yield": null,
    "per": 4.8,
    "roe": 4.9,
-   "pbr": 0.23,
+   "pbr": 0.24,
    "cycle": {
     "phase": "중립",
     "note": "본업 평균 이익과 금융 수익을 더했어요",
@@ -10234,32 +9784,32 @@
     "r": 11.0,
     "c": 0.6,
     "note": "본업 평균 이익과 금융 수익을 더했어요",
-    "fwd_per": 16.0,
-    "norm_per": 10.2,
+    "fwd_per": 16.1,
+    "norm_per": 10.3,
     "scenarios": {
      "bear": {
       "g": -4.0,
       "value": 222306,
-      "per_share": 10229,
-      "upside": -0.6
+      "per_share": 10232,
+      "upside": -1.4
      },
      "base": {
       "g": 0.0,
       "value": 241194,
-      "per_share": 11098,
-      "upside": 7.9
+      "per_share": 11101,
+      "upside": 6.9
      },
      "bull": {
       "g": 3.0,
       "value": 257778,
-      "per_share": 11861,
-      "upside": 15.3
+      "per_share": 11864,
+      "upside": 14.3
      }
     },
     "c_T": 0.6,
     "roe_norm": 2.3,
-    "implied_g": -3.7,
-    "implied_E1": 18958,
+    "implied_g": -3.3,
+    "implied_E1": 19267,
     "cycle": {
      "position": "중립",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
@@ -10288,13 +9838,13 @@
     "ttm_ni": 47017,
     "oneoff": true,
     "E": 22044,
-    "per_share": 5347,
-    "bear": 4517,
-    "bull": 6074,
-    "upside": -48.0,
-    "pct": 25,
+    "per_share": 5349,
+    "bear": 4518,
+    "bull": 6075,
+    "upside": -48.5,
+    "pct": 22,
     "tier": "비싼 ⅓",
-    "exp_ex": -4.0,
+    "exp_ex": -3.6,
     "conflict": false
    },
    "marks": {
@@ -10307,35 +9857,35 @@
      "bull": 0.25
     },
     "weighted": 240618,
-    "weighted_ps": 11071,
-    "weighted_upside": 7.6,
+    "weighted_ps": 11075,
+    "weighted_upside": 6.7,
     "stress": {
      "E": 8270,
      "margin": 1.5,
      "g": -4.0,
      "value": 202421,
-     "per_share": 9314,
+     "per_share": 9317,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 1.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 9314,
-    "max_loss": 9.5,
-    "up_bull": 15.3,
-    "asym_ratio": 1.6,
+    "down_ps": 9317,
+    "max_loss": 10.2,
+    "up_bull": 14.3,
+    "asym_ratio": 1.4,
     "asym": "균형",
     "risk": {
-     "score": 27,
+     "score": 28,
      "grade": "보통",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 25,
       "차입 부담": 0,
-      "하방 거리": 2
+      "하방 거리": 3
      }
     },
     "mos": 30,
-    "buy_ps": 7750,
-    "buy_gap": -24.7,
-    "implied_margin": 3.4,
+    "buy_ps": 7752,
+    "buy_gap": -25.3,
+    "implied_margin": 3.5,
     "base_margin": 4.0,
     "hist_margin": [
      1.4,
@@ -10344,22 +9894,22 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 3.4%가 이어져야 해요(과거 1.4%~19.3%, 평균 5.0%, 이 리포트의 정상 이익 가정 4.0%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 9% 손실, 낙관 시나리오면 +15%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 0.0%씩 늘면서 순이익률 3.5%가 이어져야 해요(과거 1.4%~19.3%, 평균 5.0%, 이 리포트의 정상 이익 가정 4.0%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 10% 손실, 낙관 시나리오면 +14%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
     "per_q": 1.9,
     "ni_q": 29962,
-    "por_ttm": 9.6,
+    "por_ttm": 9.7,
     "op_ttm": 23331,
     "por_q": 4.5,
     "op_q": 12490,
     "cns_per": null,
-    "div_yield": 4.03,
+    "div_yield": 3.85,
     "dps": 400.0,
     "debt_eq": 8,
-    "ret_1y": -16.9,
+    "ret_1y": -16.2,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 27.0,
     "rev_cagr5": 2.2,
@@ -10415,7 +9965,7 @@
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "6.5",
+      "val": "6.4",
       "note": "2 이상이면 매우 좋음"
      },
      {
@@ -10503,16 +10053,16 @@
      }
     ]
    },
-   "price": 7700,
-   "price_date": "2026-11-13 18:39",
+   "price": 7730,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 211149,
-   "mcap_eff": 200150,
-   "shares": 25993506,
+   "mcap": 211900,
+   "mcap_eff": 200858,
+   "shares": 25984217,
    "shares_check": {
     "dart_common": 25986851,
     "dart_period": "2026-11012",
-    "listed": 27421981,
+    "listed": 27412678,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -10562,32 +10112,32 @@
     "r": 10.0,
     "c": 0.6,
     "note": "임대 이익 평균을 정상으로 봤어요",
-    "fwd_per": 15.4,
+    "fwd_per": 15.5,
     "norm_per": 9.9,
     "scenarios": {
      "bear": {
       "g": -2.0,
       "value": 127168,
-      "per_share": 4892,
-      "upside": -36.5
+      "per_share": 4894,
+      "upside": -36.7
      },
      "base": {
       "g": 1.0,
       "value": 145560,
-      "per_share": 5600,
-      "upside": -27.3
+      "per_share": 5602,
+      "upside": -27.5
      },
      "bull": {
       "g": 3.0,
       "value": 159295,
-      "per_share": 6128,
-      "upside": -20.4
+      "per_share": 6130,
+      "upside": -20.7
      }
     },
     "c_T": 0.6,
     "roe_norm": 2.5,
     "implied_g": 8.1,
-    "implied_E1": 27917,
+    "implied_E1": 28016,
     "cycle": {
      "position": "중립",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
@@ -10616,13 +10166,13 @@
     "ttm_ni": 52332,
     "oneoff": false,
     "E": 37183,
-    "per_share": 7541,
-    "bear": 6370,
-    "bull": 8566,
-    "upside": -2.1,
-    "pct": 50,
+    "per_share": 7544,
+    "bear": 6373,
+    "bull": 8569,
+    "upside": -2.4,
+    "pct": 56,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.0,
+    "exp_ex": 0.4,
     "conflict": false
    },
    "marks": {
@@ -10635,19 +10185,19 @@
      "bull": 0.25
     },
     "weighted": 144396,
-    "weighted_ps": 5555,
-    "weighted_upside": -27.9,
+    "weighted_ps": 5557,
+    "weighted_upside": -28.1,
     "stress": {
      "E": 4557,
      "margin": 1.1,
      "g": -2.0,
      "value": 103673,
-     "per_share": 3988,
+     "per_share": 3990,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 1.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 3988,
-    "max_loss": 48.2,
-    "up_bull": -20.4,
+    "down_ps": 3990,
+    "max_loss": 48.4,
+    "up_bull": -20.7,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -10661,9 +10211,9 @@
      }
     },
     "mos": 30,
-    "buy_ps": 3888,
-    "buy_gap": -49.5,
-    "implied_margin": 6.7,
+    "buy_ps": 3890,
+    "buy_gap": -49.7,
+    "implied_margin": 6.8,
     "base_margin": 4.9,
     "hist_margin": [
      -3.4,
@@ -10672,7 +10222,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 6.7%가 이어져야 해요(과거 -3.4%~12.7%, 평균 5.7%, 이 리포트의 정상 이익 가정 4.9%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 -20%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 6.8%가 이어져야 해요(과거 -3.4%~12.7%, 평균 5.7%, 이 리포트의 정상 이익 가정 4.9%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 -21%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -10684,10 +10234,10 @@
     "por_q": 4.5,
     "op_q": 11166,
     "cns_per": null,
-    "div_yield": 2.17,
+    "div_yield": 2.07,
     "dps": 160.0,
     "debt_eq": 26,
-    "ret_1y": 8.8,
+    "ret_1y": 9.2,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 29.5,
     "rev_cagr5": 4.6,
@@ -10820,16 +10370,16 @@
     },
     "oneoff": []
    },
-   "price": 31550,
-   "price_date": "2026-11-13 18:39",
+   "price": 30900,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 52975,
-   "mcap_eff": 35922,
-   "shares": 1138574,
+   "mcap": 51900,
+   "mcap_eff": 35198,
+   "shares": 1139094,
    "shares_check": {
     "dart_common": 1139470,
     "dart_period": "2026-11012",
-    "listed": 1679092,
+    "listed": 1679612,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -10838,9 +10388,9 @@
    "equity_source": "DART 2026Q2",
    "net_cash": 91240,
    "dividend_yield": null,
-   "per": 71.3,
+   "per": 69.8,
    "roe": 0.2,
-   "pbr": 0.16,
+   "pbr": 0.15,
    "skip": "본업 적자와 구조조정으로 정상 이익을 정할 수 없어 적정가를 계산하지 않았어요.",
    "cycle": {
     "position": "바닥권",
@@ -10857,7 +10407,7 @@
    "metrics": {
     "q": "2026Q2",
     "ttm_period": "2025Q3~2026Q2",
-    "per_q": 10.3,
+    "per_q": 10.1,
     "ni_q": 875,
     "por_ttm": null,
     "op_ttm": -4281,
@@ -10867,11 +10417,11 @@
     "div_yield": 3.24,
     "dps": 1000.0,
     "debt_eq": 0,
-    "ret_1y": -16.5,
+    "ret_1y": -18.3,
     "ret_1y_from": "2025-11",
     "ni_cagr5": 38.2,
     "rev_cagr5": -17.3,
-    "peg": 1.86,
+    "peg": 1.82,
     "peg_g": 38.2
    },
    "checks": {
@@ -10917,7 +10467,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": false,
-      "val": "1.86",
+      "val": "1.82",
       "note": "성장률 = 최근 5년 순이익 연평균 38.2%(상한 50%)"
      },
      {
@@ -10969,10 +10519,10 @@
    "name": "백산",
    "group": "섬유·소재·가죽",
    "ttm": {
-    "rev": 505173,
-    "op": 49320,
-    "ni": 35472,
-    "period": "2025Q3~2026Q2"
+    "rev": 493246,
+    "op": 45475,
+    "ni": 24375,
+    "period": "2025Q4~2026Q3"
    },
    "hist": {
     "years": "2016~2025",
@@ -10982,10 +10532,10 @@
      0.8,
      12.2
     ],
-    "trend_rev": 564350,
-    "ttm_rev": 505173,
-    "norm_ni": 39605,
-    "trend_g": 9.2,
+    "trend_rev": 568217,
+    "ttm_rev": 493246,
+    "norm_ni": 39876,
+    "trend_g": 8.9,
     "margins": {
      "2016": 10.89,
      "2017": 4.25,
@@ -11011,31 +10561,31 @@
      }
     ]
    },
-   "price": 9500,
-   "price_date": "2026-11-13 18:39",
+   "price": 9840,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 187788,
-   "mcap_eff": 187788,
-   "shares": 19767158,
+   "mcap": 194500,
+   "mcap_eff": 194500,
+   "shares": 19766260,
    "shares_check": {
     "dart_common": 19771079,
     "dart_period": "2026-11012",
-    "listed": 19767206,
+    "listed": 19766260,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
    },
-   "equity": 270095,
-   "equity_source": "DART 2026Q2",
-   "net_cash": -42459,
+   "equity": 257485,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -24106,
    "dividend_yield": null,
-   "per": 5.3,
-   "roe": 13.1,
-   "pbr": 0.7,
+   "per": 8.0,
+   "roe": 9.5,
+   "pbr": 0.76,
    "cycle": {
     "phase": "회복기",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.5,
+    "note": "나이키 재고 사이클 중간 수준인 2023~25년 평균 순이익(약 450억원)에서 차입 부담을 감안해 낮췄어요",
+    "w_mid": 0.4,
     "follow": null,
     "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
     "midcycle": {
@@ -11056,46 +10606,46 @@
      "avg_margin": 6.2,
      "min": -4.1,
      "max": 12.2,
-     "ni": 31472,
+     "ni": 30729,
      "oneoff": []
     },
-    "ttm_margin": 7.0,
-    "ttm_ni": 35472,
-    "E1_fwd": 13000,
-    "E1_basis": "사이클 평균 이익 50% + 전망 이익 50%"
+    "ttm_margin": 4.9,
+    "ttm_ni": 24375,
+    "E1_fwd": 38000,
+    "E1_basis": "사이클 평균 이익 40% + 전망 이익 60%"
    },
-   "net_debt_levered": -42459,
+   "net_debt_levered": -24106,
    "dcf": {
-    "E1": 22236,
+    "E1": 35092,
     "r": 11.5,
     "c": 0.55,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 14.4,
-    "norm_per": 8.4,
+    "note": "나이키 재고 사이클 중간 수준인 2023~25년 평균 순이익(약 450억원)에서 차입 부담을 감안해 낮췄어요",
+    "fwd_per": 5.1,
+    "norm_per": 5.5,
     "scenarios": {
      "bear": {
       "g": -3.0,
-      "value": 128550,
-      "per_share": 6503,
-      "upside": -31.5
+      "value": 197031,
+      "per_share": 9968,
+      "upside": 1.3
      },
      "base": {
       "g": 3.0,
-      "value": 169717,
-      "per_share": 8586,
-      "upside": -9.6
+      "value": 264373,
+      "per_share": 13375,
+      "upside": 35.9
      },
      "bull": {
       "g": 6.0,
-      "value": 197927,
-      "per_share": 10013,
-      "upside": 5.4
+      "value": 308617,
+      "per_share": 15613,
+      "upside": 58.7
      }
     },
-    "c_T": 0.757,
-    "roe_norm": 8.2,
-    "implied_g": 5.3,
-    "implied_E1": 24714,
+    "c_T": 0.826,
+    "roe_norm": 13.6,
+    "implied_g": -3.5,
+    "implied_E1": 26027,
     "cycle": {
      "position": "회복기",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
@@ -11103,50 +10653,46 @@
       0.8,
       0.4
      ],
-     "excess": 13236,
-     "excess_value": 7565,
+     "excess": -10717,
+     "excess_value": -6126,
      "excess_by": {
-      "bear": 5223,
-      "base": 7565,
-      "bull": 12008
+      "bear": -7826,
+      "base": -6126,
+      "bull": -2115
      },
-     "bear_trough": true,
+     "bear_trough": false,
      "ni_paths": {
       "bear": [
-       32825,
-       22236,
-       22236,
-       22236
+       26518,
+       30805,
+       30805
       ],
       "base": [
-       32825,
-       27530
+       26518,
+       30805
       ],
       "bull": [
-       32825,
-       32825,
-       27530
+       30805
       ]
-     },
-     "trough_ni": 22236
+     }
     },
     "net_cash_added": 0
    },
    "quant": {
-    "pos": "중립",
-    "period": "2025Q3~2026Q2",
-    "core": 36971,
-    "norm": 37049,
-    "ttm_ni": 35472,
+    "pos": "바닥권",
+    "period": "2025Q4~2026Q3",
+    "core": 29923,
+    "norm": 37303,
+    "ttm_ni": 24375,
     "oneoff": false,
-    "E": 37010,
-    "per_share": 9870,
-    "bear": 8338,
-    "bull": 11211,
-    "upside": 3.9,
-    "pct": 53,
+    "E": 33613,
+    "per_share": 8964,
+    "bear": 7573,
+    "bull": 10183,
+    "upside": -8.9,
+    "pct": 50,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.4,
+    "exp_ex": 0.0,
     "conflict": false
    },
    "marks": {
@@ -11158,60 +10704,60 @@
      "base": 0.5,
      "bull": 0.3
     },
-    "weighted": 169947,
-    "weighted_ps": 8597,
-    "weighted_upside": -9.5,
+    "weighted": 264178,
+    "weighted_ps": 13365,
+    "weighted_upside": 35.8,
     "stress": {
-     "E": 8465,
+     "E": 8523,
      "margin": 1.5,
      "g": -3.0,
-     "value": 104978,
-     "per_share": 5311,
+     "value": 161630,
+     "per_share": 8177,
      "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 1.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 5311,
-    "max_loss": 44.1,
-    "up_bull": 5.4,
-    "asym_ratio": 0.1,
-    "asym": "불리",
+    "down_ps": 8177,
+    "max_loss": 16.9,
+    "up_bull": 58.7,
+    "asym_ratio": 3.5,
+    "asym": "유리",
     "risk": {
-     "score": 42,
+     "score": 34,
      "grade": "보통",
      "parts": {
       "적자 이력": 6,
       "이익 변동폭": 21,
-      "차입 부담": 4,
-      "하방 거리": 11
+      "차입 부담": 2,
+      "하방 거리": 4
      }
     },
     "mos": 30,
-    "buy_ps": 6018,
-    "buy_gap": -36.7,
-    "implied_margin": 4.4,
-    "base_margin": 3.9,
+    "buy_ps": 9356,
+    "buy_gap": -4.9,
+    "implied_margin": 4.6,
+    "base_margin": 6.2,
     "hist_margin": [
      -4.1,
      6.2,
      12.2
     ],
-    "verdict": "기대 선반영",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 4.4%가 이어져야 해요(과거 -4.1%~12.2%, 평균 6.2%, 이 리포트의 정상 이익 가정 3.9%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 44% 손실, 낙관 시나리오면 +5%로 손익 구조는 '불리'예요."
+    "verdict": "가치 이하·안전마진 부족",
+    "tone": "neu",
+    "note": "지금 주가가 맞으려면 이익이 연 3.0%씩 늘면서 순이익률 4.6%가 이어져야 해요(과거 -4.1%~12.2%, 평균 6.2%, 이 리포트의 정상 이익 가정 6.2%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 불황이 길어지면 최대 약 17% 손실, 낙관 시나리오면 +59%로 손익 구조는 '유리'예요."
    },
    "metrics": {
-    "q": "2026Q2",
-    "ttm_period": "2025Q3~2026Q2",
-    "per_q": 5.2,
-    "ni_q": 9075,
-    "por_ttm": 3.8,
-    "op_ttm": 49320,
-    "por_q": 2.9,
-    "op_q": 16339,
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": null,
+    "ni_q": -2198,
+    "por_ttm": 4.3,
+    "op_ttm": 45475,
+    "por_q": 5.4,
+    "op_q": 9045,
     "cns_per": null,
-    "div_yield": 4.56,
+    "div_yield": 4.57,
     "dps": 450.0,
-    "debt_eq": 37,
-    "ret_1y": -27.0,
+    "debt_eq": 36,
+    "ret_1y": -24.4,
     "ret_1y_from": "2025-11",
     "ni_cagr5": null,
     "rev_cagr5": 5.7,
@@ -11223,13 +10769,13 @@
      {
       "name": "정상 이익 기준 ROE 15% 이상",
       "ok": false,
-      "val": "8.2%",
+      "val": "13.6%",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
       "name": "최근 4분기 ROE 15% 이상",
       "ok": false,
-      "val": "13.1%",
+      "val": "9.5%",
       "note": ""
      },
      {
@@ -11252,8 +10798,8 @@
      },
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
-      "ok": false,
-      "val": "4.5년",
+      "ok": true,
+      "val": "2.6년",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -11273,13 +10819,13 @@
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-425억",
+      "val": "-241억",
       "note": ""
      },
      {
       "name": "차입금이 자본보다 적음",
       "ok": true,
-      "val": "37%",
+      "val": "36%",
       "note": ""
      }
     ],
@@ -11305,7 +10851,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 0/6개 통과. 이익이 크게 오르내려(적자 2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 1/6개 통과. 이익이 크게 오르내려(적자 2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -11344,16 +10890,16 @@
     },
     "oneoff": []
    },
-   "price": 982,
-   "price_date": "2026-11-13 18:39",
+   "price": 983,
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 27715,
-   "mcap_eff": 26748,
-   "shares": 27238289,
+   "mcap": 27800,
+   "mcap_eff": 26832,
+   "shares": 27296033,
    "shares_check": {
     "dart_common": 27246521,
     "dart_period": "2026-11012",
-    "listed": 28223350,
+    "listed": 28280773,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -11365,89 +10911,10 @@
    "per": null,
    "roe": -29.6,
    "pbr": 0.62,
+   "skip": "2023~25년 연속 순손실(2025년 -182억원)이고 플랜트 수주에 따라 손익이 크게 흔들려 정상 이익을 정할 수 없어요.",
    "cycle": {
-    "phase": "중립",
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "w_mid": 0.7,
-    "follow": null,
-    "industry": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
-    "midcycle": {
-     "years": "2018~2025",
-     "n": 8,
-     "trimmed": true,
-     "excluded": [],
-     "margins": {
-      "2018": 1.4,
-      "2019": -1.4,
-      "2020": 3.3,
-      "2021": 2.1,
-      "2022": 0.1,
-      "2023": -1.1,
-      "2024": -1.4,
-      "2025": -6.7
-     },
-     "avg_margin": -0.1,
-     "min": -6.7,
-     "max": 3.3,
-     "ni": -135,
-     "oneoff": []
-    },
-    "ttm_margin": -4.9,
-    "ttm_ni": -12830,
-    "E1_fwd": 2000,
-    "E1_basis": "사이클 평균 이익 70% + 전망 이익 30%"
-   },
-   "net_debt_levered": -156789,
-   "dcf": {
-    "E1": 506,
-    "r": 13.0,
-    "c": 0.5,
-    "note": "과거 평균 순이익률을 정상으로 봤어요",
-    "fwd_per": 13.4,
-    "norm_per": 52.9,
-    "scenarios": {
-     "bear": {
-      "g": -5.0,
-      "value": 1729,
-      "per_share": 63,
-      "upside": -93.5
-     },
-     "base": {
-      "g": 1.0,
-      "value": 2207,
-      "per_share": 81,
-      "upside": -91.7
-     },
-     "bull": {
-      "g": 4.0,
-      "value": 2498,
-      "per_share": 92,
-      "upside": -90.7
-     }
-    },
-    "c_T": 0.5,
-    "roe_norm": 1.2,
-    "implied_g": 64.1,
-    "implied_E1": 6132,
-    "cycle": {
-     "position": "중립",
-     "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
-     "path": [],
-     "excess": -13336,
-     "excess_value": 0,
-     "excess_by": {
-      "bear": 0,
-      "base": 0,
-      "bull": 0
-     },
-     "bear_trough": false,
-     "ni_paths": {
-      "bear": [],
-      "base": [],
-      "bull": []
-     }
-    },
-    "net_cash_added": 0
+    "position": "중립",
+    "note": "2023~25년 연속 순손실(2025년 -182억원)이고 플랜트 수주에 따라 손익이 크게 흔들려 정상 이익을 정할 수 없어요."
    },
    "quant": {
     "pos": "회복기",
@@ -11456,55 +10923,6 @@
     "norm": -432,
     "ttm_ni": -12830,
     "oneoff": false
-   },
-   "marks": {
-    "pos": "중립",
-    "pos_src": "회사별 판단",
-    "pos_raw": "중립",
-    "weights": {
-     "bear": 0.25,
-     "base": 0.5,
-     "bull": 0.25
-    },
-    "weighted": 2160,
-    "weighted_ps": 79,
-    "weighted_upside": -92.0,
-    "stress": {
-     "E": -4608,
-     "margin": -1.4,
-     "g": -5.0,
-     "value": 0,
-     "per_share": 0,
-     "how": "2018~2025 중 두 번째로 나쁜 해의 순이익률 -1.4% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
-    },
-    "down_ps": 0,
-    "max_loss": 100.0,
-    "up_bull": -90.6,
-    "asym_ratio": null,
-    "asym": "불리",
-    "risk": {
-     "score": 100,
-     "grade": "높음",
-     "parts": {
-      "적자 이력": 30,
-      "이익 변동폭": 25,
-      "차입 부담": 25,
-      "하방 거리": 20
-     }
-    },
-    "mos": 40,
-    "buy_ps": 47,
-    "buy_gap": -95.2,
-    "implied_margin": 1.9,
-    "base_margin": 0.2,
-    "hist_margin": [
-     -6.7,
-     -0.1,
-     3.3
-    ],
-    "verdict": "낙관 시나리오도 넘는 가격",
-    "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 1.0%씩 늘면서 순이익률 1.9%가 이어져야 해요(과거 -6.7%~3.3%, 평균 -0.1%, 이 리포트의 정상 이익 가정 0.2%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -91%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q2",
@@ -11516,7 +10934,7 @@
     "por_q": 3.1,
     "op_q": 2179,
     "cns_per": null,
-    "div_yield": 2.03,
+    "div_yield": 2.04,
     "dps": 20.0,
     "debt_eq": 380,
     "ret_1y": -42.6,
@@ -11530,8 +10948,8 @@
     "buffett": [
      {
       "name": "정상 이익 기준 ROE 15% 이상",
-      "ok": false,
-      "val": "1.2%",
+      "ok": null,
+      "val": "–",
       "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
      },
      {
@@ -11560,8 +10978,8 @@
      },
      {
       "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
-      "ok": false,
-      "val": "325.9년",
+      "ok": null,
+      "val": "–",
       "note": "금융사는 해당 없음"
      }
     ],
@@ -11607,7 +11025,7 @@
     ],
     "lynch_cat": "경기순환주",
     "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
-    "buffett_take": "버핏 관점: 숫자 기준 0/6개 통과. 이익이 크게 오르내려(적자 2016·2017·2019·2023·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2016·2017·2019·2023·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
     "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
    }
   },
@@ -11652,15 +11070,15 @@
     ]
    },
    "price": 66600,
-   "price_date": "2026-11-13 18:39",
+   "price_date": "2026-11-13 23:56",
    "price_source": "네이버 금융",
-   "mcap": 442880,
-   "mcap_eff": 236672,
-   "shares": 3553634,
+   "mcap": 442800,
+   "mcap_eff": 236592,
+   "shares": 3552432,
    "shares_check": {
     "dart_common": 3552923,
     "dart_period": "2026-11012",
-    "listed": 6649852,
+    "listed": 6648649,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -11721,26 +11139,26 @@
      "bear": {
       "g": -3.0,
       "value": 103563,
-      "per_share": 29143,
+      "per_share": 29153,
       "upside": -56.2
      },
      "base": {
       "g": 1.0,
       "value": 113221,
-      "per_share": 31861,
-      "upside": -52.2
+      "per_share": 31871,
+      "upside": -52.1
      },
      "bull": {
       "g": 4.0,
       "value": 121693,
-      "per_share": 34245,
+      "per_share": 34256,
       "upside": -48.6
      }
     },
     "c_T": 0.6,
     "roe_norm": 1.7,
     "implied_g": 26.7,
-    "implied_E1": 29868,
+    "implied_E1": 29855,
     "cycle": {
      "position": "중립",
      "note": "범용 원사·면방은 중국 공급 과잉으로 구조적 약세, 신발 소재는 나이키·아디다스 재고 사이클 회복 대기예요. 가치는 자산(부동산·투자)에 기대는 회사가 많아요.",
@@ -11769,13 +11187,13 @@
     "ttm_ni": 9971,
     "oneoff": true,
     "E": 7010,
-    "per_share": 10399,
-    "bear": 8785,
-    "bull": 11812,
+    "per_share": 10403,
+    "bear": 8788,
+    "bull": 11816,
     "upside": -84.4,
     "pct": 9,
     "tier": "비싼 ⅓",
-    "exp_ex": -11.2,
+    "exp_ex": -10.8,
     "conflict": false
    },
    "marks": {
@@ -11788,17 +11206,17 @@
      "bull": 0.25
     },
     "weighted": 112924,
-    "weighted_ps": 31777,
+    "weighted_ps": 31788,
     "weighted_upside": -52.3,
     "stress": {
      "E": 6198,
      "margin": 7.1,
      "g": -3.0,
      "value": 97222,
-     "per_share": 27358,
+     "per_share": 27368,
      "how": "2017~2025 중 두 번째로 나쁜 해의 순이익률 7.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 27358,
+    "down_ps": 27368,
     "max_loss": 58.9,
     "up_bull": -48.6,
     "asym_ratio": null,
@@ -11814,7 +11232,7 @@
      }
     },
     "mos": 30,
-    "buy_ps": 22244,
+    "buy_ps": 22252,
     "buy_gap": -66.6,
     "implied_margin": 34.2,
     "base_margin": 12.1,
@@ -11962,25 +11380,25 @@
  },
  "marks_meta": {
   "temperature": {
-   "n": 36,
-   "median_upside": -7.4,
-   "share_above": 56,
-   "label": "다소 뜨거움",
+   "n": 32,
+   "median_upside": 5.2,
+   "share_above": 47,
+   "label": "중간",
    "shift": 0
   },
   "market": [
    {
     "industry": "cosmetics",
     "n": 44,
-    "median_upside": 8.4,
-    "share_above": 48,
+    "median_upside": 6.8,
+    "share_above": 43,
     "label": "중간",
     "shift": 0
    },
    {
     "industry": "semi",
-    "n": 108,
-    "median_upside": -43.8,
+    "n": 109,
+    "median_upside": -44.3,
     "share_above": 80,
     "label": "과열(낙관 쪽)",
     "shift": 1
@@ -11988,7 +11406,7 @@
    {
     "industry": "chem",
     "n": 54,
-    "median_upside": -2.2,
+    "median_upside": -2.1,
     "share_above": 52,
     "label": "중간",
     "shift": 0
@@ -11996,31 +11414,31 @@
    {
     "industry": "battery",
     "n": 66,
-    "median_upside": -57.3,
-    "share_above": 89,
+    "median_upside": -57.4,
+    "share_above": 91,
     "label": "과열(낙관 쪽)",
     "shift": 1
    },
    {
     "industry": "apparel",
-    "n": 36,
-    "median_upside": -7.4,
-    "share_above": 56,
-    "label": "다소 뜨거움",
+    "n": 32,
+    "median_upside": 5.2,
+    "share_above": 47,
+    "label": "중간",
     "shift": 0
    },
    {
     "industry": "food",
-    "n": 46,
-    "median_upside": 24.9,
-    "share_above": 43,
+    "n": 48,
+    "median_upside": 19.6,
+    "share_above": 46,
     "label": "다소 차가움",
     "shift": 0
    },
    {
     "industry": "logistics",
     "n": 25,
-    "median_upside": 5.9,
+    "median_upside": 6.5,
     "share_above": 44,
     "label": "중간",
     "shift": 0

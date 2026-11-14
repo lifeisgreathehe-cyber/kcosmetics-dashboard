@@ -6,6 +6,7 @@ from part_b import D as B
 from part_c import D as C
 from part_d import X as XD
 from part_e import X as XE
+from part_f import D as FD, X as XF
 
 FISHER = [
  "시장 잠재력: 앞으로 몇 년간 매출을 크게 늘릴 만한 시장을 가졌나",
@@ -33,13 +34,13 @@ VERDICT = {"호조": ("실적 호조", "pos"), "사이클": ("사이클 요인",
 def main():
     root = os.path.join(os.path.dirname(__file__), "..", "..")
     comps = {}
-    for src in (A, B, C):
+    for src in (A, B, C, FD):
         for code, d in src.items():
             assert len(d["fisher"]) == 16, (code, len(d["fisher"]))
             d = dict(d)
             d["fisher"] = [{"s": s, "a": a} for s, a in d["fisher"]]
             d["fisher_score"] = sum(f["s"] for f in d["fisher"])
-            x = XD.get(code) or XE.get(code)
+            x = XD.get(code) or XE.get(code) or XF.get(code)
             assert x, ("해설 누락", code)
             g = x["diag"]
             d["explain"] = {"title": "", "sections": [{"h": t, "p": b} for t, b in x["explain"]]}
@@ -54,7 +55,7 @@ def main():
                 comps[code]["explain"] = {"title": ex.get("title", ""), "sections": [{"h": h, "p": t} for h, t in ex["sections"]]}
                 comps[code]["diagnosis"] = x["diagnosis"]
     out = {
-        "updated": "2026-11-05",
+        "updated": "2026-11-13",
         "source": "DART 사업보고서(2025.12)·반기보고서(2026.06) 본문, 최근 4개 분기 실적, 2026년 10~11월 기사",
         "fisher_questions": FISHER,
         "fisher_note": "필립 피셔 『위대한 기업에 투자하라』의 15가지 질문에, 자본 배분(주주환원) 항목을 16번째로 더했어요. 2점 충족, 1점 부분 충족, 0점 미흡이에요. 노사·경영진 항목은 공개 정보가 적어 보수적으로 매겼어요.",

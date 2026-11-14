@@ -113,6 +113,7 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .moat .dots{letter-spacing:2px;color:var(--accent);font-size:15px}
 .chip{display:inline-block;font-size:11.5px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);margin:0 4px 4px 0}
 .fisher{width:100%;border-collapse:collapse;font-size:13px}
+.fsc{display:block;font-size:11px;line-height:1.2;margin-top:2px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .fisher td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal}
 .fisher td.n{color:var(--ink-3);width:22px;font-variant-numeric:tabular-nums}
 .fisher td.q{width:34%;color:var(--ink-2)}
@@ -555,11 +556,11 @@ function renderCompanyTable(){
   const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
     const l=L(c);
-    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
     const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
     const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
-    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
+    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td>${q}</td>
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
       <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
@@ -575,8 +576,8 @@ const TONE={pos:'개선',neg:'부진',neu:'중립'};
 function renderReview(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code];
   if(!r){$('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">리뷰 작성 대기 중이에요. 실적 데이터가 수집되면 추가돼요.</p>`;return}
-  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${D.reviews.updated||''}</p>
-   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>
+  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${r.asof||D.reviews.updated||''}${r.basis?' · '+r.basis+' 실적 반영':''}</p>
+   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>${r.note?`<p class="sub">${r.note}</p>`:''}
    <h4>실적 동향</h4><ul>${r.trend.map(t=>`<li>${t}</li>`).join('')}</ul>
    ${r.latest?`<h4>${r.latest.period} 잠정실적 (DART 반영 전)</h4><p>${r.latest.note}</p>`:''}
    ${r.take?`<h4>최신 뉴스를 반영한 판단 (${r.news_asof} 기준)</h4><p>${r.take}</p>`:''}
@@ -631,6 +632,13 @@ function renderBiz(c){
    ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
    <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}${window.ctxBlock?ctxBlock(c,D):''}`;
+}
+/* 회사 표: 종목명 아래 필립 피셔 16문항 점수(각 0·1·2점, 만점 32) */
+function fisherTag(code){
+  const x=D.deep&&D.deep.companies&&D.deep.companies[code];
+  if(!x||!x.fisher||x.fisher_score==null) return '';
+  const mx=x.fisher.length*2;
+  return `<span class="fsc" title="필립 피셔 ${x.fisher.length}문항 점수 (충족 2·부분 1·미흡 0점)">피셔 ${x.fisher_score}/${mx}</span>`;
 }
 function renderDeep(c){
   const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
@@ -731,7 +739,7 @@ function selectCo(code){
   cur=code; const c=CO.companies.find(x=>x.code===code); if(!c)return;
   $('#co-select').value=code;
   $('#co-name').textContent=c.name;
-  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':c.source==='pending'?'DART 수집 대기':'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
+  const srcTxt=c.source==='dart'?'DART 전자공시 (연결 기준, 지배주주순이익)':c.source==='pending'?'DART 수집 대기':c.source==='prospectus'?(c.note||'증권신고서 기준(신규 상장)'):'StockAnalysis 공개 집계 (연결, 순이익은 비지배지분 포함 전체 기준). 국내 PC에서 DART 수집을 실행하면 10년치 지배주주순이익으로 교체돼요';
   NI=c.source==='dart'?'지배주주순이익':'순이익';
   document.querySelectorAll('.ni-l').forEach(e=>e.textContent=NI);
   $('#co-meta').textContent=`${c.market} ${c.code} · ${c.group} · 출처: ${srcTxt}`;

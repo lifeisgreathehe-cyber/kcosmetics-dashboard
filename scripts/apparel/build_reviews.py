@@ -9,7 +9,7 @@ sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, "..", "deep"))
 from build import FISHER  # noqa: E402
 
-UPDATED = "2026-11-08"
+UPDATED = "2026-11-13"
 DATA = os.path.join(ROOT, "docs", "apparel", "data")
 CFG = os.path.join(ROOT, "config", "apparel")
 
@@ -72,6 +72,9 @@ def main():
         for code, upd in getattr(m, "UPD", {}).items():
             if code in src:
                 src[code]["review"].update(upd)
+        for code, vo in getattr(m, "VAL", {}).items():
+            if code in src:
+                src[code]["val"] = {"skip": vo["skip"], "pos": src[code]["val"].get("pos")} if vo.get("skip") else {k: v for k, v in dict(src[code]["val"], **vo).items() if k != "skip"}
     from ir_src import IR, IRGO
     # 심층 분석
     deep = {}
@@ -102,7 +105,7 @@ def main():
                     "news": sorted(news[code], key=dk, reverse=True)[:10], "next": r["next"],
                     "biz": {"report": rep.get("report_nm", ""), "url": rep.get("url", ""), "mix_title": "", "mix": [], "points": r["points"]} if rep else None}
     json.dump({"updated": UPDATED, "news_asof": asof,
-               "period": "2026년 3분기 실적 시즌(한섬·삼성물산 발표, 영원무역·한세실업·F&F·미스토 컨센서스)과 2026년 11월 8일까지의 기사",
+               "period": "2026년 3분기 실적 시즌(한섬·삼성물산 발표, 영원무역·한세실업·F&F·미스토 컨센서스)과 2026년 11월 13일까지의 기사·DART 분기 실적",
                "disclaimer": "공시와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아니에요. 각 기사 아래 '이렇게 보세요'는 기사 내용이 회사 가치에 어떤 의미인지에 대한 해석이에요.",
                "companies": {c["code"]: rv[c["code"]] for c in cfg if c["code"] in rv}},
               open(os.path.join(DATA, "reviews.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
@@ -116,7 +119,7 @@ def main():
         b, m, u = v["g"]
         vc[code] = {"E1": v["E1"], "g": {"bear": b, "base": m, "bull": u}, "r": v["r"], "c": v["c"], "note": v["note"],
                     "cyc_pos": v["pos"], "cycle_note": INDUSTRY_CYCLE.get(grp.get(code), ""),
-                    "cycle": {"phase": v["pos"], "note": v["note"], "w_mid": v["w"]}, **({"nc_adj": False} if v.get("nc") is False else {})}
+                    "cycle": {"phase": v["pos"], "note": v["note"], "w_mid": v["w"], **({"years": v["years"]} if v.get("years") else {})}, **({"nc_adj": False} if v.get("nc") is False else {})}
     vp = os.path.join(CFG, "valuation.json")
     out = {"note": "사이클을 반영한 내재가치예요. ① 정상 이익(E1): 최근 1년 순이익이 아니라 회사별 사이클 위치를 판단해 정한 '사이클 중간' 지배순이익이에요. DART 연간 실적이 들어오면 과거 순이익률 평균(최고·최저 해 제외) × 최근 매출로 구한 사이클 평균 이익을 회사별 비중(w)만큼 섞어요. ② 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 사이클 위치에 따라 1~3년만 이어진다고 보고 현재가치만 더하거나 빼요. ③ 성장률(g)은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인하고 순현금은 더해요(지주사·비지배지분이 큰 회사는 제외). 순차입금은 빼지 않아요: 순이익에 이미 이자비용이 빠져 있어 또 빼면 부채를 두 번 반영하게 돼요.",
            "terminal_growth": 2.0, "asof": UPDATED, "cycle_mode": True, "debt_mode": "levered", "industry_cycle": INDUSTRY_CYCLE,

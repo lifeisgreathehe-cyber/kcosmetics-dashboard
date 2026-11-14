@@ -32,6 +32,14 @@ def main():
         if code in val:
             val[code]["ni_now"] = ni
             val[code]["ni_now_note"] = "공정위 과징금(일회성)을 뺀 최근 이익(최근 4개 분기 영업이익 × 0.7)"
+    # 날짜별 보강 파일(news_add_*.py)의 VAL: 회사별 가정 덮어쓰기(skip이면 계산 제외)
+    for f in sorted(glob.glob(os.path.join(HERE, "news_add_*.py"))):
+        for code, vo in getattr(importlib.import_module(os.path.basename(f)[:-3]), "VAL", {}).items():
+            if code in val:
+                if vo.get("skip"):
+                    val[code] = {"skip": vo["skip"], "cyc_pos": val[code].get("cyc_pos"), "cycle_note": val[code].get("cycle_note", "")}
+                else:
+                    val[code] = {k: v for k, v in dict(val[code], **vo).items() if not (k == "E1_adj" and "margin" in vo)}
     # 사조동아원은 2026년 6월 10:1 주식병합. DART 2분기 주식수(1억4,095만주)가 병합 전이라 병합 후 주식수를 써요.
     if "008040" in val:
         val["008040"]["snapshot"] = {"shares": 14094619}

@@ -15,7 +15,7 @@ concurrency:
 jobs:
   news:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -28,6 +28,8 @@ jobs:
             ind=$(basename "$d")
             [ -f "config/$ind/companies.json" ] && [ -d "docs/$ind" ] && (timeout 300 python scripts/update.py --industry "$ind" --only news || true)
           done
+          # 새 실적(잠정실적·분기보고서)이 나온 회사는 '최근 4개 분기 리뷰'를 다시 쓴다 (scripts/reviews/refresh.py)
+          timeout 900 python scripts/reviews/refresh.py --industry all --fetch || true
           timeout 120 python scripts/update.py --only stock_hist || true
           for d in config/*/; do
             ind=$(basename "$d")
@@ -39,6 +41,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/news.json docs/*/data/news.json 2>/dev/null || true
           git add docs/data/stock_hist.json docs/*/data/stock_hist.json 2>/dev/null || true
+          git add docs/data/reviews.json docs/*/data/reviews.json raw/earnings 2>/dev/null || true
           if git diff --cached --quiet; then echo "변경 없음"; else
             git commit -m "data: 뉴스 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
             for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done

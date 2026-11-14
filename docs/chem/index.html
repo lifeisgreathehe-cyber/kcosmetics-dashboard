@@ -96,6 +96,7 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .moat .dots{letter-spacing:2px;color:var(--accent);font-size:15px}
 .chip{display:inline-block;font-size:11.5px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);margin:0 4px 4px 0}
 .fisher{width:100%;border-collapse:collapse;font-size:13px}
+.fsc{display:block;font-size:11px;line-height:1.2;margin-top:2px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .fisher td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal}
 .fisher td.n{color:var(--ink-3);width:22px;font-variant-numeric:tabular-nums}
 .fisher td.q{width:34%;color:var(--ink-2)}
@@ -523,11 +524,11 @@ function renderCompanyTable(){
   const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
     const l=L(c);
-    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
     const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
     const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
-    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
+    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td>${q}</td>
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
       <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
@@ -543,13 +544,13 @@ const TONE={pos:'개선',neg:'부진',neu:'중립'};
 function renderReview(c){
   const r=(D.reviews&&D.reviews.companies||{})[c.code];
   if(!r){$('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">리뷰 작성 대기 중이에요. 실적 데이터가 수집되면 추가돼요.</p>`;return}
-  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${D.reviews.updated||''}</p>
-   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>
+  $('#co-review').innerHTML=`<h2>최근 4개 분기 리뷰</h2><p class="sub">${D.reviews.period||''} · 작성 ${r.asof||D.reviews.updated||''}${r.basis?' · '+r.basis+' 실적 반영':''}</p>
+   <h3><span class="tone ${r.tone}">${TONE[r.tone]||''}</span>${r.title}</h3>${r.note?`<p class="sub">${r.note}</p>`:''}
    <h4>실적 동향</h4><ul>${r.trend.map(t=>`<li>${t}</li>`).join('')}</ul>
    <h4>평가</h4><p>${r.eval}</p>
    ${r.watch&&r.watch.length?`<h4>체크 포인트</h4><ul>${r.watch.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${r.next?`<h4>다음 실적 발표</h4><p>${r.next}</p>`:''}
-   ${r.news&&r.news.length?`<h4>최신 기사 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> <a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a></li>`).join('')}</ul>`:''}
+   ${r.news&&r.news.length?`<h4>최근 뉴스와 읽는 법 (${D.reviews.updated} 기준)</h4><ul>${r.news.map(n=>`<li><span class="sub">${n.date}</span> ${n.impact&&TONE[n.impact]?`<span class="tone ${n.impact}" style="font-size:10.5px">${{pos:'호재',neg:'악재',neu:'중립'}[n.impact]}</span>`:''}<a href="${n.url}" target="_blank" rel="noopener" style="color:var(--accent)">${n.title}</a>${n.read?`<br><span style="color:var(--ink-2)">어떻게 볼까: ${n.read}</span>`:''}</li>`).join('')}</ul>`:''}
    <p class="src">${D.reviews.disclaimer||''}</p>`;
 }
 function renderBiz(c){
@@ -560,6 +561,13 @@ function renderBiz(c){
    ${mix.length?`<h4>${b.mix_title}</h4><div class="mixbar" role="img" aria-label="${mix.map(m=>m.label+' '+m.pct+'%').join(', ')}">${mix.map((m,i)=>`<span style="width:${m.pct}%;background:${s[i%8]}" title="${m.label} ${m.pct}%"></span>`).join('')}</div>
    <div class="mixleg">${mix.map((m,i)=>`<span><i style="background:${s[i%8]}"></i>${m.label} ${m.pct.toFixed(1)}%</span>`).join('')}</div>`:''}
    <h4>핵심 내용</h4><ul>${b.points.map(t=>`<li>${t}</li>`).join('')}</ul>${renderDeep(c)}${window.ctxBlock?ctxBlock(c,D):''}`;
+}
+/* 회사 표: 종목명 아래 필립 피셔 16문항 점수(각 0·1·2점, 만점 32) */
+function fisherTag(code){
+  const x=D.deep&&D.deep.companies&&D.deep.companies[code];
+  if(!x||!x.fisher||x.fisher_score==null) return '';
+  const mx=x.fisher.length*2;
+  return `<span class="fsc" title="필립 피셔 ${x.fisher.length}문항 점수 (충족 2·부분 1·미흡 0점)">피셔 ${x.fisher_score}/${mx}</span>`;
 }
 function renderDeep(c){
   const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];

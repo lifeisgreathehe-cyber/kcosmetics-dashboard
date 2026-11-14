@@ -33,6 +33,16 @@ def trend(co):
     return out
 
 
+def annual_trend(co):
+    """분기 실적이 4개 미만인 신규 상장사: 연간 실적으로 추세를 보여 준다."""
+    A = {k: v for k, v in sorted(co["annual"].items()) if v.get("rev")}
+    ks = list(A)[-3:]
+    revs = " → ".join("%s년 %s" % (k, eok(A[k]["rev"])) for k in ks)
+    out = [f"상장 직후라 분기 실적이 아직 DART에 없어요. 연간 매출은 {revs}원이에요."]
+    out.append("영업이익률은 " + ", ".join(f"{k}년 {(A[k].get('op') or 0)/A[k]['rev']*100:.1f}%" for k in ks) + "예요.")
+    return out
+
+
 def auto(co):
     """해석 원고가 아직 없는 회사: 숫자만으로 만든 자동 리뷰."""
     Q = clean(co["quarterly"])
@@ -65,12 +75,13 @@ def sector_for(group, code):
 
 def main():
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/semi/data/companies.json")))["companies"]}
-    out = {"updated": "2026-11-12",
-           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-12까지 나온 3분기 잠정실적과 뉴스",
+    out = {"updated": "2026-11-13",
+           "period": "DART 확정 실적(2026년 2분기까지) + 2026-11-13까지 나온 3분기 잠정실적과 뉴스",
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
-        if len(clean(co.get("quarterly") or {})) < 4:
+        short = len(clean(co.get("quarterly") or {})) < 4
+        if short and not (code in NEW and co.get("annual")):  # 신규 상장사는 연간 실적만으로도 보여 준다
             continue
         r = R.get(code) or (dict(NEW[code]["review"], next=NEXT) if code in NEW else auto(co))
         nw = NEWS.get(code) or {}
@@ -80,7 +91,7 @@ def main():
         rep = next((x for x in reps if "반기" in x["report_nm"]), None) or (reps[0] if reps else {})
         out["companies"][code] = {
             "tone": nw.get("tone", r["tone"]), "title": nw.get("title", r["title"]),
-            "trend": trend(co) + r.get("extra", []),
+            "trend": (annual_trend(co) if short else trend(co)) + r.get("extra", []),
             "eval": r["eval"], "watch": r["watch"],
             "news": [{"date": x[0], "title": x[1], "url": x[2], "src": x[3], "read": x[4], "impact": x[5]}
                      for x in sorted(nw.get("items", []), key=lambda x: x[0], reverse=True)]
