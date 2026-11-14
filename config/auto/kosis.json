@@ -1,0 +1,109 @@
+[
+ {
+  "file": "auto_index.json",
+  "title": "자동차 및 트레일러 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C30",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "vehicle_index.json",
+  "title": "완성차(자동차용 엔진 및 자동차) 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C301",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "parts_index.json",
+  "title": "자동차 신품 부품 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C303",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "rubber_index.json",
+  "title": "고무제품(타이어 포함) 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C221",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "retail_car.json",
+  "title": "승용차 소매판매액지수 (내수 판매)",
+  "source": "국가데이터처 서비스업동향조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41012",
+  "orgId": "101",
+  "tblId": "DT_1K41012",
+  "itmId": "ALL",
+  "objL1": "G11+G111+G112",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {}
+ },
+ {
+  "file": "import_price.json",
+  "title": "타이어·부품 원재료 수입물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 원화기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+  "orgId": "301",
+  "tblId": "DT_401Y017",
+  "itmId": "ALL",
+  "objL1": "13102134644ACC_CD.10113401AA+13102134644ACC_CD.30521201AA+13102134644ACC_CD.30721201AA+13102134644ACC_CD.30722201AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "원화기준"
+  }
+ }
+]

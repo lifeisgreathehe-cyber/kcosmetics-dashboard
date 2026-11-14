@@ -16,7 +16,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
+INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "auto", "steel"]
 
 
 def paths(base: Path, ind: str):

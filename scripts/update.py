@@ -33,6 +33,9 @@ else:
     DATA = ROOT / "docs" / INDUSTRY / "data"
     CONFIG = ROOT / "config" / INDUSTRY
     RAW = ROOT / "raw" / INDUSTRY
+if not (CONFIG / "companies.json").exists():  # 아직 이 브랜치에 없는 업종(예: dart_all.bat 목록에만 있는 경우)은 조용히 건너뜀
+    print(f"[update] config/{INDUSTRY}/companies.json 없음 — 건너뜀", flush=True)
+    sys.exit(0)
 DATA.mkdir(parents=True, exist_ok=True)
 TODAY = dt.date.today()
 
