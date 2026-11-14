@@ -50,4 +50,4 @@ jobs:
           git add docs/auto/data raw/auto 2>/dev/null || true
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
           git commit -q -m "data: 자동차 수집·적정가"
-          for i in 1 2 3 4; do git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; git rebase --abort 2>/dev/null; sleep 6; done
+          for i in 1 2 3 4; do git checkout -- . 2>/dev/null; git clean -fdq raw/audit 2>/dev/null; git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; git rebase --abort 2>/dev/null; sleep 6; done
