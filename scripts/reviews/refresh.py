@@ -157,16 +157,22 @@ def auto_review(name, q, cur, prv, series, peers, nums, src, cyc, cmp, base, val
         if pm is not None and pn >= 3 and pm <= -5:
             J.append(f"이익이 줄었지만 {peer_txt} 동종 업체도 함께 약해, 회사 고유의 경쟁력 문제보다 업황·사이클 영향이 큰 구간으로 봐요.")
         elif ry is not None and ry >= 0:
-            J.append(f"매출은 {ry:+.0f}%로 지켰는데 이익이 줄어, 판매 경쟁력보다는 원가·판관비·믹스(비용) 쪽 문제예요. {peer_txt} "
+            J.append(f"매출은 {ry:+.0f}%로 지켰는데 이익이 줄어, 판매 경쟁력보다는 원가·판관비·믹스(비용) 쪽 문제예요. {peer_txt + ' ' if peer_txt else ''}"
                      "비용이 일회성인지(사이클), 가격 경쟁·마케팅비 증가처럼 계속되는 것인지(경쟁력)는 다음 분기 이익률로 판별해요.")
         elif pm is not None and pn >= 3 and pm > 0:
             J.append(f"{peer_txt} 동종 업체는 이익이 늘었는데 이 회사는 매출과 이익이 함께 줄어, 경쟁력(점유율·제품력) 약화 신호로 보고 점검해야 해요.")
         else:
-            J.append(f"매출과 이익이 함께 줄었어요. {peer_txt} 비교 대상이 적어 사이클인지 경쟁력 문제인지 단정하기 어렵고, 다음 분기 회복 여부로 판단해요.")
+            J.append(f"매출과 이익이 함께 줄었어요. {peer_txt + ' ' if peer_txt else ''}비교 대상이 적어 사이클인지 경쟁력 문제인지 단정하기 어렵고, 다음 분기 회복 여부로 판단해요.")
     elif strong:
         if pm is not None and pn >= 3 and pm >= 10:
-            J.append(f"{peer_txt} 업종 전체가 함께 좋아진 구간이라 이번 개선에는 업황(사이클) 순풍이 크게 섞여 있어요. "
-                     "동종 중앙값보다 얼마나 더 좋았는지가 회사 고유의 경쟁력 몫이에요.")
+            rel = ""
+            if oy is not None and oy >= pm + 20:
+                rel = f" 이 회사는 {oy:+.0f}%로 동종 중앙값보다 크게 앞서, 업황 위에 회사 고유의 경쟁력(제품·고객·점유율) 몫이 더해졌어요."
+            elif oy is not None and oy <= pm - 20:
+                rel = f" 이 회사는 {oy:+.0f}%로 동종 중앙값에 못 미쳐, 업황 순풍을 덜 받았거나 비용·제품 믹스에서 뒤처졌어요. 상대적으로는 경쟁력 점검이 필요해요."
+            elif oy is not None:
+                rel = f" 이 회사({oy:+.0f}%)는 동종과 비슷한 속도라 개선의 대부분을 업황 덕분으로 봐요."
+            J.append(f"{peer_txt} 업종 전체가 함께 좋아진 구간이라 이번 개선에는 업황(사이클) 순풍이 크게 섞여 있어요.{rel}")
         elif pm is not None and pn >= 3:
             J.append(f"{peer_txt} 동종 업체보다 확실히 좋은 실적이라 업황보다는 회사 고유의 경쟁력(제품·고객·채널) 덕분으로 봐요.")
         else:
@@ -311,7 +317,8 @@ def refresh(ind, fetch=False):
             r["how"] = "manual"
             n_manual += 1
         elif q and q >= target:
-            btxt = " ".join([base.get("title") or ""] + (base.get("trend") or []) + [base.get("eval") or ""])
+            # 업종별 build_reviews.py가 숫자로 만든 문장('…2026Q3 매출은 …')은 해석이 아니라서 빼고 본다
+            btxt = " ".join([base.get("title") or ""] + [t for t in base.get("trend") or [] if not AUTO_TREND.search(t)] + [base.get("eval") or ""])
             if mentions_actual(btxt, q):
                 # 원고가 이미 이 분기 실적을 다뤘으면 문장은 두고, 지난 예고만 정리
                 out = {f: base.get(f) for f in FIELDS}
