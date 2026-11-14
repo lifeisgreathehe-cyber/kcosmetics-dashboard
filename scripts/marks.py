@@ -197,7 +197,7 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
             "verdict": verdict, "tone": tone, "note": note}
     # 시장 전체 진자: 다른 대시보드가 마지막으로 만든 valuation.json의 온도를 모은다
     mkt = []
-    for sub in ("", "semi", "chem", "battery", "apparel", "food", "logistics"):
+    for sub in ("", "semi", "chem", "battery", "apparel", "food", "logistics", "travel"):
         p = os.path.join(root, "docs", *( [sub] if sub else []), "data", "valuation.json")
         if os.path.join(*dd) == os.path.join("docs", *([sub] if sub else []), "data"):
             t = temp

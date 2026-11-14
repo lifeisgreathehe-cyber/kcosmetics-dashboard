@@ -8,7 +8,7 @@
     '하강기':'이익이 줄고 있어요. 아직 바닥이 확인되지 않아 비관 쪽을 약간 더 뒀어요.',
     '바닥권':'이익이 평균보다 낮고 아직 나빠요. 나쁜 소식이 이미 가격에 들어 있을 가능성이 커서 낙관 쪽 확률을 높였어요.',
     '회복기':'이익이 평균보다 낮지만 다시 늘기 시작했어요. 낙관 쪽 확률을 조금 높였어요.'};
-  const IND={cosmetics:'화장품',semi:'반도체',chem:'화학',battery:'2차전지',apparel:'의류',food:'음식료',logistics:'물류'};
+  const IND={cosmetics:'화장품',semi:'반도체',chem:'화학',battery:'2차전지',apparel:'의류',food:'음식료',logistics:'물류',travel:'여행'};
   const P=x=>Math.round(x*100)+'%';
   // 페이지 스크립트의 함수에 기대지 않도록 자체 포맷 함수를 둔다
   const fmt=(v,d=0)=>v==null||isNaN(v)?'–':Number(v).toLocaleString('ko-KR',{maximumFractionDigits:d,minimumFractionDigits:d});

@@ -38,10 +38,10 @@ KST = dt.timezone(dt.timedelta(hours=9))
 TH_E, TH_P = 0.05, 0.10   # finchart.js 와 같은 문턱
 ZZ = 0.30                  # 고점·저점 판정: 30% 넘게 되돌리면 변곡점
 IND_NAME = {"cosmetics": "화장품", "semi": "반도체", "chem": "화학·정유", "battery": "2차전지", "apparel": "의류",
-            "food": "음식료", "logistics": "물류·운송"}
+            "food": "음식료", "logistics": "물류·운송", "travel": "여행"}
 # 업종별 환율·유가 민감도(문장용): +1 원화 약세가 이익에 유리, -1 불리, 0 혼재
-FX_SENS = {"cosmetics": 1, "semi": 1, "chem": 0, "battery": 1, "apparel": 1, "food": -1, "logistics": 0}
-OIL_SENS = {"chem": "정유는 재고평가이익·정제마진, 석유화학은 원가 부담", "logistics": "항공·해운 연료비 부담",
+FX_SENS = {"cosmetics": 1, "semi": 1, "chem": 0, "battery": 1, "apparel": 1, "food": -1, "logistics": 0, "travel": 0}
+OIL_SENS = {"chem": "정유는 재고평가이익·정제마진, 석유화학은 원가 부담", "logistics": "항공·해운 연료비 부담", "travel": "항공사 연료비·유류할증료(여행 수요 위축)",
             "food": "포장재·물류비 부담", "apparel": "합성섬유 원가"}
 
 

@@ -30,7 +30,7 @@ jobs:
       fail-fast: false
       max-parallel: 4
       matrix:
-        industry: [cosmetics, semi, chem, battery, apparel, food, logistics]
+        industry: [cosmetics, semi, chem, battery, apparel, food, logistics, travel]
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

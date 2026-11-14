@@ -18,7 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import earnings as E  # noqa: E402
 
 ROOT = E.ROOT
-INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
+INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "travel"]
 FIELDS = ("tone", "title", "trend", "eval", "watch", "next")
 TODAY = dt.datetime.now(E.KST).date().isoformat()
 QNAME = lambda q: f"{q[:4]}년 {q[-1]}분기"

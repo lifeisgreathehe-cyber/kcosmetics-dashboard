@@ -129,7 +129,7 @@ td.l,th.l{text-align:left}
 <div class="wrap">
   <header class="top">
     <h1><small>KOREA COSMETICS · K-BEAUTY</small>국내 화장품 산업 대시보드</h1>
-    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="semi/" style="color:var(--accent)">반도체 대시보드 →</a><br><a href="chem/" style="color:var(--accent)">화학·정유 대시보드 →</a><br><a href="battery/" style="color:var(--accent)">2차전지 대시보드 →</a><br><a href="food/" style="color:var(--accent)">음식료 대시보드 →</a><br><a href="apparel/" style="color:var(--accent)">의류·패션 대시보드 →</a><br><a href="logistics/" style="color:var(--accent)">물류·운송 대시보드 →</a><br><a href="backtest/" style="color:var(--accent)">적정주가 1년 백테스트 →</a></div>
+    <div class="meta"><span id="meta">데이터 불러오는 중…</span><br><a href="semi/" style="color:var(--accent)">반도체 대시보드 →</a><br><a href="chem/" style="color:var(--accent)">화학·정유 대시보드 →</a><br><a href="battery/" style="color:var(--accent)">2차전지 대시보드 →</a><br><a href="food/" style="color:var(--accent)">음식료 대시보드 →</a><br><a href="apparel/" style="color:var(--accent)">의류·패션 대시보드 →</a><br><a href="logistics/" style="color:var(--accent)">물류·운송 대시보드 →</a><br><a href="travel/" style="color:var(--accent)">여행 대시보드 →</a><br><a href="backtest/" style="color:var(--accent)">적정주가 1년 백테스트 →</a></div>
   </header>
   <nav class="tabs" aria-label="보기 선택">
     <a href="#industry" data-view="industry">산업 동향</a>
@@ -594,7 +594,7 @@ function quantBlock(v){
    ${q.oneoff?` 최근 4분기 순이익(${fmt(eok(q.ttm_ni))}억)이 영업이익과 크게 달라 일회성 손익이 섞인 것으로 보고, 핵심 이익 ${fmt(eok(q.core))}억으로 바꿔 계산했어요.`:''}
    ${q.conflict?` <b>위 판단과 기계식 모델이 반대 방향이에요.</b> 사람이 정한 가정(성장률·사이클 위치)이 맞는지 다시 볼 필요가 있어요.`:''}
    숫자로 정한 사이클 위치는 '${q.pos}'예요(최근 핵심 이익이 사이클 평균보다 높은지 × 이익이 늘고 있는지).</p>
-   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food|logistics|apparel)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
+   <p class="src">모델: ${M?M.model:''}. 사람 판단·뉴스를 쓰지 않아 위 적정가와 독립적이에요. 같은 모델의 과거 성적: ${hist||'–'}. 자세한 검증은 <a href="${/\/(semi|chem|battery|food|logistics|apparel|travel)\//.test(location.pathname)?'../':''}backtest/">적정주가 백테스트</a>.</p>`;
 }
 function renderValueReport(c){
   const v=VAL(c.code), d=v.dcf;
