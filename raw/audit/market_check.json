@@ -1,5 +1,5 @@
 {
- "fetched": "2026-11-14 00:35 KST",
+ "fetched": "2026-11-14 17:13 KST",
  "codes": {
   "000050": {
    "name": "경방",
@@ -2362,7 +2362,8 @@
   "003490": {
    "name": "대한항공",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -2419,7 +2420,8 @@
   "003495": {
    "name": "대한항공우",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_of": "003490",
    "naver": {
@@ -3042,6 +3044,63 @@
       "name": "TRADING"
      },
      "itemCode": "004140"
+    }
+   }
+  },
+  "004170": {
+   "name": "신세계",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "신세계",
+    "infos": {
+     "lastClosePrice": "242,000",
+     "openPrice": "241,500",
+     "highPrice": "256,000",
+     "lowPrice": "241,000",
+     "accumulatedTradingVolume": "96,857",
+     "accumulatedTradingValue": "243억",
+     "marketValue": "2조 3,566억",
+     "foreignRate": "30.90%",
+     "highPriceOf52Weeks": "798,000",
+     "lowPriceOf52Weeks": "208,000",
+     "per": "14.16배",
+     "eps": "17,615원",
+     "cnsPer": "5.66배",
+     "cnsEps": "44,075원",
+     "pbr": "0.40배",
+     "bps": "616,162원",
+     "dividendYieldRatio": "2.08%",
+     "dividend": "5,200원"
+    },
+    "basic": {
+     "stockName": "신세계",
+     "closePrice": "249,500",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:26+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "004170"
     }
    }
   },
@@ -3799,7 +3858,8 @@
   "005430": {
    "name": "한국공항",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -4716,6 +4776,63 @@
     }
    }
   },
+  "006730": {
+   "name": "서부T&D",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "서부T&D",
+    "infos": {
+     "lastClosePrice": "10,130",
+     "openPrice": "10,140",
+     "highPrice": "10,500",
+     "lowPrice": "10,020",
+     "accumulatedTradingVolume": "334,136",
+     "accumulatedTradingValue": "34.1억",
+     "marketValue": "6,479억",
+     "foreignRate": "16.70%",
+     "highPriceOf52Weeks": "20,450",
+     "lowPriceOf52Weeks": "8,700",
+     "per": "6.68배",
+     "eps": "1,508원",
+     "cnsPer": "12.76배",
+     "cnsEps": "790원",
+     "pbr": "0.60배",
+     "bps": "16,719원",
+     "dividendYieldRatio": "0.99%",
+     "dividend": "100원"
+    },
+    "basic": {
+     "stockName": "서부T&D",
+     "closePrice": "10,080",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:22+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "006730"
+    }
+   }
+  },
   "006890": {
    "name": "태경케미컬",
    "inds": [
@@ -5344,6 +5461,121 @@
       "name": "TRADING"
      },
      "itemCode": "008730"
+    }
+   }
+  },
+  "008770": {
+   "name": "호텔신라",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "pref_found": "008775",
+   "naver": {
+    "name": "호텔신라",
+    "infos": {
+     "lastClosePrice": "34,950",
+     "openPrice": "35,300",
+     "highPrice": "35,800",
+     "lowPrice": "34,550",
+     "accumulatedTradingVolume": "176,266",
+     "accumulatedTradingValue": "62억",
+     "marketValue": "1조 3,717억",
+     "foreignRate": "19.22%",
+     "highPriceOf52Weeks": "70,300",
+     "lowPriceOf52Weeks": "33,550",
+     "per": "N/A",
+     "eps": "-3,458원",
+     "cnsPer": "14.90배",
+     "cnsEps": "2,345원",
+     "pbr": "1.16배",
+     "bps": "30,080원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "호텔신라",
+     "closePrice": "34,950",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:22+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "008770"
+    }
+   }
+  },
+  "008775": {
+   "name": "호텔신라우",
+   "inds": [
+    "travel"
+   ],
+   "pref_of": "008770",
+   "naver": {
+    "name": "호텔신라우",
+    "infos": {
+     "lastClosePrice": "27,000",
+     "openPrice": "27,450",
+     "highPrice": "27,500",
+     "lowPrice": "26,950",
+     "accumulatedTradingVolume": "921",
+     "accumulatedTradingValue": "0.25억",
+     "marketValue": "205억",
+     "foreignRate": "2.95%",
+     "highPriceOf52Weeks": "43,000",
+     "lowPriceOf52Weeks": "24,750",
+     "per": "N/A",
+     "eps": "-3,458원",
+     "cnsPer": "11.62배",
+     "cnsEps": "2,345원",
+     "pbr": "0.91배",
+     "bps": "30,080원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "호텔신라우",
+     "closePrice": "27,250",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:19+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "008775"
     }
    }
   },
@@ -7648,7 +7880,8 @@
   "020560": {
    "name": "아시아나항공",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -8100,6 +8333,63 @@
       "name": "TRADING"
      },
      "itemCode": "025900"
+    }
+   }
+  },
+  "025980": {
+   "name": "아난티",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "아난티",
+    "infos": {
+     "lastClosePrice": "4,065",
+     "openPrice": "4,070",
+     "highPrice": "4,170",
+     "lowPrice": "4,020",
+     "accumulatedTradingVolume": "763,644",
+     "accumulatedTradingValue": "31.2억",
+     "marketValue": "3,999억",
+     "foreignRate": "8.01%",
+     "highPriceOf52Weeks": "9,220",
+     "lowPriceOf52Weeks": "3,150",
+     "per": "N/A",
+     "eps": "-313원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "0.56배",
+     "bps": "7,353원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "아난티",
+     "closePrice": "4,110",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:24+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "025980"
     }
    }
   },
@@ -8675,6 +8965,63 @@
     }
    }
   },
+  "032350": {
+   "name": "롯데관광개발",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "롯데관광개발",
+    "infos": {
+     "lastClosePrice": "10,110",
+     "openPrice": "10,110",
+     "highPrice": "10,340",
+     "lowPrice": "9,880",
+     "accumulatedTradingVolume": "336,258",
+     "accumulatedTradingValue": "33.7억",
+     "marketValue": "7,957억",
+     "foreignRate": "20.11%",
+     "highPriceOf52Weeks": "28,250",
+     "lowPriceOf52Weeks": "9,790",
+     "per": "15.08배",
+     "eps": "662원",
+     "cnsPer": "20.84배",
+     "cnsEps": "479원",
+     "pbr": "2.11배",
+     "bps": "4,727원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "롯데관광개발",
+     "closePrice": "9,980",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:24+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "032350"
+    }
+   }
+  },
   "033160": {
    "name": "엠케이전자",
    "inds": [
@@ -8960,6 +9307,63 @@
     }
    }
   },
+  "034230": {
+   "name": "파라다이스",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "파라다이스",
+    "infos": {
+     "lastClosePrice": "9,980",
+     "openPrice": "10,100",
+     "highPrice": "10,510",
+     "lowPrice": "9,950",
+     "accumulatedTradingVolume": "1,285,623",
+     "accumulatedTradingValue": "133억",
+     "marketValue": "9,615억",
+     "foreignRate": "6.82%",
+     "highPriceOf52Weeks": "21,850",
+     "lowPriceOf52Weeks": "9,060",
+     "per": "12.85배",
+     "eps": "808원",
+     "cnsPer": "12.74배",
+     "cnsEps": "815원",
+     "pbr": "0.52배",
+     "bps": "19,937원",
+     "dividendYieldRatio": "1.45%",
+     "dividend": "150원"
+    },
+    "basic": {
+     "stockName": "파라다이스",
+     "closePrice": "10,380",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:22+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "034230"
+    }
+   }
+  },
   "035150": {
    "name": "백산",
    "inds": [
@@ -9014,6 +9418,63 @@
       "name": "TRADING"
      },
      "itemCode": "035150"
+    }
+   }
+  },
+  "035250": {
+   "name": "강원랜드",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "강원랜드",
+    "infos": {
+     "lastClosePrice": "13,940",
+     "openPrice": "13,860",
+     "highPrice": "14,130",
+     "lowPrice": "13,850",
+     "accumulatedTradingVolume": "537,062",
+     "accumulatedTradingValue": "75.1억",
+     "marketValue": "2조 9,973억",
+     "foreignRate": "8.91%",
+     "highPriceOf52Weeks": "19,700",
+     "lowPriceOf52Weeks": "13,100",
+     "per": "9.07배",
+     "eps": "1,544원",
+     "cnsPer": "14.69배",
+     "cnsEps": "954원",
+     "pbr": "0.71배",
+     "bps": "19,725원",
+     "dividendYieldRatio": "6.78%",
+     "dividend": "950원"
+    },
+    "basic": {
+     "stockName": "강원랜드",
+     "closePrice": "14,010",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:23+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "035250"
     }
    }
   },
@@ -9418,6 +9879,63 @@
     }
    }
   },
+  "038390": {
+   "name": "레드캡투어",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "레드캡투어",
+    "infos": {
+     "lastClosePrice": "9,960",
+     "openPrice": "9,960",
+     "highPrice": "10,140",
+     "lowPrice": "9,930",
+     "accumulatedTradingVolume": "10,632",
+     "accumulatedTradingValue": "1.06억",
+     "marketValue": "1,670억",
+     "foreignRate": "6.98%",
+     "highPriceOf52Weeks": "13,330",
+     "lowPriceOf52Weeks": "9,000",
+     "per": "6.52배",
+     "eps": "1,533원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "0.78배",
+     "bps": "12,751원",
+     "dividendYieldRatio": "8.01%",
+     "dividend": "800원"
+    },
+    "basic": {
+     "stockName": "레드캡투어",
+     "closePrice": "9,990",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:21+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "038390"
+    }
+   }
+  },
   "038880": {
    "name": "아이에이",
    "inds": [
@@ -9531,6 +10049,120 @@
       "name": "TRADING"
      },
      "itemCode": "039030"
+    }
+   }
+  },
+  "039130": {
+   "name": "하나투어",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "하나투어",
+    "infos": {
+     "lastClosePrice": "30,650",
+     "openPrice": "30,400",
+     "highPrice": "30,950",
+     "lowPrice": "30,000",
+     "accumulatedTradingVolume": "25,193",
+     "accumulatedTradingValue": "7.69억",
+     "marketValue": "4,473억",
+     "foreignRate": "11.59%",
+     "highPriceOf52Weeks": "51,900",
+     "lowPriceOf52Weeks": "26,800",
+     "per": "12.02배",
+     "eps": "2,538원",
+     "cnsPer": "10.11배",
+     "cnsEps": "3,016원",
+     "pbr": "3.14배",
+     "bps": "9,725원",
+     "dividendYieldRatio": "3.93%",
+     "dividend": "1,200원"
+    },
+    "basic": {
+     "stockName": "하나투어",
+     "closePrice": "30,500",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:20+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "039130"
+    }
+   }
+  },
+  "039310": {
+   "name": "세중",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "세중",
+    "infos": {
+     "lastClosePrice": "1,160",
+     "openPrice": "1,159",
+     "highPrice": "1,176",
+     "lowPrice": "1,123",
+     "accumulatedTradingVolume": "30,952",
+     "accumulatedTradingValue": "0.35억",
+     "marketValue": "211억",
+     "foreignRate": "3.37%",
+     "highPriceOf52Weeks": "2,900",
+     "lowPriceOf52Weeks": "830",
+     "per": "N/A",
+     "eps": "-205원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "0.21배",
+     "bps": "5,475원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "세중",
+     "closePrice": "1,164",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:20+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "039310"
     }
    }
   },
@@ -11201,6 +11833,120 @@
     }
    }
   },
+  "069960": {
+   "name": "현대백화점",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "현대백화점",
+    "infos": {
+     "lastClosePrice": "84,000",
+     "openPrice": "84,100",
+     "highPrice": "86,600",
+     "lowPrice": "82,000",
+     "accumulatedTradingVolume": "78,114",
+     "accumulatedTradingValue": "66.8억",
+     "marketValue": "1조 8,265억",
+     "foreignRate": "26.06%",
+     "highPriceOf52Weeks": "222,000",
+     "lowPriceOf52Weeks": "70,400",
+     "per": "8.21배",
+     "eps": "10,322원",
+     "cnsPer": "6.98배",
+     "cnsEps": "12,138원",
+     "pbr": "0.39배",
+     "bps": "217,975원",
+     "dividendYieldRatio": "2.54%",
+     "dividend": "2,150원"
+    },
+    "basic": {
+     "stockName": "현대백화점",
+     "closePrice": "84,700",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:26+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "069960"
+    }
+   }
+  },
+  "070960": {
+   "name": "HJ매그놀리아용평호텔앤리조트",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "모나용평",
+    "infos": {
+     "lastClosePrice": "1,857",
+     "openPrice": "1,840",
+     "highPrice": "1,889",
+     "lowPrice": "1,823",
+     "accumulatedTradingVolume": "21,201",
+     "accumulatedTradingValue": "0.39억",
+     "marketValue": "895억",
+     "foreignRate": "2.15%",
+     "highPriceOf52Weeks": "3,640",
+     "lowPriceOf52Weeks": "1,674",
+     "per": "N/A",
+     "eps": "-895원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "0.25배",
+     "bps": "7,527원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "모나용평",
+     "closePrice": "1,860",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:23+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "070960"
+    }
+   }
+  },
   "071280": {
    "name": "로체시스템즈",
    "inds": [
@@ -11883,6 +12629,63 @@
       "name": "TRADING"
      },
      "itemCode": "079980"
+    }
+   }
+  },
+  "080160": {
+   "name": "모두투어",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "모두투어",
+    "infos": {
+     "lastClosePrice": "10,210",
+     "openPrice": "10,260",
+     "highPrice": "10,950",
+     "lowPrice": "9,800",
+     "accumulatedTradingVolume": "972,000",
+     "accumulatedTradingValue": "101억",
+     "marketValue": "1,922억",
+     "foreignRate": "5.81%",
+     "highPriceOf52Weeks": "17,500",
+     "lowPriceOf52Weeks": "7,150",
+     "per": "35.81배",
+     "eps": "284원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "1.93배",
+     "bps": "5,281원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "모두투어",
+     "closePrice": "10,170",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:20+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "080160"
     }
    }
   },
@@ -13145,7 +13948,8 @@
   "089590": {
    "name": "제주항공",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -13602,7 +14406,8 @@
   "091810": {
    "name": "티웨이항공",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -14288,6 +15093,63 @@
       "name": "TRADING"
      },
      "itemCode": "094360"
+    }
+   }
+  },
+  "094850": {
+   "name": "참좋은여행",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "참좋은여행",
+    "infos": {
+     "lastClosePrice": "4,055",
+     "openPrice": "3,980",
+     "highPrice": "4,175",
+     "lowPrice": "3,925",
+     "accumulatedTradingVolume": "759,546",
+     "accumulatedTradingValue": "30.7억",
+     "marketValue": "556억",
+     "foreignRate": "2.05%",
+     "highPriceOf52Weeks": "7,740",
+     "lowPriceOf52Weeks": "3,510",
+     "per": "4.71배",
+     "eps": "842원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "0.53배",
+     "bps": "7,450원",
+     "dividendYieldRatio": "3.78%",
+     "dividend": "150원"
+    },
+    "basic": {
+     "stockName": "참좋은여행",
+     "closePrice": "3,970",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:23+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "094850"
     }
    }
   },
@@ -15436,6 +16298,63 @@
     }
    }
   },
+  "104620": {
+   "name": "노랑풍선",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "노랑풍선",
+    "infos": {
+     "lastClosePrice": "3,115",
+     "openPrice": "3,115",
+     "highPrice": "3,805",
+     "lowPrice": "3,100",
+     "accumulatedTradingVolume": "11,457,426",
+     "accumulatedTradingValue": "411억",
+     "marketValue": "604억",
+     "foreignRate": "1.54%",
+     "highPriceOf52Weeks": "7,580",
+     "lowPriceOf52Weeks": "2,530",
+     "per": "48.58배",
+     "eps": "74원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "1.42배",
+     "bps": "2,531원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "노랑풍선",
+     "closePrice": "3,595",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:21+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "104620"
+    }
+   }
+  },
   "104830": {
    "name": "원익머트리얼즈",
    "inds": [
@@ -15948,6 +16867,63 @@
       "name": "TRADING"
      },
      "itemCode": "112290"
+    }
+   }
+  },
+  "114090": {
+   "name": "GKL",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "GKL",
+    "infos": {
+     "lastClosePrice": "7,750",
+     "openPrice": "7,900",
+     "highPrice": "7,900",
+     "lowPrice": "7,660",
+     "accumulatedTradingVolume": "106,389",
+     "accumulatedTradingValue": "8.21억",
+     "marketValue": "4,769억",
+     "foreignRate": "11.26%",
+     "highPriceOf52Weeks": "15,570",
+     "lowPriceOf52Weeks": "7,660",
+     "per": "10.12배",
+     "eps": "762원",
+     "cnsPer": "9.12배",
+     "cnsEps": "845원",
+     "pbr": "1.05배",
+     "bps": "7,311원",
+     "dividendYieldRatio": "5.37%",
+     "dividend": "414원"
+    },
+    "basic": {
+     "stockName": "GKL",
+     "closePrice": "7,710",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:22+09:00",
+     "stockExchangeType": {
+      "code": "KS",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스피",
+      "nameEng": "KOSPI",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSPI"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "114090"
     }
    }
   },
@@ -17685,7 +18661,8 @@
   "180640": {
    "name": "한진칼",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "pref_found": "18064K",
@@ -17743,7 +18720,8 @@
   "18064K": {
    "name": "한진칼우",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_of": "180640",
    "naver": {
@@ -18317,6 +19295,63 @@
       "name": "TRADING"
      },
      "itemCode": "200710"
+    }
+   }
+  },
+  "204620": {
+   "name": "글로벌텍스프리",
+   "inds": [
+    "travel"
+   ],
+   "pref_checked": true,
+   "naver": {
+    "name": "글로벌텍스프리",
+    "infos": {
+     "lastClosePrice": "5,680",
+     "openPrice": "5,650",
+     "highPrice": "5,650",
+     "lowPrice": "5,410",
+     "accumulatedTradingVolume": "825,703",
+     "accumulatedTradingValue": "45.4억",
+     "marketValue": "3,894억",
+     "foreignRate": "23.32%",
+     "highPriceOf52Weeks": "7,230",
+     "lowPriceOf52Weeks": "3,955",
+     "per": "10.59배",
+     "eps": "523원",
+     "cnsPer": "N/A",
+     "cnsEps": "N/A",
+     "pbr": "2.37배",
+     "bps": "2,342원",
+     "dividendYieldRatio": "N/A",
+     "dividend": "N/A"
+    },
+    "basic": {
+     "stockName": "글로벌텍스프리",
+     "closePrice": "5,540",
+     "marketStatus": "CLOSE",
+     "localTradedAt": "2026-11-13T20:20:19+09:00",
+     "stockExchangeType": {
+      "code": "KQ",
+      "zoneId": "Asia/Seoul",
+      "nationType": "KOR",
+      "delayTime": 0,
+      "startTime": "0900",
+      "endTime": "1530",
+      "closePriceSendTime": "1630",
+      "nameKor": "코스닥",
+      "nameEng": "KOSDAQ",
+      "stockType": "domestic",
+      "nationCode": "KOR",
+      "nationName": "대한민국",
+      "name": "KOSDAQ"
+     },
+     "tradeStopType": {
+      "code": "1",
+      "text": "운영.Trading",
+      "name": "TRADING"
+     },
+     "itemCode": "204620"
     }
    }
   },
@@ -20950,7 +21985,8 @@
   "272450": {
    "name": "진에어",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
@@ -21866,7 +22902,8 @@
   "298690": {
    "name": "에어부산",
    "inds": [
-    "logistics"
+    "logistics",
+    "travel"
    ],
    "pref_checked": true,
    "naver": {
