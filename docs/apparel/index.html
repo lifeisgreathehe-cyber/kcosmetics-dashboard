@@ -95,6 +95,7 @@ p.lede{max-width:70ch;color:var(--ink-2);margin:0 0 18px}
 .moat .dots{letter-spacing:2px;color:var(--accent);font-size:15px}
 .chip{display:inline-block;font-size:11.5px;padding:1px 8px;border:1px solid var(--line);border-radius:99px;color:var(--ink-2);margin:0 4px 4px 0}
 .fisher{width:100%;border-collapse:collapse;font-size:13px}
+.fsc{display:block;font-size:11px;line-height:1.2;margin-top:2px;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .fisher td{padding:6px 8px;border-top:1px solid var(--line);vertical-align:top;text-align:left;white-space:normal}
 .fisher td.n{color:var(--ink-3);width:22px;font-variant-numeric:tabular-nums}
 .fisher td.q{width:34%;color:var(--ink-2)}
@@ -438,11 +439,11 @@ function renderCompanyTable(){
   const rows=sortRows(CO.companies.filter(c=>grp==='전체'||c.group===grp),coSort,G);
   const body=rows.map(c=>{
     const l=L(c);
-    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
+    if(!l) return `<tr data-code="${c.code}" tabindex="0"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td colspan="16" style="text-align:left;color:var(--ink-3)">데이터 수집 대기 (국내 PC에서 DART 수집 실행 후 표시)</td></tr>`;
     const {q,a,p}=l, v=VAL(c.code);
     const ry=yoy(a.rev,p.rev), oy=yoy(a.op,p.op), opm=a.rev?a.op/a.rev*100:null;
     const per=v.per!=null?ratio(v.per,1,'배'):(v.ttm&&v.ttm.ni<=0?'적자':'–');
-    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span></td><td>${q}</td>
+    return `<tr data-code="${c.code}" tabindex="0" class="${cur===c.code?'sel':''}"><td class="l">${c.name} <span class="pill">${c.group}</span>${fisherTag(c.code)}</td><td>${q}</td>
       <td class="num">${fmt(eok(a.rev))}</td><td class="num ${cls(ry)}">${pct(ry)}</td>
       <td class="num">${fmt(eok(a.op))}</td><td class="num ${cls(oy)}">${pct(oy)}</td><td class="num">${opm==null?'–':opm.toFixed(1)+'%'}</td>
       <td class="num">${fmt(eok(a.ni))}</td><td class="num ${cls(yoy(a.ni,p.ni))}">${pct(yoy(a.ni,p.ni))}</td>
@@ -500,6 +501,13 @@ function irBlock(c,x){
    ${ft?`<p><span class="tone ${tn[1]}">${tn[0]}</span>${ft.text}</p>`:''}
    ${ir.changes&&ir.changes.length?`<h4>과거 IR 대비 달라진 점</h4><ul>${ir.changes.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}
    ${ir.cross&&ir.cross.length?`<h4>경쟁사·고객사·공급사 자료로 교차검증</h4><ul>${ir.cross.map(t=>`<li>${t}</li>`).join('')}</ul>`:''}`;
+}
+/* 회사 표: 종목명 아래 필립 피셔 16문항 점수(각 0·1·2점, 만점 32) */
+function fisherTag(code){
+  const x=D.deep&&D.deep.companies&&D.deep.companies[code];
+  if(!x||!x.fisher||x.fisher_score==null) return '';
+  const mx=x.fisher.length*2;
+  return `<span class="fsc" title="필립 피셔 ${x.fisher.length}문항 점수 (충족 2·부분 1·미흡 0점)">피셔 ${x.fisher_score}/${mx}</span>`;
 }
 function renderDeep(c){
   const dp=D.deep, x=dp&&dp.companies&&dp.companies[c.code];
