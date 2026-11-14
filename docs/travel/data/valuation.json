@@ -1,0 +1,3293 @@
+{
+ "updated": "2026-11-14",
+ "method": "",
+ "terminal_growth": 2.0,
+ "asof": null,
+ "companies": {
+  "039130": {
+   "name": "하나투어",
+   "group": "여행사",
+   "ttm": {
+    "rev": 588779,
+    "op": 56032,
+    "ni": 39309,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 30500,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 447435,
+   "mcap_eff": 447435,
+   "shares": 14670000,
+   "shares_check": {
+    "dart_common": 14670000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 142622,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 137985,
+   "dividend_yield": null,
+   "per": 11.4,
+   "roe": 27.6,
+   "pbr": 3.14,
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 41507,
+    "norm": -255210,
+    "ttm_ni": 39309,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 23.3,
+    "ni_q": 4811,
+    "por_ttm": 8.0,
+    "op_ttm": 56032,
+    "por_q": 20.7,
+    "op_q": 5402,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 78,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": true,
+      "val": "27.6%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021·2022",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "85.9%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "1,380억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "78%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 2/3개 통과. 이익이 높고 안정적이며 빚 부담이 적어 '예측 가능한 좋은 사업'에 가까워요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "080160": {
+   "name": "모두투어",
+   "group": "여행사",
+   "ttm": {
+    "rev": 209010,
+    "op": -1229,
+    "ni": 5371,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10170,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 181534,
+   "mcap_eff": 181534,
+   "shares": 17849951,
+   "shares_check": {
+    "dart_common": 17850000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 99818,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 79997,
+   "dividend_yield": null,
+   "per": 33.8,
+   "roe": 5.4,
+   "pbr": 1.82,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 2206,
+    "norm": 63788,
+    "ttm_ni": 5371,
+    "oneoff": false,
+    "E": 32997,
+    "per_share": 17394,
+    "bear": 13931,
+    "bull": 21711,
+    "upside": 71.0,
+    "pct": 100,
+    "tier": "싼 ⅓",
+    "exp_ex": 5.5
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -221,
+    "por_ttm": null,
+    "op_ttm": -1229,
+    "por_q": null,
+    "op_q": -856,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 26,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "5.4%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2022",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "70.1%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "800억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "26%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2022년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "104620": {
+   "name": "노랑풍선",
+   "group": "여행사",
+   "ttm": {
+    "rev": 112819,
+    "op": 5076,
+    "ni": 1239,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 3595,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 60432,
+   "mcap_eff": 60432,
+   "shares": 16810014,
+   "shares_check": {
+    "dart_common": 16810000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 42556,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 13154,
+   "dividend_yield": null,
+   "per": 48.8,
+   "roe": 2.9,
+   "pbr": 1.42,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 2599,
+    "norm": -206091,
+    "ttm_ni": 1239,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 31.7,
+    "ni_q": 477,
+    "por_ttm": 11.9,
+    "op_ttm": 5076,
+    "por_q": 19.5,
+    "op_q": 773,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 63,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "2.9%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021·2022·2024·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "99.7%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "132억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "63%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2021·2022·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "094850": {
+   "name": "참좋은여행",
+   "group": "여행사"
+  },
+  "038390": {
+   "name": "레드캡투어",
+   "group": "여행사",
+   "ttm": {
+    "rev": 356105,
+    "op": 49048,
+    "ni": 25637,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 9990,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 167033,
+   "mcap_eff": 167033,
+   "shares": 16720020,
+   "shares_check": {
+    "dart_common": 16720000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 213215,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -365337,
+   "dividend_yield": null,
+   "per": 6.5,
+   "roe": 12.0,
+   "pbr": 0.78,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 31947,
+    "norm": 23646,
+    "ttm_ni": 25637,
+    "oneoff": false,
+    "E": 27797,
+    "per_share": 15642,
+    "bear": 12528,
+    "bull": 19526,
+    "upside": 56.6,
+    "pct": 91,
+    "tier": "싼 ⅓",
+    "exp_ex": 4.9
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 4.6,
+    "ni_q": 9129,
+    "por_ttm": 3.4,
+    "op_ttm": 49048,
+    "por_q": 2.7,
+    "op_q": 15737,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 206,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "12.0%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": true,
+      "val": "5년 모두 흑자",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": true,
+      "val": "0.14",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "75.5%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-3,653억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "206%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "대형우량주(스탤워트)",
+    "lynch_cat_note": "연 5~20%로 꾸준히 크는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 3/4개 통과. 이익이 높고 안정적이며 빚 부담이 적어 '예측 가능한 좋은 사업'에 가까워요.",
+    "lynch_take": "린치 관점: 꾸준히 크는 대형우량주예요. 린치는 이런 회사에서 30~50% 수익을 보고 비싸지면 갈아탔어요."
+   }
+  },
+  "039310": {
+   "name": "세중",
+   "group": "여행사"
+  },
+  "003490": {
+   "name": "대한항공",
+   "group": "항공",
+   "ttm": {
+    "rev": 26411092,
+    "op": 622732,
+    "ni": -255994,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 31600,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 11666700,
+   "mcap_eff": 11666698,
+   "shares": 369199304,
+   "shares_check": {
+    "dart_common": 368220609,
+    "dart_period": "2026-11012",
+    "listed": 368221519,
+    "pref": "003495",
+    "pref_shares": 1111508,
+    "pref_price": 27800
+   },
+   "equity": 10512545,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -8320931,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -2.4,
+   "pbr": 1.11,
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q3~2026Q2",
+    "core": 485731,
+    "norm": 534682,
+    "ttm_ni": -255994,
+    "oneoff": true,
+    "E": 510206,
+    "per_share": 13003,
+    "bear": 10414,
+    "bull": 16230,
+    "upside": -58.9,
+    "pct": 36,
+    "tier": "가운데 ⅓",
+    "exp_ex": -3.9
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -387857,
+    "por_ttm": 18.7,
+    "op_ttm": 622732,
+    "por_q": null,
+    "op_q": -207111,
+    "cns_per": 22.48,
+    "div_yield": 2.37,
+    "dps": 750.0,
+    "debt_eq": 104,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 27.1,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-2.4%",
+      "note": ""
+     },
+     {
+      "name": "최근 10년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2016·2018·2019·2020",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "0.64",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "21.3%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-83,209억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "104%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": true,
+      "val": "5/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "9.1% vs 8.8%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": true,
+      "val": "59.2% vs 27.1%",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2016·2018·2019·2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "020560": {
+   "name": "아시아나항공",
+   "group": "항공",
+   "ttm": {
+    "rev": 6967672,
+    "op": -787007,
+    "ni": -642516,
+    "period": "2025Q4~2026Q3"
+   },
+   "price": 8400,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 1730300,
+   "mcap_eff": 1729546,
+   "shares": 205898333,
+   "shares_check": {
+    "dart_common": 205900990,
+    "dart_period": "2026-11012",
+    "listed": 205988095,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 358516,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -1598455,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -179.2,
+   "pbr": 4.82,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q4~2026Q3",
+    "core": -628191,
+    "norm": -231103,
+    "ttm_ni": -642516,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 1.8,
+    "ni_q": 235221,
+    "por_ttm": null,
+    "op_ttm": -787007,
+    "por_q": null,
+    "op_q": -182356,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 634,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 13.3,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-179.2%",
+      "note": ""
+     },
+     {
+      "name": "최근 10년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2018·2019·2020·2021·2024·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "3.88",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "11.5%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-15,985억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "634%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": true,
+      "val": "4/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "2.2% vs 1.1%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2018·2019·2020·2021·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "089590": {
+   "name": "제주항공",
+   "group": "항공",
+   "ttm": {
+    "rev": 1840835,
+    "op": -13183,
+    "ni": -100574,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 6860,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 553200,
+   "mcap_eff": 552721,
+   "shares": 80571574,
+   "shares_check": {
+    "dart_common": 80571111,
+    "dart_period": "2026-11012",
+    "listed": 80641399,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 239400,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -263781,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -42.0,
+   "pbr": 2.31,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": -55428,
+    "norm": -167713,
+    "ttm_ni": -100574,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -43456,
+    "por_ttm": null,
+    "op_ttm": -13183,
+    "por_q": null,
+    "op_q": -44963,
+    "cns_per": 4.25,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 190,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 33.2,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-42.0%",
+      "note": ""
+     },
+     {
+      "name": "최근 10년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2019·2020·2021·2022·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "-10.8%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-2,638억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "190%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": false,
+      "val": "3/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "2.3% vs -29.5%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2019·2020·2021·2022·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "272450": {
+   "name": "진에어",
+   "group": "항공",
+   "ttm": {
+    "rev": 1549183,
+    "op": -20356,
+    "ni": -26828,
+    "period": "2025Q4~2026Q3"
+   },
+   "price": 7780,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 406100,
+   "mcap_eff": 400916,
+   "shares": 51531620,
+   "shares_check": {
+    "dart_common": 51533634,
+    "dart_period": "2026-11012",
+    "listed": 52197943,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 209067,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 43952,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -12.8,
+   "pbr": 1.92,
+   "quant": {
+    "pos": "중립",
+    "period": "2025Q4~2026Q3",
+    "core": -21353,
+    "norm": -86285,
+    "ttm_ni": -26828,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 3.2,
+    "ni_q": 31247,
+    "por_ttm": null,
+    "op_ttm": -20356,
+    "por_q": 12.9,
+    "op_q": 7765,
+    "cns_per": -15.78,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 0,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 38.4,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-12.8%",
+      "note": ""
+     },
+     {
+      "name": "최근 9년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2019·2020·2021·2022·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "-2.3%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "차입 없음",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "440억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "0%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": false,
+      "val": "3/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "8.0% vs -23.7%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2019·2020·2021·2022·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "091810": {
+   "name": "티웨이항공",
+   "group": "항공",
+   "ttm": {
+    "rev": 2055491,
+    "op": -314466,
+    "ni": -443487,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 2450,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 250200,
+   "mcap_eff": 249697,
+   "shares": 101917143,
+   "shares_check": {
+    "dart_common": 412764093,
+    "dart_period": "2026-11012",
+    "listed": 102122449,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 90517,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 455788,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -489.9,
+   "pbr": 2.76,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -344385,
+    "norm": -266424,
+    "ttm_ni": -443487,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -211381,
+    "por_ttm": null,
+    "op_ttm": -314466,
+    "por_q": null,
+    "op_q": -181983,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 46,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 46.2,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-489.9%",
+      "note": ""
+     },
+     {
+      "name": "최근 8년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2019·2020·2021·2022·2024·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "-7.2%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "4,558억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "46%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": true,
+      "val": "4/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "-1.7% vs -29.9%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2019·2020·2021·2022·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "298690": {
+   "name": "에어부산",
+   "group": "항공",
+   "ttm": {
+    "rev": 976233,
+    "op": -5421,
+    "ni": -36473,
+    "period": "2025Q4~2026Q3"
+   },
+   "price": 1790,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 291600,
+   "mcap_eff": 291496,
+   "shares": 162846927,
+   "shares_check": {
+    "dart_common": 162856856,
+    "dart_period": "2026-11012",
+    "listed": 162905028,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 154258,
+   "equity_source": "DART 2026Q3",
+   "net_cash": 49407,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -23.6,
+   "pbr": 1.89,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q4~2026Q3",
+    "core": -20351,
+    "norm": -167468,
+    "ttm_ni": -36473,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 1.0,
+    "ni_q": 73004,
+    "por_ttm": null,
+    "op_ttm": -5421,
+    "por_q": 15.6,
+    "op_q": 4677,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 26,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 34.4,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-23.6%",
+      "note": ""
+     },
+     {
+      "name": "최근 8년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2019·2020·2021·2022·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "-11.5%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "494억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "26%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": false,
+      "val": "3/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "10.6% vs -47.6%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2019·2020·2021·2022·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "180640": {
+   "name": "한진칼",
+   "group": "항공",
+   "ttm": {
+    "rev": 300879,
+    "op": 54031,
+    "ni": 321261,
+    "period": "2025Q4~2026Q3"
+   },
+   "price": 200000,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 13411900,
+   "mcap_eff": 13411174,
+   "shares": 67055870,
+   "shares_check": {
+    "dart_common": 66762276,
+    "dart_period": "2026-11012",
+    "listed": 66762500,
+    "pref": "18064K",
+    "pref_shares": 523888,
+    "pref_price": 112000
+   },
+   "equity": 3579674,
+   "equity_source": "DART 2026Q3",
+   "net_cash": -369526,
+   "dividend_yield": null,
+   "per": 41.7,
+   "roe": 9.0,
+   "pbr": 3.75,
+   "quant": {
+    "pos": "회복기",
+    "period": "2025Q4~2026Q3",
+    "core": 42144,
+    "norm": 83104,
+    "ttm_ni": 321261,
+    "oneoff": true,
+    "E": 62624,
+    "per_share": 8787,
+    "bear": 7038,
+    "bull": 10969,
+    "upside": -95.6,
+    "pct": 18,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
+   },
+   "metrics": {
+    "q": "2026Q3",
+    "ttm_period": "2025Q4~2026Q3",
+    "per_q": 12.2,
+    "ni_q": 275150,
+    "por_ttm": 248.2,
+    "op_ttm": 54031,
+    "por_q": 282.8,
+    "op_q": 11854,
+    "cns_per": null,
+    "div_yield": 0.18,
+    "dps": 360.0,
+    "debt_eq": 13,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": -6.1,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "9.0%",
+      "note": ""
+     },
+     {
+      "name": "최근 10년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2016·2018·2019·2020",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "27.0%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-3,695억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "13%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": false,
+      "val": "3/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "10.0% vs -9.7%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2016·2018·2019·2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "005430": {
+   "name": "한국공항",
+   "group": "항공",
+   "ttm": {
+    "rev": 697877,
+    "op": 53628,
+    "ni": 45872,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 106100,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 336000,
+   "mcap_eff": 324526,
+   "shares": 3058680,
+   "shares_check": {
+    "dart_common": 3058211,
+    "dart_period": "2026-11012",
+    "listed": 3166824,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 427704,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 95824,
+   "dividend_yield": null,
+   "per": 7.1,
+   "roe": 10.7,
+   "pbr": 0.76,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 43851,
+    "norm": 21304,
+    "ttm_ni": 45872,
+    "oneoff": false,
+    "E": 32577,
+    "per_share": 100215,
+    "bear": 80264,
+    "bull": 125092,
+    "upside": -5.5,
+    "pct": 73,
+    "tier": "싼 ⅓",
+    "exp_ex": 1.5
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 7.9,
+    "ni_q": 10333,
+    "por_ttm": 6.1,
+    "op_ttm": 53628,
+    "por_q": 6.3,
+    "op_q": 12924,
+    "cns_per": null,
+    "div_yield": 0.94,
+    "dps": 1000.0,
+    "debt_eq": 0,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": 17.3,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "10.7%",
+      "note": ""
+     },
+     {
+      "name": "최근 10년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2020",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "2.73",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "10.3%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "차입 없음",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "958억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "0%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": true,
+      "val": "5/5년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     },
+     {
+      "name": "영업이익률 개선(최근 3년 평균 > 이전 평균)",
+      "ok": true,
+      "val": "6.8% vs 0.6%",
+      "note": "피셔 5·6번 질문: 이익률과 개선 노력"
+     },
+     {
+      "name": "영업이익이 매출보다 빠르게 늘어남(5년)",
+      "ok": null,
+      "val": "–",
+      "note": "규모가 커질수록 남는 게 많아지는 사업인지(영업 레버리지)"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2020년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "008770": {
+   "name": "호텔신라",
+   "group": "면세점",
+   "ttm": {
+    "rev": 4096392,
+    "op": 88254,
+    "ni": -135650,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 34950,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 1322858,
+   "mcap_eff": 1322858,
+   "shares": 37850014,
+   "shares_check": {
+    "dart_common": 37850000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 1140101,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -972728,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -11.9,
+   "pbr": 1.16,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 68838,
+    "norm": -29087,
+    "ttm_ni": -135650,
+    "oneoff": true,
+    "E": 19876,
+    "per_share": 4941,
+    "bear": 3957,
+    "bull": 6167,
+    "upside": -85.9,
+    "pct": 27,
+    "tier": "비싼 ⅓",
+    "exp_ex": -10.3
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 15.7,
+    "ni_q": 21021,
+    "por_ttm": 15.0,
+    "op_ttm": 88254,
+    "por_q": 5.4,
+    "op_q": 61142,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 134,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-11.9%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2022·2024·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "0.85",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "99.7%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-9,727억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "134%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 1/4개 통과. 이익이 크게 오르내려(적자 2022·2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "004170": {
+   "name": "신세계",
+   "group": "면세점",
+   "ttm": {
+    "rev": 7197361,
+    "op": 635852,
+    "ni": 169013,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 249500,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 2188115,
+   "mcap_eff": 2188115,
+   "shares": 8770000,
+   "shares_check": {
+    "dart_common": 8770000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 5402310,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -3938662,
+   "dividend_yield": null,
+   "per": 12.9,
+   "roe": 3.1,
+   "pbr": 0.41,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 332489,
+    "norm": 215350,
+    "ttm_ni": 169013,
+    "oneoff": false,
+    "E": 273919,
+    "per_share": 293882,
+    "bear": 235377,
+    "bull": 366834,
+    "upside": 17.8,
+    "pct": 82,
+    "tier": "싼 ⅓",
+    "exp_ex": 2.9
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 6.1,
+    "ni_q": 90148,
+    "por_ttm": 3.4,
+    "op_ttm": 635852,
+    "por_q": 3.3,
+    "op_q": 167158,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 92,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "3.1%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": true,
+      "val": "5년 모두 흑자",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": true,
+      "val": "0.14",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "60.9%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-39,387억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "92%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "저성장주",
+    "lynch_cat_note": "매출 성장률이 연 5% 미만인 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 3/4개 통과. 이익이 높고 안정적이며 빚 부담이 적어 '예측 가능한 좋은 사업'에 가까워요.",
+    "lynch_take": "린치 관점: 저성장주예요. 린치는 이런 회사에서 배당수익률과 싼 가격 외에는 큰 수익을 기대하지 않았어요."
+   }
+  },
+  "069960": {
+   "name": "현대백화점",
+   "group": "면세점",
+   "ttm": {
+    "rev": 4070054,
+    "op": 356716,
+    "ni": 231644,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 84700,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 1806651,
+   "mcap_eff": 1806651,
+   "shares": 21330000,
+   "shares_check": {
+    "dart_common": 21330000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 4649950,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1257008,
+   "dividend_yield": null,
+   "per": 7.8,
+   "roe": 5.0,
+   "pbr": 0.39,
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 254941,
+    "norm": 87617,
+    "ttm_ni": 231644,
+    "oneoff": false,
+    "E": 171279,
+    "per_share": 75555,
+    "bear": 60514,
+    "bull": 94311,
+    "upside": -10.8,
+    "pct": 55,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.1
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 6.6,
+    "ni_q": 68734,
+    "por_ttm": 5.1,
+    "op_ttm": 356716,
+    "por_q": 5.7,
+    "op_q": 79319,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 67,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "5.0%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2023·2024",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": true,
+      "val": "0.12",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "61.8%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-12,570억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "67%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "회생주",
+    "lynch_cat_note": "적자에서 흑자로 돌아선 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 2/4개 통과. 이익이 크게 오르내려(적자 2023·2024년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 회생주예요. 흑자 전환이 일회성인지, 빚을 버틸 현금이 있는지가 핵심이에요."
+   }
+  },
+  "204620": {
+   "name": "글로벌텍스프리",
+   "group": "택스리펀드",
+   "ttm": {
+    "rev": 167146,
+    "op": 30429,
+    "ni": 36747,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 5540,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 389296,
+   "mcap_eff": 389296,
+   "shares": 70270036,
+   "shares_check": {
+    "dart_common": 70270000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 164574,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 147456,
+   "dividend_yield": null,
+   "per": 10.6,
+   "roe": 22.3,
+   "pbr": 2.37,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 30241,
+    "norm": -27713,
+    "ttm_ni": 36747,
+    "oneoff": false,
+    "E": 1264,
+    "per_share": 169,
+    "bear": 136,
+    "bull": 211,
+    "upside": -96.9,
+    "pct": 9,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 8.1,
+    "ni_q": 11998,
+    "por_ttm": 12.8,
+    "op_ttm": 30429,
+    "por_q": 10.6,
+    "op_q": 9139,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 1,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": true,
+      "val": "22.3%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021·2022·2023",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "13.65",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "97.4%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "1,475억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "1%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 2/4개 통과. 이익이 크게 오르내려(적자 2021·2022·2023년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "035250": {
+   "name": "강원랜드",
+   "group": "카지노",
+   "ttm": {
+    "rev": 1474153,
+    "op": 215253,
+    "ni": 330292,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 14010,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 2776642,
+   "mcap_eff": 2776642,
+   "shares": 198190007,
+   "shares_check": {
+    "dart_common": 198190000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 3909446,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 2927389,
+   "dividend_yield": null,
+   "per": 8.4,
+   "roe": 8.4,
+   "pbr": 0.71,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": 249095,
+    "norm": 277872,
+    "ttm_ni": 330292,
+    "oneoff": false,
+    "E": 263483,
+    "per_share": 12509,
+    "bear": 10019,
+    "bull": 15614,
+    "upside": -10.7,
+    "pct": 64,
+    "tier": "가운데 ⅓",
+    "exp_ex": 1.1
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 6.3,
+    "ni_q": 109866,
+    "por_ttm": 12.9,
+    "op_ttm": 215253,
+    "por_q": 15.8,
+    "op_q": 43804,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 1,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "8.4%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "0.76",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "23.9%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "29,274억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "1%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2021년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "034230": {
+   "name": "파라다이스",
+   "group": "카지노",
+   "ttm": {
+    "rev": 1194156,
+    "op": 128544,
+    "ni": 74599,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 10380,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 910949,
+   "mcap_eff": 910949,
+   "shares": 87760019,
+   "shares_check": {
+    "dart_common": 87760000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 1749690,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -620698,
+   "dividend_yield": null,
+   "per": 12.2,
+   "roe": 4.3,
+   "pbr": 0.52,
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 87432,
+    "norm": 35938,
+    "ttm_ni": 74599,
+    "oneoff": false,
+    "E": 61685,
+    "per_share": 6613,
+    "bear": 5297,
+    "bull": 8255,
+    "upside": -36.3,
+    "pct": 45,
+    "tier": "가운데 ⅓",
+    "exp_ex": -1.1
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 14.4,
+    "ni_q": 15787,
+    "por_ttm": 7.1,
+    "op_ttm": 128544,
+    "por_q": 6.4,
+    "op_q": 35550,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 76,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "4.3%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "1.82",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "16.2%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-6,207억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "76%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2021년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "114090": {
+   "name": "GKL",
+   "group": "카지노",
+   "ttm": {
+    "rev": 443244,
+    "op": 55503,
+    "ni": 47116,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 7710,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 476941,
+   "mcap_eff": 476941,
+   "shares": 61860052,
+   "shares_check": {
+    "dart_common": 61860000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 452224,
+   "equity_source": "DART 2026Q2",
+   "net_cash": 378615,
+   "dividend_yield": null,
+   "per": 10.1,
+   "roe": 10.4,
+   "pbr": 1.05,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 45204,
+    "norm": -123911,
+    "ttm_ni": 47116,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 6.6,
+    "ni_q": 18015,
+    "por_ttm": 8.6,
+    "op_ttm": 55503,
+    "por_q": 5.7,
+    "op_q": 20835,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 9,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "10.4%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021·2022",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "-15.5%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": true,
+      "val": "3,786억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "9%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/3개 통과. 이익이 크게 오르내려(적자 2021·2022년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "032350": {
+   "name": "롯데관광개발",
+   "group": "카지노",
+   "ttm": {
+    "rev": 733273,
+    "op": 177903,
+    "ni": 52662,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 9980,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 795705,
+   "mcap_eff": 795705,
+   "shares": 79729960,
+   "shares_check": {
+    "dart_common": 79730000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 376892,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -1192651,
+   "dividend_yield": null,
+   "per": 15.1,
+   "roe": 14.0,
+   "pbr": 2.11,
+   "quant": {
+    "pos": "상승기",
+    "period": "2025Q3~2026Q2",
+    "core": 95713,
+    "norm": -644768,
+    "ttm_ni": 52662,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": 13.6,
+    "ni_q": 14660,
+    "por_ttm": 4.5,
+    "op_ttm": 177903,
+    "por_q": 3.8,
+    "op_q": 51929,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 353,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "14.0%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2021·2022·2023·2024",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "적자 평균",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "100.0%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
+      "ok": null,
+      "val": "–",
+      "note": "5년 전 또는 지금이 적자라 성장률 계산 불가"
+     },
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-11,927억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": false,
+      "val": "353%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "회생주",
+    "lynch_cat_note": "적자에서 흑자로 돌아선 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 1/3개 통과. 이익이 크게 오르내려(적자 2021·2022·2023·2024년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 회생주예요. 흑자 전환이 일회성인지, 빚을 버틸 현금이 있는지가 핵심이에요."
+   }
+  },
+  "025980": {
+   "name": "아난티",
+   "group": "호텔·리조트",
+   "ttm": {
+    "rev": 240795,
+    "op": -827,
+    "ni": -29694,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 4110,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 400026,
+   "mcap_eff": 400026,
+   "shares": 97329927,
+   "shares_check": {
+    "dart_common": 97330000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 715464,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -565745,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -4.2,
+   "pbr": 0.56,
+   "quant": {
+    "pos": "바닥권",
+    "period": "2025Q3~2026Q2",
+    "core": -15170,
+    "norm": 1963,
+    "ttm_ni": -29694,
+    "oneoff": false
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -8709,
+    "por_ttm": null,
+    "op_ttm": -827,
+    "por_q": null,
+    "op_q": -5365,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 88,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-4.2%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2024·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "0.76",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": true,
+      "val": "46.1%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-5,657억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "88%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 1/4개 통과. 이익이 크게 오르내려(적자 2024·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  },
+  "006730": {
+   "name": "서부T&D",
+   "group": "호텔·리조트"
+  },
+  "070960": {
+   "name": "HJ매그놀리아용평호텔앤리조트",
+   "group": "호텔·리조트",
+   "ttm": {
+    "rev": 171935,
+    "op": 5213,
+    "ni": -43055,
+    "period": "2025Q3~2026Q2"
+   },
+   "price": 1860,
+   "price_date": "2026-11-14 17:15",
+   "price_source": "네이버 금융",
+   "mcap": 87978,
+   "mcap_eff": 87978,
+   "shares": 47300000,
+   "shares_check": {
+    "dart_common": 47300000,
+    "dart_period": "stockanalysis",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": 356075,
+   "equity_source": "DART 2026Q2",
+   "net_cash": -295166,
+   "dividend_yield": null,
+   "per": null,
+   "roe": -12.1,
+   "pbr": 0.25,
+   "quant": {
+    "pos": "하강기",
+    "period": "2025Q3~2026Q2",
+    "core": 4066,
+    "norm": -4014,
+    "ttm_ni": -43055,
+    "oneoff": true,
+    "E": 26,
+    "per_share": 5,
+    "bear": 4,
+    "bull": 6,
+    "upside": -99.7,
+    "pct": 0,
+    "tier": "비싼 ⅓",
+    "exp_ex": -12.2
+   },
+   "metrics": {
+    "q": "2026Q2",
+    "ttm_period": "2025Q3~2026Q2",
+    "per_q": null,
+    "ni_q": -9227,
+    "por_ttm": 16.9,
+    "op_ttm": 5213,
+    "por_q": null,
+    "op_q": -8194,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": 93,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": false,
+      "val": "-12.1%",
+      "note": ""
+     },
+     {
+      "name": "최근 5년 적자 낸 해 없음",
+      "ok": false,
+      "val": "2022·2025",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": false,
+      "val": "0.46",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": false,
+      "val": "18.7%",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": null,
+      "val": "–",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-2,952억",
+      "note": ""
+     },
+     {
+      "name": "차입금이 자본보다 적음",
+      "ok": true,
+      "val": "93%",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/4년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "경기순환주",
+    "lynch_cat_note": "업황에 따라 이익이 크게 오르내리는 회사",
+    "buffett_take": "버핏 관점: 숫자 기준 0/4개 통과. 이익이 크게 오르내려(적자 2022·2025년) 버핏이 말한 '10년 뒤 이익을 예측할 수 있는 사업'의 요건은 약해요. 사려면 정상 이익보다 충분히 싸야 해요.",
+    "lynch_take": "린치 관점: 경기순환주예요. 린치는 경기순환주의 PER이 가장 낮을 때가 이익 정점일 수 있다고 경고했어요. 공급 증가(증설·재고)와 가격 둔화 신호를 지켜봐야 해요."
+   }
+  }
+ },
+ "industry_cycle": {},
+ "quant_meta": {
+  "model": "사이클 평균 이익 50% + 핵심 이익(일회성 제거) 50%, 업종 공통 가정",
+  "par": {
+   "g": {
+    "bear": 0.0,
+    "base": 5.0,
+    "bull": 10.0
+   },
+   "r": 10.5,
+   "c": 0.7
+  },
+  "beta": 0.065,
+  "history": []
+ },
+ "marks_meta": {
+  "temperature": null,
+  "market": [
+   {
+    "industry": "cosmetics",
+    "n": 44,
+    "median_upside": 6.8,
+    "share_above": 43,
+    "label": "중간",
+    "shift": 0
+   },
+   {
+    "industry": "semi",
+    "n": 109,
+    "median_upside": -44.3,
+    "share_above": 80,
+    "label": "과열(낙관 쪽)",
+    "shift": 1
+   },
+   {
+    "industry": "chem",
+    "n": 54,
+    "median_upside": -2.1,
+    "share_above": 52,
+    "label": "중간",
+    "shift": 0
+   },
+   {
+    "industry": "battery",
+    "n": 66,
+    "median_upside": -57.4,
+    "share_above": 91,
+    "label": "과열(낙관 쪽)",
+    "shift": 1
+   },
+   {
+    "industry": "apparel",
+    "n": 32,
+    "median_upside": 5.2,
+    "share_above": 47,
+    "label": "중간",
+    "shift": 0
+   },
+   {
+    "industry": "food",
+    "n": 48,
+    "median_upside": 20.2,
+    "share_above": 46,
+    "label": "다소 차가움",
+    "shift": 0
+   },
+   {
+    "industry": "logistics",
+    "n": 25,
+    "median_upside": 9.6,
+    "share_above": 44,
+    "label": "중간",
+    "shift": 0
+   }
+  ],
+  "weights": {
+   "호황 정점권": [
+    0.45,
+    0.4,
+    0.15
+   ],
+   "상승기": [
+    0.35,
+    0.45,
+    0.2
+   ],
+   "중립": [
+    0.25,
+    0.5,
+    0.25
+   ],
+   "하강기": [
+    0.3,
+    0.5,
+    0.2
+   ],
+   "바닥권": [
+    0.15,
+    0.45,
+    0.4
+   ],
+   "회복기": [
+    0.2,
+    0.5,
+    0.3
+   ]
+  },
+  "mos_base": {
+   "낮음": 20,
+   "보통": 30,
+   "높음": 40
+  },
+  "mos_cycle": {
+   "호황 정점권": 10,
+   "상승기": 5,
+   "중립": 0,
+   "하강기": 5,
+   "바닥권": -5,
+   "회복기": 0
+  }
+ }
+}
