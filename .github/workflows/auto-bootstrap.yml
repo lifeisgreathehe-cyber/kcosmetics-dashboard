@@ -3,7 +3,7 @@ name: 자동차 대시보드 첫 수집 (브랜치 전용, 병합 전 삭제)
 on:
   push:
     branches: [claude/project-thread-1zq8xo]
-    paths: [".github/workflows/auto-bootstrap.yml", "config/auto/**", "scripts/auto/seed_naver.py"]
+    paths: [".github/workflows/auto-bootstrap.yml", "config/auto/companies.json", "scripts/auto/**"]
   workflow_dispatch: {}
 
 permissions:
@@ -33,11 +33,21 @@ jobs:
         run: timeout 2400 python scripts/update.py --industry auto || true
       - name: 월봉
         run: timeout 600 python scripts/update.py --industry auto --only stock_hist || true
+      - name: 주식수 대조(네이버, 자동차만) → 적정가
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: |
+          timeout 900 python -c "import sys;sys.path.insert(0,'scripts');import audit_market as a;a.INDS=['auto'];a.main()" || true
+          python scripts/auto/build_deep.py || true
+          python scripts/auto/build_reviews.py || true
+          python scripts/build_valuation.py --industry auto || true
+      - name: 입체 분석(context)
+        run: timeout 1500 python scripts/context/build.py --industry auto || true
       - name: 브랜치에 반영
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/auto/data raw/auto 2>/dev/null || true
           if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
-          git commit -q -m "data: 자동차 첫 수집"
+          git commit -q -m "data: 자동차 수집·적정가"
           for i in 1 2 3 4; do git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; git rebase --abort 2>/dev/null; sleep 6; done
