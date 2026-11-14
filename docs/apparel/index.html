@@ -136,6 +136,41 @@ td.l,th.l{text-align:left}
     <div class="kpis" id="kpis"></div>
     <div class="grid">
       <div class="card full rv" id="cycle"></div>
+      <div class="card full" id="sig-head">
+        <div class="row"><div><h2>사이클이 바뀌는 신호 — 장기 그래프</h2><p class="sub" id="sig-sub">위 진단의 신호들을 공개 통계로 그려 봤어요. 자료마다 시작 시점이 달라 20년치가 없는 지표는 받을 수 있는 가장 긴 기간을 보여줘요.</p></div><div class="segs" role="group" aria-label="기간 선택" id="sig-range"></div></div>
+      </div>
+      <div class="card full">
+        <h2>① 백화점 의복 판매액지수와 겨울 시즌</h2><p class="sub">선: 지수(2020=100, 불변) · 막대: 전년 동월 대비 %, 진한 막대가 11~2월 겨울 시즌 · 겨울 정상가 판매율은 회사 내부 자료라 공개 통계가 없어, 정상가 비중이 높은 백화점의 겨울 판매로 대신 봐요</p>
+        <div class="chart" style="height:320px"><canvas id="c-sig1"></canvas></div>
+        <div class="tbl" id="sig1-tbl"></div>
+        <div class="src" id="sig1-src"></div>
+      </div>
+      <div class="card">
+        <h2>② 의복 제조업 출하 vs 재고 (전년 대비)</h2><p class="sub">출하 증가율이 재고 증가율을 웃돌면(막대 플러스) 재고가 빠지며 업황이 돌아서는 국면이에요</p>
+        <div class="chart"><canvas id="c-sig2"></canvas></div>
+        <div class="src" id="sig2-src"></div>
+      </div>
+      <div class="card">
+        <h2>③ 원/달러 환율</h2><p class="sub">월평균, 원 · 점선 1,400원: 이보다 낮아지면(원화 강세) 달러로 버는 OEM 수출사(한세실업·영원무역·화승엔터 등)의 원화 이익 추정치가 내려가요</p>
+        <div class="chart"><canvas id="c-sig3"></canvas></div>
+        <div class="src" id="sig3-src"></div>
+      </div>
+      <div class="card">
+        <h2>④ 미국 의류점 재고/판매 비율 · 실효 관세율</h2><p class="sub">왼쪽: 재고가 몇 달 치 판매분인지(개월, 높을수록 OEM 발주 축소) · 오른쪽: 미국 전체 관세 수입 ÷ 상품 수입(%, 분기)</p>
+        <div class="chart"><canvas id="c-sig4"></canvas></div>
+        <div class="src" id="sig4-src"></div>
+      </div>
+      <div class="card">
+        <h2>⑤ 나프타 · 면화 가격</h2><p class="sub">왼쪽: 한국 경질유(나프타 중심) 수입 단가, 달러/톤(관세청 금액 ÷ 중량) → 폴리에스터·나일론 원가 · 오른쪽: 국제 면화 가격, 센트/파운드</p>
+        <div class="chart"><canvas id="c-sig5"></canvas></div>
+        <div class="src" id="sig5-src"></div>
+      </div>
+      <div class="card full">
+        <h2>⑥ 서울 기온 — 해마다 얼마나 달랐나</h2><p class="sub" id="tmp-sub">월평균 기온(℃), 최근 5년과 올해 · 왼쪽은 해마다 같은 달끼리 겹쳐 본 것, 오른쪽은 최근 24개월이 평년(직전 10년 같은 달 평균)보다 얼마나 따뜻했는지예요(진한 막대가 10~2월 아우터 시즌). 늦가을·겨울이 따뜻하면 아우터(패딩·코트) 판매가 줄어요.</p>
+        <div class="grid" style="gap:12px"><div class="chart" style="height:300px"><canvas id="c-tmp1"></canvas></div><div class="chart" style="height:300px"><canvas id="c-tmp2"></canvas></div></div>
+        <div class="tbl" id="tmp-tbl"></div>
+        <div class="src" id="tmp-src"></div>
+      </div>
       <div class="card full">
         <div class="row"><div><h2>월별 의류·신발·가방 수출입</h2><p class="sub" id="exp-sub"></p></div><div class="segs" role="group" aria-label="기간 선택" id="exp-range"></div></div>
         <div class="chart" id="exp-wrap"><canvas id="c-exp" aria-label="월별 의류 수출 차트" role="img"></canvas></div>
@@ -281,7 +316,7 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','production_index','textile_index','retail_index','online_fashion','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir','ir_web'];
+  const names=['meta','production_index','textile_index','retail_index','online_fashion','news_exports','customs_exports','customs_by_country','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir','ir_web','signals'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
 }
@@ -409,6 +444,117 @@ function renderIndustry(){
     draw('c-lip',{type:'line',data:{labels:L2,datasets:LP.map((k,i)=>line(k,X[k].imp_price.slice(from2),s[i]))},options:lo(v=>'$'+fmt(v,2)+'/kg')});
     src('#lip-src',cu);
   } else empty('c-lip','관세청 중량 데이터 수집 후 표시돼요.');
+}
+
+/* ---------------- 사이클 신호 (최대 20년) ---------------- */
+let sigRange=0;
+function renderSignals(){
+  const s=S(), SD=D.signals||{}, G=SD.series||{};
+  const R=[[5,'5년'],[10,'10년'],[0,'20년·전체']];
+  $('#sig-range').innerHTML=R.map(([v,l])=>`<button class="seg" aria-pressed="${v===sigRange}" data-v="${v}">${l}</button>`).join('');
+  $('#sig-range').querySelectorAll('button').forEach(b=>b.onclick=()=>{sigRange=+b.dataset.v;renderSignals()});
+  const now=new Date(), cut=sigRange?`${now.getFullYear()-sigRange}-${String(now.getMonth()+1).padStart(2,'0')}`:`${now.getFullYear()-20}-01`;
+  const from=ms=>{const i=ms.findIndex(m=>m>=cut);return i<0?ms.length:i};
+  const step=sigRange&&sigRange<=10?1:2;
+  const xs={ticks:{color:css('--ink-3'),maxRotation:0,autoSkip:false,font:{size:11},callback(v){const l=this.getLabelForValue(v)||'';return l.slice(5)==='01'&&+l.slice(0,4)%step===0?l.slice(0,4):null}},grid:{display:false}};
+  const yax=(cb,pos='left',zero=false)=>({position:pos,ticks:{color:css('--ink-3'),callback:cb,font:{size:11}},grid:pos==='left'?{color:ctx=>zero&&ctx.tick.value===0?css('--ink-3'):css('--line')}:{display:false},border:{display:false}});
+  const leg={position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}};
+  const r1=v=>v==null?null:+v.toFixed(1);
+  const notes=[];
+  // ① 백화점 + 겨울 시즌
+  const rt=D.retail_index;
+  if(rt&&rt.series&&rt.series['백화점']){
+    const P=rt.series['백화점'], f=Math.max(12,from(rt.months)), L=rt.months.slice(f);
+    const win=m=>['11','12','01','02'].includes(m.slice(5));
+    const Y=L.map((_,j)=>r1(ys(P,f+j)));
+    draw('c-sig1',{data:{labels:L,datasets:[
+      line('백화점 의복 판매액지수',P.slice(f),s[0],{yAxisID:'y1',order:0}),
+      bar('전년 동월 대비(%)',Y,L.map(m=>win(m)?s[1]:css('--line')),{yAxisID:'y',order:1,maxBarThickness:8,borderRadius:1})]},
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y'?`전년 대비 ${pct(c.raw)}${win(L[c.dataIndex])?' (겨울)':''}`:`지수 ${fmt(c.raw,1)}`}}},
+        scales:{x:xs,y:yax(v=>v+'%','left',true),y1:yax(v=>v,'right')}})});
+    // 겨울 시즌(전년 11월~당해 2월) 합계의 전년 대비: 두 해 모두 값이 있는 달끼리만 비교
+    const by={};
+    rt.months.forEach((m,i)=>{const y=+m.slice(0,4),mo=+m.slice(5);const k=mo>=11?y+1:(mo<=2?y:null);
+      if(k==null||i<12||P[i]==null||P[i-12]==null)return;const o=by[k]=by[k]||{a:0,b:0,n:0};o.a+=P[i];o.b+=P[i-12];o.n++});
+    const rows=Object.keys(by).map(Number).sort((a,b)=>a-b).map(k=>({k,y:(by[k].a/by[k].b-1)*100,n:by[k].n})).filter(r=>r.n>=2||r.k===Math.max(...Object.keys(by).map(Number))).slice(-14);
+    const part=rows.some(r=>r.n<4);
+    $('#sig1-tbl').innerHTML=rows.length?`<table><thead><tr><th>겨울 시즌(11~2월)</th>${rows.map(r=>`<th>${String(r.k-1).slice(2)}/${String(r.k).slice(2)}${r.n<4?'*':''}</th>`).join('')}</tr></thead><tbody><tr><td>백화점 의복 전년 대비</td>${rows.map(r=>`<td class="num ${cls(r.y)}">${pct(r.y)}</td>`).join('')}</tr></tbody></table>${part?'<p class="sub">* 아직 진행 중이거나 자료가 일부만 있는 시즌은 있는 달만 전년 같은 달과 비교했어요.</p>':''}`:'';
+    src('#sig1-src',rt); notes.push(`백화점 판매액지수 ${rt.months[0].slice(0,4)}년~(통계표 시작)`);
+  } else empty('c-sig1','KOSIS 수집 후 표시돼요.');
+  // ② 출하 vs 재고
+  const pi=D.production_index;
+  if(pi&&pi.series&&pi.series['출하']){
+    const Sh=pi.series['출하'],In=pi.series['재고'], f=Math.max(12,from(pi.months)), L=pi.months.slice(f);
+    const a=L.map((_,j)=>r1(ys(Sh,f+j))), b=L.map((_,j)=>r1(ys(In,f+j))), g=a.map((v,j)=>v==null||b[j]==null?null:r1(v-b[j]));
+    draw('c-sig2',{data:{labels:L,datasets:[line('출하 증가율',a,s[2],{order:0,borderWidth:1.6}),line('재고 증가율',b,s[1],{order:0,borderWidth:1.6}),
+      bar('출하−재고(%p)',g,g.map(v=>v>=0?s[0]+'66':css('--line')),{order:1,maxBarThickness:6,borderRadius:0})]},
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${c.raw>0?'+':''}${fmt(c.raw,1)}${c.datasetIndex===2?'%p':'%'}`}}},scales:{x:xs,y:yax(v=>v+'%','left',true)}})});
+    src('#sig2-src',pi); notes.push(`의복 제조업 지수 ${pi.months[0].slice(0,4)}년~`);
+  } else empty('c-sig2','KOSIS 수집 후 표시돼요.');
+  // ③ 환율
+  const fx=G.usdkrw;
+  if(fx&&fx.months){
+    const f=from(fx.months), L=fx.months.slice(f);
+    draw('c-sig3',{type:'line',data:{labels:L,datasets:[line('원/달러',fx.values.slice(f),s[0]),line('1,400원 기준선',L.map(()=>1400),css('--ink-3'),{borderDash:[5,4],borderWidth:1.5,pointHoverRadius:0})]},
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.datasetIndex?'기준선 1,400원':`원/달러 ${fmt(c.raw,1)}원`}}},scales:{x:xs,y:yax(v=>fmt(v))}})});
+    src('#sig3-src',Object.assign({updated:SD.updated},fx)); notes.push(`환율 ${fx.months[0].slice(0,4)}년~`);
+  } else empty('c-sig3','FRED 수집 후 표시돼요(매일 자동 수집).');
+  // ④ 미국 재고/판매 + 관세
+  const isr=G.us_cloth_isr, tr=G.us_tariff;
+  if(isr&&isr.months){
+    const f=from(isr.months), L=isr.months.slice(f);
+    const qv={}; if(tr&&tr.quarters) tr.quarters.forEach((q,i)=>qv[q]=tr.values[i]);
+    const tq=L.map(m=>qv[`${m.slice(0,4)}Q${Math.floor((+m.slice(5)-1)/3)+1}`]??null);
+    const ds=[line('미국 의류점 재고/판매(개월)',isr.values.slice(f),s[0],{yAxisID:'y'})];
+    if(tr) ds.push(line('미국 실효 관세율(%)',tq,s[1],{yAxisID:'y1',stepped:true,tension:0,borderDash:[4,3],spanGaps:false}));
+    draw('c-sig4',{type:'line',data:{labels:L,datasets:ds},
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?`실효 관세율 ${fmt(c.raw,2)}%`:`재고/판매 ${fmt(c.raw,2)}개월`}}},scales:{x:xs,y:yax(v=>fmt(v,1)),y1:yax(v=>v+'%','right')}})});
+    $('#sig4-src').innerHTML=`출처: ${isr.source} · <a href="${isr.url}" target="_blank" rel="noopener">재고/판매</a>${tr?` · ${tr.source} · <a href="${tr.url}" target="_blank" rel="noopener">관세 수입</a>`:''} · 수집 ${SD.updated}`;
+    notes.push(`미국 지표 ${isr.months[0].slice(0,4)}년~`);
+  } else empty('c-sig4','FRED 수집 후 표시돼요(매일 자동 수집).');
+  // ⑤ 나프타 + 면화
+  const cu=D.customs_exports, X=cu&&cu.extra||{}, nk=Object.keys(X).find(k=>k.includes('나프타')), ct=G.cotton;
+  const nm=nk&&X[nk].imp_price?cu.months:[], cm=ct&&ct.months||[];
+  if(nm.length||cm.length){
+    const all=[...new Set([...nm,...cm])].sort(), L=all.slice(from(all));
+    const nv=new Map(nm.map((m,i)=>[m,X[nk].imp_price[i]==null?null:Math.round(X[nk].imp_price[i]*1000)])), cv=new Map(cm.map((m,i)=>[m,ct.values[i]]));
+    const ds=[]; if(nm.length) ds.push(line('나프타·경질유 수입 단가($/t)',L.map(m=>nv.get(m)??null),s[0],{yAxisID:'y'}));
+    if(cm.length) ds.push(line('국제 면화(¢/lb)',L.map(m=>cv.get(m)??null),s[3],{yAxisID:nm.length?'y1':'y'}));
+    const sc={x:xs}; if(nm.length){sc.y=yax(v=>'$'+fmt(v));if(cm.length)sc.y1=yax(v=>v+'¢','right')} else sc.y=yax(v=>v+'¢');
+    draw('c-sig5',{type:'line',data:{labels:L,datasets:ds},
+      options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.label.includes('면화')?`면화 ${fmt(c.raw,1)}¢/lb`:`나프타 $${fmt(c.raw)}/t`}}},scales:sc})});
+    $('#sig5-src').innerHTML=[nm.length?`나프타: 관세청 품목별 수출입실적(HS 271012) · <a href="${cu.url}" target="_blank" rel="noopener">원자료</a>`:'',ct?`면화: ${ct.source} · <a href="${ct.url}" target="_blank" rel="noopener">원자료</a>`:''].filter(Boolean).join(' · ');
+    if(nm.length) notes.push(`나프타 ${nm.find((m,i)=>X[nk].imp_price[i]!=null)?.slice(0,4)||nm[0].slice(0,4)}년~`);
+  } else empty('c-sig5','관세청·FRED 수집 후 표시돼요.');
+  if(notes.length) $('#sig-sub').textContent=`위 진단의 신호들을 공개 통계로 그려 봤어요. 20년치가 있는 지표는 20년, 없는 지표는 받을 수 있는 가장 긴 기간을 보여줘요 (${notes.join(' · ')}).`;
+  renderTemp(G.seoul_temp,SD.updated);
+}
+function renderTemp(T,upd){
+  if(!(T&&T.months&&T.months.length)){empty('c-tmp1','기상청 자료 수집 후 표시돼요(매일 자동 수집).');empty('c-tmp2','');return}
+  const s=S(), M=new Map(T.months.map((m,i)=>[m,T.values[i]]));
+  const lastY=+T.months[T.months.length-1].slice(0,4), years=[0,1,2,3,4,5].map(d=>lastY-5+d);
+  const seasons=years.slice(1).concat(M.has(`${lastY}-10`)?[lastY+1]:[]);
+  const mm=[...Array(12)].map((_,i)=>String(i+1).padStart(2,'0'));
+  const leg={position:'bottom',labels:{color:css('--ink-2'),boxWidth:10,usePointStyle:true}};
+  const pal=[css('--ink-3'),s[4],s[3],s[2],s[1],s[0]];
+  draw('c-tmp1',{type:'line',data:{labels:mm.map(m=>+m+'월'),datasets:years.map((y,i)=>line(String(y)+(y===lastY?'(올해)':''),mm.map(m=>M.get(`${y}-${m}`)??null),pal[i],{borderWidth:y===lastY?3:1.6,tension:.3,spanGaps:false}))},
+    options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>`${c.dataset.label}: ${fmt(c.raw,1)}℃`}}},scales:{x:{ticks:{color:css('--ink-3'),font:{size:11}},grid:{display:false}},y:{ticks:{color:css('--ink-3'),callback:v=>v+'℃'},grid:{color:css('--line')},border:{display:false}}}})});
+  // 평년 = 직전 10년(해당 해 제외) 같은 달 평균
+  const norm=m=>{const y=+m.slice(0,4),mo=m.slice(5);const v=[];for(let k=1;k<=10;k++){const x=M.get(`${y-k}-${mo}`);if(x!=null)v.push(x)}return v.length>=5?v.reduce((a,b)=>a+b,0)/v.length:null};
+  const L=T.months.slice(-24), A=L.map(m=>{const n=norm(m),v=M.get(m);return n==null||v==null?null:+(v-n).toFixed(1)});
+  const winter=m=>['10','11','12','01','02'].includes(m.slice(5));
+  draw('c-tmp2',{type:'bar',data:{labels:L,datasets:[bar('평년 대비(℃)',A,A.map((v,i)=>v==null?css('--line'):(v>=0?s[1]:s[0])+(winter(L[i])?'':'88')),{maxBarThickness:14})]},
+    options:baseOpts({plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>`평년 대비 ${c.raw>0?'+':''}${fmt(c.raw,1)}℃ (기온 ${fmt(M.get(L[c.dataIndex]),1)}℃)`}}},
+      scales:{x:{ticks:{color:css('--ink-3'),maxRotation:0,autoSkipPadding:10,font:{size:11},callback(v){const l=this.getLabelForValue(v);return l?l.slice(2).replace('-','.'):''}},grid:{display:false}},
+        y:{ticks:{color:css('--ink-3'),callback:v=>(v>0?'+':'')+v+'℃'},grid:{color:ctx=>ctx.tick.value===0?css('--ink-3'):css('--line')},border:{display:false}}}})});
+  // 표: 해마다 아우터 시즌(10~2월) 평균 기온과 평년 차
+  const rows=seasons.map(y=>{const ms=[`${y-1}-10`,`${y-1}-11`,`${y-1}-12`,`${y}-01`,`${y}-02`];const v=ms.map(m=>M.get(m)).filter(x=>x!=null);const n=ms.map(norm).filter(x=>x!=null);
+    return {y,n:v.length,avg:v.length?v.reduce((a,b)=>a+b,0)/v.length:null,an:v.length===5&&n.length===5?(v.reduce((a,b)=>a+b,0)-n.reduce((a,b)=>a+b,0))/5:null}}).filter(r=>r.n);
+  $('#tmp-tbl').innerHTML=`<table><thead><tr><th>아우터 시즌(10~2월)</th>${rows.map(r=>`<th>${String(r.y-1).slice(2)}/${String(r.y).slice(2)}${r.n<5?'*':''}</th>`).join('')}</tr></thead><tbody>
+    <tr><td>평균 기온</td>${rows.map(r=>`<td class="num">${fmt(r.avg,1)}℃</td>`).join('')}</tr>
+    <tr><td>평년 대비</td>${rows.map(r=>`<td class="num ${r.an==null?'':(r.an>0?'down':'up')}">${r.an==null?'–':(r.an>0?'+':'')+fmt(r.an,1)+'℃'}</td>`).join('')}</tr></tbody></table>
+    <p class="sub">평년 대비가 플러스(따뜻한 겨울, 빨강)면 패딩·코트 판매에 불리, 마이너스(추운 겨울)면 유리해요. * 진행 중인 시즌은 있는 달만 평균했어요.</p>`;
+  $('#tmp-src').innerHTML=`출처: ${T.source}${T.url?` · <a href="${T.url}" target="_blank" rel="noopener">원자료</a>`:''} · 수집 ${upd||''}`;
 }
 
 /* ---------------- 기업 ---------------- */
@@ -711,7 +857,7 @@ function show(){
   document.querySelectorAll('[data-viewpanel]').forEach(p=>p.hidden=p.dataset.viewpanel!==view);
   document.querySelectorAll('nav.tabs a').forEach(a=>a.setAttribute('aria-current',a.dataset.view===view?'page':'false'));
   if(!rendered[view]){rendered[view]=1;
-    if(view==='industry'){renderKPIs();renderCycle();renderExports();renderIndustry();}
+    if(view==='industry'){renderKPIs();renderCycle();renderExports();renderIndustry();renderSignals();}
     if(view==='companies')renderCompanies();
     if(view==='valuation')renderValuation();
     if(view==='sources')renderSources();}
