@@ -1,0 +1,43 @@
+name: 자동차 대시보드 첫 수집 (브랜치 전용, 병합 전 삭제)
+
+on:
+  push:
+    branches: [claude/project-thread-1zq8xo]
+    paths: [".github/workflows/auto-bootstrap.yml", "config/auto/**", "scripts/auto/seed_naver.py"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: auto-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 네이버 재무 구조 확인
+        run: python scripts/auto/seed_naver.py --industry auto --probe 005380 || true
+      - name: 임시 실적(네이버)
+        run: python scripts/auto/seed_naver.py --industry auto || true
+      - name: 통계·관세청·주가·뉴스
+        env:
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: timeout 2400 python scripts/update.py --industry auto || true
+      - name: 월봉
+        run: timeout 600 python scripts/update.py --industry auto --only stock_hist || true
+      - name: 브랜치에 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/auto/data raw/auto 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "data: 자동차 첫 수집"
+          for i in 1 2 3 4; do git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break; git rebase --abort 2>/dev/null; sleep 6; done
