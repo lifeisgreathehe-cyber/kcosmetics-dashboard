@@ -22,6 +22,21 @@ SYMS = [  # (야후 심볼, 이름, 배수)
 ]
 
 
+def clean(out):
+    """야후 월봉에 가끔 섞이는 잘못된 값(원/달러 0.11 등)을 앞뒤 석 달 중앙값과 3배 이상 다르면 버린다."""
+    ks = sorted(out)
+    bad = []
+    for i, k in enumerate(ks):
+        nb = sorted(out[x] for x in ks[max(0, i - 3):i] + ks[i + 1:i + 4])
+        if nb:
+            m = nb[len(nb) // 2]
+            if m and not (1 / 3 < out[k] / m < 3):
+                bad.append(k)
+    for k in bad:
+        del out[k]
+    return out
+
+
 def get(sym):
     url = f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=25y&interval=1mo"
     for i in range(3):
@@ -37,7 +52,7 @@ def get(sym):
                     continue
                 m = dt.datetime.utcfromtimestamp(t).strftime("%Y-%m")
                 out[m] = c
-            return out
+            return clean(out)
         except Exception as e:  # noqa: BLE001
             print("[market] 실패", sym, e)
             time.sleep(3 * (i + 1))
