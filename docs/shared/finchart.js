@@ -350,8 +350,8 @@
       const box = el.querySelector('.fc-turns'); if (!box) return;
       const F = { all: ['전체', () => true], leg: ['큰 흐름(고점·저점)', e => e.kind === 'leg'], band: ['실적·주가 엇갈림', e => e.kind === 'band'] };
       const list = TE.filter(F[TF.f][1]).slice().reverse();
-      const CN = { cycle: '업황', trend: '트렌드', news: '뉴스', val: '밸류에이션', cat: '촉매제', macro: '거시·시장' };
-      const SG = (c, t) => c.none ? '–' : c.s > 0 ? '↑' : c.s < 0 ? '↓' : '±';
+      const CN = { earn: '실적', cycle: '업황', trend: '트렌드', news: '뉴스', val: '밸류에이션', cat: '촉매제', macro: '거시·시장' };
+      const SG = (c, t) => c.none ? '–' : c.s > 0 ? '↑' : c.s < 0 ? '↓' : '·';
       const sc = c => c.none ? 'n' : c.s > 0 ? 'p' : c.s < 0 ? 'm' : 'z';
       const lv = c => c.none ? '' : `<span class="lv" title="영향 ${['약함', '약함', '보통', '강함'][c.lvl || 0]}">${'●'.repeat(Math.max(1, c.lvl || 1))}${'○'.repeat(3 - Math.max(1, c.lvl || 1))}</span>`;
       const evl = c => (c.ev || []).length ? `<ul>${c.ev.map((x, i) => `<li>${esc(x)}${c.u && c.u[i] ? ` <a href="${esc(c.u[i])}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>` : '';
@@ -364,7 +364,7 @@
         <div class="bd"><ul>${(e.f || []).map(f => `<li><span class="fc-tag${f.tag === '불확실' ? ' unc' : ''}">${esc(f.tag)}</span>${esc(f.text)}${f.u ? ` <a href="${esc(f.u)}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>
         <p class="look"><b>앞으로 볼 점</b> ${esc(e.look)}</p></div></details>`;
       box.innerHTML = `<div class="th"><h4>변곡점마다 왜 오르고 내렸나 · ${TE.length}개</h4><div class="fc-segs" role="group" aria-label="해설 종류">${Object.entries(F).map(([k, [l]]) => `<button class="seg" data-f="${k}" aria-pressed="${k === TF.f}">${l}</button>`).join('')}</div></div>
-        <p class="lead">차트의 번호 원과 색 띠를 누르면 해당 해설이 열려요. 오르내린 이유를 업황·트렌드·뉴스·밸류에이션·촉매제·거시·시장 6가지로 나눠 설명하고, 맨 위 한 줄에 가장 크게 작용한 요인을 요약했어요. ↑는 주가를 올린 쪽, ↓는 내린 쪽, ●●●는 영향의 크기예요. 그 시기에 근거가 없는 요인은 '–'로 표시했어요. 숫자는 데이터에서 자동 계산했고, 원인 연결은 추정이에요.</p>
+        <p class="lead">차트의 번호 원과 색 띠를 누르면 해당 해설이 열려요. 오르내린 이유를 실적(시장 기대 대비)·업황·트렌드·뉴스·밸류에이션·촉매제·거시·시장으로 나눠 설명하고, 맨 위 한 줄에 가장 크게 작용한 요인을 요약했어요. ✔는 기사 원문으로 확인한 원인이에요. ↑는 주가를 올린 쪽, ↓는 내린 쪽, ●●●는 영향의 크기예요. 그 시기에 근거가 없는 요인은 '–'로 표시했어요. 숫자는 데이터에서 자동 계산했고, 원인 연결은 추정이에요.</p>
         ${list.map(card).join('') || '<p class="lead">이 종류의 변곡점이 없어요.</p>'}
         <p class="fc-note">해설 갱신 ${esc((o._turns && o._turns.updated) || '')} · 시장 비교는 ${o._turns && o._turns.macro === false ? '7개 산업 대시보드 전체 중앙값' : '코스피(코스닥 상장사는 코스닥)'} 기준</p>`;
       box.querySelectorAll('.fc-segs button').forEach(b => b.onclick = () => { TF.f = b.dataset.f; drawList(); });

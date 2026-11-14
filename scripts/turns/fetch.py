@@ -25,10 +25,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 KST = dt.timezone(dt.timedelta(hours=9))
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124 Safari/537.36"
-KEEP_PER_CO = 400   # 회사당 누적 뉴스 상한(최신순)
+KEEP_PER_CO = 800   # 회사당 누적 뉴스 상한(최신순)
+KEEP_RESEARCH = 600  # 회사당 증권사 리포트 제목 상한
 REL = re.compile(r"실적|영업이익|영업익|순이익|매출|어닝|서프라이즈|쇼크|흑자|적자|컨센서스|가이던스|잠정|수주|계약|납품|인수|매각|합병|분할|"
                  r"증자|전환사채|자사주|소각|배당|경영권|최대주주|블록딜|상장|관세|규제|정책|보조금|소송|리콜|공장|증설|감산|가격|인상|인하|"
-                 r"수출|점유율|목표가|하향|상향|급등|급락|신고가|52주")
+                 r"수출|점유율|목표가|하향|상향|급등|급락|신고가|52주|"
+                 r"테마|관련주|수혜주|대장주|상한가|하한가|선거|후보|기대치|예상치|웃돌|밑돌|상회|하회|깜짝|부진|호실적|"
+                 r"IR|기업설명회|컨퍼런스콜|NDR|주주환원|밸류업|관리종목|거래정지|감사의견")
 
 
 def get(url, params=None, timeout=25, enc="utf-8"):
@@ -210,9 +213,77 @@ def update_news_hist(backfill=0):
         log(f"뉴스 누적 {ind}: {len(hist)}개사, +{added}건")
 
 
+# ---------------------------------------------------------------- 증권사 리포트 제목 누적(실적 기대 대비 판단용)
+def naver_research_page(code, page):
+    """네이버 금융 리서치 > 종목분석 목록: 날짜·제목·증권사·PDF. 제목('어닝 쇼크', '기대치 상회' 등)으로 실적이 기대 대비 어땠는지 읽는다."""
+    html = get("https://finance.naver.com/research/company_list.naver",
+               {"searchType": "itemCode", "itemCode": code, "page": page}, enc="euc-kr")
+    out = []
+    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", html, re.S):
+        a = re.search(r'<a href="(company_read\.naver\?nid=\d+[^"]*)"[^>]*>(.*?)</a>', tr, re.S)
+        dm = re.search(r'class="date"[^>]*>\s*(\d{2})\.(\d{2})\.(\d{2})', tr)
+        if not a or not dm:
+            continue
+        tds = re.findall(r"<td[^>]*>(.*?)</td>", tr, re.S)
+        broker = re.sub(r"<[^>]+>|\s+", " ", tds[2]).strip() if len(tds) > 2 else ""
+        pdf = re.search(r'href="(https?://[^"]+\.pdf)"', tr)
+        title = re.sub(r"<[^>]+>", "", a.group(2)).strip()
+        for x, y in (("&quot;", '"'), ("&amp;", "&"), ("&lt;", "<"), ("&gt;", ">"), ("&#39;", "'")):
+            title = title.replace(x, y)
+        out.append({"date": f"20{dm.group(1)}-{dm.group(2)}-{dm.group(3)}", "title": title, "office": broker,
+                    "url": pdf.group(1) if pdf else "https://finance.naver.com/research/" + a.group(1).replace("&amp;", "&")})
+    return out
+
+
+def update_research(pages=1):
+    for ind, data, cfgp in industries():
+        try:
+            cfg = json.loads(cfgp.read_text("utf-8"))
+            cfg = cfg["companies"] if isinstance(cfg, dict) else cfg
+        except Exception:  # noqa: BLE001
+            cfg = []
+        hp = data / "research_hist.json"
+        hist = {}
+        try:
+            hist = json.loads(hp.read_text("utf-8")).get("companies", {})
+        except Exception:  # noqa: BLE001
+            pass
+        added, fails = 0, 0
+        for c in cfg:
+            code = c["code"]
+            got = []
+            for pg in range(1, pages + 1):
+                try:
+                    g = naver_research_page(code, pg)
+                except Exception as e:  # noqa: BLE001
+                    fails += 1
+                    if fails <= 3:
+                        log("리포트 목록 실패:", ind, code, pg, e)
+                    break
+                if not g:
+                    break
+                got += g
+                if len(g) < 30:
+                    break
+                time.sleep(0.15)
+            old = hist.get(code) or []
+            m = {(x["date"], x["title"]): x for x in old + got}
+            lst = sorted(m.values(), key=lambda x: x["date"], reverse=True)[:KEEP_RESEARCH]
+            added += max(0, len(lst) - len(old))
+            if lst:
+                hist[code] = lst
+            time.sleep(0.1)
+        hp.write_text(json.dumps({"updated": dt.datetime.now(KST).strftime("%Y-%m-%d %H:%M KST"),
+                                  "note": "네이버 금융 리서치 종목분석 리포트 제목 누적본(실적 기대 대비·증권사 시각 판단용)", "companies": hist},
+                                 ensure_ascii=False, separators=(",", ":")), "utf-8")
+        log(f"리포트 누적 {ind}: {len(hist)}개사, +{added}건")
+
+
 if __name__ == "__main__":
     bf = int(sys.argv[sys.argv.index("--backfill") + 1]) if "--backfill" in sys.argv else 0
     if "--no-macro" not in sys.argv:
         update_macro()
     if "--no-news" not in sys.argv:
         update_news_hist(bf)
+    if "--no-research" not in sys.argv:
+        update_research(max(1, bf))
