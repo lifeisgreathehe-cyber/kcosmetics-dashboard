@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parents[2]
 KST = dt.timezone(dt.timedelta(hours=9))
 TODAY = dt.datetime.now(KST).date()
 CFG = json.loads((ROOT / "config/context/industries.json").read_text("utf-8"))
-INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
+INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "auto", "steel"]
 CONSUMER = {"cosmetics", "apparel", "food"}
 
 
