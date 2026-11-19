@@ -10,6 +10,7 @@ if errorlevel 1 goto fail
 if "%DART_API_KEY%"=="" set /p DART_API_KEY=<C:\Users\ceter\Desktop\kiwoom\dart_key.txt
 for %%I in (cosmetics semi chem battery apparel food logistics) do python scripts\update.py --industry %%I --only dart --latest
 git add docs raw
+python scripts\update.py --industry travel --only dart --latest & git add docs raw
 git commit -m "DART update %date%"
 git pull --rebase -X theirs
 if errorlevel 1 goto fail

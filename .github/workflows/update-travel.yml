@@ -1,0 +1,54 @@
+name: 여행 대시보드 통계 갱신
+
+# 방한 외래객(국적별)·내국인 출국·항공 여객·여행수지·업종 매출지수(KOSIS)와 환율·유가(Yahoo)를 매일 확인해요.
+# 월간 통계는 공표일이 기관마다 달라서 매일 확인하고, 새 달이 들어오면 차트가 자동으로 늘어나요.
+on:
+  schedule:
+    - cron: "30 1 * * *"   # 매일 10:30 KST
+  workflow_dispatch: {}
+  push:  # 수집 설정이 바뀌면(새 통계 추가 등) 바로 다시 받기
+    paths:
+      - config/travel/kosis.json
+      - scripts/travel/fetch_market.py
+      - .github/workflows/update-travel.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-travel
+  cancel-in-progress: false
+
+jobs:
+  travel:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: KOSIS 통계
+        continue-on-error: true
+        timeout-minutes: 15
+        env:
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+        run: python scripts/update.py --industry travel --only kosis
+      - name: 환율·유가
+        continue-on-error: true
+        run: python scripts/travel/fetch_market.py
+      - name: 주가·뉴스 (처음 실행 때 비어 있는 파일 채우기)
+        continue-on-error: true
+        run: |
+          [ -f docs/travel/data/quotes.json ] || timeout 300 python scripts/update.py --industry travel --only quotes || true
+          [ -f docs/travel/data/news.json ] || timeout 300 python scripts/update.py --industry travel --only news || true
+          [ -f docs/travel/data/stock_hist.json ] || timeout 300 python scripts/update.py --industry travel --only stock_hist || true
+      - name: 변경분 커밋
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/travel/data
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 여행 통계 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi

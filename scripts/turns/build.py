@@ -44,6 +44,9 @@ FX_SENS = {"cosmetics": 1, "semi": 1, "chem": 0, "battery": 1, "apparel": 1, "fo
 OIL_SENS = {"chem": "정유는 재고평가이익·정제마진, 석유화학은 원가 부담", "logistics": "항공·해운 연료비 부담",
             "food": "포장재·물류비 부담", "apparel": "합성섬유 원가"}
 
+IND_NAME["travel"] = "여행"  # 여행: 공용 사전 줄과 겹치지 않게 따로 둠
+FX_SENS["travel"] = 0
+OIL_SENS["travel"] = "항공사 연료비·유류할증료(여행 수요 위축)"
 
 def industries(sel=None):
     out = []
