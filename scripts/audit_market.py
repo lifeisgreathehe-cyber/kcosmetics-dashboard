@@ -13,7 +13,7 @@ import urllib.parse
 import urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-INDS = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
+INDS = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "auto", "steel"]
 UA = {"User-Agent": "Mozilla/5.0", "Referer": "https://m.stock.naver.com/"}
 PRICE_URL = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo"
 
@@ -63,6 +63,8 @@ def main():
     codes = {}
     for ind in INDS:
         p = ROOT / ("config" if ind == "cosmetics" else f"config/{ind}") / "companies.json"
+        if not p.exists():  # 아직 없는 업종(다른 브랜치에서 추가 중)은 건너뜀
+            continue
         for c in json.loads(p.read_text("utf-8")):
             codes.setdefault(c["code"], {"name": c["name"], "inds": []})["inds"].append(ind)
             if c.get("pref"):
