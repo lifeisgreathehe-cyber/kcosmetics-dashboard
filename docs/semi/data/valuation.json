@@ -24292,7 +24292,191 @@
   },
   "345290": {
    "name": "영광와이케이엠씨",
-   "group": "소재·부품"
+   "group": "소재·부품",
+   "price": 7840,
+   "price_date": "2026-11-20 01:06",
+   "price_source": "네이버 금융",
+   "mcap": 113543,
+   "mcap_eff": 113543,
+   "shares": 14482526,
+   "shares_check": {
+    "dart_common": 14482531,
+    "dart_period": "2026-11-16",
+    "listed": null,
+    "pref": null,
+    "pref_shares": null,
+    "pref_price": null
+   },
+   "equity": null,
+   "equity_source": "스냅샷(PBR 역산)",
+   "net_cash": -14500,
+   "dividend_yield": null,
+   "pbr": null,
+   "net_debt_levered": -14500,
+   "dcf": {
+    "E1": 7000,
+    "r": 11.0,
+    "c": 0.7,
+    "note": "상장 직후라 이력이 짧고 2023~24년은 적자였어요. 2026년 이익률(21%)은 장비 호황 효과라, 추세 매출 800억원 × 정상 순이익률 9%로 70억원을 정상 이익으로 봤어요. 고객 집중·차입금 부담으로 할인율을 높였어요.",
+    "fwd_per": 16.2,
+    "norm_per": 16.2,
+    "scenarios": {
+     "bear": {
+      "g": 0.0,
+      "value": 54436,
+      "per_share": 3759,
+      "upside": -52.1
+     },
+     "base": {
+      "g": 6.0,
+      "value": 71297,
+      "per_share": 4923,
+      "upside": -37.2
+     },
+     "bull": {
+      "g": 12.0,
+      "value": 93268,
+      "per_share": 6440,
+      "upside": -17.9
+     }
+    },
+    "c_T": 0.818,
+    "roe_norm": null,
+    "implied_g": 16.4,
+    "implied_E1": 11148,
+    "net_cash_added": 0
+   },
+   "marks": {
+    "pos": "중립",
+    "pos_src": "판단 근거 없음",
+    "pos_raw": null,
+    "weights": {
+     "bear": 0.3,
+     "base": 0.5,
+     "bull": 0.2
+    },
+    "weighted": 70633,
+    "weighted_ps": 4877,
+    "weighted_upside": -37.8,
+    "stress": {
+     "E": 4200,
+     "margin": null,
+     "g": 0.0,
+     "value": 49646,
+     "per_share": 3428,
+     "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
+    },
+    "down_ps": 3428,
+    "max_loss": 56.3,
+    "up_bull": -17.9,
+    "asym_ratio": null,
+    "asym": "불리",
+    "risk": {
+     "score": 39,
+     "grade": "보통",
+     "parts": {
+      "적자 이력": 0,
+      "이익 변동폭": 0,
+      "차입 부담": 25,
+      "하방 거리": 14
+     }
+    },
+    "mos": 35,
+    "buy_ps": 3170,
+    "buy_gap": -59.6,
+    "implied_margin": null,
+    "base_margin": null,
+    "hist_margin": null,
+    "verdict": "낙관 시나리오도 넘는 가격",
+    "tone": "neg",
+    "note": "지금 주가는 1~5년 이익이 연 16.4%씩 늘어난다고 가정하는 셈이에요(기준 가정 6.0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 56% 손실, 낙관 시나리오면 -18%로 손익 구조는 '불리'예요."
+   },
+   "metrics": {
+    "q": null,
+    "ttm_period": null,
+    "per_q": null,
+    "ni_q": null,
+    "por_ttm": null,
+    "op_ttm": null,
+    "por_q": null,
+    "op_q": null,
+    "cns_per": null,
+    "div_yield": null,
+    "dps": null,
+    "debt_eq": null,
+    "ret_1y": null,
+    "ret_1y_from": null,
+    "ni_cagr5": null,
+    "rev_cagr5": null,
+    "peg": null,
+    "peg_g": null
+   },
+   "checks": {
+    "buffett": [
+     {
+      "name": "정상 이익 기준 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": "연도별 자기자본을 아직 수집하지 않아 10년 평균 대신 정상 이익 ÷ 현재 자본"
+     },
+     {
+      "name": "최근 4분기 ROE 15% 이상",
+      "ok": null,
+      "val": "–",
+      "note": ""
+     },
+     {
+      "name": "최근 0년 적자 낸 해 없음",
+      "ok": null,
+      "val": "–",
+      "note": ""
+     },
+     {
+      "name": "영업이익률이 안정적(변동계수 0.35 미만)",
+      "ok": null,
+      "val": "–",
+      "note": "표준편차 ÷ 평균, 작을수록 예측 가능한 사업"
+     },
+     {
+      "name": "매출총이익률 40% 이상(5년 평균)",
+      "ok": null,
+      "val": "–",
+      "note": "가격 결정력의 흔적. 유통·제조 하청은 구조적으로 낮아요"
+     },
+     {
+      "name": "차입금을 정상 이익 4년 안에 갚을 수 있음",
+      "ok": false,
+      "val": "4.9년",
+      "note": "금융사는 해당 없음"
+     }
+    ],
+    "lynch": [
+     {
+      "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
+      "ok": null,
+      "val": "–",
+      "note": "2 이상이면 매우 좋음"
+     },
+     {
+      "name": "순현금 보유",
+      "ok": false,
+      "val": "-145억",
+      "note": ""
+     }
+    ],
+    "fisher": [
+     {
+      "name": "매출이 꾸준히 늘어남(최근 5년 중 4년 이상 증가)",
+      "ok": null,
+      "val": "0/-1년 증가",
+      "note": "피셔 1번 질문: 매출 성장 잠재력"
+     }
+    ],
+    "lynch_cat": "분류 불가",
+    "lynch_cat_note": "실적 이력이 짧아요",
+    "buffett_take": "버핏 관점: 숫자 기준 0/1개 통과. 이익이 높고 안정적이며 빚 부담이 적어 '예측 가능한 좋은 사업'에 가까워요.",
+    "lynch_take": "린치 관점: 꾸준히 크는 대형우량주예요. 린치는 이런 회사에서 30~50% 수익을 보고 비싸지면 갈아탔어요."
+   }
   },
   "101490": {
    "name": "에스앤에스텍",
@@ -35331,8 +35515,8 @@
  },
  "marks_meta": {
   "temperature": {
-   "n": 109,
-   "median_upside": -39.8,
+   "n": 110,
+   "median_upside": -39.3,
    "share_above": 76,
    "label": "과열(낙관 쪽)",
    "shift": 1
@@ -35348,8 +35532,8 @@
    },
    {
     "industry": "semi",
-    "n": 109,
-    "median_upside": -39.8,
+    "n": 110,
+    "median_upside": -39.3,
     "share_above": 76,
     "label": "과열(낙관 쪽)",
     "shift": 1
