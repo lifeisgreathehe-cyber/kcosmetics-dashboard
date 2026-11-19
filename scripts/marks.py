@@ -197,7 +197,7 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
             "verdict": verdict, "tone": tone, "note": note}
     # 시장 전체 진자: 다른 대시보드가 마지막으로 만든 valuation.json의 온도를 모은다
     mkt = []
-    for sub in ("", "semi", "chem", "battery", "apparel", "food", "logistics", "travel"):
+    for sub in ("", "semi", "chem", "battery", "apparel", "food", "logistics"):
         p = os.path.join(root, "docs", *( [sub] if sub else []), "data", "valuation.json")
         if os.path.join(*dd) == os.path.join("docs", *([sub] if sub else []), "data"):
             t = temp
@@ -209,6 +209,18 @@ def apply(cos, out, cfg, ev, cycle_base, gT, nc_yield, root, dd):
                 t = None
         if t:
             mkt.append({"industry": sub or "cosmetics", **t})
+    # 여행: 공용 목록 줄과 겹치지 않게 따로 모은다
+    if os.path.join(*dd) == os.path.join("docs", "travel", "data"):
+        if temp:
+            mkt.append({"industry": "travel", **temp})
+    else:
+        try:
+            with open(os.path.join(root, "docs", "travel", "data", "valuation.json"), encoding="utf-8") as f:
+                t = (json.load(f).get("marks_meta") or {}).get("temperature")
+            if t:
+                mkt.append({"industry": "travel", **t})
+        except Exception:  # noqa: BLE001
+            pass
     out["marks_meta"] = {"temperature": temp, "market": mkt,
                          "weights": W, "mos_base": MOS_BASE, "mos_cycle": MOS_CYC}
 

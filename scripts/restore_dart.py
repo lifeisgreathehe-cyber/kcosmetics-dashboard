@@ -16,8 +16,9 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "travel"]
+INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
 
+INDUSTRIES.append("travel")  # 여행: 공용 목록 줄과 겹치지 않게 따로 둠
 
 def paths(base: Path, ind: str):
     if ind == "cosmetics":
