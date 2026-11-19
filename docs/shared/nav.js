@@ -7,5 +7,9 @@
   const here=location.pathname.replace(/index\.html$/,'');
   const el=document.getElementById('dash-nav'); if(!el) return;
   el.innerHTML=L.map(([p,n])=>{const cur=here.endsWith('/'+p)&&(p||!/\/(semi|chem|battery|food|apparel|logistics|auto|steel|backtest)\/$/.test(here));
-    return cur?`<b>${n}</b>`:`<a href="${root}${p}" style="color:var(--accent)">${n}</a>`}).join(' · ');
+    return cur?`<b>${n}</b>`:`<a href="${root}${p}" data-p="${p}" style="color:var(--accent)">${n}</a>`}).join(' · ');
+  // 아직 배포되지 않은 업종(다른 PR에서 추가 중)은 메뉴에서 숨김
+  el.querySelectorAll('a[data-p]').forEach(a=>{const p=a.dataset.p; if(!p) return;
+    fetch(root+p+'index.html',{method:'HEAD'}).then(r=>{if(!r.ok) hide(a)}).catch(()=>{})});
+  function hide(a){const prev=a.previousSibling; if(prev&&prev.nodeType===3) prev.remove(); else if(a.nextSibling&&a.nextSibling.nodeType===3) a.nextSibling.remove(); a.remove();}
 })();
