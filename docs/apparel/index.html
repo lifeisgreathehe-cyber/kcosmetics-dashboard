@@ -513,7 +513,7 @@ function renderSignals(){
       options:baseOpts({plugins:{legend:leg,tooltip:{callbacks:{label:c=>c.dataset.yAxisID==='y1'?`${c.dataset.label.replace('(%)','')} ${fmt(c.raw,2)}%`:`재고/판매 ${fmt(c.raw,2)}개월`}}},scales:{x:xs,y:yax(v=>fmt(v,1)),y1:yax(v=>v+'%','right')}})});
     $('#sig4-src').innerHTML=`출처: ${isr.source} · <a href="${isr.url}" target="_blank" rel="noopener">재고/판매</a>${tr?` · ${tr.source} · <a href="${tr.url}" target="_blank" rel="noopener">관세 수입</a>`:''} · 수집 ${SD.updated}`;
     notes.push(`미국 지표 ${isr.months[0].slice(0,4)}년~`);
-  } else empty('c-sig4','FRED 수집 후 표시돼요(매일 자동 수집).');
+  } else empty('c-sig4','미국 통계 서버(연준 FRED·인구조사국)가 GitHub Actions 자동 수집을 막고 있어 아직 못 받았어요. 인구조사국 무료 API 키를 등록하면 채울 수 있어요.');
   // ⑤ 나프타 + 면화
   const cu=D.customs_exports, X=cu&&cu.extra||{}, nk=Object.keys(X).find(k=>k.includes('나프타')), ct=G.cotton;
   const nm=nk&&X[nk].imp_price?cu.months:[], cm=ct&&ct.months||[];
