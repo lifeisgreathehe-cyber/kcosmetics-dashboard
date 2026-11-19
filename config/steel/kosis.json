@@ -1,0 +1,89 @@
+[
+ {
+  "file": "steel_index.json",
+  "title": "1차 철강 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C241",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "nonferrous_index.json",
+  "title": "1차 비철금속 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C242",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "metal_index.json",
+  "title": "1차 금속 제조업(철강+비철+주조) 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C24",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "steel_ppi.json",
+  "title": "철강·비철금속 생산자물가지수",
+  "source": "한국은행 생산자물가조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+  "orgId": "301",
+  "tblId": "DT_404Y016",
+  "itmId": "ALL",
+  "objL1": "13102134764ACC_CD.307AA+13102134764ACC_CD.30712502AA+13102134764ACC_CD.30712401AA+13102134764ACC_CD.30713102AA+13102134764ACC_CD.30714101AA+13102134764ACC_CD.30714104AA+13102134764ACC_CD.30712101AA+13102134764ACC_CD.30712201AA+13102134764ACC_CD.30712301AA+13102134764ACC_CD.30713103AA+13102134764ACC_CD.30712702AA+13102134764ACC_CD.30712701AA+13102134764ACC_CD.30711201AA+13102134764ACC_CD.30712603AA+13102134764ACC_CD.30712607AA+13102134764ACC_CD.30712703AA+13102134764ACC_CD.30721101AA+13102134764ACC_CD.30721302AA+13102134764ACC_CD.30721301AA+13102134764ACC_CD.30721202AA+13102134764ACC_CD.30721401AA+13102134764ACC_CD.30721402AA+13102134764ACC_CD.30722101AA+13102134764ACC_CD.30722103AA+13102134764ACC_CD.30722204AA+13102134764ACC_CD.30722201AA",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM"
+ },
+ {
+  "file": "raw_price.json",
+  "title": "철강 원료·비철 광석 수입물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 달러기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+  "orgId": "301",
+  "tblId": "DT_401Y017",
+  "itmId": "ALL",
+  "objL1": "13102134644ACC_CD.20121101AA+13102134644ACC_CD.20111201AA+13102134644ACC_CD.30411101AA+13102134644ACC_CD.30711102AA+13102134644ACC_CD.30711201AA+13102134644ACC_CD.20121201AA+13102134644ACC_CD.20121203AA+13102134644ACC_CD.20121202AA+13102134644ACC_CD.20121206AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "달러기준"
+  }
+ }
+]
