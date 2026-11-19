@@ -1,12 +1,12 @@
 [
   {"file":"production_index.json","title":"의복·의복액세서리 및 모피제품 제조업 생산·출하·재고지수","source":"국가데이터처 광업제조업동향조사 (2020=100, 원지수)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
-   "orgId":"101","tblId":"DT_1F02001","itmId":"T10+T11+T12","objL1":"00","objL2":"C14","prdSe":"M","start":"201501","series_key":"ITM_NM",
+   "orgId":"101","tblId":"DT_1F02001","itmId":"T10+T11+T12","objL1":"00","objL2":"C14","prdSe":"M","start":"200501","series_key":"ITM_NM",
    "rename":{"생산지수(원지수)":"생산","생산자제품 출하지수(원지수)":"출하","생산자제품 재고지수(원지수)":"재고"}},
   {"file":"textile_index.json","title":"섬유제품 제조업(의복 제외) 생산·출하·재고지수","source":"국가데이터처 광업제조업동향조사 (2020=100, 원지수)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
-   "orgId":"101","tblId":"DT_1F02001","itmId":"T10+T11+T12","objL1":"00","objL2":"C13","prdSe":"M","start":"201501","series_key":"ITM_NM",
+   "orgId":"101","tblId":"DT_1F02001","itmId":"T10+T11+T12","objL1":"00","objL2":"C13","prdSe":"M","start":"200501","series_key":"ITM_NM",
    "rename":{"생산지수(원지수)":"생산","생산자제품 출하지수(원지수)":"출하","생산자제품 재고지수(원지수)":"재고"}},
   {"file":"retail_index.json","title":"업태별 의복 판매액지수","source":"국가데이터처 서비스업동향조사 (2020=100, 불변지수)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41014",
-   "orgId":"101","tblId":"DT_1K41014","itmId":"T1","objL1":"A1G21+A2G21+A7G21+A8G21","prdSe":"M","start":"201701","series_key":"C1",
+   "orgId":"101","tblId":"DT_1K41014","itmId":"T1","objL1":"A1G21+A2G21+A7G21+A8G21","prdSe":"M","start":"201001","series_key":"C1",
    "rename":{"A1G21":"백화점","A2G21":"대형마트","A7G21":"전문소매점","A8G21":"무점포소매(온라인 등)"}},
   {"file":"online_fashion.json","title":"온라인쇼핑 패션 상품군 거래액","source":"국가데이터처 온라인쇼핑동향조사 (백만원)","url":"https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KE10051",
    "orgId":"101","tblId":"DT_1KE10051","itmId":"T20","objL1":"005+006+007+008+009","objL2":"00","prdSe":"M","start":"201701","series_key":"C1_NM"}
