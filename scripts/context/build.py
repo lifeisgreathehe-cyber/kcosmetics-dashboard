@@ -27,8 +27,9 @@ ROOT = Path(__file__).resolve().parents[2]
 KST = dt.timezone(dt.timedelta(hours=9))
 TODAY = dt.datetime.now(KST).date()
 CFG = json.loads((ROOT / "config/context/industries.json").read_text("utf-8"))
-INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "travel"]
+INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics"]
 CONSUMER = {"cosmetics", "apparel", "food"}
+INDUSTRIES.append("travel")  # 여행 대시보드 (다른 업종 PR과 줄이 겹치지 않게 따로 둠)
 
 
 def cfg_path(ind):
