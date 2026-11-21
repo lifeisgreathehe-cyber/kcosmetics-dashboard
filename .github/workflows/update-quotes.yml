@@ -30,6 +30,7 @@ jobs:
           timeout 300 python scripts/update.py --industry battery --only quotes || true
           timeout 300 python scripts/update.py --industry food --only quotes || true
           timeout 300 python scripts/update.py --industry apparel --only quotes || true
+          timeout 300 python scripts/update.py --industry travel --only quotes || true
           timeout 300 python scripts/update.py --industry logistics --only quotes || true
           for ind in auto steel; do [ -f "config/$ind/companies.json" ] && (timeout 300 python scripts/update.py --industry "$ind" --only quotes || true); done; true
       - name: live-data 브랜치에 게시 (장중 실시간용)
@@ -40,6 +41,7 @@ jobs:
           cp docs/battery/data/quotes.json docs/battery/data/valuation.json /tmp/live/battery/ || true
           cp docs/food/data/quotes.json docs/food/data/valuation.json /tmp/live/food/ || true
           cp docs/apparel/data/quotes.json docs/apparel/data/valuation.json /tmp/live/apparel/ || true
+          mkdir -p /tmp/live/travel && cp docs/travel/data/quotes.json docs/travel/data/valuation.json /tmp/live/travel/ || true
           cp docs/logistics/data/quotes.json docs/logistics/data/valuation.json /tmp/live/logistics/ || true
           for ind in auto steel; do [ -f "docs/$ind/data/quotes.json" ] && mkdir -p "/tmp/live/$ind" && cp "docs/$ind/data/quotes.json" "docs/$ind/data/valuation.json" "/tmp/live/$ind/" || true; done
           cd /tmp/live
@@ -51,6 +53,7 @@ jobs:
       - name: 종가 main 반영
         if: github.event.schedule == '45 6 * * 1-5' || github.event_name == 'workflow_dispatch'
         run: |
+          git add docs/travel/data 2>/dev/null || true
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add docs/data/quotes.json docs/data/valuation.json docs/data/meta.json && git add docs/semi/data || true; git add docs/chem/data || true; git add docs/battery/data || true; git add docs/food/data || true; git add docs/apparel/data || true; git add docs/logistics/data || true; git add docs/auto/data docs/steel/data 2>/dev/null || true

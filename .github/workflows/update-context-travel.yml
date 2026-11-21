@@ -1,0 +1,47 @@
+name: 회사별 입체 분석 갱신 (여행)
+
+# update-context.yml 과 같은 일을 여행 대시보드(docs/travel)만 따로 해요.
+# 공용 워크플로의 업종 목록 줄을 다른 업종 PR과 함께 고치면 충돌이 나서 분리했어요.
+on:
+  schedule:
+    - cron: "45 22,10 * * *"  # 매일 07:45·19:45 KST
+  push:
+    branches: [main]
+    paths:
+      - "raw/travel/dart_docs/**"
+      - "config/context/**"
+      - ".github/workflows/update-context-travel.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-context-travel-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  context:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 수집·분류 (travel)
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: timeout 1500 python scripts/context/build.py --industry travel
+      - name: 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/travel/data/context.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "data: 입체 분석 travel $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            git rebase --abort 2>/dev/null || true; sleep $((i*7))
+          done

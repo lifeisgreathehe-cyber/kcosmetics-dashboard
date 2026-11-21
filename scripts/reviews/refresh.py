@@ -23,6 +23,7 @@ INDUSTRIES.append("steel")  # 철강 대시보드(docs/steel)
 FIELDS = ("tone", "title", "trend", "eval", "watch", "next")
 TODAY = dt.datetime.now(E.KST).date().isoformat()
 QNAME = lambda q: f"{q[:4]}년 {q[-1]}분기"
+INDUSTRIES.append("travel")  # 여행 대시보드 (다른 업종 추가와 줄이 겹치지 않게 따로 둠)
 
 
 def eok(v):
