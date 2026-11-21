@@ -33,6 +33,9 @@ else:
     DATA = ROOT / "docs" / INDUSTRY / "data"
     CONFIG = ROOT / "config" / INDUSTRY
     RAW = ROOT / "raw" / INDUSTRY
+if not (CONFIG / "companies.json").exists():  # 아직 이 브랜치에 없는 업종(예: dart_all.bat 목록에만 있는 경우)은 조용히 건너뜀
+    print(f"[update] config/{INDUSTRY}/companies.json 없음 — 건너뜀", flush=True)
+    sys.exit(0)
 DATA.mkdir(parents=True, exist_ok=True)
 TODAY = dt.date.today()
 
@@ -524,6 +527,7 @@ def update_customs(key):
            "imports": [round(imp_total.get(m, 0) / 1e6, 2) for m in months], "updated": TODAY.isoformat()}
     if extra:
         out["extra"] = extra
+    out["imports_series"] = {lab: [r2(by_hs_imp.get(lab, {}), m) for m in months] for lab in by_hs if lab in totals}  # 품목별 수입(합계 품목)
     if unit_price:
         out["unit_price"] = unit_price
     save("customs_exports.json", out)

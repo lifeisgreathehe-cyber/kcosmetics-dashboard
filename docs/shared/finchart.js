@@ -95,7 +95,7 @@
 .fc-tc.sel{box-shadow:0 0 0 2px var(--ink-3)}
 .fc-tc summary{cursor:pointer;list-style:none;padding:9px 12px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px;align-items:start}
 .fc-tc summary::-webkit-details-marker{display:none}
-.fc-tc .no{grid-row:span 3;display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:11px;font-size:12px;font-weight:700;color:#fff;background:var(--ink-3)}
+.fc-tc .no{grid-row:span 4;align-self:start;display:inline-flex;align-items:center;justify-content:center;min-width:22px;height:22px;border-radius:11px;font-size:12px;font-weight:700;color:#fff;background:var(--ink-3)}
 .fc-tc.t-up .no,.fc-tc.t-opp .no{background:var(--up)}.fc-tc.t-down .no,.fc-tc.t-warn .no{background:var(--down)}
 .fc-tc .tt{font-weight:600;font-size:13.5px;color:var(--ink)}
 .fc-tc .hd{font-size:12.5px;color:var(--ink-2);font-family:var(--font-mono,ui-monospace,monospace)}
@@ -107,6 +107,19 @@
 .fc-tag.unc{color:var(--down);border-color:currentColor}
 .fc-tc .look,.fc-yn .look{font-size:12.5px;color:var(--ink);margin:4px 0 0;line-height:1.6}
 .fc-tc a,.fc-yn a{color:var(--ink-2)}
+.fc-tc .chips{grid-column:2;display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
+.fc-chip{font-size:11px;line-height:18px;padding:0 7px;border-radius:99px;border:1px solid var(--line);color:var(--ink-3);white-space:nowrap}
+.fc-chip.c-p{color:var(--up);border-color:currentColor}.fc-chip.c-m{color:var(--down);border-color:currentColor}.fc-chip.dr{font-weight:700}
+.fc-cats{display:grid;gap:6px;margin:4px 0 6px}
+.fc-cat{border-left:3px solid var(--line);padding:2px 0 2px 10px}
+.fc-cat.c-p{border-left-color:var(--up)}.fc-cat.c-m{border-left-color:var(--down)}
+.fc-cat .ch{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px}
+.fc-cat .nm{font-weight:700;font-size:13px;color:var(--ink)}.fc-cat .sg{font-weight:700;font-size:13px}
+.fc-cat.c-p .sg{color:var(--up)}.fc-cat.c-m .sg{color:var(--down)}.fc-cat .lv{font-size:10px;letter-spacing:1px;color:var(--ink-3)}
+.fc-cat .br{font-size:12.5px;color:var(--ink-2)}
+.fc-cat p{margin:2px 0 0;font-size:12.8px;color:var(--ink);line-height:1.6}
+.fc-cat.none p{color:var(--ink-3)}.fc-cat.none .nm{color:var(--ink-3);font-weight:600}
+.fc-cat ul{margin:3px 0 2px}.fc-cat li{font-size:12.3px}
 .fc-yn{margin:12px 0 0}
 .fc-yn details{border:1px solid var(--line);border-radius:8px;margin:0 0 6px;background:var(--panel)}
 .fc-yn summary{cursor:pointer;padding:8px 12px;font-size:13px;color:var(--ink);line-height:1.55}
@@ -337,11 +350,21 @@
       const box = el.querySelector('.fc-turns'); if (!box) return;
       const F = { all: ['전체', () => true], leg: ['큰 흐름(고점·저점)', e => e.kind === 'leg'], band: ['실적·주가 엇갈림', e => e.kind === 'band'] };
       const list = TE.filter(F[TF.f][1]).slice().reverse();
-      const card = e => `<details class="fc-tc t-${e.t}${e.id === o._sel ? ' sel' : ''}" data-id="${e.id}"${e.id === o._sel ? ' open' : ''}><summary><span class="no">${e.no}</span><span class="tt">${esc(e.title)}</span><span class="hd">${esc(e.head)}</span><span class="why"><b>왜?</b> ${esc(e.why)}</span></summary>
-        <div class="bd"><ul>${e.f.map(f => `<li><span class="fc-tag${f.tag === '불확실' ? ' unc' : ''}">${esc(f.tag)}</span>${esc(f.text)}${f.u ? ` <a href="${esc(f.u)}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>
+      const CN = { earn: '실적', cycle: '업황', trend: '트렌드', news: '뉴스', val: '밸류에이션', cat: '촉매제', macro: '거시·시장' };
+      const SG = (c, t) => c.none ? '–' : c.s > 0 ? '↑' : c.s < 0 ? '↓' : '·';
+      const sc = c => c.none ? 'n' : c.s > 0 ? 'p' : c.s < 0 ? 'm' : 'z';
+      const lv = c => c.none ? '' : `<span class="lv" title="영향 ${['약함', '약함', '보통', '강함'][c.lvl || 0]}">${'●'.repeat(Math.max(1, c.lvl || 1))}${'○'.repeat(3 - Math.max(1, c.lvl || 1))}</span>`;
+      const evl = c => (c.ev || []).length ? `<ul>${c.ev.map((x, i) => `<li>${esc(x)}${c.u && c.u[i] ? ` <a href="${esc(c.u[i])}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>` : '';
+      const chips = e => `<span class="chips">${e.cats.map(c => `<span class="fc-chip c-${sc(c)}${(e.drive || []).includes(c.k) ? ' dr' : ''}">${CN[c.k] || c.k} ${SG(c)}</span>`).join('')}</span>`;
+      const card = e => e.cats ? `<details class="fc-tc t-${e.t}${e.id === o._sel ? ' sel' : ''}" data-id="${e.id}"${e.id === o._sel ? ' open' : ''}><summary><span class="no">${e.no}</span><span class="tt">${esc(e.title)}</span><span class="hd">${esc(e.head)}</span><span class="why">${esc(e.sum)}</span>${chips(e)}</summary>
+        <div class="bd"><div class="fc-cats">${e.cats.map(c => `<div class="fc-cat c-${sc(c)}${c.none ? ' none' : ''}"><div class="ch"><span class="nm">${CN[c.k] || c.k}</span><span class="sg">${SG(c)}</span>${lv(c)}${c.b ? `<span class="br">${esc(c.b)}</span>` : ''}</div><p>${esc(c.t)}</p>${evl(c)}</div>`).join('')}</div>
+        ${e.after ? `<p class="look"><b>이후 확인</b> ${esc(e.after)}</p>` : ''}${e.unc ? `<p class="look"><span class="fc-tag unc">불확실</span>${esc(e.unc)}</p>` : ''}
+        <p class="look"><b>앞으로 볼 점</b> ${esc(e.look)}</p></div></details>`
+        : `<details class="fc-tc t-${e.t}${e.id === o._sel ? ' sel' : ''}" data-id="${e.id}"${e.id === o._sel ? ' open' : ''}><summary><span class="no">${e.no}</span><span class="tt">${esc(e.title)}</span><span class="hd">${esc(e.head)}</span><span class="why"><b>왜?</b> ${esc(e.why)}</span></summary>
+        <div class="bd"><ul>${(e.f || []).map(f => `<li><span class="fc-tag${f.tag === '불확실' ? ' unc' : ''}">${esc(f.tag)}</span>${esc(f.text)}${f.u ? ` <a href="${esc(f.u)}" target="_blank" rel="noopener">기사</a>` : ''}</li>`).join('')}</ul>
         <p class="look"><b>앞으로 볼 점</b> ${esc(e.look)}</p></div></details>`;
       box.innerHTML = `<div class="th"><h4>변곡점마다 왜 오르고 내렸나 · ${TE.length}개</h4><div class="fc-segs" role="group" aria-label="해설 종류">${Object.entries(F).map(([k, [l]]) => `<button class="seg" data-f="${k}" aria-pressed="${k === TF.f}">${l}</button>`).join('')}</div></div>
-        <p class="lead">차트의 번호 원과 색 띠를 누르면 해당 해설이 열려요. 숫자(이익·PER·업종 대비·실적 발표 반응·사후 1년)는 데이터에서 자동 계산했고, 사건 연표와 뉴스는 같은 시기의 것을 맞춰 붙였어요. 원인 연결은 추정이며, 설명이 부족한 곳은 '불확실'로 표시했어요.</p>
+        <p class="lead">차트의 번호 원과 색 띠를 누르면 해당 해설이 열려요. 오르내린 이유를 실적(시장 기대 대비)·업황·트렌드·뉴스·밸류에이션·촉매제·거시·시장으로 나눠 설명하고, 맨 위 한 줄에 가장 크게 작용한 요인을 요약했어요. ✔는 기사 원문으로 확인한 원인이에요. ↑는 주가를 올린 쪽, ↓는 내린 쪽, ●●●는 영향의 크기예요. 그 시기에 근거가 없는 요인은 '–'로 표시했어요. 숫자는 데이터에서 자동 계산했고, 원인 연결은 추정이에요.</p>
         ${list.map(card).join('') || '<p class="lead">이 종류의 변곡점이 없어요.</p>'}
         <p class="fc-note">해설 갱신 ${esc((o._turns && o._turns.updated) || '')} · 시장 비교는 ${o._turns && o._turns.macro === false ? '7개 산업 대시보드 전체 중앙값' : '코스피(코스닥 상장사는 코스닥)'} 기준</p>`;
       box.querySelectorAll('.fc-segs button').forEach(b => b.onclick = () => { TF.f = b.dataset.f; drawList(); });
@@ -423,7 +446,7 @@
               afterBody: it => {
                 if (!TE.length || !it.length) return [];
                 const xv = it[0].parsed.x, pv = isP && pivotNear(xv), es = pv ? [pv] : evAt(xv);
-                return es.length ? [''].concat(es.flatMap(e => wrap(`(${e.no}) ${e.title}: ${e.why}`, 46)), ['클릭하면 아래에 근거가 열려요']) : [];
+                return es.length ? [''].concat(es.flatMap(e => wrap(`(${e.no}) ${e.title}: ${e.sum || e.why}`, 46)), ['클릭하면 아래에 근거가 열려요']) : [];
               } } } },
           onClick: (ev, act, ch) => pick(ch, ev),
           scales: {
