@@ -1,0 +1,40 @@
+name: apparel-signals
+# 의류 '사이클이 바뀌는 신호' 장기 시계열(최대 20년): KOSIS·관세청(국내) + FRED(환율·면화·미국 의류 재고·관세)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "40 23 * * *"   # 매일 08:40 KST
+  push:
+    paths:
+      - scripts/apparel/signals.py
+      - config/apparel/kosis.json
+      - config/apparel/customs.json
+      - .github/workflows/apparel-signals.yml
+permissions: {contents: write}
+concurrency: {group: apparel-signals, cancel-in-progress: false}
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: KOSIS (판매액·출하·재고지수, 2005~)
+        run: python scripts/update.py --industry apparel --only kosis || true
+        env:
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+      - name: 관세청 (나프타·면화 수입 단가, 2006~)
+        run: python scripts/update.py --industry apparel --only customs || true
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      - name: FRED (환율·면화·미국 의류 재고·관세) + 서울 기온(기상청)
+        run: python scripts/apparel/signals.py
+        env:
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+      - run: |
+          git config user.name "github-actions"; git config user.email "actions@github.com"
+          git add docs/apparel/data raw/apparel || true
+          git diff --cached --quiet && exit 0
+          git commit -m "data: 의류 사이클 신호 $(date -u +%F)"
+          for i in 1 2 3 4; do git pull --rebase -X theirs -q && git push -q && break; sleep 7; done
