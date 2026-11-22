@@ -1,19 +1,28 @@
 @echo off
-rem DART 실적 수집 + GitHub 업로드를 한 번에 (국내 PC에서 실행)
-rem 사용법: 저장소 폴더에서  scripts\dart_all.bat
-rem 이미 받은 회사는 올해 분기만 새로 받고(--latest), 처음 받는 업종은 10년치를 받는다.
-chcp 65001 >nul
+rem DART collect + GitHub upload in one step (run on a PC in Korea).
+rem Usage, in the repo folder:  scripts\dart_all.bat
+rem Companies already collected get only this years quarters (--latest).
 cd /d "%~dp0.."
+echo [1/4] Checking git...
 if exist .git\MERGE_HEAD echo Unfinished git merge - see restore steps in README & goto fail
+if exist .git\rebase-merge echo Unfinished git rebase - run: git rebase --abort & goto fail
+if exist .git\rebase-apply echo Unfinished git rebase - run: git rebase --abort & goto fail
 git pull --rebase --autostash
 if errorlevel 1 goto fail
 if "%DART_API_KEY%"=="" set /p DART_API_KEY=<C:\Users\ceter\Desktop\kiwoom\dart_key.txt
-for %%I in (cosmetics semi chem battery apparel food logistics auto steel) do python scripts\update.py --industry %%I --only dart --latest
+if "%DART_API_KEY%"=="" echo DART key file not found & goto fail
+set PYTHONUNBUFFERED=1
+echo [2/4] Collecting DART data (takes a while; do not click inside this window)...
+for %%I in (cosmetics semi chem battery apparel food logistics auto steel travel) do (
+  echo ---- %%I ----
+  python -u scripts\update.py --industry %%I --only dart --latest
+)
+echo [3/4] Saving to git...
 git add docs raw
-python scripts\update.py --industry travel --only dart --latest & git add docs raw
 git commit -m "DART update %date%"
 git pull --rebase -X theirs
 if errorlevel 1 goto fail
+echo [4/4] Uploading to GitHub...
 git push
 if errorlevel 1 goto fail
 echo.
