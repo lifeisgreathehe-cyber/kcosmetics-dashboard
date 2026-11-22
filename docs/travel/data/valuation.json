@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21",
+ "updated": "2026-11-22",
  "method": "여행 업종은 이익이 환율·유가·방한객 같은 외부 변수에 크게 출렁이고, 면세점·카지노·호텔은 일회성 손상과 매각 손실이 자주 섞여요. 그래서 ① 정상 이익(E1): 최근 1년 순이익이 아니라 회사별로 '사이클이 평균적인 해'의 이익을 썼어요(근거는 회사별 메모). ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금 위치에 따라 1~3년만 이어진다고 보고 현재가치만 더하거나 빼요. ③ 성장률(g)은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인, 순현금은 더해요(여행사는 현금 대부분이 고객 선수금이라, 비지배지분이 큰 백화점 계열은 연결 현금이 주주 몫과 달라 더하지 않았어요). 순차입은 빼지 않아요(정상 이익이 이미 이자를 뺀 순이익이라).",
  "terminal_growth": 2.0,
  "asof": "2026-11-14",
@@ -5810,7 +5810,7 @@
    {
     "industry": "cosmetics",
     "n": 44,
-    "median_upside": 8.2,
+    "median_upside": 8.3,
     "share_above": 43,
     "label": "중간",
     "shift": 0
@@ -5819,30 +5819,38 @@
     "industry": "semi",
     "n": 110,
     "median_upside": -32.2,
-    "share_above": 70,
+    "share_above": 69,
     "label": "과열(낙관 쪽)",
     "shift": 1
    },
    {
     "industry": "chem",
     "n": 54,
-    "median_upside": 5.0,
-    "share_above": 43,
+    "median_upside": 2.6,
+    "share_above": 44,
     "label": "중간",
     "shift": 0
    },
    {
     "industry": "battery",
     "n": 66,
-    "median_upside": -50.1,
+    "median_upside": -49.5,
     "share_above": 83,
     "label": "과열(낙관 쪽)",
     "shift": 1
    },
    {
+    "industry": "apparel",
+    "n": 32,
+    "median_upside": 19.7,
+    "share_above": 41,
+    "label": "다소 차가움",
+    "shift": 0
+   },
+   {
     "industry": "food",
     "n": 48,
-    "median_upside": 18.5,
+    "median_upside": 18.9,
     "share_above": 42,
     "label": "다소 차가움",
     "shift": 0
@@ -5856,18 +5864,10 @@
     "shift": 0
    },
    {
-    "industry": "auto",
-    "n": 55,
-    "median_upside": 35.6,
-    "share_above": 33,
-    "label": "냉각(비관 쪽)",
-    "shift": -1
-   },
-   {
     "industry": "steel",
     "n": 71,
-    "median_upside": -28.0,
-    "share_above": 70,
+    "median_upside": -25.5,
+    "share_above": 66,
     "label": "과열(낙관 쪽)",
     "shift": 1
    },
