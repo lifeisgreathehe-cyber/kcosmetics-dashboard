@@ -17,6 +17,13 @@ for %%I in (cosmetics semi chem battery apparel food logistics auto steel travel
   echo ---- %%I ----
   python -u scripts\update.py --industry %%I --only dart --latest
 )
+rem bio/construction/ship/energy: only when that dashboard exists
+for %%I in (bio construction ship energy) do (
+  if exist config\%%I\companies.json (
+    echo ---- %%I ----
+    python -u scripts\update.py --industry %%I --only dart --latest
+  )
+)
 echo [3/4] Saving to git...
 git add docs raw
 git commit -m "DART update %date%"

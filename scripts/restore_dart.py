@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent.parent
 INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "auto", "steel"]
 
 INDUSTRIES.append("travel")  # 여행: 공용 목록 줄과 겹치지 않게 따로 둠
+INDUSTRIES += [i for i in ("bio", "construction", "ship", "energy") if (ROOT / "config" / i / "companies.json").exists()]  # 바이오·건설·조선·에너지: 설정이 생긴 업종만(공용 등록, 4개 업종 PR이 같은 줄을 공유)
 
 def paths(base: Path, ind: str):
     if ind == "cosmetics":
