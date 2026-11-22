@@ -74,7 +74,9 @@ def main():
             ev = f"※ {last_q} 확정 실적이 새로 들어왔어요. 위 실적 동향 숫자는 {last_q} 기준이고, 아래 해석은 {r['basis']} 실적과 잠정실적 기사를 기준으로 쓴 것이라 곧 다시 써요. " + ev
         if (r.get("auto") or not r.get("points")) and dp_.get("explain"):
             # 사업 핵심: 심층분석 제품 해설(사람이 쓴 원고)의 항목별 첫 문장
-            r["points"] = [f"{sec['h']} — {re.split(r'(?<=요\.)\s', sec['p'])[0]}"
+            # Python 3.11 호환: f-string 안에 백슬래시(정규식)를 넣지 않음
+            first = lambda t: re.split(r'(?<=요\.)\s', t)[0]
+            r["points"] = [f"{sec['h']} — {first(sec['p'])}"
                            for sec in dp_["explain"].get("sections", [])[:4]]
             r["mix_title"] = dp_["explain"].get("title", "")
         news = r.get("news") or []

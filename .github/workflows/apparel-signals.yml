@@ -5,6 +5,7 @@ on:
   schedule:
     - cron: "40 23 * * *"   # 매일 08:40 KST
   push:
+    branches: [main]   # PR 브랜치에 데이터 커밋이 쌓이지 않게(main에서만 실행)
     paths:
       - scripts/apparel/signals.py
       - config/apparel/kosis.json
@@ -19,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
+        with: {python-version: "3.12"}
       - name: KOSIS (판매액·출하·재고지수, 2005~)
         run: python scripts/update.py --industry apparel --only kosis || true
         env:
