@@ -77,6 +77,7 @@
 .fc-pt .v{font-family:var(--font-mono,ui-monospace,monospace);font-size:12.5px;color:var(--ink)}
 .fc-pt .v .up{color:var(--up)}.fc-pt .v .down{color:var(--down)}
 .fc-c{position:relative}
+.fc-body.tall{max-width:680px;margin:0 auto}
 .fc-note{font-size:11.5px;color:var(--ink-3);margin:6px 0 0;line-height:1.55}
 .fc-tbl{margin-top:10px;font-size:12.5px}
 .fc-tbl summary{cursor:pointer;color:var(--ink-2)}
@@ -399,10 +400,11 @@
     };
     const body = el.querySelector('.fc-body');
 
+    body.classList.toggle('tall', ST.view !== 'index');  // 나란히 보기: 가로 절반·세로 길게 → 증감폭이 잘 보이게
     if (ST.view === 'index') return drawIndex();
 
     // ---- 나란히 보기: 세로로 긴 패널
-    const H = narrow ? { px: 190, f: 150 } : { px: 240, f: 190 };
+    const H = narrow ? { px: 300, f: 240 } : { px: 440, f: 340 };
     const panels = [];
     if (PM.length) panels.push({ k: 'px', data: PM.filter(p => XM(p) >= -0.7).map(p => ({ x: XM(p), y: p.v, m: p.m })) });
     fields.forEach(f => panels.push({ k: f, data: axis.map((n, i) => ({ x: i, y: ser(n, f) })).filter(p => p.y != null) }));
