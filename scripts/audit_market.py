@@ -17,6 +17,7 @@ INDS = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", 
 UA = {"User-Agent": "Mozilla/5.0", "Referer": "https://m.stock.naver.com/"}
 PRICE_URL = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo"
 INDS.append("travel")  # 여행: 공용 목록 줄과 겹치지 않게 따로 둠
+INDS += [i for i in ("bio", "construction", "ship", "energy") if (ROOT / "config" / i / "companies.json").exists()]  # 바이오·건설·조선·에너지: 설정이 생긴 업종만(공용 등록, 4개 업종 PR이 같은 줄을 공유)
 
 
 def get(url, params=None, quiet=False):
