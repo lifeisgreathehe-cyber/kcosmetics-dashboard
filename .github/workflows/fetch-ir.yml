@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-        with: {python-version: "3.11"}
+        with: {python-version: "3.12"}
       - run: pip install -q pypdf
       - run: sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-kor >/dev/null
       - run: python scripts/ir/irgo_fetch.py --industry "${{ inputs.industry }}" --codes "${{ inputs.codes }}" ${{ inputs.args }}

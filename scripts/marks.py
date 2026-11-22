@@ -231,7 +231,9 @@ def second_level(rec, d, hb, imp_m, pos, temp, loss, up, asym, base_m=None):
     s = []
     if imp_m is not None and hb:
         lo, avg, hi = hb["margin_range"][0], hb["margin"], hb["margin_range"][1]
-        head = f"지금 주가가 맞으려면 이익이 연 {g}%씩 늘면서 순이익률 {imp_m}%가 이어져야 해요(과거 {lo}%~{hi}%, 평균 {avg}%{f", 이 리포트의 정상 이익 가정 {base_m}%" if base_m is not None else ""})."
+        # Python 3.11 호환: f-string 안에 같은 따옴표의 f-string을 넣지 않음(3.12부터만 허용, 3.11 Actions에서 marks 전체가 빠졌음)
+        base_txt = f", 이 리포트의 정상 이익 가정 {base_m}%" if base_m is not None else ""
+        head = f"지금 주가가 맞으려면 이익이 연 {g}%씩 늘면서 순이익률 {imp_m}%가 이어져야 해요(과거 {lo}%~{hi}%, 평균 {avg}%{base_txt})."
         if imp_m > hi:
             s.append(head + " 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요.")
         elif imp_m > avg * 1.15:
