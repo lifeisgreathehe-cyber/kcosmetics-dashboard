@@ -49,6 +49,12 @@ OIL_SENS = {"chem": "정유는 재고평가이익·정제마진, 석유화학은
 IND_NAME["travel"] = "여행"  # 여행: 공용 사전 줄과 겹치지 않게 따로 둠
 FX_SENS["travel"] = 0
 OIL_SENS["travel"] = "항공사 연료비·유류할증료(여행 수요 위축)"
+# 바이오·건설·조선·에너지 (공용 등록, 4개 업종 PR이 같은 줄을 공유)
+IND_NAME.update({"bio": "바이오·제약", "construction": "건설·건자재", "ship": "조선", "energy": "에너지·전력"})
+FX_SENS.update({"bio": 1, "construction": 0, "ship": 1, "energy": 0})
+OIL_SENS.update({"construction": "아스팔트·시멘트 연료(유연탄)·운송비 원가",
+                 "ship": "해양플랜트·LNG선 발주(유가 상승은 수주에 유리), 후판 원가",
+                 "energy": "한전·가스공사 연료비(LNG·석탄) 부담, 발전·가스 정산단가와 요금 조정 시차"})
 
 def industries(sel=None):
     out = []
