@@ -322,7 +322,7 @@ def kosis_fetch(key, spec):
          "orgId": spec["orgId"], "tblId": spec["tblId"], "itmId": spec.get("itmId", "ALL"),
          "objL1": spec.get("objL1", "ALL"), "prdSe": spec["prdSe"],
          "startPrdDe": spec["start"], "endPrdDe": spec.get("end", f"{TODAY.year}12" if spec["prdSe"] == "M" else str(TODAY.year))}
-    for k in ("objL2", "objL3"):
+    for k in ("objL2", "objL3", "objL4"):
         if k in spec:
             p[k] = spec[k]
     if spec["prdSe"] == "Q":
