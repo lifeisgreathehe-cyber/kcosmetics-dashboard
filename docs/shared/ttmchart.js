@@ -1,11 +1,11 @@
-/* 최근 20개 분기 TTM(최근 4개 분기 합) 추이 + 주가 — 모든 산업 대시보드 공용.
+/* 최근 20개 분기 실적(분기 단독) + 주가(로그 눈금) — 모든 산업 대시보드 공용. (전역 이름 TTMChart는 호환을 위해 유지)
    사용법: <script src="(상대경로)/shared/ttmchart.js"></script> (Chart.js 4 먼저 로드)
-     TTMChart.render(canvasEl, quarterly, {niLabel:'지배주주순이익', subEl, n:20, price})
+     TTMChart.render(canvasEl, quarterly, {niLabel:'지배주주순이익', subEl, n:20, price, mode:'q'})
        quarterly: companies.json 의 quarterly ({"2025Q3": {rev, op, ni}, ...}, 백만원, 분기 단독)
        price: stock_hist.json series[code] ({months:["2016-12",...], close:[...]}, 월말 수정종가). 없으면 주가 칸 생략.
-   - TTM은 연속된 4개 분기가 모두 있을 때만 계산(한 분기라도 빠지면 그 시점은 비움 → 선이 끊김).
+       mode: 'q'(기본, 분기 단독 실적) | 'ttm'(최근 4개 분기 합)
    - 한 차트 안에 위에서부터 주가 · 매출액 · 영업이익 · 순이익 칸을 세로로 쌓고(같은 분기축), 칸마다 y축을 그 계열의 범위에 맞춰
-     증감폭이 잘 보이게 함. 0을 지나는 칸(적자 전환 등)은 0선을 진하게 표시. 차트 높이는 이 모듈이 정함(데스크톱 약 1,200px).
+     증감폭이 잘 보이게 함. 주가 칸은 로그 눈금(같은 높이 = 같은 등락률). 0을 지나는 칸(적자 등)은 0선을 진하게 표시.
    - companies.json·stock_hist.json이 바뀌면 페이지가 다시 그릴 때 자동으로 반영돼요. 따로 생성하는 파일이 없어요. */
 (function () {
   const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
@@ -26,10 +26,18 @@
   };
 
   // quarterly → [{q, rev, op, ni}] TTM 시계열(억원). 4개 분기가 모두 있어야 계산.
-  function series(quarterly, n) {
+  function series(quarterly, n, mode) {
     const Q = quarterly || {};
     const keys = Object.keys(Q).sort();
     const out = [];
+    if (mode !== 'ttm') {  // 분기 단독 실적
+      for (const q of keys.slice(-n)) {
+        const row = { q };
+        for (const m of ['rev', 'op', 'ni']) { const v = Q[q] ? Q[q][m] : null; row[m] = v != null && isFinite(v) ? eok(v) : null; }
+        out.push(row);
+      }
+      return out;
+    }
     for (const q of keys) {
       const w = [q]; while (w.length < 4) w.push(prevQ(w[w.length - 1]));
       const row = { q };
@@ -83,16 +91,17 @@
   function render(canvas, quarterly, opt) {
     opt = opt || {};
     const NI = opt.niLabel || '지배주주순이익';
-    const rows = series(quarterly, opt.n || 20);
+    const mode = opt.mode || 'q', isQ = mode !== 'ttm', TAG = isQ ? '' : ' TTM';
+    const rows = series(quarterly, opt.n || 20, mode);
     const old = charts.get(canvas); if (old) old.destroy();
     if (opt.subEl) {
-      if (rows.length < 1) { opt.subEl.textContent = '연속된 4개 분기 실적이 없어 TTM을 계산할 수 없어요.'; }
+      if (rows.length < 1) { opt.subEl.textContent = isQ ? '분기 실적 데이터가 없어요.' : '연속된 4개 분기 실적이 없어 TTM을 계산할 수 없어요.'; }
       else {
         const last = rows[rows.length - 1], yago = rows.find(r => r.q === prevQ(prevQ(prevQ(prevQ(last.q)))));
-        opt.subEl.innerHTML = `단위: 억원(주가는 원) · 실적의 각 점은 그 분기까지 최근 4개 분기 합계 · 주가는 그 분기 마지막 달 말 종가(수정주가) · 칸마다 세로축을 그 값의 범위에 맞춰 증감폭이 잘 보이게 했어요(0부터 시작하지 않을 수 있음)` +
+        opt.subEl.innerHTML = `단위: 억원(주가는 원) · 실적의 각 점은 ${isQ ? '그 분기 한 분기 실적' : '그 분기까지 최근 4개 분기 합계'} · 주가는 그 분기 마지막 달 말 종가(수정주가), 로그 눈금(같은 높이 = 같은 등락률) · 칸마다 세로축을 그 값의 범위에 맞춰 증감폭이 잘 보이게 했어요(0부터 시작하지 않을 수 있음)` +
           (rows.length < (opt.n || 20) ? ` · 수집된 분기가 적어 ${rows.length}개 시점만 표시` : '') +
-          `<br><b>${last.q} TTM</b> 매출액 ${amt(last.rev)}${yago ? chg(last.rev, yago.rev) : ''} · 영업이익 ${amt(last.op)}${yago ? chg(last.op, yago.op) : ''} · ${NI} ${amt(last.ni)}${yago ? chg(last.ni, yago.ni) : ''}` +
-          (yago ? ' <span style="color:var(--ink-3)">(괄호는 1년 전 TTM 대비)</span>' : '') + pxLine(opt.price, last.q);
+          `<br><b>${last.q}${TAG}</b> 매출액 ${amt(last.rev)}${yago ? chg(last.rev, yago.rev) : ''} · 영업이익 ${amt(last.op)}${yago ? chg(last.op, yago.op) : ''} · ${NI} ${amt(last.ni)}${yago ? chg(last.ni, yago.ni) : ''}` +
+          (yago ? ` <span style="color:var(--ink-3)">(괄호는 ${isQ ? '전년 같은 분기' : '1년 전 TTM'} 대비)</span>` : '') + pxLine(opt.price, last.q);
       }
     }
     if (!rows.length) return null;
@@ -103,19 +112,38 @@
     const ink2 = css('--ink-2'), ink3 = css('--ink-3'), grid = css('--line');
     const mobile = window.innerWidth < 640;
     const panels = [
-      hasPx && { id: 'yp', key: 'px', label: '주가 (분기 말 월말 종가)', short: '주가', unit: '원', data: px, color: ink2, tf: v => won(v) },
-      { id: 'yr', key: 'rev', label: '매출액 TTM', short: '매출액', data: rows.map(r => r.rev), color: s[0], tf: tick },
-      { id: 'yo', key: 'op', label: '영업이익 TTM', short: '영업이익', data: rows.map(r => r.op), color: s[1], tf: tick },
-      { id: 'yn', key: 'ni', label: `${NI} TTM`, short: NI, data: rows.map(r => r.ni), color: s[2], tf: tick }
+      hasPx && { id: 'yp', key: 'px', label: '주가 (분기 말 월말 종가, 로그 눈금)', short: '주가', unit: '원', data: px, color: ink2, tf: v => won(v), log: true },
+      { id: 'yr', key: 'rev', label: '매출액' + TAG, short: '매출액', data: rows.map(r => r.rev), color: s[0], tf: tick },
+      { id: 'yo', key: 'op', label: '영업이익' + TAG, short: '영업이익', data: rows.map(r => r.op), color: s[1], tf: tick },
+      { id: 'yn', key: 'ni', label: NI + TAG, short: NI, data: rows.map(r => r.ni), color: s[2], tf: tick }
     ].filter(Boolean);
-    // 높이: 칸당 데스크톱 280px(모바일 230px) → 4칸이면 약 1,200px(기존 340px의 3.5배)
+    // 높이: 칸당 데스크톱 165px(모바일 150px). 카드 가로폭이 절반이라 칸을 납작하게 해서 기울기(증감폭)가 잘 보이게
     const wrap = canvas.parentElement;
-    if (wrap) wrap.style.height = (panels.length * (mobile ? 230 : 280) + 70) + 'px';
+    if (wrap) wrap.style.height = (panels.length * (mobile ? 150 : 165) + 60) + 'px';
     const scales = { x: { ticks: { color: ink3, maxRotation: 0, autoSkipPadding: 12, font: { size: 11 } }, grid: { color: grid }, border: { color: grid } } };
     // Chart.js는 같은 stack의 축을 '나중에 정의한 것이 위'로 쌓음 → 역순으로 정의해 주가가 맨 위에 오게 함
     const W = mobile ? 50 : 78;
     const won = v => mobile && Math.abs(v) >= 10000 ? (v / 10000).toLocaleString('ko-KR', { maximumFractionDigits: 1 }) + '만' : fmt(v);
     panels.slice().reverse().forEach((p, i) => {
+      if (p.log) {
+        const v = p.data.filter(x => x > 0); const lo = Math.min(...v), hi = Math.max(...v);
+        const pad = Math.pow(hi / lo, 0.08) || 1.1;
+        scales[p.id] = {
+          type: 'logarithmic', position: 'left', stack: 'ttm', stackWeight: 1, min: lo / pad, max: hi * pad,
+          title: { display: !mobile, text: '주가(원, 로그)', color: p.color, font: { size: 11.5, weight: '700' } },
+          ticks: { color: p.color, font: { size: mobile ? 10 : 11 }, autoSkip: true, maxTicksLimit: 6,
+            callback: v => p.tf(v) },
+          afterBuildTicks: ax => {  // 1·2·5 단위 눈금만 남김(범위가 좁으면 사이 눈금도 추가)
+            const out = []; const lo2 = ax.min, hi2 = ax.max;
+            for (let e = Math.floor(Math.log10(lo2)); e <= Math.ceil(Math.log10(hi2)); e++)
+              for (const m of (hi2 / lo2 < 4 ? [1, 1.5, 2, 3, 5, 7] : [1, 2, 5])) { const t = m * Math.pow(10, e); if (t > lo2 && t < hi2) out.push({ value: t }); }
+            ax.ticks = out;
+          },
+          afterFit: ax => { ax.width = W; },
+          grid: { color: grid }, border: { display: true, color: ink3, width: 1 }
+        };
+        return;
+      }
       const r = fit(p.data, 4);
       const crosses = r.min < 0 && r.max > 0;
       scales[p.id] = {
@@ -140,7 +168,7 @@
         interaction: { mode: 'index', intersect: false },
         plugins: {
           legend: { display: false, position: 'top', labels: { color: ink2, boxWidth: 10, boxHeight: 10, usePointStyle: true, font: { size: 11.5 } } },
-          tooltip: { callbacks: { title: x => `${x[0].label} (실적은 최근 4개 분기 합)`, label: x => `${x.dataset.label}: ${fmt(x.raw)}${x.dataset._unit}` } }
+          tooltip: { callbacks: { title: x => isQ ? `${x[0].label} 분기 실적` : `${x[0].label} (실적은 최근 4개 분기 합)`, label: x => `${x.dataset.label}: ${fmt(x.raw)}${x.dataset._unit}` } }
         },
         scales
       },
@@ -158,7 +186,7 @@
             }
             g.font = `700 ${mobile ? 11 : 12}px system-ui, sans-serif`; g.textBaseline = 'top';
             const t = p.label, tw = g.measureText(t).width;
-            g.globalAlpha = .85; g.fillStyle = bg; g.fillRect(ca.left + 4, sc.top + 4, tw + 10, 18); g.globalAlpha = 1;
+            g.globalAlpha = .6; g.fillStyle = bg; g.fillRect(ca.left + 4, sc.top + 4, tw + 10, 18); g.globalAlpha = 1;
             g.fillStyle = p.color; g.fillText(t, ca.left + 9, sc.top + 7);
           });
           g.restore();
