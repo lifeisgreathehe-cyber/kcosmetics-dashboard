@@ -1,0 +1,221 @@
+{
+ "title": "여행",
+ "index_name": "여행·레저 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "exclude_window": [
+  "2020-02",
+  "2024-06"
+ ],
+ "intro": "여행 업종은 인바운드(방한객 → 면세·카지노·호텔)와 아웃바운드(출국자 → 여행사·LCC)로 나뉘어요. 환율(원화 약세는 인바운드에 유리, 아웃바운드에 불리)과 유가가 함께 작용해요. 코로나와 그 뒤 기저효과 기간(2020.2~2024.6)은 전년비가 극단적으로 왜곡돼 상관 계산에서 뺐어요(그래프엔 그대로 보여요).",
+ "series": [
+  {
+   "id": "visitors",
+   "name": "방한 외래객",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "concat": [
+     {
+      "file": "inbound_old.json",
+      "path": "series.총계"
+     },
+     {
+      "file": "inbound_new.json",
+      "path": "series.총계"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계(구·신 통계표 연결)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRD_TGT_ENT_AGG_MONTH",
+   "why": "면세점·카지노·호텔·여행사 인바운드 매출의 출발점이에요.",
+   "read": "2003~21년·2022년~ 두 통계표를 이어 붙였어요(정의가 다를 수 있어 주의).",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cn_visitors",
+   "name": "중국인 방한객",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "concat": [
+     {
+      "file": "inbound_old.json",
+      "path": "series.중국"
+     },
+     {
+      "file": "inbound_new.json",
+      "path": "series.중국"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계(구·신 통계표 연결)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRD_TGT_ENT_AGG_MONTH",
+   "why": "면세점·카지노(외국인 전용) 매출에 가장 중요한 손님이에요.",
+   "read": "단체관광 허용·비자 정책이 큰 변수예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "jp_visitors",
+   "name": "일본인 방한객",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "concat": [
+     {
+      "file": "inbound_old.json",
+      "path": "series.일본"
+     },
+     {
+      "file": "inbound_new.json",
+      "path": "series.일본"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계(구·신 통계표 연결)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRD_TGT_ENT_AGG_MONTH",
+   "why": "카지노·호텔·K-뷰티 쇼핑의 핵심 손님이에요. 엔화 환율에 민감해요.",
+   "read": "엔화 강세 땐 방한이 늘어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "outbound",
+   "name": "내국인 출국자",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "file": "outbound.json",
+    "path": "series.전체"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRFF_DEP_AGG_MONTH",
+   "why": "하나투어·모두투어·LCC 매출의 출발점이에요.",
+   "read": "출국자 증가율이 꺾이면 아웃바운드 이익 정점이 가까워요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "intl_pax",
+   "name": "국제선 여객(항공사 합계)",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "file": "air_carrier.json",
+    "path": "series.합계"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국공항공사·인천국제공항공사 항공통계",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=381&tblId=DT_920005_B008",
+   "why": "국제선 도착+출발 여객이에요.",
+   "read": "항공사 여객 매출의 물량 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "dutyfree",
+   "name": "면세점 매출(서비스업생산 경상)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_nominal.json",
+    "path": "series.면세점"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "면세점 업종 매출 지수예요.",
+   "read": "따이궁 수수료 경쟁이 심하면 매출이 늘어도 이익은 안 늘 수 있어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "agency",
+   "name": "여행사업 매출(서비스업생산 경상)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_nominal.json",
+    "path": "series.여행사업"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "여행사 업종 매출 지수예요.",
+   "read": "패키지 여행 수요를 보여줘요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "casino",
+   "name": "사행시설(카지노 등) 매출",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_nominal.json",
+    "path": "series.사행시설 관리 및 운영업"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "카지노·경마 등 업종 매출이에요. 강원랜드·GKL·파라다이스와 관련돼요.",
+   "read": "외국인 카지노는 중국·일본 VIP 방문에 좌우돼요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "travel_pay",
+   "name": "여행지급(한국인 해외 지출)",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "travel_bop.json",
+    "path": "series.여행지급"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 국제수지",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_301Y013",
+   "why": "한국인이 해외에서 쓴 돈이에요.",
+   "read": "아웃바운드 업황의 금액 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "jpykrw",
+   "name": "원/100엔 환율",
+   "group": "거시·금융",
+   "unit": "원",
+   "src": {
+    "file": "market.json",
+    "path": "series.원/100엔"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/JPYKRW=X/",
+   "why": "엔화 약세면 한국인 일본 여행(아웃바운드)이 늘고, 일본인 방한은 줄어요.",
+   "read": "부호로 업종 지수가 인바운드·아웃바운드 중 어디에 더 민감한지 알 수 있어요."
+  }
+ ]
+}

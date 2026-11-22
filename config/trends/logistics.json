@@ -1,0 +1,201 @@
+{
+ "title": "물류·운송",
+ "index_name": "물류·운송 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "해운·항공화물은 '운임'이 이익을 거의 결정하고(물량보다 가격), 운임은 공급(선복·항로 차질)과 세계 교역에 반응해요. 항공 여객은 국제선 여객 운임과 유가, 택배는 물량과 단가가 핵심이에요.",
+ "series": [
+  {
+   "id": "ocean",
+   "name": "외항화물 운임(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "freight_ppi.json",
+    "path": "series.외항화물"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "컨테이너·벌크 해상 운임이에요. HMM·팬오션·대한해운 이익과 직결돼요.",
+   "read": "운임이 꺾이면 이익 정점이 가까워요. 주가는 보통 운임 고점보다 먼저 꺾여요.",
+   "sign": 1
+  },
+  {
+   "id": "airfr",
+   "name": "항공화물 운임(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "freight_ppi.json",
+    "path": "series.항공화물"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "대한항공 화물 사업 이익을 좌우하는 운임이에요.",
+   "read": "해상 운송 차질·전자상거래 물량이 늘면 올라가요.",
+   "sign": 1
+  },
+  {
+   "id": "airpax_px",
+   "name": "국제항공여객 운임(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "freight_ppi.json",
+    "path": "series.국제항공여객"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "국제선 항공권 가격이에요.",
+   "read": "공급(좌석)이 수요보다 늦게 늘면 운임이 높게 유지돼요.",
+   "sign": 1
+  },
+  {
+   "id": "parcel_px",
+   "name": "택배 단가(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "freight_ppi.json",
+    "path": "series.택배"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "택배 1건당 가격이에요. CJ대한통운·한진 이익의 핵심이에요.",
+   "read": "물량이 늘어도 단가가 제자리면 이익 개선이 더뎌요.",
+   "sign": 1
+  },
+  {
+   "id": "ocean_vol",
+   "name": "외항 운송업 생산(불변)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_volume.json",
+    "path": "series.외항 운송업"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "국내 해운사들의 실질 영업 규모예요.",
+   "read": "운임과 함께 보면 물량 요인과 가격 요인을 나눠 볼 수 있어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "air_vol",
+   "name": "항공 여객 운송업 생산(불변)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_volume.json",
+    "path": "series.항공 여객 운송업"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "항공사 여객 사업의 실질 규모예요.",
+   "read": "코로나 이후 회복 국면이 끝나면 증가율이 정상화돼요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "parcel_vol",
+   "name": "소화물(택배) 운송업 생산(불변)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "service_volume.json",
+    "path": "series.소화물 전문 운송업"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+   "why": "택배 물량이에요.",
+   "read": "온라인 쇼핑 성장률과 함께 움직여요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "bdry",
+   "name": "건화물선 운임 ETF(BDRY)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:BDRY"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(BDRY)",
+   "url": "https://finance.yahoo.com/quote/BDRY/",
+   "why": "발틱 건화물선 운임 선물에 투자하는 ETF로 BDI(벌크 운임)를 거의 실시간으로 보여줘요(2018년~).",
+   "read": "팬오션·대한해운 등 벌크선사 이익의 선행 지표예요.",
+   "sign": 1
+  },
+  {
+   "id": "maersk",
+   "name": "머스크 주가(ADR)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:AMKBY"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(AMKBY)",
+   "url": "https://finance.yahoo.com/quote/AMKBY/",
+   "why": "세계 2위 컨테이너선사예요. 컨테이너 운임 기대가 가장 먼저 반영돼요.",
+   "read": "HMM 주가와 같은 방향으로 움직이는 경우가 많아요.",
+   "sign": 1
+  },
+  {
+   "id": "ec",
+   "name": "상하이 컨테이너 운임 선물(유럽항로)",
+   "group": "해외 동종·선행 시장",
+   "unit": "포인트",
+   "src": {
+    "market": "sina:EC0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 상하이국제에너지거래소 EC 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/EC0.shtml",
+   "why": "SCFIS 유럽항로 운임 선물(2023년 8월 상장)이에요. 컨테이너 운임의 시장 기대예요.",
+   "read": "기간이 짧아 상관 판정은 자료가 쌓인 뒤에 나와요.",
+   "sign": 1
+  },
+  {
+   "id": "jet",
+   "name": "항공유 원가 대용(WTI)",
+   "group": "원가",
+   "unit": "달러/배럴",
+   "src": {
+    "market": "yahoo:CL=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(CL=F)",
+   "url": "https://finance.yahoo.com/quote/CL%3DF/",
+   "why": "항공사 비용의 25~30%가 연료비예요.",
+   "read": "유가 상승은 항공사엔 부담, 유류할증료로 일부 전가돼요.",
+   "sign": -1
+  }
+ ]
+}

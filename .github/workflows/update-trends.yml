@@ -1,0 +1,58 @@
+name: 산업동향 선행·동행 지표 갱신
+
+# 업종별 투자 판단 지표(config/trends/<업종>.json)를 모아 업종 주가와의 선행·동행 관계를 다시 계산한다.
+#  1) 시장 가격(야후·시나 선물), 추가 KOSIS 지표(경기종합지수·심리지수 등, 2005년부터), 상장사 장기 월봉(2000년~)
+#  2) scripts/trends/build.py → docs/<업종>/data/trends.json (화장품은 docs/data/trends.json)
+# 대시보드의 KOSIS·관세청 파일(update-data.yml)과 월봉(update-stock-hist.yml)이 바뀌면 다음 실행 때 자동 반영.
+on:
+  schedule:
+    - cron: "10 9 * * *"   # 매일 18:10 KST (월봉 16:40·변곡점 17:30 이후)
+  push:
+    branches: [main, claude/project-thread-9h3gzn]
+    paths:
+      - "scripts/trends/**"
+      - "config/trends/**"
+      - ".github/workflows/update-trends.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-trends-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  trends:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 장기 월봉 (처음 한 번 오래 걸리고 이후엔 새 종목만)
+        continue-on-error: true
+        run: timeout 1200 python scripts/trends/fetch.py --only stocks || true
+      - name: 시장 가격 (야후·시나)
+        continue-on-error: true
+        run: timeout 600 python scripts/trends/fetch.py --only markets || true
+      - name: 추가 KOSIS 지표
+        continue-on-error: true
+        env:
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+        run: timeout 600 python scripts/trends/fetch.py --only kosis || true
+      - name: 선행·동행 계산
+        run: python scripts/trends/build.py --industry all
+      - name: 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/shared/markets.json docs/shared/trend_kosis.json raw/trends 2>/dev/null || true
+          git add docs/data/trends.json docs/*/data/trends.json 2>/dev/null || true
+          if git diff --cached --quiet; then echo "변경 없음"; exit 0; fi
+          git commit -q -m "data: 산업동향 선행·동행 지표 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3 4 5; do
+            git pull --rebase -X theirs -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && break
+            git rebase --abort 2>/dev/null || true; sleep $((i*7))
+          done
