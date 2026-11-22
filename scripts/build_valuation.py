@@ -576,6 +576,12 @@ def main(industry="cosmetics"):
                       **({"cycle": cy} if cy else {}),
                       "net_cash_added": nc}
         out["companies"][code] = rec
+    if any((v or {}).get("pipeline") or (v or {}).get("platform") for v in (cfg.get("companies") or {}).values()):
+        # 신약 파이프라인 위험조정 가치(rNPV): 회사 가정에 pipeline이 있으면(바이오) scripts/rnpv.py
+        import sys as _s
+        _s.path.insert(0, os.path.join(ROOT, "scripts"))
+        import rnpv
+        rnpv.apply(out, cfg)
     try:
         quant_check(cos, out, cfg, dd)
     except Exception as e:  # noqa: BLE001  검증 모델 오류가 본 계산을 막지 않게

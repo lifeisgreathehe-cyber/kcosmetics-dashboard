@@ -1,0 +1,85 @@
+[
+ {
+  "file": "pharma_index.json",
+  "title": "의료용 물질·의약품 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C21",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "meddev_index.json",
+  "title": "의료용 기기 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C271",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "pharma_ppi.json",
+  "title": "의약품 생산자물가지수",
+  "source": "한국은행 생산자물가조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+  "orgId": "301",
+  "tblId": "DT_404Y016",
+  "itmId": "ALL",
+  "objL1": "13102134764ACC_CD.30541101AA+13102134764ACC_CD.30541104AA+13102134764ACC_CD.30541106AA",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM"
+ },
+ {
+  "file": "pharma_retail.json",
+  "title": "의약품 소매판매액지수 (불변)",
+  "source": "국가데이터처 서비스업동향조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41012",
+  "orgId": "101",
+  "tblId": "DT_1K41012",
+  "itmId": "T2",
+  "objL1": "G32",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "의약품": "의약품 소매판매"
+  }
+ },
+ {
+  "file": "health_service.json",
+  "title": "보건업 서비스업생산지수 (불변)",
+  "source": "국가데이터처 서비스업동향조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KC2020",
+  "orgId": "101",
+  "tblId": "DT_1KC2020",
+  "itmId": "T2",
+  "objL1": "Q86",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "보건업": "보건업 생산"
+  }
+ }
+]
