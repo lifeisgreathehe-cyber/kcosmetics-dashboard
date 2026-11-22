@@ -24,6 +24,7 @@ FIELDS = ("tone", "title", "trend", "eval", "watch", "next")
 TODAY = dt.datetime.now(E.KST).date().isoformat()
 QNAME = lambda q: f"{q[:4]}년 {q[-1]}분기"
 INDUSTRIES.append("travel")  # 여행 대시보드 (다른 업종 추가와 줄이 겹치지 않게 따로 둠)
+INDUSTRIES += [i for i in ("bio", "construction", "ship", "energy") if os.path.exists(os.path.join(ROOT, "config", i, "companies.json"))]  # 바이오·건설·조선·에너지: 설정이 생긴 업종만(공용 등록, 4개 업종 PR이 같은 줄을 공유)
 
 
 def eok(v):
