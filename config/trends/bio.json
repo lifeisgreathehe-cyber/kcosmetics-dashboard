@@ -1,0 +1,279 @@
+{
+ "title": "바이오·제약",
+ "index_name": "바이오·제약 업종 시총가중",
+ "groups": [
+  "수출",
+  "생산·재고",
+  "가격",
+  "국내 수요",
+  "해외 동종·금융",
+  "거시·금융"
+ ],
+ "intro": "바이오·제약 주가는 실적보다 '금리(할인율)·미국 바이오 투자심리(XBI)·기술수출 뉴스'에 먼저 반응하고, 수출·생산 같은 업황 숫자는 CDMO·바이오시밀러·의료기기 대형주의 이익을 확인해 주는 역할을 해요. 아래 지표를 업종 지수와 시차를 두고 맞춰 본 결과예요.",
+ "series": [
+  {
+   "id": "bio_exp",
+   "name": "바이오의약품 수출액(HS 3002)",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.바이오의약품(항체·백신·혈액, HS 3002)"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "삼성바이오로직스·셀트리온·삼성에피스 매출의 대부분이 항체·바이오시밀러 수출이라 이 숫자가 대형 바이오 실적의 월간 대리 지표예요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "drug_exp",
+   "name": "완제의약품 수출액(HS 3004)",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.완제의약품(HS 3004)"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "케미컬 신약·개량신약·제네릭 수출(한미·대웅 나보타·보령·셀트리온제약 등) 흐름을 보여줘요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "total_exp",
+   "name": "의약품·의료기기 수출 합계",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "업종 전체의 해외 매출 방향을 한 번에 보여줘요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "dx_exp",
+   "name": "진단 시약 수출(HS 3822)",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.진단 시약(HS 3822)"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "씨젠·SD바이오센서·바디텍메드 등 진단 기업 매출과 바로 연결돼요. 감염병 유행기에 급등해요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "dev_exp",
+   "name": "의료기기 수출(HS 9018)",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.의료기기(HS 9018)"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "인바디·아이센스·미용 의료기기 수출 흐름이에요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "impl_exp",
+   "name": "임플란트·보형물 수출(HS 9021)",
+   "group": "수출",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.임플란트·보형물(HS 9021)"
+   },
+   "ma": 3,
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "덴티움 등 치과 임플란트 수출(중국 VBP 영향)을 보여줘요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "pi_prod",
+   "name": "의약품 제조업 생산지수",
+   "group": "생산·재고",
+   "unit": "지수",
+   "src": {
+    "file": "pharma_index.json",
+    "path": "series.생산"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "통계청 광업제조업동향조사 — 의약품(C21)",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "국내 공장 가동(CDMO·완제의약품)의 물량 지표예요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "pi_inv",
+   "name": "의약품 제조업 재고지수",
+   "group": "생산·재고",
+   "unit": "지수",
+   "src": {
+    "file": "pharma_index.json",
+    "path": "series.재고"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "통계청 광업제조업동향조사 — 의약품(C21)",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": -1,
+   "why": "재고가 쌓이면 출하 둔화 신호예요(재고 증가 = 주가에 불리하다고 가정).",
+   "read": "재고가 쌓이는(증가율 상승) 구간은 보통 업황 둔화 신호예요. 줄어들기 시작하면 바닥 신호로 봐요."
+  },
+  {
+   "id": "md_prod",
+   "name": "의료기기 제조업 생산지수",
+   "group": "생산·재고",
+   "unit": "지수",
+   "src": {
+    "file": "meddev_index.json",
+    "path": "series.생산"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "통계청 광업제조업동향조사 — 의료기기(C271)",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "의료기기 업체 국내 생산 물량이에요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "ppi_drug",
+   "name": "완제의약품 생산자물가",
+   "group": "가격",
+   "unit": "지수",
+   "src": {
+    "file": "pharma_ppi.json",
+    "path": "series.의약품완제"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가지수 — 의약품",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "국내 약가(건강보험 약가 인하·인상)의 방향이에요. 약가 인하가 강해지면 전통 제약사 마진이 줄어요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "retail",
+   "name": "의약품 소매판매(불변)",
+   "group": "국내 수요",
+   "unit": "지수",
+   "src": {
+    "file": "pharma_retail.json",
+    "path": "series.의약품 소매판매"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "통계청 상품군별 소매판매액지수 — 의약품",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "약국 일반의약품·처방약 판매량이에요. 감기·독감 유행, 고령화를 반영해요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "health",
+   "name": "보건업 생산(불변)",
+   "group": "국내 수요",
+   "unit": "지수",
+   "src": {
+    "file": "health_service.json",
+    "path": "series.보건업 생산"
+   },
+   "ma": 3,
+   "pub_lag": 1,
+   "source": "통계청 서비스업생산지수 — 보건업",
+   "url": "https://kosis.kr",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "병원 진료량이에요. 의정 갈등 같은 진료 차질은 처방약·의료기기 수요를 줄여요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "xbi",
+   "name": "미국 바이오테크 지수(XBI)",
+   "group": "해외 동종·금융",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:XBI"
+   },
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월봉",
+   "url": "https://finance.yahoo.com/quote/XBI",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "글로벌 바이오 투자 심리예요. 미국 바이오 자금이 풀리면 기술이전·M&A가 늘어 한국 신약 개발사 주가가 함께 움직여요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "ibb",
+   "name": "미국 나스닥 바이오 지수(IBB)",
+   "group": "해외 동종·금융",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:IBB"
+   },
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월봉",
+   "url": "https://finance.yahoo.com/quote/IBB",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "대형 바이오·빅파마 중심의 글로벌 업황이에요.",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  },
+  {
+   "id": "kosdaq",
+   "name": "코스닥 지수",
+   "group": "해외 동종·금융",
+   "unit": "포인트",
+   "src": {
+    "market": "yahoo:^KQ11"
+   },
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월봉",
+   "url": "https://finance.yahoo.com/quote/^KQ11",
+   "tf": "yoy",
+   "sign": 1,
+   "why": "신약 개발사 대부분이 코스닥에 있어 시장 전체 위험 선호가 함께 움직여요(동행 확인용).",
+   "read": "전년 대비 증가율(3개월 평균)이 올라가는 구간이 업종 주가에 유리한지, 몇 달 앞서는지를 위 표로 확인하세요."
+  }
+ ]
+}

@@ -146,7 +146,6 @@ td.l,th.l{text-align:left}
         <h2>숫자로 보는 최근 동향</h2><p class="sub">기사·보도자료·실적 발표에서 수치화할 수 있는 항목. 카드를 누르면 원문이 열려요.</p>
         <div class="news" id="news"></div>
       </div>
-      <div class="card full" id="leadlag"><h2>산업 데이터 ↔ 주가 선행·동행성</h2><p class="sub">자동 계산 준비 중이에요(매일 17:20 갱신).</p></div>
       <div class="card">
         <h2>품목별 수출: 항체·백신·원료</h2><p class="sub">월별, 단위: 억 달러 · HS 300215 항체 등 면역제품(삼성바이오로직스·셀트리온·삼성에피스), 300241 사람용 백신(SK바이오사이언스·유바이오로직스), 2941·2937 원료의약품(에스티팜·경보제약 등)</p>
         <div class="chart"><canvas id="c-sub"></canvas></div>
@@ -261,7 +260,7 @@ td.l,th.l{text-align:left}
 <script src="../shared/context.js"></script>
 <script src="../shared/normcheck.js"></script>
 <script src="../shared/checks.js"></script>
-<script src="../shared/leadlag.js"></script>
+<script src="../shared/trends.js"></script>
 <script>
 (function(){
 const $=s=>document.querySelector(s);
@@ -298,10 +297,20 @@ const line=(label,data,color,extra={})=>Object.assign({type:'line',label,data,bo
 
 let D={};
 async function loadAll(){
-  const names=['meta','pharma_ppi','pharma_index','meddev_index','pharma_retail','health_service','leadlag_market','leadlag','customs_exports','customs_by_country','news_exports','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir_web','ir'];
+  const names=['meta','pharma_ppi','pharma_index','meddev_index','pharma_retail','health_service','customs_exports','customs_by_country','news_exports','companies','valuation','reviews','quotes','deep','cycle','news','stock_hist','ir_web','ir'];
   const res=await Promise.all(names.map(n=>J(n+'.json')));
   names.forEach((n,i)=>D[n]=res[i]);
   normVal(D.valuation);
+  D.us_market=await usMarket();
+}
+async function SJ(n){try{const r=await fetch('../shared/'+n,{cache:'no-cache'});if(!r.ok)return null;return await r.json()}catch(e){return null}}
+async function usMarket(){  // 미국 바이오 ETF(XBI, 공용 markets.json) + 미국 10년 금리(공용 macro.json)를 월 배열로 맞춘다
+  const [mk,mc]=await Promise.all([SJ('markets.json'),SJ('macro.json')]);
+  const xbi=mk&&mk.series&&mk.series['yahoo:XBI']&&mk.series['yahoo:XBI'].data, us=mc&&mc.series&&mc.series.US10Y&&mc.series.US10Y.data;
+  if(!xbi&&!us) return null;
+  const months=[...new Set([...Object.keys(xbi||{}),...Object.keys(us||{})])].sort(), series={};
+  if(xbi) series.XBI=months.map(m=>xbi[m]??null); if(us) series.US10Y=months.map(m=>us[m]??null);
+  return {months,series,source:'Yahoo Finance(XBI) · FRED(미국 10년 국채)',updated:(mk&&mk.updated)||(mc&&mc.updated)||''};
 }
 
 /* ---------------- 산업 ---------------- */
@@ -320,7 +329,7 @@ function renderKPIs(){
     Object.keys(X.series||{}).slice(0,2).forEach(key=>{const a=X.series[key];const m=lastIdx(a);const yy=ys(a,m);k.push({l:`${X.months[m]} ${key.replace(/\(.*\)/,'')}`,v:fmt(a[m]/100,2)+'억$',s:`전년 동월 대비 <span class="${cls(yy)}">${pct(yy)}</span>`})})}
   add(I,'생산','의약품 생산지수');add(M,'생산','의료기기 생산지수');add(P,'의약품완제','완제의약품 가격(PPI)');
   add(R,'의약품 소매판매','약국 판매지수');add(H,'보건업 생산','병·의원 진료지수');
-  const U=D.leadlag_market; if(U&&ser(U,'XBI')){const a=U.series.XBI;const n=lastIdx(a);const y=ys(a,n);k.push({l:`${U.months[n]} 미국 바이오 ETF(XBI)`,v:'$'+fmt(a[n],1),s:`1년 전 대비 <span class="${cls(y)}">${pct(y)}</span>`})}
+  const U=D.us_market; if(U&&ser(U,'XBI')){const a=U.series.XBI;const n=lastIdx(a);const y=ys(a,n);k.push({l:`${U.months[n]} 미국 바이오 ETF(XBI)`,v:'$'+fmt(a[n],1),s:`1년 전 대비 <span class="${cls(y)}">${pct(y)}</span>`})}
   $('#kpis').innerHTML=k.length?k.map(x=>`<div class="kpi"><div class="l">${x.l}</div><div class="v">${x.v}</div><div class="s">${x.s}</div></div>`).join(''):'<p class="sub">통계 수집 후 표시돼요(KOSIS·관세청, 매주 월요일 자동 갱신).</p>';
 }
 function renderCycle(){
@@ -382,7 +391,6 @@ function stackX(id,keys,srcEl,n=60){
 }
 function renderIndustry(){
   const s=S(), P=D.pharma_ppi, C=D.customs_by_country;
-  if(window.LeadLag&&D.leadlag) LeadLag.render(document.getElementById('leadlag'),D.leadlag);
   stackX('c-sub',[['면역 제품(항체 의약품)','항체 등 면역제품(300215)'],['백신(사람용)','사람용 백신(300241)'],['항생물질 원료','항생물질 원료(2941)'],['호르몬·펩타이드 원료','호르몬·펩타이드 원료(2937)']],'#sub-src');
   stackX('c-dev',[['진단 시약(HS 3822)','진단 시약'],['의료기기(HS 9018)','의료기기'],['임플란트·보형물(HS 9021)','임플란트·보형물'],['X선·영상장비(HS 9022)','X선·영상장비']],'#dev-src');
   if(C&&C.months&&C.series){
@@ -400,7 +408,7 @@ function renderIndustry(){
     draw('c-dem',{type:'line',data:{labels:L,datasets:[line('약국 의약품 판매',L.map(m=>at(R,'의약품 소매판매',m)),s[0]),line('병·의원 진료(보건업 생산)',L.map(m=>at(H,'보건업 생산',m)),s[1])]},options:baseOpts({plugins:{legend:legend()}})});
     $('#dem-src').innerHTML=`출처: ${R.source} · ${H.source} · <a href="${R.url}" target="_blank" rel="noopener">원자료</a>`;
   } else empty('c-dem','KOSIS 수집 후 표시돼요(매주 월요일 자동 갱신).');
-  const U=D.leadlag_market;
+  const U=D.us_market;
   if(U&&U.months&&(ser(U,'XBI')||ser(U,'US10Y'))){
     const from=Math.max(0,U.months.length-120), L=U.months.slice(from), ds=[];
     if(ser(U,'XBI')) ds.push(line('XBI(달러)',U.series.XBI.slice(from),s[0],{yAxisID:'y'}));
@@ -408,7 +416,7 @@ function renderIndustry(){
     const o=baseOpts({plugins:{legend:legend()}}); o.scales.y1={position:'right',ticks:{color:css('--ink-3'),callback:v=>v+'%'},grid:{display:false}};
     draw('c-us',{type:'line',data:{labels:L,datasets:ds},options:o});
     $('#us-src').innerHTML=`출처: ${U.source} · 수집 ${U.updated||''}`;
-  } else empty('c-us','매일 17:20 자동 수집 후 표시돼요.');
+  } else empty('c-us','매일 18:10 자동 수집 후 표시돼요.');
   const I=D.pharma_index;
   if(I&&I.months&&ser(I,'출하')&&ser(I,'재고')){
     const n=I.months.length, from=Math.max(12,n-84), L=I.months.slice(from);
@@ -734,7 +742,7 @@ function renderValuation(){
    <p class="src">참고용 추정이며 투자 권유가 아니에요.</p>`;
 }
 function renderSources(){
-  const list=[D.news_exports,D.customs_exports,D.customs_by_country,D.pharma_index,D.meddev_index,D.pharma_ppi,D.pharma_retail,D.health_service,D.leadlag_market].filter(Boolean);
+  const list=[D.news_exports,D.customs_exports,D.customs_by_country,D.pharma_index,D.meddev_index,D.pharma_ppi,D.pharma_retail,D.health_service,D.us_market].filter(Boolean);
   $('#src-list').innerHTML=list.map(d=>`<li>${d.url?`<a href="${d.url}" target="_blank" rel="noopener">${d.source}</a>`:d.source}${d.updated?` <span class="sub">(${d.updated})</span>`:''}</li>`).join('')+
    `<li>상장사 재무: DART 전자공시 OpenAPI / StockAnalysis 집계</li>`;
   const m=D.meta; if(m) $('#run-meta').textContent=`마지막 자동 실행: ${m.last_run||'–'} · 갱신된 소스: ${(m.sources_updated||[]).join(', ')||'없음(키 미등록)'}`;
