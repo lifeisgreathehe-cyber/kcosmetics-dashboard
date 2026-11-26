@@ -1,0 +1,89 @@
+[
+ {
+  "file": "elec_equip_index.json",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C28",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  },
+  "title": "전기장비 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001"
+ },
+ {
+  "file": "power_equip_index.json",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C281",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  },
+  "title": "전동기·발전기·전기 변환·공급·제어장치(변압기·차단기) 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001"
+ },
+ {
+  "file": "utility_index.json",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "D35",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  },
+  "title": "전기·가스·증기 공급업 생산지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001"
+ },
+ {
+  "file": "energy_ppi.json",
+  "title": "전력기기·전선·전기요금·가스요금 생산자물가지수",
+  "source": "한국은행 생산자물가조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+  "orgId": "301",
+  "tblId": "DT_404Y016",
+  "itmId": "ALL",
+  "objL1": 13102134764ACC_CD.31012101AA+13102134764ACC_CD.31012102AA+13102134764ACC_CD.31012103AA+13102134764ACC_CD.31012401AA+13102134764ACC_CD.31012301AA+13102134764ACC_CD.31012303AA+13102134764ACC_CD.31012304AA+13102134764ACC_CD.31014102AA+13102134764ACC_CD.31014104AA+13102134764ACC_CD.31011103AA+13102134764ACC_CD.31012202AA+13102134764ACC_CD.31012203AA+13102134764ACC_CD.40111101AA+13102134764ACC_CD.40111102AA+13102134764ACC_CD.40111103AA+13102134764ACC_CD.40121101AA+13102134764ACC_CD.40121102AA+13102134764ACC_CD.40121103AA+13102134764ACC_CD.40122102AA",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM"
+ },
+ {
+  "file": "fuel_price.json",
+  "title": "원유·LNG·석탄 수입물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100, 달러기준)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+  "orgId": "301",
+  "tblId": "DT_401Y017",
+  "itmId": "ALL",
+  "objL1": "13102134644ACC_CD.20112101AA+13102134644ACC_CD.20112201AA+13102134644ACC_CD.20111201AA+13102134644ACC_CD.20111101AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "where": {
+   "C2_NM": "달러기준"
+  }
+ }
+]
