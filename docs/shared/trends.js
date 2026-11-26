@@ -103,7 +103,7 @@
     const el = mountPoint();
     if (!el || !D) return;
     const sm = D.summary || {};
-    const toneCls = { '우호적': 'up', '부정적': 'down' }[sm.tone] || '';
+    const toneCls = { '우호적': 'up', '부정적': 'down' }[(sm.tone || '').replace('(약함)', '')] || '';
     const leadChips = ['up', 'down', 'flat'].map(k => ((sm.lead || {})[k] || []).map(n => `<span class="tl-chip ${k}">${k === 'up' ? '▲' : k === 'down' ? '▼' : '―'} ${esc(n)}</span>`).join('')).join('');
     const ix = D.index || {};
     const top = (ix.top_share || []).map(t => `${esc(t[0])} ${t[1]}%`).join(' · ');

@@ -346,11 +346,11 @@ def run(ind):
                        "eff_lead": (k - sp.get("pub_lag", 1)) if k is not None else None,
                        "recent_r": fmt(rp.get(k, (None,))[0], 2) if rp else None,
                        "prof": [[kk, round(prof[kk][0], 3)] for kk in sorted(prof)],
-                       "cond": S.conditional_returns(xs_stat, t["idx"], sign or (1 if r >= 0 else -1), h)}
+                       "cond": S.conditional_returns(xs_stat, t["idx"], 1 if r >= 0 else -1, h)}
             tg_rows.append(row)
         if not rel:
             rel = {"cls": "na", "label": "자료 부족", "n": len(x)}
-        eff_sign = sign or (1 if (rel.get("r") or 0) >= 0 else -1)
+        eff_sign = (1 if rel["r"] >= 0 else -1) if rel.get("r") is not None else (sign or 1)  # 실제 관계의 부호를 따름
         # 지금 신호: 변환값이 3개월 전보다 좋아졌나(부호 보정)
         xm = sorted(x)
         now = {}
@@ -381,14 +381,31 @@ def run(ind):
     lead = tally(("lead", "lead0"))
     coin = tally(("coin",))
     nl = len(lead["up"]) + len(lead["down"]) + len(lead["flat"])
+    nc = len(coin["up"]) + len(coin["down"]) + len(coin["flat"])
+    lagged = [x for x in out_series if x.get("rel", {}).get("cls") == "lag"]
+    names = lambda a: "·".join(a[:3]) + (" 등" if len(a) > 3 else "")
+    parts = []
     if nl:
-        share = len(lead["up"]) / nl
-        tone = "우호적" if share >= 0.6 else ("부정적" if len(lead["down"]) / nl >= 0.6 else "엇갈림")
-        verdict = {"우호적": f"주가보다 먼저 움직였던 지표 {nl}개 중 {len(lead['up'])}개가 최근 3개월 사이 좋아지고 있어요 — 앞으로 몇 달 업종 주가에 우호적인 신호가 우세해요.",
-                   "부정적": f"주가보다 먼저 움직였던 지표 {nl}개 중 {len(lead['down'])}개가 최근 3개월 사이 나빠지고 있어요 — 업종 주가에 부담이 될 수 있는 신호가 우세해요.",
-                   "엇갈림": f"주가보다 먼저 움직였던 지표 {nl}개의 방향이 엇갈려요(좋아짐 {len(lead['up'])} · 나빠짐 {len(lead['down'])} · 보합 {len(lead['flat'])}) — 방향을 단정하기 이른 구간이에요."}[tone]
+        share_up, share_dn = len(lead["up"]) / nl, len(lead["down"]) / nl
+        tone = "우호적" if share_up >= 0.6 else ("부정적" if share_dn >= 0.6 else "엇갈림")
+        if nl < 3 and tone != "엇갈림":
+            tone = tone + "(약함)"
+        if share_up >= 0.6:
+            parts.append(f"주가보다 먼저 움직였던 지표 {nl}개 중 {len(lead['up'])}개({names(lead['up'])})가 최근 3개월 사이 주가에 유리한 쪽으로 움직였어요.")
+        elif share_dn >= 0.6:
+            parts.append(f"주가보다 먼저 움직였던 지표 {nl}개 중 {len(lead['down'])}개({names(lead['down'])})가 최근 3개월 사이 주가에 불리한 쪽으로 움직였어요.")
+        else:
+            parts.append(f"주가보다 먼저 움직였던 지표 {nl}개의 방향이 엇갈려요(좋아짐 {len(lead['up'])} · 나빠짐 {len(lead['down'])} · 보합 {len(lead['flat'])}).")
+        if nl < 3:
+            parts.append("다만 선행 지표가 적어 이것만으로 방향을 단정하긴 어려워요.")
     else:
-        tone, verdict = "없음", "통계적으로 뚜렷한 선행 지표가 아직 없어요. 동행 지표로 현재 업황을 확인하세요."
+        tone = "없음"
+        parts.append("이 업종은 통계적으로 뚜렷하게 주가를 앞서는 지표가 없어요 — 주가가 업황 숫자보다 먼저 움직이는 업종이에요.")
+    if nc:
+        parts.append(f"주가와 같이 움직이는 동행 지표 {nc}개는 좋아짐 {len(coin['up'])} · 나빠짐 {len(coin['down'])} · 보합 {len(coin['flat'])}이에요.")
+    if lagged:
+        parts.append(f"{names([x['name'] for x in lagged])}은(는) 주가가 먼저 반영하고 뒤따라오는 숫자라, 발표 때 놀라기보다 주가가 이미 어디까지 반영했는지 비교하는 데 쓰세요.")
+    verdict = " ".join(parts)
     idx_months = sorted(main["idx"])
     kospi = resolve(ind, {"market": "yahoo:^KS11"}) or resolve(ind, {"macro": "KOSPI"})
     out = {

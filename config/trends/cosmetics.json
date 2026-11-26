@@ -191,11 +191,17 @@
    "group": "거시·금융",
    "unit": "원",
    "src": {
-    "market": "yahoo:CNYKRW=X"
+    "calc": "ratio",
+    "a": {
+     "market": "yahoo:KRW=X"
+    },
+    "b": {
+     "market": "yahoo:CNY=X"
+    }
    },
    "tf": "yoy",
    "pub_lag": 0,
-   "source": "Yahoo Finance(CNYKRW=X)",
+   "source": "Yahoo Finance(KRW=X ÷ CNY=X)로 계산",
    "url": "https://finance.yahoo.com/quote/CNYKRW=X/",
    "why": "위안화가 강하면 중국 소비자·따이궁의 구매력이 커져요.",
    "read": "상관이 플러스면 위안 강세(원/위안 상승)가 업종에 유리하다는 뜻이에요."
