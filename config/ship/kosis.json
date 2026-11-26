@@ -1,0 +1,74 @@
+[
+ {
+  "file": "ship_orders.json",
+  "title": "선박 수주액·판매액(건조)·수주잔고 (월별, 경상금액)",
+  "source": "국가데이터처 기계수주동향조사 — 기종 '선박' (단위: 백만원)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+  "orgId": "101",
+  "tblId": "DT_1F48",
+  "itmId": "T1",
+  "objL1": "0+7+8+9",
+  "objL2": "92",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "총수주액": "수주액",
+   "해외수요": "해외 수주",
+   "판매액": "판매액(건조)",
+   "수주잔고": "수주잔고"
+  }
+ },
+ {
+  "file": "engine_orders.json",
+  "title": "내연기관(선박엔진 포함) 수주액·판매액·수주잔고 (월별)",
+  "source": "국가데이터처 기계수주동향조사 — 기종 '내연기관' (단위: 백만원)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+  "orgId": "101",
+  "tblId": "DT_1F48",
+  "itmId": "T1",
+  "objL1": "0+8+9",
+  "objL2": "14",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "총수주액": "수주액",
+   "판매액": "판매액",
+   "수주잔고": "수주잔고"
+  }
+ },
+ {
+  "file": "ship_index.json",
+  "title": "선박 및 보트 건조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C311",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  }
+ },
+ {
+  "file": "engine_price.json",
+  "title": "선박용엔진 수출물가지수",
+  "source": "한국은행 수출입물가조사 (2020=100)",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y016",
+  "orgId": "301",
+  "tblId": "DT_402Y016",
+  "itmId": "ALL",
+  "objL1": "13102134578ACC_CD.31111101AA",
+  "objL2": "ALL",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C2_NM"
+ }
+]

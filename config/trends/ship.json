@@ -1,0 +1,286 @@
+{
+ "title": "조선·조선기자재",
+ "index_name": "조선·조선기자재 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "조선사 이익은 2~3년 전에 받은 선가가 정해요. 그래서 주가는 지금 실적보다 '수주·선가·잔고'와 선주의 돈벌이(운임·가스 가격)에 먼저 반응해요. 엔진·보냉재 같은 기자재사는 선박 수주보다 6~12개월 늦게 따라가요. 원화 약세와 후판 가격은 이익률을 바꿔요.",
+ "series": [
+  {
+   "id": "orders",
+   "name": "선박 수주액 (12개월 평균)",
+   "group": "수요·물량",
+   "unit": "백만원",
+   "src": {
+    "file": "ship_orders.json",
+    "path": "series.수주액"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 기계수주통계(선박)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+   "why": "선주가 새 배를 주문한 금액이에요. 매출은 2~3년 뒤에 잡히지만 주가는 수주 소식에 먼저 반응해요.",
+   "read": "월별로 들쭉날쭉해 12개월 평균으로 봐요. 수주 증가율이 꺾이면 다음 사이클 정점 신호예요.",
+   "sign": 1,
+   "ma": 12
+  },
+  {
+   "id": "backlog",
+   "name": "선박 수주잔고",
+   "group": "공급·재고",
+   "unit": "백만원",
+   "src": {
+    "file": "ship_orders.json",
+    "path": "series.수주잔고"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 기계수주통계(선박)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+   "why": "앞으로 지을 배의 계약 총액이에요. 잔고가 두꺼울수록 조선소가 배를 골라 받고 선가를 올려요.",
+   "read": "잔고가 줄기 시작하면(인도 > 수주) 선가 협상력이 약해져요.",
+   "sign": 1
+  },
+  {
+   "id": "sales",
+   "name": "선박 판매액(건조·인도, 12개월 평균)",
+   "group": "수요·물량",
+   "unit": "백만원",
+   "src": {
+    "file": "ship_orders.json",
+    "path": "series.판매액(건조)"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 기계수주통계(선박)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+   "why": "실제로 지어서 넘긴 배의 금액이라 조선사 매출과 거의 같아요.",
+   "read": "주가는 보통 이보다 먼저 움직여요. 후행으로 나오면 정상이에요.",
+   "sign": 1,
+   "ma": 12
+  },
+  {
+   "id": "prod",
+   "name": "선박 건조업 생산지수",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "ship_index.json",
+    "path": "series.생산"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "조선소가 얼마나 바쁘게 배를 짓는지 보여줘요.",
+   "read": "생산이 늘면 고정비가 분산돼 이익률이 올라가요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "eng_orders",
+   "name": "내연기관(선박엔진 포함) 수주액 (12개월 평균)",
+   "group": "수요·물량",
+   "unit": "백만원",
+   "src": {
+    "file": "engine_orders.json",
+    "path": "series.수주액"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 기계수주통계(내연기관)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+   "why": "엔진은 선박 수주 6~12개월 뒤 발주돼요. 한화엔진·HD현대마린엔진·STX엔진 같은 기자재사의 수주 지표예요.",
+   "read": "선박 수주보다 늦게 움직이고, 기자재 주가와 더 가깝게 움직여요.",
+   "sign": 1,
+   "ma": 12
+  },
+  {
+   "id": "eng_backlog",
+   "name": "내연기관 수주잔고",
+   "group": "공급·재고",
+   "unit": "백만원",
+   "src": {
+    "file": "engine_orders.json",
+    "path": "series.수주잔고"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 기계수주통계(내연기관)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F48",
+   "why": "엔진 업체의 일감이에요. 엔진 생산능력이 빠듯해 잔고가 늘면 단가 인상으로 이어져요.",
+   "read": "엔진 잔고 증가율이 둔화되면 기자재주의 고점 신호일 수 있어요.",
+   "sign": 1
+  },
+  {
+   "id": "eng_px",
+   "name": "선박용 엔진 수출물가(원화)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "engine_price.json",
+    "path": "series.원화기준"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y016",
+   "why": "엔진 수출 단가 흐름이에요.",
+   "read": "엔진 가격이 오르면 엔진·부품사 이익률이 바로 좋아져요.",
+   "sign": 1
+  },
+  {
+   "id": "exports",
+   "name": "선박 수출액(관세청, 12개월 평균)",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "인도된 배의 달러 금액이에요(HS 8901·8905·8906).",
+   "read": "수주 2~3년 뒤 인도되므로 매출과 동행하고 주가에는 후행하기 쉬워요.",
+   "sign": 1,
+   "ma": 12
+  },
+  {
+   "id": "plate",
+   "name": "후판 가격(생산자물가)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "ind": "steel",
+    "file": "steel_ppi.json",
+    "path": "series.중후판"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "선박 원가의 15~20%가 후판이에요.",
+   "read": "후판이 오르면 고정가로 받은 배의 이익률이 깎여요. 조선사에는 불리, 철강사에는 유리해요.",
+   "sign": -1
+  },
+  {
+   "id": "hh",
+   "name": "미국 천연가스(헨리허브)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러/MMBtu",
+   "src": {
+    "market": "yahoo:NG=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(NG=F)",
+   "url": "https://finance.yahoo.com/quote/NG%3DF/",
+   "why": "미국 LNG 수출 프로젝트의 경제성을 좌우해요. LNG선 발주는 수출 프로젝트 최종투자결정(FID) 뒤에 나와요.",
+   "read": "미국 가스가 싸고 유럽·아시아 가스가 비쌀수록 LNG 수출(→ LNG선) 유인이 커요.",
+   "sign": 1
+  },
+  {
+   "id": "ttf",
+   "name": "유럽 천연가스(TTF)",
+   "group": "해외 동종·선행 시장",
+   "unit": "유로/MWh",
+   "src": {
+    "market": "yahoo:TTF=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(TTF=F)",
+   "url": "https://finance.yahoo.com/quote/TTF%3DF/",
+   "why": "유럽 가스값이 높으면 LNG 수입 수요와 LNG선 운임이 올라 발주가 늘어요.",
+   "read": "2022년처럼 급등하면 LNG선 발주가 1~2년간 몰려요.",
+   "sign": 1
+  },
+  {
+   "id": "bdry",
+   "name": "건화물선 운임 ETF(BDRY)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:BDRY"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(BDRY)",
+   "url": "https://finance.yahoo.com/quote/BDRY/",
+   "why": "운임이 오르면 선주 현금이 늘어 신조 발주로 이어져요.",
+   "read": "운임 → 선주 이익 → 발주 → 조선주 순서의 첫 단계예요.",
+   "sign": 1
+  },
+  {
+   "id": "zim",
+   "name": "컨테이너선사 ZIM 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:ZIM"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ZIM)",
+   "url": "https://finance.yahoo.com/quote/ZIM/",
+   "why": "컨테이너 운임·선사 이익의 대리 지표예요.",
+   "read": "2021~2023년 컨테이너선 발주 붐은 선사 이익 급증에서 시작했어요.",
+   "sign": 1
+  },
+  {
+   "id": "flng",
+   "name": "LNG선사 플렉스LNG 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:FLNG"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(FLNG)",
+   "url": "https://finance.yahoo.com/quote/FLNG/",
+   "why": "LNG선 용선료 흐름의 대리 지표예요. 한국 조선소 수주의 절반 가까이가 LNG선이에요.",
+   "read": "LNG선사 주가가 꺾이면 LNG선 발주 둔화를 의심해 봐요.",
+   "sign": 1
+  },
+  {
+   "id": "cssc",
+   "name": "중국선박(CSSC) 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안",
+   "src": {
+    "market": "yahoo:600150.SS"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(600150.SS)",
+   "url": "https://finance.yahoo.com/quote/600150.SS/",
+   "why": "세계 최대 조선그룹 주가예요.",
+   "read": "같은 사이클을 타는지, 한국만의 차별화(LNG·방산·미국)가 있는지 비교해요.",
+   "sign": 1
+  },
+  {
+   "id": "namura",
+   "name": "일본 나무라조선 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "엔",
+   "src": {
+    "market": "yahoo:7014.T"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(7014.T)",
+   "url": "https://finance.yahoo.com/quote/7014.T/",
+   "why": "일본 조선사 주가예요.",
+   "read": "벌크선 중심이라 벌크 사이클과 한국 조선주 차이를 확인해요.",
+   "sign": 1
+  }
+ ]
+}
