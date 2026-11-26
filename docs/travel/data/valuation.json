@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-25",
+ "updated": "2026-11-26",
  "method": "여행 업종은 이익이 환율·유가·방한객 같은 외부 변수에 크게 출렁이고, 면세점·카지노·호텔은 일회성 손상과 매각 손실이 자주 섞여요. 그래서 ① 정상 이익(E1): 최근 1년 순이익이 아니라 회사별로 '사이클이 평균적인 해'의 이익을 썼어요(근거는 회사별 메모). ② 사이클 초과(부족) 이익: 최근 4개 분기 순이익이 정상 이익보다 높거나 낮은 부분은 지금 위치에 따라 1~3년만 이어진다고 보고 현재가치만 더하거나 빼요. ③ 성장률(g)은 구조적 성장만 반영해요. ④ 10년 주주잉여현금흐름(이익 × 현금 전환율 c)을 자기자본비용 r로 할인, 순현금은 더해요(여행사는 현금 대부분이 고객 선수금이라, 비지배지분이 큰 백화점 계열은 연결 현금이 주주 몫과 달라 더하지 않았어요). 순차입은 빼지 않아요(정상 이익이 이미 이자를 뺀 순이익이라).",
  "terminal_growth": 2.0,
  "asof": "2026-11-14",
@@ -42,13 +42,13 @@
    "price": 32650,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 478867,
-   "mcap_eff": 451938,
-   "shares": 13841899,
+   "mcap": 478800,
+   "mcap_eff": 451872,
+   "shares": 13839877,
    "shares_check": {
     "dart_common": 14665179,
     "dart_period": "2026-11012",
-    "listed": 14666667,
+    "listed": 14664625,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -71,26 +71,26 @@
      "bear": {
       "g": -6,
       "value": 280937,
-      "per_share": 20296,
+      "per_share": 20299,
       "upside": -37.8
      },
      "base": {
       "g": 3,
       "value": 418164,
-      "per_share": 30210,
+      "per_share": 30214,
       "upside": -7.5
      },
      "bull": {
       "g": 8,
       "value": 522105,
-      "per_share": 37719,
+      "per_share": 37725,
       "upside": 15.5
      }
     },
     "c_T": 0.85,
     "roe_norm": 27.5,
     "implied_g": 4.7,
-    "implied_E1": 43231,
+    "implied_E1": 43224,
     "cycle": {
      "position": "둔화",
      "note": "패키지 송출이 3분기 40만 명(-11%)으로 줄었어요. 중동 정세(2월 이란 공습), 11월 유류할증료 27단계, 원/달러 1,450원 이상이 장거리 패키지를 눌렀고, 일본·중국 단거리와 개별여행(FIT 126만 명, +15%)으로 수요가 옮겨가고 있어요.",
@@ -129,7 +129,7 @@
      "bull": 0.15
     },
     "weighted": 385726,
-    "weighted_ps": 27867,
+    "weighted_ps": 27871,
     "weighted_upside": -14.6,
     "stress": {
      "E": -340005,
@@ -155,7 +155,7 @@
      }
     },
     "mos": 50,
-    "buy_ps": 13934,
+    "buy_ps": 13936,
     "buy_gap": -57.3,
     "implied_margin": 13.9,
     "base_margin": 12.9,
@@ -177,8 +177,8 @@
     "op_ttm": 54749,
     "por_q": 22.0,
     "op_q": 5132,
-    "cns_per": 10.44,
-    "div_yield": 3.81,
+    "cns_per": 10.79,
+    "div_yield": 3.68,
     "dps": 1200.0,
     "debt_eq": 2,
     "ret_1y": -30.8,
@@ -322,13 +322,13 @@
    "price": 10260,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 193879,
-   "mcap_eff": 193879,
-   "shares": 18896589,
+   "mcap": 193900,
+   "mcap_eff": 193900,
+   "shares": 18898635,
    "shares_check": {
     "dart_common": 18900000,
     "dart_period": "2026-11012",
-    "listed": 18896552,
+    "listed": 18898635,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -356,25 +356,25 @@
       "g": -8,
       "value": 69900,
       "per_share": 3699,
-      "upside": -63.9
+      "upside": -64.0
      },
      "base": {
       "g": 2,
       "value": 108004,
-      "per_share": 5716,
+      "per_share": 5715,
       "upside": -44.3
      },
      "bull": {
       "g": 8,
       "value": 140591,
-      "per_share": 7440,
+      "per_share": 7439,
       "upside": -27.5
      }
     },
     "c_T": 0.818,
     "roe_norm": 12.4,
-    "implied_g": 15.3,
-    "implied_E1": 21541,
+    "implied_g": 15.4,
+    "implied_E1": 21544,
     "cycle": {
      "position": "둔화",
      "note": "3분기 패키지 13.9만 명(-19.4%), 티켓 6.5만 명(-43.5%)으로 하나투어보다 감소 폭이 커요. 유럽·미주·남태평양이 반토막 났고 일본(+32%)·중국(+25%)만 늘었어요. 2분기 영업손실 9억원.",
@@ -599,13 +599,13 @@
    "price": 4405,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 74097,
-   "mcap_eff": 74097,
-   "shares": 16821112,
+   "mcap": 74100,
+   "mcap_eff": 74100,
+   "shares": 16821793,
    "shares_check": {
     "dart_common": 16810552,
     "dart_period": "2026-11014",
-    "listed": 16821192,
+    "listed": 16821793,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -886,13 +886,13 @@
    "price": 3800,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 53240,
-   "mcap_eff": 51483,
-   "shares": 13548158,
+   "mcap": 53200,
+   "mcap_eff": 51443,
+   "shares": 13537632,
    "shares_check": {
     "dart_common": 13537717,
     "dart_period": "2026-11012",
-    "listed": 14010417,
+    "listed": 14000000,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -913,7 +913,7 @@
     "oneoff": true,
     "E": 796,
     "per_share": 415,
-    "bear": 332,
+    "bear": 333,
     "bull": 474,
     "upside": -89.1,
     "pct": 8,
@@ -923,14 +923,14 @@
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 22.7,
+    "per_q": 22.6,
     "ni_q": 568,
     "por_ttm": 12.2,
     "op_ttm": 4224,
     "por_q": 8.9,
     "op_q": 1440,
     "cns_per": null,
-    "div_yield": 3.91,
+    "div_yield": 3.95,
     "dps": 150.0,
     "debt_eq": 0,
     "ret_1y": -37.0,
@@ -1069,13 +1069,13 @@
    "price": 9720,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 162567,
-   "mcap_eff": 162567,
-   "shares": 16725000,
+   "mcap": 162500,
+   "mcap_eff": 162500,
+   "shares": 16718107,
    "shares_check": {
     "dart_common": 16720822,
     "dart_period": "2026-11014",
-    "listed": 16725026,
+    "listed": 16718107,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -1099,26 +1099,26 @@
      "bear": {
       "g": -4,
       "value": 145437,
-      "per_share": 8696,
+      "per_share": 8699,
       "upside": -10.5
      },
      "base": {
       "g": 3,
       "value": 204570,
-      "per_share": 12231,
-      "upside": 25.8
+      "per_share": 12236,
+      "upside": 25.9
      },
      "bull": {
       "g": 6,
       "value": 236471,
-      "per_share": 14139,
+      "per_share": 14145,
       "upside": 45.5
      }
     },
     "c_T": 0.8,
     "roe_norm": 10.8,
     "implied_g": -1.7,
-    "implied_E1": 18278,
+    "implied_E1": 18270,
     "cycle": {
      "position": "중립",
      "note": "이름은 여행사지만 이익의 대부분은 법인 장기 렌터카(차량 1.7만 대 안팎)에서 나와요. 출장 여행은 기업 출장 수요, 렌터카는 금리·중고차 가격에 따라 움직여요.",
@@ -1147,9 +1147,9 @@
     "ttm_ni": 25292,
     "oneoff": false,
     "E": 25925,
-    "per_share": 10942,
-    "bear": 8768,
-    "bull": 12501,
+    "per_share": 10946,
+    "bear": 8772,
+    "bull": 12506,
     "upside": 12.6,
     "pct": 100,
     "tier": "싼 ⅓",
@@ -1166,17 +1166,17 @@
      "bull": 0.2
     },
     "weighted": 193210,
-    "weighted_ps": 11552,
-    "weighted_upside": 18.8,
+    "weighted_ps": 11557,
+    "weighted_upside": 18.9,
     "stress": {
      "E": 16924,
      "margin": 4.8,
      "g": -4,
      "value": 137882,
-     "per_share": 8244,
+     "per_share": 8247,
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 4.8% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 8244,
+    "down_ps": 8247,
     "max_loss": 15.2,
     "up_bull": 45.5,
     "asym_ratio": 3.0,
@@ -1192,7 +1192,7 @@
      }
     },
     "mos": 35,
-    "buy_ps": 7509,
+    "buy_ps": 7512,
     "buy_gap": -22.7,
     "implied_margin": 5.2,
     "base_margin": 6.6,
@@ -1203,7 +1203,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 5.2%가 이어져야 해요(과거 3.3%~8.6%, 평균 5.7%, 이 리포트의 정상 이익 가정 6.6%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 15% 손실, 낙관 시나리오면 +45%로 손익 구조는 '유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 5.2%가 이어져야 해요(과거 3.3%~8.6%, 평균 5.7%, 이 리포트의 정상 이익 가정 6.6%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 15% 손실, 낙관 시나리오면 +46%로 손익 구조는 '유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -1215,7 +1215,7 @@
     "por_q": 3.9,
     "op_q": 10494,
     "cns_per": null,
-    "div_yield": 8.24,
+    "div_yield": 8.23,
     "dps": 800.0,
     "debt_eq": 220,
     "ret_1y": -16.6,
@@ -1353,13 +1353,13 @@
    "price": 1105,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 20057,
-   "mcap_eff": 20057,
-   "shares": 18151131,
+   "mcap": 20000,
+   "mcap_eff": 20000,
+   "shares": 18099548,
    "shares_check": {
     "dart_common": 18121667,
     "dart_period": "2026-11012",
-    "listed": 18150975,
+    "listed": 18099548,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -1376,13 +1376,13 @@
     "r": 11.0,
     "c": 0.6,
     "note": "DART 수집 후 자동 계산",
-    "fwd_per": 50.1,
-    "norm_per": 50.1,
+    "fwd_per": 50.0,
+    "norm_per": 50.0,
     "scenarios": {
      "bear": {
       "g": -5,
       "value": 1967,
-      "per_share": 108,
+      "per_share": 109,
       "upside": -90.2
      },
      "base": {
@@ -1394,14 +1394,14 @@
      "bull": {
       "g": 6,
       "value": 3177,
-      "per_share": 175,
-      "upside": -84.2
+      "per_share": 176,
+      "upside": -84.1
      }
     },
     "c_T": 0.6,
     "roe_norm": 0.4,
     "implied_g": 50.2,
-    "implied_E1": 3009,
+    "implied_E1": 3000,
     "cycle": {
      "position": "중립",
      "note": "여행(세중투어몰 등 법인 출장)과 투자 자산을 함께 가진 회사예요.",
@@ -1452,7 +1452,7 @@
     },
     "down_ps": 28,
     "max_loss": 97.5,
-    "up_bull": -84.2,
+    "up_bull": -84.1,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -1622,15 +1622,15 @@
    "price": 31100,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 11479743,
-   "mcap_eff": 11479742,
-   "shares": 369123537,
+   "mcap": 11479800,
+   "mcap_eff": 11479798,
+   "shares": 369125338,
    "shares_check": {
     "dart_common": 368220609,
     "dart_period": "2026-11012",
-    "listed": 368221138,
+    "listed": 368221865,
     "pref": "003495",
-    "pref_shares": 1109309,
+    "pref_shares": 1110669,
     "pref_price": 25300
    },
    "equity": 11467971,
@@ -1659,7 +1659,7 @@
       "g": 3,
       "value": 7192060,
       "per_share": 19484,
-      "upside": -37.3
+      "upside": -37.4
      },
      "bull": {
       "g": 6,
@@ -1671,7 +1671,7 @@
     "c_T": 0.5,
     "roe_norm": 9.6,
     "implied_g": 13.4,
-    "implied_E1": 1755786,
+    "implied_E1": 1755794,
     "cycle": {
      "position": "중립",
      "note": "여객은 국제선 탑승률 86.7%로 정상화가 끝났고, 화물은 반도체(HBM) 수출 호조로 운임이 km당 629원(+27.5%)으로 높아요. 반대로 항공유(싱가포르 MOPS 배럴당 174달러)와 환율(1,540원대)이 비용을 키워 호재와 악재가 엇갈리는 '중립' 위치로 봤어요.",
@@ -1767,8 +1767,8 @@
     "op_ttm": 814359,
     "por_q": 8.2,
     "op_q": 349171,
-    "cns_per": 20.69,
-    "div_yield": 2.44,
+    "cns_per": 20.93,
+    "div_yield": 2.41,
     "dps": 750.0,
     "debt_eq": 110,
     "ret_1y": 42.3,
@@ -1907,13 +1907,13 @@
    "price": 8370,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 1724160,
-   "mcap_eff": 1723409,
-   "shares": 205903106,
+   "mcap": 1724100,
+   "mcap_eff": 1723349,
+   "shares": 205895938,
    "shares_check": {
     "dart_common": 205900990,
     "dart_period": "2026-11012",
-    "listed": 205992780,
+    "listed": 205985663,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -2081,13 +2081,13 @@
    "price": 8400,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 677437,
-   "mcap_eff": 676850,
-   "shares": 80577381,
+   "mcap": 677400,
+   "mcap_eff": 676813,
+   "shares": 80572976,
    "shares_check": {
     "dart_common": 80571111,
     "dart_period": "2026-11012",
-    "listed": 80647208,
+    "listed": 80642857,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -2130,7 +2130,7 @@
     "c_T": 0.5,
     "roe_norm": 11.3,
     "implied_g": 16.8,
-    "implied_E1": 100249,
+    "implied_E1": 100243,
     "cycle": {
      "position": "바닥권",
      "note": "2024년 12월 무안 사고 이후 수요 회복이 늦었고 2025년 공급 과잉·운임 하락으로 적자였어요. 2026년 3분기 별도 영업이익 549억원으로 흑자 전환했지만 외화 정비부채 환산 같은 일회성이 섞여 있어 바닥권에서 막 벗어나는 단계로 봤어요. 고유가·고환율이 회복 속도를 늦춰요.",
@@ -2233,7 +2233,7 @@
     "op_ttm": 97775,
     "por_q": 3.0,
     "op_q": 55931,
-    "cns_per": 4.97,
+    "cns_per": 4.96,
     "div_yield": null,
     "dps": null,
     "debt_eq": 44,
@@ -2372,13 +2372,13 @@
    "price": 7810,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 407680,
-   "mcap_eff": 402476,
-   "shares": 51533419,
+   "mcap": 407700,
+   "mcap_eff": 402496,
+   "shares": 51535980,
    "shares_check": {
     "dart_common": 51533634,
     "dart_period": "2026-11012",
-    "listed": 52199730,
+    "listed": 52202305,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -2401,7 +2401,7 @@
      "bear": {
       "g": -5,
       "value": 274237,
-      "per_share": 5322,
+      "per_share": 5321,
       "upside": -31.9
      },
      "base": {
@@ -2420,7 +2420,7 @@
     "c_T": 0.5,
     "roe_norm": 33.5,
     "implied_g": 3.0,
-    "implied_E1": 64152,
+    "implied_E1": 64155,
     "cycle": {
      "position": "바닥권",
      "note": "2025년~2026년 상반기 적자(2분기 영업손실 731억원) 뒤 3분기 매출 4,131억원(+36%, 분기 최대)·영업이익 78억원으로 흑자 전환했어요. 2027년 3월 17일 에어부산·에어서울을 흡수해 국내 1위 LCC가 돼요.",
@@ -2519,7 +2519,7 @@
     "op_ttm": -20356,
     "por_q": 13.0,
     "op_q": 7765,
-    "cns_per": -23.75,
+    "cns_per": -25.03,
     "div_yield": null,
     "dps": null,
     "debt_eq": 0,
@@ -2651,13 +2651,13 @@
    "price": 2245,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 229206,
-   "mcap_eff": 229073,
-   "shares": 102036971,
+   "mcap": 229200,
+   "mcap_eff": 229067,
+   "shares": 102034298,
    "shares_check": {
     "dart_common": 102046914,
     "dart_period": "2026-11014",
-    "listed": 102096070,
+    "listed": 102093541,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -2699,7 +2699,7 @@
     "c_T": 0.45,
     "roe_norm": 33.8,
     "implied_g": -30.0,
-    "implied_E1": -1611,
+    "implied_E1": -1612,
     "cycle": {
      "position": "바닥권",
      "note": "2026년 9월 10일 '트리니티항공'으로 이름을 바꾸고 소노트리니티그룹 체제가 됐어요. 유럽 노선 확대에 따른 비용 부담으로 3분기도 영업손실 335억원(컨센서스) 예상이에요.",
@@ -2930,13 +2930,13 @@
    "price": 1917,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 312358,
-   "mcap_eff": 312247,
-   "shares": 162883151,
+   "mcap": 312300,
+   "mcap_eff": 312189,
+   "shares": 162852895,
    "shares_check": {
     "dart_common": 162856856,
     "dart_period": "2026-11012",
-    "listed": 162941176,
+    "listed": 162910798,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -3104,15 +3104,15 @@
    "price": 245000,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 16415034,
-   "mcap_eff": 16414322,
-   "shares": 66997233,
+   "mcap": 16415100,
+   "mcap_eff": 16414387,
+   "shares": 66997498,
    "shares_check": {
     "dart_common": 66762276,
     "dart_period": "2026-11012",
-    "listed": 66762115,
+    "listed": 66762449,
     "pref": "18064K",
-    "pref_shares": 523679,
+    "pref_shares": 523531,
     "pref_price": 110000
    },
    "equity": 3579674,
@@ -3139,7 +3139,7 @@
      "base": {
       "g": 3,
       "value": 1647636,
-      "per_share": 24593,
+      "per_share": 24592,
       "upside": -90.0
      },
      "bull": {
@@ -3152,7 +3152,7 @@
     "c_T": 0.45,
     "roe_norm": 7.8,
     "implied_g": 57.8,
-    "implied_E1": 2789458,
+    "implied_E1": 2789469,
     "cycle": {
      "position": "중립",
      "note": "대한항공 지분(약 26%)이 가치의 대부분인 지주회사예요. 대한항공 사이클을 그대로 따라요.",
@@ -3183,7 +3183,7 @@
     "E": 62624,
     "per_share": 6598,
     "bear": 5287,
-    "bull": 7539,
+    "bull": 7538,
     "upside": -97.3,
     "pct": 0,
     "tier": "비싼 ⅓",
@@ -3249,7 +3249,7 @@
     "por_q": 346.2,
     "op_q": 11854,
     "cns_per": null,
-    "div_yield": 0.16,
+    "div_yield": 0.15,
     "dps": 360.0,
     "debt_eq": 13,
     "ret_1y": 139.3,
@@ -3394,13 +3394,13 @@
    "price": 103300,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 327083,
-   "mcap_eff": 315912,
-   "shares": 3058199,
+   "mcap": 327100,
+   "mcap_eff": 315929,
+   "shares": 3058364,
    "shares_check": {
     "dart_common": 3058211,
     "dart_period": "2026-11012",
-    "listed": 3166342,
+    "listed": 3166505,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -3423,26 +3423,26 @@
      "bear": {
       "g": -2,
       "value": 229198,
-      "per_share": 74945,
-      "upside": -27.4
+      "per_share": 74941,
+      "upside": -27.5
      },
      "base": {
       "g": 3,
       "value": 264808,
-      "per_share": 86589,
+      "per_share": 86585,
       "upside": -16.2
      },
      "bull": {
       "g": 6,
       "value": 290394,
-      "per_share": 94956,
+      "per_share": 94951,
       "upside": -8.1
      }
     },
     "c_T": 0.65,
     "roe_norm": 4.8,
     "implied_g": 8.6,
-    "implied_E1": 26633,
+    "implied_E1": 26635,
     "cycle": {
      "position": "중립",
      "note": "대한항공 계열 지상조업(수하물·급유·항공기 견인) 회사예요. 운항 편수에 비례해 안정적이고, 아시아나 통합으로 인천공항 물량이 늘어요.",
@@ -3471,9 +3471,9 @@
     "ttm_ni": 46790,
     "oneoff": false,
     "E": 33081,
-    "per_share": 76357,
-    "bear": 61189,
-    "bull": 87241,
+    "per_share": 76353,
+    "bear": 61186,
+    "bull": 87236,
     "upside": -26.1,
     "pct": 77,
     "tier": "싼 ⅓",
@@ -3490,17 +3490,17 @@
      "bull": 0.2
     },
     "weighted": 259242,
-    "weighted_ps": 84770,
+    "weighted_ps": 84765,
     "weighted_upside": -17.9,
     "stress": {
      "E": 3259,
      "margin": 0.6,
      "g": -2,
      "value": 200265,
-     "per_share": 65485,
+     "per_share": 65481,
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 0.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 65485,
+    "down_ps": 65481,
     "max_loss": 36.6,
     "up_bull": -8.1,
     "asym_ratio": null,
@@ -3516,7 +3516,7 @@
      }
     },
     "mos": 35,
-    "buy_ps": 55100,
+    "buy_ps": 55097,
     "buy_gap": -46.7,
     "implied_margin": 4.5,
     "base_margin": 3.5,
@@ -3678,15 +3678,15 @@
    "price": 38100,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 1515361,
-   "mcap_eff": 1435552,
-   "shares": 37678530,
+   "mcap": 1515400,
+   "mcap_eff": 1435591,
+   "shares": 37679554,
    "shares_check": {
     "dart_common": 37161352,
     "dart_period": "2026-11012",
-    "listed": 39248340,
+    "listed": 39249344,
     "pref": "008775",
-    "pref_shares": 740445,
+    "pref_shares": 740473,
     "pref_price": 26600
    },
    "equity": 1145083,
@@ -3708,7 +3708,7 @@
      "bear": {
       "g": -4,
       "value": 583287,
-      "per_share": 15481,
+      "per_share": 15480,
       "upside": -59.4
      },
      "base": {
@@ -3720,14 +3720,14 @@
      "bull": {
       "g": 9,
       "value": 1069829,
-      "per_share": 28394,
+      "per_share": 28393,
       "upside": -25.5
      }
     },
     "c_T": 0.746,
     "roe_norm": 7.9,
     "implied_g": 15.4,
-    "implied_E1": 152356,
+    "implied_E1": 152361,
     "cycle": {
      "position": "회복",
      "note": "면세(TR) 부문이 2025년 2월 미국 3Sixty 매각, 2026년 4월 인천공항 DF1 철수로 적자 사업을 정리해 1~3분기 영업이익 759억원 흑자로 돌아섰어요. 다이궁 수수료 축소로 매출은 줄지만(-4%) 이익은 늘어나는 구조조정 후 회복 단계예요. 호텔·레저도 영업이익 608억원(+37%)으로 좋아요.",
@@ -3757,7 +3757,7 @@
     "oneoff": false,
     "E": 38218,
     "per_share": 7160,
-    "bear": 5738,
+    "bear": 5737,
     "bull": 8180,
     "upside": -81.2,
     "pct": 31,
@@ -3775,7 +3775,7 @@
      "bull": 0.25
     },
     "weighted": 837284,
-    "weighted_ps": 22222,
+    "weighted_ps": 22221,
     "weighted_upside": -41.7,
     "stress": {
      "E": -169862,
@@ -3823,7 +3823,7 @@
     "op_ttm": 132622,
     "por_q": 6.5,
     "op_q": 55183,
-    "cns_per": 16.06,
+    "cns_per": 16.25,
     "div_yield": null,
     "dps": null,
     "debt_eq": 101,
@@ -3974,13 +3974,13 @@
    "price": 273000,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 2578516,
-   "mcap_eff": 2393558,
-   "shares": 8767612,
+   "mcap": 2578500,
+   "mcap_eff": 2393543,
+   "shares": 8767557,
    "shares_check": {
     "dart_common": 8767681,
     "dart_period": "2026-11012",
-    "listed": 9445113,
+    "listed": 9445055,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4003,26 +4003,26 @@
      "bear": {
       "g": -3,
       "value": 1777382,
-      "per_share": 202721,
+      "per_share": 202723,
       "upside": -25.7
      },
      "base": {
       "g": 3,
       "value": 2355225,
-      "per_share": 268628,
+      "per_share": 268630,
       "upside": -1.6
      },
      "bull": {
       "g": 7,
       "value": 2838908,
-      "per_share": 323795,
+      "per_share": 323797,
       "upside": 18.6
      }
     },
     "c_T": 0.635,
     "roe_norm": 5.5,
     "implied_g": 3.3,
-    "implied_E1": 284557,
+    "implied_E1": 284555,
     "cycle": {
      "position": "회복",
      "note": "백화점은 외국인 매출이 1~3분기 8,500억원으로 2배 넘게 늘었고, 신세계디에프(면세)는 3분기 영업이익 253억원으로 흑자 전환했어요. 3분기 연결 영업이익 1,643억원(+64.7%)으로 분기 최대예요.",
@@ -4051,9 +4051,9 @@
     "ttm_ni": 251771,
     "oneoff": false,
     "E": 362712,
-    "per_share": 292020,
-    "bear": 234013,
-    "bull": 333644,
+    "per_share": 292022,
+    "bear": 234014,
+    "bull": 333646,
     "upside": 7.0,
     "pct": 85,
     "tier": "싼 ⅓",
@@ -4070,17 +4070,17 @@
      "bull": 0.25
     },
     "weighted": 2331685,
-    "weighted_ps": 265943,
+    "weighted_ps": 265945,
     "weighted_upside": -2.6,
     "stress": {
      "E": 131698,
      "margin": 1.6,
      "g": -3,
      "value": 1572741,
-     "per_share": 179381,
+     "per_share": 179382,
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 1.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 179381,
+    "down_ps": 179382,
     "max_loss": 34.3,
     "up_bull": 18.6,
     "asym_ratio": 0.5,
@@ -4096,7 +4096,7 @@
      }
     },
     "mos": 35,
-    "buy_ps": 172863,
+    "buy_ps": 172864,
     "buy_gap": -36.7,
     "implied_margin": 3.5,
     "base_margin": 3.5,
@@ -4118,8 +4118,8 @@
     "op_ttm": 701803,
     "por_q": 3.6,
     "op_q": 164310,
-    "cns_per": 6.06,
-    "div_yield": 1.96,
+    "cns_per": 6.22,
+    "div_yield": 1.91,
     "dps": 5200.0,
     "debt_eq": 88,
     "ret_1y": 25.5,
@@ -4269,13 +4269,13 @@
    "price": 90800,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 1958139,
-   "mcap_eff": 1937032,
-   "shares": 21332952,
+   "mcap": 1958100,
+   "mcap_eff": 1936993,
+   "shares": 21332522,
    "shares_check": {
     "dart_common": 21332452,
     "dart_period": "2026-11012",
-    "listed": 21565410,
+    "listed": 21564978,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4298,26 +4298,26 @@
      "bear": {
       "g": -3,
       "value": 1166682,
-      "per_share": 54689,
+      "per_share": 54690,
       "upside": -39.8
      },
      "base": {
       "g": 2,
       "value": 1466667,
-      "per_share": 68751,
+      "per_share": 68753,
       "upside": -24.3
      },
      "bull": {
       "g": 6,
       "value": 1761068,
-      "per_share": 82552,
+      "per_share": 82553,
       "upside": -9.1
      }
     },
     "c_T": 0.55,
     "roe_norm": 4.3,
     "implied_g": 8.1,
-    "implied_E1": 264141,
+    "implied_E1": 264135,
     "cycle": {
      "position": "중립",
      "note": "3분기 연결 영업이익 946억원(+30%)으로 백화점과 면세(매출 3,666억원 +65%, 인천공항 DF2 개장)가 좋았지만, 가구 자회사 지누스가 영업손실 125억원으로 발목을 잡았어요.",
@@ -4346,9 +4346,9 @@
     "ttm_ni": 237171,
     "oneoff": false,
     "E": 294646,
-    "per_share": 97495,
-    "bear": 78128,
-    "bull": 111391,
+    "per_share": 97497,
+    "bear": 78130,
+    "bull": 111394,
     "upside": 7.4,
     "pct": 92,
     "tier": "싼 ⅓",
@@ -4365,17 +4365,17 @@
      "bull": 0.2
     },
     "weighted": 1435552,
-    "weighted_ps": 67293,
+    "weighted_ps": 67294,
     "weighted_upside": -25.9,
     "stress": {
      "E": 157491,
      "margin": 3.1,
      "g": -3,
      "value": 1108024,
-     "per_share": 51940,
+     "per_share": 51941,
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 3.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 51940,
+    "down_ps": 51941,
     "max_loss": 42.8,
     "up_bull": -9.1,
     "asym_ratio": null,
@@ -4391,7 +4391,7 @@
      }
     },
     "mos": 35,
-    "buy_ps": 43740,
+    "buy_ps": 43741,
     "buy_gap": -51.8,
     "implied_margin": 5.2,
     "base_margin": 3.9,
@@ -4413,8 +4413,8 @@
     "op_ttm": 378584,
     "por_q": 5.1,
     "op_q": 94564,
-    "cns_per": 7.4,
-    "div_yield": 2.38,
+    "cns_per": 7.42,
+    "div_yield": 2.37,
     "dps": 2150.0,
     "debt_eq": 50,
     "ret_1y": -0.4,
@@ -4552,13 +4552,13 @@
    "price": 6040,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 424546,
-   "mcap_eff": 424482,
-   "shares": 70278477,
+   "mcap": 424500,
+   "mcap_eff": 424435,
+   "shares": 70270695,
    "shares_check": {
     "dart_common": 70272633,
     "dart_period": "2026-11012",
-    "listed": 70289116,
+    "listed": 70281457,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4569,7 +4569,7 @@
    "dividend_yield": null,
    "per": 11.4,
    "roe": 22.0,
-   "pbr": 2.51,
+   "pbr": 2.5,
    "dcf": {
     "E1": 26000,
     "r": 11.0,
@@ -4587,20 +4587,20 @@
      "base": {
       "g": 10,
       "value": 451220,
-      "per_share": 6420,
+      "per_share": 6421,
       "upside": 6.3
      },
      "bull": {
       "g": 18,
       "value": 572887,
-      "per_share": 8152,
+      "per_share": 8153,
       "upside": 35.0
      }
     },
     "c_T": 0.818,
     "roe_norm": 15.3,
     "implied_g": 7.8,
-    "implied_E1": 23910,
+    "implied_E1": 23906,
     "cycle": {
      "position": "확장",
      "note": "방한객 +21%, 특히 중국(+29%)·대만(+32%) 쇼핑객 급증으로 2분기 매출 469억원(+17%), 영업이익률 19.3%로 최대예요. 2026년 미용성형 부가세 환급 일몰은 부담이지만 이를 빼면 실질 성장률은 +46%예요. 11월 시작한 일본 사후환급 제도(시장 3~6천억원)가 새 성장 동력이에요.",
@@ -4629,7 +4629,7 @@
     "ttm_ni": 37323,
     "oneoff": false,
     "E": 9174,
-    "per_share": 921,
+    "per_share": 922,
     "bear": 738,
     "bull": 1053,
     "upside": -84.7,
@@ -4648,7 +4648,7 @@
      "bull": 0.15
     },
     "weighted": 427988,
-    "weighted_ps": 6090,
+    "weighted_ps": 6091,
     "weighted_upside": 0.8,
     "stress": {
      "E": -77094,
@@ -4674,7 +4674,7 @@
      }
     },
     "mos": 50,
-    "buy_ps": 3045,
+    "buy_ps": 3046,
     "buy_gap": -49.6,
     "implied_margin": 16.8,
     "base_margin": 18.2,
@@ -4836,13 +4836,13 @@
    "price": 14060,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 3007954,
-   "mcap_eff": 2786556,
-   "shares": 198190327,
+   "mcap": 3008000,
+   "mcap_eff": 2786601,
+   "shares": 198193528,
    "shares_check": {
     "dart_common": 198193804,
     "dart_period": "2026-11012",
-    "listed": 213937008,
+    "listed": 213940256,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -4871,7 +4871,7 @@
      "base": {
       "g": 1,
       "value": 4042820,
-      "per_share": 20399,
+      "per_share": 20398,
       "upside": 45.1
      },
      "bull": {
@@ -4884,7 +4884,7 @@
     "c_T": 0.763,
     "roe_norm": 8.4,
     "implied_g": -9.5,
-    "implied_E1": 208479,
+    "implied_E1": 208483,
     "cycle": {
      "position": "중립",
      "note": "내국인 카지노는 매출 총량 규제와 영업시간 제한으로 성장이 묶여 있어요. 방한 외국인 증가의 수혜가 거의 없고, 인건비·워터월드 같은 비카지노 투자로 이익률이 내려오는 중이에요.",
@@ -4980,8 +4980,8 @@
     "op_ttm": 202217,
     "por_q": 11.7,
     "op_q": 59666,
-    "cns_per": 14.15,
-    "div_yield": 6.8,
+    "cns_per": 14.25,
+    "div_yield": 6.76,
     "dps": 950.0,
     "debt_eq": 0,
     "ret_1y": -21.8,
@@ -5131,13 +5131,13 @@
    "price": 11510,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 1066206,
-   "mcap_eff": 1010151,
-   "shares": 87762902,
+   "mcap": 1066200,
+   "mcap_eff": 1010144,
+   "shares": 87762294,
    "shares_check": {
     "dart_common": 87759214,
     "dart_period": "2026-11012",
-    "listed": 92633028,
+    "listed": 92632493,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -5167,7 +5167,7 @@
      "base": {
       "g": 4,
       "value": 944105,
-      "per_share": 10757,
+      "per_share": 10758,
       "upside": -6.5
      },
      "bull": {
@@ -5276,8 +5276,8 @@
     "op_ttm": 153153,
     "por_q": 3.9,
     "op_q": 64121,
-    "cns_per": 13.51,
-    "div_yield": 1.38,
+    "cns_per": 14.26,
+    "div_yield": 1.3,
     "dps": 150.0,
     "debt_eq": 63,
     "ret_1y": -32.5,
@@ -5416,13 +5416,13 @@
    "price": 7360,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 455260,
-   "mcap_eff": 455260,
-   "shares": 61855978,
+   "mcap": 455300,
+   "mcap_eff": 455300,
+   "shares": 61861413,
    "shares_check": {
     "dart_common": 61855670,
     "dart_period": "2026-11012",
-    "listed": 61855956,
+    "listed": 61861413,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -5445,26 +5445,26 @@
      "bear": {
       "g": -4,
       "value": 675080,
-      "per_share": 10914,
+      "per_share": 10913,
       "upside": 48.3
      },
      "base": {
       "g": 2,
       "value": 754650,
-      "per_share": 12200,
-      "upside": 65.8
+      "per_share": 12199,
+      "upside": 65.7
      },
      "bull": {
       "g": 5,
       "value": 803351,
-      "per_share": 12987,
-      "upside": 76.5
+      "per_share": 12986,
+      "upside": 76.4
      }
     },
     "c_T": 0.8,
     "roe_norm": 9.2,
     "implied_g": -30.0,
-    "implied_E1": 12061,
+    "implied_E1": 12065,
     "cycle": {
      "position": "중립",
      "note": "방한객은 신기록인데 입장객은 -1.9%(중국 -8.7%)로 줄었고, 콤프(고객 무료 제공) +9%와 인건비 +12.8%로 3분기 영업이익이 96억원(-44%)에 그쳤어요. 공기업이라 마케팅·투자 자율성이 낮아요.",
@@ -5495,7 +5495,7 @@
     "E": 25714,
     "per_share": 2934,
     "bear": 2351,
-    "bull": 3353,
+    "bull": 3352,
     "upside": -60.1,
     "pct": 46,
     "tier": "가운데 ⅓",
@@ -5512,19 +5512,19 @@
      "bull": 0.2
     },
     "weighted": 740519,
-    "weighted_ps": 11972,
-    "weighted_upside": 62.7,
+    "weighted_ps": 11971,
+    "weighted_upside": 62.6,
     "stress": {
      "E": -107429,
      "margin": -34.9,
      "g": -4,
      "value": 324363,
-     "per_share": 5244,
+     "per_share": 5243,
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 -34.9% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 5244,
-    "max_loss": 28.7,
-    "up_bull": 76.5,
+    "down_ps": 5243,
+    "max_loss": 28.8,
+    "up_bull": 76.4,
     "asym_ratio": 2.7,
     "asym": "유리",
     "risk": {
@@ -5538,7 +5538,7 @@
      }
     },
     "mos": 45,
-    "buy_ps": 6585,
+    "buy_ps": 6584,
     "buy_gap": -10.5,
     "implied_margin": 3.9,
     "base_margin": 13.6,
@@ -5560,8 +5560,8 @@
     "op_ttm": 47805,
     "por_q": 11.8,
     "op_q": 9623,
-    "cns_per": 9.09,
-    "div_yield": 5.73,
+    "cns_per": 9.27,
+    "div_yield": 5.63,
     "dps": 414.0,
     "debt_eq": 0,
     "ret_1y": -49.3,
@@ -5700,13 +5700,13 @@
    "price": 10530,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 839545,
-   "mcap_eff": 839545,
-   "shares": 79728870,
+   "mcap": 839500,
+   "mcap_eff": 839500,
+   "shares": 79724596,
    "shares_check": {
     "dart_common": 79725458,
     "dart_period": "2026-11012",
-    "listed": 79728916,
+    "listed": 79724596,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -5736,7 +5736,7 @@
      "base": {
       "g": 6,
       "value": 547355,
-      "per_share": 6865,
+      "per_share": 6866,
       "upside": -34.8
      },
      "bull": {
@@ -5749,7 +5749,7 @@
     "c_T": 0.826,
     "roe_norm": 16.1,
     "implied_g": 15.5,
-    "implied_E1": 92029,
+    "implied_E1": 92024,
     "cycle": {
      "position": "확장",
      "note": "제주 드림타워 카지노가 10월 625억원(+24%)으로 국내 단일 카지노 최초 600억원을 넘었어요. 3분기 드롭 8,759억원(+3.2%)은 늘었지만 홀드율이 15.9%(전년 17.7%)로 낮아 순매출은 -8.7%였어요. 제주 국제선이 동계 주 486편(+39%)으로 늘어요.",
@@ -5836,7 +5836,7 @@
     "op_ttm": 155744,
     "por_q": 6.8,
     "op_q": 30798,
-    "cns_per": 28.3,
+    "cns_per": 29.91,
     "div_yield": null,
     "dps": null,
     "debt_eq": 246,
@@ -5976,13 +5976,13 @@
    "price": 3230,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 314296,
-   "mcap_eff": 314296,
-   "shares": 97305263,
+   "mcap": 314300,
+   "mcap_eff": 314300,
+   "shares": 97306502,
    "shares_check": {
     "dart_common": 97300990,
     "dart_period": "2026-11012",
-    "listed": 97305195,
+    "listed": 97306502,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -6025,7 +6025,7 @@
     "c_T": 0.4,
     "roe_norm": 2.1,
     "implied_g": 40.1,
-    "implied_E1": 65583,
+    "implied_E1": 65584,
     "cycle": {
      "position": "투자기",
      "note": "부산 기장 빌라쥬 드 아난티 분양이 끝난 2024년부터 운영만으로는 적자예요. 다음 리조트 개발로 차입이 커지고 있어요. 객실 단가는 높지만 다음 분양 이익이 언제 나오는지가 관건이에요.",
@@ -6246,13 +6246,13 @@
    "price": 9160,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 588726,
-   "mcap_eff": 583175,
-   "shares": 63665393,
+   "mcap": 588800,
+   "mcap_eff": 583248,
+   "shares": 63673362,
    "shares_check": {
     "dart_common": 63670852,
     "dart_period": "2026-11014",
-    "listed": 64271413,
+    "listed": 64279476,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -6288,14 +6288,14 @@
      "bull": {
       "g": 5,
       "value": 167427,
-      "per_share": 2630,
+      "per_share": 2629,
       "upside": -71.3
      }
     },
     "c_T": 0.6,
     "roe_norm": 1.8,
     "implied_g": 33.6,
-    "implied_E1": 77757,
+    "implied_E1": 77766,
     "cycle": {
      "position": "중립",
      "note": "서울 신도림 쉐라톤·디큐브 호텔과 물류·부동산을 가진 회사예요.",
@@ -6324,9 +6324,9 @@
     "ttm_ni": 68851,
     "oneoff": false,
     "E": 41615,
-    "per_share": 4614,
+    "per_share": 4613,
     "bear": 3697,
-    "bull": 5272,
+    "bull": 5271,
     "upside": -49.6,
     "pct": 62,
     "tier": "가운데 ⅓",
@@ -6371,7 +6371,7 @@
     "mos": 45,
     "buy_ps": 1224,
     "buy_gap": -86.6,
-    "implied_margin": 29.2,
+    "implied_margin": 29.3,
     "base_margin": 7.3,
     "hist_margin": [
      -46.2,
@@ -6380,7 +6380,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 29.2%가 이어져야 해요(과거 -46.2%~81.8%, 평균 7.3%, 이 리포트의 정상 이익 가정 7.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -71%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 29.3%가 이어져야 해요(과거 -46.2%~81.8%, 평균 7.3%, 이 리포트의 정상 이익 가정 7.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -71%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -6391,8 +6391,8 @@
     "op_ttm": 75123,
     "por_q": 10.3,
     "op_q": 14177,
-    "cns_per": 13.12,
-    "div_yield": 1.11,
+    "cns_per": 13.37,
+    "div_yield": 1.09,
     "dps": 100.0,
     "debt_eq": 126,
     "ret_1y": -17.0,
@@ -6542,13 +6542,13 @@
    "price": 1719,
    "price_date": "2026-11-26 02:39",
    "price_source": "네이버 금융",
-   "mcap": 82752,
-   "mcap_eff": 81327,
-   "shares": 47310646,
+   "mcap": 82700,
+   "mcap_eff": 81275,
+   "shares": 47280396,
    "shares_check": {
     "dart_common": 47304483,
     "dart_period": "2026-11012",
-    "listed": 48139535,
+    "listed": 48109366,
     "pref": null,
     "pref_shares": null,
     "pref_price": null
@@ -6570,8 +6570,8 @@
     "r": 11.0,
     "c": 0.5,
     "note": "정상 이익 60억원은 2023~2024년 순이익(80~100억원)에서 리조트 노후 투자 부담을 감안해 낮춘 값이에요",
-    "fwd_per": 13.6,
-    "norm_per": 13.6,
+    "fwd_per": 13.5,
+    "norm_per": 13.5,
     "scenarios": {
      "bear": {
       "g": -5,
@@ -6588,14 +6588,14 @@
      "bull": {
       "g": 6,
       "value": 39713,
-      "per_share": 839,
-      "upside": -51.2
+      "per_share": 840,
+      "upside": -51.1
      }
     },
     "c_T": 0.5,
     "roe_norm": 1.7,
     "implied_g": 22.5,
-    "implied_E1": 14639,
+    "implied_E1": 14630,
     "cycle": {
      "position": "중립",
      "note": "평창 용평리조트 운영사로 스키 시즌(4분기~1분기)에 이익이 몰려요. 2025년 4분기 순손실 399억원은 자산 손상 같은 일회성이에요.",
@@ -6655,7 +6655,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -51.2,
+    "up_bull": -51.1,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -6854,7 +6854,7 @@
    {
     "industry": "apparel",
     "n": 32,
-    "median_upside": 19.8,
+    "median_upside": 19.7,
     "share_above": 38,
     "label": "다소 차가움",
     "shift": 0
@@ -6870,7 +6870,7 @@
    {
     "industry": "logistics",
     "n": 25,
-    "median_upside": 15.1,
+    "median_upside": 10.6,
     "share_above": 44,
     "label": "다소 차가움",
     "shift": 0
@@ -6878,7 +6878,7 @@
    {
     "industry": "auto",
     "n": 55,
-    "median_upside": 53.5,
+    "median_upside": 55.7,
     "share_above": 33,
     "label": "냉각(비관 쪽)",
     "shift": -1
@@ -6886,7 +6886,7 @@
    {
     "industry": "steel",
     "n": 71,
-    "median_upside": -7.7,
+    "median_upside": -6.8,
     "share_above": 56,
     "label": "다소 뜨거움",
     "shift": 0
