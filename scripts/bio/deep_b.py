@@ -2,7 +2,7 @@
 # 근거: 2026년 3분기 실적 기사, 실적 랭킹 집계(DART 연결), 회사 IR
 from common import C, G, PL, NS
 from sector import PH_SECS, LO_SECS
-from news_sector import N_LO, N_BIG5, N_SMID, N_MFN, N_TARIFF
+from news_sector import *
 
 NXT = "4분기·연간 실적은 2027년 1월 말~2월 중순 발표(잠정실적 공시). 3분기 분기보고서(11/14 공시)는 국내 PC에서 DART 수집 후 숫자가 바뀌어요."
 
