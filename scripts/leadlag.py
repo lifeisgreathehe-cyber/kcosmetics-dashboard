@@ -16,7 +16,6 @@
   - file: docs/<업종>/data 기준 경로. path(점으로 구분)는 그 파일의 months 와 같은 길이의 배열이거나 [["YYYY-MM", 값], ...] 목록.
     find: 파일이 [{id, series:[[YYYY-MM, 값]]}] 목록(또는 {"indicators": [...]})일 때 id로 찾는다.
   - transform: yoy(전년 같은 달 대비 %, 기본) · diff12(1년 전 대비 차이, 금리·비율용) · level(수준 그대로)
-  - roll: n → 최근 n개월 합계(roll_how "mean"이면 평균)로 바꾼 뒤 transform (수주처럼 달마다 들쭉날쭉한 지표)
   - expect: "+"(지표가 오르면 주가에 좋음) / "-"(나쁨). 실제 상관 부호와 다르면 화면에 표시한다.
 출력: docs/<업종>/data/leadlag.json — 화면은 docs/shared/leadlag.js 의 LeadLag.render(el, data)
 주가: docs/<업종>/data/stock_hist.json(네이버 월봉 수정주가) 구성 종목의 월 수익률을 동일가중으로 이어 붙인 업종 지수.
@@ -67,15 +66,6 @@ def load_series(data_dir, spec):
             if v is not None:
                 out[str(m)[:7]] = float(v)
     return out
-
-
-def rolling(s, n, how="sum"):
-    o = {}
-    for m in s:
-        vs = [s.get(mshift(m, -i)) for i in range(n)]
-        if all(v is not None for v in vs):
-            o[m] = sum(vs) / (n if how == "mean" else 1)
-    return o
 
 
 def transform(s, how):
@@ -237,10 +227,8 @@ def run(ind):
     res = []
     for sp in cfg.get("series", []):
         raw = load_series(data_dir, sp)
-        if sp.get("roll"):  # 들쭉날쭉한 월별 값(수주·선박 수출)은 최근 n개월 합계(roll_how=mean이면 평균)로 바꾼 뒤 변화율을 잰다
-            raw = rolling(raw, int(sp["roll"]), sp.get("roll_how", "sum"))
         x = transform(raw, sp.get("transform", "yoy"))
-        item = {k: sp.get(k) for k in ("id", "name", "unit", "why", "expect", "group", "src", "roll")}
+        item = {k: sp.get(k) for k in ("id", "name", "unit", "why", "expect", "group", "src")}
         item["transform"] = sp.get("transform", "yoy")
         item["n_raw"] = len(raw)
         if len(x) < 24:
