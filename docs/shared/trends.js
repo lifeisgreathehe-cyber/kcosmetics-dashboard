@@ -19,6 +19,7 @@
   .tl-sub{font-size:12.5px;color:var(--ink-3);margin:0 0 10px;line-height:1.55}
   .tl-verdict{border-radius:8px;padding:10px 12px;margin:8px 0 12px;font-size:14px;line-height:1.6;background:var(--accent-soft,#f3e7ef)}
   .tl-verdict b{font-weight:700}
+  .tl-verdict.up,.tl-verdict.down{color:var(--ink)} .tl-verdict.up{background:#1baf7a1a} .tl-verdict.down{background:#c0392b14}
   .tl-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
   .tl-chip{font-size:12px;border-radius:999px;padding:2px 9px;border:1px solid var(--line);background:var(--panel)}
   .tl-chip.up{color:var(--up);border-color:var(--up)} .tl-chip.down{color:var(--down);border-color:var(--down)}
@@ -96,7 +97,8 @@
     const n = s.now || {};
     if (n.tf == null) return '–';
     const unit = s.tf === 'yoy' ? '%' : (s.tf === 'diff12' ? '' : '');
-    return `${s.tf === 'level' ? f1(n.tf) : sg(n.tf)}${unit}<br><span class="tl-small">${ym(n.m)} · ${s.tf === 'yoy' ? '전년비' : s.tf === 'diff12' ? '1년 전 대비' : '수준'}</span>`;
+    const dd = Math.abs(n.tf) < 1 ? 2 : 1;
+    return `${s.tf === 'level' ? f1(n.tf, dd) : sg(n.tf, dd)}${unit}<br><span class="tl-small">${ym(n.m)} · ${s.tf === 'yoy' ? '전년비' : s.tf === 'diff12' ? '1년 전 대비' : '수준'}</span>`;
   }
 
   function render() {
