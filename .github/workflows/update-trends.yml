@@ -8,7 +8,7 @@ on:
   schedule:
     - cron: "10 9 * * *"   # 매일 18:10 KST (월봉 16:40·변곡점 17:30 이후)
   push:
-    branches: [main, claude/project-thread-9h3gzn]
+    branches: [main]
     paths:
       - "scripts/trends/**"
       - "config/trends/**"
