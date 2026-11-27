@@ -1,0 +1,42 @@
+name: 컨센서스 기록 (기업분석 리포트)
+
+on:
+  schedule:
+    - cron: "50 7 * * *"   # 매일 16:50 KST (장 마감·종가 뒤)
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "앞에서 N개사만 (시험용, 비우면 전체)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-consensus
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: 네이버 금융 컨센서스 스냅숏
+        run: |
+          if [ -n "${{ github.event.inputs.limit }}" ]; then python scripts/report/fetch_consensus.py --limit "${{ github.event.inputs.limit }}"; else python scripts/report/fetch_consensus.py; fi
+      - name: 리포트 입력 파일 재생성
+        run: python scripts/report/build.py
+      - name: main 반영
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw/consensus docs/report/data
+          if git diff --cached --quiet; then echo "변경 없음"; else
+            git commit -m "data: 컨센서스 기록 $(TZ=Asia/Seoul date '+%Y-%m-%d %H:%M')"
+            for i in 1 2 3; do git pull --rebase -X theirs -q && git push && break; git rebase --abort 2>/dev/null; sleep 5; done
+          fi

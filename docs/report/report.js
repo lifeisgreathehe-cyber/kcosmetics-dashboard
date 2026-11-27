@@ -474,7 +474,7 @@ function render() {
   s6 += H3('s6-ytd', `${CY}년 실적`) + secText('ytd', always(autoP(`${ytdTxt} ${gpmLqTxt} ${M.cyNote ? `연간 추정: ${M.cyNote} → 매출 ${eok(cyRow && cyRow.rev)}억원, 영업이익 ${eok(cyRow && cyRow.op)}억원, 지배순이익 ${eok(cyRow && cyRow.ni)}억원.` : ''}`) + quarterChart(d)));
   s6 += H3('s6-future', '향후 변화 요인') + secText('drivers_future', always(driverTable(M)), '');
   s6 += H3('s6-fc', '추정 실적') + forecastBlock(M) + secText('forecast', null, '');
-  s6 += H3('s6-cons', '가이던스와 컨센서스 비교') + secText('consensus', consensusBlock(d, M), '증권사 추정치·회사 목표를 원고에 넣으면 모델과 나란히 비교합니다.');
+  s6 += H3('s6-cons', '가이던스와 컨센서스 비교') + secText('consensus', consensusBlock(d, M), '컨센서스 기록(매일 자동 수집)과 증권사 목표주가 기사가 아직 없습니다.');
 
   // ---- 7. 시장의 시각
   const nb = newsBuckets(d);
@@ -773,10 +773,52 @@ function forecastBlock(M) {
 }
 
 function consensusBlock(d, M) {
+  const R = M.rows, parts = [];
   const c = d.manual && d.manual.consensus;
-  if (!c || !c.length) return null;
-  const R = M.rows;
-  return always(table(['출처', '연도', '영업이익(억원)', '우리 추정', '차이'], c.map(x => ({ c: [esc(x.src), esc(x.year), won(x.op), eok(R[x.year] && R[x.year].op), R[x.year] ? sg(R[x.year].op / (x.op * 100) - 1) : '–'] }))));
+  if (c && c.length) parts.push(table(['출처', '연도', '영업이익(억원)', '우리 추정', '차이'], c.map(x => ({ c: [esc(x.src), esc(x.year), won(x.op), eok(R[x.year] && R[x.year].op), R[x.year] ? sg(R[x.year].op / (x.op * 100) - 1) : '–'] }))));
+  // 1) 컨센서스 스냅숏(매일 쌓임) → 월별 변화와 주가 변화
+  const H = (d.cons_hist || []).filter(r => r[1] && (r[1].cy || r[1].tp));
+  if (H.length) {
+    const byM = {}; H.forEach(r => { byM[r[0].slice(0, 7)] = r; });
+    const rows = Object.values(byM); if (rows[rows.length - 1] !== H[H.length - 1]) rows.push(H[H.length - 1]);
+    const f = rows[0][1], cyY = f.cy && f.cy.y;
+    const pr = r => r[1].price || priceAt(d, r[0]);
+    parts.push(table(['날짜', `${cyY || ''} 영업이익 컨센서스(억원)`, '다음 분기 영업이익(억원)', '목표주가 평균(원)', '주가(원)', '컨센서스 변화', '주가 변화'], rows.slice(-8).map(r => {
+      const s = r[1], same = s.cy && s.cy.y === cyY;
+      return { c: [esc(r[0]), s.cy ? won(s.cy.op) + (same ? '' : ` (${s.cy.y})`) : '–', s.nq ? `${won(s.nq.op)} (${esc(s.nq.q)})` : '–', won(s.tp), won(pr(r)),
+        same && f.cy && f.cy.op ? sg(s.cy.op / f.cy.op - 1, 1) : '–', pr(rows[0]) && pr(r) ? sg(pr(r) / pr(rows[0]) - 1, 1) : '–'] };
+    })));
+    const last = H[H.length - 1][1];
+    const my = last.cy && R[last.cy.y] && R[last.cy.y].op;
+    let note = `네이버 금융(FnGuide) 컨센서스를 매일 기록합니다(${esc(H[0][0])}부터 ${H.length}일).`;
+    if (isNum(my) && last.cy.op) note += ` 이 리포트 모델의 ${last.cy.y}년 영업이익 ${eok(my)}억원은 컨센서스 ${won(last.cy.op)}억원보다 ${sg(my / (last.cy.op * 100) - 1)} ${my >= last.cy.op * 100 ? '높습니다' : '낮습니다'}.`;
+    if (rows.length > 1 && f.cy && last.cy && f.cy.y === last.cy.y && f.cy.op && pr(rows[0]) && pr(rows[rows.length - 1])) {
+      const dc = last.cy.op / f.cy.op - 1, dp = pr(rows[rows.length - 1]) / pr(rows[0]) - 1;
+      note += ` 같은 기간 컨센서스는 ${sg(dc, 1)}, 주가는 ${sg(dp, 1)} 움직여 ${Math.abs(dp - dc) < 0.05 ? '주가가 이익 추정 변화만큼 움직였습니다' : dp > dc ? '주가가 이익 추정보다 더 올랐습니다(기대가 먼저 반영)' : '주가가 이익 추정보다 덜 올랐거나 더 내렸습니다(이익 대비 할인 확대)'}.`;
+    }
+    parts.push(`<div class="note">${note}</div>`);
+  }
+  // 2) 증권사 목표주가 언급(뉴스) → 시장과 다른 의견 표시
+  const T = d.tp_mentions || [];
+  if (T.length) {
+    const ref = (H.length && H[H.length - 1][1].tp) || median(T.map(x => x.tp));
+    const odd = x => ref && Math.abs(x.tp / ref - 1) >= 0.25;
+    parts.push(table(['날짜', '증권사', '목표주가(원)', ref ? '평균 대비' : '', '당시 주가 대비', '기사'], T.slice(0, 10).map(x => {
+      const p = priceAt(d, x.date);
+      return { c: [esc(x.date), esc(x.broker || '–'), won(x.tp) + (odd(x) ? ' <span class="tag">다른 의견</span>' : ''), ref ? sg(x.tp / ref - 1) : '', p ? sg(x.tp / p - 1) : '–',
+        `<a href="${esc(x.url)}" target="_blank" rel="noopener">${esc((x.title || '').slice(0, 34))}</a>`] };
+    })));
+    const n = T.filter(odd).length;
+    parts.push(`<div class="note">뉴스 제목·요약에 나온 증권사 목표주가입니다. ${ref ? `기준은 ${H.length && H[H.length - 1][1].tp ? '컨센서스 목표주가 평균' : '언급된 목표주가의 중앙값'} ${won(ref)}원이고, 25% 이상 벗어난 의견 ${n}건에 '다른 의견' 표시를 했습니다. 이런 리포트는 원고에서 근거(어느 가정이 다른지)를 깊게 분석합니다.` : ''}</div>`);
+  }
+  return parts.length ? always(parts.join('')) : null;
+}
+function priceAt(d, date) {
+  const P = d.prices || {}, ms = P.months || [], cl = P.close || [];
+  if (!date || !ms.length) return null;
+  const k = date.slice(0, 7); const i = ms.indexOf(k);
+  if (k >= ms[ms.length - 1]) return d.price || cl[cl.length - 1];
+  return i >= 0 ? cl[i] : null;
 }
 
 const POSW = /(최대|사상\s*최|증가|상향|수주|흑자|호조|성장|신고가|매수|확대|돌파|개선|공급\s*시작|양산|승인|편입|상승|급등|순항)/;
