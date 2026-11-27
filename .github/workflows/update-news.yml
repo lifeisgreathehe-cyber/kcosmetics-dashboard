@@ -35,6 +35,7 @@ jobs:
             ind=$(basename "$d")
             [ -f "config/$ind/stock_hist.json" ] && (timeout 120 python scripts/update.py --industry "$ind" --only stock_hist || true)
           done
+          true  # 마지막 폴더(config/trends 등)에 설정 파일이 없어도 실패로 끝나지 않게
       - name: main 반영
         run: |
           git config user.name "github-actions[bot]"
