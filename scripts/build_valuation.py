@@ -604,6 +604,16 @@ def main(industry="cosmetics"):
     except Exception as e:  # noqa: BLE001
         import traceback; traceback.print_exc()
         print("checks 실패:", e)
+    try:
+        # 리포트식 점검(5년 기대수익률·이익률 충격 사례·영업이익 변화 분해·민감도·동종 비교·투자 방법).
+        # 이엔에프 AI 리포트 역엔지니어링(2026-11-27)에서 가져온 도구. 적정가는 바꾸지 않아요.
+        import sys as _s
+        _s.path.insert(0, os.path.join(ROOT, "scripts"))
+        import lens
+        lens.apply(cos, out, cfg, ROOT, dd)
+    except Exception as e:  # noqa: BLE001
+        import traceback; traceback.print_exc()
+        print("lens 실패:", e)
     out["companies"] = {c["code"]: out["companies"][c["code"]] for c in cos.get("companies", [])
                         if c["code"] in out["companies"]}
     with open(P(*dd, "valuation.json"), "w", encoding="utf-8") as f:
