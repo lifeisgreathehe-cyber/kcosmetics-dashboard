@@ -135,6 +135,37 @@ def gp_shocks(quarterly):
 SRC = {}
 
 
+CONS_HIST = ROOT / "raw" / "consensus" / "history.json"
+TP_RE = re.compile(r"목표(?:주)?가[^0-9\n]{0,15}?([\d,]+(?:\.\d+)?)\s*(?:(만)\s*원?|원)")
+BROKER_RE = re.compile(r"([가-힣A-Za-z]{2,8}(?:증권|투자증권|證|투자))")
+
+
+def tp_mentions(*lists):
+    """뉴스 제목·요약에서 증권사 목표주가 언급 → [{date, broker, tp, title, url}] (최근순, 중복 제거)."""
+    out, seen = [], set()
+    for L in lists:
+        for x in L or []:
+            t = (x.get("title") or "") + " " + (x.get("summary") or "")
+            m = TP_RE.search(t)
+            if not m:
+                continue
+            v = float(m.group(1).replace(",", ""))
+            if m.group(2):
+                v *= 10000
+            if v < 100:
+                continue
+            b = BROKER_RE.search(x.get("title") or "") or BROKER_RE.search(t)
+            k = (x.get("date"), int(v))
+            if k in seen:
+                continue
+            seen.add(k)
+            out.append({"date": x.get("date"), "broker": b.group(1) if b else None, "tp": v,
+                        "title": x.get("title"), "url": x.get("url")})
+    return sorted(out, key=lambda r: r["date"] or "", reverse=True)[:30]
+
+
+CONS = {}
+
 def synth_sources(dp, cx, ia, rv):
     """업종 대시보드 파이프라인이 이미 만든 '자료 → 해석' 결과(사업보고서 발췌·IR 판독·뉴스 해석·연관기업 신호)를
     리포트 각 장의 재료로 넘긴다. 피셔 점수·해자 등급 같은 기존 대시보드의 평가 점수는 넘기지 않는다."""
@@ -169,6 +200,8 @@ def news_months(nh):
 
 
 def main():
+    global CONS
+    CONS = (jload(CONS_HIST, {}) or {}).get("series", {})
     OUT.mkdir(parents=True, exist_ok=True)
     (OUT / "c").mkdir(exist_ok=True)
     today = dt.date.today().isoformat()
@@ -243,6 +276,8 @@ def main():
                           "fy": max(annual) if annual else None, "equity": (c.get("bs") or {}).get("equity")},
                        **({k: annual[max(annual)].get(k) for k in ("rev", "op", "ni")} if annual else {})}] + peers,
             "manual": manual,
+            "cons_hist": CONS.get(code, [])[-400:],
+            "tp_mentions": tp_mentions(nw if isinstance(nw, list) else [], nh if isinstance(nh, list) else []),
             "src": SRC.get(code) or {},
         }
         # 이엔에프 원본처럼 '재작성 전'과 다를 수 있어 표시용 플래그
