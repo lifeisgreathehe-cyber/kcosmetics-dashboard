@@ -1,0 +1,215 @@
+[
+ {
+  "file": "orders.json",
+  "title": "건설수주액 (발주자별, 경상)",
+  "source": "국가데이터처 건설경기동향조사 (백만원)",
+  "orgId": "101",
+  "tblId": "DT_1G1B002",
+  "itmId": "T10",
+  "objL1": "0+1+2",
+  "objL2": "0",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "수주총액": "총액",
+   "공공부문": "공공",
+   "민간부문": "민간"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1G1B002"
+ },
+ {
+  "file": "orders_type.json",
+  "title": "건설수주액 (공종별, 경상)",
+  "source": "국가데이터처 건설경기동향조사 (백만원)",
+  "orgId": "101",
+  "tblId": "DT_1G1B002",
+  "itmId": "T10",
+  "objL1": "0",
+  "objL2": "1+11+12+13+2",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C2_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1G1B002",
+  "rename": {
+   " 주택": "주택",
+   "주택": "주택"
+  }
+ },
+ {
+  "file": "gisung.json",
+  "title": "건설기성액 (불변)",
+  "source": "국가데이터처 건설경기동향조사 (백만원, 불변)",
+  "orgId": "101",
+  "tblId": "DT_1G18011",
+  "itmId": "T10",
+  "objL1": "0+1+2",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1G18011"
+ },
+ {
+  "file": "housing_starts.json",
+  "title": "주택 착공 (전국, 호)",
+  "source": "국토교통부 주택건설실적통계 (월계)",
+  "orgId": "116",
+  "tblId": "DT_MLTM_5386",
+  "itmId": "13103766971T1",
+  "objL1": "13102766971A.0001",
+  "objL2": "13102766971B.0001",
+  "objL3": "13102766971C.0001",
+  "prdSe": "M",
+  "start": "201101",
+  "series_key": "C1_NM",
+  "rename": {
+   "총계": "착공"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_5386"
+ },
+ {
+  "file": "housing_permits.json",
+  "title": "주택 인허가 (전국, 연중 누계, 호)",
+  "source": "국토교통부 주택건설실적통계 (월별 누계)",
+  "orgId": "116",
+  "tblId": "DT_MLTM_1946",
+  "itmId": "13103871089T1",
+  "objL1": "13102871089A.0001",
+  "objL2": "13102871089B.0001",
+  "objL3": "13102871089C.0001",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "총  계": "인허가누계",
+   "총계": "인허가누계"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_1946"
+ },
+ {
+  "file": "presale.json",
+  "title": "공동주택 분양 실적 (전국, 호)",
+  "source": "국토교통부 주택건설실적통계 (분양실적, 순계)",
+  "orgId": "116",
+  "tblId": "DT_MLTM_5557",
+  "itmId": "13103133605T1+13103133605T2+13103133605T3+13103133605T4",
+  "objL1": "13102133605A.0001",
+  "objL2": "13102133605B.0001",
+  "objL3": "13102133605C.0001",
+  "prdSe": "M",
+  "start": "201301",
+  "series_key": "ITM_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_5557"
+ },
+ {
+  "file": "unsold.json",
+  "title": "미분양 주택 (호)",
+  "source": "국토교통부 미분양주택현황보고",
+  "orgId": "116",
+  "tblId": "DT_MLTM_2080",
+  "itmId": "13103792722T1",
+  "objL1": "13102792722A.0001+13102792722A.0002",
+  "objL2": "13102792722B.0001",
+  "objL3": "13102792722C.0001",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_2080"
+ },
+ {
+  "file": "unsold_done.json",
+  "title": "준공 후 미분양 (전국, 호)",
+  "source": "국토교통부 미분양주택현황보고 (공사완료후 미분양)",
+  "orgId": "116",
+  "tblId": "DT_MLTM_5328",
+  "itmId": "13103871088T1",
+  "objL1": "13102871088A.0001",
+  "objL2": "13102871088B.0001",
+  "objL3": "13102871088C.0001",
+  "objL4": "13102871088D.0001",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "rename": {
+   "전국": "준공후미분양"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=116&tblId=DT_MLTM_5328"
+ },
+ {
+  "file": "cement_index.json",
+  "title": "시멘트·석회·플라스터 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C233",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001"
+ },
+ {
+  "file": "nonmetal_index.json",
+  "title": "비금속 광물제품(시멘트·유리·레미콘·벽돌) 제조업 생산·출하·재고지수",
+  "source": "국가데이터처 광업제조업동향조사 (2020=100, 원지수)",
+  "orgId": "101",
+  "tblId": "DT_1F02001",
+  "itmId": "T10+T11+T12",
+  "objL1": "00",
+  "objL2": "C23",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "ITM_NM",
+  "rename": {
+   "생산지수(원지수)": "생산",
+   "생산자제품 출하지수(원지수)": "출하",
+   "생산자제품 재고지수(원지수)": "재고"
+  },
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001"
+ },
+ {
+  "file": "material_ppi.json",
+  "title": "건설자재 생산자물가지수",
+  "source": "한국은행 생산자물가조사 (2020=100)",
+  "orgId": "301",
+  "tblId": "DT_404Y016",
+  "itmId": "ALL",
+  "objL1": "13102134764ACC_CD.30622101AA+13102134764ACC_CD.30623101AA+13102134764ACC_CD.30611101AA+13102134764ACC_CD.30712101AA+13102134764ACC_CD.30712201AA",
+  "prdSe": "M",
+  "start": "201501",
+  "series_key": "C1_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016"
+ },
+ {
+  "file": "apt_price.json",
+  "title": "아파트 매매 실거래가격지수",
+  "source": "한국부동산원 공동주택실거래가격지수",
+  "orgId": "408",
+  "tblId": "DT_KAB_11672_S1",
+  "itmId": "T1",
+  "objL1": "000+010+020",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=408&tblId=DT_KAB_11672_S1"
+ },
+ {
+  "file": "mortgage_rate.json",
+  "title": "예금은행 주택담보대출 금리 (신규취급액, 연%)",
+  "source": "한국은행 통화금융통계",
+  "orgId": "301",
+  "tblId": "DT_121Y006",
+  "itmId": "ALL",
+  "objL1": "13102134553ACC_ITEM.BECBLA0302",
+  "prdSe": "M",
+  "start": "201001",
+  "series_key": "C1_NM",
+  "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_121Y006"
+ }
+]
