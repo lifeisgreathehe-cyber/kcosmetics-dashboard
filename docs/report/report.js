@@ -382,7 +382,7 @@ const yl = (M, y) => M.rows[y] && M.rows[y].est ? y + 'E' : String(y);
 // ---------------------------------------------------------------- 리포트
 function render() {
   const d = S.d, M = S.M = buildModel(d, S.ov), man = d.manual || {};
-  if (!M) { $('#out').innerHTML = `<div class="paper">${esc(d.name)}: 재무 자료가 아직 없습니다.</div>`; return; }
+  if (!M) { $('#out').innerHTML = `<div class="paper"><h1>${esc(d.name)}</h1>${wait('DART 재무 자료가 아직 수집되지 않은 회사입니다. PC에서 scripts\\dart_all.bat 을 실행하면 리포트가 만들어집니다.')}${synth('intro')}${synth('products')}${synth('strategy')}</div>`; return; }
   const R = M.rows, FY = M.FY, CY = M.CY, base = M.sc[1];
   const cyRow = R[CY], nxt = R[CY + 1];
   const name = d.name, Nm = eunNeun(name);
