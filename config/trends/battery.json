@@ -1,0 +1,242 @@
+{
+ "title": "2차전지",
+ "index_name": "2차전지 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "배터리 주가는 전기차 판매 기대(테슬라·미국 정책), 리튬·니켈 가격(판가 연동과 재고평가), 수출 물량 순으로 반응해요. 메탈 가격은 양극재 판가에 2~3개월 시차로 반영돼요.",
+ "series": [
+  {
+   "id": "exp_liion",
+   "name": "리튬이온 축전지 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.리튬이온 축전지"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "셀·팩 수출(HS 850760)이에요. 해외 공장 비중이 커져 국내 수출은 일부만 보여줘요.",
+   "read": "증가율이 회복하면 국내 라인 가동률이 오르는 중이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_cam",
+   "name": "양극재 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "extra.양극재(HS 284190).exports"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 284190)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "에코프로비엠·엘앤에프·포스코퓨처엠 매출과 직결되는 양극재 수출이에요.",
+   "read": "물량과 메탈 가격이 함께 들어가 양극재 업체 매출과 거의 같이 움직여요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cam_px",
+   "name": "양극재 수출 단가",
+   "group": "가격·마진",
+   "unit": "달러/kg",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "extra.양극재(HS 284190).exp_price"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청(금액÷중량)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "양극재 kg당 수출 단가예요. 리튬·니켈 가격이 판가에 반영된 결과예요.",
+   "read": "단가 하락기엔 재고평가 손실로 이익이 매출보다 더 나빠져요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "xp_bat",
+   "name": "전지 수출물가지수",
+   "group": "가격·마진",
+   "unit": "2020=100(달러)",
+   "src": {
+    "file": "export_price.json",
+    "path": "series.전지"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "한국은행 조사 전지 수출 가격이에요.",
+   "read": "판가가 떨어지는 국면이면 물량이 늘어도 이익은 줄 수 있어요.",
+   "sign": 1
+  },
+  {
+   "id": "lioh",
+   "name": "수산화리튬 수입물가(달러)",
+   "group": "원가",
+   "unit": "지수",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.수산화리튬"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "하이니켈 양극재의 핵심 원료 가격이에요.",
+   "read": "리튬 가격 상승은 양극재 판가·재고 이익에 플러스, 셀 업체엔 원가 부담이에요. 업종 지수는 소재주 비중이 커서 대체로 플러스예요.",
+   "sign": 1
+  },
+  {
+   "id": "nickel_imp",
+   "name": "니켈괴 수입물가(달러)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.니켈괴"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "NCM 양극재의 주원료 니켈 가격이에요.",
+   "read": "니켈 가격 방향은 양극재·전구체 판가로 이어져요."
+  },
+  {
+   "id": "ship_bat",
+   "name": "전지 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "production_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 전지 공장 출하 물량이에요.",
+   "read": "출하 증가율이 높아지면 국내 가동률 회복이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cyc_bat",
+   "name": "출하−재고 순환(전지)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "production_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "production_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "전지 출하 증가율 − 재고 증가율이에요.",
+   "read": "재고가 줄며 출하가 늘면 업황 회복 신호예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "lit",
+   "name": "글로벌 리튬·배터리 ETF(LIT)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:LIT"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(LIT)",
+   "url": "https://finance.yahoo.com/quote/LIT/",
+   "why": "앨버말·CATL·LG에너지솔루션 등 리튬·배터리 체인 종목을 담은 미국 ETF예요.",
+   "read": "해외 투자자의 배터리 업황 기대를 보여줘요.",
+   "sign": 1
+  },
+  {
+   "id": "alb",
+   "name": "앨버말(리튬 1위) 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:ALB"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ALB)",
+   "url": "https://finance.yahoo.com/quote/ALB/",
+   "why": "세계 최대 리튬 생산사예요. 리튬 가격 기대가 가장 먼저 반영돼요.",
+   "read": "앨버말이 바닥을 다지면 리튬 가격 바닥 기대가 커지는 국면이에요.",
+   "sign": 1
+  },
+  {
+   "id": "tsla",
+   "name": "테슬라 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:TSLA"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(TSLA)",
+   "url": "https://finance.yahoo.com/quote/TSLA/",
+   "why": "전기차 수요 기대의 대표 지표예요.",
+   "read": "테슬라 주가가 전기차 시장 성장 기대를 대변해요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_ni",
+   "name": "상하이 니켈 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:NI0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 상하이선물거래소 니켈 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/NI0.shtml",
+   "why": "중국 니켈 가격이에요. LME보다 빨리 중국 수요를 반영해요.",
+   "read": "니켈 가격 상승은 양극재 판가 상승으로 이어져요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_lc",
+   "name": "중국 탄산리튬 선물(광저우)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:LC0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 광저우선물거래소 탄산리튬 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/LC0.shtml",
+   "why": "2023년 7월 상장된 탄산리튬 선물이에요. 리튬 현물가의 가장 빠른 지표예요.",
+   "read": "기간이 짧아 상관 판정은 자료가 쌓인 뒤에 나와요.",
+   "sign": 1
+  }
+ ]
+}

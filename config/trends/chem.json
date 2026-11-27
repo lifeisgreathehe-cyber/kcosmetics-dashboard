@@ -1,0 +1,278 @@
+{
+ "title": "화학·정유",
+ "index_name": "화학·정유 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "skip_common": [],
+ "intro": "정유는 '정제마진(제품가−원유가)', 석유화학은 '제품 스프레드(제품가−나프타)'와 중국 공급 과잉이 이익을 좌우해요. 유가 방향은 재고평가 손익으로 분기 실적을 흔들어요.",
+ "series": [
+  {
+   "id": "exp_oil",
+   "name": "석유제품 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.석유제품"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "정유 4사 매출의 절반 이상이 수출이에요(HS 2710). 물량과 가격이 함께 반영돼요.",
+   "read": "수출액이 유가보다 빨리 늘면 마진이 좋은 국면이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_resin",
+   "name": "플라스틱·합성수지 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.플라스틱·합성수지"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "석유화학 주력 수출품(HS 39)이에요. 중국 수요와 경쟁이 그대로 보여요.",
+   "read": "증가율이 마이너스에서 회복하면 업황 바닥 통과 신호예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "xp_oil",
+   "name": "석유제품 수출물가",
+   "group": "가격·마진",
+   "unit": "2020=100(달러)",
+   "src": {
+    "file": "export_price.json",
+    "path": "series.석유제품"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "휘발유·경유·항공유 수출 가격이에요.",
+   "read": "원유가보다 더 오르면 정제마진 확대예요.",
+   "sign": 1
+  },
+  {
+   "id": "crack",
+   "name": "정제마진 대용치 (석유제품 수출물가 ÷ 원유 수입물가)",
+   "group": "가격·마진",
+   "unit": "비율×100",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "export_price.json",
+     "path": "series.석유제품"
+    },
+    "b": {
+     "file": "crude_price.json",
+     "path": "series.달러기준"
+    },
+    "scale": 100
+   },
+   "tf": "diff12",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "제품 가격이 원유 가격보다 얼마나 비싼지를 지수로 본 값이에요. 싱가포르 복합 정제마진과 방향이 비슷해요.",
+   "read": "비율이 1년 전보다 높아지면 정유사 마진 개선이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "chem_spread",
+   "name": "화학 마진 대용치 (기초유기화학 수출물가 ÷ 원유 수입물가)",
+   "group": "가격·마진",
+   "unit": "비율×100",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "export_price.json",
+     "path": "series.기초유기화학물질"
+    },
+    "b": {
+     "file": "crude_price.json",
+     "path": "series.달러기준"
+    },
+    "scale": 100
+   },
+   "tf": "diff12",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "에틸렌·프로필렌·BTX 같은 기초유분 가격이 원료(원유·나프타)보다 얼마나 비싼지예요.",
+   "read": "1년 전보다 높아지면 NCC 스프레드 개선이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "eth_naph",
+   "name": "에틸렌 수출단가 − 나프타 수입단가",
+   "group": "가격·마진",
+   "unit": "달러/kg",
+   "src": {
+    "calc": "diff",
+    "a": {
+     "file": "customs_exports.json",
+     "path": "extra.에틸렌.exp_price"
+    },
+    "b": {
+     "file": "customs_exports.json",
+     "path": "extra.경질유(나프타·휘발유).imp_price"
+    }
+   },
+   "tf": "diff12",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적으로 계산",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "NCC(나프타 분해) 마진의 가장 대표적인 스프레드예요. 관세청 금액÷중량으로 계산했어요.",
+   "read": "1년 전보다 스프레드가 넓어지면 석유화학 이익 회복 신호예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "crude_imp",
+   "name": "원유 수입물가(달러)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "crude_price.json",
+    "path": "series.달러기준"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "원유는 정유·화학의 원재료예요.",
+   "read": "정유는 유가 상승기에 재고 이익, 화학은 원가 부담. 업종 전체 부호는 둘 중 큰 쪽을 따라가요."
+  },
+  {
+   "id": "ship_chem",
+   "name": "화학제품 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "chem_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 화학 공장 출하 물량이에요.",
+   "read": "출하 증가율이 높아지면 가동률 회복이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cyc_chem",
+   "name": "출하−재고 순환(화학)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "chem_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "chem_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "화학 제품의 출하 증가율 − 재고 증가율이에요.",
+   "read": "플러스로 돌아서면 재고 소진·업황 회복 신호예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cyc_ref",
+   "name": "출하−재고 순환(정유)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "refining_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "refining_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "석유정제품의 출하 증가율 − 재고 증가율이에요.",
+   "read": "플러스면 제품 재고가 줄며 마진이 좋아지는 국면이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cn_pp",
+   "name": "중국 PP 선물(다롄)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:PP0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 다롄상품거래소 PP 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/PP0.shtml",
+   "why": "세계 최대 생산·소비국 중국의 폴리프로필렌 가격이에요. 한국 석유화학 판가의 기준이에요.",
+   "read": "중국 선물이 오르면 1~2개월 뒤 한국 수출가도 따라 올라요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_pta",
+   "name": "중국 PTA 선물(정저우)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:TA0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 정저우상품거래소 PTA 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/TA0.shtml",
+   "why": "폴리에스터 원료로 아로마틱(PX·PTA) 업황을 보여줘요.",
+   "read": "PTA 가격 회복은 롯데케미칼·한화솔루션 등 아로마틱 사업에 유리해요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_pvc",
+   "name": "중국 PVC 선물(다롄)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:V0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 다롄상품거래소 PVC 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/V0.shtml",
+   "why": "건설 경기에 민감한 PVC 가격이에요(LG화학·한화솔루션).",
+   "read": "중국 부동산 경기의 바로미터이기도 해요.",
+   "sign": 1
+  }
+ ]
+}

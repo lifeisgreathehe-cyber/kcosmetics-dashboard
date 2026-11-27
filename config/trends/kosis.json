@@ -1,0 +1,8 @@
+[
+ {"id":"lead_cycle","name":"경기선행지수 순환변동치","orgId":"101","tblId":"DT_1C8015","itmId":"T1","objL1":"A03","start":"200801"},
+ {"id":"coin_cycle","name":"경기동행지수 순환변동치","orgId":"101","tblId":"DT_1C8015","itmId":"T1","objL1":"B03","start":"200801"},
+ {"id":"inv_cycle","name":"재고순환지표(%p)","orgId":"101","tblId":"DT_1C8016","itmId":"T1","objL1":"A0101","start":"200801"},
+ {"id":"esi","name":"경제심리지수","orgId":"101","tblId":"DT_1C8016","itmId":"T1","objL1":"A0102","start":"200801"},
+ {"id":"csi","name":"소비자심리지수","orgId":"301","tblId":"DT_511Y002","itmId":"13103134688999","objL1":"13102134688CSI_CD.FME","objL2":"ALL","where":{"C2_NM":"전체"},"start":"200809"},
+ {"id":"cos_xp","name":"화장품 수출물가지수(달러)","orgId":"301","tblId":"DT_402Y014","itmId":"ALL","objL1":"13102134642ACC_CD.305622AA","objL2":"ALL","where":{"C2_NM":"달러기준"},"start":"201001"}
+]

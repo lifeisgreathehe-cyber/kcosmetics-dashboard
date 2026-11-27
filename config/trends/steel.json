@@ -1,0 +1,273 @@
+{
+ "title": "철강·비철",
+ "index_name": "철강·비철 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "철강은 '제품가 − 원료가(철광석·석탄·고철)' 스프레드와 중국 수출(공급 과잉)이 이익을 좌우해요. 중국 철강 선물은 국내 판가보다 1~3개월 먼저 움직이는 경우가 많아요. 비철(고려아연·전선)은 구리·아연·금·은 가격을 따라가요.",
+ "series": [
+  {
+   "id": "exp_steel",
+   "name": "철강재 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.철강재(판재·봉형강·반제품)"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "판재·봉형강 수출(HS 72)이에요.",
+   "read": "수출 단가와 물량이 함께 반영돼요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "imp_steel",
+   "name": "철강재 수입액(중국산 압박)",
+   "group": "공급·재고",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "imports_series.철강재(판재·봉형강·반제품)"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "중국·일본산 저가 철강재 수입이에요.",
+   "read": "수입이 늘면 국내 유통가가 눌려요. 반덤핑 관세로 줄면 국내 판가 회복이에요.",
+   "ma": 3,
+   "sign": -1
+  },
+  {
+   "id": "hrc",
+   "name": "열연강판 가격(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "steel_ppi.json",
+    "path": "series.열연강대및강판"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "판재류 기준 가격이에요(POSCO·현대제철).",
+   "read": "열연 가격은 냉연·도금·강관 가격의 기준이에요.",
+   "sign": 1
+  },
+  {
+   "id": "rebar",
+   "name": "철근 가격(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "steel_ppi.json",
+    "path": "series.일반철근"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "건설용 철근 가격이에요(현대제철·동국제강·대한제강).",
+   "read": "건설 경기와 고철 가격에 좌우돼요.",
+   "sign": 1
+  },
+  {
+   "id": "bf_spread",
+   "name": "고로 마진 대용치 (열연 가격 ÷ 철광석 수입물가)",
+   "group": "가격·마진",
+   "unit": "비율×100",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "steel_ppi.json",
+     "path": "series.열연강대및강판"
+    },
+    "b": {
+     "file": "raw_price.json",
+     "path": "series.철광석"
+    },
+    "scale": 100
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "제품가 ÷ 원료가로 본 고로 마진이에요(원화 PPI ÷ 달러 수입물가라 환율 효과도 섞여 있어요).",
+   "read": "1년 전보다 높아지면 고로 마진 개선이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "eaf_spread",
+   "name": "전기로 마진 대용치 (철근 가격 ÷ 고철 수입물가)",
+   "group": "가격·마진",
+   "unit": "비율×100",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "steel_ppi.json",
+     "path": "series.일반철근"
+    },
+    "b": {
+     "file": "raw_price.json",
+     "path": "series.고철"
+    },
+    "scale": 100
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국은행 물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "철근−고철 스프레드의 대용치예요.",
+   "read": "1년 전보다 높아지면 전기로 마진 개선이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "ore",
+   "name": "철광석 수입물가(달러)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "raw_price.json",
+    "path": "series.철광석"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "고로 원가의 핵심이에요.",
+   "read": "철광석 가격은 중국 수요 기대를 반영해 철강 주가와 같은 방향으로 움직이기도 해요."
+  },
+  {
+   "id": "scrap",
+   "name": "고철 수입물가(달러)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "raw_price.json",
+    "path": "series.고철"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "전기로 원가예요.",
+   "read": "고철 가격이 철근보다 빨리 오르면 전기로 마진이 줄어요."
+  },
+  {
+   "id": "cyc_steel",
+   "name": "출하−재고 순환(1차 철강)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "steel_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "steel_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "철강 출하 증가율 − 재고 증가율이에요.",
+   "read": "재고가 줄며 출하가 늘면 가격 인상 여력이 생겨요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cn_rebar",
+   "name": "중국 철근 선물(상하이)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:RB0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 상하이선물거래소 철근 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/RB0.shtml",
+   "why": "세계 철강 가격의 기준 역할을 하는 중국 철근 선물이에요.",
+   "read": "중국 부동산·인프라 경기와 감산 정책을 가장 빨리 반영해요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_hrc",
+   "name": "중국 열연 선물(상하이)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:HC0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 상하이선물거래소 열연 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/HC0.shtml",
+   "why": "중국 열연 가격이에요. 한국 수입 열연·유통가의 기준이에요.",
+   "read": "중국 열연이 오르면 1~2개월 뒤 국내 판재 가격 인상 여력이 생겨요.",
+   "sign": 1
+  },
+  {
+   "id": "cn_ore",
+   "name": "중국 철광석 선물(다롄)",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:I0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 다롄상품거래소 철광석 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/I0.shtml",
+   "why": "중국 철광석 가격이에요.",
+   "read": "철강 수요 기대와 원가를 함께 반영해요."
+  },
+  {
+   "id": "zinc",
+   "name": "상하이 아연 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "위안/톤",
+   "src": {
+    "market": "sina:ZN0"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Sina Finance 상하이선물거래소 아연 연결선물 월평균",
+   "url": "https://finance.sina.com.cn/futures/quotes/ZN0.shtml",
+   "why": "고려아연·영풍의 주력 제품 가격이에요.",
+   "read": "아연 가격과 제련 수수료(TC)가 제련사 이익을 결정해요.",
+   "sign": 1
+  },
+  {
+   "id": "gold",
+   "name": "금 가격",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러/온스",
+   "src": {
+    "market": "yahoo:GC=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(GC=F)",
+   "url": "https://finance.yahoo.com/quote/GC%3DF/",
+   "why": "고려아연 부산물(금·은) 이익과 안전자산 수요를 보여줘요.",
+   "read": "금·은 가격 상승은 제련사 이익에 플러스예요.",
+   "sign": 1
+  }
+ ]
+}

@@ -1,0 +1,231 @@
+{
+ "title": "자동차",
+ "index_name": "자동차 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "완성차 주가는 미국 판매·수출 단가(믹스), 원/달러·원/엔 환율, 관세 같은 정책에 반응해요. 부품사는 완성차 생산 물량을 1~2분기 늦게 따라가요.",
+ "series": [
+  {
+   "id": "exp_car",
+   "name": "승용차 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.승용차"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "현대차·기아 국내 생산분 수출이에요(HS 8703).",
+   "read": "증가율이 꺾이면 완성차 이익 모멘텀 둔화예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_parts",
+   "name": "자동차부품 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.자동차부품"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "해외 공장으로 보내는 부품(HS 8708)이에요. 해외 생산 물량을 보여줘요.",
+   "read": "부품사 매출의 동행 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "car_px",
+   "name": "승용차 수출 단가",
+   "group": "가격·마진",
+   "unit": "달러/kg",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "unit_price.승용차"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청(금액÷중량)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "수출액 ÷ 중량이에요. SUV·제네시스·전기차 비중(믹스)이 높아지면 올라가요.",
+   "read": "단가 상승은 대당 이익 증가로 이어져요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_hev",
+   "name": "하이브리드차 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "extra.하이브리드(HEV).exports"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "전기차 캐즘 속 현대차·기아 성장을 이끄는 하이브리드 수출이에요.",
+   "read": "친환경차 믹스 개선 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "dom_car",
+   "name": "승용차 내수 판매(소매판매액지수)",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "retail_car.json",
+    "path": "series.승용차 전체"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41012",
+   "why": "국내 승용차 판매(불변)예요.",
+   "read": "개소세 인하 등 정책 효과가 크게 반영돼요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "ship_auto",
+   "name": "자동차 제조업 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "auto_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "완성차+부품 국내 출하 물량이에요.",
+   "read": "부품사 매출과 가장 비슷하게 움직여요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cyc_auto",
+   "name": "출하−재고 순환(자동차)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "auto_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "auto_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "자동차 출하 증가율 − 재고 증가율이에요.",
+   "read": "재고가 쌓이면 인센티브(할인)가 늘어 이익이 줄어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "rubber",
+   "name": "천연고무 수입물가(원화)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.천연고무"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "타이어 원가의 핵심이에요.",
+   "read": "고무 가격이 오르면 타이어 3사 마진에 부담이에요(3~6개월 시차).",
+   "ma": 3,
+   "sign": -1
+  },
+  {
+   "id": "alu",
+   "name": "알루미늄판 수입물가(원화)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.알루미늄판"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "경량화 차체·부품 원가예요.",
+   "read": "원가 상승은 부품사 마진에 부담이에요.",
+   "ma": 3,
+   "sign": -1
+  },
+  {
+   "id": "jpykrw",
+   "name": "원/엔 환율",
+   "group": "거시·금융",
+   "unit": "원/엔",
+   "src": {
+    "market": "yahoo:JPYKRW=X"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(JPYKRW=X)",
+   "url": "https://finance.yahoo.com/quote/JPYKRW=X/",
+   "why": "일본 완성차(도요타·혼다)와 해외에서 경쟁하므로 엔화 약세는 한국차 가격 경쟁력에 불리해요.",
+   "read": "상관이 플러스면 엔화 강세(원/엔 상승)가 업종에 유리하다는 뜻이에요."
+  },
+  {
+   "id": "toyota",
+   "name": "도요타 주가(ADR)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:TM"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(TM)",
+   "url": "https://finance.yahoo.com/quote/TM/",
+   "why": "세계 1위 완성차로 글로벌 자동차 업황 기대를 대표해요.",
+   "read": "같은 업황 요인(미국 수요·관세·환율)에 함께 반응해요.",
+   "sign": 1
+  },
+  {
+   "id": "carx",
+   "name": "글로벌 자동차 ETF(CARZ)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:CARZ"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(CARZ)",
+   "url": "https://finance.yahoo.com/quote/CARZ/",
+   "why": "세계 주요 완성차·부품사 ETF예요.",
+   "read": "글로벌 자동차 주가 사이클을 보여줘요.",
+   "sign": 1
+  }
+ ]
+}
