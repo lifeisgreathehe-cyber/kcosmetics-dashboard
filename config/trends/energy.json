@@ -1,0 +1,565 @@
+{
+ "title": "에너지·전력",
+ "index_name": "에너지·전력 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "에너지 업종은 하위 업종마다 움직이는 지표가 달라요. 전력기기·전선은 '미국 전력기기 주가·변압기 가격 → 수출액 → 실적', 한전·가스는 '연료비(LNG·석탄)와 요금', 원전·풍력·태양광은 해외 동종 기업 주가와 정책 뉴스가 먼저 움직여요. 아래 지표를 업종 주가와 시차를 두고 맞춰 본 결과예요.",
+ "series": [
+  {
+   "id": "exp_total",
+   "name": "에너지 기자재 수출액(합계)",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 8504·8544·8535~8537·8502·8401·8406·730820·854143)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "변압기·전선·차단기·발전기·원전·풍력 타워·태양광 모듈 수출을 합친 값이에요. 국내 전력기기·전선 회사 이익의 절반 이상이 수출이에요.",
+   "read": "전년 대비 증가율(3개월 평균)이 꺾이면 전력기기 주가가 먼저 쉬는 경우가 많아요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "exp_trx",
+   "name": "변압기 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.변압기·인버터"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 8504)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "HD현대일렉트릭·효성중공업·LS ELECTRIC·산일전기·일진전기 이익과 가장 직접 연결돼요. 미국 데이터센터·노후 교체 수요가 반영돼요.",
+   "read": "수주 후 1~2년 뒤 수출되므로 실적에는 동행, 주가에는 후행인 경우가 많아요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "exp_cable",
+   "name": "전선·케이블 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.전선·케이블"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 8544)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "LS전선·대한전선·가온전선 등 전선사의 수출 물량과 구리 가격이 함께 반영돼요.",
+   "read": "구리 가격 효과가 섞이므로 구리 가격과 같이 봐야 해요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "exp_swgr",
+   "name": "개폐기·차단기·배전반 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "calc": "sum",
+    "parts": [
+     {
+      "file": "customs_exports.json",
+      "path": "series.고압 개폐기·차단기"
+     },
+     {
+      "file": "customs_exports.json",
+      "path": "series.저압 개폐기·차단기"
+     },
+     {
+      "file": "customs_exports.json",
+      "path": "series.배전반·제어반"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 8535·8536·8537)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "LS ELECTRIC·제일일렉트릭·비츠로테크의 배전 기기 수출이에요. 데이터센터·공장 건설 경기를 따라가요.",
+   "read": "변압기보다 납기가 짧아 경기에 더 빨리 반응해요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "exp_nuc",
+   "name": "원자로·증기터빈 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "calc": "sum",
+    "parts": [
+     {
+      "file": "customs_exports.json",
+      "path": "series.원자로·부품"
+     },
+     {
+      "file": "customs_exports.json",
+      "path": "series.증기터빈"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 8401·8406)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "두산에너빌리티의 원자로·터빈 수출이에요. 바라카·체코 같은 대형 프로젝트 일정에 따라 들쭉날쭉해요.",
+   "read": "월별 변동이 커 12개월 합계 추세로 봐요. 주가는 수주 발표에 먼저 반응해요.",
+   "sign": 1,
+   "ma": 12
+  },
+  {
+   "id": "exp_tower",
+   "name": "풍력 타워(철구조물) 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.풍력 타워(철구조물)"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 730820)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "씨에스윈드·동국S&C·스페코 등 풍력 타워 업체의 국내 공장 수출이에요(해외 공장 생산분은 빠져요).",
+   "read": "풍력 업체 주가는 미국·유럽 정책 뉴스에 먼저 움직이고 수출은 뒤따라요.",
+   "sign": 1,
+   "ma": 6
+  },
+  {
+   "id": "exp_solar",
+   "name": "태양광 모듈 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.태양광 모듈"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 854143)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "한화솔루션·HD현대에너지솔루션의 국내 생산 모듈 수출이에요. 미국 관세·보조금 정책의 영향을 크게 받아요.",
+   "read": "미국 수출이 늘면 국내 모듈사 이익이 좋아져요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "ppi_trx",
+   "name": "송배전 변압기 생산자물가",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.송배전변압기"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "변압기 판매 가격이에요. 2020년 대비 약 2배로 올라 전력기기 회사 이익률 급등의 원인이 됐어요.",
+   "read": "가격 상승률이 둔화되면 '이익률 정점' 우려로 주가가 먼저 꺾일 수 있어요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_itrx",
+   "name": "산업용 변압기 생산자물가",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.산업용변압기"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "공장·데이터센터용 변압기 가격이에요.",
+   "read": "송배전 변압기와 함께 판가 사이클을 보여줘요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_swgr",
+   "name": "배전반 생산자물가",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.배전반"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "배전반 판매 가격이에요(LS ELECTRIC·중소 배전반 업체).",
+   "read": "변압기보다 경쟁이 심해 가격 상승이 작아요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_cable",
+   "name": "전력선 생산자물가",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.전력선"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "전력 케이블 판매 가격으로, 구리 가격을 대부분 반영해요.",
+   "read": "구리 가격과 거의 같이 움직여요. 전선사 매출은 늘지만 마진은 가공비에 달려 있어요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_ind_elec",
+   "name": "산업용 전기요금(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.산업용전력"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "한국전력의 판매 단가예요. 요금 인상은 한전 이익에 바로 더해져요.",
+   "read": "요금 인상 발표 시점에 한전 주가가 먼저 움직여요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_res_elec",
+   "name": "주택용 전기요금(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.주택용전력"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "주택용 전기요금이에요. 정치적 부담이 커서 가장 늦게 올라요.",
+   "read": "주택용 인상은 한전 재무 개선의 강한 신호예요.",
+   "sign": 1
+  },
+  {
+   "id": "ppi_gas",
+   "name": "주택용 도시가스요금(생산자물가)",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "energy_ppi.json",
+    "path": "series.주택용도시가스"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "가스공사·도시가스사의 판매 단가예요. 민수용 요금 인상은 가스공사 미수금 회수로 이어져요.",
+   "read": "인상되면 가스공사 주가에 긍정적이에요.",
+   "sign": 1
+  },
+  {
+   "id": "elec_spread",
+   "name": "전기요금 ÷ LNG 수입가(한전 마진 대리)",
+   "group": "가격·마진",
+   "unit": "비율",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "energy_ppi.json",
+     "path": "series.산업용전력"
+    },
+    "b": {
+     "file": "fuel_price.json",
+     "path": "series.천연가스(LNG)"
+    },
+    "scale": 100
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 생산자물가·수입물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_404Y016",
+   "why": "한전의 '판매 단가 − 연료비'를 근사한 값이에요. 이 비율이 오르면 한전 이익이 늘어요.",
+   "read": "한전 주가와 가장 밀접할 것으로 예상되는 지표예요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "lng",
+   "name": "LNG 수입물가",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "fuel_price.json",
+    "path": "series.천연가스(LNG)"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사(달러 기준)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "SMP(전력 도매가)를 결정하는 연료예요. 오르면 한전 비용이 늘고, 가스공사 매출이 늘어요.",
+   "read": "한전에는 반대(-), 정유·가스 유통사에는 같은 방향으로 작용해요.",
+   "sign": -1
+  },
+  {
+   "id": "coal",
+   "name": "유연탄 수입물가",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "fuel_price.json",
+    "path": "series.유연탄"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사(달러 기준)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "석탄발전 연료비예요. 한전·SGC에너지 이익에 영향을 줘요.",
+   "read": "오르면 한전 이익에 부정적이에요.",
+   "sign": -1
+  },
+  {
+   "id": "crude",
+   "name": "원유 수입물가",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "fuel_price.json",
+    "path": "series.원유"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사(달러 기준)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "정유사 원가이자, 몇 달 시차를 두고 LNG 장기계약 가격을 끌어올려요.",
+   "read": "유가 상승 초기에는 정유사 재고이익, 6~9개월 뒤에는 한전 비용 증가로 이어져요.",
+   "sign": -1
+  },
+  {
+   "id": "imp_lng",
+   "name": "LNG 수입액",
+   "group": "원가",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "extra.LNG·석유가스.imports"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 2711)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "가격과 물량이 함께 반영된 LNG 수입액이에요. 겨울 난방·발전 수요를 보여줘요.",
+   "read": "전년 대비 급증은 연료비 부담 신호예요.",
+   "sign": -1,
+   "ma": 3
+  },
+  {
+   "id": "equip_ship",
+   "name": "전기 변환·공급장치(변압기·차단기) 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "power_equip_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "국가데이터처 광업제조업동향조사(C281)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 변압기·차단기·발전기 공장의 출하 물량이에요.",
+   "read": "출하 증가율이 재고 증가율보다 높으면 업황이 좋은 구간이에요.",
+   "sign": 1
+  },
+  {
+   "id": "equip_cycle",
+   "name": "전기 변환·공급장치 출하−재고 증가율 차",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "power_equip_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "power_equip_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 0.5,
+   "source": "국가데이터처 광업제조업동향조사(C281)로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "재고 순환 지표예요. 플러스가 커지면 공급이 수요를 못 따라가는 호황이에요.",
+   "read": "보통 업황 지표 중 주가에 가장 먼저 반응해요.",
+   "sign": 1,
+   "ma": 3
+  },
+  {
+   "id": "elec_equip",
+   "name": "전기장비 제조업 생산지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "elec_equip_index.json",
+    "path": "series.생산"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "국가데이터처 광업제조업동향조사(C28)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "전기장비 업종 전체(변압기·전선·배터리 제외 전기기기)의 생산 물량이에요.",
+   "read": "업종 경기의 동행 지표예요.",
+   "sign": 1
+  },
+  {
+   "id": "util_prod",
+   "name": "전기·가스·증기 공급업 생산지수",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "utility_index.json",
+    "path": "series.생산"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "국가데이터처 광업제조업동향조사(D35)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 전력·가스 판매량을 대신 보여주는 지표예요. 반도체·데이터센터 전력 수요가 반영돼요.",
+   "read": "판매량은 한전 이익보다 요금·연료비의 영향이 작아 장기 추세로 봐요.",
+   "sign": 1
+  },
+  {
+   "id": "ng_us",
+   "name": "미국 천연가스 선물(헨리허브)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러/MMBtu",
+   "src": {
+    "market": "yahoo:NG=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/NG=F",
+   "why": "미국 LNG 수출 가격의 기준이에요. 미국산 LNG 도입이 늘면서 국내 LNG 가격에도 영향을 줘요.",
+   "read": "가스 가격 상승은 한전에는 부정적, 가스 개발·유통사에는 긍정적이에요.",
+   "sign": -1
+  },
+  {
+   "id": "uranium",
+   "name": "우라늄 ETF(URA)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:URA"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/URA",
+   "why": "세계 원전 투자 기대를 보여주는 대표 ETF예요(우라늄 채굴·원전 기업).",
+   "read": "원전주(두산에너빌리티·한전기술·비에이치아이)와 같은 방향으로 움직이는지 확인해요.",
+   "sign": 1
+  },
+  {
+   "id": "eaton",
+   "name": "Eaton 주가(미국 전력기기)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:ETN"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/ETN",
+   "why": "미국 데이터센터 전력기기 대표 기업이에요. 미국 수요 기대를 한국 전력기기주보다 먼저 반영하는지 봐요.",
+   "read": "Eaton 수주·가이던스 변화는 HD현대일렉트릭·효성중공업 주가에 바로 영향을 줘요.",
+   "sign": 1
+  },
+  {
+   "id": "vestas",
+   "name": "Vestas 주가(풍력 터빈)",
+   "group": "해외 동종·선행 시장",
+   "unit": "덴마크 크로네",
+   "src": {
+    "market": "yahoo:VWS.CO"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/VWS.CO",
+   "why": "세계 1위 풍력 터빈 회사예요. 씨에스윈드·씨에스베어링·태웅의 최대 고객이에요.",
+   "read": "Vestas 수주가 늘면 1~2분기 뒤 타워·베어링 발주가 늘어요.",
+   "sign": 1
+  },
+  {
+   "id": "solar_etf",
+   "name": "태양광 ETF(TAN)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:TAN"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/TAN",
+   "why": "세계 태양광 기업 주가 지수예요. 한화솔루션·OCI홀딩스와 비교해요.",
+   "read": "미국 보조금(IRA) 뉴스가 가장 먼저 반영돼요.",
+   "sign": 1
+  },
+  {
+   "id": "xlu",
+   "name": "미국 유틸리티 ETF(XLU)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:XLU"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/XLU",
+   "why": "미국 전력회사 주가예요. 데이터센터 전력 수요 기대와 금리에 반응해요.",
+   "read": "미국 유틸리티 투자(설비투자) 확대는 한국 전력기기 수출로 이어져요.",
+   "sign": 1
+  },
+  {
+   "id": "bloom",
+   "name": "Bloom Energy 주가(SOFC 연료전지)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:BE"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance 월말 종가",
+   "url": "https://finance.yahoo.com/quote/BE",
+   "why": "데이터센터용 연료전지 대표 기업이에요. 산일전기(블룸향 리액터)와 두산퓨얼셀 비교 대상이에요.",
+   "read": "블룸 수주가 늘면 산일전기 부품 발주가 늘어요.",
+   "sign": 1
+  }
+ ]
+}
