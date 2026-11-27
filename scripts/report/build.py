@@ -132,6 +132,33 @@ def gp_shocks(quarterly):
     return out[-3:]
 
 
+SRC = {}
+
+
+def synth_sources(dp, cx, ia, rv):
+    """업종 대시보드 파이프라인이 이미 만든 '자료 → 해석' 결과(사업보고서 발췌·IR 판독·뉴스 해석·연관기업 신호)를
+    리포트 각 장의 재료로 넘긴다. 피셔 점수·해자 등급 같은 기존 대시보드의 평가 점수는 넘기지 않는다."""
+    out = {}
+    if isinstance(dp, dict):
+        out["deep"] = {k: dp.get(k) for k in ("products", "competition", "customers", "sourcing") if dp.get(k)}
+        if isinstance(dp.get("moat"), dict):
+            out["deep"]["moat"] = {k: dp["moat"].get(k) for k in ("sources", "reason")}
+        if isinstance(dp.get("outlook"), dict):
+            out["deep"]["outlook"] = {k: dp["outlook"].get(k) for k in ("summary", "upside", "risks")}
+        if isinstance(dp.get("explain"), dict):
+            out["deep"]["explain"] = dp["explain"]
+        if isinstance(dp.get("diagnosis"), dict):
+            out["deep"]["diagnosis"] = {k: dp["diagnosis"].get(k) for k in ("verdict", "summary", "cycle", "structural", "check")}
+    if isinstance(cx, dict):
+        out["ctx"] = {"facts": cx.get("facts"), "related": cx.get("related"), "check": cx.get("check"),
+                      "signals": (cx.get("signals") or [])[:30]}
+    if isinstance(ia, dict):
+        out["ira"] = {k: ia.get(k) for k in ("asof", "summary", "strategy", "change", "prev", "cross")}
+    if isinstance(rv, dict):
+        out["rev"] = {k: rv.get(k) for k in ("tone", "title", "trend", "eval", "watch", "news")}
+    return out
+
+
 def news_months(nh):
     m = {}
     for x in nh or []:
@@ -155,11 +182,16 @@ def main():
         news = by_code(jload(data / "news.json"))
         newsh = by_code(jload(data / "news_hist.json"))
         irw = by_code(jload(data / "ir_web.json"))
+        deep = by_code(jload(data / "deep.json"))
+        ctx = by_code(jload(data / "context.json"))
+        ira = by_code(jload(data / "ir_analysis.json"))
+        revw = by_code(jload(data / "reviews.json"))
         for c in cos:
             code = c.get("code")
             if not code or code in all_cos:
                 continue
             all_cos[code] = (ind, data, raw, c, quotes.get(code), val.get(code), hist.get(code), news.get(code), newsh.get(code), irw.get(code))
+            SRC[code] = synth_sources(deep.get(code), ctx.get(code), ira.get(code), revw.get(code))
     # 업종·그룹별 경쟁사 표 재료
     peers_pool = {}
     for code, (ind, data, raw, c, q, v, *_r) in all_cos.items():
@@ -211,6 +243,7 @@ def main():
                           "fy": max(annual) if annual else None, "equity": (c.get("bs") or {}).get("equity")},
                        **({k: annual[max(annual)].get(k) for k in ("rev", "op", "ni")} if annual else {})}] + peers,
             "manual": manual,
+            "src": SRC.get(code) or {},
         }
         # 이엔에프 원본처럼 '재작성 전'과 다를 수 있어 표시용 플래그
         out["restated"] = bool(extra.get("annual"))
