@@ -86,6 +86,7 @@ jobs:
           git add docs/data docs/semi/data raw/semi docs/chem/data raw/chem docs/battery/data raw/battery docs/food/data raw/food docs/apparel/data raw/apparel docs/logistics/data
           git add docs/auto/data raw/auto docs/steel/data raw/steel 2>/dev/null || true
           for ind in bio construction ship energy; do [ -d "docs/$ind/data" ] && git add "docs/$ind/data"; [ -d "raw/$ind" ] && git add "raw/$ind"; done; true
+          git add raw/customs_cache.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "변경 없음"
           else
