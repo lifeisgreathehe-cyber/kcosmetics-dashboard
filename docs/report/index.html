@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>기업분석 리포트</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&family=Nanum+Myeongjo:wght@700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* 리포트 한 편 = 표지(개요·전망·투자의견 + 지표 박스 + 요약표) → 10개 장 → 부록 수익모델. 왼쪽 목차, 휴대폰은 1열 */
+:root{
+  --bg:#f5f4f0; --panel:#ffffff; --ink:#1a1916; --ink-2:#54514a; --ink-3:#8b877d;
+  --line:#e3e0d8; --accent:#1f5f8b; --accent-soft:#e6eff6; --warn:#a15c00; --warn-soft:#fbf1e3;
+  --up:#0f7a3a; --down:#c0392b;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#8a5cd0; --s6:#7d7a72;
+  --font-display:"Nanum Myeongjo","Noto Serif KR",Georgia,serif;
+  --font-body:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#131416; --panel:#1c1d20; --ink:#efede8; --ink-2:#c3c0b8; --ink-3:#8f8c84;
+  --line:#2f3034; --accent:#7fb6e0; --accent-soft:#1d2c38; --warn:#e0a458; --warn-soft:#33281a;
+  --up:#4cc47a; --down:#ef7a6c;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#9f7ee6; --s6:#9a978f;
+  color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#131416; --panel:#1c1d20; --ink:#efede8; --ink-2:#c3c0b8; --ink-3:#8f8c84;
+  --line:#2f3034; --accent:#7fb6e0; --accent-soft:#1d2c38; --warn:#e0a458; --warn-soft:#33281a;
+  --up:#4cc47a; --down:#ef7a6c;
+  --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#9f7ee6; --s6:#9a978f;
+  color-scheme:dark }
+*{box-sizing:border-box}
+html{scroll-padding-top:12px}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.7 var(--font-body)}
+a{color:var(--accent)}
+.wrap{max-width:1320px;margin:0 auto;padding:20px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px))}
+#dash-nav{font-size:13px;color:var(--ink-3);margin-bottom:14px;line-height:1.9}
+.bar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;margin-bottom:18px}
+.bar input,.bar select{font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:7px 10px;min-width:0}
+.bar input{flex:1 1 260px;max-width:420px}
+.bar .hint{font-size:12.5px;color:var(--ink-3)}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px}
+@media (max-width:980px){.layout{grid-template-columns:minmax(0,1fr)} #toc{display:none}}
+#toc{position:sticky;top:12px;align-self:start;font-size:13px;max-height:calc(100vh - 24px);overflow:auto}
+#toc a{display:block;color:var(--ink-2);text-decoration:none;padding:3px 0 3px 10px;border-left:2px solid var(--line)}
+#toc a.sub{padding-left:22px;font-size:12.5px;color:var(--ink-3)}
+#toc a:hover{color:var(--ink);border-left-color:var(--accent)}
+article{min-width:0}
+.paper{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px clamp(16px,3vw,40px);margin-bottom:20px}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(24px,3.4vw,34px);line-height:1.25;margin:4px 0 6px;text-wrap:balance}
+.kicker{font-size:13px;color:var(--accent);font-weight:600;letter-spacing:.04em}
+.byline{font-size:13px;color:var(--ink-3);margin-bottom:18px}
+.badge{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:99px;background:var(--accent-soft);color:var(--accent);margin-left:6px;vertical-align:1px}
+.badge.auto{background:var(--warn-soft);color:var(--warn)}
+.cover{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px}
+@media (max-width:760px){.cover{grid-template-columns:minmax(0,1fr)}}
+.cover h3{font-size:14px;margin:12px 0 2px;color:var(--accent)}
+.cover p{margin:0 0 6px}
+.stats{width:100%;border-collapse:collapse;font-size:13px;align-self:start}
+.stats td{padding:5px 2px;border-bottom:1px solid var(--line)}
+.stats td:last-child{text-align:right;font-family:var(--font-mono);font-variant-numeric:tabular-nums}
+h2{font-family:var(--font-display);font-size:24px;margin:0 0 10px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+h3.sec{font-size:16.5px;margin:22px 0 6px}
+p{margin:0 0 10px}
+.auto-p{color:var(--ink-2)}
+.tag{font-size:11px;color:var(--warn);border:1px solid var(--warn);border-radius:4px;padding:0 4px;margin-right:4px;vertical-align:1px}
+.wait{font-size:13px;color:var(--ink-3);background:var(--bg);border:1px dashed var(--line);border-radius:8px;padding:8px 12px;margin:6px 0 10px}
+.tbl{overflow-x:auto;margin:8px 0 6px}
+table.t{border-collapse:collapse;font-size:12.5px;min-width:100%;font-variant-numeric:tabular-nums}
+table.t th,table.t td{padding:4px 7px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+table.t th:first-child,table.t td:first-child{text-align:left;position:sticky;left:0;background:var(--panel)}
+table.t thead th{font-weight:600;color:var(--ink-2);border-bottom:1.5px solid var(--ink-3)}
+table.t td.e,table.t th.e{background:var(--accent-soft)}
+table.t tr.ind td:first-child{padding-left:18px;color:var(--ink-2)}
+table.t tr.self td{font-weight:600}
+.note{font-size:12px;color:var(--ink-3);margin:2px 0 12px}
+.cap{font-size:12px;color:var(--ink-3);margin:4px 0 14px}
+.chart{width:100%;margin:8px 0 2px}
+.chart svg{display:block;width:100%;height:auto}
+.legend{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:var(--ink-2);margin-top:4px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+details.src{margin:6px 0 12px;font-size:13px}
+details.src summary{cursor:pointer;color:var(--ink-2)}
+details.src pre{white-space:pre-wrap;word-break:break-all;font:12px/1.6 var(--font-body);background:var(--bg);border-radius:8px;padding:10px 12px;max-height:340px;overflow:auto;color:var(--ink-2)}
+ul.news{list-style:none;padding:0;margin:4px 0 10px;font-size:13.5px}
+ul.news li{padding:4px 0;border-bottom:1px dashed var(--line)}
+ul.news .d{font-family:var(--font-mono);font-size:12px;color:var(--ink-3);margin-right:6px}
+.pts{display:grid;gap:10px}
+.pt{border-left:3px solid var(--accent);padding:2px 0 2px 12px}
+.pt.risk{border-left-color:var(--down)}
+.pt b{display:block;margin-bottom:2px}
+.pt .chk{font-size:12.5px;color:var(--ink-3)}
+.er{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:10px 0}
+@media (max-width:560px){.er{grid-template-columns:minmax(0,1fr)}}
+.er>div{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.er .v{font-family:var(--font-mono);font-size:24px}
+.er .l{font-size:12.5px;color:var(--ink-2)}
+.pos{color:var(--up)} .neg{color:var(--down)}
+.assume{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:12px 0}
+.assume h4{margin:0 0 6px;font-size:14px}
+.assume table input{width:64px;font:inherit;font-size:12.5px;text-align:right;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:2px 4px}
+.assume .btns{margin-top:8px;display:flex;gap:8px;flex-wrap:wrap}
+.assume button{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer}
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px}
+.chips a{white-space:nowrap;font-size:12.5px;border:1px solid var(--line);border-radius:99px;padding:2px 10px;text-decoration:none;color:var(--ink-2);background:var(--panel)}
+@media (min-width:981px){.chips{display:none}}
+.loading{padding:40px;text-align:center;color:var(--ink-3)}
+.method h3{margin-top:18px}
+.method table{border-collapse:collapse;font-size:13px}
+.method td,.method th{border-bottom:1px solid var(--line);padding:4px 8px;text-align:left;vertical-align:top}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="dash-nav"></div><script src="../shared/nav.js"></script>
+  <div class="bar">
+    <input id="q" list="cos" placeholder="회사 이름이나 종목코드 (558개사)" aria-label="회사 검색">
+    <datalist id="cos"></datalist>
+    <select id="ind" aria-label="업종"><option value="">전체 업종</option></select>
+    <a href="#method" id="mlink">분석 방법(역엔지니어링)</a>
+    <span class="hint" id="hint"></span>
+  </div>
+  <div class="layout">
+    <nav id="toc" aria-label="목차"></nav>
+    <article id="out"><div class="loading">불러오는 중…</div></article>
+  </div>
+</div>
+<script src="report.js"></script>
+</body>
+</html>
