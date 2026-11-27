@@ -6,6 +6,12 @@ from new_src import NEW
 
 ROOT = os.path.join(os.path.dirname(__file__), "..", "..")
 
+# 신규 상장사: 첫 사업보고서가 나오기 전까지 DART에는 연간 실적이 없어서, 증권신고서 연간 숫자(백만원)를 함께 보여 준다.
+SEED_ANNUAL = {
+    "0162D0": {"2023": {"rev": 50500, "op": 900}, "2024": {"rev": 59500, "op": 1100}, "2025": {"rev": 92300, "op": 7800, "ni": 3400}},
+    "345290": {"2023": {"rev": 26135, "op": -6314}, "2024": {"rev": 37059, "op": -4735}, "2025": {"rev": 51609, "op": 4476}},
+}
+
 
 def clean(Q):
     """비어 있는 항목(None)은 0으로 두고, 매출이 없는 분기는 뺀다."""
@@ -38,8 +44,12 @@ def annual_trend(co):
     A = {k: v for k, v in sorted(co["annual"].items()) if v.get("rev")}
     ks = list(A)[-3:]
     revs = " → ".join("%s년 %s" % (k, eok(A[k]["rev"])) for k in ks)
-    out = [f"상장 직후라 분기 실적이 아직 DART에 없어요. 연간 매출은 {revs}원이에요."]
+    out = [f"상장 직후라 DART 분기 실적이 4개가 안 돼요. 증권신고서 기준 연간 매출은 {revs}원이에요."]
     out.append("영업이익률은 " + ", ".join(f"{k}년 {(A[k].get('op') or 0)/A[k]['rev']*100:.1f}%" for k in ks) + "예요.")
+    Q = clean(co.get("quarterly") or {})
+    for k in sorted(Q):
+        q = Q[k]
+        out.append(f"상장 후 첫 분기보고서({k})는 매출 {eok(q['rev'])}원, 영업이익 {eok(q['op'])}원(이익률 {q['op']/q['rev']*100:.1f}%), 순이익 {eok(q['ni'])}원이에요.")
     return out
 
 
@@ -75,11 +85,13 @@ def sector_for(group, code):
 
 def main():
     cos = {c["code"]: c for c in json.load(open(os.path.join(ROOT, "docs/semi/data/companies.json")))["companies"]}
-    out = {"updated": "2026-11-21",
-           "period": "DART 확정 실적(2026년 3분기까지, 일부 회사는 2분기) + 2026-11-21까지 나온 3분기 잠정실적과 뉴스",
+    out = {"updated": "2026-11-27",
+           "period": "DART 확정 실적(2026년 3분기까지, 일부 회사는 2분기) + 2026-11-27까지 나온 3분기 잠정실적과 뉴스",
            "disclaimer": "공시 수치와 언론 보도를 바탕으로 정리한 참고용 해석이며 투자 권유가 아닙니다.",
            "companies": {}}
     for code, co in cos.items():
+        if code in SEED_ANNUAL and not co.get("annual"):
+            co = dict(co, annual=SEED_ANNUAL[code])
         short = len(clean(co.get("quarterly") or {})) < 4
         if short and not (code in NEW and co.get("annual")):  # 신규 상장사는 연간 실적만으로도 보여 준다
             continue

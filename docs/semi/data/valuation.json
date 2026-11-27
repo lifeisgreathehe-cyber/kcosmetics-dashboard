@@ -54974,7 +54974,8 @@
    },
    "equity": 70302,
    "equity_source": "DART 2026Q3",
-   "net_cash": 19894,
+   "net_cash": 8000,
+   "net_cash_note": "3분기 보고서는 상장(11월) 전 기준이라 공모 자금이 빠져 있어요. 증권신고서 기준 상장 후 현금 538억원 − 차입금 458억원 = 순현금 약 80억원으로 봤어요.",
    "dividend_yield": null,
    "pbr": 2.13,
    "dcf": {
@@ -54987,28 +54988,28 @@
     "scenarios": {
      "bear": {
       "g": 0.0,
-      "value": 143062,
-      "per_share": 15423,
-      "upside": -4.5
+      "value": 133174,
+      "per_share": 14357,
+      "upside": -11.1
      },
      "base": {
       "g": 6.0,
-      "value": 181237,
-      "per_share": 19538,
-      "upside": 21.0
+      "value": 171972,
+      "per_share": 18539,
+      "upside": 14.8
      },
      "bull": {
       "g": 12.0,
-      "value": 230986,
-      "per_share": 24901,
-      "upside": 54.2
+      "value": 222530,
+      "per_share": 23990,
+      "upside": 48.5
      }
     },
     "c_T": 0.81,
     "roe_norm": 21.3,
-    "implied_g": 1.2,
-    "implied_E1": 12156,
-    "net_cash_added": 19894
+    "implied_g": 2.8,
+    "implied_E1": 12994,
+    "net_cash_added": 8000
    },
    "marks": {
     "pos": "중립",
@@ -55019,41 +55020,41 @@
      "base": 0.5,
      "bull": 0.2
     },
-    "weighted": 179734,
-    "weighted_ps": 19376,
-    "weighted_upside": 20.0,
+    "weighted": 170444,
+    "weighted_ps": 18374,
+    "weighted_upside": 13.8,
     "stress": {
      "E": 9000,
      "margin": null,
      "g": 0.0,
-     "value": 131969,
-     "per_share": 14227,
+     "value": 122081,
+     "per_share": 13161,
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 14227,
-    "max_loss": 11.9,
-    "up_bull": 54.2,
-    "asym_ratio": 4.6,
+    "down_ps": 13161,
+    "max_loss": 18.5,
+    "up_bull": 48.5,
+    "asym_ratio": 2.6,
     "asym": "유리",
     "risk": {
-     "score": 3,
+     "score": 5,
      "grade": "낮음",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 0,
       "차입 부담": 0,
-      "하방 거리": 3
+      "하방 거리": 5
      }
     },
     "mos": 25,
-    "buy_ps": 14532,
-    "buy_gap": -10.0,
+    "buy_ps": 13780,
+    "buy_gap": -14.7,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가는 1~5년 이익이 연 1.2%씩 늘어난다고 가정하는 셈이에요(기준 가정 6.0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 12% 손실, 낙관 시나리오면 +54%로 손익 구조는 '유리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 2.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 6.0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 19% 손실, 낙관 시나리오면 +49%로 손익 구조는 '유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -55124,7 +55125,7 @@
      {
       "name": "순현금 보유",
       "ok": true,
-      "val": "199억",
+      "val": "80억",
       "note": ""
      },
      {
@@ -55165,14 +55166,14 @@
        "per": 10.0,
        "g": 0.0,
        "excess": 0,
-       "nc": 19894,
+       "nc": 8000,
        "stress": true,
-       "value": 109894,
+       "value": 98000,
        "div": 0,
-       "value_ps": 11847,
+       "value_ps": 10565,
        "E1": 15000,
        "div_ps": 0,
-       "ret": -6.0,
+       "ret": -8.1,
        "how": "불황 실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
       },
       "base": {
@@ -55180,14 +55181,14 @@
        "per": 12.0,
        "g": 6.0,
        "excess": 0,
-       "nc": 19894,
+       "nc": 8000,
        "stress": false,
-       "value": 247140,
+       "value": 235246,
        "div": 0,
-       "value_ps": 26642,
+       "value_ps": 25360,
        "E1": 15000,
        "div_ps": 0,
-       "ret": 10.5,
+       "ret": 9.4,
        "how": ""
       },
       "bull": {
@@ -55195,18 +55196,18 @@
        "per": 14.5,
        "g": 12.0,
        "excess": 0,
-       "nc": 19894,
+       "nc": 8000,
        "stress": false,
-       "value": 362134,
+       "value": 350240,
        "div": 0,
-       "value_ps": 39039,
+       "value_ps": 37757,
        "E1": 15000,
        "div_ps": 0,
-       "ret": 19.3,
+       "ret": 18.5,
        "how": ""
       }
      },
-     "weighted": 7.3,
+     "weighted": 6.0,
      "weights": {
       "bear": 0.3,
       "base": 0.5,
@@ -55215,12 +55216,12 @@
      "r": 10.5
     },
     "plan": {
-     "start_ps": 16172,
-     "add_ps": 14532,
-     "trim_ps": 25592,
+     "start_ps": 15394,
+     "add_ps": 13780,
+     "trim_ps": 24310,
      "trim_per": 14.5,
      "price": 16150,
-     "zone": "나눠 사기 구간"
+     "zone": "보유·관찰 구간"
     },
     "peers": {
      "group": "소재·부품",
@@ -55324,8 +55325,8 @@
    "price_date": "2026-11-27 18:39",
    "price_source": "네이버 금융",
    "mcap": 89058,
-   "mcap_eff": 77432,
-   "shares": 12590569,
+   "mcap_eff": 89058,
+   "shares": 14480976,
    "shares_check": {
     "dart_common": 12590531,
     "dart_period": "2026-11014",
@@ -55336,41 +55337,42 @@
    },
    "equity": 40210,
    "equity_source": "DART 2026Q3",
-   "net_cash": -33595,
+   "net_cash": -14500,
+   "net_cash_note": "3분기 보고서는 상장(11/16) 전 기준이라 공모 자금(약 208억원)이 빠져 있어요. 증권신고서 기준 상장 후 현금 198억원 − 차입금 343억원 = 순차입 약 145억원으로 봤어요.",
    "dividend_yield": null,
-   "pbr": 1.93,
-   "net_debt_levered": -33595,
+   "pbr": 2.21,
+   "net_debt_levered": -14500,
    "dcf": {
     "E1": 7000,
     "r": 11.0,
     "c": 0.7,
     "note": "상장 직후라 이력이 짧고 2023~24년은 적자였어요. 2026년 이익률(21%)은 장비 호황 효과라, 추세 매출 800억원 × 정상 순이익률 9%로 70억원을 정상 이익으로 봤어요. 고객 집중·차입금 부담으로 할인율을 높였어요.",
-    "fwd_per": 11.1,
-    "norm_per": 11.1,
+    "fwd_per": 12.7,
+    "norm_per": 12.7,
     "scenarios": {
      "bear": {
       "g": 0.0,
       "value": 54436,
-      "per_share": 4324,
-      "upside": -29.7
+      "per_share": 3759,
+      "upside": -38.9
      },
      "base": {
       "g": 6.0,
       "value": 71297,
-      "per_share": 5663,
-      "upside": -7.9
+      "per_share": 4923,
+      "upside": -19.9
      },
      "bull": {
       "g": 12.0,
       "value": 93268,
-      "per_share": 7408,
-      "upside": 20.5
+      "per_share": 6441,
+      "upside": 4.7
      }
     },
     "c_T": 0.818,
     "roe_norm": 17.4,
-    "implied_g": 7.8,
-    "implied_E1": 7602,
+    "implied_g": 11.0,
+    "implied_E1": 8744,
     "net_cash_added": 0
    },
    "marks": {
@@ -55383,49 +55385,49 @@
      "bull": 0.2
     },
     "weighted": 70633,
-    "weighted_ps": 5610,
-    "weighted_upside": -8.8,
+    "weighted_ps": 4878,
+    "weighted_upside": -20.7,
     "stress": {
      "E": 4200,
      "margin": null,
      "g": 0.0,
      "value": 49646,
-     "per_share": 3943,
+     "per_share": 3428,
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
-    "down_ps": 3943,
-    "max_loss": 35.9,
-    "up_bull": 20.5,
-    "asym_ratio": 0.6,
+    "down_ps": 3428,
+    "max_loss": 44.3,
+    "up_bull": 4.7,
+    "asym_ratio": 0.1,
     "asym": "불리",
     "risk": {
-     "score": 30,
-     "grade": "보통",
+     "score": 20,
+     "grade": "낮음",
      "parts": {
       "적자 이력": 0,
       "이익 변동폭": 0,
-      "차입 부담": 21,
-      "하방 거리": 9
+      "차입 부담": 9,
+      "하방 거리": 11
      }
     },
-    "mos": 35,
-    "buy_ps": 3646,
-    "buy_gap": -40.7,
+    "mos": 25,
+    "buy_ps": 3658,
+    "buy_gap": -40.5,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "기대 선반영",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 7.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 6.0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 36% 손실, 낙관 시나리오면 +20%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 11.0%씩 늘어난다고 가정하는 셈이에요(기준 가정 6.0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 44% 손실, 낙관 시나리오면 +5%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": null,
-    "per_q": 6.9,
+    "per_q": 7.9,
     "ni_q": 2816,
     "por_ttm": null,
     "op_ttm": null,
-    "por_q": 4.8,
+    "por_q": 5.5,
     "op_q": 4024,
     "cns_per": null,
     "div_yield": null,
@@ -55487,7 +55489,7 @@
      {
       "name": "순현금 보유",
       "ok": false,
-      "val": "-336억",
+      "val": "-145억",
       "note": ""
      },
      {
@@ -55532,10 +55534,10 @@
        "stress": true,
        "value": 42000,
        "div": 0,
-       "value_ps": 3336,
+       "value_ps": 2900,
        "E1": 7000,
        "div_ps": 0,
-       "ret": -11.5,
+       "ret": -14.0,
        "how": "불황 실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
       },
       "base": {
@@ -55547,10 +55549,10 @@
        "stress": false,
        "value": 106048,
        "div": 0,
-       "value_ps": 8423,
+       "value_ps": 7323,
        "E1": 7000,
        "div_ps": 0,
-       "ret": 6.5,
+       "ret": 3.6,
        "how": ""
       },
       "bull": {
@@ -55562,14 +55564,14 @@
        "stress": false,
        "value": 159712,
        "div": 0,
-       "value_ps": 12685,
+       "value_ps": 11029,
        "E1": 7000,
        "div_ps": 0,
-       "ret": 15.6,
+       "ret": 12.4,
        "how": ""
       }
      },
-     "weighted": 2.9,
+     "weighted": 0.1,
      "weights": {
       "bear": 0.3,
       "base": 0.5,
@@ -55578,9 +55580,9 @@
      "r": 11.0
     },
     "plan": {
-     "start_ps": 4999,
-     "add_ps": 3646,
-     "trim_ps": 8062,
+     "start_ps": 4346,
+     "add_ps": 3658,
+     "trim_ps": 7009,
      "trim_per": 14.5,
      "price": 6150,
      "zone": "보유·관찰 구간"
@@ -55671,7 +55673,7 @@
        "ni": null,
        "roe": null,
        "per": null,
-       "pbr": 1.93
+       "pbr": 2.21
       }
      ],
      "med_roe": 9.3,
@@ -80565,23 +80567,23 @@
    {
     "industry": "chem",
     "n": 54,
-    "median_upside": 3.4,
-    "share_above": 43,
+    "median_upside": 3.0,
+    "share_above": 44,
     "label": "중간",
     "shift": 0
    },
    {
     "industry": "battery",
     "n": 66,
-    "median_upside": -51.7,
-    "share_above": 83,
+    "median_upside": -52.4,
+    "share_above": 86,
     "label": "과열(낙관 쪽)",
     "shift": 1
    },
    {
     "industry": "apparel",
     "n": 32,
-    "median_upside": 16.6,
+    "median_upside": 15.2,
     "share_above": 38,
     "label": "다소 차가움",
     "shift": 0
@@ -80589,7 +80591,7 @@
    {
     "industry": "food",
     "n": 48,
-    "median_upside": 19.1,
+    "median_upside": 19.5,
     "share_above": 42,
     "label": "다소 차가움",
     "shift": 0
@@ -80597,7 +80599,7 @@
    {
     "industry": "logistics",
     "n": 25,
-    "median_upside": 16.5,
+    "median_upside": 14.9,
     "share_above": 44,
     "label": "다소 차가움",
     "shift": 0
@@ -80605,7 +80607,7 @@
    {
     "industry": "auto",
     "n": 55,
-    "median_upside": 55.7,
+    "median_upside": 54.2,
     "share_above": 35,
     "label": "냉각(비관 쪽)",
     "shift": -1
@@ -80613,15 +80615,15 @@
    {
     "industry": "steel",
     "n": 71,
-    "median_upside": -10.1,
-    "share_above": 56,
+    "median_upside": -11.0,
+    "share_above": 58,
     "label": "다소 뜨거움",
     "shift": 0
    },
    {
     "industry": "bio",
     "n": 65,
-    "median_upside": -30.0,
+    "median_upside": -30.7,
     "share_above": 62,
     "label": "과열(낙관 쪽)",
     "shift": 1
@@ -80629,15 +80631,15 @@
    {
     "industry": "construction",
     "n": 64,
-    "median_upside": 2.1,
-    "share_above": 47,
+    "median_upside": 1.2,
+    "share_above": 48,
     "label": "중간",
     "shift": 0
    },
    {
     "industry": "energy",
     "n": 89,
-    "median_upside": -31.3,
+    "median_upside": -33.1,
     "share_above": 69,
     "label": "과열(낙관 쪽)",
     "shift": 1
@@ -80645,7 +80647,7 @@
    {
     "industry": "travel",
     "n": 22,
-    "median_upside": -26.6,
+    "median_upside": -26.4,
     "share_above": 73,
     "label": "과열(낙관 쪽)",
     "shift": 1
