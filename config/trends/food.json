@@ -1,0 +1,244 @@
+{
+ "title": "음식료",
+ "index_name": "음식료 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "skip_common": [
+  "us_curve"
+ ],
+ "intro": "음식료는 경기 방어주라 경기 지표보다 '원가(곡물·원당·환율) 대비 판가(가공식품 물가)'와 K-푸드 수출(라면·김·과자)에 반응해요. 곡물 가격은 보통 3~6개월 뒤 투입 원가에 반영돼요.",
+ "series": [
+  {
+   "id": "exp_food",
+   "name": "K-푸드 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "라면·과자·소스·김·음료·주류·커피 등 가공식품 수출이에요.",
+   "read": "삼양식품·오리온·농심 등 해외 성장주의 주가를 이끌어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_ramen",
+   "name": "라면 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.라면"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "K-푸드 수출의 간판 품목이에요(HS 190230).",
+   "read": "라면 수출 증가율은 삼양식품·농심 해외 매출과 거의 같이 움직여요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cpi_proc",
+   "name": "가공식품 소비자물가",
+   "group": "가격·마진",
+   "unit": "2020=100",
+   "src": {
+    "file": "cpi.json",
+    "path": "series.가공식품"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "국가데이터처 소비자물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1J22002",
+   "why": "음식료 회사의 판매 가격(판가)이에요.",
+   "read": "판가 인상률이 원가 상승률보다 높으면 마진이 좋아져요.",
+   "sign": 1
+  },
+  {
+   "id": "margin",
+   "name": "판가 ÷ 곡물 원가 (가공식품 물가 ÷ 밀·옥수수·콩 수입물가)",
+   "group": "가격·마진",
+   "unit": "비율×100",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "file": "cpi.json",
+     "path": "series.가공식품"
+    },
+    "b": {
+     "calc": "sum",
+     "parts": [
+      {
+       "file": "import_price.json",
+       "path": "series.밀"
+      },
+      {
+       "file": "import_price.json",
+       "path": "series.옥수수"
+      },
+      {
+       "file": "import_price.json",
+       "path": "series.콩"
+      }
+     ]
+    },
+    "scale": 300
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "국가데이터처·한국은행 물가로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "판가와 원가의 비율로 본 마진 대용치예요(원가는 밀·옥수수·콩 수입물가 단순 평균, 원화).",
+   "read": "1년 전보다 올라가면 '판가는 올랐는데 원가는 내린' 마진 개선 국면이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "wheat_imp",
+   "name": "밀 수입물가(원화)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.밀"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "제분·라면·제과의 핵심 원재료예요.",
+   "read": "곡물 가격이 오르면 3~6개월 뒤 원가에 반영돼요.",
+   "ma": 3,
+   "sign": -1
+  },
+  {
+   "id": "corn_imp",
+   "name": "옥수수 수입물가(원화)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.옥수수"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "전분·당·사료(육류 원가)의 원재료예요.",
+   "read": "사료·전분당 업체 마진에 영향을 줘요.",
+   "ma": 3,
+   "sign": -1
+  },
+  {
+   "id": "sugar_imp",
+   "name": "원당 수입물가(원화)",
+   "group": "원가",
+   "unit": "2020=100",
+   "src": {
+    "file": "import_price.json",
+    "path": "series.원당"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_401Y017",
+   "why": "제당·제과·음료 원가예요.",
+   "read": "원당 가격 상승은 CJ제일제당·삼양사 등 제당사 판가와 과자·음료 원가를 함께 움직여요.",
+   "ma": 3
+  },
+  {
+   "id": "cbot_wheat",
+   "name": "시카고 밀 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "센트/부셸",
+   "src": {
+    "market": "yahoo:ZW=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ZW=F)",
+   "url": "https://finance.yahoo.com/quote/ZW%3DF/",
+   "why": "국제 곡물가의 기준이에요. 국내 수입물가보다 몇 달 먼저 움직여요.",
+   "read": "선물 가격이 내려가면 반년쯤 뒤 국내 원가 부담이 줄어요.",
+   "sign": -1
+  },
+  {
+   "id": "cbot_corn",
+   "name": "시카고 옥수수 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "센트/부셸",
+   "src": {
+    "market": "yahoo:ZC=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ZC=F)",
+   "url": "https://finance.yahoo.com/quote/ZC%3DF/",
+   "why": "사료·전분당 원가의 기준 가격이에요.",
+   "read": "옥수수가 내려가면 사료·육가공 업체 원가가 개선돼요.",
+   "sign": -1
+  },
+  {
+   "id": "cbot_soy",
+   "name": "시카고 대두 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "센트/부셸",
+   "src": {
+    "market": "yahoo:ZS=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ZS=F)",
+   "url": "https://finance.yahoo.com/quote/ZS%3DF/",
+   "why": "식용유·장류·사료 원가예요.",
+   "read": "대두 가격은 식용유 업체(사조대림·CJ) 원가로 이어져요.",
+   "sign": -1
+  },
+  {
+   "id": "sugar",
+   "name": "국제 원당 선물",
+   "group": "해외 동종·선행 시장",
+   "unit": "센트/파운드",
+   "src": {
+    "market": "yahoo:SB=F"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(SB=F)",
+   "url": "https://finance.yahoo.com/quote/SB%3DF/",
+   "why": "국제 설탕 가격이에요.",
+   "read": "제당사엔 판가, 과자·음료엔 원가예요."
+  },
+  {
+   "id": "ship_food",
+   "name": "식료품 제조업 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "food_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 식료품 공장 출하 물량이에요.",
+   "read": "내수 물량의 동행 지표예요. 음식료는 물량보다 가격 영향이 커요.",
+   "ma": 3,
+   "sign": 1
+  }
+ ]
+}
