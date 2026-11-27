@@ -57,8 +57,9 @@ function buildModel(d, ov) {
     const fyOpmSame = ytd.prev_rev ? sumQ(prevSame, 'op') / ytd.prev_rev : null;
     const restPrevRev = sumQ(prevRest, 'rev');
     const fyOpmRest = restPrevRev ? sumQ(prevRest, 'op') / restPrevRev : null;
-    const season = (fyOpmSame > 0 && isNum(fyOpmRest)) ? clamp(fyOpmRest / fyOpmSame, 0.3, 1.5) : 1;
-    const restOp = restRev * opmY * season;
+    const season = (fyOpmSame > 0 && isNum(fyOpmRest)) ? clamp(fyOpmRest / fyOpmSame, 0.3, 1.2) : 1;
+    const qMax = Math.max(...cyq.map(k => Q[k].rev ? Q[k].op / Q[k].rev : -1));
+    const restOp = restRev * Math.min(opmY * season, qMax > 0 ? qMax : opmY * season);   // 남은 분기 이익률은 올해 최고 분기를 넘지 않게
     const conv = ytd.op > 0 ? clamp(ytd.ni / ytd.op, 0, 1.2) : 0.7;
     const gpmRest = hasGP && isNum(gpmY) ? gpmY - (opmY - opmY * season) * 0.5 : null;
     cy = { rev: ytd.rev + restRev, gp: hasGP ? ytd.gp + restRev * gpmRest : null, op: ytd.op + restOp, ni: ytd.ni + restOp * conv };
@@ -273,7 +274,7 @@ function chart({ labels, bars = [], lines = [], stack = false, h = 240, yFmt = v
   return `<div class="chart">${s}<div class="legend">${lg.map(([t, c]) => `<span><i style="background:${c}"></i>${esc(t)}</span>`).join('')}</div></div>`;
 }
 function niceStep(raw) { if (!(raw > 0)) return 1; const e = 10 ** Math.floor(Math.log10(raw)), f = raw / e; return (f < 1.5 ? 1 : f < 3 ? 2 : f < 7 ? 5 : 10) * e; }
-const fE = v => Math.round(v / 100).toLocaleString('ko-KR');           // 백만원 → 억원 축
+const fE = v => { const e = v / 100; return Math.abs(e) >= 10000 ? (e / 10000).toLocaleString('ko-KR', { maximumFractionDigits: 1 }) + '조' : Math.round(e).toLocaleString('ko-KR'); };  // 백만원 → 억원·조원 축
 const fP = v => (v * 100).toFixed(0) + '%';
 
 // ---------------------------------------------------------------- 원고/자동 문장
@@ -287,11 +288,13 @@ function txt(s) {   // 원고 문단: 빈 줄 = 문단, "- " = 목록, **굵게*
   }).join('');
 }
 const autoP = s => s ? `<p class="auto-p"><span class="tag">자동</span>${s}</p>` : '';
-const wait = s => `<div class="wait">원고 대기 · ${s}</div>`;
+const wait = s => `<div class="wait">자료 대기 · ${s}</div>`;
 function secText(key, autoHtml, waitMsg) {
   const m = S.d.manual && S.d.manual.sections && S.d.manual.sections[key];
-  if (m) return txt(m) + (autoHtml && autoHtml.always ? autoHtml.html : '');
-  if (autoHtml && (autoHtml.html || typeof autoHtml === 'string')) return typeof autoHtml === 'string' ? autoHtml : autoHtml.html;
+  const body = m ? txt(m) : synth(key);
+  const auto = autoHtml ? (typeof autoHtml === 'string' ? autoHtml : autoHtml.html) : '';
+  const autoPart = m ? (autoHtml && autoHtml.always ? autoHtml.html : '') : auto;
+  if (body || autoPart) return (body || '') + (autoPart || '');
   return waitMsg ? wait(waitMsg) : '';
 }
 const always = html => ({ always: true, html });
@@ -302,6 +305,72 @@ function srcBox(title, text, url) {
 const biz = k => (S.d.biz || []).find(b => b.k === k);
 const bizBox = (k, t) => { const b = biz(k); return b ? srcBox(t || b.title, b.text, S.d.biz_src && S.d.biz_src[0] && S.d.biz_src[0].url) : ''; };
 const firstSentences = (t, n = 2) => { if (!t) return ''; const c = t.replace(/\s*\|\s*/g, ' ').replace(/\s+/g, ' ').replace(/^[^가-힣A-Za-z]*/, ''); const m = c.split(/(?<=다\.)\s*/).filter(x => x.length > 8); return m.length ? m.slice(0, n).join(' ').slice(0, 480) : c.slice(0, 300); };
+
+// ---------------------------------------------------------------- 자료 종합(리포트 툴의 '자료 → 해석' 단계)
+// 원본 리포트는 장마다 정해진 자료(사업보고서·IR·언론·연관기업)를 읽어 문단을 썼다. 여기서는 업종 대시보드 파이프라인이
+// 매일 만드는 같은 종류의 자료 해석(사업보고서 발췌, IR 판독·과거 IR 비교, 뉴스 해석, 고객·경쟁사 신호)을 장별로 배치한다.
+const strip = t => String(t == null ? '' : t).replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+const SRCNAME = { deep: '사업보고서·IR·언론 종합', dart: '사업보고서', ir: 'IR 자료', news: '뉴스 해석', rel: '고객·경쟁사 뉴스', rev: '최근 분기 실적·뉴스' };
+const srcP = (t, k) => t ? `<p>${esc(strip(t))} <span class="srcnote">[${SRCNAME[k] || k}]</span></p>` : '';
+const srcL = (arr, k) => (arr && arr.length) ? `<ul>${arr.filter(Boolean).map(x => `<li>${esc(strip(x))}</li>`).join('')}</ul><div class="srcnote">[${SRCNAME[k] || k}]</div>` : '';
+const sigList = (arr, lab) => arr.length ? `<ul class="news">${arr.slice(0, 6).map(n => `<li><span class="d">${esc(n.date)}</span>${n.who ? `<b>${esc(n.who)}</b> ` : ''}<a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a> <small>${esc(n.office || n.src || '')}</small>${n.read ? `<div class="note">해석: ${esc(strip(n.read))}</div>` : ''}</li>`).join('')}</ul><div class="srcnote">[${lab}]</div>` : '';
+function synth(key) {
+  const X = (S.d && S.d.src) || {}, D = X.deep || {}, C = X.ctx || {}, F = C.facts || {}, I = X.ira || {}, V = X.rev || {};
+  const E = D.explain || {}, G = D.diagnosis || {}, O = D.outlook || {}, MO = D.moat || {};
+  const sig = (sec, tone) => (C.signals || []).filter(n => (!sec || n.sec === sec) && (!tone || n.tone === tone));
+  const revNews = imp => (V.news || []).filter(n => n.impact === imp);
+  const ex = (E.sections || []);
+  switch (key) {
+    case 'intro': return srcP((F.overview || []).join(' '), 'dart') + srcP(D.products, 'deep');
+    case 'founding': {
+      const h = (S.d.biz || []).find(b => b.k === 'history'); const t = h ? h.text.replace(/\s*\|\s*/g, ' ') : '';
+      const m = t.match(/[^.]*(경영진은|대표이사)[^.]*\./); const mm = t.match(/최대주주[^.]*\./);
+      return (m ? srcP(m[0], 'dart') : '') + (mm ? srcP(mm[0], 'dart') : '');
+    }
+    case 'value_chain': return ex[0] ? `<p><b>${esc(ex[0].h)}</b> ${esc(strip(ex[0].p))} <span class="srcnote">[${SRCNAME.deep}]</span></p>` : '';
+    case 'products': return ex.slice(1).map(x => `<p><b>${esc(x.h)}</b> ${esc(strip(x.p))}</p>`).join('') + (ex.length > 1 ? `<div class="srcnote">[${SRCNAME.deep}]</div>` : '') + srcL(F.products, 'dart');
+    case 'customers': return srcP(D.customers, 'deep') + srcL(F.customers, 'dart') + sigList(sig('customers'), '고객사 뉴스');
+    case 'subs': return srcL(F.channel, 'dart');
+    case 'strategy': {
+      let h = I.summary ? srcP(I.summary, 'ir') : '';
+      if (I.strategy && I.strategy.length) h += `<ul>${I.strategy.map(x => `<li><b>${esc(x.h)}</b>: ${esc(strip(x.detail))} <i>달성 가능성 ${esc(x.odds || '')}</i> — ${esc(strip(x.why))}</li>`).join('')}</ul>`;
+      if (I.change && I.change.length) h += `<p><b>과거 IR과 달라진 점</b>${I.prev ? `(${esc(I.prev)} 대비)` : ''}</p>` + srcL(I.change, 'ir');
+      if (I.cross && I.cross.length) h += `<p><b>연관 기업 IR로 교차 검증</b></p><ul>${I.cross.map(x => `<li>${esc(x.who)}: ${esc(strip(x.check))} (${esc(x.verdict || '')})</li>`).join('')}</ul>`;
+      return h + srcL(F.strategy, 'dart');
+    }
+    case 'market': return srcL(G.cycle, 'deep') + (C.check && C.check.verdict ? srcP(C.check.verdict.join(' — '), 'rel') : '');
+    case 'downstream': return (C.check && C.check.notes ? srcL(C.check.notes, 'rel') : '') + sigList(sig('cycle').concat(sig('outlook')), '업황·전방 뉴스');
+    case 'upstream': return srcP(D.sourcing, 'deep') + srcL(F.materials, 'dart') + sigList(sig('sourcing'), '원재료 뉴스');
+    case 'competition': return srcP(D.competition, 'deep') + srcL(F.competition, 'dart') + sigList(sig('competition'), '경쟁사 뉴스');
+    case 'switching': return MO.reason ? srcP(MO.reason, 'deep') : '';
+    case 'cost_adv': return MO.sources && MO.sources.length ? `<p>경쟁우위의 원천으로 꼽히는 것: ${MO.sources.map(esc).join(', ')}. <span class="srcnote">[${SRCNAME.deep}]</span></p>` : '';
+    case 'moat_sum': return '';
+    case 'ytd': return V.trend ? srcL(V.trend, 'rev') + (V.eval ? srcP(V.eval.split('이전 분석')[0], 'rev') : '') : '';
+    case 'drivers_future': {
+      const L = (O.upside || []).map(x => '긍정 변수: ' + x).concat((O.risks || []).map(x => '부정 변수: ' + x)).concat((V.watch || []).map(x => '확인할 것: ' + x));
+      return srcP(O.summary, 'deep') + srcL(L, 'deep');
+    }
+    case 'bull': return sigList(revNews('pos'), '뉴스 해석') + sigList(sig(null, '+').filter(n => n.rel !== 'self'), '고객·경쟁사·업종 긍정 신호');
+    case 'bear': return sigList(revNews('neg'), '뉴스 해석') + sigList(sig(null, '-'), '고객·경쟁사·업종 부정 신호');
+    case 'debate': return G.summary ? `<p><b>${esc(G.verdict || '')}</b> ${esc(strip(G.summary))} <span class="srcnote">[${SRCNAME.deep}]</span></p>` + (G.structural ? srcL(G.structural, 'deep') : '') : '';
+    case 'judgment': return G.summary ? `<p>업황 판단: <b>${esc(G.verdict || '')}</b>. ${esc(strip(O.summary || ''))} <span class="srcnote">[${SRCNAME.deep}]</span></p>` : '';
+    default: return '';
+  }
+}
+function synthCover() {
+  const X = (S.d && S.d.src) || {}, D = X.deep || {}, V = X.rev || {}, C = (X.ctx || {}).facts || {}, G = D.diagnosis || {}, O = D.outlook || {}, MO = D.moat || {};
+  if (!D.products && !C.overview) return null;
+  return {
+    title: D.explain && D.explain.title ? `${D.explain.title}${G.verdict ? ' · ' + G.verdict : ''}` : null,
+    overview: [strip(D.products || (C.overview || []).slice(0, 2).join(' ')), MO.reason ? '경쟁우위: ' + strip(MO.reason) : ''].filter(Boolean).join(' '),
+    outlook: [V.title ? strip(V.title) + '.' : '', strip((V.trend || [])[0] || ''), strip(O.summary || '')].filter(Boolean).join(' '),
+  };
+}
+function synthPoints(risk) {
+  const D = ((S.d && S.d.src) || {}).deep || {}, O = D.outlook || {}, G = D.diagnosis || {};
+  const arr = risk ? (O.risks || []) : (O.upside || []);
+  return arr.map((h, i) => ({ h, body: '', check: risk ? '' : (G.check || [])[i] || '' }));
+}
 
 // ---------------------------------------------------------------- 표
 function table(head, rows, opts = {}) {
@@ -340,14 +409,15 @@ function render() {
 
   // ---- 표지
   let h = '';
-  const title = man.title || autoTitle(d, M);
+  const SC = synthCover();
+  const title = man.title || (SC && SC.title) || autoTitle(d, M);
   h += `<section class="paper" id="cover">
     <div class="kicker">${esc(d.industry_name)} · ${esc(d.group || '')} · ${esc(d.market || '')} ${esc(d.code)}</div>
     <h1>${esc(name)}<br><span style="font-size:.72em">${esc(title)}</span></h1>
-    <div class="byline">${esc(name)} · ${esc(man.asof || d.built)} 기준 · ${man.cover ? '원고 + 자동 계산' : '자동 생성'}${man.cover ? '<span class="badge">원고</span>' : '<span class="badge auto">자동 문장</span>'} · 주가 ${esc(d.price_time || '')}</div>
+    <div class="byline">${esc(name)} · ${esc(man.asof || d.built)} 기준 · ${man.cover ? '원고 + 자동 계산' : '자료 종합 + 자동 계산'}${man.cover ? '<span class="badge">원고</span>' : '<span class="badge auto">자동 생성</span>'} · 주가 ${esc(d.price_time || '')}</div>
     <div class="cover"><div>
-      <h3>개요</h3>${man.cover && man.cover.overview ? txt(man.cover.overview) : autoP(`${Nm} ${esc(d.industry_name)} 업종(${esc(d.group || '')})의 ${esc(d.market || '')} 상장사입니다. ${esc(firstSentences(biz('overview') && biz('overview').text, 2))} ${FY}년 매출은 ${eok(R[FY].rev)}억원, 영업이익률 ${pct(R[FY].opm)}이고${isNum(rev10) ? `, ${hy[0]}~${FY}년 매출은 연평균 ${sg(rev10, 1)} 변했습니다` : ''}.`)}
-      <h3>전망</h3>${man.cover && man.cover.outlook ? txt(man.cover.outlook) : autoP(`${ytdTxt} ${gpmLqTxt} 기본 가정은 ${d1 ? `${d1.y}년 매출 ${sg(d1.g)}${M.hasGP ? `, 매출총이익률 ${pct(d1.m)}` : `, 영업이익률 ${pct(d1.m)}`}로 영업이익 ${eok(R[d1.y].op)}억원(${sg(opChg(d1.y - 1, d1.y))})` : ''}입니다.`)}
+      <h3>개요</h3>${man.cover && man.cover.overview ? txt(man.cover.overview) : (SC && SC.overview ? `<p>${esc(SC.overview)} <span class="srcnote">[사업보고서·IR·언론 종합]</span></p>` : '') + autoP(`${Nm} ${esc(d.industry_name)} 업종(${esc(d.group || '')})의 ${esc(d.market || '')} 상장사입니다. ${esc(firstSentences(biz('overview') && biz('overview').text, 2))} ${FY}년 매출은 ${eok(R[FY].rev)}억원, 영업이익률 ${pct(R[FY].opm)}이고${isNum(rev10) ? `, ${hy[0]}~${FY}년 매출은 연평균 ${sg(rev10, 1)} 변했습니다` : ''}.`)}
+      <h3>전망</h3>${man.cover && man.cover.outlook ? txt(man.cover.outlook) : (SC && SC.outlook ? `<p>${esc(SC.outlook)} <span class="srcnote">[최근 실적·뉴스 해석]</span></p>` : '') + autoP(`${ytdTxt} ${gpmLqTxt} 기본 가정은 ${d1 ? `${d1.y}년 매출 ${sg(d1.g)}${M.hasGP ? `, 매출총이익률 ${pct(d1.m)}` : `, 영업이익률 ${pct(d1.m)}`}로 영업이익 ${eok(R[d1.y].op)}억원(${sg(opChg(d1.y - 1, d1.y))})` : ''}입니다.`)}
       <h3>투자의견</h3>${man.cover && man.cover.opinion ? txt(man.cover.opinion) : autoP(`${isNum(fwdPer) ? `주가는 ${CY + 1}년 추정 PER ${x1(fwdPer)}배로 과거 연말 PER 평균(${x1(histPerAvg)}배)보다 ${fwdPer < histPerAvg ? '낮습니다' : '높습니다'}. ` : ''}5년 기대수익률은 기본 연 ${pct(base.ret)}, 비관 ${pct(M.sc[0].ret)}, 낙관 ${pct(M.sc[2].ret)}로 ${verdict}.`)}
     </div><table class="stats"><tbody>${statRows(d, M).map(([a, b]) => `<tr><td>${a}</td><td>${b}</td></tr>`).join('')}</tbody></table></div>
     ${summaryTable(d, M)}
@@ -355,8 +425,8 @@ function render() {
 
   // ---- 1. 기업 개요
   let s1 = H2('s1', '기업 개요');
-  s1 += H3('s1-intro', '회사 소개') + secText('intro', always(autoP(`${esc(firstSentences(biz('overview') && biz('overview').text, 3))}`) + bizBox('overview')), '사업보고서 본문이 아직 없습니다.');
-  s1 += H3('s1-founding', '창업 배경과 경영진') + secText('founding', d.dart_sections && d.dart_sections.executives ? always(srcBox('임원 현황', d.dart_sections.executives, d.dart_sections.url)) : null, '창업 배경·지배구조 정점·대표 이력은 원고에서 씁니다(언론·사업보고서 임원 현황).');
+  s1 += H3('s1-intro', '회사 소개') + secText('intro', always(autoP(`${esc(firstSentences(biz('overview') && biz('overview').text, 3))}`) + bizBox('overview')), '이 회사는 사업보고서 본문을 아직 받지 못했습니다(다음 DART 수집 때 채워집니다).');
+  s1 += H3('s1-founding', '창업 배경과 경영진') + secText('founding', d.dart_sections && d.dart_sections.executives ? always(srcBox('임원 현황', d.dart_sections.executives, d.dart_sections.url)) : null, '창업 배경·경영진은 사업보고서 임원 현황(PC 추가 수집) 후 채워집니다.');
   const histTxt = (d.dart_sections && d.dart_sections.history) || (biz('history') && biz('history').text);
   s1 += H3('s1-history', '연혁') + secText('history', histTxt ? always(srcBox('회사의 연혁', histTxt)) : null, '연혁 원문은 PC 추가 수집(scripts\\report_dart.bat) 후 표시됩니다.') + revChart(M, hy);
   s1 += H3('s1-holders', '주주 구성과 주주 친화도') + secText('holders', always(holdersBlock(d, M)));
@@ -416,8 +486,8 @@ function render() {
   s7 += H3('s7-disc', '경쟁사 대비 할인·할증 이유') + secText('discount', always(autoP(discountTxt(d, M))));
 
   // ---- 8. 투자포인트, 9. 리스크
-  let s8 = H2('s8', '투자포인트') + points(man.points, autoPoints(d, M), false);
-  let s9 = H2('s9', '리스크') + points(man.risks, autoRisks(d, M), true);
+  let s8 = H2('s8', '투자포인트') + points(man.points && man.points.length ? man.points : synthPoints(false).concat(autoPoints(d, M).filter(p => p.h !== '두드러진 숫자 신호 없음')), autoPoints(d, M), false, !(man.points && man.points.length));
+  let s9 = H2('s9', '리스크') + points(man.risks && man.risks.length ? man.risks : synthPoints(true).concat(autoRisks(d, M)), autoRisks(d, M), true, !(man.risks && man.risks.length));
 
   // ---- 10. 결론
   let s10 = H2('s10', '결론');
@@ -736,9 +806,9 @@ function discountTxt(d, M) {
   return `최근 사업연도 이익 기준 PER은 ${x1(me)}배로 비교 대상 중앙값 ${x1(mp)}배보다 ${pct(Math.abs(dsc), 0)} ${dsc < 0 ? '낮습니다(할인)' : '높습니다(할증)'}. ${dsc < -0.2 ? '이익률·고객 집중·지배구조·주주환원 가운데 무엇이 할인의 원인인지 원고에서 따져 봅니다.' : ''}`;
 }
 
-function points(man, auto, risk) {
+function points(man, auto, risk, isAuto) {
   const arr = (man && man.length) ? man : auto;
-  const tag = (man && man.length) ? '' : '<p class="auto-p"><span class="tag">자동</span>숫자로 드러나는 포인트만 골랐습니다. 원고가 있으면 원고가 우선합니다.</p>';
+  const tag = isAuto ? '<p class="auto-p"><span class="tag">자동</span>업종 대시보드의 전망·위험 해석(사업보고서·IR·뉴스)과 숫자 규칙(영업레버리지·밸류에이션·FCF·배당·민감도)을 합쳤습니다.</p>' : '';
   return tag + `<div class="pts">${arr.map(p => `<div class="pt ${risk ? 'risk' : ''}"><b>${esc(p.h)}</b>${txt(p.body)}${p.check ? `<div class="chk">확인할 지표: ${esc(p.check)}</div>` : ''}</div>`).join('')}</div>`;
 }
 function autoPoints(d, M) {
