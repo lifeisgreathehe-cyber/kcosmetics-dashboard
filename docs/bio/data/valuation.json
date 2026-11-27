@@ -35,11 +35,11 @@
     },
     "oneoff": []
    },
-   "price": 1345000,
-   "price_date": "2026-11-27 09:35",
+   "price": 1344000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 62261318,
-   "mcap_eff": 62261318,
+   "mcap": 62215027,
+   "mcap_eff": 62215027,
    "shares": 46290943,
    "shares_check": {
     "dart_common": 46290943,
@@ -53,16 +53,16 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 1522470,
    "dividend_yield": null,
-   "per": 34.6,
+   "per": 34.5,
    "roe": 24.2,
-   "pbr": 8.36,
+   "pbr": 8.35,
    "dcf": {
     "E1": 1900000,
     "r": 8.5,
     "c": 0.6,
     "note": "정상 이익 1.9조원: 최근 4개 분기 순이익 1.8조원에 5공장 가동률 상승분을 일부 더했어요. 1~5년 기준 성장률 15%는 증설 계획(5공장 18만 리터 가동률 상승, 미국 록빌)과 수주 잔고를 근거로 했고, 증설 투자가 계속돼 현금 전환율은 60%로 뒀어요.",
-    "fwd_per": 32.8,
-    "norm_per": 32.8,
+    "fwd_per": 32.7,
+    "norm_per": 32.7,
     "scenarios": {
      "bear": {
       "g": 6,
@@ -86,7 +86,7 @@
     "c_T": 0.765,
     "roe_norm": 25.5,
     "implied_g": 25.2,
-    "implied_E1": 3018490,
+    "implied_E1": 3016212,
     "cycle": {
      "position": "중립",
      "note": "증설-가동 사이클의 투자기. 수요는 구조적 성장.",
@@ -121,7 +121,7 @@
     "upside": -77.4,
     "pct": 30,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.1,
+    "exp_ex": -6.0,
     "conflict": false
    },
    "marks": {
@@ -171,7 +171,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 15%씩 늘면서 순이익률 58.1%가 이어져야 해요(과거 20.7%~39.2%, 평균 28.0%, 이 리포트의 정상 이익 가정 36.6%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 59% 손실, 낙관 시나리오면 -21%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 15%씩 늘면서 순이익률 58.1%가 이어져야 해요(과거 20.7%~39.2%, 평균 28.0%, 이 리포트의 정상 이익 가정 36.6%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 59% 손실, 낙관 시나리오면 -20%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -287,11 +287,11 @@
   "0126Z0": {
    "name": "삼성에피스홀딩스",
    "group": "바이오의약품·CDMO",
-   "price": 384000,
-   "price_date": "2026-11-27 09:35",
+   "price": 387500,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 9555098,
-   "mcap_eff": 9555098,
+   "mcap": 9642189,
+   "mcap_eff": 9642189,
    "shares": 24883068,
    "shares_check": {
     "dart_common": 24883068,
@@ -305,39 +305,39 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -453480,
    "dividend_yield": null,
-   "pbr": 1.62,
+   "pbr": 1.63,
    "net_debt_levered": -453480,
    "dcf": {
     "E1": 400000,
     "r": 9.0,
     "c": 0.6,
     "note": "정상 이익 4,000억원: 에피스 3분기 영업이익 1,326억원(마일스톤 제외 기준 성장 +21%)을 연환산(약 5,000억원)하고 법인세·마일스톤 변동을 감안했어요. 분할 전 연간 실적이 짧아 DART 연결 실적이 쌓이면 다시 맞춰요.",
-    "fwd_per": 23.9,
-    "norm_per": 23.9,
+    "fwd_per": 24.1,
+    "norm_per": 24.1,
     "scenarios": {
      "bear": {
       "g": 3,
       "value": 3591723,
       "per_share": 144344,
-      "upside": -62.4
+      "upside": -62.7
      },
      "base": {
       "g": 10,
       "value": 4964422,
       "per_share": 199510,
-      "upside": -48.0
+      "upside": -48.5
      },
      "bull": {
       "g": 15,
       "value": 6237143,
       "per_share": 250658,
-      "upside": -34.7
+      "upside": -35.3
      }
     },
     "c_T": 0.6,
     "roe_norm": 6.8,
-    "implied_g": 24.6,
-    "implied_E1": 769886,
+    "implied_g": 24.8,
+    "implied_E1": 776903,
     "net_cash_added": 0
    },
    "marks": {
@@ -351,7 +351,7 @@
     },
     "weighted": 4807156,
     "weighted_ps": 193190,
-    "weighted_upside": -49.7,
+    "weighted_upside": -50.1,
     "stress": {
      "E": 240000,
      "margin": null,
@@ -361,8 +361,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 134578,
-    "max_loss": 65.0,
-    "up_bull": -34.7,
+    "max_loss": 65.3,
+    "up_bull": -35.3,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -377,22 +377,22 @@
     },
     "mos": 25,
     "buy_ps": 144892,
-    "buy_gap": -62.3,
+    "buy_gap": -62.6,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 24.6%씩 늘어난다고 가정하는 셈이에요(기준 가정 10%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 65% 손실, 낙관 시나리오면 -35%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 24.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 10%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 65% 손실, 낙관 시나리오면 -35%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": null,
-    "per_q": 24.8,
+    "per_q": 25.0,
     "ni_q": 96260,
     "por_ttm": null,
     "op_ttm": null,
-    "por_q": 22.7,
+    "por_q": 22.9,
     "op_q": 105090,
     "cns_per": null,
     "div_yield": null,
@@ -514,7 +514,7 @@
     "oneoff": []
    },
    "price": 220500,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 51278131,
    "mcap_eff": 51278131,
@@ -803,12 +803,12 @@
      }
     ]
    },
-   "price": 42450,
-   "price_date": "2026-11-27 09:35",
+   "price": 42600,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1884885,
-   "mcap_eff": 1884885,
-   "shares": 44402473,
+   "mcap": 1891545,
+   "mcap_eff": 1891545,
+   "shares": 44402465,
    "shares_check": {
     "dart_common": 44402469,
     "dart_period": "2026-11-20",
@@ -821,41 +821,41 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -85880,
    "dividend_yield": null,
-   "per": 38.4,
+   "per": 38.5,
    "roe": 11.3,
-   "pbr": 4.32,
+   "pbr": 4.34,
    "net_debt_levered": -85880,
    "dcf": {
     "E1": 50000,
     "r": 9.0,
     "c": 0.6,
     "note": "정상 이익 500억원: 최근 4개 분기 순이익 491억원과 2025년 388억원 사이에서 개선 추세를 반영했어요.",
-    "fwd_per": 37.7,
-    "norm_per": 37.7,
+    "fwd_per": 37.8,
+    "norm_per": 37.8,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 461813,
       "per_share": 10401,
-      "upside": -75.5
+      "upside": -75.6
      },
      "base": {
       "g": 5,
       "value": 588048,
       "per_share": 13244,
-      "upside": -68.8
+      "upside": -68.9
      },
      "bull": {
       "g": 9,
       "value": 712047,
       "per_share": 16036,
-      "upside": -62.2
+      "upside": -62.4
      }
     },
     "c_T": 0.778,
     "roe_norm": 11.5,
-    "implied_g": 30.3,
-    "implied_E1": 160266,
+    "implied_g": 30.4,
+    "implied_E1": 160832,
     "cycle": {
      "position": "중립",
      "note": "성숙한 국내 유통 사업.",
@@ -887,10 +887,10 @@
     "per_share": 7858,
     "bear": 5971,
     "bull": 9432,
-    "upside": -81.5,
+    "upside": -81.6,
     "pct": 18,
     "tier": "비싼 ⅓",
-    "exp_ex": -7.3,
+    "exp_ex": -7.2,
     "conflict": false
    },
    "marks": {
@@ -904,7 +904,7 @@
     },
     "weighted": 574977,
     "weighted_ps": 12949,
-    "weighted_upside": -69.5,
+    "weighted_upside": -69.6,
     "stress": {
      "E": 10721,
      "margin": 1.6,
@@ -915,7 +915,7 @@
     },
     "down_ps": 9057,
     "max_loss": 78.7,
-    "up_bull": -62.2,
+    "up_bull": -62.4,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -930,8 +930,8 @@
     },
     "mos": 45,
     "buy_ps": 7122,
-    "buy_gap": -83.2,
-    "implied_margin": 23.8,
+    "buy_gap": -83.3,
+    "implied_margin": 23.9,
     "base_margin": 7.4,
     "hist_margin": [
      -20.7,
@@ -940,16 +940,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 23.8%가 이어져야 해요(과거 -20.7%~9.0%, 평균 5.2%, 이 리포트의 정상 이익 가정 7.4%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 79% 손실, 낙관 시나리오면 -62%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 23.9%가 이어져야 해요(과거 -20.7%~9.0%, 평균 5.2%, 이 리포트의 정상 이익 가정 7.4%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 79% 손실, 낙관 시나리오면 -62%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 26.7,
+    "per_q": 26.8,
     "ni_q": 17670,
-    "por_ttm": 27.0,
+    "por_ttm": 27.1,
     "op_ttm": 69830,
-    "por_q": 19.7,
+    "por_q": 19.8,
     "op_q": 23900,
     "cns_per": null,
     "div_yield": null,
@@ -959,7 +959,7 @@
     "ret_1y_from": null,
     "ni_cagr5": 13.1,
     "rev_cagr5": 18.1,
-    "peg": 2.93,
+    "peg": 2.94,
     "peg_g": 13.1
    },
    "checks": {
@@ -1005,7 +1005,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": false,
-      "val": "2.93",
+      "val": "2.94",
       "note": "성장률 = 최근 5년 순이익 연평균 13.1%(상한 50%)"
      },
      {
@@ -1084,12 +1084,12 @@
     },
     "oneoff": []
    },
-   "price": 40250,
-   "price_date": "2026-11-27 09:35",
+   "price": 40500,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 3157900,
-   "mcap_eff": 3157900,
-   "shares": 78457143,
+   "mcap": 3177514,
+   "mcap_eff": 3177514,
+   "shares": 78457136,
    "shares_check": {
     "dart_common": 78457143,
     "dart_period": "2026-11-20",
@@ -1104,7 +1104,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -5.5,
-   "pbr": 1.77,
+   "pbr": 1.78,
    "skip": "rNPV",
    "cycle": {
     "position": "바닥권",
@@ -1150,23 +1150,23 @@
       "pipeline": 1128310,
       "value": 1222926,
       "per_share": 15587,
-      "upside": -61.3
+      "upside": -61.5
      },
      "base": {
       "pipeline": 2501877,
       "value": 2596493,
       "per_share": 33094,
-      "upside": -17.8
+      "upside": -18.3
      },
      "bull": {
       "pipeline": 4120195,
       "value": 4214811,
       "per_share": 53721,
-      "upside": 33.5
+      "upside": 32.6
      }
     },
     "net_cash": 249093,
-    "implied_pipeline": 3063284
+    "implied_pipeline": 3082898
    },
    "quant": {
     "pos": "회복기",
@@ -1179,7 +1179,7 @@
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 75.0,
+    "per_q": 75.4,
     "ni_q": 10530,
     "por_ttm": null,
     "op_ttm": -123110,
@@ -1316,7 +1316,7 @@
     "oneoff": []
    },
    "price": 87700,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 1830921,
    "mcap_eff": 1830921,
@@ -1567,12 +1567,12 @@
   "053030": {
    "name": "바이넥스",
    "group": "바이오의약품·CDMO",
-   "price": 7200,
-   "price_date": "2026-11-27 09:35",
+   "price": 7210,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 235302,
-   "mcap_eff": 235302,
-   "shares": 32680833,
+   "mcap": 235629,
+   "mcap_eff": 235629,
+   "shares": 32680860,
    "shares_check": {
     "dart_common": 32680851,
     "dart_period": "2026-11-20",
@@ -1598,25 +1598,25 @@
       "g": -3,
       "value": 75236,
       "per_share": 2302,
-      "upside": -68.0
+      "upside": -68.1
      },
      "base": {
       "g": 3,
       "value": 100450,
       "per_share": 3074,
-      "upside": -57.3
+      "upside": -57.4
      },
      "bull": {
       "g": 8,
       "value": 127522,
       "per_share": 3902,
-      "upside": -45.8
+      "upside": -45.9
      }
     },
     "c_T": 0.81,
     "roe_norm": null,
     "implied_g": 21.2,
-    "implied_E1": 28110,
+    "implied_E1": 28149,
     "net_cash_added": 0
    },
    "marks": {
@@ -1630,7 +1630,7 @@
     },
     "weighted": 98300,
     "weighted_ps": 3008,
-    "weighted_upside": -58.2,
+    "weighted_upside": -58.3,
     "stress": {
      "E": 7200,
      "margin": null,
@@ -1640,8 +1640,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 2121,
-    "max_loss": 70.5,
-    "up_bull": -45.8,
+    "max_loss": 70.6,
+    "up_bull": -45.9,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -1656,7 +1656,7 @@
     },
     "mos": 35,
     "buy_ps": 1955,
-    "buy_gap": -72.8,
+    "buy_gap": -72.9,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
@@ -1780,12 +1780,12 @@
     },
     "oneoff": []
    },
-   "price": 82700,
-   "price_date": "2026-11-27 09:35",
+   "price": 82900,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 6586890,
-   "mcap_eff": 6586890,
-   "shares": 79648005,
+   "mcap": 6602820,
+   "mcap_eff": 6602820,
+   "shares": 79648010,
    "shares_check": {
     "dart_common": 79648010,
     "dart_period": "2026-11-20",
@@ -1798,16 +1798,16 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 137950,
    "dividend_yield": null,
-   "per": 28.3,
+   "per": 28.4,
    "roe": 9.8,
-   "pbr": 2.79,
+   "pbr": 2.8,
    "dcf": {
     "E1": 110000,
     "r": 8.5,
     "c": 0.7,
     "note": "본업 정상 이익 1,100억원(로열티 제외, 지분법·일회성 제외)에 렉라자 로열티 rNPV를 더했어요.",
-    "fwd_per": 59.9,
-    "norm_per": 59.9,
+    "fwd_per": 60.0,
+    "norm_per": 60.0,
     "scenarios": {
      "bear": {
       "g": 0,
@@ -1819,19 +1819,19 @@
       "g": 4,
       "value": 2261358,
       "per_share": 28392,
-      "upside": -65.7
+      "upside": -65.8
      },
      "bull": {
       "g": 7,
       "value": 2709777,
       "per_share": 34022,
-      "upside": -58.9
+      "upside": -59.0
      }
     },
     "c_T": 0.7,
     "roe_norm": 4.7,
-    "implied_g": 40.5,
-    "implied_E1": 547663,
+    "implied_g": 40.6,
+    "implied_E1": 549009,
     "cycle": {
      "position": "중립",
      "note": "본업 성숙 + 로열티 성장.",
@@ -1862,13 +1862,13 @@
       "g": 4,
       "value": 1407147,
       "per_share": 17667,
-      "upside": -78.6
+      "upside": -78.7
      },
      "bull": {
       "g": 7,
       "value": 1599303,
       "per_share": 20080,
-      "upside": -75.7
+      "upside": -75.8
      }
     },
     "pipeline_added": 854211
@@ -1907,13 +1907,13 @@
       "pipeline": 854211,
       "value": 2261358,
       "per_share": 28392,
-      "upside": -65.7
+      "upside": -65.8
      },
      "bull": {
       "pipeline": 1110474,
       "value": 2709777,
       "per_share": 34022,
-      "upside": -58.9
+      "upside": -59.0
      }
     }
    },
@@ -1945,7 +1945,7 @@
     },
     "weighted": 2208608,
     "weighted_ps": 27730,
-    "weighted_upside": -66.5,
+    "weighted_upside": -66.6,
     "stress": {
      "E": 76514,
      "margin": 3.4,
@@ -1956,7 +1956,7 @@
     },
     "down_ps": 21679,
     "max_loss": 73.8,
-    "up_bull": -58.9,
+    "up_bull": -59.0,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -1971,7 +1971,7 @@
     },
     "mos": 35,
     "buy_ps": 18024,
-    "buy_gap": -78.2,
+    "buy_gap": -78.3,
     "implied_margin": 24.5,
     "base_margin": 4.9,
     "hist_margin": [
@@ -1986,11 +1986,11 @@
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 79.7,
+    "per_q": 79.9,
     "ni_q": 20650,
-    "por_ttm": 48.8,
+    "por_ttm": 48.9,
     "op_ttm": 134980,
-    "por_q": 49.6,
+    "por_q": 49.7,
     "op_q": 33210,
     "cns_per": null,
     "div_yield": null,
@@ -2000,7 +2000,7 @@
     "ret_1y_from": null,
     "ni_cagr5": 0.1,
     "rev_cagr5": 6.2,
-    "peg": 207.2,
+    "peg": 207.93,
     "peg_g": 0.1
    },
    "checks": {
@@ -2046,7 +2046,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": false,
-      "val": "207.20",
+      "val": "207.93",
       "note": "성장률 = 최근 5년 순이익 연평균 0.1%(상한 50%)"
      },
      {
@@ -2129,11 +2129,11 @@
     },
     "oneoff": []
    },
-   "price": 494500,
-   "price_date": "2026-11-27 09:35",
+   "price": 498000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 6334991,
-   "mcap_eff": 6334991,
+   "mcap": 6379829,
+   "mcap_eff": 6379829,
    "shares": 12810902,
    "shares_check": {
     "dart_common": 12810901,
@@ -2147,41 +2147,41 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -182790,
    "dividend_yield": null,
-   "per": 33.5,
+   "per": 33.7,
    "roe": 15.1,
-   "pbr": 5.07,
+   "pbr": 5.1,
    "net_debt_levered": -182790,
    "dcf": {
     "E1": 190000,
     "r": 8.5,
     "c": 0.65,
     "note": "본업 정상 이익 1,900억원에 에페(국내)와 MSD MASH 로열티 rNPV를 더했어요.",
-    "fwd_per": 33.3,
-    "norm_per": 33.3,
+    "fwd_per": 33.6,
+    "norm_per": 33.6,
     "scenarios": {
      "bear": {
       "g": 1,
       "value": 2265456,
       "per_share": 176838,
-      "upside": -64.2
+      "upside": -64.5
      },
      "base": {
       "g": 6,
       "value": 3005982,
       "per_share": 234642,
-      "upside": -52.5
+      "upside": -52.9
      },
      "bull": {
       "g": 10,
       "value": 3759142,
       "per_share": 293433,
-      "upside": -40.7
+      "upside": -41.1
      }
     },
     "c_T": 0.765,
     "roe_norm": 15.2,
-    "implied_g": 25.4,
-    "implied_E1": 468424,
+    "implied_g": 25.6,
+    "implied_E1": 471739,
     "cycle": {
      "position": "중립",
      "note": "본업 성숙, 신약 출시 비용기.",
@@ -2206,19 +2206,19 @@
       "g": 1,
       "value": 2018768,
       "per_share": 157582,
-      "upside": -68.1
+      "upside": -68.4
      },
      "base": {
       "g": 6,
       "value": 2569571,
       "per_share": 200577,
-      "upside": -59.4
+      "upside": -59.7
      },
      "bull": {
       "g": 10,
       "value": 3109909,
       "per_share": 242755,
-      "upside": -50.9
+      "upside": -51.3
      }
     },
     "pipeline_added": 436411
@@ -2263,19 +2263,19 @@
       "pipeline": 246688,
       "value": 2265456,
       "per_share": 176838,
-      "upside": -64.2
+      "upside": -64.5
      },
      "base": {
       "pipeline": 436411,
       "value": 3005982,
       "per_share": 234642,
-      "upside": -52.5
+      "upside": -52.9
      },
      "bull": {
       "pipeline": 649233,
       "value": 3759142,
       "per_share": 293433,
-      "upside": -40.7
+      "upside": -41.1
      }
     }
    },
@@ -2290,10 +2290,10 @@
     "per_share": 106266,
     "bear": 80745,
     "bull": 127551,
-    "upside": -78.5,
-    "pct": 22,
+    "upside": -78.7,
+    "pct": 25,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.4,
+    "exp_ex": -6.3,
     "conflict": false
    },
    "marks": {
@@ -2307,7 +2307,7 @@
     },
     "weighted": 2934456,
     "weighted_ps": 229059,
-    "weighted_upside": -53.7,
+    "weighted_upside": -54.0,
     "stress": {
      "E": 41150,
      "margin": 2.5,
@@ -2317,8 +2317,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 2.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 157549,
-    "max_loss": 68.1,
-    "up_bull": -40.7,
+    "max_loss": 68.4,
+    "up_bull": -41.1,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -2333,8 +2333,8 @@
     },
     "mos": 35,
     "buy_ps": 148888,
-    "buy_gap": -69.9,
-    "implied_margin": 27.9,
+    "buy_gap": -70.1,
+    "implied_margin": 28.1,
     "base_margin": 11.3,
     "hist_margin": [
      1.1,
@@ -2343,16 +2343,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 6%씩 늘면서 순이익률 27.9%가 이어져야 해요(과거 1.1%~11.0%, 평균 5.8%, 이 리포트의 정상 이익 가정 11.3%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 68% 손실, 낙관 시나리오면 -41%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 6%씩 늘면서 순이익률 28.1%가 이어져야 해요(과거 1.1%~11.0%, 평균 5.8%, 이 리포트의 정상 이익 가정 11.3%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 68% 손실, 낙관 시나리오면 -41%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 129.5,
+    "per_q": 130.4,
     "ni_q": 12230,
-    "por_ttm": 20.7,
+    "por_ttm": 20.9,
     "op_ttm": 305820,
-    "por_q": 41.9,
+    "por_q": 42.2,
     "op_q": 37810,
     "cns_per": null,
     "div_yield": null,
@@ -2490,12 +2490,12 @@
     },
     "oneoff": []
    },
-   "price": 56800,
-   "price_date": "2026-11-27 09:35",
+   "price": 57300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 783970,
-   "mcap_eff": 783970,
-   "shares": 13802289,
+   "mcap": 790871,
+   "mcap_eff": 790871,
+   "shares": 13802286,
    "shares_check": {
     "dart_common": 13802288,
     "dart_period": "2026-11-20",
@@ -2508,40 +2508,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 28740,
    "dividend_yield": null,
-   "per": 10.0,
+   "per": 10.1,
    "roe": 7.8,
-   "pbr": 0.78,
+   "pbr": 0.79,
    "dcf": {
     "E1": 85000,
     "r": 8.5,
     "c": 0.7,
     "note": "정상 이익 850억원: 2025년 775억원·최근 4분기 782억원에 매출 성장분. 노바티스 기술수출 rNPV를 더했어요.",
-    "fwd_per": 9.2,
-    "norm_per": 9.2,
+    "fwd_per": 9.3,
+    "norm_per": 9.3,
     "scenarios": {
      "bear": {
       "g": -1,
       "value": 907566,
       "per_share": 65755,
-      "upside": 15.8
+      "upside": 14.8
      },
      "base": {
       "g": 3,
       "value": 1130138,
-      "per_share": 81880,
-      "upside": 44.2
+      "per_share": 81881,
+      "upside": 42.9
      },
      "bull": {
       "g": 6,
       "value": 1334223,
       "per_share": 96667,
-      "upside": 70.2
+      "upside": 68.7
      }
     },
     "c_T": 0.764,
     "roe_norm": 8.5,
-    "implied_g": -3.1,
-    "implied_E1": 63670,
+    "implied_g": -2.9,
+    "implied_E1": 64246,
     "cycle": {
      "position": "중립",
      "note": "국내 처방 성숙기.",
@@ -2566,19 +2566,19 @@
       "g": -1,
       "value": 862977,
       "per_share": 62524,
-      "upside": 10.1
+      "upside": 9.1
      },
      "base": {
       "g": 3,
       "value": 1039286,
       "per_share": 75298,
-      "upside": 32.6
+      "upside": 31.4
      },
      "bull": {
       "g": 6,
       "value": 1194617,
       "per_share": 86552,
-      "upside": 52.4
+      "upside": 51.1
      }
     },
     "pipeline_added": 90852
@@ -2611,19 +2611,19 @@
       "pipeline": 44589,
       "value": 907566,
       "per_share": 65755,
-      "upside": 15.8
+      "upside": 14.8
      },
      "base": {
       "pipeline": 90852,
       "value": 1130138,
-      "per_share": 81880,
-      "upside": 44.2
+      "per_share": 81881,
+      "upside": 42.9
      },
      "bull": {
       "pipeline": 139606,
       "value": 1334223,
       "per_share": 96667,
-      "upside": 70.2
+      "upside": 68.7
      }
     }
    },
@@ -2638,7 +2638,7 @@
     "per_share": 56029,
     "bear": 42573,
     "bull": 67251,
-    "upside": -1.4,
+    "upside": -2.2,
     "pct": 72,
     "tier": "싼 ⅓",
     "exp_ex": 3.4,
@@ -2655,7 +2655,7 @@
     },
     "weighted": 1104183,
     "weighted_ps": 80000,
-    "weighted_upside": 40.8,
+    "weighted_upside": 39.6,
     "stress": {
      "E": 83980,
      "margin": 4.4,
@@ -2666,7 +2666,7 @@
     },
     "down_ps": 65623,
     "max_loss": 0.0,
-    "up_bull": 70.2,
+    "up_bull": 68.7,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -2681,7 +2681,7 @@
     },
     "mos": 25,
     "buy_ps": 60000,
-    "buy_gap": 5.6,
+    "buy_gap": 4.7,
     "implied_margin": 3.4,
     "base_margin": 4.5,
     "hist_margin": [
@@ -2691,16 +2691,16 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 3.4%가 이어져야 해요(과거 3.2%~12.7%, 평균 5.6%, 이 리포트의 정상 이익 가정 4.5%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +70%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 3.4%가 이어져야 해요(과거 3.2%~12.7%, 평균 5.6%, 이 리포트의 정상 이익 가정 4.5%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +69%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 10.4,
+    "per_q": 10.5,
     "ni_q": 18840,
-    "por_ttm": 10.0,
+    "por_ttm": 10.1,
     "op_ttm": 78240,
-    "por_q": 8.9,
+    "por_q": 9.0,
     "op_q": 22050,
     "cns_per": null,
     "div_yield": null,
@@ -2850,12 +2850,12 @@
      }
     ]
    },
-   "price": 94600,
-   "price_date": "2026-11-27 09:35",
+   "price": 94400,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1096111,
-   "mcap_eff": 1096111,
-   "shares": 11586797,
+   "mcap": 1093794,
+   "mcap_eff": 1093794,
+   "shares": 11586801,
    "shares_check": {
     "dart_common": 11586802,
     "dart_period": "2026-11-20",
@@ -2877,32 +2877,32 @@
     "r": 9.0,
     "c": 0.6,
     "note": "정상 이익 1,600억원: 최근 4개 분기 순이익 1,835억원에서 일회성(지분 평가 등)을 덜어냈어요.",
-    "fwd_per": 6.9,
-    "norm_per": 6.9,
+    "fwd_per": 6.8,
+    "norm_per": 6.8,
     "scenarios": {
      "bear": {
       "g": 2,
       "value": 1628213,
       "per_share": 140523,
-      "upside": 48.5
+      "upside": 48.9
      },
      "base": {
       "g": 7,
       "value": 2071206,
       "per_share": 178756,
-      "upside": 89.0
+      "upside": 89.4
      },
      "bull": {
       "g": 11,
       "value": 2505214,
       "per_share": 216213,
-      "upside": 128.6
+      "upside": 129.0
      }
     },
     "c_T": 0.778,
     "roe_norm": 15.9,
-    "implied_g": -6.1,
-    "implied_E1": 84674,
+    "implied_g": -6.2,
+    "implied_E1": 84495,
     "cycle": {
      "position": "중립",
      "note": "자체 신약 성장기.",
@@ -2934,10 +2934,10 @@
     "per_share": 84544,
     "bear": 64240,
     "bull": 101478,
-    "upside": -10.6,
+    "upside": -10.4,
     "pct": 70,
     "tier": "싼 ⅓",
-    "exp_ex": 2.7,
+    "exp_ex": 2.8,
     "conflict": false
    },
    "marks": {
@@ -2951,7 +2951,7 @@
     },
     "weighted": 2025110,
     "weighted_ps": 174777,
-    "weighted_upside": 84.8,
+    "weighted_upside": 85.1,
     "stress": {
      "E": 26934,
      "margin": 1.7,
@@ -2962,7 +2962,7 @@
     },
     "down_ps": 123081,
     "max_loss": 0.0,
-    "up_bull": 128.6,
+    "up_bull": 129.0,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -2977,7 +2977,7 @@
     },
     "mos": 35,
     "buy_ps": 113605,
-    "buy_gap": 20.1,
+    "buy_gap": 20.3,
     "implied_margin": 5.2,
     "base_margin": 9.9,
     "hist_margin": [
@@ -2992,7 +2992,7 @@
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 8.0,
+    "per_q": 7.9,
     "ni_q": 34420,
     "por_ttm": 5.3,
     "op_ttm": 204950,
@@ -3135,12 +3135,12 @@
     },
     "oneoff": []
    },
-   "price": 130000,
-   "price_date": "2026-11-27 09:35",
+   "price": 129800,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1519263,
-   "mcap_eff": 1519263,
-   "shares": 11686638,
+   "mcap": 1516925,
+   "mcap_eff": 1516925,
+   "shares": 11686633,
    "shares_check": {
     "dart_common": 11686636,
     "dart_period": "2026-11-20",
@@ -3168,25 +3168,25 @@
       "g": 2,
       "value": 1008509,
       "per_share": 86296,
-      "upside": -33.6
+      "upside": -33.5
      },
      "base": {
       "g": 8,
       "value": 1287899,
       "per_share": 110203,
-      "upside": -15.2
+      "upside": -15.1
      },
      "bull": {
       "g": 13,
       "value": 1585426,
       "per_share": 135661,
-      "upside": 4.4
+      "upside": 4.5
      }
     },
     "c_T": 0.729,
     "roe_norm": 7.4,
-    "implied_g": 12.0,
-    "implied_E1": 107857,
+    "implied_g": 11.9,
+    "implied_E1": 107676,
     "cycle": {
      "position": "중립",
      "note": "알리글로 성장기.",
@@ -3218,7 +3218,7 @@
     "per_share": 36976,
     "bear": 28096,
     "bull": 44382,
-    "upside": -71.6,
+    "upside": -71.5,
     "pct": 32,
     "tier": "비싼 ⅓",
     "exp_ex": -4.6,
@@ -3235,7 +3235,7 @@
     },
     "weighted": 1263587,
     "weighted_ps": 108122,
-    "weighted_upside": -16.8,
+    "weighted_upside": -16.7,
     "stress": {
      "E": -30089,
      "margin": -1.6,
@@ -3245,8 +3245,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 -1.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 68082,
-    "max_loss": 47.6,
-    "up_bull": 4.4,
+    "max_loss": 47.5,
+    "up_bull": 4.5,
     "asym_ratio": 0.1,
     "asym": "불리",
     "risk": {
@@ -3261,7 +3261,7 @@
     },
     "mos": 45,
     "buy_ps": 59467,
-    "buy_gap": -54.3,
+    "buy_gap": -54.2,
     "implied_margin": 5.6,
     "base_margin": 4.7,
     "hist_margin": [
@@ -3271,14 +3271,14 @@
     ],
     "verdict": "기대 선반영",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 8%씩 늘면서 순이익률 5.6%가 이어져야 해요(과거 -1.6%~8.0%, 평균 2.4%, 이 리포트의 정상 이익 가정 4.7%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 +4%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 8%씩 늘면서 순이익률 5.6%가 이어져야 해요(과거 -1.6%~8.0%, 평균 2.4%, 이 리포트의 정상 이익 가정 4.7%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 +5%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": 1.7,
     "ni_q": 222180,
-    "por_ttm": 22.6,
+    "por_ttm": 22.5,
     "op_ttm": 67290,
     "por_q": 7.7,
     "op_q": 49230,
@@ -3424,12 +3424,12 @@
      }
     ]
    },
-   "price": 8370,
-   "price_date": "2026-11-27 09:35",
+   "price": 8360,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 718068,
-   "mcap_eff": 718068,
-   "shares": 85790681,
+   "mcap": 717210,
+   "mcap_eff": 717210,
+   "shares": 85790670,
    "shares_check": {
     "dart_common": 85790698,
     "dart_period": "2026-11-20",
@@ -3450,32 +3450,32 @@
     "r": 8.5,
     "c": 0.7,
     "note": "정상 이익 700억원: 2025년 643억원·최근 4분기 734억원 평균.",
-    "fwd_per": 10.3,
-    "norm_per": 10.3,
+    "fwd_per": 10.2,
+    "norm_per": 10.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 769673,
       "per_share": 8972,
-      "upside": 7.2
+      "upside": 7.3
      },
      "base": {
       "g": 4,
       "value": 919220,
       "per_share": 10715,
-      "upside": 28.0
+      "upside": 28.2
      },
      "bull": {
       "g": 7,
       "value": 1050831,
       "per_share": 12249,
-      "upside": 46.3
+      "upside": 46.5
      }
     },
     "c_T": 0.758,
     "roe_norm": 8.3,
     "implied_g": -1.6,
-    "implied_E1": 53892,
+    "implied_E1": 53823,
     "cycle": {
      "position": "중립",
      "note": "성숙기.",
@@ -3507,10 +3507,10 @@
     "per_share": 6681,
     "bear": 5076,
     "bull": 8019,
-    "upside": -20.2,
+    "upside": -20.1,
     "pct": 60,
     "tier": "가운데 ⅓",
-    "exp_ex": 2.0,
+    "exp_ex": 2.1,
     "conflict": false
    },
    "marks": {
@@ -3524,7 +3524,7 @@
     },
     "weighted": 900678,
     "weighted_ps": 10499,
-    "weighted_upside": 25.4,
+    "weighted_upside": 25.6,
     "stress": {
      "E": 50443,
      "margin": 4.4,
@@ -3535,7 +3535,7 @@
     },
     "down_ps": 8564,
     "max_loss": 0.0,
-    "up_bull": 46.3,
+    "up_bull": 46.5,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -3550,7 +3550,7 @@
     },
     "mos": 25,
     "buy_ps": 7874,
-    "buy_gap": -5.9,
+    "buy_gap": -5.8,
     "implied_margin": 4.7,
     "base_margin": 6.1,
     "hist_margin": [
@@ -3560,7 +3560,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 4.7%가 이어져야 해요(과거 0.2%~6.9%, 평균 5.5%, 이 리포트의 정상 이익 가정 6.1%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +46%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 4.7%가 이어져야 해요(과거 0.2%~6.9%, 평균 5.5%, 이 리포트의 정상 이익 가정 6.1%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +47%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -3709,7 +3709,7 @@
     "oneoff": []
    },
    "price": 33650,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 327378,
    "mcap_eff": 327378,
@@ -4003,12 +4003,12 @@
     },
     "oneoff": []
    },
-   "price": 40850,
-   "price_date": "2026-11-27 09:35",
+   "price": 41000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1157328,
-   "mcap_eff": 1157328,
-   "shares": 28331163,
+   "mcap": 1161578,
+   "mcap_eff": 1161578,
+   "shares": 28331171,
    "shares_check": {
     "dart_common": 28331160,
     "dart_period": "2026-11-20",
@@ -4021,7 +4021,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -297570,
    "dividend_yield": null,
-   "per": 13.3,
+   "per": 13.4,
    "roe": 6.5,
    "pbr": 0.87,
    "net_debt_levered": -297570,
@@ -4037,25 +4037,25 @@
       "g": 2,
       "value": 964926,
       "per_share": 34059,
-      "upside": -16.6
+      "upside": -16.9
      },
      "base": {
       "g": 7,
       "value": 1314635,
       "per_share": 46402,
-      "upside": 13.6
+      "upside": 13.2
      },
      "bull": {
       "g": 11,
       "value": 1633566,
       "per_share": 57660,
-      "upside": 41.1
+      "upside": 40.6
      }
     },
     "c_T": 0.705,
     "roe_norm": 6.8,
-    "implied_g": 7.8,
-    "implied_E1": 93563,
+    "implied_g": 7.9,
+    "implied_E1": 93907,
     "cycle": {
      "position": "중립",
      "note": "케이캡 성장기.",
@@ -4080,19 +4080,19 @@
       "g": 2,
       "value": 880345,
       "per_share": 31073,
-      "upside": -23.9
+      "upside": -24.2
      },
      "base": {
       "g": 7,
       "value": 1113252,
       "per_share": 39294,
-      "upside": -3.8
+      "upside": -4.2
      },
      "bull": {
       "g": 11,
       "value": 1340969,
       "per_share": 47332,
-      "upside": 15.9
+      "upside": 15.4
      }
     },
     "pipeline_added": 201383
@@ -4125,19 +4125,19 @@
       "pipeline": 84581,
       "value": 964926,
       "per_share": 34059,
-      "upside": -16.6
+      "upside": -16.9
      },
      "base": {
       "pipeline": 201383,
       "value": 1314635,
       "per_share": 46402,
-      "upside": 13.6
+      "upside": 13.2
      },
      "bull": {
       "pipeline": 292597,
       "value": 1633566,
       "per_share": 57660,
-      "upside": 41.1
+      "upside": 40.6
      }
     }
    },
@@ -4152,7 +4152,7 @@
     "per_share": 23770,
     "bear": 18062,
     "bull": 28532,
-    "upside": -41.8,
+    "upside": -42.0,
     "pct": 48,
     "tier": "가운데 ⅓",
     "exp_ex": -0.1,
@@ -4169,7 +4169,7 @@
     },
     "weighted": 1273508,
     "weighted_ps": 44951,
-    "weighted_upside": 10.0,
+    "weighted_upside": 9.6,
     "stress": {
      "E": 49518,
      "margin": 4.5,
@@ -4179,8 +4179,8 @@
      "how": "2020~2025 중 두 번째로 나쁜 해의 순이익률 4.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 31708,
-    "max_loss": 22.4,
-    "up_bull": 41.2,
+    "max_loss": 22.7,
+    "up_bull": 40.6,
     "asym_ratio": 1.8,
     "asym": "균형",
     "risk": {
@@ -4195,7 +4195,7 @@
     },
     "mos": 25,
     "buy_ps": 33713,
-    "buy_gap": -17.5,
+    "buy_gap": -17.8,
     "implied_margin": 8.5,
     "base_margin": 8.2,
     "hist_margin": [
@@ -4205,16 +4205,16 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 7%씩 늘면서 순이익률 8.5%가 이어져야 해요(과거 3.2%~7.1%, 평균 5.4%, 이 리포트의 정상 이익 가정 8.2%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 22% 손실, 낙관 시나리오면 +41%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 7%씩 늘면서 순이익률 8.5%가 이어져야 해요(과거 3.2%~7.1%, 평균 5.4%, 이 리포트의 정상 이익 가정 8.2%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 23% 손실, 낙관 시나리오면 +41%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": 14.8,
     "ni_q": 19590,
-    "por_ttm": 8.9,
+    "por_ttm": 9.0,
     "op_ttm": 129320,
-    "por_q": 11.1,
+    "por_q": 11.2,
     "op_q": 26020,
     "cns_per": null,
     "div_yield": null,
@@ -4224,7 +4224,7 @@
     "ret_1y_from": null,
     "ni_cagr5": 22.1,
     "rev_cagr5": 12.2,
-    "peg": 0.6,
+    "peg": 0.61,
     "peg_g": 22.1
    },
    "checks": {
@@ -4270,13 +4270,13 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": true,
-      "val": "0.60",
+      "val": "0.61",
       "note": "성장률 = 최근 5년 순이익 연평균 22.1%(상한 50%)"
      },
      {
       "name": "(성장률 + 배당수익률) ÷ PER 1.5 이상",
       "ok": true,
-      "val": "1.7",
+      "val": "1.6",
       "note": "2 이상이면 매우 좋음"
      },
      {
@@ -4354,7 +4354,7 @@
     "oneoff": []
    },
    "price": 24050,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 560051,
    "mcap_eff": 560051,
@@ -4439,7 +4439,7 @@
     "upside": -19.5,
     "pct": 62,
     "tier": "가운데 ⅓",
-    "exp_ex": 2.0,
+    "exp_ex": 2.1,
     "conflict": false
    },
    "marks": {
@@ -4648,12 +4648,12 @@
      }
     ]
    },
-   "price": 12880,
-   "price_date": "2026-11-27 09:35",
+   "price": 12960,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 407449,
-   "mcap_eff": 407449,
-   "shares": 31634239,
+   "mcap": 409979,
+   "mcap_eff": 409979,
+   "shares": 31634182,
    "shares_check": {
     "dart_common": 31634208,
     "dart_period": "2026-11-20",
@@ -4666,40 +4666,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 64420,
    "dividend_yield": null,
-   "per": 24.8,
+   "per": 24.9,
    "roe": 6.7,
-   "pbr": 1.65,
+   "pbr": 1.66,
    "dcf": {
     "E1": 18000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 180억원(최근 4분기 164억원). 비만약은 rNPV로 더했어요.",
-    "fwd_per": 22.6,
-    "norm_per": 22.6,
+    "fwd_per": 22.8,
+    "norm_per": 22.8,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 200203,
       "per_share": 6329,
-      "upside": -50.9
+      "upside": -51.2
      },
      "base": {
       "g": 4,
       "value": 258264,
       "per_share": 8164,
-      "upside": -36.6
+      "upside": -37.0
      },
      "bull": {
       "g": 8,
       "value": 313196,
       "per_share": 9901,
-      "upside": -23.1
+      "upside": -23.6
      }
     },
     "c_T": 0.726,
     "roe_norm": 7.3,
-    "implied_g": 19.8,
-    "implied_E1": 35967,
+    "implied_g": 20.0,
+    "implied_E1": 36222,
     "cycle": {
      "position": "회복기",
      "note": "구조조정 후 회복.",
@@ -4736,19 +4736,19 @@
       "g": -2,
       "value": 188001,
       "per_share": 5943,
-      "upside": -53.9
+      "upside": -54.1
      },
      "base": {
       "g": 4,
       "value": 229212,
       "per_share": 7246,
-      "upside": -43.7
+      "upside": -44.1
      },
      "bull": {
       "g": 8,
       "value": 264098,
       "per_share": 8348,
-      "upside": -35.2
+      "upside": -35.6
      }
     },
     "pipeline_added": 29052
@@ -4781,19 +4781,19 @@
       "pipeline": 12202,
       "value": 200203,
       "per_share": 6329,
-      "upside": -50.9
+      "upside": -51.2
      },
      "base": {
       "pipeline": 29052,
       "value": 258264,
       "per_share": 8164,
-      "upside": -36.6
+      "upside": -37.0
      },
      "bull": {
       "pipeline": 49098,
       "value": 313196,
       "per_share": 9901,
-      "upside": -23.1
+      "upside": -23.6
      }
     }
    },
@@ -4816,7 +4816,7 @@
     },
     "weighted": 257482,
     "weighted_ps": 8139,
-    "weighted_upside": -36.8,
+    "weighted_upside": -37.2,
     "stress": {
      "E": -124630,
      "margin": -17.8,
@@ -4827,7 +4827,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -23.1,
+    "up_bull": -23.6,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -4842,8 +4842,8 @@
     },
     "mos": 45,
     "buy_ps": 4476,
-    "buy_gap": -65.2,
-    "implied_margin": 5.1,
+    "buy_gap": -65.5,
+    "implied_margin": 5.2,
     "base_margin": 2.6,
     "hist_margin": [
      -22.2,
@@ -4852,16 +4852,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 5.1%가 이어져야 해요(과거 -22.2%~6.2%, 평균 -2.5%, 이 리포트의 정상 이익 가정 2.6%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -23%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 5.2%가 이어져야 해요(과거 -22.2%~6.2%, 평균 -2.5%, 이 리포트의 정상 이익 가정 2.6%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -24%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -4760,
-    "por_ttm": 15.5,
+    "por_ttm": 15.6,
     "op_ttm": 26280,
-    "por_q": 14.3,
+    "por_q": 14.4,
     "op_q": 7140,
     "cns_per": null,
     "div_yield": null,
@@ -5000,12 +5000,12 @@
     },
     "oneoff": []
    },
-   "price": 14970,
-   "price_date": "2026-11-27 09:35",
+   "price": 15120,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 179358,
-   "mcap_eff": 179358,
-   "shares": 11981162,
+   "mcap": 181156,
+   "mcap_eff": 181156,
+   "shares": 11981217,
    "shares_check": {
     "dart_common": 11981195,
     "dart_period": "2026-11-20",
@@ -5018,7 +5018,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -116980,
    "dividend_yield": null,
-   "per": 6.6,
+   "per": 6.7,
    "roe": 7.2,
    "pbr": 0.48,
    "net_debt_levered": -116980,
@@ -5038,25 +5038,25 @@
       "g": -3,
       "value": 198983,
       "per_share": 16608,
-      "upside": 10.9
+      "upside": 9.8
      },
      "base": {
       "g": 3,
       "value": 275359,
       "per_share": 22983,
-      "upside": 53.5
+      "upside": 52.0
      },
      "bull": {
       "g": 7,
       "value": 345634,
       "per_share": 28848,
-      "upside": 92.7
+      "upside": 90.8
      }
     },
     "c_T": 0.751,
     "roe_norm": 8.0,
-    "implied_g": -5.4,
-    "implied_E1": 20082,
+    "implied_g": -5.2,
+    "implied_E1": 20268,
     "cycle": {
      "position": "하강기",
      "note": "일시 부진.",
@@ -5100,10 +5100,10 @@
     "per_share": 25920,
     "bear": 19695,
     "bull": 31111,
-    "upside": 73.1,
+    "upside": 71.4,
     "pct": 95,
     "tier": "싼 ⅓",
-    "exp_ex": 7.3,
+    "exp_ex": 7.2,
     "conflict": false
    },
    "marks": {
@@ -5117,7 +5117,7 @@
     },
     "weighted": 259169,
     "weighted_ps": 21631,
-    "weighted_upside": 44.5,
+    "weighted_upside": 43.1,
     "stress": {
      "E": 30000,
      "margin": 5.0,
@@ -5128,7 +5128,7 @@
     },
     "down_ps": 16608,
     "max_loss": 0.0,
-    "up_bull": 92.7,
+    "up_bull": 90.8,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -5143,8 +5143,8 @@
     },
     "mos": 30,
     "buy_ps": 15142,
-    "buy_gap": 1.1,
-    "implied_margin": 2.8,
+    "buy_gap": 0.1,
+    "implied_margin": 2.9,
     "base_margin": 4.2,
     "hist_margin": [
      4.6,
@@ -5153,14 +5153,14 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 2.8%가 이어져야 해요(과거 4.6%~13.8%, 평균 9.2%, 이 리포트의 정상 이익 가정 4.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +93%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 2.9%가 이어져야 해요(과거 4.6%~13.8%, 평균 9.2%, 이 리포트의 정상 이익 가정 4.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +91%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": 2.8,
     "ni_q": 16140,
-    "por_ttm": 23.5,
+    "por_ttm": 23.7,
     "op_ttm": 7630,
     "por_q": null,
     "op_q": -4470,
@@ -5301,12 +5301,12 @@
     },
     "oneoff": []
    },
-   "price": 8080,
-   "price_date": "2026-11-27 09:35",
+   "price": 8070,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 111220,
-   "mcap_eff": 111220,
-   "shares": 13764851,
+   "mcap": 111082,
+   "mcap_eff": 111082,
+   "shares": 13764808,
    "shares_check": {
     "dart_common": 13764846,
     "dart_period": "2026-11-20",
@@ -5335,7 +5335,7 @@
       "g": -3,
       "value": 28518,
       "per_share": 2072,
-      "upside": -74.4
+      "upside": -74.3
      },
      "base": {
       "g": 2,
@@ -5353,7 +5353,7 @@
     "c_T": 0.6,
     "roe_norm": 2.9,
     "implied_g": 18.7,
-    "implied_E1": 16889,
+    "implied_E1": 16871,
     "cycle": {
      "position": "바닥권",
      "note": "저수익·고차입.",
@@ -5397,7 +5397,7 @@
     "per_share": 3874,
     "bear": 2944,
     "bull": 4650,
-    "upside": -52.1,
+    "upside": -52.0,
     "pct": 40,
     "tier": "가운데 ⅓",
     "exp_ex": -1.3,
@@ -5450,7 +5450,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 3.0%가 이어져야 해요(과거 -10.4%~7.4%, 평균 0.4%, 이 리포트의 정상 이익 가정 1.4%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -43%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 3.0%가 이어져야 해요(과거 -10.4%~7.4%, 평균 0.4%, 이 리포트의 정상 이익 가정 1.4%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -42%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -5560,12 +5560,12 @@
   "271980": {
    "name": "제일약품",
    "group": "상위 제약",
-   "price": 8320,
-   "price_date": "2026-11-27 09:35",
+   "price": 8310,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 122298,
-   "mcap_eff": 122298,
-   "shares": 14699279,
+   "mcap": 122151,
+   "mcap_eff": 122151,
+   "shares": 14699278,
    "shares_check": {
     "dart_common": 14699248,
     "dart_period": "2026-11-20",
@@ -5584,8 +5584,8 @@
     "r": 10.0,
     "c": 0.6,
     "note": "정상 이익 50억원(과거 흑자기 수준을 보수적으로). 온코닉 지분 가치 별도.",
-    "fwd_per": 24.5,
-    "norm_per": 24.5,
+    "fwd_per": 24.4,
+    "norm_per": 24.4,
     "scenarios": {
      "bear": {
       "g": -3,
@@ -5597,19 +5597,19 @@
       "g": 2,
       "value": 44910,
       "per_share": 3055,
-      "upside": -63.3
+      "upside": -63.2
      },
      "bull": {
       "g": 5,
       "value": 51739,
       "per_share": 3520,
-      "upside": -57.7
+      "upside": -57.6
      }
     },
     "c_T": 0.8,
     "roe_norm": null,
     "implied_g": 23.7,
-    "implied_E1": 13616,
+    "implied_E1": 13599,
     "net_cash_added": 0
    },
    "marks": {
@@ -5623,7 +5623,7 @@
     },
     "weighted": 43435,
     "weighted_ps": 2955,
-    "weighted_upside": -64.5,
+    "weighted_upside": -64.4,
     "stress": {
      "E": 3000,
      "margin": null,
@@ -5633,8 +5633,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 2208,
-    "max_loss": 73.5,
-    "up_bull": -57.7,
+    "max_loss": 73.4,
+    "up_bull": -57.6,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -5773,12 +5773,12 @@
     },
     "oneoff": []
    },
-   "price": 25700,
-   "price_date": "2026-11-27 09:35",
+   "price": 25450,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1162438,
-   "mcap_eff": 1162376,
-   "shares": 45228638,
+   "mcap": 1151131,
+   "mcap_eff": 1151069,
+   "shares": 45228644,
    "shares_check": {
     "dart_common": 45228628,
     "dart_period": "2026-11-20",
@@ -5791,41 +5791,41 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -32060,
    "dividend_yield": null,
-   "per": 16.7,
+   "per": 16.5,
    "roe": 10.5,
-   "pbr": 1.75,
+   "pbr": 1.73,
    "net_debt_levered": -32060,
    "dcf": {
     "E1": 65000,
     "r": 9.0,
     "c": 0.6,
     "note": "정상 이익 650억원: 2024년 612억, 2025년 660억, 최근 4개 분기 697억원의 중간.",
-    "fwd_per": 17.9,
-    "norm_per": 17.9,
+    "fwd_per": 17.7,
+    "norm_per": 17.7,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 600357,
       "per_share": 13274,
-      "upside": -48.4
+      "upside": -47.8
      },
      "base": {
       "g": 4,
       "value": 728535,
       "per_share": 16108,
-      "upside": -37.3
+      "upside": -36.7
      },
      "bull": {
       "g": 8,
       "value": 882600,
       "per_share": 19514,
-      "upside": -24.1
+      "upside": -23.3
      }
     },
     "c_T": 0.778,
     "roe_norm": 9.8,
-    "implied_g": 13.8,
-    "implied_E1": 103707,
+    "implied_g": 13.6,
+    "implied_E1": 102699,
     "cycle": {
      "position": "중립",
      "note": "소비재형 제약, 경기 영향 작음.",
@@ -5857,10 +5857,10 @@
     "per_share": 16608,
     "bear": 12619,
     "bull": 19934,
-    "upside": -35.4,
+    "upside": -34.7,
     "pct": 57,
     "tier": "가운데 ⅓",
-    "exp_ex": 0.6,
+    "exp_ex": 0.7,
     "conflict": false
    },
    "marks": {
@@ -5874,7 +5874,7 @@
     },
     "weighted": 720895,
     "weighted_ps": 15939,
-    "weighted_upside": -38.0,
+    "weighted_upside": -37.4,
     "stress": {
      "E": 65000,
      "margin": 7.1,
@@ -5884,8 +5884,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 7.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 13274,
-    "max_loss": 48.4,
-    "up_bull": -24.1,
+    "max_loss": 47.8,
+    "up_bull": -23.3,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -5900,8 +5900,8 @@
     },
     "mos": 25,
     "buy_ps": 11954,
-    "buy_gap": -53.5,
-    "implied_margin": 10.1,
+    "buy_gap": -53.0,
+    "implied_margin": 10.0,
     "base_margin": 6.3,
     "hist_margin": [
      6.5,
@@ -5910,16 +5910,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 10.1%가 이어져야 해요(과거 6.5%~13.1%, 평균 9.5%, 이 리포트의 정상 이익 가정 6.3%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 -24%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 10.0%가 이어져야 해요(과거 6.5%~13.1%, 평균 9.5%, 이 리포트의 정상 이익 가정 6.3%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 -23%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 21.8,
+    "per_q": 21.5,
     "ni_q": 13360,
-    "por_ttm": 11.5,
+    "por_ttm": 11.3,
     "op_ttm": 101500,
-    "por_q": 12.2,
+    "por_q": 12.1,
     "op_q": 23780,
     "cns_per": 14.37,
     "div_yield": 0.78,
@@ -5929,7 +5929,7 @@
     "ret_1y_from": null,
     "ni_cagr5": 3.4,
     "rev_cagr5": 10.6,
-    "peg": 4.95,
+    "peg": 4.89,
     "peg_g": 3.4
    },
    "checks": {
@@ -5975,7 +5975,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": false,
-      "val": "4.95",
+      "val": "4.89",
       "note": "성장률 = 최근 5년 순이익 연평균 3.4%(상한 50%)"
      },
      {
@@ -6058,12 +6058,12 @@
     },
     "oneoff": []
    },
-   "price": 5750,
-   "price_date": "2026-11-27 09:35",
+   "price": 5780,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 286332,
-   "mcap_eff": 286332,
-   "shares": 49796870,
+   "mcap": 287826,
+   "mcap_eff": 287826,
+   "shares": 49796886,
    "shares_check": {
     "dart_common": 49796954,
     "dart_period": "2026-11-20",
@@ -6076,7 +6076,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 155720,
    "dividend_yield": null,
-   "per": 23.5,
+   "per": 23.6,
    "roe": 1.9,
    "pbr": 0.44,
    "dcf": {
@@ -6084,32 +6084,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 280억원: 2020~2025년 순이익 평균 320억원에서 최근 부진을 감안해 낮췄어요.",
-    "fwd_per": 10.2,
-    "norm_per": 10.2,
+    "fwd_per": 10.3,
+    "norm_per": 10.3,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 308507,
       "per_share": 6195,
-      "upside": 7.7
+      "upside": 7.2
      },
      "base": {
       "g": 2,
       "value": 344710,
       "per_share": 6922,
-      "upside": 20.4
+      "upside": 19.8
      },
      "bull": {
       "g": 5,
       "value": 380629,
       "per_share": 7644,
-      "upside": 32.9
+      "upside": 32.2
      }
     },
     "c_T": 0.6,
     "roe_norm": 4.3,
-    "implied_g": -5.6,
-    "implied_E1": 20703,
+    "implied_g": -5.4,
+    "implied_E1": 20890,
     "cycle": {
      "position": "하강기",
      "note": "음료 원가 부담 구간.",
@@ -6153,10 +6153,10 @@
     "per_share": 4764,
     "bear": 3620,
     "bull": 5719,
-    "upside": -17.1,
+    "upside": -17.6,
     "pct": 65,
     "tier": "가운데 ⅓",
-    "exp_ex": 2.2,
+    "exp_ex": 2.3,
     "conflict": false
    },
    "marks": {
@@ -6170,7 +6170,7 @@
     },
     "weighted": 337427,
     "weighted_ps": 6776,
-    "weighted_upside": 17.8,
+    "weighted_upside": 17.2,
     "stress": {
      "E": 28000,
      "margin": 1.7,
@@ -6181,7 +6181,7 @@
     },
     "down_ps": 6195,
     "max_loss": 0.0,
-    "up_bull": 32.9,
+    "up_bull": 32.2,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -6196,7 +6196,7 @@
     },
     "mos": 30,
     "buy_ps": 4743,
-    "buy_gap": -17.5,
+    "buy_gap": -17.9,
     "implied_margin": 1.2,
     "base_margin": 1.6,
     "hist_margin": [
@@ -6206,14 +6206,14 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 1.2%가 이어져야 해요(과거 1.3%~3.6%, 평균 2.1%, 이 리포트의 정상 이익 가정 1.6%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +33%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 1.2%가 이어져야 해요(과거 1.3%~3.6%, 평균 2.1%, 이 리포트의 정상 이익 가정 1.6%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +32%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 62.2,
+    "per_q": 62.6,
     "ni_q": 1150,
-    "por_ttm": 9.6,
+    "por_ttm": 9.7,
     "op_ttm": 29710,
     "por_q": 10.2,
     "op_q": 7040,
@@ -6347,12 +6347,12 @@
     },
     "oneoff": []
    },
-   "price": 41300,
-   "price_date": "2026-11-27 09:35",
+   "price": 41200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 602990,
-   "mcap_eff": 602990,
-   "shares": 14600242,
+   "mcap": 601530,
+   "mcap_eff": 601530,
+   "shares": 14600243,
    "shares_check": {
     "dart_common": 14600243,
     "dart_period": "2026-11-20",
@@ -6380,25 +6380,25 @@
       "g": 0,
       "value": 1165049,
       "per_share": 79797,
-      "upside": 93.2
+      "upside": 93.7
      },
      "base": {
       "g": 4,
       "value": 1320361,
       "per_share": 90434,
-      "upside": 119.0
+      "upside": 119.5
      },
      "bull": {
       "g": 7,
       "value": 1456949,
       "per_share": 99789,
-      "upside": 141.6
+      "upside": 142.2
      }
     },
     "c_T": 0.778,
     "roe_norm": 10.7,
     "implied_g": -30.0,
-    "implied_E1": 24017,
+    "implied_E1": 23893,
     "cycle": {
      "position": "중립",
      "note": "비경기 CNS 전문약.",
@@ -6430,7 +6430,7 @@
     "per_share": 51334,
     "bear": 39005,
     "bull": 61616,
-    "upside": 24.3,
+    "upside": 24.6,
     "pct": 80,
     "tier": "싼 ⅓",
     "exp_ex": 5.0,
@@ -6447,7 +6447,7 @@
     },
     "weighted": 1301085,
     "weighted_ps": 89114,
-    "weighted_upside": 115.8,
+    "weighted_upside": 116.3,
     "stress": {
      "E": 76729,
      "margin": 25.5,
@@ -6458,7 +6458,7 @@
     },
     "down_ps": 78793,
     "max_loss": 0.0,
-    "up_bull": 141.6,
+    "up_bull": 142.2,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -6473,8 +6473,8 @@
     },
     "mos": 25,
     "buy_ps": 66836,
-    "buy_gap": 61.8,
-    "implied_margin": 8.0,
+    "buy_gap": 62.2,
+    "implied_margin": 7.9,
     "base_margin": 28.2,
     "hist_margin": [
      25.5,
@@ -6483,7 +6483,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 8.0%가 이어져야 해요(과거 25.5%~30.7%, 평균 28.2%, 이 리포트의 정상 이익 가정 28.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +142%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 7.9%가 이어져야 해요(과거 25.5%~30.7%, 평균 28.2%, 이 리포트의 정상 이익 가정 28.2%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +142%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -6619,12 +6619,12 @@
     },
     "oneoff": []
    },
-   "price": 3905,
-   "price_date": "2026-11-27 09:35",
+   "price": 3920,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 385321,
-   "mcap_eff": 385321,
-   "shares": 98673752,
+   "mcap": 386801,
+   "mcap_eff": 386801,
+   "shares": 98673724,
    "shares_check": {
     "dart_common": 98673740,
     "dart_period": "2026-11-20",
@@ -6637,40 +6637,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 26740,
    "dividend_yield": null,
-   "per": 51.1,
+   "per": 51.3,
    "roe": 2.2,
-   "pbr": 1.13,
+   "pbr": 1.14,
    "dcf": {
     "E1": 12000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 120억원: 2025년 순이익 126억원, 최근 4개 분기 75억원.",
-    "fwd_per": 32.1,
-    "norm_per": 32.1,
+    "fwd_per": 32.2,
+    "norm_per": 32.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 106772,
       "per_share": 1082,
-      "upside": -72.3
+      "upside": -72.4
      },
      "base": {
       "g": 5,
       "value": 129108,
       "per_share": 1308,
-      "upside": -66.5
+      "upside": -66.6
      },
      "bull": {
       "g": 10,
       "value": 157887,
       "per_share": 1600,
-      "upside": -59.0
+      "upside": -59.2
      }
     },
     "c_T": 0.6,
     "roe_norm": 3.5,
-    "implied_g": 32.9,
-    "implied_E1": 39919,
+    "implied_g": 33.0,
+    "implied_E1": 40081,
     "cycle": {
      "position": "회복기",
      "note": "구조조정 후 회복.",
@@ -6714,7 +6714,7 @@
     "per_share": 519,
     "bear": 394,
     "bull": 623,
-    "upside": -86.7,
+    "upside": -86.8,
     "pct": 10,
     "tier": "비싼 ⅓",
     "exp_ex": -9.2,
@@ -6731,7 +6731,7 @@
     },
     "weighted": 130719,
     "weighted_ps": 1325,
-    "weighted_upside": -66.1,
+    "weighted_upside": -66.2,
     "stress": {
      "E": -8395,
      "margin": -4.4,
@@ -6741,8 +6741,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 -4.4% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 686,
-    "max_loss": 82.4,
-    "up_bull": -59.0,
+    "max_loss": 82.5,
+    "up_bull": -59.2,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -6757,8 +6757,8 @@
     },
     "mos": 45,
     "buy_ps": 729,
-    "buy_gap": -81.3,
-    "implied_margin": 21.0,
+    "buy_gap": -81.4,
+    "implied_margin": 21.1,
     "base_margin": 6.3,
     "hist_margin": [
      -24.9,
@@ -6767,16 +6767,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 21.0%가 이어져야 해요(과거 -24.9%~75.0%, 평균 1.6%, 이 리포트의 정상 이익 가정 6.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 82% 손실, 낙관 시나리오면 -59%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 21.1%가 이어져야 해요(과거 -24.9%~75.0%, 평균 1.6%, 이 리포트의 정상 이익 가정 6.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 82% 손실, 낙관 시나리오면 -59%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 332.2,
+    "per_q": 333.4,
     "ni_q": 290,
-    "por_ttm": 31.1,
+    "por_ttm": 31.2,
     "op_ttm": 12390,
-    "por_q": 55.7,
+    "por_q": 55.9,
     "op_q": 1730,
     "cns_per": null,
     "div_yield": null,
@@ -6883,12 +6883,12 @@
   "005500": {
    "name": "삼진제약",
    "group": "중견 제약·일반약",
-   "price": 19220,
-   "price_date": "2026-11-27 09:35",
+   "price": 19230,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 255971,
-   "mcap_eff": 255971,
-   "shares": 13317950,
+   "mcap": 256104,
+   "mcap_eff": 256104,
+   "shares": 13317941,
    "shares_check": {
     "dart_common": 13317925,
     "dart_period": "2026-11-20",
@@ -6932,7 +6932,7 @@
     "c_T": 0.789,
     "roe_norm": null,
     "implied_g": 6.2,
-    "implied_E1": 26828,
+    "implied_E1": 26842,
     "net_cash_added": 0
    },
    "marks": {
@@ -6972,13 +6972,13 @@
     },
     "mos": 35,
     "buy_ps": 10024,
-    "buy_gap": -47.8,
+    "buy_gap": -47.9,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 6.2%씩 늘어난다고 가정하는 셈이에요(기준 가정 2%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 37% 손실, 낙관 시나리오면 -5%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 6.2%씩 늘어난다고 가정하는 셈이에요(기준 가정 2%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 38% 손실, 낙관 시나리오면 -5%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -7095,12 +7095,12 @@
     },
     "oneoff": []
    },
-   "price": 10640,
-   "price_date": "2026-11-27 09:35",
+   "price": 10610,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 197933,
-   "mcap_eff": 197933,
-   "shares": 18602726,
+   "mcap": 197375,
+   "mcap_eff": 197375,
+   "shares": 18602733,
    "shares_check": {
     "dart_common": 18602740,
     "dart_period": "2026-11-20",
@@ -7113,7 +7113,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 69640,
    "dividend_yield": null,
-   "per": 8.4,
+   "per": 8.3,
    "roe": 5.6,
    "pbr": 0.47,
    "dcf": {
@@ -7128,25 +7128,25 @@
       "g": 0,
       "value": 255074,
       "per_share": 13712,
-      "upside": 28.9
+      "upside": 29.2
      },
      "base": {
       "g": 3,
       "value": 283223,
       "per_share": 15225,
-      "upside": 43.1
+      "upside": 43.5
      },
      "bull": {
       "g": 6,
       "value": 315515,
       "per_share": 16961,
-      "upside": 59.4
+      "upside": 59.9
      }
     },
     "c_T": 0.649,
     "roe_norm": 5.7,
-    "implied_g": -7.8,
-    "implied_E1": 14972,
+    "implied_g": -7.9,
+    "implied_E1": 14913,
     "cycle": {
      "position": "중립",
      "note": "비경기 CNS.",
@@ -7178,7 +7178,7 @@
     "per_share": 13420,
     "bear": 10197,
     "bull": 16109,
-    "upside": 26.1,
+    "upside": 26.5,
     "pct": 82,
     "tier": "싼 ⅓",
     "exp_ex": 5.1,
@@ -7195,7 +7195,7 @@
     },
     "weighted": 281237,
     "weighted_ps": 15118,
-    "weighted_upside": 42.1,
+    "weighted_upside": 42.5,
     "stress": {
      "E": 24000,
      "margin": 9.0,
@@ -7206,7 +7206,7 @@
     },
     "down_ps": 13712,
     "max_loss": 0.0,
-    "up_bull": 59.4,
+    "up_bull": 59.9,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -7221,7 +7221,7 @@
     },
     "mos": 25,
     "buy_ps": 11338,
-    "buy_gap": 6.6,
+    "buy_gap": 6.9,
     "implied_margin": 5.4,
     "base_margin": 8.7,
     "hist_margin": [
@@ -7231,7 +7231,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 5.4%가 이어져야 해요(과거 5.3%~18.4%, 평균 12.6%, 이 리포트의 정상 이익 가정 8.7%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +59%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 3%씩 늘면서 순이익률 5.4%가 이어져야 해요(과거 5.3%~18.4%, 평균 12.6%, 이 리포트의 정상 이익 가정 8.7%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +60%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -7347,12 +7347,12 @@
   "003220": {
    "name": "대원제약",
    "group": "중견 제약·일반약",
-   "price": 7500,
-   "price_date": "2026-11-27 09:35",
+   "price": 7550,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 168238,
-   "mcap_eff": 168238,
-   "shares": 22431733,
+   "mcap": 169360,
+   "mcap_eff": 169360,
+   "shares": 22431788,
    "shares_check": {
     "dart_common": 22431730,
     "dart_period": "2026-11-20",
@@ -7371,32 +7371,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 200억원: 과거 연 매출 5,000억원대·순이익 200억원 안팎(사업보고서 기준).",
-    "fwd_per": 8.4,
-    "norm_per": 8.4,
+    "fwd_per": 8.5,
+    "norm_per": 8.5,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 157534,
       "per_share": 7023,
-      "upside": -6.4
+      "upside": -7.0
      },
      "base": {
       "g": 3,
       "value": 200166,
       "per_share": 8923,
-      "upside": 19.0
+      "upside": 18.2
      },
      "bull": {
       "g": 6,
       "value": 230902,
       "per_share": 10294,
-      "upside": 37.2
+      "upside": 36.3
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": -0.6,
-    "implied_E1": 16810,
+    "implied_g": -0.5,
+    "implied_E1": 16922,
     "net_cash_added": 0
    },
    "marks": {
@@ -7410,7 +7410,7 @@
     },
     "weighted": 193524,
     "weighted_ps": 8627,
-    "weighted_upside": 15.0,
+    "weighted_upside": 14.3,
     "stress": {
      "E": 12000,
      "margin": null,
@@ -7420,9 +7420,9 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 6486,
-    "max_loss": 13.5,
-    "up_bull": 37.3,
-    "asym_ratio": 2.8,
+    "max_loss": 14.1,
+    "up_bull": 36.3,
+    "asym_ratio": 2.6,
     "asym": "유리",
     "risk": {
      "score": 28,
@@ -7436,13 +7436,13 @@
     },
     "mos": 35,
     "buy_ps": 5608,
-    "buy_gap": -25.2,
+    "buy_gap": -25.7,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가는 1~5년 이익이 연 -0.6%씩 늘어난다고 가정하는 셈이에요(기준 가정 3%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 14% 손실, 낙관 시나리오면 +37%로 손익 구조는 '유리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 -0.5%씩 늘어난다고 가정하는 셈이에요(기준 가정 3%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 14% 손실, 낙관 시나리오면 +36%로 손익 구조는 '유리'예요."
    },
    "metrics": {
     "q": null,
@@ -7528,12 +7528,12 @@
   "293480": {
    "name": "하나제약",
    "group": "중견 제약·일반약",
-   "price": 7990,
-   "price_date": "2026-11-27 09:35",
+   "price": 8090,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 141990,
-   "mcap_eff": 141990,
-   "shares": 17770964,
+   "mcap": 143767,
+   "mcap_eff": 143767,
+   "shares": 17770952,
    "shares_check": {
     "dart_common": 17771011,
     "dart_period": "2026-11-20",
@@ -7552,32 +7552,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 190억원: 사업보고서 기준 과거 평균 순이익.",
-    "fwd_per": 7.5,
-    "norm_per": 7.5,
+    "fwd_per": 7.6,
+    "norm_per": 7.6,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 164729,
       "per_share": 9270,
-      "upside": 16.0
+      "upside": 14.6
      },
      "base": {
       "g": 4,
       "value": 199450,
       "per_share": 11223,
-      "upside": 40.5
+      "upside": 38.7
      },
      "bull": {
       "g": 7,
       "value": 230007,
       "per_share": 12943,
-      "upside": 62.0
+      "upside": 60.0
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": -3.1,
-    "implied_E1": 13526,
+    "implied_g": -2.8,
+    "implied_E1": 13696,
     "net_cash_added": 0
    },
    "marks": {
@@ -7591,7 +7591,7 @@
     },
     "weighted": 195145,
     "weighted_ps": 10981,
-    "weighted_upside": 37.4,
+    "weighted_upside": 35.7,
     "stress": {
      "E": 11400,
      "margin": null,
@@ -7602,7 +7602,7 @@
     },
     "down_ps": 8626,
     "max_loss": 0.0,
-    "up_bull": 62.0,
+    "up_bull": 60.0,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -7617,18 +7617,18 @@
     },
     "mos": 35,
     "buy_ps": 7138,
-    "buy_gap": -10.7,
+    "buy_gap": -11.8,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가는 1~5년 이익이 연 -3.1%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +62%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 -2.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +60%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": null,
-    "per_q": 7.7,
+    "per_q": 7.8,
     "ni_q": 4590,
     "por_ttm": null,
     "op_ttm": null,
@@ -7709,12 +7709,12 @@
   "000020": {
    "name": "동화약품",
    "group": "중견 제약·일반약",
-   "price": 4935,
-   "price_date": "2026-11-27 09:35",
+   "price": 4930,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 137831,
-   "mcap_eff": 137831,
-   "shares": 27929281,
+   "mcap": 137691,
+   "mcap_eff": 137691,
+   "shares": 27929209,
    "shares_check": {
     "dart_common": 27929240,
     "dart_period": "2026-11-20",
@@ -7746,19 +7746,19 @@
       "g": 2,
       "value": 114496,
       "per_share": 4099,
-      "upside": -16.9
+      "upside": -16.8
      },
      "bull": {
       "g": 4,
       "value": 125968,
       "per_share": 4510,
-      "upside": -8.6
+      "upside": -8.5
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
     "implied_g": 5.9,
-    "implied_E1": 14446,
+    "implied_E1": 14431,
     "net_cash_added": 0
    },
    "marks": {
@@ -7772,7 +7772,7 @@
     },
     "weighted": 110798,
     "weighted_ps": 3967,
-    "weighted_upside": -19.6,
+    "weighted_upside": -19.5,
     "stress": {
      "E": 7200,
      "margin": null,
@@ -7782,8 +7782,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 3126,
-    "max_loss": 36.7,
-    "up_bull": -8.6,
+    "max_loss": 36.6,
+    "up_bull": -8.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -7890,12 +7890,12 @@
   "001540": {
    "name": "안국약품",
    "group": "중견 제약·일반약",
-   "price": 10330,
-   "price_date": "2026-11-27 09:35",
+   "price": 10180,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 134762,
-   "mcap_eff": 134762,
-   "shares": 13045692,
+   "mcap": 132805,
+   "mcap_eff": 132805,
+   "shares": 13045678,
    "shares_check": {
     "dart_common": 13045685,
     "dart_period": "2026-11-20",
@@ -7914,32 +7914,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 130억원: 사업보고서 기준 최근 흑자 연도 평균.",
-    "fwd_per": 10.4,
-    "norm_per": 10.4,
+    "fwd_per": 10.2,
+    "norm_per": 10.2,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 102397,
       "per_share": 7849,
-      "upside": -24.0
+      "upside": -22.9
      },
      "base": {
       "g": 2,
       "value": 124037,
       "per_share": 9508,
-      "upside": -8.0
+      "upside": -6.6
      },
      "bull": {
       "g": 5,
       "value": 143121,
       "per_share": 10971,
-      "upside": 6.2
+      "upside": 7.8
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": 3.7,
-    "implied_E1": 14124,
+    "implied_g": 3.4,
+    "implied_E1": 13919,
     "net_cash_added": 0
    },
    "marks": {
@@ -7953,7 +7953,7 @@
     },
     "weighted": 121362,
     "weighted_ps": 9303,
-    "weighted_upside": -9.9,
+    "weighted_upside": -8.6,
     "stress": {
      "E": 7800,
      "margin": null,
@@ -7963,9 +7963,9 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 7249,
-    "max_loss": 29.8,
-    "up_bull": 6.2,
-    "asym_ratio": 0.2,
+    "max_loss": 28.8,
+    "up_bull": 7.8,
+    "asym_ratio": 0.3,
     "asym": "불리",
     "risk": {
      "score": 32,
@@ -7979,13 +7979,13 @@
     },
     "mos": 35,
     "buy_ps": 6047,
-    "buy_gap": -41.5,
+    "buy_gap": -40.6,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "기대 선반영",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 3.7%씩 늘어난다고 가정하는 셈이에요(기준 가정 2%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 30% 손실, 낙관 시나리오면 +6%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 3.4%씩 늘어난다고 가정하는 셈이에요(기준 가정 2%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 29% 손실, 낙관 시나리오면 +8%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -8103,12 +8103,12 @@
     },
     "oneoff": []
    },
-   "price": 16340,
-   "price_date": "2026-11-27 09:35",
+   "price": 16480,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 259950,
-   "mcap_eff": 259950,
-   "shares": 15908813,
+   "mcap": 262177,
+   "mcap_eff": 262177,
+   "shares": 15908799,
    "shares_check": {
     "dart_common": 15908811,
     "dart_period": "2026-11-20",
@@ -8123,38 +8123,38 @@
    "dividend_yield": null,
    "per": 4.7,
    "roe": 12.2,
-   "pbr": 0.57,
+   "pbr": 0.58,
    "dcf": {
     "E1": 40000,
     "r": 9.0,
     "c": 0.6,
     "note": "정상 이익 400억원: 2022~2025년 평균 411억원. 최근 4개 분기 556억원은 금융 이익 포함.",
-    "fwd_per": 6.5,
-    "norm_per": 6.5,
+    "fwd_per": 6.6,
+    "norm_per": 6.6,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 387482,
       "per_share": 24356,
-      "upside": 49.1
+      "upside": 47.8
      },
      "base": {
       "g": 4,
       "value": 464995,
       "per_share": 29229,
-      "upside": 78.9
+      "upside": 77.4
      },
      "bull": {
       "g": 7,
       "value": 533261,
       "per_share": 33520,
-      "upside": 105.1
+      "upside": 103.4
      }
     },
     "c_T": 0.773,
     "roe_norm": 8.8,
-    "implied_g": -8.9,
-    "implied_E1": 21623,
+    "implied_g": -8.7,
+    "implied_E1": 21822,
     "cycle": {
      "position": "중립",
      "note": "비경기.",
@@ -8186,7 +8186,7 @@
     "per_share": 23503,
     "bear": 17859,
     "bull": 28211,
-    "upside": 43.8,
+    "upside": 42.6,
     "pct": 90,
     "tier": "싼 ⅓",
     "exp_ex": 6.0,
@@ -8203,7 +8203,7 @@
     },
     "weighted": 455394,
     "weighted_ps": 28625,
-    "weighted_upside": 75.2,
+    "weighted_upside": 73.7,
     "stress": {
      "E": 34249,
      "margin": 11.2,
@@ -8214,7 +8214,7 @@
     },
     "down_ps": 23807,
     "max_loss": 0.0,
-    "up_bull": 105.1,
+    "up_bull": 103.4,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -8229,8 +8229,8 @@
     },
     "mos": 25,
     "buy_ps": 21469,
-    "buy_gap": 31.4,
-    "implied_margin": 7.1,
+    "buy_gap": 30.3,
+    "implied_margin": 7.2,
     "base_margin": 13.1,
     "hist_margin": [
      11.0,
@@ -8239,16 +8239,16 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 7.1%가 이어져야 해요(과거 11.0%~17.3%, 평균 13.8%, 이 리포트의 정상 이익 가정 13.1%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +105%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 7.2%가 이어져야 해요(과거 11.0%~17.3%, 평균 13.8%, 이 리포트의 정상 이익 가정 13.1%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +103%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -7020,
-    "por_ttm": 6.5,
+    "por_ttm": 6.6,
     "op_ttm": 39920,
-    "por_q": 23.0,
+    "por_q": 23.2,
     "op_q": 2820,
     "cns_per": null,
     "div_yield": null,
@@ -8356,7 +8356,7 @@
    "name": "대한약품",
    "group": "중견 제약·일반약",
    "price": 23850,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 143100,
    "mcap_eff": 143100,
@@ -8579,12 +8579,12 @@
      }
     ]
    },
-   "price": 7700,
-   "price_date": "2026-11-27 09:35",
+   "price": 7780,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 403604,
-   "mcap_eff": 403604,
-   "shares": 52416104,
+   "mcap": 407797,
+   "mcap_eff": 407797,
+   "shares": 52416067,
    "shares_check": {
     "dart_common": 52416107,
     "dart_period": "2026-11-20",
@@ -8599,38 +8599,38 @@
    "dividend_yield": null,
    "per": null,
    "roe": -7.0,
-   "pbr": 1.49,
+   "pbr": 1.51,
    "dcf": {
     "E1": 6000,
     "r": 10.0,
     "c": 0.6,
     "note": "정상 이익 60억원: 2025년 88억원 흑자, 최근 4개 분기 적자.",
-    "fwd_per": 67.3,
-    "norm_per": 67.3,
+    "fwd_per": 68.0,
+    "norm_per": 68.0,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 21610,
       "per_share": 412,
-      "upside": -94.6
+      "upside": -94.7
      },
      "base": {
       "g": 2,
       "value": 34976,
       "per_share": 667,
-      "upside": -91.3
+      "upside": -91.4
      },
      "bull": {
       "g": 5,
       "value": 51748,
       "per_share": 987,
-      "upside": -87.2
+      "upside": -87.3
      }
     },
     "c_T": 0.6,
     "roe_norm": 2.2,
-    "implied_g": 55.0,
-    "implied_E1": 55150,
+    "implied_g": 55.3,
+    "implied_E1": 55709,
     "cycle": {
      "position": "하강기",
      "note": "구조적 부진.",
@@ -8682,7 +8682,7 @@
     },
     "weighted": 32814,
     "weighted_ps": 626,
-    "weighted_upside": -91.9,
+    "weighted_upside": -92.0,
     "stress": {
      "E": -38062,
      "margin": -16.9,
@@ -8693,7 +8693,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -87.2,
+    "up_bull": -87.3,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -8708,8 +8708,8 @@
     },
     "mos": 50,
     "buy_ps": 313,
-    "buy_gap": -95.9,
-    "implied_margin": 24.5,
+    "buy_gap": -96.0,
+    "implied_margin": 24.7,
     "base_margin": 2.7,
     "hist_margin": [
      -28.6,
@@ -8718,7 +8718,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 24.5%가 이어져야 해요(과거 -28.6%~3.8%, 평균 -2.4%, 이 리포트의 정상 이익 가정 2.7%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -87%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 2%씩 늘면서 순이익률 24.7%가 이어져야 해요(과거 -28.6%~3.8%, 평균 -2.4%, 이 리포트의 정상 이익 가정 2.7%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -87%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -8828,12 +8828,12 @@
   "007570": {
    "name": "일양약품",
    "group": "중견 제약·일반약",
-   "price": 6120,
-   "price_date": "2026-11-27 09:35",
+   "price": 6170,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 116801,
-   "mcap_eff": 116801,
-   "shares": 19085131,
+   "mcap": 117756,
+   "mcap_eff": 117756,
+   "shares": 19085251,
    "shares_check": {
     "dart_common": 19085174,
     "dart_period": "2026-11-20",
@@ -8852,32 +8852,32 @@
     "r": 10.0,
     "c": 0.6,
     "note": "정상 이익 100억원: 사업보고서 기준 최근 순이익의 보수적 평균.",
-    "fwd_per": 11.7,
-    "norm_per": 11.7,
+    "fwd_per": 11.8,
+    "norm_per": 11.8,
     "scenarios": {
      "bear": {
       "g": -4,
       "value": 67603,
       "per_share": 3542,
-      "upside": -42.1
+      "upside": -42.6
      },
      "base": {
       "g": 0,
       "value": 81710,
       "per_share": 4281,
-      "upside": -30.0
+      "upside": -30.6
      },
      "bull": {
       "g": 4,
       "value": 98716,
       "per_share": 5172,
-      "upside": -15.5
+      "upside": -16.2
      }
     },
     "c_T": 0.8,
     "roe_norm": null,
-    "implied_g": 7.6,
-    "implied_E1": 14295,
+    "implied_g": 7.8,
+    "implied_E1": 14411,
     "net_cash_added": 0
    },
    "marks": {
@@ -8891,7 +8891,7 @@
     },
     "weighted": 80879,
     "weighted_ps": 4238,
-    "weighted_upside": -30.8,
+    "weighted_upside": -31.3,
     "stress": {
      "E": 6000,
      "margin": null,
@@ -8901,8 +8901,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 3229,
-    "max_loss": 47.2,
-    "up_bull": -15.5,
+    "max_loss": 47.7,
+    "up_bull": -16.2,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -8917,13 +8917,13 @@
     },
     "mos": 35,
     "buy_ps": 2755,
-    "buy_gap": -55.0,
+    "buy_gap": -55.3,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 7.6%씩 늘어난다고 가정하는 셈이에요(기준 가정 0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 47% 손실, 낙관 시나리오면 -15%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 7.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 0%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 48% 손실, 낙관 시나리오면 -16%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -9009,12 +9009,12 @@
   "102460": {
    "name": "이연제약",
    "group": "중견 제약·일반약",
-   "price": 8960,
-   "price_date": "2026-11-27 09:35",
+   "price": 9010,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 166552,
-   "mcap_eff": 166552,
-   "shares": 18588393,
+   "mcap": 167481,
+   "mcap_eff": 167481,
+   "shares": 18588346,
    "shares_check": {
     "dart_common": 18588362,
     "dart_period": "2026-11-20",
@@ -9033,32 +9033,32 @@
     "r": 10.0,
     "c": 0.5,
     "note": "정상 이익 80억원: 기존 주사제·원료 사업 이익만 반영, CDMO는 수주 전이라 제외.",
-    "fwd_per": 20.8,
-    "norm_per": 20.8,
+    "fwd_per": 20.9,
+    "norm_per": 20.9,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 55782,
       "per_share": 3001,
-      "upside": -66.5
+      "upside": -66.7
      },
      "base": {
       "g": 4,
       "value": 74685,
       "per_share": 4018,
-      "upside": -55.2
+      "upside": -55.4
      },
      "bull": {
       "g": 10,
       "value": 99603,
       "per_share": 5358,
-      "upside": -40.2
+      "upside": -40.5
      }
     },
     "c_T": 0.8,
     "roe_norm": null,
-    "implied_g": 21.0,
-    "implied_E1": 17841,
+    "implied_g": 21.1,
+    "implied_E1": 17940,
     "net_cash_added": 0
    },
    "marks": {
@@ -9072,7 +9072,7 @@
     },
     "weighted": 73998,
     "weighted_ps": 3981,
-    "weighted_upside": -55.6,
+    "weighted_upside": -55.8,
     "stress": {
      "E": 4800,
      "margin": null,
@@ -9082,8 +9082,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 2787,
-    "max_loss": 68.9,
-    "up_bull": -40.2,
+    "max_loss": 69.1,
+    "up_bull": -40.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -9098,13 +9098,13 @@
     },
     "mos": 35,
     "buy_ps": 2588,
-    "buy_gap": -71.1,
+    "buy_gap": -71.3,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 21.0%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 69% 손실, 낙관 시나리오면 -40%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 21.1%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 69% 손실, 낙관 시나리오면 -41%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -9222,12 +9222,12 @@
     },
     "oneoff": []
    },
-   "price": 727,
-   "price_date": "2026-11-27 09:35",
+   "price": 730,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 132997,
-   "mcap_eff": 132997,
-   "shares": 182939477,
+   "mcap": 133546,
+   "mcap_eff": 133546,
+   "shares": 182939726,
    "shares_check": {
     "dart_common": 182939633,
     "dart_period": "2026-11-20",
@@ -9242,39 +9242,39 @@
    "dividend_yield": null,
    "per": null,
    "roe": -8.6,
-   "pbr": 1.45,
+   "pbr": 1.46,
    "net_debt_levered": -70480,
    "dcf": {
     "E1": 2000,
     "r": 10.0,
     "c": 0.6,
     "note": "정상 이익 20억원: 2024년 흑자 12억원 수준.",
-    "fwd_per": 66.5,
-    "norm_per": 66.5,
+    "fwd_per": 66.8,
+    "norm_per": 66.8,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 3933,
       "per_share": 21,
-      "upside": -97.0
+      "upside": -97.1
      },
      "base": {
       "g": 2,
       "value": 8735,
       "per_share": 48,
-      "upside": -93.4
+      "upside": -93.5
      },
      "bull": {
       "g": 5,
       "value": 15019,
       "per_share": 82,
-      "upside": -88.7
+      "upside": -88.8
      }
     },
     "c_T": 0.6,
     "roe_norm": 2.2,
-    "implied_g": 54.7,
-    "implied_E1": 18568,
+    "implied_g": 54.9,
+    "implied_E1": 18641,
     "cycle": {
      "position": "하강기",
      "note": "구조적 부진.",
@@ -9326,7 +9326,7 @@
     },
     "weighted": 7997,
     "weighted_ps": 44,
-    "weighted_upside": -93.9,
+    "weighted_upside": -94.0,
     "stress": {
      "E": -15044,
      "margin": -5.9,
@@ -9337,7 +9337,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -88.7,
+    "up_bull": -88.8,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -9472,12 +9472,12 @@
   "011040": {
    "name": "경동제약",
    "group": "중견 제약·일반약",
-   "price": 4855,
-   "price_date": "2026-11-27 09:35",
+   "price": 4880,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 149415,
-   "mcap_eff": 149415,
-   "shares": 30775489,
+   "mcap": 150184,
+   "mcap_eff": 150184,
+   "shares": 30775410,
    "shares_check": {
     "dart_common": 30775428,
     "dart_period": "2026-11-20",
@@ -9496,32 +9496,32 @@
     "r": 9.5,
     "c": 0.7,
     "note": "정상 이익 100억원: 사업보고서 기준 과거 평균.",
-    "fwd_per": 14.9,
-    "norm_per": 14.9,
+    "fwd_per": 15.0,
+    "norm_per": 15.0,
     "scenarios": {
      "bear": {
       "g": -3,
       "value": 79629,
       "per_share": 2587,
-      "upside": -46.7
+      "upside": -47.0
      },
      "base": {
       "g": 1,
       "value": 96001,
       "per_share": 3119,
-      "upside": -35.7
+      "upside": -36.1
      },
      "bull": {
       "g": 4,
       "value": 110429,
       "per_share": 3588,
-      "upside": -26.1
+      "upside": -26.5
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": 10.5,
-    "implied_E1": 15564,
+    "implied_g": 10.6,
+    "implied_E1": 15644,
     "net_cash_added": 0
    },
    "marks": {
@@ -9535,7 +9535,7 @@
     },
     "weighted": 93975,
     "weighted_ps": 3054,
-    "weighted_upside": -37.1,
+    "weighted_upside": -37.4,
     "stress": {
      "E": 6000,
      "margin": null,
@@ -9545,8 +9545,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 2359,
-    "max_loss": 51.4,
-    "up_bull": -26.1,
+    "max_loss": 51.7,
+    "up_bull": -26.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -9561,13 +9561,13 @@
     },
     "mos": 35,
     "buy_ps": 1985,
-    "buy_gap": -59.1,
+    "buy_gap": -59.3,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 10.5%씩 늘어난다고 가정하는 셈이에요(기준 가정 1%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 51% 손실, 낙관 시나리오면 -26%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 10.6%씩 늘어난다고 가정하는 셈이에요(기준 가정 1%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 52% 손실, 낙관 시나리오면 -26%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -9685,12 +9685,12 @@
     },
     "oneoff": []
    },
-   "price": 10590,
-   "price_date": "2026-11-27 09:35",
+   "price": 10570,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 167717,
-   "mcap_eff": 167717,
-   "shares": 15837299,
+   "mcap": 167400,
+   "mcap_eff": 167400,
+   "shares": 15837275,
    "shares_check": {
     "dart_common": 15837321,
     "dart_period": "2026-11-20",
@@ -9719,25 +9719,25 @@
       "g": 0,
       "value": 277088,
       "per_share": 17496,
-      "upside": 65.2
+      "upside": 65.5
      },
      "base": {
       "g": 3,
       "value": 320410,
       "per_share": 20231,
-      "upside": 91.0
+      "upside": 91.4
      },
      "bull": {
       "g": 6,
       "value": 370187,
       "per_share": 23374,
-      "upside": 120.7
+      "upside": 121.1
      }
     },
     "c_T": 0.778,
     "roe_norm": 13.6,
-    "implied_g": -10.3,
-    "implied_E1": 15703,
+    "implied_g": -10.4,
+    "implied_E1": 15674,
     "cycle": {
      "position": "중립",
      "note": "병원 수요.",
@@ -9769,10 +9769,10 @@
     "per_share": 15555,
     "bear": 11819,
     "bull": 18671,
-    "upside": 46.9,
+    "upside": 47.2,
     "pct": 92,
     "tier": "싼 ⅓",
-    "exp_ex": 6.1,
+    "exp_ex": 6.2,
     "conflict": false
    },
    "marks": {
@@ -9786,7 +9786,7 @@
     },
     "weighted": 317369,
     "weighted_ps": 20039,
-    "weighted_upside": 89.2,
+    "weighted_upside": 89.6,
     "stress": {
      "E": 20049,
      "margin": 7.9,
@@ -9797,7 +9797,7 @@
     },
     "down_ps": 16542,
     "max_loss": 0.0,
-    "up_bull": 120.7,
+    "up_bull": 121.1,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -9812,7 +9812,7 @@
     },
     "mos": 25,
     "buy_ps": 15029,
-    "buy_gap": 41.9,
+    "buy_gap": 42.2,
     "implied_margin": 6.2,
     "base_margin": 11.9,
     "hist_margin": [
@@ -9976,12 +9976,12 @@
      }
     ]
    },
-   "price": 4910,
-   "price_date": "2026-11-27 09:35",
+   "price": 4940,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 117407,
-   "mcap_eff": 117407,
-   "shares": 23911813,
+   "mcap": 118124,
+   "mcap_eff": 118124,
+   "shares": 23911741,
    "shares_check": {
     "dart_common": 23911735,
     "dart_period": "2026-11-20",
@@ -9994,7 +9994,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -164390,
    "dividend_yield": null,
-   "per": 103.0,
+   "per": 103.6,
    "roe": 0.8,
    "pbr": 0.81,
    "net_debt_levered": -164390,
@@ -10003,32 +10003,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 30억원: 2020~2025년 평균 17억원보다 조금 높게(2024년 46억원).",
-    "fwd_per": 39.1,
-    "norm_per": 39.1,
+    "fwd_per": 39.4,
+    "norm_per": 39.4,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 18456,
       "per_share": 772,
-      "upside": -84.3
+      "upside": -84.4
      },
      "base": {
       "g": 2,
       "value": 22812,
       "per_share": 954,
-      "upside": -80.6
+      "upside": -80.7
      },
      "bull": {
       "g": 5,
       "value": 27123,
       "per_share": 1134,
-      "upside": -76.9
+      "upside": -77.0
      }
     },
     "c_T": 0.6,
     "roe_norm": 2.1,
-    "implied_g": 38.4,
-    "implied_E1": 14824,
+    "implied_g": 38.5,
+    "implied_E1": 14914,
     "cycle": {
      "position": "하강기",
      "note": "원가 경쟁.",
@@ -10072,10 +10072,10 @@
     "per_share": 1656,
     "bear": 1258,
     "bull": 1987,
-    "upside": -66.3,
+    "upside": -66.5,
     "pct": 35,
     "tier": "가운데 ⅓",
-    "exp_ex": -3.6,
+    "exp_ex": -3.5,
     "conflict": false
    },
    "marks": {
@@ -10089,7 +10089,7 @@
     },
     "weighted": 21934,
     "weighted_ps": 917,
-    "weighted_upside": -81.3,
+    "weighted_upside": -81.4,
     "stress": {
      "E": 779,
      "margin": 0.3,
@@ -10099,8 +10099,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 0.3% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 632,
-    "max_loss": 87.1,
-    "up_bull": -76.9,
+    "max_loss": 87.2,
+    "up_bull": -77.0,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -10132,9 +10132,9 @@
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -870,
-    "por_ttm": 52.0,
+    "por_ttm": 52.3,
     "op_ttm": 2260,
-    "por_q": 293.5,
+    "por_q": 295.3,
     "op_q": 100,
     "cns_per": null,
     "div_yield": null,
@@ -10241,12 +10241,12 @@
   "000520": {
    "name": "삼일제약",
    "group": "중견 제약·일반약",
-   "price": 6990,
-   "price_date": "2026-11-27 09:35",
+   "price": 7100,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 151678,
-   "mcap_eff": 151678,
-   "shares": 21699285,
+   "mcap": 154065,
+   "mcap_eff": 154065,
+   "shares": 21699296,
    "shares_check": {
     "dart_common": 21699248,
     "dart_period": "2026-11-20",
@@ -10265,32 +10265,32 @@
     "r": 10.0,
     "c": 0.5,
     "note": "정상 이익 30억원: 기존 사업 이익만, 베트남 공장 기여는 수주 확인 후.",
-    "fwd_per": 50.6,
-    "norm_per": 50.6,
+    "fwd_per": 51.4,
+    "norm_per": 51.4,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 20918,
       "per_share": 964,
-      "upside": -86.2
+      "upside": -86.4
      },
      "base": {
       "g": 5,
       "value": 29393,
       "per_share": 1355,
-      "upside": -80.6
+      "upside": -80.9
      },
      "bull": {
       "g": 12,
       "value": 41066,
       "per_share": 1892,
-      "upside": -72.9
+      "upside": -73.3
      }
     },
     "c_T": 0.8,
     "roe_norm": null,
-    "implied_g": 41.4,
-    "implied_E1": 15481,
+    "implied_g": 41.8,
+    "implied_E1": 15725,
     "net_cash_added": 0
    },
    "marks": {
@@ -10304,7 +10304,7 @@
     },
     "weighted": 29185,
     "weighted_ps": 1345,
-    "weighted_upside": -80.8,
+    "weighted_upside": -81.1,
     "stress": {
      "E": 1800,
      "margin": null,
@@ -10314,8 +10314,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 895,
-    "max_loss": 87.2,
-    "up_bull": -72.9,
+    "max_loss": 87.4,
+    "up_bull": -73.4,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -10330,13 +10330,13 @@
     },
     "mos": 35,
     "buy_ps": 874,
-    "buy_gap": -87.5,
+    "buy_gap": -87.7,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 41.4%씩 늘어난다고 가정하는 셈이에요(기준 가정 5%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 87% 손실, 낙관 시나리오면 -73%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 41.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 5%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 87% 손실, 낙관 시나리오면 -73%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -10454,12 +10454,12 @@
     },
     "oneoff": []
    },
-   "price": 57400,
-   "price_date": "2026-11-27 09:35",
+   "price": 58900,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 3925646,
-   "mcap_eff": 3925646,
-   "shares": 68391045,
+   "mcap": 4028233,
+   "mcap_eff": 4028233,
+   "shares": 68391053,
    "shares_check": {
     "dart_common": 68391051,
     "dart_period": "2026-11-20",
@@ -10472,41 +10472,41 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -83460,
    "dividend_yield": null,
-   "per": 29.3,
+   "per": 30.0,
    "roe": 14.0,
-   "pbr": 4.08,
+   "pbr": 4.19,
    "net_debt_levered": -83460,
    "dcf": {
     "E1": 90000,
     "r": 9.0,
     "c": 0.7,
     "note": "지배주주 몫 정상 이익 900억원: 한미약품 정상 이익 1,900억원 × 41% + 온라인팜·기타. 연결 순이익 1,342억원에는 비지배지분이 섞여 있어요.",
-    "fwd_per": 43.6,
-    "norm_per": 43.6,
+    "fwd_per": 44.8,
+    "norm_per": 44.8,
     "scenarios": {
      "bear": {
       "g": 1,
       "value": 918779,
       "per_share": 13434,
-      "upside": -76.6
+      "upside": -77.2
      },
      "base": {
       "g": 5,
       "value": 1109802,
       "per_share": 16227,
-      "upside": -71.7
+      "upside": -72.4
      },
      "bull": {
       "g": 9,
       "value": 1338757,
       "per_share": 19575,
-      "upside": -65.9
+      "upside": -66.8
      }
     },
     "c_T": 0.778,
     "roe_norm": 9.4,
-    "implied_g": 33.0,
-    "implied_E1": 318353,
+    "implied_g": 33.6,
+    "implied_E1": 326672,
     "cycle": {
      "position": "중립",
      "note": "자회사 연동.",
@@ -10538,10 +10538,10 @@
     "per_share": 12513,
     "bear": 9508,
     "bull": 15020,
-    "upside": -78.2,
-    "pct": 25,
+    "upside": -78.8,
+    "pct": 22,
     "tier": "비싼 ⅓",
-    "exp_ex": -6.3,
+    "exp_ex": -6.4,
     "conflict": false
    },
    "marks": {
@@ -10555,7 +10555,7 @@
     },
     "weighted": 1098286,
     "weighted_ps": 16059,
-    "weighted_upside": -72.0,
+    "weighted_upside": -72.7,
     "stress": {
      "E": 37422,
      "margin": 2.5,
@@ -10565,8 +10565,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 2.5% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 12072,
-    "max_loss": 79.0,
-    "up_bull": -65.9,
+    "max_loss": 79.5,
+    "up_bull": -66.8,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -10581,8 +10581,8 @@
     },
     "mos": 35,
     "buy_ps": 10438,
-    "buy_gap": -81.8,
-    "implied_margin": 21.7,
+    "buy_gap": -82.3,
+    "implied_margin": 22.3,
     "base_margin": 6.1,
     "hist_margin": [
      1.2,
@@ -10591,16 +10591,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 21.7%가 이어져야 해요(과거 1.2%~9.2%, 평균 4.8%, 이 리포트의 정상 이익 가정 6.1%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 79% 손실, 낙관 시나리오면 -66%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 22.3%가 이어져야 해요(과거 1.2%~9.2%, 평균 4.8%, 이 리포트의 정상 이익 가정 6.1%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 80% 손실, 낙관 시나리오면 -67%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 63.0,
+    "per_q": 64.7,
     "ni_q": 15570,
-    "por_ttm": 26.2,
+    "por_ttm": 26.9,
     "op_ttm": 149600,
-    "por_q": 51.2,
+    "por_q": 52.6,
     "op_q": 19150,
     "cns_per": null,
     "div_yield": null,
@@ -10610,7 +10610,7 @@
     "ret_1y_from": null,
     "ni_cagr5": 39.3,
     "rev_cagr5": 9.6,
-    "peg": 0.75,
+    "peg": 0.76,
     "peg_g": 39.3
    },
    "checks": {
@@ -10656,7 +10656,7 @@
      {
       "name": "PEG 1 이하 (PER ÷ 이익 성장률)",
       "ok": true,
-      "val": "0.75",
+      "val": "0.76",
       "note": "성장률 = 최근 5년 순이익 연평균 39.3%(상한 50%)"
      },
      {
@@ -10739,12 +10739,12 @@
     },
     "oneoff": []
    },
-   "price": 16880,
-   "price_date": "2026-11-27 09:35",
+   "price": 16950,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 981398,
-   "mcap_eff": 981398,
-   "shares": 58139692,
+   "mcap": 985467,
+   "mcap_eff": 985467,
+   "shares": 58139646,
    "shares_check": {
     "dart_common": 58139675,
     "dart_period": "2026-11-20",
@@ -10757,9 +10757,9 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -705300,
    "dividend_yield": null,
-   "per": 5.7,
+   "per": 5.8,
    "roe": 14.6,
-   "pbr": 0.83,
+   "pbr": 0.84,
    "net_debt_levered": -705300,
    "dcf": {
     "E1": 90000,
@@ -10773,25 +10773,25 @@
       "g": 1,
       "value": 888935,
       "per_share": 15290,
-      "upside": -9.4
+      "upside": -9.8
      },
      "base": {
       "g": 5,
       "value": 1072175,
       "per_share": 18441,
-      "upside": 9.2
+      "upside": 8.8
      },
      "bull": {
       "g": 9,
       "value": 1291673,
       "per_share": 22217,
-      "upside": 31.6
+      "upside": 31.1
      }
     },
     "c_T": 0.739,
     "roe_norm": 7.6,
-    "implied_g": 3.1,
-    "implied_E1": 82380,
+    "implied_g": 3.2,
+    "implied_E1": 82722,
     "cycle": {
      "position": "중립",
      "note": "자회사 연동.",
@@ -10823,8 +10823,8 @@
     "per_share": 22656,
     "bear": 17215,
     "bull": 27194,
-    "upside": 34.2,
-    "pct": 85,
+    "upside": 33.7,
+    "pct": 88,
     "tier": "싼 ⅓",
     "exp_ex": 5.5,
     "conflict": false
@@ -10840,7 +10840,7 @@
     },
     "weighted": 1061103,
     "weighted_ps": 18251,
-    "weighted_upside": 8.1,
+    "weighted_upside": 7.7,
     "stress": {
      "E": 53661,
      "margin": 2.4,
@@ -10850,10 +10850,10 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 2.4% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 14182,
-    "max_loss": 16.0,
-    "up_bull": 31.6,
-    "asym_ratio": 2.0,
-    "asym": "유리",
+    "max_loss": 16.3,
+    "up_bull": 31.1,
+    "asym_ratio": 1.9,
+    "asym": "균형",
     "risk": {
      "score": 29,
      "grade": "보통",
@@ -10866,7 +10866,7 @@
     },
     "mos": 35,
     "buy_ps": 11863,
-    "buy_gap": -29.7,
+    "buy_gap": -30.0,
     "implied_margin": 3.7,
     "base_margin": 4.1,
     "hist_margin": [
@@ -10876,7 +10876,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 3.7%가 이어져야 해요(과거 2.0%~8.5%, 평균 5.4%, 이 리포트의 정상 이익 가정 4.1%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 16% 손실, 낙관 시나리오면 +32%로 손익 구조는 '유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 3.7%가 이어져야 해요(과거 2.0%~8.5%, 평균 5.4%, 이 리포트의 정상 이익 가정 4.1%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 16% 손실, 낙관 시나리오면 +31%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -11024,12 +11024,12 @@
     },
     "oneoff": []
    },
-   "price": 92500,
-   "price_date": "2026-11-27 09:35",
+   "price": 92300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 622746,
-   "mcap_eff": 622746,
-   "shares": 6732389,
+   "mcap": 621400,
+   "mcap_eff": 621400,
+   "shares": 6732394,
    "shares_check": {
     "dart_common": 6732394,
     "dart_period": "2026-11-20",
@@ -11111,7 +11111,7 @@
     "upside": 21.1,
     "pct": 78,
     "tier": "싼 ⅓",
-    "exp_ex": 4.8,
+    "exp_ex": 4.9,
     "conflict": false
    },
    "marks": {
@@ -11309,12 +11309,12 @@
     },
     "oneoff": []
    },
-   "price": 8920,
-   "price_date": "2026-11-27 09:35",
+   "price": 8990,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 419510,
-   "mcap_eff": 419510,
-   "shares": 47030269,
+   "mcap": 422802,
+   "mcap_eff": 422802,
+   "shares": 47030256,
    "shares_check": {
     "dart_common": 47030238,
     "dart_period": "2026-11-20",
@@ -11339,32 +11339,32 @@
     "r": 9.0,
     "c": 0.7,
     "note": "지배주주 몫 정상 이익 350억원: 녹십자 몫 450억원에서 자회사 정상 손실을 뺐어요. 2023·2025년 손상은 일회성.",
-    "fwd_per": 12.0,
-    "norm_per": 12.0,
+    "fwd_per": 12.1,
+    "norm_per": 12.1,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 487258,
       "per_share": 10361,
-      "upside": 16.1
+      "upside": 15.2
      },
      "base": {
       "g": 5,
       "value": 562198,
       "per_share": 11954,
-      "upside": 34.0
+      "upside": 33.0
      },
      "bull": {
       "g": 9,
       "value": 637908,
       "per_share": 13564,
-      "upside": 52.1
+      "upside": 50.9
      }
     },
     "c_T": 0.7,
     "roe_norm": 3.9,
-    "implied_g": -6.2,
-    "implied_E1": 22587,
+    "implied_g": -5.8,
+    "implied_E1": 22873,
     "cycle": {
      "position": "회복기",
      "note": "손상 후 회복.",
@@ -11408,7 +11408,7 @@
     "per_share": 7733,
     "bear": 5876,
     "bull": 9282,
-    "upside": -13.3,
+    "upside": -14.0,
     "pct": 68,
     "tier": "싼 ⅓",
     "exp_ex": 2.5,
@@ -11425,7 +11425,7 @@
     },
     "weighted": 562390,
     "weighted_ps": 11958,
-    "weighted_upside": 34.1,
+    "weighted_upside": 33.0,
     "stress": {
      "E": -65619,
      "margin": -2.6,
@@ -11435,9 +11435,9 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 -2.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 5510,
-    "max_loss": 38.2,
-    "up_bull": 52.1,
-    "asym_ratio": 1.4,
+    "max_loss": 38.7,
+    "up_bull": 50.9,
+    "asym_ratio": 1.3,
     "asym": "균형",
     "risk": {
      "score": 47,
@@ -11451,7 +11451,7 @@
     },
     "mos": 35,
     "buy_ps": 7773,
-    "buy_gap": -12.9,
+    "buy_gap": -13.5,
     "implied_margin": 0.9,
     "base_margin": 1.4,
     "hist_margin": [
@@ -11461,7 +11461,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 0.9%가 이어져야 해요(과거 -2.8%~9.9%, 평균 1.4%, 이 리포트의 정상 이익 가정 1.4%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 38% 손실, 낙관 시나리오면 +52%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 0.9%가 이어져야 해요(과거 -2.8%~9.9%, 평균 1.4%, 이 리포트의 정상 이익 가정 1.4%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 39% 손실, 낙관 시나리오면 +51%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -11571,12 +11571,12 @@
   "001630": {
    "name": "종근당홀딩스",
    "group": "제약 지주",
-   "price": 34250,
-   "price_date": "2026-11-27 09:35",
+   "price": 34200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 171541,
-   "mcap_eff": 171541,
-   "shares": 5008496,
+   "mcap": 171291,
+   "mcap_eff": 171291,
+   "shares": 5008509,
    "shares_check": {
     "dart_common": 5008499,
     "dart_period": "2026-11-20",
@@ -11602,25 +11602,25 @@
       "g": 0,
       "value": 227784,
       "per_share": 45480,
-      "upside": 32.8
+      "upside": 33.0
      },
      "base": {
       "g": 3,
       "value": 261896,
       "per_share": 52290,
-      "upside": 52.7
+      "upside": 52.9
      },
      "bull": {
       "g": 6,
       "value": 301001,
       "per_share": 60098,
-      "upside": 75.5
+      "upside": 75.7
      }
     },
     "c_T": 0.7,
     "roe_norm": null,
     "implied_g": -6.1,
-    "implied_E1": 16375,
+    "implied_E1": 16351,
     "net_cash_added": 0
    },
    "marks": {
@@ -11634,7 +11634,7 @@
     },
     "weighted": 259483,
     "weighted_ps": 51809,
-    "weighted_upside": 51.3,
+    "weighted_upside": 51.5,
     "stress": {
      "E": 15000,
      "margin": null,
@@ -11645,7 +11645,7 @@
     },
     "down_ps": 41942,
     "max_loss": 0.0,
-    "up_bull": 75.5,
+    "up_bull": 75.7,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -11660,13 +11660,13 @@
     },
     "mos": 35,
     "buy_ps": 33676,
-    "buy_gap": -1.7,
+    "buy_gap": -1.5,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가는 1~5년 이익이 연 -6.1%씩 늘어난다고 가정하는 셈이에요(기준 가정 3%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +75%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 -6.1%씩 늘어난다고 가정하는 셈이에요(기준 가정 3%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +76%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": null,
@@ -11752,12 +11752,12 @@
   "084110": {
    "name": "휴온스글로벌",
    "group": "제약 지주",
-   "price": 19310,
-   "price_date": "2026-11-27 09:35",
+   "price": 19410,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 244497,
-   "mcap_eff": 244497,
-   "shares": 12661678,
+   "mcap": 245763,
+   "mcap_eff": 245763,
+   "shares": 12661669,
    "shares_check": {
     "dart_common": 12661678,
     "dart_period": "2026-11-20",
@@ -11776,32 +11776,32 @@
     "r": 9.5,
     "c": 0.7,
     "note": "지배주주 몫 정상 이익 220억원: 사업보고서 기준 과거 평균.",
-    "fwd_per": 11.1,
-    "norm_per": 11.1,
+    "fwd_per": 11.2,
+    "norm_per": 11.2,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 201557,
       "per_share": 15919,
-      "upside": -17.6
+      "upside": -18.0
      },
      "base": {
       "g": 4,
       "value": 242943,
       "per_share": 19187,
-      "upside": -0.6
+      "upside": -1.1
      },
      "bull": {
       "g": 8,
       "value": 292558,
       "per_share": 23106,
-      "upside": 19.7
+      "upside": 19.0
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": 4.1,
-    "implied_E1": 22141,
+    "implied_g": 4.2,
+    "implied_E1": 22255,
     "net_cash_added": 0
    },
    "marks": {
@@ -11815,7 +11815,7 @@
     },
     "weighted": 240450,
     "weighted_ps": 18990,
-    "weighted_upside": -1.7,
+    "weighted_upside": -2.2,
     "stress": {
      "E": 13200,
      "margin": null,
@@ -11825,8 +11825,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 14698,
-    "max_loss": 23.9,
-    "up_bull": 19.7,
+    "max_loss": 24.3,
+    "up_bull": 19.0,
     "asym_ratio": 0.8,
     "asym": "불리",
     "risk": {
@@ -11841,13 +11841,13 @@
     },
     "mos": 35,
     "buy_ps": 12344,
-    "buy_gap": -36.1,
+    "buy_gap": -36.4,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "기대 선반영",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 4.1%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 24% 손실, 낙관 시나리오면 +20%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 4.2%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 24% 손실, 낙관 시나리오면 +19%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -11965,12 +11965,12 @@
     },
     "oneoff": []
    },
-   "price": 3665,
-   "price_date": "2026-11-27 09:35",
+   "price": 3690,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 270966,
-   "mcap_eff": 270966,
-   "shares": 73933424,
+   "mcap": 272815,
+   "mcap_eff": 272815,
+   "shares": 73933604,
    "shares_check": {
     "dart_common": 73933518,
     "dart_period": "2026-11-20",
@@ -11992,32 +11992,32 @@
     "r": 9.5,
     "c": 0.7,
     "note": "지배주주 몫 정상 이익 330억원: 연결 순이익 715억원 중 지배주주 몫 추정.",
-    "fwd_per": 8.2,
-    "norm_per": 8.2,
+    "fwd_per": 8.3,
+    "norm_per": 8.3,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 281046,
       "per_share": 3801,
-      "upside": 3.7
+      "upside": 3.0
      },
      "base": {
       "g": 4,
       "value": 337523,
       "per_share": 4565,
-      "upside": 24.6
+      "upside": 23.7
      },
      "bull": {
       "g": 7,
       "value": 387087,
       "per_share": 5236,
-      "upside": 42.9
+      "upside": 41.9
      }
     },
     "c_T": 0.7,
     "roe_norm": 12.4,
-    "implied_g": -0.8,
-    "implied_E1": 26493,
+    "implied_g": -0.6,
+    "implied_E1": 26673,
     "cycle": {
      "position": "중립",
      "note": "자회사 연동.",
@@ -12046,13 +12046,13 @@
     "ttm_ni": 71480,
     "oneoff": false,
     "E": 67150,
-    "per_share": 7963,
+    "per_share": 7962,
     "bear": 6050,
     "bull": 9557,
-    "upside": 117.3,
+    "upside": 115.8,
     "pct": 100,
     "tier": "싼 ⅓",
-    "exp_ex": 8.8,
+    "exp_ex": 8.9,
     "conflict": false
    },
    "marks": {
@@ -12066,7 +12066,7 @@
     },
     "weighted": 330493,
     "weighted_ps": 4470,
-    "weighted_upside": 22.0,
+    "weighted_upside": 21.1,
     "stress": {
      "E": -20998,
      "margin": -2.1,
@@ -12076,9 +12076,9 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 -2.1% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 2305,
-    "max_loss": 37.1,
-    "up_bull": 42.9,
-    "asym_ratio": 1.2,
+    "max_loss": 37.5,
+    "up_bull": 41.9,
+    "asym_ratio": 1.1,
     "asym": "균형",
     "risk": {
      "score": 58,
@@ -12092,8 +12092,8 @@
     },
     "mos": 45,
     "buy_ps": 2458,
-    "buy_gap": -32.9,
-    "implied_margin": 2.6,
+    "buy_gap": -33.4,
+    "implied_margin": 2.7,
     "base_margin": 3.3,
     "hist_margin": [
      -4.6,
@@ -12102,7 +12102,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 2.6%가 이어져야 해요(과거 -4.6%~7.9%, 평균 2.5%, 이 리포트의 정상 이익 가정 3.3%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 37% 손실, 낙관 시나리오면 +43%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 2.7%가 이어져야 해요(과거 -4.6%~7.9%, 평균 2.5%, 이 리포트의 정상 이익 가정 3.3%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 38% 손실, 낙관 시나리오면 +42%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -12250,12 +12250,12 @@
     },
     "oneoff": []
    },
-   "price": 5240,
-   "price_date": "2026-11-27 09:35",
+   "price": 5220,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 60517,
-   "mcap_eff": 60517,
-   "shares": 11549046,
+   "mcap": 60286,
+   "mcap_eff": 60286,
+   "shares": 11549042,
    "shares_check": {
     "dart_common": 11549020,
     "dart_period": "2026-11-20",
@@ -12276,32 +12276,32 @@
     "r": 10.0,
     "c": 0.6,
     "note": "지배주주 몫 정상 이익 60억원: 2024~2026년 흑자 중 지배주주 몫(일동제약 지분율 감안).",
-    "fwd_per": 10.1,
-    "norm_per": 10.1,
+    "fwd_per": 10.0,
+    "norm_per": 10.0,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 110119,
       "per_share": 9535,
-      "upside": 82.0
+      "upside": 82.7
      },
      "base": {
       "g": 5,
       "value": 127033,
       "per_share": 10999,
-      "upside": 109.9
+      "upside": 110.7
      },
      "bull": {
       "g": 10,
       "value": 141138,
       "per_share": 12221,
-      "upside": 133.2
+      "upside": 134.1
      }
     },
     "c_T": 0.6,
     "roe_norm": 3.6,
     "implied_g": -30.0,
-    "implied_E1": -1747,
+    "implied_E1": -1774,
     "cycle": {
      "position": "회복기",
      "note": "구조조정 후.",
@@ -12357,7 +12357,7 @@
     },
     "weighted": 126331,
     "weighted_ps": 10939,
-    "weighted_upside": 108.8,
+    "weighted_upside": 109.6,
     "stress": {
      "E": -147307,
      "margin": -12.0,
@@ -12368,7 +12368,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": 133.2,
+    "up_bull": 134.1,
     "asym_ratio": 1.3,
     "asym": "균형",
     "risk": {
@@ -12383,7 +12383,7 @@
     },
     "mos": 45,
     "buy_ps": 6016,
-    "buy_gap": 14.8,
+    "buy_gap": 15.2,
     "implied_margin": -0.1,
     "base_margin": 0.5,
     "hist_margin": [
@@ -12393,7 +12393,7 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 -0.1%가 이어져야 해요(과거 -15.2%~652.4%, 평균 -3.6%, 이 리포트의 정상 이익 가정 0.5%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 +133%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 -0.1%가 이어져야 해요(과거 -15.2%~652.4%, 평균 -3.6%, 이 리포트의 정상 이익 가정 0.5%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 +134%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -12541,12 +12541,12 @@
     },
     "oneoff": []
    },
-   "price": 177400,
-   "price_date": "2026-11-27 09:35",
+   "price": 181900,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 9506228,
-   "mcap_eff": 9506228,
-   "shares": 53586404,
+   "mcap": 9747367,
+   "mcap_eff": 9747367,
+   "shares": 53586405,
    "shares_check": {
     "dart_common": 53586406,
     "dart_period": "2026-11-20",
@@ -12559,9 +12559,9 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 425380,
    "dividend_yield": null,
-   "per": 44.4,
+   "per": 45.5,
    "roe": 48.1,
-   "pbr": 21.35,
+   "pbr": 21.89,
    "skip": "rNPV",
    "cycle": {
     "position": "확장",
@@ -12619,23 +12619,23 @@
       "pipeline": 1990502,
       "value": 2285137,
       "per_share": 42644,
-      "upside": -76.0
+      "upside": -76.6
      },
      "base": {
       "pipeline": 3540557,
       "value": 3835192,
       "per_share": 71570,
-      "upside": -59.7
+      "upside": -60.7
      },
      "bull": {
       "pipeline": 5125140,
       "value": 5419775,
       "per_share": 101141,
-      "upside": -43.0
+      "upside": -44.4
      }
     },
     "net_cash": 425380,
-    "implied_pipeline": 9211593
+    "implied_pipeline": 9452732
    },
    "quant": {
     "pos": "상승기",
@@ -12648,7 +12648,7 @@
     "per_share": 10298,
     "bear": 7825,
     "bull": 12361,
-    "upside": -94.2,
+    "upside": -94.3,
     "pct": 8,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2
@@ -12656,11 +12656,11 @@
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 55.3,
+    "per_q": 56.7,
     "ni_q": 42970,
-    "por_ttm": 55.3,
+    "por_ttm": 56.7,
     "op_ttm": 172020,
-    "por_q": 30.1,
+    "por_q": 30.9,
     "op_q": 78900,
     "cns_per": null,
     "div_yield": null,
@@ -12799,12 +12799,12 @@
     },
     "oneoff": []
    },
-   "price": 66000,
-   "price_date": "2026-11-27 09:35",
+   "price": 65800,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 2443277,
-   "mcap_eff": 2443277,
-   "shares": 37019348,
+   "mcap": 2435873,
+   "mcap_eff": 2435873,
+   "shares": 37019347,
    "shares_check": {
     "dart_common": 37019342,
     "dart_period": "2026-11-20",
@@ -12819,7 +12819,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -43.7,
-   "pbr": 4.81,
+   "pbr": 4.8,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -12877,23 +12877,23 @@
       "pipeline": 886834,
       "value": 574960,
       "per_share": 15531,
-      "upside": -76.5
+      "upside": -76.4
      },
      "base": {
       "pipeline": 1825795,
       "value": 1513921,
       "per_share": 40895,
-      "upside": -38.0
+      "upside": -37.8
      },
      "bull": {
       "pipeline": 2800594,
       "value": 2488719,
       "per_share": 67228,
-      "upside": 1.9
+      "upside": 2.2
      }
     },
     "net_cash": 178420,
-    "implied_pipeline": 2755151
+    "implied_pipeline": 2747747
    },
    "quant": {
     "pos": "바닥권",
@@ -13039,12 +13039,12 @@
     },
     "oneoff": []
    },
-   "price": 43400,
-   "price_date": "2026-11-27 09:35",
+   "price": 44900,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 2429905,
-   "mcap_eff": 2429905,
-   "shares": 55988594,
+   "mcap": 2513888,
+   "mcap_eff": 2513888,
+   "shares": 55988597,
    "shares_check": {
     "dart_common": 55988588,
     "dart_period": "2026-11-20",
@@ -13059,7 +13059,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -18.7,
-   "pbr": 15.71,
+   "pbr": 16.25,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -13117,23 +13117,23 @@
       "pipeline": 681508,
       "value": 520274,
       "per_share": 9293,
-      "upside": -78.6
+      "upside": -79.3
      },
      "base": {
       "pipeline": 1394067,
       "value": 1232833,
       "per_share": 22019,
-      "upside": -49.3
+      "upside": -51.0
      },
      "bull": {
       "pipeline": 2127973,
       "value": 1966739,
       "per_share": 35127,
-      "upside": -19.1
+      "upside": -21.8
      }
     },
     "net_cash": 67570,
-    "implied_pipeline": 2591139
+    "implied_pipeline": 2675122
    },
    "quant": {
     "pos": "하강기",
@@ -13283,12 +13283,12 @@
     },
     "oneoff": []
    },
-   "price": 92200,
-   "price_date": "2026-11-27 09:35",
+   "price": 92800,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 2149887,
-   "mcap_eff": 2149887,
-   "shares": 23317646,
+   "mcap": 2163878,
+   "mcap_eff": 2163878,
+   "shares": 23317651,
    "shares_check": {
     "dart_common": 23317647,
     "dart_period": "2026-11-20",
@@ -13303,7 +13303,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -19.6,
-   "pbr": 15.14,
+   "pbr": 15.24,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -13349,23 +13349,23 @@
       "pipeline": 187277,
       "value": 83309,
       "per_share": 3573,
-      "upside": -96.1
+      "upside": -96.2
      },
      "base": {
       "pipeline": 357902,
       "value": 253933,
       "per_share": 10890,
-      "upside": -88.2
+      "upside": -88.3
      },
      "bull": {
       "pipeline": 529804,
       "value": 425836,
       "per_share": 18262,
-      "upside": -80.2
+      "upside": -80.3
      }
     },
     "net_cash": -5910,
-    "implied_pipeline": 2253856
+    "implied_pipeline": 2267847
    },
    "quant": {
     "pos": "바닥권",
@@ -13508,12 +13508,12 @@
     },
     "oneoff": []
    },
-   "price": 42300,
-   "price_date": "2026-11-27 09:35",
+   "price": 41450,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1938961,
-   "mcap_eff": 1938961,
-   "shares": 45838322,
+   "mcap": 1899998,
+   "mcap_eff": 1899998,
+   "shares": 45838311,
    "shares_check": {
     "dart_common": 45838323,
     "dart_period": "2026-11-20",
@@ -13528,7 +13528,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -41.4,
-   "pbr": 24.39,
+   "pbr": 23.9,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -13574,23 +13574,23 @@
       "pipeline": 233090,
       "value": 234221,
       "per_share": 5110,
-      "upside": -87.9
+      "upside": -87.7
      },
      "base": {
       "pipeline": 497832,
       "value": 498964,
       "per_share": 10885,
-      "upside": -74.3
+      "upside": -73.7
      },
      "bull": {
       "pipeline": 784337,
       "value": 785468,
       "per_share": 17136,
-      "upside": -59.5
+      "upside": -58.7
      }
     },
     "net_cash": 148220,
-    "implied_pipeline": 1937829
+    "implied_pipeline": 1898866
    },
    "quant": {
     "pos": "바닥권",
@@ -13727,11 +13727,11 @@
     },
     "oneoff": []
    },
-   "price": 105800,
-   "price_date": "2026-11-27 09:35",
+   "price": 107200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 2220971,
-   "mcap_eff": 2220971,
+   "mcap": 2250360,
+   "mcap_eff": 2250360,
    "shares": 20992164,
    "shares_check": {
     "dart_common": 20992167,
@@ -13747,7 +13747,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -11.7,
-   "pbr": 14.87,
+   "pbr": 15.06,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -13793,23 +13793,23 @@
       "pipeline": 242043,
       "value": 255675,
       "per_share": 12180,
-      "upside": -88.5
+      "upside": -88.6
      },
      "base": {
       "pipeline": 500103,
       "value": 513735,
       "per_share": 24473,
-      "upside": -76.9
+      "upside": -77.2
      },
      "bull": {
       "pipeline": 769175,
       "value": 782806,
       "per_share": 37290,
-      "upside": -64.8
+      "upside": -65.2
      }
     },
     "net_cash": 160720,
-    "implied_pipeline": 2207339
+    "implied_pipeline": 2236728
    },
    "quant": {
     "pos": "하강기",
@@ -13953,12 +13953,12 @@
     },
     "oneoff": []
    },
-   "price": 148100,
-   "price_date": "2026-11-27 09:35",
+   "price": 149300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 2728143,
-   "mcap_eff": 2728143,
-   "shares": 18420952,
+   "mcap": 2750248,
+   "mcap_eff": 2750248,
+   "shares": 18420951,
    "shares_check": {
     "dart_common": 18420952,
     "dart_period": "2026-11-20",
@@ -13973,7 +13973,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -15.7,
-   "pbr": 26.28,
+   "pbr": 26.5,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -14025,17 +14025,17 @@
       "pipeline": 331586,
       "value": 192508,
       "per_share": 10450,
-      "upside": -92.9
+      "upside": -93.0
      },
      "bull": {
       "pipeline": 522381,
       "value": 383302,
       "per_share": 20808,
-      "upside": -86.0
+      "upside": -86.1
      }
     },
     "net_cash": 8010,
-    "implied_pipeline": 2867221
+    "implied_pipeline": 2889326
    },
    "quant": {
     "pos": "중립",
@@ -14174,7 +14174,7 @@
     "oneoff": []
    },
    "price": 56800,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 2967241,
    "mcap_eff": 2967241,
@@ -14533,12 +14533,12 @@
     },
     "oneoff": []
    },
-   "price": 37200,
-   "price_date": "2026-11-27 09:35",
+   "price": 37050,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1423238,
-   "mcap_eff": 1423238,
-   "shares": 38259086,
+   "mcap": 1417499,
+   "mcap_eff": 1417499,
+   "shares": 38259082,
    "shares_check": {
     "dart_common": 38259084,
     "dart_period": "2026-11-20",
@@ -14551,9 +14551,9 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 5360,
    "dividend_yield": null,
-   "per": 18.6,
+   "per": 18.5,
    "roe": 42.3,
-   "pbr": 7.85,
+   "pbr": 7.82,
    "skip": "rNPV",
    "cycle": {
     "position": "확장",
@@ -14599,23 +14599,23 @@
       "pipeline": 287684,
       "value": 227672,
       "per_share": 5951,
-      "upside": -84.0
+      "upside": -83.9
      },
      "base": {
       "pipeline": 421478,
       "value": 361465,
       "per_share": 9448,
-      "upside": -74.6
+      "upside": -74.5
      },
      "bull": {
       "pipeline": 558158,
       "value": 498146,
       "per_share": 13020,
-      "upside": -65.0
+      "upside": -64.9
      }
     },
     "net_cash": 5360,
-    "implied_pipeline": 1483251
+    "implied_pipeline": 1477512
    },
    "quant": {
     "pos": "상승기",
@@ -14630,7 +14630,7 @@
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -17910,
-    "por_ttm": 17.1,
+    "por_ttm": 17.0,
     "op_ttm": 83400,
     "por_q": null,
     "op_q": -6690,
@@ -14771,11 +14771,11 @@
     },
     "oneoff": []
    },
-   "price": 181100,
-   "price_date": "2026-11-27 09:35",
+   "price": 182300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 4248128,
-   "mcap_eff": 4248128,
+   "mcap": 4276277,
+   "mcap_eff": 4276277,
    "shares": 23457361,
    "shares_check": {
     "dart_common": 23457359,
@@ -14789,23 +14789,23 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -1990,
    "dividend_yield": null,
-   "per": 317.0,
+   "per": 319.1,
    "roe": 4.9,
-   "pbr": 15.39,
+   "pbr": 15.49,
    "net_debt_levered": -1990,
    "dcf": {
     "E1": 12000,
     "r": 9.5,
     "c": 0.6,
     "note": "본업 이익 120억원에 시밀러·경구 GLP-1 rNPV를 더했어요.",
-    "fwd_per": 354.0,
-    "norm_per": 354.0,
+    "fwd_per": 356.4,
+    "norm_per": 356.4,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 215531,
       "per_share": 9188,
-      "upside": -94.9
+      "upside": -95.0
      },
      "base": {
       "g": 4,
@@ -14817,13 +14817,13 @@
       "g": 8,
       "value": 535595,
       "per_share": 22833,
-      "upside": -87.4
+      "upside": -87.5
      }
     },
     "c_T": 0.6,
     "roe_norm": 4.3,
     "implied_g": null,
-    "implied_E1": 484568,
+    "implied_E1": 487779,
     "cycle": {
      "position": "중립",
      "note": "기대 선반영.",
@@ -14848,7 +14848,7 @@
       "g": 0,
       "value": 87599,
       "per_share": 3734,
-      "upside": -97.9
+      "upside": -98.0
      },
      "base": {
       "g": 4,
@@ -14905,7 +14905,7 @@
       "pipeline": 127932,
       "value": 215531,
       "per_share": 9188,
-      "upside": -94.9
+      "upside": -95.0
      },
      "base": {
       "pipeline": 299383,
@@ -14917,7 +14917,7 @@
       "pipeline": 409321,
       "value": 535595,
       "per_share": 22833,
-      "upside": -87.4
+      "upside": -87.5
      }
     }
    },
@@ -14932,7 +14932,7 @@
     "per_share": 3181,
     "bear": 2417,
     "bull": 3818,
-    "upside": -98.2,
+    "upside": -98.3,
     "pct": 2,
     "tier": "비싼 ⅓",
     "exp_ex": -12.2,
@@ -14949,7 +14949,7 @@
     },
     "weighted": 374071,
     "weighted_ps": 15947,
-    "weighted_upside": -91.2,
+    "weighted_upside": -91.3,
     "stress": {
      "E": -12689,
      "margin": -5.4,
@@ -14960,7 +14960,7 @@
     },
     "down_ps": 7061,
     "max_loss": 96.1,
-    "up_bull": -87.4,
+    "up_bull": -87.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -14976,7 +14976,7 @@
     "mos": 45,
     "buy_ps": 8771,
     "buy_gap": -95.2,
-    "implied_margin": 205.8,
+    "implied_margin": 207.2,
     "base_margin": 5.1,
     "hist_margin": [
      -9.9,
@@ -14985,16 +14985,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 205.8%가 이어져야 해요(과거 -9.9%~7.8%, 평균 1.4%, 이 리포트의 정상 이익 가정 5.1%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 96% 손실, 낙관 시나리오면 -87%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 207.2%가 이어져야 해요(과거 -9.9%~7.8%, 평균 1.4%, 이 리포트의 정상 이익 가정 5.1%). 과거 최고보다 높은 수익성을 이미 가격에 넣은 상태라, 좋은 소식이 나와도 '예상대로'일 뿐이고 실망하면 하락폭이 커요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 96% 손실, 낙관 시나리오면 -87%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -1810,
-    "por_ttm": 237.7,
+    "por_ttm": 239.3,
     "op_ttm": 17870,
-    "por_q": 299.2,
+    "por_q": 301.1,
     "op_q": 3550,
     "cns_per": null,
     "div_yield": null,
@@ -15101,12 +15101,12 @@
   "475830": {
    "name": "오름테라퓨틱",
    "group": "플랫폼·기술수출",
-   "price": 14690,
-   "price_date": "2026-11-27 09:35",
+   "price": 15070,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 319096,
-   "mcap_eff": 319096,
-   "shares": 21721988,
+   "mcap": 327351,
+   "mcap_eff": 327351,
+   "shares": 21722031,
    "shares_check": {
     "dart_common": 21722008,
     "dart_period": "2026-11-20",
@@ -15171,17 +15171,17 @@
       "pipeline": 206167,
       "value": 108108,
       "per_share": 4977,
-      "upside": -66.1
+      "upside": -67.0
      },
      "bull": {
       "pipeline": 319923,
       "value": 221864,
       "per_share": 10214,
-      "upside": -30.5
+      "upside": -32.2
      }
     },
     "net_cash": 0,
-    "implied_pipeline": 417155
+    "implied_pipeline": 425410
    },
    "metrics": {
     "q": null,
@@ -15293,12 +15293,12 @@
     },
     "oneoff": []
    },
-   "price": 14760,
-   "price_date": "2026-11-27 09:35",
+   "price": 14830,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 345551,
-   "mcap_eff": 345551,
-   "shares": 23411314,
+   "mcap": 347189,
+   "mcap_eff": 347189,
+   "shares": 23411261,
    "shares_check": {
     "dart_common": 23411290,
     "dart_period": "2026-11-20",
@@ -15313,7 +15313,7 @@
    "dividend_yield": null,
    "per": 15.3,
    "roe": 23.5,
-   "pbr": 3.59,
+   "pbr": 3.6,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -15358,24 +15358,24 @@
      "bear": {
       "pipeline": 99386,
       "value": 472006,
-      "per_share": 20161,
-      "upside": 36.6
+      "per_share": 20162,
+      "upside": 36.0
      },
      "base": {
       "pipeline": 208061,
       "value": 580682,
-      "per_share": 24803,
-      "upside": 68.0
+      "per_share": 24804,
+      "upside": 67.3
      },
      "bull": {
       "pipeline": 323124,
       "value": 695744,
       "per_share": 29718,
-      "upside": 101.3
+      "upside": 100.4
      }
     },
     "net_cash": 421650,
-    "implied_pipeline": -27070
+    "implied_pipeline": -25432
    },
    "quant": {
     "pos": "중립",
@@ -15390,7 +15390,7 @@
     "ttm_period": "2024Q2~2025Q1",
     "per_q": null,
     "ni_q": -4600,
-    "por_ttm": 17.9,
+    "por_ttm": 18.0,
     "op_ttm": 19280,
     "por_q": null,
     "op_q": -3350,
@@ -15512,12 +15512,12 @@
     },
     "oneoff": []
    },
-   "price": 16840,
-   "price_date": "2026-11-27 09:35",
+   "price": 16860,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1089031,
-   "mcap_eff": 1089031,
-   "shares": 64669299,
+   "mcap": 1090325,
+   "mcap_eff": 1090325,
+   "shares": 64669336,
    "shares_check": {
     "dart_common": 64669312,
     "dart_period": "2026-11-20",
@@ -15578,7 +15578,7 @@
       "pipeline": 145182,
       "value": 105107,
       "per_share": 1625,
-      "upside": -90.3
+      "upside": -90.4
      },
      "base": {
       "pipeline": 298054,
@@ -15594,7 +15594,7 @@
      }
     },
     "net_cash": 41640,
-    "implied_pipeline": 1129107
+    "implied_pipeline": 1130401
    },
    "quant": {
     "pos": "상승기",
@@ -15609,7 +15609,7 @@
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -9530,
-    "por_ttm": 46.6,
+    "por_ttm": 46.7,
     "op_ttm": 23370,
     "por_q": null,
     "op_q": -6710,
@@ -15706,12 +15706,12 @@
   "199800": {
    "name": "툴젠",
    "group": "플랫폼·기술수출",
-   "price": 30100,
-   "price_date": "2026-11-27 09:35",
+   "price": 30400,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 270792,
-   "mcap_eff": 270792,
-   "shares": 8996412,
+   "mcap": 273491,
+   "mcap_eff": 273491,
+   "shares": 8996414,
    "shares_check": {
     "dart_common": 8996403,
     "dart_period": "2026-11-20",
@@ -15745,23 +15745,23 @@
       "pipeline": 125000,
       "value": 92314,
       "per_share": 10261,
-      "upside": -65.9
+      "upside": -66.2
      },
      "base": {
       "pipeline": 250000,
       "value": 217314,
       "per_share": 24156,
-      "upside": -19.7
+      "upside": -20.5
      },
      "bull": {
       "pipeline": 375000,
       "value": 342314,
       "per_share": 38050,
-      "upside": 26.4
+      "upside": 25.2
      }
     },
     "net_cash": 0,
-    "implied_pipeline": 303478
+    "implied_pipeline": 306177
    },
    "metrics": {
     "q": null,
@@ -15853,12 +15853,12 @@
     "ni": -25900,
     "period": "2025Q4~2026Q3"
    },
-   "price": 26650,
-   "price_date": "2026-11-27 09:35",
+   "price": 26400,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 747616,
-   "mcap_eff": 747616,
-   "shares": 28053133,
+   "mcap": 740603,
+   "mcap_eff": 740603,
+   "shares": 28053144,
    "shares_check": {
     "dart_common": 28053140,
     "dart_period": "2026-11-20",
@@ -15873,7 +15873,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -44.0,
-   "pbr": 12.7,
+   "pbr": 12.58,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -15919,23 +15919,23 @@
       "pipeline": 126912,
       "value": 67199,
       "per_share": 2395,
-      "upside": -91.0
+      "upside": -90.9
      },
      "base": {
       "pipeline": 264075,
       "value": 204362,
       "per_share": 7285,
-      "upside": -72.7
+      "upside": -72.4
      },
      "bull": {
       "pipeline": 408287,
       "value": 348574,
-      "per_share": 12426,
-      "upside": -53.4
+      "per_share": 12425,
+      "upside": -52.9
      }
     },
     "net_cash": 28540,
-    "implied_pipeline": 807329
+    "implied_pipeline": 800316
    },
    "quant": {
     "pos": "중립",
@@ -16066,12 +16066,12 @@
     },
     "oneoff": []
    },
-   "price": 11660,
-   "price_date": "2026-11-27 09:35",
+   "price": 11710,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 529496,
-   "mcap_eff": 529496,
-   "shares": 45411321,
+   "mcap": 531766,
+   "mcap_eff": 531766,
+   "shares": 45411272,
    "shares_check": {
     "dart_common": 45411298,
     "dart_period": "2026-11-20",
@@ -16084,9 +16084,9 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 55680,
    "dividend_yield": null,
-   "per": 74.0,
+   "per": 74.3,
    "roe": 9.9,
-   "pbr": 7.35,
+   "pbr": 7.38,
    "skip": "rNPV",
    "cycle": {
     "position": "확장",
@@ -16144,23 +16144,23 @@
       "pipeline": 147018,
       "value": 153669,
       "per_share": 3384,
-      "upside": -71.0
+      "upside": -71.1
      },
      "base": {
       "pipeline": 272909,
       "value": 279559,
       "per_share": 6156,
-      "upside": -47.2
+      "upside": -47.4
      },
      "bull": {
       "pipeline": 386469,
       "value": 393120,
       "per_share": 8657,
-      "upside": -25.8
+      "upside": -26.1
      }
     },
     "net_cash": 55680,
-    "implied_pipeline": 522845
+    "implied_pipeline": 525115
    },
    "quant": {
     "pos": "하강기",
@@ -16183,7 +16183,7 @@
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -7690,
-    "por_ttm": 114.1,
+    "por_ttm": 114.6,
     "op_ttm": 4640,
     "por_q": null,
     "op_q": -4350,
@@ -16308,12 +16308,12 @@
     },
     "oneoff": []
    },
-   "price": 96100,
-   "price_date": "2026-11-27 09:35",
+   "price": 97200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 7525859,
-   "mcap_eff": 7525859,
-   "shares": 78312789,
+   "mcap": 7612003,
+   "mcap_eff": 7612003,
+   "shares": 78312788,
    "shares_check": {
     "dart_common": 78312791,
     "dart_period": "2026-11-20",
@@ -16326,40 +16326,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 470150,
    "dividend_yield": null,
-   "per": 19.7,
+   "per": 20.0,
    "roe": 46.9,
-   "pbr": 9.26,
+   "pbr": 9.36,
    "dcf": {
     "E1": 330000,
     "r": 9.0,
     "c": 0.7,
     "note": "정상 이익 3,300억원: 최근 4개 분기 순이익 3,812억원에서 일회성 이익을 빼고 보수적으로. 특허 만료 전 성장 구간.",
-    "fwd_per": 22.8,
-    "norm_per": 22.8,
+    "fwd_per": 23.1,
+    "norm_per": 23.1,
     "scenarios": {
      "bear": {
       "g": 6,
       "value": 4613869,
       "per_share": 58916,
-      "upside": -38.7
+      "upside": -39.4
      },
      "base": {
       "g": 12,
       "value": 5952840,
       "per_share": 76014,
-      "upside": -20.9
+      "upside": -21.8
      },
      "bull": {
       "g": 16,
       "value": 7060811,
       "per_share": 90162,
-      "upside": -6.2
+      "upside": -7.2
      }
     },
     "c_T": 0.778,
     "roe_norm": 40.6,
-    "implied_g": 17.5,
-    "implied_E1": 421981,
+    "implied_g": 17.8,
+    "implied_E1": 427019,
     "cycle": {
      "position": "확장",
      "note": "신약 성장기.",
@@ -16391,7 +16391,7 @@
     "per_share": 16238,
     "bear": 12338,
     "bull": 19490,
-    "upside": -83.1,
+    "upside": -83.3,
     "pct": 12,
     "tier": "비싼 ⅓",
     "exp_ex": -7.8,
@@ -16408,7 +16408,7 @@
     },
     "weighted": 5583447,
     "weighted_ps": 71297,
-    "weighted_upside": -25.8,
+    "weighted_upside": -26.6,
     "stress": {
      "E": -658492,
      "margin": -56.6,
@@ -16418,8 +16418,8 @@
      "how": "2020~2025 중 두 번째로 나쁜 해의 순이익률 -56.6% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 30165,
-    "max_loss": 68.6,
-    "up_bull": -6.2,
+    "max_loss": 69.0,
+    "up_bull": -7.2,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -16434,8 +16434,8 @@
     },
     "mos": 50,
     "buy_ps": 35648,
-    "buy_gap": -62.9,
-    "implied_margin": 36.3,
+    "buy_gap": -63.3,
+    "implied_margin": 36.7,
     "base_margin": 28.4,
     "hist_margin": [
      -951.6,
@@ -16444,16 +16444,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 12%씩 늘면서 순이익률 36.3%가 이어져야 해요(과거 -951.6%~44.0%, 평균 -3.2%, 이 리포트의 정상 이익 가정 28.4%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 사이클이 좋은 쪽에 있는데 가격도 좋은 수익성을 전제해, 남들과 같은 낙관에 올라타는 위치예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 69% 손실, 낙관 시나리오면 -6%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 12%씩 늘면서 순이익률 36.7%가 이어져야 해요(과거 -951.6%~44.0%, 평균 -3.2%, 이 리포트의 정상 이익 가정 28.4%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 사이클이 좋은 쪽에 있는데 가격도 좋은 수익성을 전제해, 남들과 같은 낙관에 올라타는 위치예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 69% 손실, 낙관 시나리오면 -7%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 34.6,
+    "per_q": 35.0,
     "ni_q": 54340,
-    "por_ttm": 21.5,
+    "por_ttm": 21.8,
     "op_ttm": 349390,
-    "por_q": 16.2,
+    "por_q": 16.4,
     "op_q": 116280,
     "cns_per": null,
     "div_yield": null,
@@ -16592,12 +16592,12 @@
     },
     "oneoff": []
    },
-   "price": 30350,
-   "price_date": "2026-11-27 09:35",
+   "price": 30400,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 4042530,
-   "mcap_eff": 4042530,
-   "shares": 133197035,
+   "mcap": 4049190,
+   "mcap_eff": 4049190,
+   "shares": 133197039,
    "shares_check": {
     "dart_common": 133197026,
     "dart_period": "2026-11-20",
@@ -16612,7 +16612,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -37.9,
-   "pbr": 9.66,
+   "pbr": 9.68,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -16670,11 +16670,11 @@
       "pipeline": 1479715,
       "value": 1263654,
       "per_share": 9487,
-      "upside": -68.7
+      "upside": -68.8
      }
     },
     "net_cash": 41400,
-    "implied_pipeline": 4258591
+    "implied_pipeline": 4265251
    },
    "quant": {
     "pos": "하강기",
@@ -16824,12 +16824,12 @@
     },
     "oneoff": []
    },
-   "price": 2470,
-   "price_date": "2026-11-27 09:35",
+   "price": 2465,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 301154,
-   "mcap_eff": 301154,
-   "shares": 121924696,
+   "mcap": 300544,
+   "mcap_eff": 300544,
+   "shares": 121924544,
    "shares_check": {
     "dart_common": 121924528,
     "dart_period": "2026-11-20",
@@ -16894,7 +16894,7 @@
      }
     },
     "net_cash": -130270,
-    "implied_pipeline": 470043
+    "implied_pipeline": 469433
    },
    "quant": {
     "pos": "바닥권",
@@ -17044,12 +17044,12 @@
     },
     "oneoff": []
    },
-   "price": 64500,
-   "price_date": "2026-11-27 09:35",
+   "price": 64200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1974100,
-   "mcap_eff": 1974100,
-   "shares": 30606202,
+   "mcap": 1964919,
+   "mcap_eff": 1964919,
+   "shares": 30606215,
    "shares_check": {
     "dart_common": 30606209,
     "dart_period": "2026-11-20",
@@ -17064,7 +17064,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -172.8,
-   "pbr": 114.84,
+   "pbr": 114.31,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -17104,17 +17104,17 @@
       "pipeline": 254287,
       "value": 209792,
       "per_share": 6855,
-      "upside": -89.4
+      "upside": -89.3
      },
      "bull": {
       "pipeline": 429746,
       "value": 385250,
       "per_share": 12587,
-      "upside": -80.5
+      "upside": -80.4
      }
     },
     "net_cash": 19870,
-    "implied_pipeline": 2018595
+    "implied_pipeline": 2009414
    },
    "quant": {
     "pos": "하강기",
@@ -17232,12 +17232,12 @@
   "950160": {
    "name": "코오롱티슈진",
    "group": "신약 상업화·후기 임상",
-   "price": 16990,
-   "price_date": "2026-11-27 09:35",
+   "price": 16410,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 288699,
-   "mcap_eff": 288699,
-   "shares": 16992290,
+   "mcap": 278843,
+   "mcap_eff": 278843,
+   "shares": 16992261,
    "shares_check": {
     "dart_common": 16992288,
     "dart_period": "2026-11-20",
@@ -17290,17 +17290,17 @@
       "pipeline": 161077,
       "value": 83839,
       "per_share": 4934,
-      "upside": -71.0
+      "upside": -69.9
      },
      "bull": {
       "pipeline": 272221,
       "value": 194982,
       "per_share": 11475,
-      "upside": -32.5
+      "upside": -30.1
      }
     },
     "net_cash": 0,
-    "implied_pipeline": 365937
+    "implied_pipeline": 356081
    },
    "metrics": {
     "q": "2026Q3",
@@ -17386,12 +17386,12 @@
   "215600": {
    "name": "신라젠",
    "group": "신약 상업화·후기 임상",
-   "price": 1949,
-   "price_date": "2026-11-27 09:35",
+   "price": 1973,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 270027,
-   "mcap_eff": 270027,
-   "shares": 138546434,
+   "mcap": 273352,
+   "mcap_eff": 273352,
+   "shares": 138546376,
    "shares_check": {
     "dart_common": 138546603,
     "dart_period": "2026-11-20",
@@ -17456,17 +17456,17 @@
       "pipeline": 79837,
       "value": 14465,
       "per_share": 104,
-      "upside": -94.6
+      "upside": -94.7
      },
      "bull": {
       "pipeline": 125425,
       "value": 60052,
       "per_share": 433,
-      "upside": -77.8
+      "upside": -78.0
      }
     },
     "net_cash": 0,
-    "implied_pipeline": 335400
+    "implied_pipeline": 338725
    },
    "metrics": {
     "q": null,
@@ -17579,12 +17579,12 @@
     },
     "oneoff": []
    },
-   "price": 15110,
-   "price_date": "2026-11-27 09:35",
+   "price": 15520,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 566799,
-   "mcap_eff": 566799,
-   "shares": 37511516,
+   "mcap": 582179,
+   "mcap_eff": 582179,
+   "shares": 37511534,
    "shares_check": {
     "dart_common": 37511521,
     "dart_period": "2026-11-20",
@@ -17599,7 +17599,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -113.7,
-   "pbr": 16.65,
+   "pbr": 17.1,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -17651,17 +17651,17 @@
       "pipeline": 97997,
       "value": 24139,
       "per_share": 644,
-      "upside": -95.7
+      "upside": -95.9
      },
      "bull": {
       "pipeline": 156116,
       "value": 82257,
       "per_share": 2193,
-      "upside": -85.5
+      "upside": -85.9
      }
     },
     "net_cash": 3380,
-    "implied_pipeline": 640657
+    "implied_pipeline": 656037
    },
    "quant": {
     "pos": "바닥권",
@@ -17810,12 +17810,12 @@
      }
     ]
    },
-   "price": 7860,
-   "price_date": "2026-11-27 09:35",
+   "price": 7890,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 730765,
-   "mcap_eff": 730765,
-   "shares": 92972646,
+   "mcap": 733554,
+   "mcap_eff": 733554,
+   "shares": 92972624,
    "shares_check": {
     "dart_common": 92972603,
     "dart_period": "2026-11-20",
@@ -17830,15 +17830,15 @@
    "dividend_yield": null,
    "per": null,
    "roe": -1.2,
-   "pbr": 2.4,
+   "pbr": 2.41,
    "net_debt_levered": -397010,
    "dcf": {
     "E1": 10000,
     "r": 10.0,
     "c": 0.5,
     "note": "병원·헬스케어 정상 이익 100억원(흑자 해 수준)에 세포치료 후보 rNPV를 더했어요. CDMO는 수주 전이라 보수적으로.",
-    "fwd_per": 73.1,
-    "norm_per": 73.1,
+    "fwd_per": 73.4,
+    "norm_per": 73.4,
     "scenarios": {
      "bear": {
       "g": 0,
@@ -17861,8 +17861,8 @@
     },
     "c_T": 0.5,
     "roe_norm": 3.3,
-    "implied_g": 60.9,
-    "implied_E1": 102134,
+    "implied_g": 61.0,
+    "implied_E1": 102523,
     "cycle": {
      "position": "투자기",
      "note": "CDMO 투자기.",
@@ -17899,7 +17899,7 @@
       "g": 10,
       "value": 89577,
       "per_share": 963,
-      "upside": -87.7
+      "upside": -87.8
      }
     },
     "pipeline_added": 21477
@@ -17967,7 +17967,7 @@
     },
     "weighted": 99144,
     "weighted_ps": 1066,
-    "weighted_upside": -86.4,
+    "weighted_upside": -86.5,
     "stress": {
      "E": -113115,
      "margin": -8.7,
@@ -18113,12 +18113,12 @@
   "372320": {
    "name": "큐로셀",
    "group": "세포·유전자치료",
-   "price": 26100,
-   "price_date": "2026-11-27 09:35",
+   "price": 26250,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 397420,
-   "mcap_eff": 397420,
-   "shares": 15226820,
+   "mcap": 399704,
+   "mcap_eff": 399704,
+   "shares": 15226819,
    "shares_check": {
     "dart_common": 15226824,
     "dart_period": "2026-11-20",
@@ -18131,7 +18131,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -47200,
    "dividend_yield": null,
-   "pbr": 79.01,
+   "pbr": 79.46,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -18189,11 +18189,11 @@
       "pipeline": 221555,
       "value": 84244,
       "per_share": 5533,
-      "upside": -78.8
+      "upside": -78.9
      }
     },
     "net_cash": -47200,
-    "implied_pipeline": 534731
+    "implied_pipeline": 537015
    },
    "metrics": {
     "q": null,
@@ -18333,12 +18333,12 @@
      }
     ]
    },
-   "price": 10230,
-   "price_date": "2026-11-27 09:35",
+   "price": 10350,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 161676,
-   "mcap_eff": 161676,
-   "shares": 15804106,
+   "mcap": 163573,
+   "mcap_eff": 163573,
+   "shares": 15804155,
    "shares_check": {
     "dart_common": 15804124,
     "dart_period": "2026-11-20",
@@ -18353,7 +18353,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -136.6,
-   "pbr": 0.87,
+   "pbr": 0.88,
    "ttm_news": {
     "period": "최근 4개 분기 영업손실 130억원 기준(영업권·자산 손상 제외)",
     "ni": -10000
@@ -18363,32 +18363,32 @@
     "r": 10.0,
     "c": 0.5,
     "note": "정상 이익 80억원: 2021~2022년 흑자(250~314억원)의 보수적 일부. 2024~2025년 손상은 일회성.",
-    "fwd_per": 20.2,
-    "norm_per": 20.2,
+    "fwd_per": 20.4,
+    "norm_per": 20.4,
     "scenarios": {
      "bear": {
       "g": -2,
       "value": 33404,
       "per_share": 2114,
-      "upside": -79.3
+      "upside": -79.6
      },
      "base": {
       "g": 4,
       "value": 49655,
       "per_share": 3142,
-      "upside": -69.3
+      "upside": -69.6
      },
      "bull": {
       "g": 8,
       "value": 67198,
       "per_share": 4252,
-      "upside": -58.4
+      "upside": -58.9
      }
     },
     "c_T": 0.534,
     "roe_norm": 4.3,
-    "implied_g": 28.6,
-    "implied_E1": 23728,
+    "implied_g": 28.8,
+    "implied_E1": 23994,
     "cycle": {
      "position": "하강기",
      "note": "손상 정리.",
@@ -18440,7 +18440,7 @@
     },
     "weighted": 46599,
     "weighted_ps": 2949,
-    "weighted_upside": -71.2,
+    "weighted_upside": -71.5,
     "stress": {
      "E": -101578,
      "margin": -42.4,
@@ -18451,7 +18451,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": -58.4,
+    "up_bull": -58.9,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -18466,8 +18466,8 @@
     },
     "mos": 50,
     "buy_ps": 1474,
-    "buy_gap": -85.6,
-    "implied_margin": 9.9,
+    "buy_gap": -85.8,
+    "implied_margin": 10.0,
     "base_margin": 3.3,
     "hist_margin": [
      -164.9,
@@ -18476,7 +18476,7 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 9.9%가 이어져야 해요(과거 -164.9%~18.7%, 평균 -3.8%, 이 리포트의 정상 이익 가정 3.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -58%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 10.0%가 이어져야 해요(과거 -164.9%~18.7%, 평균 -3.8%, 이 리포트의 정상 이익 가정 3.3%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 -59%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -18618,12 +18618,12 @@
     },
     "oneoff": []
    },
-   "price": 8330,
-   "price_date": "2026-11-27 09:35",
+   "price": 8390,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 326579,
-   "mcap_eff": 326579,
-   "shares": 39205162,
+   "mcap": 328931,
+   "mcap_eff": 328931,
+   "shares": 39205125,
    "shares_check": {
     "dart_common": 39205128,
     "dart_period": "2026-11-20",
@@ -18638,7 +18638,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -16.9,
-   "pbr": 1.31,
+   "pbr": 1.32,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -18684,23 +18684,23 @@
       "pipeline": 95048,
       "value": 56525,
       "per_share": 1442,
-      "upside": -82.7
+      "upside": -82.8
      },
      "base": {
       "pipeline": 179885,
       "value": 141363,
       "per_share": 3606,
-      "upside": -56.7
+      "upside": -57.0
      },
      "bull": {
       "pipeline": 276851,
       "value": 238329,
       "per_share": 6079,
-      "upside": -27.0
+      "upside": -27.5
      }
     },
     "net_cash": 12970,
-    "implied_pipeline": 365101
+    "implied_pipeline": 367453
    },
    "quant": {
     "pos": "바닥권",
@@ -18846,12 +18846,12 @@
     },
     "oneoff": []
    },
-   "price": 21050,
-   "price_date": "2026-11-27 09:35",
+   "price": 21200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1356370,
-   "mcap_eff": 1356370,
-   "shares": 64435629,
+   "mcap": 1366036,
+   "mcap_eff": 1366036,
+   "shares": 64435660,
    "shares_check": {
     "dart_common": 64435644,
     "dart_period": "2026-11-20",
@@ -18866,7 +18866,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -17.1,
-   "pbr": 21.52,
+   "pbr": 21.67,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -18924,11 +18924,11 @@
       "pipeline": 295868,
       "value": 252699,
       "per_share": 3922,
-      "upside": -81.4
+      "upside": -81.5
      }
     },
     "net_cash": -4550,
-    "implied_pipeline": 1399539
+    "implied_pipeline": 1409205
    },
    "quant": {
     "pos": "하강기",
@@ -19089,12 +19089,12 @@
      }
     ]
    },
-   "price": 8970,
-   "price_date": "2026-11-27 09:35",
+   "price": 9000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 329658,
-   "mcap_eff": 329658,
-   "shares": 36751171,
+   "mcap": 330760,
+   "mcap_eff": 330760,
+   "shares": 36751111,
    "shares_check": {
     "dart_common": 36751152,
     "dart_period": "2026-11-20",
@@ -19107,40 +19107,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 90830,
    "dividend_yield": null,
-   "per": 13.5,
+   "per": 13.6,
    "roe": 13.9,
-   "pbr": 1.88,
+   "pbr": 1.89,
    "dcf": {
     "E1": 35000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 350억원: 2025년 순이익 413억원과 최근 4개 분기 243억원의 평균 수준. 조달 물량 시점 차이를 평균했어요.",
-    "fwd_per": 9.4,
-    "norm_per": 9.4,
+    "fwd_per": 9.5,
+    "norm_per": 9.5,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 378528,
       "per_share": 10300,
-      "upside": 14.8
+      "upside": 14.4
      },
      "base": {
       "g": 8,
       "value": 511993,
       "per_share": 13931,
-      "upside": 55.3
+      "upside": 54.8
      },
      "bull": {
       "g": 14,
       "value": 648640,
       "per_share": 17650,
-      "upside": 96.8
+      "upside": 96.1
      }
     },
     "c_T": 0.789,
     "roe_norm": 20.0,
-    "implied_g": -3.9,
-    "implied_E1": 20634,
+    "implied_g": -3.8,
+    "implied_E1": 20721,
     "cycle": {
      "position": "중립",
      "note": "국제기구 조달 물량에 따라 분기 변동.",
@@ -19179,8 +19179,8 @@
      "bull": 0.2
     },
     "weighted": 499283,
-    "weighted_ps": 13585,
-    "weighted_upside": 51.4,
+    "weighted_ps": 13586,
+    "weighted_upside": 51.0,
     "stress": {
      "E": -232661,
      "margin": -138.4,
@@ -19191,7 +19191,7 @@
     },
     "down_ps": 0,
     "max_loss": 100.0,
-    "up_bull": 96.8,
+    "up_bull": 96.1,
     "asym_ratio": 1.0,
     "asym": "균형",
     "risk": {
@@ -19206,7 +19206,7 @@
     },
     "mos": 45,
     "buy_ps": 7472,
-    "buy_gap": -16.7,
+    "buy_gap": -17.0,
     "implied_margin": 12.3,
     "base_margin": 20.8,
     "hist_margin": [
@@ -19216,7 +19216,7 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 8%씩 늘면서 순이익률 12.3%가 이어져야 해요(과거 -211.1%~27.7%, 평균 -25.8%, 이 리포트의 정상 이익 가정 20.8%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 +97%로 손익 구조는 '균형'이에요."
+    "note": "지금 주가가 맞으려면 이익이 연 8%씩 늘면서 순이익률 12.3%가 이어져야 해요(과거 -211.1%~27.7%, 평균 -25.8%, 이 리포트의 정상 이익 가정 20.8%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 100% 손실, 낙관 시나리오면 +96%로 손익 구조는 '균형'이에요."
    },
    "metrics": {
     "q": "2026Q3",
@@ -19364,12 +19364,12 @@
     },
     "oneoff": []
    },
-   "price": 8830,
-   "price_date": "2026-11-27 09:35",
+   "price": 8870,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 83527,
-   "mcap_eff": 83527,
-   "shares": 9459456,
+   "mcap": 83905,
+   "mcap_eff": 83905,
+   "shares": 9459414,
    "shares_check": {
     "dart_common": 9459459,
     "dart_period": "2026-11-20",
@@ -19397,25 +19397,25 @@
       "g": -2,
       "value": 58369,
       "per_share": 6170,
-      "upside": -30.1
+      "upside": -30.4
      },
      "base": {
       "g": 3,
       "value": 68817,
       "per_share": 7275,
-      "upside": -17.6
+      "upside": -18.0
      },
      "bull": {
       "g": 6,
       "value": 76316,
       "per_share": 8068,
-      "upside": -8.6
+      "upside": -9.0
      }
     },
     "c_T": 0.7,
     "roe_norm": 5.7,
-    "implied_g": 8.6,
-    "implied_E1": 7607,
+    "implied_g": 8.7,
+    "implied_E1": 7648,
     "cycle": {
      "position": "중립",
      "note": "축산 질병 사이클.",
@@ -19447,7 +19447,7 @@
     "per_share": 5507,
     "bear": 4184,
     "bull": 6610,
-    "upside": -37.6,
+    "upside": -37.9,
     "pct": 52,
     "tier": "가운데 ⅓",
     "exp_ex": 0.4,
@@ -19464,7 +19464,7 @@
     },
     "weighted": 67182,
     "weighted_ps": 7102,
-    "weighted_upside": -19.6,
+    "weighted_upside": -19.9,
     "stress": {
      "E": 4173,
      "margin": 8.7,
@@ -19474,8 +19474,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 8.7% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 5834,
-    "max_loss": 33.9,
-    "up_bull": -8.6,
+    "max_loss": 34.2,
+    "up_bull": -9.0,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -19490,7 +19490,7 @@
     },
     "mos": 25,
     "buy_ps": 5326,
-    "buy_gap": -39.7,
+    "buy_gap": -40.0,
     "implied_margin": 15.9,
     "base_margin": 12.5,
     "hist_margin": [
@@ -19647,12 +19647,12 @@
     },
     "oneoff": []
    },
-   "price": 25950,
-   "price_date": "2026-11-27 09:35",
+   "price": 26200,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1355275,
-   "mcap_eff": 1355275,
-   "shares": 52226397,
+   "mcap": 1368332,
+   "mcap_eff": 1368332,
+   "shares": 52226412,
    "shares_check": {
     "dart_common": 52226415,
     "dart_period": "2026-11-20",
@@ -19665,40 +19665,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 274450,
    "dividend_yield": null,
-   "per": 29.0,
+   "per": 29.2,
    "roe": 4.6,
-   "pbr": 1.33,
+   "pbr": 1.35,
    "dcf": {
     "E1": 50000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 500억원: 코로나 시기를 뺀 2025년·최근 4개 분기 수준.",
-    "fwd_per": 27.1,
-    "norm_per": 27.1,
+    "fwd_per": 27.4,
+    "norm_per": 27.4,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 597222,
       "per_share": 11435,
-      "upside": -55.9
+      "upside": -56.4
      },
      "base": {
       "g": 5,
       "value": 681212,
       "per_share": 13043,
-      "upside": -49.7
+      "upside": -50.2
      },
      "bull": {
       "g": 9,
       "value": 764099,
       "per_share": 14631,
-      "upside": -43.6
+      "upside": -44.2
      }
     },
     "c_T": 0.6,
     "roe_norm": 4.9,
-    "implied_g": 26.8,
-    "implied_E1": 123452,
+    "implied_g": 27.1,
+    "implied_E1": 124875,
     "cycle": {
      "position": "바닥권",
      "note": "코로나 특수 후 바닥.",
@@ -19742,7 +19742,7 @@
     "per_share": 15305,
     "bear": 11630,
     "bull": 18371,
-    "upside": -41.0,
+    "upside": -41.6,
     "pct": 50,
     "tier": "가운데 ⅓",
     "exp_ex": 0.0,
@@ -19759,7 +19759,7 @@
     },
     "weighted": 693424,
     "weighted_ps": 13277,
-    "weighted_upside": -48.8,
+    "weighted_upside": -49.3,
     "stress": {
      "E": 1497,
      "margin": 0.2,
@@ -19769,8 +19769,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 0.2% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 10037,
-    "max_loss": 61.3,
-    "up_bull": -43.6,
+    "max_loss": 61.7,
+    "up_bull": -44.2,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -19785,8 +19785,8 @@
     },
     "mos": 30,
     "buy_ps": 9294,
-    "buy_gap": -64.2,
-    "implied_margin": 14.8,
+    "buy_gap": -64.5,
+    "implied_margin": 15.0,
     "base_margin": 6.0,
     "hist_margin": [
      -2.1,
@@ -19795,16 +19795,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 14.8%가 이어져야 해요(과거 -2.1%~44.6%, 평균 16.1%, 이 리포트의 정상 이익 가정 6.0%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 61% 손실, 낙관 시나리오면 -44%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 15.0%가 이어져야 해요(과거 -2.1%~44.6%, 평균 16.1%, 이 리포트의 정상 이익 가정 6.0%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 62% 손실, 낙관 시나리오면 -44%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -18810,
-    "por_ttm": 21.3,
+    "por_ttm": 21.5,
     "op_ttm": 63720,
-    "por_q": 29.1,
+    "por_q": 29.4,
     "op_q": 11640,
     "cns_per": null,
     "div_yield": null,
@@ -19940,7 +19940,7 @@
     "oneoff": []
    },
    "price": 7310,
-   "price_date": "2026-11-27 09:35",
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
    "mcap": 882640,
    "mcap_eff": 882640,
@@ -20235,12 +20235,12 @@
      }
     ]
    },
-   "price": 9900,
-   "price_date": "2026-11-27 09:35",
+   "price": 9930,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 216862,
-   "mcap_eff": 216862,
-   "shares": 21905253,
+   "mcap": 217519,
+   "mcap_eff": 217519,
+   "shares": 21905237,
    "shares_check": {
     "dart_common": 21905263,
     "dart_period": "2026-11-20",
@@ -20253,7 +20253,7 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 17630,
    "dividend_yield": null,
-   "per": 10.7,
+   "per": 10.8,
    "roe": 8.7,
    "pbr": 0.94,
    "dcf": {
@@ -20261,32 +20261,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 260억원: 2022~2025년 평균 253억원, 최근 4개 분기 202억원.",
-    "fwd_per": 8.3,
-    "norm_per": 8.3,
+    "fwd_per": 8.4,
+    "norm_per": 8.4,
     "scenarios": {
      "bear": {
       "g": 2,
       "value": 262340,
       "per_share": 11976,
-      "upside": 21.0
+      "upside": 20.6
      },
      "base": {
       "g": 6,
       "value": 313731,
       "per_share": 14322,
-      "upside": 44.7
+      "upside": 44.2
      },
      "bull": {
       "g": 9,
       "value": 358871,
       "per_share": 16383,
-      "upside": 65.5
+      "upside": 65.0
      }
     },
     "c_T": 0.789,
     "roe_norm": 11.2,
-    "implied_g": -2.3,
-    "implied_E1": 17609,
+    "implied_g": -2.2,
+    "implied_E1": 17666,
     "cycle": {
      "position": "중립",
      "note": "안정.",
@@ -20318,10 +20318,10 @@
     "per_share": 11061,
     "bear": 8405,
     "bull": 13277,
-    "upside": 11.7,
+    "upside": 11.4,
     "pct": 75,
     "tier": "싼 ⅓",
-    "exp_ex": 4.2,
+    "exp_ex": 4.3,
     "conflict": false
    },
    "marks": {
@@ -20335,7 +20335,7 @@
     },
     "weighted": 307342,
     "weighted_ps": 14031,
-    "weighted_upside": 41.7,
+    "weighted_upside": 41.3,
     "stress": {
      "E": 15993,
      "margin": 8.2,
@@ -20346,7 +20346,7 @@
     },
     "down_ps": 11288,
     "max_loss": 0.0,
-    "up_bull": 65.5,
+    "up_bull": 65.0,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -20361,7 +20361,7 @@
     },
     "mos": 25,
     "buy_ps": 10523,
-    "buy_gap": 6.3,
+    "buy_gap": 6.0,
     "implied_margin": 9.0,
     "base_margin": 13.3,
     "hist_margin": [
@@ -20515,12 +20515,12 @@
     },
     "oneoff": []
    },
-   "price": 4250,
-   "price_date": "2026-11-27 09:35",
+   "price": 4300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 433031,
-   "mcap_eff": 433031,
-   "shares": 101889647,
+   "mcap": 438126,
+   "mcap_eff": 438126,
+   "shares": 101889767,
    "shares_check": {
     "dart_common": 101889764,
     "dart_period": "2026-11-20",
@@ -20545,32 +20545,32 @@
     "r": 10.0,
     "c": 0.5,
     "note": "정상 이익 300억원: 본업 영업이익 230억원대 + SD바이오센서 지분 정상 이익 일부. 손상은 일회성.",
-    "fwd_per": 14.4,
-    "norm_per": 14.4,
+    "fwd_per": 14.6,
+    "norm_per": 14.6,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 253297,
       "per_share": 2486,
-      "upside": -41.5
+      "upside": -42.2
      },
      "base": {
       "g": 4,
       "value": 285592,
       "per_share": 2803,
-      "upside": -34.0
+      "upside": -34.8
      },
      "bull": {
       "g": 8,
       "value": 325124,
       "per_share": 3191,
-      "upside": -24.9
+      "upside": -25.8
      }
     },
     "c_T": 0.5,
     "roe_norm": 2.0,
-    "implied_g": 16.7,
-    "implied_E1": 51556,
+    "implied_g": 17.1,
+    "implied_E1": 52301,
     "cycle": {
      "position": "바닥권",
      "note": "바닥.",
@@ -20614,7 +20614,7 @@
     "per_share": 2371,
     "bear": 1802,
     "bull": 2846,
-    "upside": -44.2,
+    "upside": -44.8,
     "pct": 45,
     "tier": "가운데 ⅓",
     "exp_ex": -0.4,
@@ -20631,7 +20631,7 @@
     },
     "weighted": 292969,
     "weighted_ps": 2875,
-    "weighted_upside": -32.4,
+    "weighted_upside": -33.1,
     "stress": {
      "E": -18676,
      "margin": -22.8,
@@ -20641,8 +20641,8 @@
      "how": "2020~2025 중 두 번째로 나쁜 해의 순이익률 -22.8% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 1664,
-    "max_loss": 60.8,
-    "up_bull": -24.9,
+    "max_loss": 61.3,
+    "up_bull": -25.8,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -20657,8 +20657,8 @@
     },
     "mos": 40,
     "buy_ps": 1725,
-    "buy_gap": -59.4,
-    "implied_margin": 62.8,
+    "buy_gap": -59.9,
+    "implied_margin": 63.7,
     "base_margin": 36.6,
     "hist_margin": [
      -74.0,
@@ -20667,16 +20667,16 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 62.8%가 이어져야 해요(과거 -74.0%~108.7%, 평균 44.7%, 이 리포트의 정상 이익 가정 36.6%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 61% 손실, 낙관 시나리오면 -25%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 4%씩 늘면서 순이익률 63.7%가 이어져야 해요(과거 -74.0%~108.7%, 평균 44.7%, 이 리포트의 정상 이익 가정 36.6%). 평균보다 좋은 수익성이 이어진다는 낙관이 들어 있어요. 그 근거(신제품·점유율·가격 결정력)가 확인되는지가 관건이에요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 61% 손실, 낙관 시나리오면 -26%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -65340,
-    "por_ttm": 18.3,
+    "por_ttm": 18.5,
     "op_ttm": 23640,
-    "por_q": 13.5,
+    "por_q": 13.7,
     "op_q": 7990,
     "cns_per": null,
     "div_yield": null,
@@ -20777,12 +20777,12 @@
   "038290": {
    "name": "마크로젠",
    "group": "진단·유전체",
-   "price": 11400,
-   "price_date": "2026-11-27 09:35",
+   "price": 11500,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 123600,
-   "mcap_eff": 123600,
-   "shares": 10842105,
+   "mcap": 124684,
+   "mcap_eff": 124684,
+   "shares": 10842087,
    "shares_check": {
     "dart_common": 10842105,
     "dart_period": "2026-11-20",
@@ -20801,32 +20801,32 @@
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 50억원: 사업보고서 기준 과거 평균.",
-    "fwd_per": 24.7,
-    "norm_per": 24.7,
+    "fwd_per": 24.9,
+    "norm_per": 24.9,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 43350,
       "per_share": 3998,
-      "upside": -64.9
+      "upside": -65.2
      },
      "base": {
       "g": 4,
       "value": 52487,
       "per_share": 4841,
-      "upside": -57.5
+      "upside": -57.9
      },
      "bull": {
       "g": 7,
       "value": 60528,
       "per_share": 5583,
-      "upside": -51.0
+      "upside": -51.5
      }
     },
     "c_T": 0.789,
     "roe_norm": null,
-    "implied_g": 22.4,
-    "implied_E1": 11774,
+    "implied_g": 22.6,
+    "implied_E1": 11878,
     "net_cash_added": 0
    },
    "marks": {
@@ -20840,7 +20840,7 @@
     },
     "weighted": 51354,
     "weighted_ps": 4737,
-    "weighted_upside": -58.4,
+    "weighted_upside": -58.8,
     "stress": {
      "E": 3000,
      "margin": null,
@@ -20850,8 +20850,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 3721,
-    "max_loss": 67.4,
-    "up_bull": -51.0,
+    "max_loss": 67.6,
+    "up_bull": -51.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -20866,13 +20866,13 @@
     },
     "mos": 35,
     "buy_ps": 3079,
-    "buy_gap": -73.0,
+    "buy_gap": -73.2,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 22.4%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 67% 손실, 낙관 시나리오면 -51%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 22.6%씩 늘어난다고 가정하는 셈이에요(기준 가정 4%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 68% 손실, 낙관 시나리오면 -51%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -20958,12 +20958,12 @@
   "394800": {
    "name": "쓰리빌리언",
    "group": "진단·유전체",
-   "price": 7950,
-   "price_date": "2026-11-27 09:35",
+   "price": 7900,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 252930,
-   "mcap_eff": 252930,
-   "shares": 31815094,
+   "mcap": 251339,
+   "mcap_eff": 251339,
+   "shares": 31815063,
    "shares_check": {
     "dart_common": 31815126,
     "dart_period": "2026-11-20",
@@ -20982,32 +20982,32 @@
     "r": 10.5,
     "c": 0.5,
     "note": "정상 이익 40억원: 흑자 전환 뒤 예상 수준(현재 손익분기 근처).",
-    "fwd_per": 63.2,
-    "norm_per": 63.2,
+    "fwd_per": 62.8,
+    "norm_per": 62.8,
     "scenarios": {
      "bear": {
       "g": 5,
       "value": 36849,
       "per_share": 1158,
-      "upside": -85.4
+      "upside": -85.3
      },
      "base": {
       "g": 12,
       "value": 51333,
       "per_share": 1613,
-      "upside": -79.7
+      "upside": -79.6
      },
      "bull": {
       "g": 20,
       "value": 74297,
       "per_share": 2335,
-      "upside": -70.6
+      "upside": -70.4
      }
     },
     "c_T": 0.81,
     "roe_norm": null,
-    "implied_g": 48.7,
-    "implied_E1": 19709,
+    "implied_g": 48.5,
+    "implied_E1": 19585,
     "net_cash_added": 0
    },
    "marks": {
@@ -21021,7 +21021,7 @@
     },
     "weighted": 51581,
     "weighted_ps": 1621,
-    "weighted_upside": -79.6,
+    "weighted_upside": -79.5,
     "stress": {
      "E": 2400,
      "margin": null,
@@ -21031,8 +21031,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 1096,
-    "max_loss": 86.2,
-    "up_bull": -70.6,
+    "max_loss": 86.1,
+    "up_bull": -70.4,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -21053,7 +21053,7 @@
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 48.7%씩 늘어난다고 가정하는 셈이에요(기준 가정 12%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 86% 손실, 낙관 시나리오면 -71%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 48.5%씩 늘어난다고 가정하는 셈이에요(기준 가정 12%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 86% 손실, 낙관 시나리오면 -70%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -21171,12 +21171,12 @@
     },
     "oneoff": []
    },
-   "price": 47650,
-   "price_date": "2026-11-27 09:35",
+   "price": 47550,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 642342,
-   "mcap_eff": 642342,
-   "shares": 13480420,
+   "mcap": 640994,
+   "mcap_eff": 640994,
+   "shares": 13480421,
    "shares_check": {
     "dart_common": 13480427,
     "dart_period": "2026-11-20",
@@ -21204,25 +21204,25 @@
       "g": 3,
       "value": 453579,
       "per_share": 33647,
-      "upside": -29.4
+      "upside": -29.2
      },
      "base": {
       "g": 7,
       "value": 536889,
       "per_share": 39827,
-      "upside": -16.4
+      "upside": -16.2
      },
      "bull": {
       "g": 10,
       "value": 610040,
       "per_share": 45254,
-      "upside": -5.0
+      "upside": -4.8
      }
     },
     "c_T": 0.778,
     "roe_norm": 12.0,
     "implied_g": 11.2,
-    "implied_E1": 46146,
+    "implied_E1": 46042,
     "cycle": {
      "position": "중립",
      "note": "안정 성장.",
@@ -21254,7 +21254,7 @@
     "per_share": 30141,
     "bear": 22902,
     "bull": 36178,
-    "upside": -36.7,
+    "upside": -36.6,
     "pct": 55,
     "tier": "가운데 ⅓",
     "exp_ex": 0.5,
@@ -21271,7 +21271,7 @@
     },
     "weighted": 526526,
     "weighted_ps": 39059,
-    "weighted_upside": -18.0,
+    "weighted_upside": -17.9,
     "stress": {
      "E": 38000,
      "margin": 16.2,
@@ -21281,8 +21281,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 16.2% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 33647,
-    "max_loss": 29.4,
-    "up_bull": -5.0,
+    "max_loss": 29.2,
+    "up_bull": -4.8,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -21297,8 +21297,8 @@
     },
     "mos": 25,
     "buy_ps": 29294,
-    "buy_gap": -38.5,
-    "implied_margin": 18.3,
+    "buy_gap": -38.4,
+    "implied_margin": 18.2,
     "base_margin": 15.1,
     "hist_margin": [
      13.1,
@@ -21307,12 +21307,12 @@
     ],
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가가 맞으려면 이익이 연 7%씩 늘면서 순이익률 18.3%가 이어져야 해요(과거 13.1%~24.7%, 평균 19.3%, 이 리포트의 정상 이익 가정 15.1%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 29% 손실, 낙관 시나리오면 -5%로 손익 구조는 '불리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 7%씩 늘면서 순이익률 18.2%가 이어져야 해요(과거 13.1%~24.7%, 평균 19.3%, 이 리포트의 정상 이익 가정 15.1%). 평균적인 수익성을 가정하는 가격이라 특별한 낙관도 비관도 없어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 29% 손실, 낙관 시나리오면 -5%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
-    "per_q": 35.1,
+    "per_q": 35.0,
     "ni_q": 4580,
     "por_ttm": 10.8,
     "op_ttm": 59600,
@@ -21455,12 +21455,12 @@
     },
     "oneoff": []
    },
-   "price": 41850,
-   "price_date": "2026-11-27 09:35",
+   "price": 43000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 360923,
-   "mcap_eff": 360923,
-   "shares": 8624205,
+   "mcap": 370841,
+   "mcap_eff": 370841,
+   "shares": 8624209,
    "shares_check": {
     "dart_common": 8624204,
     "dart_period": "2026-11-20",
@@ -21473,41 +21473,41 @@
    "equity_source": "DART 2026Q3",
    "net_cash": -225860,
    "dividend_yield": null,
-   "per": 19.8,
+   "per": 20.4,
    "roe": 3.2,
-   "pbr": 0.64,
+   "pbr": 0.66,
    "net_debt_levered": -225860,
    "dcf": {
     "E1": 50000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 500억원: 2022~2024년 평균 851억원에서 중국 VBP 가격 인하를 반영해 낮췄어요.",
-    "fwd_per": 7.2,
-    "norm_per": 7.2,
+    "fwd_per": 7.4,
+    "norm_per": 7.4,
     "scenarios": {
      "bear": {
       "g": 0,
       "value": 402297,
       "per_share": 46647,
-      "upside": 11.5
+      "upside": 8.5
      },
      "base": {
       "g": 5,
       "value": 523367,
       "per_share": 60686,
-      "upside": 45.0
+      "upside": 41.1
      },
      "bull": {
       "g": 8,
       "value": 619593,
-      "per_share": 71844,
-      "upside": 71.7
+      "per_share": 71843,
+      "upside": 67.1
      }
     },
     "c_T": 0.775,
     "roe_norm": 8.9,
-    "implied_g": -2.4,
-    "implied_E1": 35061,
+    "implied_g": -1.9,
+    "implied_E1": 35973,
     "cycle": {
      "position": "하강기",
      "note": "중국 VBP 이후.",
@@ -21551,10 +21551,10 @@
     "per_share": 56745,
     "bear": 43117,
     "bull": 68111,
-    "upside": 35.6,
-    "pct": 88,
+    "upside": 32.0,
+    "pct": 85,
     "tier": "싼 ⅓",
-    "exp_ex": 5.6,
+    "exp_ex": 5.4,
     "conflict": false
    },
    "marks": {
@@ -21568,7 +21568,7 @@
     },
     "weighted": 495426,
     "weighted_ps": 57446,
-    "weighted_upside": 37.3,
+    "weighted_upside": 33.6,
     "stress": {
      "E": 26406,
      "margin": 5.9,
@@ -21578,8 +21578,8 @@
      "how": "2016~2025 중 두 번째로 나쁜 해의 순이익률 5.9% × 추세 매출, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 42529,
-    "max_loss": 0.0,
-    "up_bull": 71.7,
+    "max_loss": 1.1,
+    "up_bull": 67.1,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -21594,8 +21594,8 @@
     },
     "mos": 30,
     "buy_ps": 40212,
-    "buy_gap": -3.9,
-    "implied_margin": 7.8,
+    "buy_gap": -6.5,
+    "implied_margin": 8.0,
     "base_margin": 11.1,
     "hist_margin": [
      4.7,
@@ -21604,16 +21604,16 @@
     ],
     "verdict": "가치 이하·안전마진 부족",
     "tone": "neu",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 7.8%가 이어져야 해요(과거 4.7%~24.5%, 평균 16.4%, 이 리포트의 정상 이익 가정 11.1%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +72%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 8.0%가 이어져야 해요(과거 4.7%~24.5%, 평균 16.4%, 이 리포트의 정상 이익 가정 11.1%). 평균보다 낮은 수익성만 반영돼 있어 평균 회복만으로도 오를 여지가 있어요. 다만 구조적으로 경쟁력이 떨어진 거라면 이 가격이 맞아요. 업황이 나쁜 쪽인데 가격도 낮은 수익성을 전제해, 남들이 피할 때 들여다볼 만한 위치예요. 회사가 불황을 버틸 체력이 있는지가 먼저예요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 1% 손실, 낙관 시나리오면 +67%로 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -7940,
-    "por_ttm": 4.9,
+    "por_ttm": 5.1,
     "op_ttm": 72960,
-    "por_q": 5.7,
+    "por_q": 5.8,
     "op_q": 15910,
     "cns_per": null,
     "div_yield": null,
@@ -21763,12 +21763,12 @@
      }
     ]
    },
-   "price": 16720,
-   "price_date": "2026-11-27 09:35",
+   "price": 17000,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 248397,
-   "mcap_eff": 248397,
-   "shares": 14856280,
+   "mcap": 252557,
+   "mcap_eff": 252557,
+   "shares": 14856294,
    "shares_check": {
     "dart_common": 14856287,
     "dart_period": "2026-11-20",
@@ -21781,40 +21781,40 @@
    "equity_source": "DART 2026Q3",
    "net_cash": 118980,
    "dividend_yield": null,
-   "per": 6.2,
+   "per": 6.3,
    "roe": 8.0,
-   "pbr": 0.5,
+   "pbr": 0.51,
    "dcf": {
     "E1": 48000,
     "r": 9.5,
     "c": 0.6,
     "note": "정상 이익 480억원: 2021~2025년 평균 550억원, 최근 4개 분기 399억원 사이.",
-    "fwd_per": 5.2,
-    "norm_per": 5.2,
+    "fwd_per": 5.3,
+    "norm_per": 5.3,
     "scenarios": {
      "bear": {
       "g": 2,
       "value": 547605,
       "per_share": 36860,
-      "upside": 120.5
+      "upside": 116.8
      },
      "base": {
       "g": 5,
       "value": 616056,
       "per_share": 41468,
-      "upside": 148.0
+      "upside": 143.9
      },
      "bull": {
       "g": 8,
       "value": 696218,
       "per_share": 46864,
-      "upside": 180.3
+      "upside": 175.7
      }
     },
     "c_T": 0.789,
     "roe_norm": 9.7,
-    "implied_g": -22.9,
-    "implied_E1": 14605,
+    "implied_g": -22.2,
+    "implied_E1": 14982,
     "cycle": {
      "position": "회복기",
      "note": "회복.",
@@ -21858,10 +21858,10 @@
     "per_share": 31165,
     "bear": 23680,
     "bull": 37407,
-    "upside": 86.4,
+    "upside": 83.3,
     "pct": 98,
     "tier": "싼 ⅓",
-    "exp_ex": 7.8,
+    "exp_ex": 7.7,
     "conflict": false
    },
    "marks": {
@@ -21875,7 +21875,7 @@
     },
     "weighted": 618984,
     "weighted_ps": 41665,
-    "weighted_upside": 149.2,
+    "weighted_upside": 145.1,
     "stress": {
      "E": 46656,
      "margin": 10.2,
@@ -21886,7 +21886,7 @@
     },
     "down_ps": 36724,
     "max_loss": 0.0,
-    "up_bull": 180.3,
+    "up_bull": 175.7,
     "asym_ratio": null,
     "asym": "매우 유리",
     "risk": {
@@ -21901,8 +21901,8 @@
     },
     "mos": 25,
     "buy_ps": 31249,
-    "buy_gap": 86.9,
-    "implied_margin": 3.2,
+    "buy_gap": 83.8,
+    "implied_margin": 3.3,
     "base_margin": 10.5,
     "hist_margin": [
      9.4,
@@ -21911,16 +21911,16 @@
     ],
     "verdict": "안전마진 확보",
     "tone": "pos",
-    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 3.2%가 이어져야 해요(과거 9.4%~19.5%, 평균 12.7%, 이 리포트의 정상 이익 가정 10.5%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +180%라 손익 구조는 '매우 유리'예요."
+    "note": "지금 주가가 맞으려면 이익이 연 5%씩 늘면서 순이익률 3.3%가 이어져야 해요(과거 9.4%~19.5%, 평균 12.7%, 이 리포트의 정상 이익 가정 10.5%). 과거 최악보다 낮은 수익성만 가정하고 있어요. 회사가 망가지지 않는다면 비관이 지나친 가격일 수 있어요. 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어진다고 가정한 하방 가치도 현재가보다 높고, 낙관 시나리오면 +176%라 손익 구조는 '매우 유리'예요."
    },
    "metrics": {
     "q": "2026Q3",
     "ttm_period": "2025Q4~2026Q3",
     "per_q": null,
     "ni_q": -3600,
-    "por_ttm": 3.9,
+    "por_ttm": 4.0,
     "op_ttm": 63320,
-    "por_q": 4.0,
+    "por_q": 4.1,
     "op_q": 15570,
     "cns_per": null,
     "div_yield": null,
@@ -22070,12 +22070,12 @@
      }
     ]
    },
-   "price": 12150,
-   "price_date": "2026-11-27 09:35",
+   "price": 12130,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 349363,
-   "mcap_eff": 349363,
-   "shares": 28754156,
+   "mcap": 348788,
+   "mcap_eff": 348788,
+   "shares": 28754163,
    "shares_check": {
     "dart_common": 28754125,
     "dart_period": "2026-11-20",
@@ -22110,7 +22110,7 @@
       "g": 8,
       "value": 126274,
       "per_share": 4391,
-      "upside": -63.9
+      "upside": -63.8
      },
      "bull": {
       "g": 12,
@@ -22121,8 +22121,8 @@
     },
     "c_T": 0.6,
     "roe_norm": 3.8,
-    "implied_g": 31.1,
-    "implied_E1": 33201,
+    "implied_g": 31.0,
+    "implied_E1": 33146,
     "cycle": {
      "position": "투자기",
      "note": "CGM 투자.",
@@ -22157,7 +22157,7 @@
     "upside": -50.9,
     "pct": 42,
     "tier": "가운데 ⅓",
-    "exp_ex": -1.2,
+    "exp_ex": -1.1,
     "conflict": false
    },
    "marks": {
@@ -22345,12 +22345,12 @@
     },
     "oneoff": []
    },
-   "price": 17860,
-   "price_date": "2026-11-27 09:35",
+   "price": 17520,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 1329826,
-   "mcap_eff": 1329826,
-   "shares": 74458343,
+   "mcap": 1304510,
+   "mcap_eff": 1304510,
+   "shares": 74458333,
    "shares_check": {
     "dart_common": 74458359,
     "dart_period": "2026-11-20",
@@ -22365,7 +22365,7 @@
    "dividend_yield": null,
    "per": null,
    "roe": -74.9,
-   "pbr": 9.68,
+   "pbr": 9.49,
    "skip": "rNPV",
    "cycle": {
     "position": "투자기",
@@ -22411,23 +22411,23 @@
       "pipeline": 415760,
       "value": 378533,
       "per_share": 5084,
-      "upside": -71.5
+      "upside": -71.0
      },
      "base": {
       "pipeline": 593943,
       "value": 556716,
       "per_share": 7477,
-      "upside": -58.1
+      "upside": -57.3
      },
      "bull": {
       "pipeline": 772126,
       "value": 734898,
       "per_share": 9870,
-      "upside": -44.7
+      "upside": -43.7
      }
     },
     "net_cash": 16900,
-    "implied_pipeline": 1367054
+    "implied_pipeline": 1341738
    },
    "quant": {
     "pos": "상승기",
@@ -22545,12 +22545,12 @@
   "338220": {
    "name": "뷰노",
    "group": "의료기기·AI 의료",
-   "price": 6380,
-   "price_date": "2026-11-27 09:35",
+   "price": 6320,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 89295,
-   "mcap_eff": 89295,
-   "shares": 13996082,
+   "mcap": 88455,
+   "mcap_eff": 88455,
+   "shares": 13996044,
    "shares_check": {
     "dart_common": 13996024,
     "dart_period": "2026-11-20",
@@ -22609,23 +22609,23 @@
       "pipeline": 107165,
       "value": 96340,
       "per_share": 6883,
-      "upside": 7.9
+      "upside": 8.9
      },
      "base": {
       "pipeline": 206017,
       "value": 195191,
       "per_share": 13946,
-      "upside": 118.6
+      "upside": 120.7
      },
      "bull": {
       "pipeline": 319422,
       "value": 308597,
       "per_share": 22049,
-      "upside": 245.6
+      "upside": 248.9
      }
     },
     "net_cash": 0,
-    "implied_pipeline": 100121
+    "implied_pipeline": 99281
    },
    "metrics": {
     "q": null,
@@ -22711,12 +22711,12 @@
   "060280": {
    "name": "큐렉소",
    "group": "의료기기·AI 의료",
-   "price": 7090,
-   "price_date": "2026-11-27 09:35",
+   "price": 7300,
+   "price_date": "2026-11-27 10:28",
    "price_source": "네이버 금융",
-   "mcap": 292506,
-   "mcap_eff": 292506,
-   "shares": 41256135,
+   "mcap": 301170,
+   "mcap_eff": 301170,
+   "shares": 41256164,
    "shares_check": {
     "dart_common": 41256117,
     "dart_period": "2026-11-20",
@@ -22735,32 +22735,32 @@
     "r": 10.5,
     "c": 0.5,
     "note": "정상 이익 30억원: 흑자 전환 뒤 예상 수준.",
-    "fwd_per": 97.5,
-    "norm_per": 97.5,
+    "fwd_per": 100.4,
+    "norm_per": 100.4,
     "scenarios": {
      "bear": {
       "g": 5,
       "value": 27636,
       "per_share": 670,
-      "upside": -90.6
+      "upside": -90.8
      },
      "base": {
       "g": 12,
       "value": 38500,
       "per_share": 933,
-      "upside": -86.8
+      "upside": -87.2
      },
      "bull": {
       "g": 20,
       "value": 55723,
       "per_share": 1351,
-      "upside": -80.9
+      "upside": -81.5
      }
     },
     "c_T": 0.81,
     "roe_norm": null,
-    "implied_g": 59.8,
-    "implied_E1": 22793,
+    "implied_g": 60.5,
+    "implied_E1": 23468,
     "net_cash_added": 0
    },
    "marks": {
@@ -22774,7 +22774,7 @@
     },
     "weighted": 38685,
     "weighted_ps": 938,
-    "weighted_upside": -86.8,
+    "weighted_upside": -87.2,
     "stress": {
      "E": 1800,
      "margin": null,
@@ -22784,8 +22784,8 @@
      "how": "실적 이력이 짧아 정상 이익의 60%를 불황 이익으로 가정, 이 상태가 3년 이어진 뒤 정상 이익으로 복귀(성장은 비관 가정)"
     },
     "down_ps": 634,
-    "max_loss": 91.1,
-    "up_bull": -80.9,
+    "max_loss": 91.3,
+    "up_bull": -81.5,
     "asym_ratio": null,
     "asym": "불리",
     "risk": {
@@ -22800,13 +22800,13 @@
     },
     "mos": 35,
     "buy_ps": 610,
-    "buy_gap": -91.4,
+    "buy_gap": -91.6,
     "implied_margin": null,
     "base_margin": null,
     "hist_margin": null,
     "verdict": "낙관 시나리오도 넘는 가격",
     "tone": "neg",
-    "note": "지금 주가는 1~5년 이익이 연 59.8%씩 늘어난다고 가정하는 셈이에요(기준 가정 12%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 91% 손실, 낙관 시나리오면 -81%로 손익 구조는 '불리'예요."
+    "note": "지금 주가는 1~5년 이익이 연 60.5%씩 늘어난다고 가정하는 셈이에요(기준 가정 12%). 업종 전체가 과열(낙관 쪽) 상태라 확률을 비관 쪽으로 조금 옮겼어요. 불황이 길어지면 최대 약 91% 손실, 낙관 시나리오면 -81%로 손익 구조는 '불리'예요."
    },
    "metrics": {
     "q": null,
@@ -22919,7 +22919,7 @@
  "marks_meta": {
   "temperature": {
    "n": 65,
-   "median_upside": -30.0,
+   "median_upside": -30.6,
    "share_above": 63,
    "label": "과열(낙관 쪽)",
    "shift": 1
@@ -22928,7 +22928,7 @@
    {
     "industry": "cosmetics",
     "n": 44,
-    "median_upside": 4.2,
+    "median_upside": 3.8,
     "share_above": 45,
     "label": "중간",
     "shift": 0
@@ -22936,7 +22936,7 @@
    {
     "industry": "semi",
     "n": 110,
-    "median_upside": -28.0,
+    "median_upside": -28.4,
     "share_above": 66,
     "label": "과열(낙관 쪽)",
     "shift": 1
@@ -22952,7 +22952,7 @@
    {
     "industry": "battery",
     "n": 66,
-    "median_upside": -49.6,
+    "median_upside": -50.3,
     "share_above": 83,
     "label": "과열(낙관 쪽)",
     "shift": 1
@@ -22968,7 +22968,7 @@
    {
     "industry": "food",
     "n": 48,
-    "median_upside": 19.7,
+    "median_upside": 19.9,
     "share_above": 40,
     "label": "다소 차가움",
     "shift": 0
@@ -22976,7 +22976,7 @@
    {
     "industry": "logistics",
     "n": 25,
-    "median_upside": 11.5,
+    "median_upside": 14.0,
     "share_above": 44,
     "label": "다소 차가움",
     "shift": 0
@@ -23000,7 +23000,7 @@
    {
     "industry": "bio",
     "n": 65,
-    "median_upside": -30.0,
+    "median_upside": -30.6,
     "share_above": 63,
     "label": "과열(낙관 쪽)",
     "shift": 1
