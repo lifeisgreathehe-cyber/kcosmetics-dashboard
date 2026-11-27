@@ -30,6 +30,7 @@ CFG = json.loads((ROOT / "config/context/industries.json").read_text("utf-8"))
 INDUSTRIES = ["cosmetics", "semi", "chem", "battery", "apparel", "food", "logistics", "auto", "steel"]
 CONSUMER = {"cosmetics", "apparel", "food"}
 INDUSTRIES.append("travel")  # 여행 대시보드 (다른 업종 PR과 줄이 겹치지 않게 따로 둠)
+INDUSTRIES += [i for i in ("bio", "construction", "ship", "energy") if (ROOT / "config" / i / "companies.json").exists() and i in CFG]  # 바이오·건설·조선·에너지: 설정이 생긴 업종만(공용 등록, 4개 업종 PR이 같은 줄을 공유)
 
 
 def cfg_path(ind):
