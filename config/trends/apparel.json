@@ -1,0 +1,211 @@
+{
+ "title": "의류·패션",
+ "index_name": "의류·패션 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "내수 패션사는 백화점·온라인 의류 소비와 날씨(겨울 기온), 소비심리에, OEM 수출사는 미국 의류 소매 경기와 원/달러 환율에 반응해요.",
+ "series": [
+  {
+   "id": "dept",
+   "name": "백화점 의복 판매액지수",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "retail_index.json",
+    "path": "series.백화점"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41014",
+   "why": "한섬·신세계인터내셔날·LF 등 고가 패션의 핵심 채널이에요.",
+   "read": "겨울 시즌(10~1월) 백화점 의복 매출이 연간 이익을 좌우해요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "online_app",
+   "name": "온라인 의복 거래액",
+   "group": "수요·물량",
+   "unit": "백만원",
+   "src": {
+    "file": "online_fashion.json",
+    "path": "series.의복"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 온라인쇼핑동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KE10051",
+   "why": "무신사·W컨셉 등 온라인 패션 소비예요.",
+   "read": "온라인 비중이 커진 캐주얼 브랜드 매출과 같이 움직여요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_app",
+   "name": "의류 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 61·62·64·42)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "국내에서 직접 수출하는 의류·신발·가방이에요. OEM 대형사는 대부분 해외 공장에서 수출해 일부만 잡혀요.",
+   "read": "방향성 참고용이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_knit",
+   "name": "편직물(니트 원단) 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "extra.편직물(니트 원단).exports"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적(HS 60)",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "한국 원단이 베트남·중미 봉제공장으로 가는 물량이에요. 미국 브랜드 발주의 선행 지표예요.",
+   "read": "원단 수출이 늘면 몇 달 뒤 OEM 봉제 수주가 늘어요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "ship_app",
+   "name": "의복 제조업 출하지수",
+   "group": "공급·재고",
+   "unit": "2020=100",
+   "src": {
+    "file": "production_index.json",
+    "path": "series.출하"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "국내 의복 공장 출하 물량이에요.",
+   "read": "내수 패션 판매의 동행 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cyc_app",
+   "name": "출하−재고 순환(의복)",
+   "group": "공급·재고",
+   "unit": "%p",
+   "src": {
+    "calc": "yoy_gap",
+    "a": {
+     "file": "production_index.json",
+     "path": "series.출하"
+    },
+    "b": {
+     "file": "production_index.json",
+     "path": "series.재고"
+    }
+   },
+   "tf": "level",
+   "pub_lag": 1,
+   "source": "국가데이터처 광업제조업동향조사로 계산",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1F02001",
+   "why": "의복 출하 증가율 − 재고 증가율이에요.",
+   "read": "재고가 쌓이면 할인 판매로 마진이 나빠져요. 플러스 전환은 정상가 판매 회복 신호예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cotton",
+   "name": "면화 가격",
+   "group": "원가",
+   "unit": "센트/파운드",
+   "src": {
+    "file": "signals.json",
+    "path": "series.cotton"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(CT=F)",
+   "url": "https://finance.yahoo.com/quote/CT%3DF/",
+   "why": "면 원사·원단의 원가예요.",
+   "read": "면화가 오르면 OEM·방적사엔 판가 전가 전까지 원가 부담이에요."
+  },
+  {
+   "id": "temp",
+   "name": "서울 기온(전년 같은 달과 차이)",
+   "group": "수요·물량",
+   "unit": "℃",
+   "src": {
+    "file": "signals.json",
+    "path": "series.seoul_temp"
+   },
+   "tf": "diff12",
+   "pub_lag": 0,
+   "source": "Open-Meteo ERA5 재분석(서울)",
+   "url": "https://open-meteo.com/",
+   "why": "겨울이 따뜻하면 패딩·코트 등 고가 아우터가 덜 팔려요.",
+   "read": "겨울(11~2월) 기온이 1년 전보다 낮으면 패션사 4분기 실적에 유리해요.",
+   "sign": -1
+  },
+  {
+   "id": "xrt",
+   "name": "미국 소매업 ETF(XRT)",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:XRT"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(XRT)",
+   "url": "https://finance.yahoo.com/quote/XRT/",
+   "why": "미국 소매 유통사 주가예요. OEM 고객사(미국 브랜드·유통)의 경기를 보여줘요.",
+   "read": "미국 소매가 좋아지면 다음 시즌 OEM 발주가 늘어요.",
+   "sign": 1
+  },
+  {
+   "id": "nke",
+   "name": "나이키 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:NKE"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(NKE)",
+   "url": "https://finance.yahoo.com/quote/NKE/",
+   "why": "세계 최대 스포츠 브랜드로 신발·의류 OEM(태광실업·화승·창신 등) 발주를 좌우해요.",
+   "read": "나이키 재고 조정기엔 OEM 수주가 줄어요.",
+   "sign": 1
+  },
+  {
+   "id": "vfc",
+   "name": "VF코프(노스페이스) 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:VFC"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(VFC)",
+   "url": "https://finance.yahoo.com/quote/VFC/",
+   "why": "영원무역의 최대 고객사 노스페이스·반스를 가진 회사예요.",
+   "read": "VF의 재고·발주 계획이 영원무역 OEM 매출을 미리 알려줘요.",
+   "sign": 1
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+ "title": "화장품",
+ "index_name": "화장품·미용 업종 시총가중",
+ "groups": [
+  "수요·물량",
+  "가격·마진",
+  "공급·재고",
+  "원가",
+  "해외 동종·선행 시장",
+  "거시·금융"
+ ],
+ "intro": "화장품 주가는 '수출(특히 미국·중국)', '면세점·중국인 관광객', '국내 H&B(올리브영) 채널'과 해외 동종사 주가에 반응해요. 2017년 사드와 2020~22년 코로나·중국 봉쇄가 큰 충격이었어요.",
+ "series": [
+  {
+   "id": "exp",
+   "name": "화장품 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "total"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "K-뷰티 수출(HS 3303·3304·3305·3307)이에요. 브랜드사·ODM 매출의 선행 지표예요.",
+   "read": "증가율이 꺾이면 실적보다 주가가 먼저 반응해요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "exp_skin",
+   "name": "기초·색조 화장품 수출액",
+   "group": "수요·물량",
+   "unit": "백만 달러",
+   "src": {
+    "file": "customs_exports.json",
+    "path": "series.기초·색조(3304)"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "관세청 품목별 수출입실적",
+   "url": "https://www.data.go.kr/data/15100475/openapi.do",
+   "why": "수출의 약 80%를 차지하는 기초·색조(HS 3304)예요.",
+   "read": "인디 브랜드의 미국·일본 수출이 이 숫자를 끌어올려요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cos_xp",
+   "name": "화장품 수출물가지수",
+   "group": "가격·마진",
+   "unit": "2020=100(달러)",
+   "src": {
+    "kosis": "cos_xp"
+   },
+   "tf": "yoy",
+   "pub_lag": 0.5,
+   "source": "한국은행 수출입물가조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=301&tblId=DT_402Y014",
+   "why": "한국 화장품의 달러 수출 가격이에요.",
+   "read": "가격이 오르며 수출이 늘면 브랜드 파워가 좋아진 것, 가격을 내려 물량을 늘리면 경쟁 심화예요.",
+   "sign": 1
+  },
+  {
+   "id": "duty",
+   "name": "면세점 화장품 판매액지수",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "retail_index_cosmetics.json",
+    "path": "series.면세점"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41014",
+   "why": "면세점 화장품 매출(불변)이에요. 중국 따이궁·관광객 수요를 보여줘요.",
+   "read": "면세 매출 회복은 아모레퍼시픽·LG생활건강 같은 대형 브랜드에 가장 중요해요.",
+   "ma": 3,
+   "sign": 1,
+   "exclude_window": [
+    "2020-02",
+    "2024-06"
+   ]
+  },
+  {
+   "id": "hnb",
+   "name": "전문소매점(H&B 등) 화장품 판매액지수",
+   "group": "수요·물량",
+   "unit": "2020=100",
+   "src": {
+    "file": "retail_index_cosmetics.json",
+    "path": "series.전문소매점"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 서비스업동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1K41014",
+   "why": "올리브영 같은 전문 소매점 화장품 매출이에요. 국내 소비와 인바운드 쇼핑을 함께 보여줘요.",
+   "read": "인디 브랜드가 성장하는 주요 채널이에요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "online",
+   "name": "온라인 화장품 거래액",
+   "group": "수요·물량",
+   "unit": "백만원",
+   "src": {
+    "file": "online_cosmetics.json",
+    "path": "values"
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "국가데이터처 온라인쇼핑동향조사",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=DT_1KE10051",
+   "why": "국내 온라인쇼핑 화장품 거래액이에요.",
+   "read": "내수 화장품 소비의 동행 지표예요.",
+   "ma": 3,
+   "sign": 1
+  },
+  {
+   "id": "cn_visitors",
+   "name": "중국인 방한객",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "concat": [
+     {
+      "ind": "travel",
+      "file": "inbound_old.json",
+      "path": "series.중국"
+     },
+     {
+      "ind": "travel",
+      "file": "inbound_new.json",
+      "path": "series.중국"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계(구·신 통계표 연결)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRD_TGT_ENT_AGG_MONTH",
+   "why": "면세점·명동·올리브영 매출을 좌우하는 중국인 관광객 수예요.",
+   "read": "사드(2017)·코로나(2020~22) 때 급감했어요. 2003~21년·2022년~ 두 통계표를 이어 붙였어요(정의가 다를 수 있어 주의).",
+   "ma": 3,
+   "sign": 1,
+   "exclude_window": [
+    "2020-02",
+    "2024-06"
+   ]
+  },
+  {
+   "id": "visitors",
+   "name": "전체 방한 외래객",
+   "group": "수요·물량",
+   "unit": "명",
+   "src": {
+    "concat": [
+     {
+      "ind": "travel",
+      "file": "inbound_old.json",
+      "path": "series.총계"
+     },
+     {
+      "ind": "travel",
+      "file": "inbound_new.json",
+      "path": "series.총계"
+     }
+    ]
+   },
+   "tf": "yoy",
+   "pub_lag": 1,
+   "source": "한국관광공사 한국관광통계(구·신 통계표 연결)",
+   "url": "https://kosis.kr/statHtml/statHtml.do?orgId=314&tblId=DT_TRD_TGT_ENT_AGG_MONTH",
+   "why": "외국인 관광객 전체예요. 일본·동남아·미국 관광객의 K-뷰티 쇼핑이 커졌어요.",
+   "read": "두 통계표를 이어 붙였어요(정의가 다를 수 있어 주의).",
+   "ma": 3,
+   "sign": 1,
+   "exclude_window": [
+    "2020-02",
+    "2024-06"
+   ]
+  },
+  {
+   "id": "cnykrw",
+   "name": "원/위안 환율",
+   "group": "거시·금융",
+   "unit": "원",
+   "src": {
+    "calc": "ratio",
+    "a": {
+     "market": "yahoo:KRW=X"
+    },
+    "b": {
+     "market": "yahoo:CNY=X"
+    }
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(KRW=X ÷ CNY=X)로 계산",
+   "url": "https://finance.yahoo.com/quote/CNYKRW=X/",
+   "why": "위안화가 강하면 중국 소비자·따이궁의 구매력이 커져요.",
+   "read": "상관이 플러스면 위안 강세(원/위안 상승)가 업종에 유리하다는 뜻이에요."
+  },
+  {
+   "id": "el",
+   "name": "에스티로더 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:EL"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(EL)",
+   "url": "https://finance.yahoo.com/quote/EL/",
+   "why": "중국·면세 비중이 큰 글로벌 1위권 화장품사예요.",
+   "read": "에스티로더가 중국·면세 부진을 먼저 공시하면 한국 대형 브랜드도 뒤따르는 경우가 많았어요.",
+   "sign": 1
+  },
+  {
+   "id": "shiseido",
+   "name": "시세이도 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "엔",
+   "src": {
+    "market": "yahoo:4911.T"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(4911.T)",
+   "url": "https://finance.yahoo.com/quote/4911.T/",
+   "why": "아시아 최대 화장품사로 중국 수요에 민감해요.",
+   "read": "중국 소비·면세 기대를 일본 시장에서 먼저 보여줘요.",
+   "sign": 1
+  },
+  {
+   "id": "ulta",
+   "name": "얼타뷰티 주가",
+   "group": "해외 동종·선행 시장",
+   "unit": "달러",
+   "src": {
+    "market": "yahoo:ULTA"
+   },
+   "tf": "yoy",
+   "pub_lag": 0,
+   "source": "Yahoo Finance(ULTA)",
+   "url": "https://finance.yahoo.com/quote/ULTA/",
+   "why": "미국 최대 화장품 소매점이에요. 미국에서 K-뷰티 입점이 늘고 있어요.",
+   "read": "미국 뷰티 소비 경기를 보여줘요.",
+   "sign": 1
+  }
+ ]
+}
