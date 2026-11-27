@@ -796,6 +796,8 @@ function consensusBlock(d, M) {
       const dc = last.cy.op / f.cy.op - 1, dp = pr(rows[rows.length - 1]) / pr(rows[0]) - 1;
       note += ` 같은 기간 컨센서스는 ${sg(dc, 1)}, 주가는 ${sg(dp, 1)} 움직여 ${Math.abs(dp - dc) < 0.05 ? '주가가 이익 추정 변화만큼 움직였습니다' : dp > dc ? '주가가 이익 추정보다 더 올랐습니다(기대가 먼저 반영)' : '주가가 이익 추정보다 덜 올랐거나 더 내렸습니다(이익 대비 할인 확대)'}.`;
     }
+    const lp = last.price || d.price;
+    if (last.tp && lp && last.tp / lp > 1.6) note += ` 목표주가 평균이 주가보다 ${sg(last.tp / lp - 1)} 높습니다. 이렇게 차이가 크면 대개 주가가 급락한 뒤 증권사들이 목표주가를 아직 내리지 않았다는 뜻이라(평균에는 몇 달 전 리포트가 섞임), 평균보다 최근 리포트의 방향을 보는 것이 맞습니다.`;
     parts.push(`<div class="note">${note}</div>`);
   }
   // 2) 증권사 목표주가 언급(뉴스) → 시장과 다른 의견 표시
