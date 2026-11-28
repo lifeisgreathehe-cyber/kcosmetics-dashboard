@@ -35,10 +35,12 @@ const srv = http.createServer((q, r) => {
       const rv = s.rev || {}; out.rev = { title: rv.title, trend: rv.trend, eval: rv.eval, watch: rv.watch };
       const ir = s.ir || {}; out.ir = { summary: ir.summary, strategy: ir.strategy, change: ir.change };
       out.news = (d.news || []).slice(0, 8).map(n => n.date + ' ' + n.title);
+      const ch = d.cons_hist || []; out.cons = ch.length ? [ch[0], ch[ch.length - 1]] : null;
+      out.tp = (d.tp_mentions || []).slice(0, 6).map(x => [x.date, x.broker, x.tp]);
       out.peers = (d.peers || []).slice(0, 6).map(p => [p.name, Math.round((p.mcap || 0) / 100), p.rev && Math.round(p.op / p.rev * 1000) / 10]);
       return out;
     });
-    console.log(JSON.stringify(o, (k, v) => typeof v === 'string' && v.length > 420 ? v.slice(0, 420) + '…' : v));
+    console.log(JSON.stringify(o, (k, v) => typeof v === 'string' && v.length > 330 ? v.slice(0, 330) + '…' : v));
     console.log('-----');
   }
   await b.close(); srv.close();

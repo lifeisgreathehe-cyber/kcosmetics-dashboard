@@ -42,7 +42,7 @@ function buildModel(d, ov) {
   const qk = Object.keys(Q).sort();
   const cyq = qk.filter(k => k.startsWith(CY + 'Q'));
   const n = cyq.length;
-  const sumQ = (ks, f) => ks.reduce((s, k) => s + (isNum(Q[k][f]) ? Q[k][f] : 0), 0);
+  const sumQ = (ks, f) => ks.reduce((s, k) => s + (Q[k] && isNum(Q[k][f]) ? Q[k][f] : 0), 0);
   const prevSame = cyq.map(k => FY + k.slice(4));
   const prevRest = [1, 2, 3, 4].map(i => FY + 'Q' + i).filter(k => !prevSame.includes(k));
   const ytd = n ? { rev: sumQ(cyq, 'rev'), gp: sumQ(cyq, 'gp'), op: sumQ(cyq, 'op'), ni: sumQ(cyq, 'ni'), n, prev_rev: sumQ(prevSame, 'rev'), prev_op: sumQ(prevSame, 'op'), prev_ni: sumQ(prevSame, 'ni') } : null;
@@ -1051,7 +1051,7 @@ async function live(d) {
 function route() {
   const h = decodeURIComponent(location.hash.slice(1));
   if (h === 'method') return renderMethod();
-  const code = /^\d{6}$/.test(h) ? h : (S.list.companies.find(c => c.manual) || S.list.companies[0]).code;
+  const code = /^[0-9A-Z]{6}$/.test(h) ? h : (S.list.companies.find(c => c.manual) || S.list.companies[0]).code;
   if (!S.d || S.d.code !== code) loadCompany(code);
   else if (!h.startsWith('s') && !h.startsWith('ap')) render();
 }
@@ -1063,8 +1063,8 @@ async function init() {
   const fill = () => { const f = $('#ind').value; $('#cos').innerHTML = cos.filter(c => !f || c.ind === f).map(c => `<option value="${esc(c.name)} (${c.code})">${esc(c.ind_name)} · ${esc(c.group || '')}${c.manual ? ' · 원고' : ''}</option>`).join(''); };
   fill(); $('#ind').onchange = fill;
   $('#hint').textContent = `${S.list.n}개사 · 원고 ${cos.filter(c => c.manual).length}개 · 빌드 ${S.list.built}`;
-  $('#q').addEventListener('change', () => { const m = $('#q').value.match(/(\d{6})/) || [null, (cos.find(c => c.name === $('#q').value.trim()) || {}).code]; if (m[1]) location.hash = m[1]; });
-  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h === 'method' || /^\d{6}$/.test(h)) route(); });
+  $('#q').addEventListener('change', () => { const m = $('#q').value.match(/([0-9][0-9A-Z]{5})/) || [null, (cos.find(c => c.name === $('#q').value.trim()) || {}).code]; if (m[1]) location.hash = m[1]; });
+  window.addEventListener('hashchange', () => { const h = location.hash.slice(1); if (h === 'method' || /^[0-9A-Z]{6}$/.test(h)) route(); });
   route();
 }
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => S.d && render());
