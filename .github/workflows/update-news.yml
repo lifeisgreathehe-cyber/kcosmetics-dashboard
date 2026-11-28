@@ -15,7 +15,7 @@ concurrency:
 jobs:
   news:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 55  # 11/26 업종 4개 추가 후 수집이 30분을 넘겨 취소되던 문제
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
